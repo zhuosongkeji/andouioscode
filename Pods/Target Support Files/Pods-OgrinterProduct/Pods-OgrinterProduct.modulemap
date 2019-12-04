@@ -1,0 +1,6 @@
+framework module Pods_OgrinterProduct {
+  umbrella header "Pods-OgrinterProduct-umbrella.h"
+
+  export *
+  module * { export * }
+}

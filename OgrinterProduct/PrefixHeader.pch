@@ -1,0 +1,134 @@
+//
+//  PrefixHeader.pch
+//  OgrinterProduct
+//
+//  Created by wongshine on 2019/11/27.
+//  Copyright © 2019 RXF. All rights reserved.
+//
+
+#ifndef PrefixHeader_h
+#define PrefixHeader_h
+
+
+#define UMKEY @"5bf77bb3b465f5ec3000007e"
+#define WeChatAPPKEY @"wx617c77c82218ea2c"
+#define WeChatSecret @"c7253e5289986cf4c4c74d1ccc185fb1"
+#define QQAPPKEY @"100371282"
+#define QQSecret @"aed9b0303e3ed1e27bae87c33761161d"
+#define SinaAPPKEY @"568898243"
+#define SinaSecret @"38a4f8204cc784f81f9f0daaf31e02e3"
+#define SinaRedirectURL @"http://www.sharesdk.cn"
+
+#define TIMECOUNT 60
+
+
+#define kDescribeContentLeft 20
+#define kDescribeContentTop 280
+#define kDescribeContentHeight 80
+#define kDescribeContentFont 14
+
+#define kSingleLineHeight 36
+#define kMaxLines  6
+#define kMaintainImgsTableViewTop 70
+#define kMaintainImgsTableViewHeight 200
+#define kItemListTop 10
+#define kItemListLeft 10
+
+#define bannerH KSCREEN_WIDTH * 9/16
+
+
+#define cityArr @[@{@"name":@"热门",@"array":@[@"北京", @"上海", @"广州", @"深圳", @"重庆", @"武汉"]},@{@"name":@"A",@"array":@[@"安康",@"阿克苏",@"阿勒泰",@"澳门",@"安庆",@"鞍山",@"安顺",@"阿图什",@"安阳"]},@{@"name":@"B",@"array":@[@"蚌埠", @"白城", @"保定", @"北海", @"北京", @"宝鸡", @"毕节", @"博乐", @"白山", @"保山", @"百色", @"包头", @"本溪", @"白银", @"巴彦淖尔", @"滨州", @"巴中"]},@{@"name":@"C",@"array":@[@"承德", @"成都", @"常德", @"赤峰", @"巢湖", @"昌吉", @"朝阳", @"长春", @"长沙", @"常州", @"潮州", @"沧州", @"滁州", @"池州", @"郴州", @"崇左"]},@{@"name":@"D",@"array":@[@"丹东", @"东莞", @"大连", @"大庆", @"大同", @"定西", @"东营", @"德阳", @"都匀", @"德州", @"达州"]},@{@"name":@"E",@"array":@[@"鄂尔多斯", @"二连浩特", @"恩施", @"鄂州"]},@{@"name":@"F",@"array":@[@"防城港", @"佛山", @"抚顺", @"阜新", @"阜阳", @"抚州", @"福州"]},@{@"name":@"G",@"array":@[@"贵港", @"桂林", @"高雄", @"固原", @"广元", @"贵阳", @"广州", @"赣州"]},@{@"name":@"H",@"array":@[@"淮安", @"淮北", @"鹤壁", @"河池", @"邯郸", @"哈尔滨", @"合肥", @"鹤岗", @"黄冈", @"黑河", @"怀化", @"呼和浩特", @"海口", @"呼伦贝尔", @"葫芦岛", @"淮南", @"衡水", @"黄山", @"黄石", @"和田", @"河源", @"衡阳", @"杭州", @"湖州", @"惠州", @"合作", @"汉中", @"菏泽", @"毫州", @"贺州"]},@{@"name":@"J",@"array":@[@"吉安", @"金昌", @"晋城", @"金华", @"九江", @"吉林", @"江门", @"荆门", @"佳木斯", @"济南", @"济宁", @"酒泉", @"吉首", @"嘉兴", @"鸡西", @"揭阳", @"嘉峪关", @"锦州", @"晋中", @"焦作", @"荆州"]},@{@"name":@"K",@"array":@[@"库尔勒", @"开封", @"凯里", @"克拉玛依", @"昆明", @"喀什"]},@{@"name":@"L",@"array":@[@"六安", @"来宾", @"聊城", @"临沧", @"廊坊", @"漯河", @"丽江", @"吕梁", @"陇南", @"六盘水", @"丽水", @"拉萨", @"乐山", @"莱芜", @"临夏", @"辽阳", @"辽源", @"临沂", @"洛阳", @"龙岩", @"连云港", @"兰州", @"泸州", @"柳州"]},@{@"name":@"M",@"array":@[@"马鞍山", @"牡丹江", @"茂名", @"眉山", @"绵阳", @"梅州"]},@{@"name":@"N",@"array":@[@"宁波", @"南充", @"南昌", @"宁德", @"内广安", @"南京", @"内江", @"南宁", @"南平", @"南通", @"南阳"]},@{@"name":@"P",@"array":@[@"平顶山", @"盘锦", @"平凉", @"莆田", @"萍乡", @"濮阳", @"攀枝花"]},@{@"name":@"Q",@"array":@[@"青岛", @"秦皇岛", @"曲靖", @"齐齐哈尔", @"七台河", @"清远", @"庆阳", @"衢州", @"泉州", @"钦州"]},@{@"name":@"R",@"array":@[@"日照"]},@{@"name":@"S",@"array":@[@"韶关", @"上海", @"石家庄", @"商洛", @"思茅", @"三明", @"三门峡", @"遂宁", @"四平", @"宿迁", @"商丘", @"上饶", @"汕头", @"绍兴", @"沈阳", @"松原", @"十堰", @"邵阳", @"三亚", @"双鸭山", @"苏州", @"深圳", @"朔州", @"宿州", @"随州", @"石嘴山"]},@{@"name":@"T",@"array":@[@"泰安", @"台北", @"塔城", @"铜川", @"通化", @"天津", @"铁岭", @"通辽", @"铜陵,", @"吐鲁番", @"铜仁", @"天水", @"唐山", @"太原", @"台州", @"泰州", @"台中",]},@{@"name":@"W",@"array":@[@"潍坊", @"乌海", @"威海", @"芜湖", @"武汉", @"乌兰察布", @"乌兰浩特", @"乌鲁木齐", @"渭南", @"武威", @"无锡", @"温州", @"吴忠", @"梧州"]},@{@"name":@"X",@"array":@[@"西安", @"宣城", @"许昌", @"襄樊", @"香港", @"孝感", @"厦门", @"西宁", @"咸宁", @"邢台", @"湘潭", @"新乡", @"咸阳", @"信阳", @"兴义", @"新余", @"徐州", @"忻州"]},@{@"name":@"Y",@"array":@[@"延安", @"雅安", @"宜宾", @"盐城", @"伊春", @"银川", @"运城", @"宜昌", @"宜春", @"云浮", @"阳江", @"延吉", @"营口", @"榆林", @"玉林", @"伊宁", @"阳泉", @"烟台", @"鹰潭", @"玉溪", @"岳阳", @"益阳", @"扬州", @"永州"]},@{@"name":@"Z",@"array":@[@"淄博", @"自贡", @"珠海", @"镇江", @"湛江", @"张家界", @"周口", @"驻马店", @"重庆", @"肇庆", @"舟山", @"中山", @"昭通", @"中卫", @"张掖", @"资阳", @"遵义", @"长治", @"枣庄", @"郑州", @"株洲", @"漳州"]}]
+
+//MARK:- login
+#define NphoneNumber @"手机号码格式不正确"
+#define phoneLength @"手机号码不能为空"
+#define phonePwdLength @"密码不能为空"
+#define sendCode @"验证码已发送请注意查收"
+#define msgCodeLength @"验证码不能为空"
+#define codeMsgCode @"验证码不正确"
+#define YcodeLength @"邀请码不能为空"
+#define loading @"请稍后..."
+#define loginSuccess @"登录注册成功"
+#define isselectdbtn @"请先阅读并勾选用户注册协议"
+
+//MARK:-
+#define OtherMsg @"该功能暂未开放"
+
+//MARK:- 通用的错误提示
+#define mError @"请求错误请稍后再试"
+#define loctionError @"无法获取定位、请设置打开定位权限"
+
+
+//MARK:-
+#define imgStr(img) [UIImage imageNamed:img]
+
+
+/*
+ *RGB颜色转换（16进制->10进制）
+ */
+
+#define KSHEX(hexString) [UIColor colorWithRed:((float)((hexString &0xFF0000) >>16))/255.0green:((float)((hexString &0xFF00) >>8))/255.0blue:((float)(hexString &0xFF))/255.0alpha:1.0]
+
+/*
+ *带有RGBA的颜色设置
+ */
+
+#define KSRGBA(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
+
+#define KSDUAULTCOLORE KSRGBA(85, 205, 158, 0.8)
+
+/*
+ *随机颜色
+ */
+
+#define UICOLOR_RANDOM  [UIColor colorWithRed:(arc4random()%255)/255.0green:(arc4random()%255)/255.0blue:(arc4random()%255)/255.0alpha:1.0]
+
+
+//屏幕宽度
+#define KSCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+
+#define KSCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height//屏幕高度
+
+
+// 防止按钮多次调用，给一个等待的时间seconds
+#define KPreventRepeatClickTime(_seconds_) \
+static BOOL shouldPrevent; \
+if (shouldPrevent) return; \
+shouldPrevent = YES; \
+dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((_seconds_) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{ \
+shouldPrevent = NO; \
+}); \
+
+
+#define IPHONE_X \
+({BOOL isPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+}\
+(isPhoneX);})
+
+#define kStatusBarAndNavigationBarHeight (IPHONE_X ? -88.f : -64.f)
+
+#define kStatusBarAndNavigationBarH (IPHONE_X ? 88.f : 64.f)
+#define kStatuTabBarH (IPHONE_X ? 83.f : 49.f)
+
+
+//快速发通知
+#define KPost_Notify(_notificationName, _obj, _userInfoDictionary) [[NSNotificationCenter defaultCenter] postNotificationName: _notificationName object: _obj userInfo: _userInfoDictionary];
+
+
+//添加观察者
+#define KAdd_Observer(_notificationName, _observer, _observerSelector, _obj) [[NSNotificationCenter defaultCenter] addObserver:_observer selector:@selector(_observerSelector) name:_notificationName object: _obj];
+
+//移除观察者
+#define KRemove_Observer(_observer) [[NSNotificationCenter defaultCenter] removeObserver: _observer];
+
+#import "HUDManager.h"
+#import "FKHRequestManager.h"
+#import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "NSObject+Timecutdow.h"
+#import <MJExtension/MJExtension.h>
+
+#endif /* PrefixHeader_h */

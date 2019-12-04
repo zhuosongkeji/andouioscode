@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HXCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="debug" translatesAutoresizingMaskIntoConstraints="NO" id="yfQ-ue-Nrk">
+                        <rect key="frame" x="0.0" y="0.0" width="128" height="107"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="撒打算打" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUL-Ap-wCr">
+                        <rect key="frame" x="0.0" y="111" width="128" height="21"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Sk5-qE-BXm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="yfQ-ue-Nrk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2CD-2b-Euz"/>
+                <constraint firstItem="yfQ-ue-Nrk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4cK-cC-exG"/>
+                <constraint firstAttribute="trailing" secondItem="yfQ-ue-Nrk" secondAttribute="trailing" id="FfW-Sl-CcJ"/>
+                <constraint firstAttribute="bottom" secondItem="yfQ-ue-Nrk" secondAttribute="bottom" constant="21" id="LPW-Qb-nYr"/>
+                <constraint firstAttribute="bottom" secondItem="vUL-Ap-wCr" secondAttribute="bottom" constant="-4" id="Umn-eY-crM"/>
+                <constraint firstItem="vUL-Ap-wCr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pn3-L1-Z7K"/>
+                <constraint firstAttribute="trailing" secondItem="vUL-Ap-wCr" secondAttribute="trailing" id="y3L-k3-u4e"/>
+            </constraints>
+            <size key="customSize" width="151" height="164"/>
+            <connections>
+                <outlet property="imgView" destination="yfQ-ue-Nrk" id="VsV-2O-omt"/>
+                <outlet property="name" destination="vUL-Ap-wCr" id="wgn-Lw-XmZ"/>
+            </connections>
+            <point key="canvasLocation" x="-792" y="-69.265367316341838"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="debug" width="232" height="204"/>
+    </resources>
+</document>
