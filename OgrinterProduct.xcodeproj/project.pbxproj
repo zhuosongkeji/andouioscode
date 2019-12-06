@@ -32,8 +32,6 @@
 		A10A9C232398B16D0049A0D2 /* MsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A10A9C222398B16D0049A0D2 /* MsgModel.m */; };
 		A10A9C272398E1490049A0D2 /* SearchResrultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10A9C252398E1490049A0D2 /* SearchResrultViewController.m */; };
 		A10A9C282398E1490049A0D2 /* SearchResrultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A10A9C262398E1490049A0D2 /* SearchResrultViewController.xib */; };
-		A10A9C4B239908DD0049A0D2 /* ShopingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10A9C49239908DD0049A0D2 /* ShopingViewController.m */; };
-		A10A9C4C239908DD0049A0D2 /* ShopingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A10A9C4A239908DD0049A0D2 /* ShopingViewController.xib */; };
 		A14FB25C238E0E4C006A6511 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FB25B238E0E4C006A6511 /* AppDelegate.m */; };
 		A14FB262238E0E4C006A6511 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14FB260238E0E4C006A6511 /* Main.storyboard */; };
 		A14FB264238E0E50006A6511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14FB263238E0E50006A6511 /* Assets.xcassets */; };
@@ -153,9 +151,6 @@
 		A10A9C242398E1490049A0D2 /* SearchResrultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResrultViewController.h; sourceTree = "<group>"; };
 		A10A9C252398E1490049A0D2 /* SearchResrultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResrultViewController.m; sourceTree = "<group>"; };
 		A10A9C262398E1490049A0D2 /* SearchResrultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResrultViewController.xib; sourceTree = "<group>"; };
-		A10A9C48239908DD0049A0D2 /* ShopingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopingViewController.h; sourceTree = "<group>"; };
-		A10A9C49239908DD0049A0D2 /* ShopingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopingViewController.m; sourceTree = "<group>"; };
-		A10A9C4A239908DD0049A0D2 /* ShopingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopingViewController.xib; sourceTree = "<group>"; };
 		A14FB257238E0E4C006A6511 /* OgrinterProduct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OgrinterProduct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14FB25A238E0E4C006A6511 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A14FB25B238E0E4C006A6511 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -338,9 +333,6 @@
 				A10A9C242398E1490049A0D2 /* SearchResrultViewController.h */,
 				A10A9C252398E1490049A0D2 /* SearchResrultViewController.m */,
 				A10A9C262398E1490049A0D2 /* SearchResrultViewController.xib */,
-				A10A9C48239908DD0049A0D2 /* ShopingViewController.h */,
-				A10A9C49239908DD0049A0D2 /* ShopingViewController.m */,
-				A10A9C4A239908DD0049A0D2 /* ShopingViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -854,7 +846,6 @@
 				A14FB30D238FCD13006A6511 /* CustomSectionView.xib in Resources */,
 				A10A9C192398A1970049A0D2 /* sorts.plist in Resources */,
 				A14FB2A9238E4DF6006A6511 /* RegisterViewController.xib in Resources */,
-				A10A9C4C239908DD0049A0D2 /* ShopingViewController.xib in Resources */,
 				A14FB350239126CB006A6511 /* ShoingMsgViewController.xib in Resources */,
 				A10A9BF5239784400049A0D2 /* ShopHomeViewCell.xib in Resources */,
 				A10A9BE9239764D70049A0D2 /* MDBannerCollectionViewCell.xib in Resources */,
@@ -1029,7 +1020,6 @@
 				A14FB2BE238F57AD006A6511 /* HUDManager.m in Sources */,
 				A10A9BEB239764D70049A0D2 /* MDBannerCollectionViewCell.m in Sources */,
 				A14FB2E8238F683D006A6511 /* FindViewController.m in Sources */,
-				A10A9C4B239908DD0049A0D2 /* ShopingViewController.m in Sources */,
 				A14FB318238FF6D4006A6511 /* WSLWaterFlowLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,6 @@
 #import "CustomSectionView.h"
 #import "HomeTableViewCell.h"
 #import "CitylistViewController.h"
-#import "ShopingViewController.h"
 
 #import "HQFlowView.h"
 #import "MarqueeView.h"
@@ -152,9 +151,6 @@
 //        [animation setDuration:0.3];
 //        [[window layer] addAnimation:animation forKey:nil];
 //        window.rootViewController = tabbar;
-        ShopingViewController *shop = [[ShopingViewController alloc]init];
-        shop.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:shop animated:YES];
         
     }
 }

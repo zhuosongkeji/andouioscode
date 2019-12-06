@@ -7,11 +7,10 @@
 //
 
 #import "BaseViewController.h"
-#import "ZJScrollPageViewDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ShoingMineViewController : BaseViewController<ZJScrollPageViewChildVcDelegate>
+@interface ShoingMineViewController : BaseViewController
 
 @end
 
