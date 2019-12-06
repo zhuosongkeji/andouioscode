@@ -8,6 +8,9 @@
 
 #import "MineViewController.h"
 
+#import "MyWalletVC.h"
+#import "MyPostVC.h"
+
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
@@ -54,15 +57,66 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//MARK: 按钮事件点击
+
+/*! 邀请有礼 */
+- (IBAction)giftForInviteClick:(UIButton *)sender
+{
+    NSLog(@"giftClick");
 }
-*/
+/*! 我的钱包 */
+- (IBAction)myWallet:(UIButton *)sender
+{
+    MyWalletVC *myWalletVC = [[MyWalletVC alloc] init];
+    [self.navigationController pushViewController:myWalletVC animated:YES];
+}
 
+/*! 我的发布 */
+- (IBAction)myRelease:(UIButton *)sender
+{
+    MyPostVC *myPostVC = [[MyPostVC alloc] init];
+    [self.navigationController pushViewController:myPostVC animated:YES];
+}
+
+/*! 我的贴吧 */
+
+- (IBAction)myPostBar:(UIButton *)sender {
+}
+
+/*! 购物车 */
+- (IBAction)shoppingCart:(UIButton *)sender {
+}
+/*! 我的收藏 */
+- (IBAction)myCollection:(UIButton *)sender {
+}
+/*! 浏览痕迹 */
+- (IBAction)browsingHistory:(UIButton *)sender {
+}
+/*! 我的地址 */
+- (IBAction)myaddress:(UIButton *)sender {
+}
+/*! 我的积分 */
+- (IBAction)myIntegral:(UIButton *)sender {
+}
+/*! 我的消息 */
+- (IBAction)myNews:(UIButton *)sender {
+}
+/*! 商家入驻 */
+- (IBAction)merchantEntry:(UIButton *)sender {
+}
+/*! 成为配送员 */
+- (IBAction)beDeliveryClerk:(UIButton *)sender {
+}
+/*! 下载APP */
+- (IBAction)downloadApp:(UIButton *)sender {
+}
+/*! 我的直播 */
+- (IBAction)myLiveBroadcast:(UIButton *)sender {
+}
+
+/*! 操作视频 */
+- (IBAction)operationVideo:(UIButton *)sender {
+}
 
 @end

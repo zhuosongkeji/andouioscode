@@ -90,6 +90,19 @@
 		A14FB350239126CB006A6511 /* ShoingMsgViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14FB34E239126CB006A6511 /* ShoingMsgViewController.xib */; };
 		A14FB354239126E5006A6511 /* ShoingMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FB352239126E5006A6511 /* ShoingMineViewController.m */; };
 		A14FB355239126E5006A6511 /* ShoingMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14FB353239126E5006A6511 /* ShoingMineViewController.xib */; };
+		F4CE9072239A25B100048C0D /* MyWalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CE9071239A25B100048C0D /* MyWalletVC.m */; };
+		F4CE9075239A25C800048C0D /* MyWalletHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CE9074239A25C800048C0D /* MyWalletHeadView.m */; };
+		F4CE9077239A25D200048C0D /* MyWalletHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4CE9076239A25D200048C0D /* MyWalletHeadView.xib */; };
+		F4CE907B239A364100048C0D /* ConsumptionDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CE9079239A364100048C0D /* ConsumptionDetailCell.m */; };
+		F4CE907C239A364100048C0D /* ConsumptionDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4CE907A239A364100048C0D /* ConsumptionDetailCell.xib */; };
+		F4CE9089239A51AE00048C0D /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CE9087239A51AE00048C0D /* PostCell.m */; };
+		F4CE908A239A51AE00048C0D /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4CE9088239A51AE00048C0D /* PostCell.xib */; };
+		F4CE908E239A51D300048C0D /* MyPostBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CE908C239A51D300048C0D /* MyPostBarCell.m */; };
+		F4CE908F239A51D300048C0D /* MyPostBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4CE908D239A51D300048C0D /* MyPostBarCell.xib */; };
+		F4CE9093239A51FF00048C0D /* ShoppingCartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CE9091239A51FE00048C0D /* ShoppingCartCell.m */; };
+		F4CE9094239A51FF00048C0D /* ShoppingCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4CE9092239A51FE00048C0D /* ShoppingCartCell.xib */; };
+		F4CE9097239A5CF400048C0D /* MyPostVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CE9096239A5CF400048C0D /* MyPostVC.m */; };
+		F4CE909A239A670300048C0D /* MyPostBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CE9099239A670300048C0D /* MyPostBarVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,6 +265,27 @@
 		A14FB352239126E5006A6511 /* ShoingMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoingMineViewController.m; sourceTree = "<group>"; };
 		A14FB353239126E5006A6511 /* ShoingMineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoingMineViewController.xib; sourceTree = "<group>"; };
 		D9D7F1BA5CA76DD030C19A92 /* Pods_OgrinterProduct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OgrinterProduct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4CE9070239A25B000048C0D /* MyWalletVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyWalletVC.h; sourceTree = "<group>"; };
+		F4CE9071239A25B100048C0D /* MyWalletVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyWalletVC.m; sourceTree = "<group>"; };
+		F4CE9073239A25C800048C0D /* MyWalletHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyWalletHeadView.h; sourceTree = "<group>"; };
+		F4CE9074239A25C800048C0D /* MyWalletHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyWalletHeadView.m; sourceTree = "<group>"; };
+		F4CE9076239A25D200048C0D /* MyWalletHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyWalletHeadView.xib; sourceTree = "<group>"; };
+		F4CE9078239A364100048C0D /* ConsumptionDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConsumptionDetailCell.h; sourceTree = "<group>"; };
+		F4CE9079239A364100048C0D /* ConsumptionDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConsumptionDetailCell.m; sourceTree = "<group>"; };
+		F4CE907A239A364100048C0D /* ConsumptionDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConsumptionDetailCell.xib; sourceTree = "<group>"; };
+		F4CE9086239A51AE00048C0D /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		F4CE9087239A51AE00048C0D /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		F4CE9088239A51AE00048C0D /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		F4CE908B239A51D300048C0D /* MyPostBarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPostBarCell.h; sourceTree = "<group>"; };
+		F4CE908C239A51D300048C0D /* MyPostBarCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPostBarCell.m; sourceTree = "<group>"; };
+		F4CE908D239A51D300048C0D /* MyPostBarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPostBarCell.xib; sourceTree = "<group>"; };
+		F4CE9090239A51FE00048C0D /* ShoppingCartCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShoppingCartCell.h; sourceTree = "<group>"; };
+		F4CE9091239A51FE00048C0D /* ShoppingCartCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartCell.m; sourceTree = "<group>"; };
+		F4CE9092239A51FE00048C0D /* ShoppingCartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingCartCell.xib; sourceTree = "<group>"; };
+		F4CE9095239A5CF400048C0D /* MyPostVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPostVC.h; sourceTree = "<group>"; };
+		F4CE9096239A5CF400048C0D /* MyPostVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPostVC.m; sourceTree = "<group>"; };
+		F4CE9098239A670300048C0D /* MyPostBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPostBarVC.h; sourceTree = "<group>"; };
+		F4CE9099239A670300048C0D /* MyPostBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPostBarVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -643,24 +677,10 @@
 			isa = PBXGroup;
 			children = (
 				A14FB2DF238F6814006A6511 /* C */,
-				A14FB2DE238F6811006A6511 /* V */,
-				A14FB2DD238F680D006A6511 /* M */,
+				F4CE9063239A01A500048C0D /* V */,
+				F4CE9064239A01A500048C0D /* M */,
 			);
 			path = Mine;
-			sourceTree = "<group>";
-		};
-		A14FB2DD238F680D006A6511 /* M */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = M;
-			sourceTree = "<group>";
-		};
-		A14FB2DE238F6811006A6511 /* V */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = V;
 			sourceTree = "<group>";
 		};
 		A14FB2DF238F6814006A6511 /* C */ = {
@@ -669,6 +689,12 @@
 				A14FB2E0238F682A006A6511 /* MineViewController.h */,
 				A14FB2E1238F682A006A6511 /* MineViewController.m */,
 				A14FB2E2238F682A006A6511 /* MineViewController.xib */,
+				F4CE9070239A25B000048C0D /* MyWalletVC.h */,
+				F4CE9071239A25B100048C0D /* MyWalletVC.m */,
+				F4CE9095239A5CF400048C0D /* MyPostVC.h */,
+				F4CE9096239A5CF400048C0D /* MyPostVC.m */,
+				F4CE9098239A670300048C0D /* MyPostBarVC.h */,
+				F4CE9099239A670300048C0D /* MyPostBarVC.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -734,6 +760,37 @@
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
+		};
+		F4CE9063239A01A500048C0D /* V */ = {
+			isa = PBXGroup;
+			children = (
+				F4CE9073239A25C800048C0D /* MyWalletHeadView.h */,
+				F4CE9074239A25C800048C0D /* MyWalletHeadView.m */,
+				F4CE9076239A25D200048C0D /* MyWalletHeadView.xib */,
+				F4CE9078239A364100048C0D /* ConsumptionDetailCell.h */,
+				F4CE9079239A364100048C0D /* ConsumptionDetailCell.m */,
+				F4CE907A239A364100048C0D /* ConsumptionDetailCell.xib */,
+				F4CE9086239A51AE00048C0D /* PostCell.h */,
+				F4CE9087239A51AE00048C0D /* PostCell.m */,
+				F4CE9088239A51AE00048C0D /* PostCell.xib */,
+				F4CE908B239A51D300048C0D /* MyPostBarCell.h */,
+				F4CE908C239A51D300048C0D /* MyPostBarCell.m */,
+				F4CE908D239A51D300048C0D /* MyPostBarCell.xib */,
+				F4CE9090239A51FE00048C0D /* ShoppingCartCell.h */,
+				F4CE9091239A51FE00048C0D /* ShoppingCartCell.m */,
+				F4CE9092239A51FE00048C0D /* ShoppingCartCell.xib */,
+			);
+			name = V;
+			path = OgrinterProduct/Controllers/Mine/V;
+			sourceTree = SOURCE_ROOT;
+		};
+		F4CE9064239A01A500048C0D /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = M;
+			path = OgrinterProduct/Controllers/Mine/M;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -846,7 +903,9 @@
 				A14FB30D238FCD13006A6511 /* CustomSectionView.xib in Resources */,
 				A10A9C192398A1970049A0D2 /* sorts.plist in Resources */,
 				A14FB2A9238E4DF6006A6511 /* RegisterViewController.xib in Resources */,
+				F4CE9077239A25D200048C0D /* MyWalletHeadView.xib in Resources */,
 				A14FB350239126CB006A6511 /* ShoingMsgViewController.xib in Resources */,
+				F4CE908A239A51AE00048C0D /* PostCell.xib in Resources */,
 				A10A9BF5239784400049A0D2 /* ShopHomeViewCell.xib in Resources */,
 				A10A9BE9239764D70049A0D2 /* MDBannerCollectionViewCell.xib in Resources */,
 				A10A9C1A2398A1970049A0D2 /* categories.plist in Resources */,
@@ -858,9 +917,12 @@
 				A10A9C202398A9C70049A0D2 /* MsgViewCell.xib in Resources */,
 				A14FB2EE238F6858006A6511 /* MsgViewController.xib in Resources */,
 				A14FB2E9238F683D006A6511 /* FindViewController.xib in Resources */,
+				F4CE907C239A364100048C0D /* ConsumptionDetailCell.xib in Resources */,
 				A10A9C1B2398A1970049A0D2 /* address.plist in Resources */,
 				A10A9C282398E1490049A0D2 /* SearchResrultViewController.xib in Resources */,
 				A14FB264238E0E50006A6511 /* Assets.xcassets in Resources */,
+				F4CE9094239A51FF00048C0D /* ShoppingCartCell.xib in Resources */,
+				F4CE908F239A51D300048C0D /* MyPostBarCell.xib in Resources */,
 				A14FB312238FD2AC006A6511 /* HomeTableViewCell.xib in Resources */,
 				A14FB262238E0E4C006A6511 /* Main.storyboard in Resources */,
 				A14FB31C238FFA76006A6511 /* HXCollectionViewCell.xib in Resources */,
@@ -973,9 +1035,12 @@
 			files = (
 				A14FB34A2391269B006A6511 /* ShopingHomeViewController.m in Sources */,
 				A10A9BEA239764D70049A0D2 /* MDBannerModel.m in Sources */,
+				F4CE908E239A51D300048C0D /* MyPostBarCell.m in Sources */,
 				A14FB31D238FFA76006A6511 /* HXCollectionViewCell.m in Sources */,
 				A14FB291238E295B006A6511 /* UMShareManege.m in Sources */,
+				F4CE9097239A5CF400048C0D /* MyPostVC.m in Sources */,
 				A14FB323239017BC006A6511 /* UIView+HHAddition.m in Sources */,
+				F4CE9089239A51AE00048C0D /* PostCell.m in Sources */,
 				A14FB2A8238E4DF6006A6511 /* RegisterViewController.m in Sources */,
 				A14FB322239017BC006A6511 /* MarqueeView.m in Sources */,
 				A14FB32A2390E6B1006A6511 /* HotTableViewCell.m in Sources */,
@@ -984,8 +1049,10 @@
 				A14FB308238FC206006A6511 /* HQIndexBannerSubview.m in Sources */,
 				A10A9BFB239788680049A0D2 /* ShopHomeSectionView.m in Sources */,
 				A14FB34F239126CB006A6511 /* ShoingMsgViewController.m in Sources */,
+				F4CE9093239A51FF00048C0D /* ShoppingCartCell.m in Sources */,
 				A14FB2B7238F5788006A6511 /* FKHRequestOperation.m in Sources */,
 				A10A9BE7239764D70049A0D2 /* MDMaskView.m in Sources */,
+				F4CE907B239A364100048C0D /* ConsumptionDetailCell.m in Sources */,
 				A14FB26A238E0E50006A6511 /* main.m in Sources */,
 				A14FB2F5238F6A84006A6511 /* HomeViewController.m in Sources */,
 				A14FB2ED238F6858006A6511 /* MsgViewController.m in Sources */,
@@ -1010,11 +1077,14 @@
 				A10A9BF4239784400049A0D2 /* ShopHomeViewCell.m in Sources */,
 				A10A9C1523989A4D0049A0D2 /* MenuScreeningView.m in Sources */,
 				A10A9BF8239786E80049A0D2 /* UIView+MD.m in Sources */,
+				F4CE909A239A670300048C0D /* MyPostBarVC.m in Sources */,
 				A14FB307238FC206006A6511 /* HQImagePageControl.m in Sources */,
 				A10A9C232398B16D0049A0D2 /* MsgModel.m in Sources */,
+				F4CE9072239A25B100048C0D /* MyWalletVC.m in Sources */,
 				A14FB34223912608006A6511 /* ShopingCategoryViewController.m in Sources */,
 				A10A9C072397EC9C0049A0D2 /* RedPacketView.m in Sources */,
 				A14FB315238FE03A006A6511 /* HomeCellModel.m in Sources */,
+				F4CE9075239A25C800048C0D /* MyWalletHeadView.m in Sources */,
 				A14FB3262390C6D1006A6511 /* CitylistViewController.m in Sources */,
 				A14FB311238FD2AC006A6511 /* HomeTableViewCell.m in Sources */,
 				A14FB2BE238F57AD006A6511 /* HUDManager.m in Sources */,
@@ -1194,7 +1264,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QXHAAL9LSY;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OgrinterProduct/PrefixHeader.pch";
 				INFOPLIST_FILE = OgrinterProduct/Info.plist;
@@ -1215,7 +1285,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QXHAAL9LSY;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OgrinterProduct/PrefixHeader.pch";
 				INFOPLIST_FILE = OgrinterProduct/Info.plist;

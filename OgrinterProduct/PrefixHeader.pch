@@ -127,6 +127,9 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 //移除观察者
 #define KRemove_Observer(_observer) [[NSNotificationCenter defaultCenter] removeObserver: _observer];
 
+// 弱引用
+#define ADWeakSelf __weak typeof(self) weakSelf = self;
+
 #import "HUDManager.h"
 #import "FKHRequestManager.h"
 #import "MJRefresh.h"
