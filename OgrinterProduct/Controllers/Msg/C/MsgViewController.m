@@ -6,18 +6,85 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
-#import "MsgViewController.h"
+#define MenuHeight 36
 
-@interface MsgViewController ()
+#import "MsgViewController.h"
+#import "MenuScreeningView.h"
+#import "MsgViewCell.h"
+
+
+@interface MsgViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic,strong) MenuScreeningView *menuScreeningView;
+
+@property (weak, nonatomic) IBOutlet UITableView *mTableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
 
 @end
 
 @implementation MsgViewController
 
+
+//MARK:-menuScreeningView
+-(MenuScreeningView *)menuScreeningView{
+    if (!_menuScreeningView) {
+        _menuScreeningView = [[MenuScreeningView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, MenuHeight)];
+        _menuScreeningView.backgroundColor = KSRGBA(255, 255, 255, 1);
+    }
+    return _menuScreeningView;
+}
+
+
+//MARK:- viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    [self.view addSubview:self.menuScreeningView];
+    self.toTop.constant = MenuHeight;
+    
+    
+    [self.mTableView registerNib:[UINib nibWithNibName:@"MsgViewCell" bundle:nil] forCellReuseIdentifier:@"MsgViewCell"];
     // Do any additional setup after loading the view from its nib.
 }
+
+
+//MARK:-tableView
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    MsgViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MsgViewCell"];
+    if (!cell) {
+        NSLog(@"创建新的cell");
+    }
+    
+    cell.selectBlock = ^(UIButton *button) {
+        
+    };
+//    cell.listmodel =
+    return cell;
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 98;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    // 取消Cell的选中状态
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+
 
 /*
 #pragma mark - Navigation

@@ -14,6 +14,7 @@
 #import "IQKeyboardManager.h"
 
 
+
 @interface AppDelegate ()
 
 @end
@@ -25,7 +26,12 @@
     // Override point for customization after application launch.
 //    KAdd_Observer(@"PushViewController", self, PushViewController, nil);
     //初始化友盟
-    [UMConfigure initWithAppkey:UMKEY channel:nil];
+//    [UMConfigure initWithAppkey:UMKEY channel:nil];
+//    [UMConfigure setLogEnabled:YES];
+    
+    [IQKeyboardManager sharedManager].enable = YES;
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
@@ -45,10 +51,6 @@
     [UMShareManege setPlaform:UMSocialPlatformType_WechatSession appKey:WeChatAPPKEY appSecret:WeChatSecret redirectURL:nil];
     [UMShareManege setPlaform:UMSocialPlatformType_QQ appKey:QQAPPKEY appSecret:QQSecret redirectURL:nil];
     [UMShareManege setPlaform:UMSocialPlatformType_Sina appKey:SinaAPPKEY appSecret:SinaSecret redirectURL:SinaRedirectURL];
-    
-    [IQKeyboardManager sharedManager].enable = YES;
-    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
-    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     
 }
 

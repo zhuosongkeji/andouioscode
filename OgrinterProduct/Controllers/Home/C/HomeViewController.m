@@ -10,11 +10,13 @@
 #import "HQImagePageControl.h"
 #import "CustomSectionView.h"
 #import "HomeTableViewCell.h"
-#import "ShoppingViewController.h"
+#import "CitylistViewController.h"
+#import "ShopingViewController.h"
+
 #import "HQFlowView.h"
 #import "MarqueeView.h"
-#import "CitylistViewController.h"
-#import "CustomBarViewController.h"
+#import "RedPacketView.h"
+#import "PacketModel.h"
 
 
 @interface HomeViewController ()<HQFlowViewDelegate,HQFlowViewDataSource,UITableViewDataSource,UITableViewDelegate>
@@ -35,7 +37,7 @@
 @implementation HomeViewController
 
 
-//MARK:-
+//MARK:-imgArr
 -(NSMutableArray *)imgArr {
     if (!_imgArr) {
         _imgArr = [NSMutableArray arrayWithObjects:@"image1",
@@ -93,7 +95,7 @@
 }
 
 
-//MARK:-
+//MARK:- viewDidLoad
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -108,6 +110,31 @@
 }
 
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self openRedPacket];
+}
+
+
+//MARK:- openRedPacket
+- (void)openRedPacket {
+    PacketModel *data = ({
+        PacketModel *data = [[PacketModel alloc]init];
+        data.money = 128.00;
+//        data.avatarImage = [UIImage imageNamed:@""];
+        data.content = @"最高可得500.00";
+//        data.userName  = @"小雨同学";
+        data;
+    });
+    
+    [RedPacketView ShowRedpacketWithData:data cancelBlock:^{
+        NSLog(@"取消领取");
+    } finishBlock:^(float money) {
+        NSLog(@"领取500.0");
+    }];
+}
+
+
 //MARK:- FlowViewDelegate
 - (CGSize)sizeForPageInFlowView:(HQFlowView *)flowView {
     return CGSizeMake(KSCREEN_WIDTH - 2*30, self.topBananerView.frame.size.height-2*3);
@@ -117,14 +144,18 @@
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
     if (subIndex == 1) {
 //        商城
-        CustomBarViewController *tabbar = [[CustomBarViewController alloc]initFrame:CustomBarTypeTwo];
-        UIWindow *window = [[UIApplication sharedApplication].delegate window];
-        CATransition *animation = [CATransition animation];
-        [animation setType:kCATransitionPush];
-        [animation setSubtype:kCATransitionFromRight];
-        [animation setDuration:0.3];
-        [[window layer] addAnimation:animation forKey:nil];
-        window.rootViewController = tabbar;
+//        CustomBarViewController *tabbar = [[CustomBarViewController alloc]initFrame:CustomBarTypeTwo];
+//        UIWindow *window = [[UIApplication sharedApplication].delegate window];
+//        CATransition *animation = [CATransition animation];
+//        [animation setType:kCATransitionPush];
+//        [animation setSubtype:kCATransitionFromRight];
+//        [animation setDuration:0.3];
+//        [[window layer] addAnimation:animation forKey:nil];
+//        window.rootViewController = tabbar;
+        ShopingViewController *shop = [[ShopingViewController alloc]init];
+        shop.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:shop animated:YES];
+        
     }
 }
 

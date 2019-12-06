@@ -1,23 +1,29 @@
 //
-//  ShopingHomeViewController.m
+//  SearchResrultViewController.m
 //  OgrinterProduct
 //
-//  Created by wongshine on 2019/11/29.
+//  Created by wongshine on 2019/12/5.
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
-#import "ShopingHomeViewController.h"
 
-@interface ShopingHomeViewController ()
+#import "SearchResrultViewController.h"
+
+@interface SearchResrultViewController ()
 
 @end
 
-@implementation ShopingHomeViewController
+@implementation SearchResrultViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    
     // Do any additional setup after loading the view from its nib.
 }
+
+
 
 /*
 #pragma mark - Navigation

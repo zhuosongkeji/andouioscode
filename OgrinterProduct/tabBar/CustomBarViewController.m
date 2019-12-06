@@ -18,7 +18,9 @@
 #import "ShoingMineViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
+
 #import "CustomBar.h"
+
 
 @interface CustomBarViewController ()<CLLocationManagerDelegate>
 
@@ -66,10 +68,10 @@
     self.hvc = [[HomeViewController alloc] init];
     [self addChildController:self.hvc title:@"首页" imageName:@"tab1-heartshow" selectedImageName:@"tab1-heart" navVc:[UINavigationController class]];
     
-    FindViewController *fvc = [[FindViewController alloc] init];
+    MsgViewController *fvc = [[MsgViewController alloc] init];
     [self addChildController:fvc title:@"商家" imageName:@"tab2-doctor" selectedImageName:@"tab2-doctorshow" navVc:[UINavigationController class]];
     
-    MsgViewController *MoreVc = [[MsgViewController alloc] init];
+    FindViewController *MoreVc = [[FindViewController alloc] init];
     [self addChildController:MoreVc title:@"贴吧" imageName:@"tab4-more" selectedImageName:@"tab4-moreshow" navVc:[UINavigationController class]];
     
     MineViewController *svc = [[MineViewController alloc] init];
@@ -86,7 +88,7 @@
 -(void)loadsubControlTwo {
     
     ShopingHomeViewController *hvc = [[ShopingHomeViewController alloc] init];
-    [self addChildController:hvc title:@"首页" imageName:@"tab1-heartshow" selectedImageName:@"tab1-heart" navVc:[UINavigationController class]];
+    [self addChildController:hvc title:@"商城" imageName:@"tab1-heartshow" selectedImageName:@"tab1-heart" navVc:[UINavigationController class]];
     
     ShopingCategoryViewController *fvc = [[ShopingCategoryViewController alloc] init];
     [self addChildController:fvc title:@"分类" imageName:@"tab2-doctor" selectedImageName:@"tab2-doctorshow" navVc:[UINavigationController class]];
@@ -134,7 +136,7 @@
     
     UINavigationController* nav = [[navVc alloc] initWithRootViewController:childController];
     
-    [nav.navigationBar setBackgroundImage:[self convertViewToImage] forBarMetrics:UIBarMetricsDefault];
+//    [nav.navigationBar setBackgroundImage:[self convertViewToImage] forBarMetrics:UIBarMetricsDefault];
     
     [self addChildViewController:nav];
 }
