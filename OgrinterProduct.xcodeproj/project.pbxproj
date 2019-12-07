@@ -117,48 +117,8 @@
 		A14FB350239126CB006A6511 /* ShoingMsgViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14FB34E239126CB006A6511 /* ShoingMsgViewController.xib */; };
 		A14FB354239126E5006A6511 /* ShoingMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FB352239126E5006A6511 /* ShoingMineViewController.m */; };
 		A14FB355239126E5006A6511 /* ShoingMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14FB353239126E5006A6511 /* ShoingMineViewController.xib */; };
-<<<<<<< HEAD
 		A1ECDEFD239B7A6E003D870D /* HotolListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1ECDEFB239B7A6E003D870D /* HotolListViewController.m */; };
 		A1ECDEFE239B7A6E003D870D /* HotolListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1ECDEFC239B7A6E003D870D /* HotolListViewController.xib */; };
-=======
-		F4FFE01D239B8C7900D89B40 /* MyIntegralHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE01C239B8C7900D89B40 /* MyIntegralHeadView.m */; };
-		F4FFE01F239B8C9500D89B40 /* MyIntegralHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FFE01E239B8C9500D89B40 /* MyIntegralHeadView.xib */; };
-		F4FFE02B239B975D00D89B40 /* ZBNTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE02A239B975D00D89B40 /* ZBNTitleButton.m */; };
-		F4FFE039239BA46500D89B40 /* ADCellGroupItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE036239BA46400D89B40 /* ADCellGroupItemModel.m */; };
-		F4FFE03A239BA46500D89B40 /* ADCellRowItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE037239BA46500D89B40 /* ADCellRowItemModel.m */; };
-		F4FFE03E239BA4D100D89B40 /* ADBaseCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE03D239BA4D000D89B40 /* ADBaseCellController.m */; };
-		F4FFE05E239BA84E00D89B40 /* MyPostBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE046239BA84E00D89B40 /* MyPostBarVC.m */; };
-		F4FFE05F239BA84E00D89B40 /* ApplyBeTakeOutMerchantVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE048239BA84E00D89B40 /* ApplyBeTakeOutMerchantVC.m */; };
-		F4FFE060239BA84E00D89B40 /* MyWalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE049239BA84E00D89B40 /* MyWalletVC.m */; };
-		F4FFE061239BA84E00D89B40 /* MerchantEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE04A239BA84E00D89B40 /* MerchantEntryVC.m */; };
-		F4FFE062239BA84E00D89B40 /* ShoppingCartVc.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE04F239BA84E00D89B40 /* ShoppingCartVc.m */; };
-		F4FFE063239BA84E00D89B40 /* ApplyBeBookingMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE051239BA84E00D89B40 /* ApplyBeBookingMerchant.m */; };
-		F4FFE064239BA84E00D89B40 /* MyAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE053239BA84E00D89B40 /* MyAddressVC.m */; };
-		F4FFE065239BA84E00D89B40 /* MyCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE056239BA84E00D89B40 /* MyCollectionVC.m */; };
-		F4FFE066239BA84E00D89B40 /* MyIntegerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE057239BA84E00D89B40 /* MyIntegerVC.m */; };
-		F4FFE067239BA84E00D89B40 /* BrowseHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE058239BA84E00D89B40 /* BrowseHistoryVC.m */; };
-		F4FFE068239BA84E00D89B40 /* MyNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE059239BA84E00D89B40 /* MyNewsVC.m */; };
-		F4FFE069239BA84E00D89B40 /* MyPostVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE05C239BA84E00D89B40 /* MyPostVC.m */; };
-		F4FFE06D239BA90A00D89B40 /* ADCommonStaticCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE06C239BA90A00D89B40 /* ADCommonStaticCell.m */; };
-		F4FFE08A239BA91C00D89B40 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE06F239BA91B00D89B40 /* PostCell.m */; };
-		F4FFE08B239BA91C00D89B40 /* MyCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE070239BA91B00D89B40 /* MyCollectionCell.m */; };
-		F4FFE08C239BA91C00D89B40 /* MyAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FFE072239BA91B00D89B40 /* MyAddressCell.xib */; };
-		F4FFE08D239BA91C00D89B40 /* MyPostBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FFE074239BA91B00D89B40 /* MyPostBarCell.xib */; };
-		F4FFE08E239BA91C00D89B40 /* ShoppingCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FFE075239BA91B00D89B40 /* ShoppingCartCell.xib */; };
-		F4FFE08F239BA91C00D89B40 /* MyNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE077239BA91B00D89B40 /* MyNewsCell.m */; };
-		F4FFE090239BA91C00D89B40 /* ShoppingCartBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE078239BA91B00D89B40 /* ShoppingCartBottomView.m */; };
-		F4FFE091239BA91C00D89B40 /* ShoppingCartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE07A239BA91B00D89B40 /* ShoppingCartCell.m */; };
-		F4FFE092239BA91C00D89B40 /* ConsumptionDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE07B239BA91B00D89B40 /* ConsumptionDetailCell.m */; };
-		F4FFE093239BA91C00D89B40 /* MyCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FFE07D239BA91B00D89B40 /* MyCollectionCell.xib */; };
-		F4FFE094239BA91C00D89B40 /* ConsumptionDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FFE07E239BA91B00D89B40 /* ConsumptionDetailCell.xib */; };
-		F4FFE095239BA91C00D89B40 /* MyWalletHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE080239BA91C00D89B40 /* MyWalletHeadView.m */; };
-		F4FFE096239BA91C00D89B40 /* MyAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE081239BA91C00D89B40 /* MyAddressCell.m */; };
-		F4FFE097239BA91C00D89B40 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FFE084239BA91C00D89B40 /* PostCell.xib */; };
-		F4FFE098239BA91C00D89B40 /* MyNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FFE085239BA91C00D89B40 /* MyNewsCell.xib */; };
-		F4FFE099239BA91C00D89B40 /* ShoppingCartBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FFE086239BA91C00D89B40 /* ShoppingCartBottomView.xib */; };
-		F4FFE09A239BA91C00D89B40 /* MyWalletHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FFE088239BA91C00D89B40 /* MyWalletHeadView.xib */; };
-		F4FFE09B239BA91C00D89B40 /* MyPostBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFE089239BA91C00D89B40 /* MyPostBarCell.m */; };
->>>>>>> a82acfab0d7b60a879a3bd006b5b8de0ecf15701
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -367,70 +327,6 @@
 		A1ECDEFB239B7A6E003D870D /* HotolListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotolListViewController.m; sourceTree = "<group>"; };
 		A1ECDEFC239B7A6E003D870D /* HotolListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotolListViewController.xib; sourceTree = "<group>"; };
 		D9D7F1BA5CA76DD030C19A92 /* Pods_OgrinterProduct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OgrinterProduct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4FFE01B239B8C7900D89B40 /* MyIntegralHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyIntegralHeadView.h; sourceTree = "<group>"; };
-		F4FFE01C239B8C7900D89B40 /* MyIntegralHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyIntegralHeadView.m; sourceTree = "<group>"; };
-		F4FFE01E239B8C9500D89B40 /* MyIntegralHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyIntegralHeadView.xib; sourceTree = "<group>"; };
-		F4FFE029239B975D00D89B40 /* ZBNTitleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNTitleButton.h; sourceTree = "<group>"; };
-		F4FFE02A239B975D00D89B40 /* ZBNTitleButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNTitleButton.m; sourceTree = "<group>"; };
-		F4FFE035239BA46400D89B40 /* ADCellRowItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADCellRowItemModel.h; path = ../ADCellRowItemModel.h; sourceTree = "<group>"; };
-		F4FFE036239BA46400D89B40 /* ADCellGroupItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADCellGroupItemModel.m; path = ../ADCellGroupItemModel.m; sourceTree = "<group>"; };
-		F4FFE037239BA46500D89B40 /* ADCellRowItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADCellRowItemModel.m; path = ../ADCellRowItemModel.m; sourceTree = "<group>"; };
-		F4FFE038239BA46500D89B40 /* ADCellGroupItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADCellGroupItemModel.h; path = ../ADCellGroupItemModel.h; sourceTree = "<group>"; };
-		F4FFE03C239BA4D000D89B40 /* ADBaseCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBaseCellController.h; sourceTree = "<group>"; };
-		F4FFE03D239BA4D000D89B40 /* ADBaseCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBaseCellController.m; sourceTree = "<group>"; };
-		F4FFE046239BA84E00D89B40 /* MyPostBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPostBarVC.m; sourceTree = "<group>"; };
-		F4FFE047239BA84E00D89B40 /* MyAddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAddressVC.h; sourceTree = "<group>"; };
-		F4FFE048239BA84E00D89B40 /* ApplyBeTakeOutMerchantVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyBeTakeOutMerchantVC.m; sourceTree = "<group>"; };
-		F4FFE049239BA84E00D89B40 /* MyWalletVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWalletVC.m; sourceTree = "<group>"; };
-		F4FFE04A239BA84E00D89B40 /* MerchantEntryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantEntryVC.m; sourceTree = "<group>"; };
-		F4FFE04B239BA84E00D89B40 /* MyNewsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNewsVC.h; sourceTree = "<group>"; };
-		F4FFE04C239BA84E00D89B40 /* BrowseHistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseHistoryVC.h; sourceTree = "<group>"; };
-		F4FFE04D239BA84E00D89B40 /* MyCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionVC.h; sourceTree = "<group>"; };
-		F4FFE04E239BA84E00D89B40 /* MyIntegerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyIntegerVC.h; sourceTree = "<group>"; };
-		F4FFE04F239BA84E00D89B40 /* ShoppingCartVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartVc.m; sourceTree = "<group>"; };
-		F4FFE050239BA84E00D89B40 /* MyPostVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPostVC.h; sourceTree = "<group>"; };
-		F4FFE051239BA84E00D89B40 /* ApplyBeBookingMerchant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyBeBookingMerchant.m; sourceTree = "<group>"; };
-		F4FFE052239BA84E00D89B40 /* ApplyBeTakeOutMerchantVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyBeTakeOutMerchantVC.h; sourceTree = "<group>"; };
-		F4FFE053239BA84E00D89B40 /* MyAddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAddressVC.m; sourceTree = "<group>"; };
-		F4FFE054239BA84E00D89B40 /* MyPostBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPostBarVC.h; sourceTree = "<group>"; };
-		F4FFE055239BA84E00D89B40 /* MyWalletVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletVC.h; sourceTree = "<group>"; };
-		F4FFE056239BA84E00D89B40 /* MyCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionVC.m; sourceTree = "<group>"; };
-		F4FFE057239BA84E00D89B40 /* MyIntegerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyIntegerVC.m; sourceTree = "<group>"; };
-		F4FFE058239BA84E00D89B40 /* BrowseHistoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseHistoryVC.m; sourceTree = "<group>"; };
-		F4FFE059239BA84E00D89B40 /* MyNewsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNewsVC.m; sourceTree = "<group>"; };
-		F4FFE05A239BA84E00D89B40 /* MerchantEntryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantEntryVC.h; sourceTree = "<group>"; };
-		F4FFE05B239BA84E00D89B40 /* ApplyBeBookingMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyBeBookingMerchant.h; sourceTree = "<group>"; };
-		F4FFE05C239BA84E00D89B40 /* MyPostVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPostVC.m; sourceTree = "<group>"; };
-		F4FFE05D239BA84E00D89B40 /* ShoppingCartVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartVc.h; sourceTree = "<group>"; };
-		F4FFE06B239BA90A00D89B40 /* ADCommonStaticCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCommonStaticCell.h; sourceTree = "<group>"; };
-		F4FFE06C239BA90A00D89B40 /* ADCommonStaticCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADCommonStaticCell.m; sourceTree = "<group>"; };
-		F4FFE06F239BA91B00D89B40 /* PostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
-		F4FFE070239BA91B00D89B40 /* MyCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionCell.m; sourceTree = "<group>"; };
-		F4FFE071239BA91B00D89B40 /* ConsumptionDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumptionDetailCell.h; sourceTree = "<group>"; };
-		F4FFE072239BA91B00D89B40 /* MyAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAddressCell.xib; sourceTree = "<group>"; };
-		F4FFE073239BA91B00D89B40 /* MyAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAddressCell.h; sourceTree = "<group>"; };
-		F4FFE074239BA91B00D89B40 /* MyPostBarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPostBarCell.xib; sourceTree = "<group>"; };
-		F4FFE075239BA91B00D89B40 /* ShoppingCartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCartCell.xib; sourceTree = "<group>"; };
-		F4FFE076239BA91B00D89B40 /* MyWalletHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletHeadView.h; sourceTree = "<group>"; };
-		F4FFE077239BA91B00D89B40 /* MyNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNewsCell.m; sourceTree = "<group>"; };
-		F4FFE078239BA91B00D89B40 /* ShoppingCartBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartBottomView.m; sourceTree = "<group>"; };
-		F4FFE079239BA91B00D89B40 /* MyPostBarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPostBarCell.h; sourceTree = "<group>"; };
-		F4FFE07A239BA91B00D89B40 /* ShoppingCartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartCell.m; sourceTree = "<group>"; };
-		F4FFE07B239BA91B00D89B40 /* ConsumptionDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumptionDetailCell.m; sourceTree = "<group>"; };
-		F4FFE07C239BA91B00D89B40 /* MyCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionCell.h; sourceTree = "<group>"; };
-		F4FFE07D239BA91B00D89B40 /* MyCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCollectionCell.xib; sourceTree = "<group>"; };
-		F4FFE07E239BA91B00D89B40 /* ConsumptionDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsumptionDetailCell.xib; sourceTree = "<group>"; };
-		F4FFE07F239BA91C00D89B40 /* PostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
-		F4FFE080239BA91C00D89B40 /* MyWalletHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWalletHeadView.m; sourceTree = "<group>"; };
-		F4FFE081239BA91C00D89B40 /* MyAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAddressCell.m; sourceTree = "<group>"; };
-		F4FFE082239BA91C00D89B40 /* ShoppingCartBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartBottomView.h; sourceTree = "<group>"; };
-		F4FFE083239BA91C00D89B40 /* MyNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNewsCell.h; sourceTree = "<group>"; };
-		F4FFE084239BA91C00D89B40 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
-		F4FFE085239BA91C00D89B40 /* MyNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyNewsCell.xib; sourceTree = "<group>"; };
-		F4FFE086239BA91C00D89B40 /* ShoppingCartBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCartBottomView.xib; sourceTree = "<group>"; };
-		F4FFE087239BA91C00D89B40 /* ShoppingCartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartCell.h; sourceTree = "<group>"; };
-		F4FFE088239BA91C00D89B40 /* MyWalletHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyWalletHeadView.xib; sourceTree = "<group>"; };
-		F4FFE089239BA91C00D89B40 /* MyPostBarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPostBarCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1156,17 +1052,29 @@
 			isa = PBXGroup;
 			children = (
 				A14FB2DF238F6814006A6511 /* C */,
-				F4CE9063239A01A500048C0D /* V */,
-				F4CE9064239A01A500048C0D /* M */,
+				A14FB2DE238F6811006A6511 /* V */,
+				A14FB2DD238F680D006A6511 /* M */,
 			);
 			path = Mine;
+			sourceTree = "<group>";
+		};
+		A14FB2DD238F680D006A6511 /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		A14FB2DE238F6811006A6511 /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
 			sourceTree = "<group>";
 		};
 		A14FB2DF238F6814006A6511 /* C */ = {
 			isa = PBXGroup;
 			children = (
-				F4FFE045239BA84E00D89B40 /* ZBNButtonPushVC */,
-				F4FFE03B239BA4D000D89B40 /* ZBNBaseCellController */,
 				A14FB2E0238F682A006A6511 /* MineViewController.h */,
 				A14FB2E1238F682A006A6511 /* MineViewController.m */,
 				A14FB2E2238F682A006A6511 /* MineViewController.xib */,
@@ -1234,132 +1142,6 @@
 				D9D7F1BA5CA76DD030C19A92 /* Pods_OgrinterProduct.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F4CE9063239A01A500048C0D /* V */ = {
-			isa = PBXGroup;
-			children = (
-				F4FFE06E239BA91B00D89B40 /* ZBNButtonPushVCCell */,
-				F4FFE06A239BA90A00D89B40 /* ZBNStaticCommonCell */,
-				F4FFE040239BA52300D89B40 /* ZBNKindOfAccesoryView */,
-				F4FFE01B239B8C7900D89B40 /* MyIntegralHeadView.h */,
-				F4FFE01C239B8C7900D89B40 /* MyIntegralHeadView.m */,
-				F4FFE01E239B8C9500D89B40 /* MyIntegralHeadView.xib */,
-				F4FFE029239B975D00D89B40 /* ZBNTitleButton.h */,
-				F4FFE02A239B975D00D89B40 /* ZBNTitleButton.m */,
-			);
-			name = V;
-			path = OgrinterProduct/Controllers/Mine/V;
-			sourceTree = SOURCE_ROOT;
-		};
-		F4CE9064239A01A500048C0D /* M */ = {
-			isa = PBXGroup;
-			children = (
-				F4FFE041239BA55400D89B40 /* ZBNStaticCellModel */,
-			);
-			name = M;
-			path = OgrinterProduct/Controllers/Mine/M;
-			sourceTree = SOURCE_ROOT;
-		};
-		F4FFE03B239BA4D000D89B40 /* ZBNBaseCellController */ = {
-			isa = PBXGroup;
-			children = (
-				F4FFE03C239BA4D000D89B40 /* ADBaseCellController.h */,
-				F4FFE03D239BA4D000D89B40 /* ADBaseCellController.m */,
-			);
-			path = ZBNBaseCellController;
-			sourceTree = "<group>";
-		};
-		F4FFE040239BA52300D89B40 /* ZBNKindOfAccesoryView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ZBNKindOfAccesoryView;
-			sourceTree = "<group>";
-		};
-		F4FFE041239BA55400D89B40 /* ZBNStaticCellModel */ = {
-			isa = PBXGroup;
-			children = (
-				F4FFE038239BA46500D89B40 /* ADCellGroupItemModel.h */,
-				F4FFE036239BA46400D89B40 /* ADCellGroupItemModel.m */,
-				F4FFE035239BA46400D89B40 /* ADCellRowItemModel.h */,
-				F4FFE037239BA46500D89B40 /* ADCellRowItemModel.m */,
-			);
-			path = ZBNStaticCellModel;
-			sourceTree = "<group>";
-		};
-		F4FFE045239BA84E00D89B40 /* ZBNButtonPushVC */ = {
-			isa = PBXGroup;
-			children = (
-				F4FFE046239BA84E00D89B40 /* MyPostBarVC.m */,
-				F4FFE047239BA84E00D89B40 /* MyAddressVC.h */,
-				F4FFE048239BA84E00D89B40 /* ApplyBeTakeOutMerchantVC.m */,
-				F4FFE049239BA84E00D89B40 /* MyWalletVC.m */,
-				F4FFE04A239BA84E00D89B40 /* MerchantEntryVC.m */,
-				F4FFE04B239BA84E00D89B40 /* MyNewsVC.h */,
-				F4FFE04C239BA84E00D89B40 /* BrowseHistoryVC.h */,
-				F4FFE04D239BA84E00D89B40 /* MyCollectionVC.h */,
-				F4FFE04E239BA84E00D89B40 /* MyIntegerVC.h */,
-				F4FFE04F239BA84E00D89B40 /* ShoppingCartVc.m */,
-				F4FFE050239BA84E00D89B40 /* MyPostVC.h */,
-				F4FFE051239BA84E00D89B40 /* ApplyBeBookingMerchant.m */,
-				F4FFE052239BA84E00D89B40 /* ApplyBeTakeOutMerchantVC.h */,
-				F4FFE053239BA84E00D89B40 /* MyAddressVC.m */,
-				F4FFE054239BA84E00D89B40 /* MyPostBarVC.h */,
-				F4FFE055239BA84E00D89B40 /* MyWalletVC.h */,
-				F4FFE056239BA84E00D89B40 /* MyCollectionVC.m */,
-				F4FFE057239BA84E00D89B40 /* MyIntegerVC.m */,
-				F4FFE058239BA84E00D89B40 /* BrowseHistoryVC.m */,
-				F4FFE059239BA84E00D89B40 /* MyNewsVC.m */,
-				F4FFE05A239BA84E00D89B40 /* MerchantEntryVC.h */,
-				F4FFE05B239BA84E00D89B40 /* ApplyBeBookingMerchant.h */,
-				F4FFE05C239BA84E00D89B40 /* MyPostVC.m */,
-				F4FFE05D239BA84E00D89B40 /* ShoppingCartVc.h */,
-			);
-			path = ZBNButtonPushVC;
-			sourceTree = "<group>";
-		};
-		F4FFE06A239BA90A00D89B40 /* ZBNStaticCommonCell */ = {
-			isa = PBXGroup;
-			children = (
-				F4FFE06B239BA90A00D89B40 /* ADCommonStaticCell.h */,
-				F4FFE06C239BA90A00D89B40 /* ADCommonStaticCell.m */,
-			);
-			path = ZBNStaticCommonCell;
-			sourceTree = "<group>";
-		};
-		F4FFE06E239BA91B00D89B40 /* ZBNButtonPushVCCell */ = {
-			isa = PBXGroup;
-			children = (
-				F4FFE06F239BA91B00D89B40 /* PostCell.m */,
-				F4FFE070239BA91B00D89B40 /* MyCollectionCell.m */,
-				F4FFE071239BA91B00D89B40 /* ConsumptionDetailCell.h */,
-				F4FFE072239BA91B00D89B40 /* MyAddressCell.xib */,
-				F4FFE073239BA91B00D89B40 /* MyAddressCell.h */,
-				F4FFE074239BA91B00D89B40 /* MyPostBarCell.xib */,
-				F4FFE075239BA91B00D89B40 /* ShoppingCartCell.xib */,
-				F4FFE076239BA91B00D89B40 /* MyWalletHeadView.h */,
-				F4FFE077239BA91B00D89B40 /* MyNewsCell.m */,
-				F4FFE078239BA91B00D89B40 /* ShoppingCartBottomView.m */,
-				F4FFE079239BA91B00D89B40 /* MyPostBarCell.h */,
-				F4FFE07A239BA91B00D89B40 /* ShoppingCartCell.m */,
-				F4FFE07B239BA91B00D89B40 /* ConsumptionDetailCell.m */,
-				F4FFE07C239BA91B00D89B40 /* MyCollectionCell.h */,
-				F4FFE07D239BA91B00D89B40 /* MyCollectionCell.xib */,
-				F4FFE07E239BA91B00D89B40 /* ConsumptionDetailCell.xib */,
-				F4FFE07F239BA91C00D89B40 /* PostCell.h */,
-				F4FFE080239BA91C00D89B40 /* MyWalletHeadView.m */,
-				F4FFE081239BA91C00D89B40 /* MyAddressCell.m */,
-				F4FFE082239BA91C00D89B40 /* ShoppingCartBottomView.h */,
-				F4FFE083239BA91C00D89B40 /* MyNewsCell.h */,
-				F4FFE084239BA91C00D89B40 /* PostCell.xib */,
-				F4FFE085239BA91C00D89B40 /* MyNewsCell.xib */,
-				F4FFE086239BA91C00D89B40 /* ShoppingCartBottomView.xib */,
-				F4FFE087239BA91C00D89B40 /* ShoppingCartCell.h */,
-				F4FFE088239BA91C00D89B40 /* MyWalletHeadView.xib */,
-				F4FFE089239BA91C00D89B40 /* MyPostBarCell.m */,
-			);
-			path = ZBNButtonPushVCCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1470,9 +1252,7 @@
 			files = (
 				A10A9CD5239B37DE0049A0D2 /* CrowdFundingViewController.xib in Resources */,
 				A14FB34B2391269B006A6511 /* ShopingHomeViewController.xib in Resources */,
-				F4FFE099239BA91C00D89B40 /* ShoppingCartBottomView.xib in Resources */,
 				A14FB2A4238E4CDE006A6511 /* LoginViewController.xib in Resources */,
-				F4FFE094239BA91C00D89B40 /* ConsumptionDetailCell.xib in Resources */,
 				A14FB30D238FCD13006A6511 /* CustomSectionView.xib in Resources */,
 				A10A9CE8239B38930049A0D2 /* LiveBroadcastViewController.xib in Resources */,
 				A10A9C192398A1970049A0D2 /* sorts.plist in Resources */,
@@ -1485,13 +1265,8 @@
 				A10A9CDF239B38380049A0D2 /* loveLoadViewController.xib in Resources */,
 				A10A9C1A2398A1970049A0D2 /* categories.plist in Resources */,
 				A10A9BFD239788820049A0D2 /* ShopHomeSectionView.xib in Resources */,
-				F4FFE098239BA91C00D89B40 /* MyNewsCell.xib in Resources */,
 				A14FB2AE238E7858006A6511 /* RetrievepsdViewController.xib in Resources */,
-<<<<<<< HEAD
 				A1ECDEFE239B7A6E003D870D /* HotolListViewController.xib in Resources */,
-=======
-				F4FFE09A239BA91C00D89B40 /* MyWalletHeadView.xib in Resources */,
->>>>>>> a82acfab0d7b60a879a3bd006b5b8de0ecf15701
 				A14FB267238E0E50006A6511 /* LaunchScreen.storyboard in Resources */,
 				A10A9CCC239B37800049A0D2 /* AutomobileViewController.xib in Resources */,
 				A10A9C02239791180049A0D2 /* ShopCollectionViewCell.xib in Resources */,
@@ -1499,16 +1274,11 @@
 				A10A9C90239A469A0049A0D2 /* CaseCluessKeybordCollectionHeadView.xib in Resources */,
 				A10A9C99239A57230049A0D2 /* HotelViewController.xib in Resources */,
 				A10A9C202398A9C70049A0D2 /* MsgViewCell.xib in Resources */,
-				F4FFE08D239BA91C00D89B40 /* MyPostBarCell.xib in Resources */,
-				F4FFE08C239BA91C00D89B40 /* MyAddressCell.xib in Resources */,
 				A14FB2EE238F6858006A6511 /* MsgViewController.xib in Resources */,
 				A14FB2E9238F683D006A6511 /* FindViewController.xib in Resources */,
 				A10A9C1B2398A1970049A0D2 /* address.plist in Resources */,
-				F4FFE01F239B8C9500D89B40 /* MyIntegralHeadView.xib in Resources */,
 				A10A9C282398E1490049A0D2 /* SearchResrultViewController.xib in Resources */,
-				F4FFE097239BA91C00D89B40 /* PostCell.xib in Resources */,
 				A14FB264238E0E50006A6511 /* Assets.xcassets in Resources */,
-				F4FFE093239BA91C00D89B40 /* MyCollectionCell.xib in Resources */,
 				A14FB312238FD2AC006A6511 /* HomeTableViewCell.xib in Resources */,
 				A14FB262238E0E4C006A6511 /* Main.storyboard in Resources */,
 				A14FB31C238FFA76006A6511 /* HXCollectionViewCell.xib in Resources */,
@@ -1516,7 +1286,6 @@
 				A10A9CBA239B368B0049A0D2 /* BusinessCoursesViewController.xib in Resources */,
 				A14FB2BF238F57AD006A6511 /* MBProgressHUD.bundle in Resources */,
 				A14FB2E4238F682A006A6511 /* MineViewController.xib in Resources */,
-				F4FFE08E239BA91C00D89B40 /* ShoppingCartCell.xib in Resources */,
 				A14FB2F6238F6A84006A6511 /* HomeViewController.xib in Resources */,
 				A14FB355239126E5006A6511 /* ShoingMineViewController.xib in Resources */,
 				A10A9C86239A24E30049A0D2 /* ShopingShopViewController.xib in Resources */,
@@ -1628,7 +1397,6 @@
 				A14FB31D238FFA76006A6511 /* HXCollectionViewCell.m in Sources */,
 				A14FB291238E295B006A6511 /* UMShareManege.m in Sources */,
 				A14FB323239017BC006A6511 /* UIView+HHAddition.m in Sources */,
-				F4FFE090239BA91C00D89B40 /* ShoppingCartBottomView.m in Sources */,
 				A14FB2A8238E4DF6006A6511 /* RegisterViewController.m in Sources */,
 				A14FB322239017BC006A6511 /* MarqueeView.m in Sources */,
 				A14FB32A2390E6B1006A6511 /* HotTableViewCell.m in Sources */,
@@ -1637,59 +1405,33 @@
 				A14FB308238FC206006A6511 /* HQIndexBannerSubview.m in Sources */,
 				A10A9CCB239B37800049A0D2 /* AutomobileViewController.m in Sources */,
 				A10A9BFB239788680049A0D2 /* ShopHomeSectionView.m in Sources */,
-				F4FFE039239BA46500D89B40 /* ADCellGroupItemModel.m in Sources */,
 				A14FB34F239126CB006A6511 /* ShoingMsgViewController.m in Sources */,
-				F4FFE01D239B8C7900D89B40 /* MyIntegralHeadView.m in Sources */,
 				A14FB2B7238F5788006A6511 /* FKHRequestOperation.m in Sources */,
 				A10A9BE7239764D70049A0D2 /* MDMaskView.m in Sources */,
-				F4FFE05E239BA84E00D89B40 /* MyPostBarVC.m in Sources */,
 				A14FB26A238E0E50006A6511 /* main.m in Sources */,
 				A14FB2F5238F6A84006A6511 /* HomeViewController.m in Sources */,
-<<<<<<< HEAD
 				A10A9CFA239B6B5E0049A0D2 /* THDatePickerView.m in Sources */,
 				A10A9CF6239B3C610049A0D2 /* ShopingViewController.m in Sources */,
-=======
-				F4FFE08A239BA91C00D89B40 /* PostCell.m in Sources */,
->>>>>>> a82acfab0d7b60a879a3bd006b5b8de0ecf15701
 				A14FB2ED238F6858006A6511 /* MsgViewController.m in Sources */,
 				A10A9C85239A24E30049A0D2 /* ShopingShopViewController.m in Sources */,
 				A10A9C8F239A469A0049A0D2 /* CaseCluessKeybordCollectionHeadView.m in Sources */,
 				A14FB30B238FCD03006A6511 /* CustomSectionView.m in Sources */,
 				A14FB2CB238F5C60006A6511 /* CustomBarViewController.m in Sources */,
-<<<<<<< HEAD
 				A10A9CD4239B37DE0049A0D2 /* CrowdFundingViewController.m in Sources */,
 				A10A9C9F239A5B650049A0D2 /* Img+lable.m in Sources */,
 				A10A9C01239791180049A0D2 /* ShopCollectionViewCell.m in Sources */,
 				A14FB2AD238E7858006A6511 /* RetrievepsdViewController.m in Sources */,
 				A10A9CB0239B35F70049A0D2 /* TCShopingViewController.m in Sources */,
-=======
-				F4FFE03A239BA46500D89B40 /* ADCellRowItemModel.m in Sources */,
-				A10A9C01239791180049A0D2 /* ShopCollectionViewCell.m in Sources */,
-				A14FB2AD238E7858006A6511 /* RetrievepsdViewController.m in Sources */,
-				F4FFE091239BA91C00D89B40 /* ShoppingCartCell.m in Sources */,
->>>>>>> a82acfab0d7b60a879a3bd006b5b8de0ecf15701
 				A14FB354239126E5006A6511 /* ShoingMineViewController.m in Sources */,
 				A14FB2B9238F5788006A6511 /* NSObject+Timecutdow.m in Sources */,
-				F4FFE069239BA84E00D89B40 /* MyPostVC.m in Sources */,
-				F4FFE063239BA84E00D89B40 /* ApplyBeBookingMerchant.m in Sources */,
-				F4FFE067239BA84E00D89B40 /* BrowseHistoryVC.m in Sources */,
 				A10A9C272398E1490049A0D2 /* SearchResrultViewController.m in Sources */,
-				F4FFE09B239BA91C00D89B40 /* MyPostBarCell.m in Sources */,
 				A14FB32E2390E74D006A6511 /* HotCollectionViewCell.m in Sources */,
 				A14FB2B8238F5788006A6511 /* FKHRequestManager.m in Sources */,
-<<<<<<< HEAD
 				A10A9CE7239B38930049A0D2 /* LiveBroadcastViewController.m in Sources */,
-=======
-				F4FFE095239BA91C00D89B40 /* MyWalletHeadView.m in Sources */,
-				F4FFE08B239BA91C00D89B40 /* MyCollectionCell.m in Sources */,
->>>>>>> a82acfab0d7b60a879a3bd006b5b8de0ecf15701
 				A10A9C1F2398A9C70049A0D2 /* MsgViewCell.m in Sources */,
 				A14FB25C238E0E4C006A6511 /* AppDelegate.m in Sources */,
 				A14FB2CE238F5F36006A6511 /* CustomBar.m in Sources */,
-				F4FFE096239BA91C00D89B40 /* MyAddressCell.m in Sources */,
 				A14FB2A3238E4CDE006A6511 /* LoginViewController.m in Sources */,
-				F4FFE068239BA84E00D89B40 /* MyNewsVC.m in Sources */,
-				F4FFE065239BA84E00D89B40 /* MyCollectionVC.m in Sources */,
 				A10A9C0A2397ED7A0049A0D2 /* PacketModel.m in Sources */,
 				A10A9C98239A57230049A0D2 /* HotelViewController.m in Sources */,
 				A10A9CDE239B38380049A0D2 /* loveLoadViewController.m in Sources */,
@@ -1700,17 +1442,10 @@
 				A10A9CA7239B35680049A0D2 /* NongJialeViewController.m in Sources */,
 				A10A9BE8239764D70049A0D2 /* MDShockBannerView.m in Sources */,
 				A10A9BF4239784400049A0D2 /* ShopHomeViewCell.m in Sources */,
-				F4FFE064239BA84E00D89B40 /* MyAddressVC.m in Sources */,
-				F4FFE08F239BA91C00D89B40 /* MyNewsCell.m in Sources */,
-				F4FFE05F239BA84E00D89B40 /* ApplyBeTakeOutMerchantVC.m in Sources */,
 				A10A9C1523989A4D0049A0D2 /* MenuScreeningView.m in Sources */,
-				F4FFE06D239BA90A00D89B40 /* ADCommonStaticCell.m in Sources */,
 				A10A9BF8239786E80049A0D2 /* UIView+MD.m in Sources */,
 				A14FB307238FC206006A6511 /* HQImagePageControl.m in Sources */,
 				A10A9C232398B16D0049A0D2 /* MsgModel.m in Sources */,
-				F4FFE060239BA84E00D89B40 /* MyWalletVC.m in Sources */,
-				F4FFE061239BA84E00D89B40 /* MerchantEntryVC.m in Sources */,
-				F4FFE03E239BA4D100D89B40 /* ADBaseCellController.m in Sources */,
 				A14FB34223912608006A6511 /* ShopingCategoryViewController.m in Sources */,
 				A10A9C072397EC9C0049A0D2 /* RedPacketView.m in Sources */,
 				A14FB315238FE03A006A6511 /* HomeCellModel.m in Sources */,
@@ -1719,18 +1454,10 @@
 				A14FB2BE238F57AD006A6511 /* HUDManager.m in Sources */,
 				A10A9CC2239B36FC0049A0D2 /* HousePropertyViewController.m in Sources */,
 				A10A9BEB239764D70049A0D2 /* MDBannerCollectionViewCell.m in Sources */,
-<<<<<<< HEAD
 				A1ECDEFD239B7A6E003D870D /* HotolListViewController.m in Sources */,
 				A14FB2E8238F683D006A6511 /* FindViewController.m in Sources */,
 				A10A9C7D2399EF120049A0D2 /* SegmentView.m in Sources */,
 				A10A9C9E239A5B650049A0D2 /* UIButton+Ex.m in Sources */,
-=======
-				F4FFE092239BA91C00D89B40 /* ConsumptionDetailCell.m in Sources */,
-				F4FFE066239BA84E00D89B40 /* MyIntegerVC.m in Sources */,
-				F4FFE02B239B975D00D89B40 /* ZBNTitleButton.m in Sources */,
-				A14FB2E8238F683D006A6511 /* FindViewController.m in Sources */,
-				F4FFE062239BA84E00D89B40 /* ShoppingCartVc.m in Sources */,
->>>>>>> a82acfab0d7b60a879a3bd006b5b8de0ecf15701
 				A14FB318238FF6D4006A6511 /* WSLWaterFlowLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1905,7 +1632,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QXHAAL9LSY;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OgrinterProduct/PrefixHeader.pch";
 				INFOPLIST_FILE = OgrinterProduct/Info.plist;
@@ -1926,7 +1653,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QXHAAL9LSY;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OgrinterProduct/PrefixHeader.pch";
 				INFOPLIST_FILE = OgrinterProduct/Info.plist;
