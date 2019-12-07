@@ -10,6 +10,14 @@
 
 #import "MyWalletVC.h"
 #import "MyPostVC.h"
+#import "ShoppingCartVc.h"
+#import "MyPostBarVC.h"
+#import "MyCollectionVC.h"
+#import "BrowseHistoryVC.h"
+#import "MyAddressVC.h"
+#import "MyIntegerVC.h"
+#import "MyNewsVC.h"
+#import "MerchantEntryVC.h"
 
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -71,39 +79,54 @@
     MyWalletVC *myWalletVC = [[MyWalletVC alloc] init];
     [self.navigationController pushViewController:myWalletVC animated:YES];
 }
-
 /*! 我的发布 */
 - (IBAction)myRelease:(UIButton *)sender
 {
     MyPostVC *myPostVC = [[MyPostVC alloc] init];
     [self.navigationController pushViewController:myPostVC animated:YES];
 }
-
 /*! 我的贴吧 */
 
 - (IBAction)myPostBar:(UIButton *)sender {
+    
+    MyPostBarVC *postBarVc = [[MyPostBarVC alloc] init];
+    [self.navigationController pushViewController:postBarVc animated:YES];
 }
 
 /*! 购物车 */
 - (IBAction)shoppingCart:(UIButton *)sender {
+    ShoppingCartVc *shoppingVc = [[ShoppingCartVc alloc] init];
+    [self.navigationController pushViewController:shoppingVc animated:YES];
 }
 /*! 我的收藏 */
 - (IBAction)myCollection:(UIButton *)sender {
+    MyCollectionVC *collectionVc = [[MyCollectionVC alloc] init];
+    [self.navigationController pushViewController:collectionVc animated:YES];
 }
 /*! 浏览痕迹 */
 - (IBAction)browsingHistory:(UIButton *)sender {
+    BrowseHistoryVC *historyVC = [[BrowseHistoryVC alloc] init];
+    [self.navigationController pushViewController:historyVC animated:YES];
 }
 /*! 我的地址 */
 - (IBAction)myaddress:(UIButton *)sender {
+    MyAddressVC *addressVc = [[MyAddressVC alloc] init];
+    [self.navigationController pushViewController:addressVc animated:YES];
 }
 /*! 我的积分 */
 - (IBAction)myIntegral:(UIButton *)sender {
+    MyIntegerVC *integerVc = [[MyIntegerVC alloc] init];
+    [self.navigationController pushViewController:integerVc animated:YES];
 }
 /*! 我的消息 */
 - (IBAction)myNews:(UIButton *)sender {
+    MyNewsVC *newsVc = [[MyNewsVC alloc] init];
+    [self.navigationController pushViewController:newsVc animated:YES];
 }
 /*! 商家入驻 */
 - (IBAction)merchantEntry:(UIButton *)sender {
+    MerchantEntryVC *merchantVc = [[MerchantEntryVC alloc] init];
+    [self.navigationController pushViewController:merchantVc animated:YES];
 }
 /*! 成为配送员 */
 - (IBAction)beDeliveryClerk:(UIButton *)sender {

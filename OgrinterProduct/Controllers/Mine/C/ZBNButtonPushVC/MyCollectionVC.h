@@ -1,8 +1,8 @@
 //
-//  MyWalletVC.h
+//  MyCollectionVC.h
 //  OgrinterProduct
 //
-//  Created by 周芳圆 on 2019/12/6.
+//  Created by 周芳圆 on 2019/12/7.
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MyWalletVC : UIViewController
+@interface MyCollectionVC : UITableViewController
 
 @end
 

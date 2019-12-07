@@ -1,38 +1,27 @@
 //
-//  MyPostVC.m
+//  MyPostBarVC.m
 //  OgrinterProduct
 //
 //  Created by 周芳圆 on 2019/12/6.
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
-#import "MyPostVC.h"
-#import "PostCell.h"
+#import "MyPostBarVC.h"
+#import "MyPostBarCell.h"
 
-@interface MyPostVC ()
+@interface MyPostBarVC ()
 
 @end
 
-@implementation MyPostVC
+@implementation MyPostBarVC
 
-static NSString * const PostCellID = @"PostCell";
+static NSString * const PostBarCellID = @"postBarCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    [self setupTable];
-    
-}
-
-- (void)setupTable
-{
     self.view.backgroundColor = [UIColor whiteColor];
-    self.tableView.contentInset = UIEdgeInsetsMake(1, 0, 0, 0);
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    // 注册cell
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([PostCell class]) bundle:nil] forCellReuseIdentifier:PostCellID];
-    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MyPostBarCell class]) bundle:nil] forCellReuseIdentifier:PostBarCellID];
 }
 
 #pragma mark - Table view data source
@@ -44,15 +33,13 @@ static NSString * const PostCellID = @"PostCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:PostCellID];
-    
+    MyPostBarCell *cell = [tableView dequeueReusableCellWithIdentifier:PostBarCellID];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 200;
+    return 300;
 }
-
 
 @end

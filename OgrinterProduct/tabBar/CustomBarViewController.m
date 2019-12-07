@@ -17,6 +17,7 @@
 #import "ShoingMsgViewController.h"
 #import "ShoingMineViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "CustomNavigationController.h"
 
 
 #import "CustomBar.h"
@@ -134,7 +135,7 @@
 //    [childController.tabBarItem setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor redColor] }forState:UIControlStateSelected];
     [[UITabBar appearance] setTintColor:KSDUAULTCOLORE];
     
-    UINavigationController* nav = [[navVc alloc] initWithRootViewController:childController];
+     UINavigationController* nav = [[navVc alloc] initWithRootViewController:childController];
     
 //    [nav.navigationBar setBackgroundImage:[self convertViewToImage] forBarMetrics:UIBarMetricsDefault];
     

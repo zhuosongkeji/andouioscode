@@ -11,11 +11,14 @@
 @interface MyWalletHeadView ()
 
 /*! 选项卡容器视图 */
-@property (weak, nonatomic) IBOutlet UIView *segmentView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 /*! 余额label */
 @property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
+/*! 消费明细Btn */
 
-@property (weak, nonatomic) IBOutlet UIButton *consumpDetaiBtn;
+@property (weak, nonatomic) IBOutlet UIButton *costBtn;
+
+@property (weak, nonatomic) IBOutlet UIView *buttonView;
 
 @end
 
@@ -43,15 +46,12 @@
 {
     [super awakeFromNib];
     
-    // 设置选钮容器视图的cornerRadius
-    self.segmentView.layer.cornerRadius = 10;
-    UIView *lineView = [[UIView alloc] init];
-    lineView.width = self.consumpDetaiBtn.width;
-    lineView.height = 1;
-    lineView.y = self.segmentView.height - 2;
-    lineView.centerX = self.consumpDetaiBtn.centerX;
-    lineView.backgroundColor = [UIColor greenColor];
-    [self.segmentView addSubview:lineView];
+    self.buttonView.layer.cornerRadius = 8;
+    self.buttonView.layer.borderWidth = 1;
+    self.buttonView.layer.borderColor = [UIColor whiteColor].CGColor;
+    
+    self.bottomView.layer.cornerRadius = 8;
+    
 }
 
 @end
