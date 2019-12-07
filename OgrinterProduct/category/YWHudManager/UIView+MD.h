@@ -86,5 +86,9 @@
 
 - (void)addTarget:(id)target
 action:(SEL)action;
+
+/*!  快速从xib加载 */
++ (instancetype)viewFromXib;
+
 @end
 
