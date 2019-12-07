@@ -82,27 +82,23 @@
     if (!self.show) {
         
         self.show = !self.show;
-        
         // 显示 TableView数量
         self.tableCount = tableNum;
-        
         // 数据
         self.dataArr = arr;
         for (UITableView *tableView in self.tableViewArr) {
             [tableView reloadData];
         }
-        
-        
-        
+
         // 初始位置 设置
         CGFloat x = 0.f;
-        CGFloat y = view.frame.origin.y + view.frame.size.height;
+        CGFloat y = kStatusBarAndNavigationBarH+view.height;
         CGFloat w = kWidth;
         CGFloat h = kHeight - y;
         
         self.frame = CGRectMake(x, y, w, h);
         self.cancelButton.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-        self.tableViewUnderView.frame = CGRectMake(0, kStatusBarAndNavigationBarH, self.frame.size.width, self.rowHeightNum * 7);
+        self.tableViewUnderView.frame = CGRectMake(0, 0, self.frame.size.width, self.rowHeightNum * 7);
         
         
         if (!self.superview) {

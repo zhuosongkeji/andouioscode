@@ -52,7 +52,7 @@
             <connections>
                 <outlet property="mCollectionView1" destination="NHu-Vu-kfc" id="0Z5-JU-TE3"/>
             </connections>
-            <point key="canvasLocation" x="128.98550724637681" y="23.4375"/>
+            <point key="canvasLocation" x="129" y="20"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeTableViewCellTwo" rowHeight="109" id="QLo-ms-LX9" customClass="HomeTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
@@ -84,10 +84,6 @@
                             <color key="titleColor" red="0.33725490200000002" green="0.76204603910000002" blue="0.62735551599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aub-nh-gNR">
-                        <rect key="frame" x="12" y="60" width="90.5" height="83.5"/>
-                        <state key="normal" image="1"/>
-                    </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhW-RZ-tJI">
                         <rect key="frame" x="16" y="40" width="288" height="16"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -95,45 +91,40 @@
                             <constraint firstAttribute="height" constant="16" id="emK-GV-p6Z"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfv-Lv-XlF">
-                        <rect key="frame" x="114.5" y="60" width="91" height="83.5"/>
-                        <state key="normal" image="2"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqN-IK-8Se">
-                        <rect key="frame" x="217.5" y="60" width="90.5" height="83.5"/>
-                        <state key="normal" image="1"/>
-                    </button>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bpi-41-stj">
+                        <rect key="frame" x="0.0" y="60" width="320" height="87.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FK5-UD-Y0D">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="mYt-JS-o12" firstAttribute="leading" secondItem="HK6-4N-68A" secondAttribute="leading" constant="16" id="1zb-6O-2Vb"/>
-                    <constraint firstItem="wfv-Lv-XlF" firstAttribute="leading" secondItem="aub-nh-gNR" secondAttribute="trailing" constant="12" id="675-iX-JDl"/>
                     <constraint firstAttribute="trailing" secondItem="VhW-RZ-tJI" secondAttribute="trailing" constant="16" id="7TJ-lx-gtf"/>
-                    <constraint firstItem="QqN-IK-8Se" firstAttribute="centerY" secondItem="aub-nh-gNR" secondAttribute="centerY" id="7vD-iy-2pI"/>
-                    <constraint firstItem="QqN-IK-8Se" firstAttribute="width" secondItem="aub-nh-gNR" secondAttribute="width" id="Bhs-tv-Kfm"/>
-                    <constraint firstItem="wfv-Lv-XlF" firstAttribute="width" secondItem="aub-nh-gNR" secondAttribute="width" id="LkZ-lr-55D"/>
-                    <constraint firstItem="aub-nh-gNR" firstAttribute="top" secondItem="VhW-RZ-tJI" secondAttribute="bottom" constant="4" id="POp-hT-5yU"/>
-                    <constraint firstItem="wfv-Lv-XlF" firstAttribute="centerX" secondItem="HK6-4N-68A" secondAttribute="centerX" id="QRM-Hs-ofm"/>
-                    <constraint firstItem="QqN-IK-8Se" firstAttribute="height" secondItem="aub-nh-gNR" secondAttribute="height" id="S3b-L8-Q5f"/>
+                    <constraint firstAttribute="trailing" secondItem="bpi-41-stj" secondAttribute="trailing" id="Bil-7p-gjE"/>
+                    <constraint firstItem="bpi-41-stj" firstAttribute="leading" secondItem="HK6-4N-68A" secondAttribute="leading" id="CLt-I1-JfT"/>
+                    <constraint firstItem="bpi-41-stj" firstAttribute="top" secondItem="VhW-RZ-tJI" secondAttribute="bottom" constant="4" id="KRT-9z-WEX"/>
+                    <constraint firstAttribute="bottom" secondItem="bpi-41-stj" secondAttribute="bottom" id="SoT-ls-Fba"/>
                     <constraint firstItem="VhW-RZ-tJI" firstAttribute="top" secondItem="y3Q-Y1-eNb" secondAttribute="bottom" constant="4" id="UBO-Nk-XME"/>
-                    <constraint firstAttribute="bottom" secondItem="aub-nh-gNR" secondAttribute="bottom" constant="4" id="aiG-Ob-czy"/>
                     <constraint firstItem="8iU-tK-PmW" firstAttribute="centerY" secondItem="mYt-JS-o12" secondAttribute="centerY" id="cBh-np-7OL"/>
                     <constraint firstItem="y3Q-Y1-eNb" firstAttribute="centerY" secondItem="mYt-JS-o12" secondAttribute="centerY" id="eS6-TW-OgJ"/>
-                    <constraint firstItem="wfv-Lv-XlF" firstAttribute="height" secondItem="aub-nh-gNR" secondAttribute="height" id="fma-8O-ggr"/>
-                    <constraint firstItem="QqN-IK-8Se" firstAttribute="leading" secondItem="wfv-Lv-XlF" secondAttribute="trailing" constant="12" id="gDd-oW-kVG"/>
-                    <constraint firstAttribute="trailing" secondItem="QqN-IK-8Se" secondAttribute="trailing" constant="12" id="jPS-Lj-ZSy"/>
-                    <constraint firstItem="wfv-Lv-XlF" firstAttribute="centerY" secondItem="aub-nh-gNR" secondAttribute="centerY" id="kvR-tE-kxx"/>
                     <constraint firstItem="mYt-JS-o12" firstAttribute="top" secondItem="HK6-4N-68A" secondAttribute="top" constant="16" id="rE6-QU-bcl"/>
                     <constraint firstItem="VhW-RZ-tJI" firstAttribute="leading" secondItem="HK6-4N-68A" secondAttribute="leading" constant="16" id="vjT-aG-Xfx"/>
                     <constraint firstAttribute="trailing" secondItem="y3Q-Y1-eNb" secondAttribute="trailing" constant="16" id="wl9-NX-iR0"/>
                     <constraint firstItem="8iU-tK-PmW" firstAttribute="leading" secondItem="mYt-JS-o12" secondAttribute="trailing" constant="4" id="x6b-DI-IeU"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="128.98550724637681" y="140.625"/>
+            <connections>
+                <outlet property="mCollectionView2" destination="bpi-41-stj" id="mVi-m6-WHt"/>
+            </connections>
+            <point key="canvasLocation" x="128.98550724637681" y="136.60714285714286"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="1" width="76" height="80"/>
-        <image name="2" width="84" height="86"/>
         <image name="icon_nav_bus.png" width="15.5" height="15.5"/>
     </resources>
 </document>

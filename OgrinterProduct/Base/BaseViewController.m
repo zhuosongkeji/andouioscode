@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = KSRGBA(247, 247, 247, 1);
+    self.view.backgroundColor = KSRGBA(240, 240, 240, 1);
     
     // Do any additional setup after loading the view.
 }

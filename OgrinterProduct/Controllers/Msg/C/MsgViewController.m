@@ -25,24 +25,16 @@
 @implementation MsgViewController
 
 
-//MARK:-menuScreeningView
--(MenuScreeningView *)menuScreeningView{
-    if (!_menuScreeningView) {
-        _menuScreeningView = [[MenuScreeningView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, MenuHeight)];
-        _menuScreeningView.backgroundColor = KSRGBA(255, 255, 255, 1);
-    }
-    return _menuScreeningView;
-}
-
 
 //MARK:- viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    [self.view addSubview:self.menuScreeningView];
     self.toTop.constant = MenuHeight;
     
+    _menuScreeningView = [[MenuScreeningView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, MenuHeight)];
+    _menuScreeningView.backgroundColor = KSRGBA(255, 255, 255, 1);
+    [self.view addSubview:_menuScreeningView];
     
     [self.mTableView registerNib:[UINib nibWithNibName:@"MsgViewCell" bundle:nil] forCellReuseIdentifier:@"MsgViewCell"];
     // Do any additional setup after loading the view from its nib.

@@ -11,6 +11,7 @@
 #import "CustomSectionView.h"
 #import "HomeTableViewCell.h"
 #import "CitylistViewController.h"
+#import "ShopingViewController.h"
 
 #import "HQFlowView.h"
 #import "MarqueeView.h"
@@ -18,7 +19,9 @@
 #import "PacketModel.h"
 
 
-@interface HomeViewController ()<HQFlowViewDelegate,HQFlowViewDataSource,UITableViewDataSource,UITableViewDelegate>
+@interface HomeViewController ()<HQFlowViewDelegate,HQFlowViewDataSource,UITableViewDataSource,UITableViewDelegate>{
+    NSArray *imgArrs;
+}
 
 
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
@@ -83,7 +86,7 @@
 
 -(MarqueeView *)queeView{
     if (!_queeView) {
-        _queeView = [[MarqueeView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH - 74,30) withTitle:@[@"这是一条测试数据",@"这又是一条测试数据",@"这还是一条测试数据"]];
+        _queeView = [[MarqueeView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH - 74,30) withTitle:@[@"安抖App正式上线啦！吃喝玩乐就上安抖",@"各种美食各种嗨！",@"这还是一条测试数据测试数据"]];
         _queeView.titleFont = [UIFont systemFontOfSize:12];
         
         self.queeView.handlerTitleClickCallBack = ^(NSInteger index){
@@ -105,13 +108,8 @@
     [self.pageFlowView addSubview:self.pageC];
     [self.pageFlowView reloadData];//刷新轮播
     
-    // Do any additional setup after loading the view from its nib.
-}
-
-
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
     [self openRedPacket];
+    // Do any additional setup after loading the view from its nib.
 }
 
 
@@ -141,7 +139,7 @@
 
 
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
-    if (subIndex == 1) {
+    if (subIndex == 0) {
 //        商城
 //        CustomBarViewController *tabbar = [[CustomBarViewController alloc]initFrame:CustomBarTypeTwo];
 //        UIWindow *window = [[UIApplication sharedApplication].delegate window];
@@ -151,6 +149,13 @@
 //        [animation setDuration:0.3];
 //        [[window layer] addAnimation:animation forKey:nil];
 //        window.rootViewController = tabbar;
+        
+        ShopingViewController *shop = [[ShopingViewController alloc]init];
+        shop.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:shop animated:YES];
+    }else if (subIndex == 1){
+        [self pushViewControllerWithString:ControllerVCArr[0]];
+    }else {
         
     }
 }
@@ -188,17 +193,15 @@
 
 //MARK:- tableView
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0) {
-        return 1;
-    }else if (section == 1){
+    if (section == 0 || section == 1) {
         return 1;
     }else {
-        return 4;
+        return 3;
     }
 }
 
@@ -221,6 +224,7 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     CustomSectionView *v = [[NSBundle mainBundle] loadNibNamed:@"CustomSectionView" owner:self options:nil].lastObject;
+    v.titimgView.image = [UIImage imageNamed:HomeSectionArr[section]];
     v.backgroundColor = [UIColor whiteColor];
     [v setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 54)];
     
@@ -235,9 +239,15 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0 || indexPath.section == 1) {
-        return 128;
+        return 138;
+    }else if (indexPath.section == 2){
+        return 178;
+    }else if (indexPath.section == 3) {
+        return 222;
+    }else{
+        return 0;
     }
-    return 168;
+        
 }
 
 
@@ -280,6 +290,25 @@
     CitylistViewController *citylist = [[CitylistViewController alloc] init];
     citylist.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:citylist animated:YES];
+}
+
+
+//ControllerVCArr
+//MARK:-withBtnClick
+- (IBAction)withBtnClick:(UIButton *)sender {
+    KPreventRepeatClickTime(1)
+    [HUDManager showTextHud:OtherMsg];
+    return;
+    
+//    [self pushViewControllerWithString:ControllerVCArr[sender.tag-1000]];
+}
+
+#pragma mark - vc push
+-(void)pushViewControllerWithString:(NSString *)nameStr{
+    Class class = NSClassFromString(nameStr);
+    UIViewController *vc = [[class alloc]initWithNibName:nameStr bundle:nil];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /*

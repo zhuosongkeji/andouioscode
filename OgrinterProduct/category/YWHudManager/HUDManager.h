@@ -313,6 +313,7 @@ typedef NS_ENUM(NSInteger,HUDStateType) {   //显示状态类型
  @param view            要显示在那个view上
  @param completionBlock 回调
  */
+
 + (void)showHud:(NSString *)message customImgView:(UIView *)customImgView btnTitle:(NSString *)btnTitle btnFont:(UIFont *)font btnTitleColor:(UIColor *)titleColor btnBackColor:(UIColor *)backColor Target:(nullable id)target action:(SEL)action isShowMaskView:(BOOL)isShowMaskView  isHide:(BOOL)isHide onView:(UIView *)view completionBlock:(MBProgressHUDCompletionBlock)completionBlock;
 
 /**

@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BTo-Kq-kIe">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="入驻商家" translatesAutoresizingMaskIntoConstraints="NO" id="BTo-Kq-kIe">
                     <rect key="frame" x="16" y="14" width="64" height="36"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="64" id="DEc-vY-Nbl"/>
@@ -51,7 +51,13 @@
                 <constraint firstAttribute="trailing" secondItem="hF3-of-CFn" secondAttribute="trailing" constant="16" id="zHS-zc-TzZ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="titimgView" destination="BTo-Kq-kIe" id="fdy-72-Wf4"/>
+            </connections>
             <point key="canvasLocation" x="73.913043478260875" y="-168.08035714285714"/>
         </view>
     </objects>
+    <resources>
+        <image name="入驻商家" width="37" height="9.5"/>
+    </resources>
 </document>

@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CustomSectionView : UIView
+@property (weak, nonatomic) IBOutlet UIImageView *titimgView;
 
 @end
 

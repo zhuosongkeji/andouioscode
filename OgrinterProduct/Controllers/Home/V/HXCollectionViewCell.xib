@@ -18,10 +18,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="debug" translatesAutoresizingMaskIntoConstraints="NO" id="yfQ-ue-Nrk">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层 533" translatesAutoresizingMaskIntoConstraints="NO" id="yfQ-ue-Nrk">
                         <rect key="frame" x="0.0" y="0.0" width="128" height="107"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="撒打算打" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUL-Ap-wCr">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="湾里饭香" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUL-Ap-wCr">
                         <rect key="frame" x="0.0" y="111" width="128" height="21"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -31,27 +31,48 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层 520" translatesAutoresizingMaskIntoConstraints="NO" id="hHT-fQ-QFV">
+                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                    </imageView>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在直播" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYZ-ol-D0T">
+                        <rect key="frame" x="8" y="102" width="45" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="Ci4-jx-sbC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="xYZ-ol-D0T" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="11v-lN-nXG"/>
                 <constraint firstItem="yfQ-ue-Nrk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2CD-2b-Euz"/>
                 <constraint firstItem="yfQ-ue-Nrk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4cK-cC-exG"/>
+                <constraint firstItem="hHT-fQ-QFV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="A5I-MY-XP1"/>
+                <constraint firstAttribute="bottom" secondItem="xYZ-ol-D0T" secondAttribute="bottom" constant="12" id="Dp0-tb-UlY"/>
                 <constraint firstAttribute="trailing" secondItem="yfQ-ue-Nrk" secondAttribute="trailing" id="FfW-Sl-CcJ"/>
+                <constraint firstAttribute="bottom" secondItem="hHT-fQ-QFV" secondAttribute="bottom" id="JPR-ud-HRJ"/>
                 <constraint firstAttribute="bottom" secondItem="yfQ-ue-Nrk" secondAttribute="bottom" constant="21" id="LPW-Qb-nYr"/>
+                <constraint firstItem="hHT-fQ-QFV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SoU-Do-T8t"/>
                 <constraint firstAttribute="bottom" secondItem="vUL-Ap-wCr" secondAttribute="bottom" constant="-4" id="Umn-eY-crM"/>
+                <constraint firstAttribute="trailing" secondItem="hHT-fQ-QFV" secondAttribute="trailing" id="WJz-S4-7U2"/>
                 <constraint firstItem="vUL-Ap-wCr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pn3-L1-Z7K"/>
                 <constraint firstAttribute="trailing" secondItem="vUL-Ap-wCr" secondAttribute="trailing" id="y3L-k3-u4e"/>
             </constraints>
             <size key="customSize" width="151" height="164"/>
             <connections>
-                <outlet property="imgView" destination="yfQ-ue-Nrk" id="VsV-2O-omt"/>
-                <outlet property="name" destination="vUL-Ap-wCr" id="wgn-Lw-XmZ"/>
+                <outlet property="imgView" destination="yfQ-ue-Nrk" id="9Os-Rs-QEy"/>
+                <outlet property="imgView1" destination="hHT-fQ-QFV" id="Oxb-gR-SQM"/>
+                <outlet property="lable1" destination="xYZ-ol-D0T" id="3Ml-Qp-omx"/>
+                <outlet property="name" destination="vUL-Ap-wCr" id="4FW-Ec-QK4"/>
             </connections>
             <point key="canvasLocation" x="-792" y="-69.265367316341838"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="debug" width="232" height="204"/>
+        <image name="图层 520" width="70" height="63.5"/>
+        <image name="图层 533" width="80" height="73.5"/>
     </resources>
 </document>

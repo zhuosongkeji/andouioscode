@@ -12,10 +12,10 @@
 #import "MsgViewController.h"
 #import "FindViewController.h"
 #import "MineViewController.h"
-#import "ShopingHomeViewController.h"
-#import "ShopingCategoryViewController.h"
-#import "ShoingMsgViewController.h"
-#import "ShoingMineViewController.h"
+//#import "ShopingHomeViewController.h"
+//#import "ShopingCategoryViewController.h"
+//#import "ShoingMsgViewController.h"
+//#import "ShoingMineViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
 
@@ -66,16 +66,16 @@
 -(void)loadsubControlOne {
     
     self.hvc = [[HomeViewController alloc] init];
-    [self addChildController:self.hvc title:@"首页" imageName:@"tab1-heartshow" selectedImageName:@"tab1-heart" navVc:[UINavigationController class]];
+    [self addChildController:self.hvc title:@"首页" imageName:@"图层 730 拷贝" selectedImageName:@"图层 730" navVc:[UINavigationController class]];
     
     MsgViewController *fvc = [[MsgViewController alloc] init];
-    [self addChildController:fvc title:@"商家" imageName:@"tab2-doctor" selectedImageName:@"tab2-doctorshow" navVc:[UINavigationController class]];
+    [self addChildController:fvc title:@"商家" imageName:@"Bar chart" selectedImageName:@"Bar chart 拷贝" navVc:[UINavigationController class]];
     
     FindViewController *MoreVc = [[FindViewController alloc] init];
-    [self addChildController:MoreVc title:@"贴吧" imageName:@"tab4-more" selectedImageName:@"tab4-moreshow" navVc:[UINavigationController class]];
+    [self addChildController:MoreVc title:@"贴吧" imageName:@"图层 507" selectedImageName:@"图层 507 拷贝" navVc:[UINavigationController class]];
     
     MineViewController *svc = [[MineViewController alloc] init];
-    [self addChildController:svc title:@"我的" imageName:@"tab5-file" selectedImageName:@"tab5-fileshow" navVc:[UINavigationController class]];
+    [self addChildController:svc title:@"我的" imageName:@"图层 510" selectedImageName:@"图层 510 拷贝" navVc:[UINavigationController class]];
     
     [[UITabBar appearance] setBackgroundImage:[self imageWithColor:[UIColor whiteColor]]];
     //  设置tabbar
@@ -87,21 +87,21 @@
 
 -(void)loadsubControlTwo {
     
-    ShopingHomeViewController *hvc = [[ShopingHomeViewController alloc] init];
-    [self addChildController:hvc title:@"商城" imageName:@"tab1-heartshow" selectedImageName:@"tab1-heart" navVc:[UINavigationController class]];
-    
-    ShopingCategoryViewController *fvc = [[ShopingCategoryViewController alloc] init];
-    [self addChildController:fvc title:@"分类" imageName:@"tab2-doctor" selectedImageName:@"tab2-doctorshow" navVc:[UINavigationController class]];
-    
-    MsgViewController *MoreVc = [[MsgViewController alloc] init];
-    [self addChildController:MoreVc title:@"收藏" imageName:@"tab4-more" selectedImageName:@"tab4-moreshow" navVc:[UINavigationController class]];
-    
-    MineViewController *svc = [[MineViewController alloc] init];
-    [self addChildController:svc title:@"消息" imageName:@"tab5-file" selectedImageName:@"tab5-fileshow" navVc:[UINavigationController class]];
-    
-    [[UITabBar appearance] setBackgroundImage:[self imageWithColor:[UIColor whiteColor]]];
-    //  设置tabbar
-    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
+//    ShopingHomeViewController *hvc = [[ShopingHomeViewController alloc] init];
+//    [self addChildController:hvc title:@"商城" imageName:@"tab1-heartshow" selectedImageName:@"tab1-heart" navVc:[UINavigationController class]];
+//
+//    ShopingCategoryViewController *fvc = [[ShopingCategoryViewController alloc] init];
+//    [self addChildController:fvc title:@"分类" imageName:@"tab2-doctor" selectedImageName:@"tab2-doctorshow" navVc:[UINavigationController class]];
+//
+//    MsgViewController *MoreVc = [[MsgViewController alloc] init];
+//    [self addChildController:MoreVc title:@"收藏" imageName:@"tab4-more" selectedImageName:@"tab4-moreshow" navVc:[UINavigationController class]];
+//
+//    MineViewController *svc = [[MineViewController alloc] init];
+//    [self addChildController:svc title:@"消息" imageName:@"tab5-file" selectedImageName:@"tab5-fileshow" navVc:[UINavigationController class]];
+//
+//    [[UITabBar appearance] setBackgroundImage:[self imageWithColor:[UIColor whiteColor]]];
+//    //  设置tabbar
+//    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
     
 //    [self setCustomtabbar];
 }
@@ -131,12 +131,15 @@
     childController.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     // 设置一下选中tabbar文字颜色
     
-//    [childController.tabBarItem setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor redColor] }forState:UIControlStateSelected];
     [[UITabBar appearance] setTintColor:KSDUAULTCOLORE];
     
     UINavigationController* nav = [[navVc alloc] initWithRootViewController:childController];
+    UIColor* color = [UIColor whiteColor];
     
-//    [nav.navigationBar setBackgroundImage:[self convertViewToImage] forBarMetrics:UIBarMetricsDefault];
+    NSDictionary* dict = [NSDictionary dictionaryWithObject:color forKey:NSForegroundColorAttributeName];
+    nav.navigationBar.titleTextAttributes= dict;
+    
+    [nav.navigationBar setBackgroundImage:[self convertViewToImage] forBarMetrics:UIBarMetricsDefault];
     
     [self addChildViewController:nav];
 }

@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <view key="tableHeaderView" contentMode="scaleToFill" id="WcS-bG-Q1l">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="228"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xV6-tf-i1U">
@@ -38,9 +38,9 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xz4-cV-fCs">
-                                <rect key="frame" x="0.0" y="176" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="316" width="414" height="44"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lnS-Uv-5C6">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="平台公告" translatesAutoresizingMaskIntoConstraints="NO" id="lnS-Uv-5C6">
                                         <rect key="frame" x="16" y="4" width="64" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="EfR-PI-PGZ"/>
@@ -78,15 +78,187 @@
                                     <constraint firstItem="DTh-YJ-yFO" firstAttribute="centerY" secondItem="lnS-Uv-5C6" secondAttribute="centerY" id="sJP-Td-dla"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6u6-IE-NmJ">
+                                <rect key="frame" x="0.0" y="168" width="414" height="140"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aag-xe-LUx" customClass="Img_lable">
+                                        <rect key="frame" x="165.5" y="16" width="83" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="aAx-eD-O6m"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="农家乐" image="图层 5661">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="withBtnClick:" destination="-1" eventType="touchUpInside" id="CQu-N7-du2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ww5-jh-prO" customClass="Img_lable">
+                                        <rect key="frame" x="83" y="16" width="82.5" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="h3F-kV-5P2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="酒店入住" image="图层 566">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="withBtnClick:" destination="-1" eventType="touchUpInside" id="1hO-iT-oFt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kv4-xZ-1JH" customClass="Img_lable">
+                                        <rect key="frame" x="248.5" y="16" width="82.5" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Ee3-RH-f8m"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="特产商城" image="图层 568">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="withBtnClick:" destination="-1" eventType="touchUpInside" id="25L-TV-W8L"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igB-Ls-4L4" customClass="Img_lable">
+                                        <rect key="frame" x="0.0" y="16" width="83" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="LYx-H8-VhK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="美食外卖" image="图层 564">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="withBtnClick:" destination="-1" eventType="touchUpInside" id="1oo-bZ-Xmo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRF-Gh-a9j" customClass="Img_lable">
+                                        <rect key="frame" x="165.5" y="74" width="83" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ClQ-Df-WCy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="众筹信息" image="图层 572">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="withBtnClick:" destination="-1" eventType="touchUpInside" id="eby-NB-Ld9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1006" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgh-je-Q7t" customClass="Img_lable">
+                                        <rect key="frame" x="83" y="74" width="82.5" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Gas-HU-U35"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="汽车港湾" image="图层 571">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="withBtnClick:" destination="-1" eventType="touchUpInside" id="DSr-ey-4aZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1008" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEq-em-U6D" customClass="Img_lable">
+                                        <rect key="frame" x="248.5" y="74" width="82.5" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Lmv-hA-u5F"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="爱心帮助" image="图层 573">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="withBtnClick:" destination="-1" eventType="touchUpInside" id="Uzd-Rf-hsc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWg-6y-ATP" customClass="Img_lable">
+                                        <rect key="frame" x="0.0" y="74" width="83" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="cxj-J5-Cac"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="房产信息" image="图层 569(1)">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="withBtnClick:" destination="-1" eventType="touchUpInside" id="1Y7-nX-okc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1009" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHh-nv-U9h" customClass="Img_lable">
+                                        <rect key="frame" x="331" y="74" width="83" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Iga-ku-aYd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="直播中心" image="图层 578">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="withBtnClick:" destination="-1" eventType="touchUpInside" id="ctM-w3-5q4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epJ-Uh-6yU" customClass="Img_lable">
+                                        <rect key="frame" x="331" y="16" width="83" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="HKc-Px-CSk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="商家课程" image="图层 569">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="withBtnClick:" destination="-1" eventType="touchUpInside" id="hFq-uy-BPj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Aag-xe-LUx" firstAttribute="centerY" secondItem="igB-Ls-4L4" secondAttribute="centerY" id="1Es-mf-TAk"/>
+                                    <constraint firstItem="mgh-je-Q7t" firstAttribute="centerY" secondItem="BWg-6y-ATP" secondAttribute="centerY" id="1zO-rt-aWC"/>
+                                    <constraint firstAttribute="trailing" secondItem="AHh-nv-U9h" secondAttribute="trailing" id="3ay-D6-IaY"/>
+                                    <constraint firstItem="Aag-xe-LUx" firstAttribute="centerX" secondItem="6u6-IE-NmJ" secondAttribute="centerX" id="4MT-eO-NNv"/>
+                                    <constraint firstAttribute="height" constant="140" id="4Vc-6E-NYa"/>
+                                    <constraint firstItem="Aag-xe-LUx" firstAttribute="width" secondItem="igB-Ls-4L4" secondAttribute="width" id="4kd-ni-eZb"/>
+                                    <constraint firstItem="mgh-je-Q7t" firstAttribute="width" secondItem="BWg-6y-ATP" secondAttribute="width" id="55j-Bq-SLb"/>
+                                    <constraint firstItem="epJ-Uh-6yU" firstAttribute="centerY" secondItem="igB-Ls-4L4" secondAttribute="centerY" id="7Rf-s0-eCu"/>
+                                    <constraint firstItem="ww5-jh-prO" firstAttribute="leading" secondItem="igB-Ls-4L4" secondAttribute="trailing" id="9Bs-gp-haQ"/>
+                                    <constraint firstItem="epJ-Uh-6yU" firstAttribute="leading" secondItem="kv4-xZ-1JH" secondAttribute="trailing" id="9yv-pE-5af"/>
+                                    <constraint firstItem="fRF-Gh-a9j" firstAttribute="width" secondItem="BWg-6y-ATP" secondAttribute="width" id="E3b-fb-O7B"/>
+                                    <constraint firstItem="jEq-em-U6D" firstAttribute="width" secondItem="BWg-6y-ATP" secondAttribute="width" id="EGB-tT-cWo"/>
+                                    <constraint firstItem="Aag-xe-LUx" firstAttribute="top" secondItem="6u6-IE-NmJ" secondAttribute="top" constant="16" id="F6d-hL-dsY"/>
+                                    <constraint firstItem="AHh-nv-U9h" firstAttribute="leading" secondItem="jEq-em-U6D" secondAttribute="trailing" id="GJq-BX-0T6"/>
+                                    <constraint firstItem="igB-Ls-4L4" firstAttribute="leading" secondItem="6u6-IE-NmJ" secondAttribute="leading" id="LrT-dN-i13"/>
+                                    <constraint firstItem="kv4-xZ-1JH" firstAttribute="centerY" secondItem="igB-Ls-4L4" secondAttribute="centerY" id="NAt-il-Pie"/>
+                                    <constraint firstItem="kv4-xZ-1JH" firstAttribute="width" secondItem="igB-Ls-4L4" secondAttribute="width" id="SOd-qq-8Mf"/>
+                                    <constraint firstItem="fRF-Gh-a9j" firstAttribute="width" secondItem="Aag-xe-LUx" secondAttribute="width" id="TuI-KF-Yo4"/>
+                                    <constraint firstItem="fRF-Gh-a9j" firstAttribute="centerY" secondItem="BWg-6y-ATP" secondAttribute="centerY" id="Xko-CX-gxO"/>
+                                    <constraint firstItem="jEq-em-U6D" firstAttribute="centerY" secondItem="BWg-6y-ATP" secondAttribute="centerY" id="fdw-3N-Vwd"/>
+                                    <constraint firstItem="ww5-jh-prO" firstAttribute="centerY" secondItem="igB-Ls-4L4" secondAttribute="centerY" id="gdg-K8-TbM"/>
+                                    <constraint firstItem="ww5-jh-prO" firstAttribute="width" secondItem="igB-Ls-4L4" secondAttribute="width" id="hPG-Jq-bT4"/>
+                                    <constraint firstItem="Aag-xe-LUx" firstAttribute="width" secondItem="6u6-IE-NmJ" secondAttribute="width" multiplier="0.2" id="in2-N0-nIu"/>
+                                    <constraint firstItem="AHh-nv-U9h" firstAttribute="centerY" secondItem="BWg-6y-ATP" secondAttribute="centerY" id="ixN-nC-ZGi"/>
+                                    <constraint firstAttribute="trailing" secondItem="epJ-Uh-6yU" secondAttribute="trailing" id="qIW-OD-CuQ"/>
+                                    <constraint firstItem="fRF-Gh-a9j" firstAttribute="top" secondItem="Aag-xe-LUx" secondAttribute="bottom" constant="8" id="tny-zc-P9p"/>
+                                    <constraint firstItem="AHh-nv-U9h" firstAttribute="width" secondItem="BWg-6y-ATP" secondAttribute="width" id="tzV-LF-Kys"/>
+                                    <constraint firstItem="epJ-Uh-6yU" firstAttribute="width" secondItem="igB-Ls-4L4" secondAttribute="width" id="vXw-yM-f05"/>
+                                    <constraint firstItem="fRF-Gh-a9j" firstAttribute="centerX" secondItem="Aag-xe-LUx" secondAttribute="centerX" id="wXf-ye-Fvm"/>
+                                    <constraint firstItem="mgh-je-Q7t" firstAttribute="leading" secondItem="BWg-6y-ATP" secondAttribute="trailing" id="yXa-Xg-uWJ"/>
+                                    <constraint firstItem="BWg-6y-ATP" firstAttribute="leading" secondItem="6u6-IE-NmJ" secondAttribute="leading" id="zl4-qf-k3v"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6u6-IE-NmJ" firstAttribute="top" secondItem="xV6-tf-i1U" secondAttribute="bottom" id="3hJ-5o-Zr6"/>
+                            <constraint firstItem="6u6-IE-NmJ" firstAttribute="leading" secondItem="WcS-bG-Q1l" secondAttribute="leading" id="7Ch-uv-tzL"/>
+                            <constraint firstAttribute="trailing" secondItem="6u6-IE-NmJ" secondAttribute="trailing" id="90p-r8-wEK"/>
                             <constraint firstItem="xV6-tf-i1U" firstAttribute="leading" secondItem="WcS-bG-Q1l" secondAttribute="leading" id="IWW-tX-dcO"/>
                             <constraint firstAttribute="trailing" secondItem="xV6-tf-i1U" secondAttribute="trailing" id="LIO-qk-roC"/>
                             <constraint firstItem="Xz4-cV-fCs" firstAttribute="leading" secondItem="WcS-bG-Q1l" secondAttribute="leading" id="Vvc-md-Gvf"/>
                             <constraint firstAttribute="trailing" secondItem="Xz4-cV-fCs" secondAttribute="trailing" id="azq-nL-t62"/>
                             <constraint firstItem="xV6-tf-i1U" firstAttribute="top" secondItem="WcS-bG-Q1l" secondAttribute="top" id="gsK-zW-a5W"/>
-                            <constraint firstItem="Xz4-cV-fCs" firstAttribute="top" secondItem="xV6-tf-i1U" secondAttribute="bottom" constant="8" id="nbG-rb-riM"/>
+                            <constraint firstItem="Xz4-cV-fCs" firstAttribute="top" secondItem="xV6-tf-i1U" secondAttribute="bottom" constant="148" id="nbG-rb-riM"/>
                         </constraints>
                     </view>
                     <connections>
@@ -101,7 +273,20 @@
                 <constraint firstAttribute="trailing" secondItem="Z46-n5-CFx" secondAttribute="trailing" id="dBL-TU-2lL"/>
                 <constraint firstItem="Z46-n5-CFx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gx9-4U-sOv"/>
             </constraints>
-            <point key="canvasLocation" x="205.79710144927537" y="35.491071428571423"/>
+            <point key="canvasLocation" x="52" y="7"/>
         </view>
     </objects>
+    <resources>
+        <image name="图层 564" width="28.5" height="28.5"/>
+        <image name="图层 566" width="29" height="28.5"/>
+        <image name="图层 5661" width="28.5" height="28.5"/>
+        <image name="图层 568" width="29" height="28.5"/>
+        <image name="图层 569" width="28.5" height="28.5"/>
+        <image name="图层 569(1)" width="27" height="27"/>
+        <image name="图层 571" width="27" height="27"/>
+        <image name="图层 572" width="27" height="27"/>
+        <image name="图层 573" width="27" height="27"/>
+        <image name="图层 578" width="27" height="27"/>
+        <image name="平台公告" width="37" height="9"/>
+    </resources>
 </document>
