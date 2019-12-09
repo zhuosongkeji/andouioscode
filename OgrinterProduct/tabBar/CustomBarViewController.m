@@ -77,7 +77,7 @@
     MineViewController *svc = [[MineViewController alloc] init];
     [self addChildController:svc title:@"我的" imageName:@"图层 510" selectedImageName:@"图层 510 拷贝" navVc:[UINavigationController class]];
     
-    [[UITabBar appearance] setBackgroundImage:[self imageWithColor:[UIColor whiteColor]]];
+    [[UITabBar appearance] setBackgroundImage:[NSObject imageWithColor:[UIColor whiteColor]]];
     //  设置tabbar
     [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
     
@@ -139,50 +139,50 @@
     NSDictionary* dict = [NSDictionary dictionaryWithObject:color forKey:NSForegroundColorAttributeName];
     nav.navigationBar.titleTextAttributes= dict;
     
-    [nav.navigationBar setBackgroundImage:[self convertViewToImage] forBarMetrics:UIBarMetricsDefault];
+    [nav.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav"] forBarMetrics:UIBarMetricsDefault];
     
     [self addChildViewController:nav];
 }
 
 
 
--(UIImage*)convertViewToImage {
-    
-    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0,0, KSCREEN_WIDTH,64)];
-    backView.backgroundColor = KSRGBA(98, 205, 173, 1);
-//    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+//-(UIImage*)convertViewToImage {
 //
-//    gradientLayer.colors = @[(__bridge id)KSRGBA(98, 205, 173, 1).CGColor, (__bridge id)KSRGBA(102, 209, 177, 1).CGColor, (__bridge id)KSRGBA(106, 213, 181, 1).CGColor];
+//    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0,0, KSCREEN_WIDTH,64)];
+//    backView.backgroundColor = KSRGBA(98, 205, 173, 1);
+////    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+////
+////    gradientLayer.colors = @[(__bridge id)KSRGBA(98, 205, 173, 1).CGColor, (__bridge id)KSRGBA(102, 209, 177, 1).CGColor, (__bridge id)KSRGBA(106, 213, 181, 1).CGColor];
+////
+////    gradientLayer.locations = @[@0.3, @0.5, @0.7];gradientLayer.startPoint =  CGPointMake(0,0);
+////
+////    gradientLayer.endPoint = CGPointMake(0,1);
+////
+////    gradientLayer.frame = backView.frame;[backView.layer addSublayer:gradientLayer];
 //
-//    gradientLayer.locations = @[@0.3, @0.5, @0.7];gradientLayer.startPoint =  CGPointMake(0,0);
-//    
-//    gradientLayer.endPoint = CGPointMake(0,1);
+//    CGSize s = backView.bounds.size;
+//    UIGraphicsBeginImageContextWithOptions(s,YES, [UIScreen mainScreen].scale); [backView.layer renderInContext:UIGraphicsGetCurrentContext()];
+//    UIImage*image =UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
 //
-//    gradientLayer.frame = backView.frame;[backView.layer addSublayer:gradientLayer];
-    
-    CGSize s = backView.bounds.size;
-    UIGraphicsBeginImageContextWithOptions(s,YES, [UIScreen mainScreen].scale); [backView.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage*image =UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
-    
-}
-
-
-//MARK:-imageWithColor
-- (UIImage *)imageWithColor:(UIColor *)color{
-    // 一个像素
-    CGRect rect = CGRectMake(0, 0, 1, 1);
-    // 开启上下文
-    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
-    [color setFill];
-    UIRectFill(rect);
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
+//    return image;
+//
+//}
+//
+//
+////MARK:-imageWithColor
+//- (UIImage *)imageWithColor:(UIColor *)color{
+//    // 一个像素
+//    CGRect rect = CGRectMake(0, 0, 1, 1);
+//    // 开启上下文
+//    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+//    [color setFill];
+//    UIRectFill(rect);
+//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//
+//    return image;
+//}
 
 
 //MARK:- cloation

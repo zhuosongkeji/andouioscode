@@ -144,7 +144,7 @@
                                             <constraint firstAttribute="height" constant="32" id="WjN-QQ-424"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="设置我喜欢的星级/价格" image="返回 拷贝 3">
+                                        <state key="normal" title="设置我喜欢的星级/价格">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>

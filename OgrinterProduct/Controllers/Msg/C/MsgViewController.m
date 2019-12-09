@@ -6,7 +6,6 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
-#define MenuHeight 36
 
 #import "MsgViewController.h"
 #import "MenuScreeningView.h"

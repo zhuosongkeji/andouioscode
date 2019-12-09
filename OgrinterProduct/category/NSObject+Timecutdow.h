@@ -36,6 +36,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIImage *)imageWithColor:(UIColor *)color;
 
+//获取当前视图所在的Controller
++ (UIViewController *)findCurrentShowingViewController;
+
 @end
 
 NS_ASSUME_NONNULL_END

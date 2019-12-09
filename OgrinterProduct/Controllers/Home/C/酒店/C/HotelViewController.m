@@ -8,6 +8,7 @@
 
 #import "HotelViewController.h"
 #import "HotolListViewController.h"
+#import "HotelDetlisViewController.h"
 #import "THDatePickerView.h"
 #import "MsgViewCell.h"
 #import "MsgModel.h"
@@ -38,19 +39,17 @@
 @implementation HotelViewController
 
 
-- (void)viewWillAppear:(BOOL)animated{
-    
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     //设置导航栏背景图片为一个空的image，这样就透明了
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    
-    //去掉透明后导航栏下边的黑边
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     
     //    如果不想让其他页面的导航栏变为透明 需要重置
-    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav"] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:nil];
 }
 
@@ -128,6 +127,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     // 取消Cell的选中状态
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    HotelDetlisViewController *holel = [[HotelDetlisViewController alloc]init];
+    [self.navigationController pushViewController:holel animated:YES];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

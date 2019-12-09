@@ -8,6 +8,7 @@
 
 #import "HotolListViewController.h"
 #import "SearchResrultViewController.h"
+#import "MenuScreeningView.h"
 #import "MsgViewCell.h"
 #import "MsgModel.h"
 
@@ -15,10 +16,13 @@
 @interface HotolListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)UIView *searchField;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
 
 @property (nonatomic,strong)UIButton *searchBtn;
 
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
+
+@property (nonatomic,strong) MenuScreeningView *menuScreeningView;
 
 
 @end
@@ -54,11 +58,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    self.toTop.constant = MenuHeight;
+    [self setup];
+    // Do any additional setup after loading the view from its nib.
+}
+
+
+//MARK:- loadsubViews
+-(void)setup {
+    _menuScreeningView = [[MenuScreeningView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, MenuHeight)];
+    _menuScreeningView.backgroundColor = KSRGBA(255, 255, 255, 1);
+    [self.view addSubview:_menuScreeningView];
+    
     self.mTableView.tableFooterView = [UILabel new];
     self.navigationItem.titleView = self.searchField;
     
     [self.mTableView registerNib:[UINib nibWithNibName:@"MsgViewCell" bundle:nil] forCellReuseIdentifier:@"MsgViewCell"];
-    // Do any additional setup after loading the view from its nib.
 }
 
 

@@ -21,6 +21,7 @@
 
 #define TIMECOUNT 60
 
+#define MenuHeight 36
 
 #define kDescribeContentLeft 20
 #define kDescribeContentTop 280
@@ -42,6 +43,11 @@
 #define TowTabBarData @[@"首页",@"分类",@"其他",@"消息"]
 
 #define HomeSectionArr @[@"入驻商家",@"336",@"337",@"338"]
+
+#define HotelDetailsListArr @[@"预定",@"评论",@"商家",@"环境设施"]
+
+#define selectpayStyle @"选择支付方式"
+#define OnlineTitle @[@"银联支付",@"微信支付",@"支付宝支付",@"余额支付"]
 
 #define ControllerVCArr @[@"HotelViewController",@"HotelViewController",@"NongJialeViewController",@"TCShopingViewController",@"BusinessCoursesViewController",@"HousePropertyViewController",@"AutomobileViewController",@"CrowdFundingViewController",@"loveLoadViewController",@"LiveBroadcastViewController"]
 
