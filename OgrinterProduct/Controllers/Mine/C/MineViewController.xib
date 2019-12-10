@@ -152,9 +152,6 @@
                                         <state key="normal" title="邀请有礼">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="giftForInviteClick:" destination="-1" eventType="touchUpInside" id="b6b-oO-J0Y"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRO-yp-dcR">
                                         <rect key="frame" x="0.0" y="246" width="103.5" height="10"/>
@@ -172,9 +169,6 @@
                                         <state key="normal" title="我的钱包">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="myWallet:" destination="-1" eventType="touchUpInside" id="vi4-6e-paK"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygf-R1-jHf">
                                         <rect key="frame" x="103.5" y="246" width="103.5" height="10"/>
@@ -189,9 +183,6 @@
                                         <state key="normal" title="我的发布">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="myRelease:" destination="-1" eventType="touchUpInside" id="34N-fP-y61"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BJ-Ie-24r">
                                         <rect key="frame" x="207" y="246" width="103.5" height="10"/>
@@ -206,9 +197,6 @@
                                         <state key="normal" title="我的贴吧">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="myPostBar:" destination="-1" eventType="touchUpInside" id="cD6-V6-azG"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnQ-Fy-wXC">
                                         <rect key="frame" x="310.5" y="246" width="103.5" height="10"/>
@@ -227,9 +215,6 @@
                                         <state key="normal" title="购物车">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="shoppingCart:" destination="-1" eventType="touchUpInside" id="V3T-5U-0Ui"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuP-Yl-YaU">
                                         <rect key="frame" x="123.5" y="66" width="64" height="60"/>
@@ -237,9 +222,6 @@
                                         <state key="normal" title="我的收藏">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="myCollection:" destination="-1" eventType="touchUpInside" id="x7C-vP-ddM"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3b-eD-Hjx">
                                         <rect key="frame" x="227" y="66" width="64" height="60"/>
@@ -247,9 +229,6 @@
                                         <state key="normal" title="浏览痕迹">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="browsingHistory:" destination="-1" eventType="touchUpInside" id="Qpf-MJ-vIG"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osy-mD-Xbb">
                                         <rect key="frame" x="330.5" y="66" width="64" height="60"/>
@@ -257,9 +236,6 @@
                                         <state key="normal" title="我的地址">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="myaddress:" destination="-1" eventType="touchUpInside" id="j4J-yH-THc"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwM-9L-uNO">
                                         <rect key="frame" x="20" y="130" width="64" height="60"/>
@@ -271,9 +247,6 @@
                                         <state key="normal" title="我的积分">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="myIntegral:" destination="-1" eventType="touchUpInside" id="pUd-PT-qEt"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFk-iT-RQv">
                                         <rect key="frame" x="123.5" y="130" width="64" height="60"/>
@@ -281,9 +254,6 @@
                                         <state key="normal" title="我的消息">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="myNews:" destination="-1" eventType="touchUpInside" id="bzm-8H-8gh"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIH-g2-ii5">
                                         <rect key="frame" x="227" y="130" width="64" height="60"/>
@@ -291,9 +261,6 @@
                                         <state key="normal" title="商家入驻">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="merchantEntry:" destination="-1" eventType="touchUpInside" id="Tul-wL-Dgp"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LnF-9K-Rny">
                                         <rect key="frame" x="330.5" y="130" width="64" height="60"/>
@@ -301,9 +268,6 @@
                                         <state key="normal" title="成为配送员">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="beDeliveryClerk:" destination="-1" eventType="touchUpInside" id="Ziq-Kt-5LG"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bpe-pA-zzv">
                                         <rect key="frame" x="20" y="194" width="64" height="60"/>
@@ -315,9 +279,6 @@
                                         <state key="normal" title="下载APP">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="downloadApp:" destination="-1" eventType="touchUpInside" id="9Iy-lL-k5F"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNd-AT-LNx">
                                         <rect key="frame" x="123.5" y="194" width="64" height="60"/>
@@ -325,9 +286,6 @@
                                         <state key="normal" title="我的直播">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="myLiveBroadcast:" destination="-1" eventType="touchUpInside" id="ufi-X6-Yvk"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwp-dx-c45">
                                         <rect key="frame" x="227" y="194" width="64" height="60"/>
@@ -335,9 +293,6 @@
                                         <state key="normal" title="操作视频">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="operationVideo:" destination="-1" eventType="touchUpInside" id="pc7-Hc-CrY"/>
-                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSC-GG-9gD">
                                         <rect key="frame" x="330.5" y="194" width="64" height="60"/>
