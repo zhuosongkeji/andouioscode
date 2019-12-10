@@ -21,6 +21,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 
+@property (weak, nonatomic) IBOutlet UIView *topBannerView;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
 
 
@@ -29,13 +31,6 @@
 
 @implementation ShopingHomeViewController
 
-
--(UIView *)headBanner {
-    UIView *v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, bannerH)];
-    [v addSubview:self.bannerView];
-    
-    return v;
-}
 
 //MARK:- MDShockBannerView
 -(MDShockBannerView *)bannerView {
@@ -49,9 +44,9 @@
         model.bgImg = @"http://md-juhe.oss-cn-hangzhou.aliyuncs.com/upload/ad/20180417/9bc42ce40490c854eab2e9969ac8e328caab0a17.png";
         
         model2.img = @"http://md-juhe.oss-cn-hangzhou.aliyuncs.com/upload/ad/20180417/16f7ab6124ae4688f0adef43ff3ab3b1f09ccc67.png";
-        model2.bgImg = @"http://md-juhe.oss-cn-hangzhou.aliyuncs.com/upload/ad/20180417/81e9ad49cba8dc479a09d146a1fabf4b9ef3504d.png";
+        model2.bgImg = @"http://md-juhe.oss-cn-hangzhou.aliyuncs.com/upload/ad/20180417/9bc42ce40490c854eab2e9969ac8e328caab0a17.png";
         
-        _bannerView.banners = @[model];
+        _bannerView.banners = @[model,model2];
         
     }
     
@@ -65,7 +60,8 @@
 
     self.toTop.constant = kStatusBarAndNavigationBarHeight;
     self.mTableView.tableFooterView = [UILabel new];
-    self.mTableView.tableHeaderView = self.headBanner;
+    
+    [self.topBannerView addSubview:self.bannerView];
     
     [self.mTableView registerNib:[UINib nibWithNibName:@"ShopHomeViewCell" bundle:nil] forCellReuseIdentifier:@"ShopHomeViewCell"];
     

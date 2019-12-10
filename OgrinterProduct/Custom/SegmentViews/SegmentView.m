@@ -32,7 +32,7 @@
     CGRect frame= CGRectMake(0, 0, KSCREEN_WIDTH, kStatuTabBarH);
     if (self = [super initWithFrame:frame]) {
         
-        self.dict = @{@"Normal":@[@"图层 730 拷贝",@"Bar chart",@"图层 507",@"图层 510"],@"select":@[@"图层 730",@"Bar chart 拷贝",@"图层 507 拷贝",@"图层 510 拷贝"]};
+        self.dict = @{@"Normal":@[@"图层 44 拷贝",@"搜索类目 拷贝",@"cart 拷贝",@"图层 45"],@"select":@[@"图层 44",@"搜索类目",@"cart",@"图层 45 拷贝"]};
         self.titles = titles;
         self.tag = 100;
         self.layer.borderWidth = 0.4;

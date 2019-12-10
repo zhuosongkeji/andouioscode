@@ -8,17 +8,27 @@
 
 
 #import "OnlineBookingViewController.h"
+#import "CustomAlterView.h"
 #import "OnlineTableViewCell.h"
+#import "PaySuccessViewController.h"
 
 
 @interface OnlineBookingViewController ()<UITableViewDelegate,UITableViewDataSource>
+{
+    
+    BOOL HHR;
+}
 
 
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
+@property(nonatomic,strong)CustomAlterView *alterView;
+
+@property (nonatomic,weak)UIButton *bjbtn;
 
 @end
 
 @implementation OnlineBookingViewController
+
 
 
 - (void)viewDidLoad {
@@ -27,6 +37,7 @@
     self.navigationItem.title = @"在线预订";
     
     [self setup];
+    [self createAlter];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -35,6 +46,15 @@
     
     self.mTableView.tableFooterView = [UILabel new];
     [self.mTableView registerNib:[UINib nibWithNibName:@"OnlineTableViewCell" bundle:nil] forCellReuseIdentifier:@"OnlineTableViewCell"];
+}
+
+
+-(void)createAlter{
+    _alterView = [[[NSBundle mainBundle]loadNibNamed:@"CustomAlterView" owner:self options:nil]lastObject];
+    [_alterView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH-64, KSCREEN_HEIGHT-280)];
+    _alterView.btnBlcok = ^{
+        HHR = YES;
+    };
 }
 
 
@@ -93,6 +113,22 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
+
+
+- (IBAction)orderclick:(UIButton *)sender {
+    KPreventRepeatClickTime(1)
+    [[QWAlertView sharedMask] show:_alterView withType:QWAlertViewStyleAlert animationFinish:^{
+        
+    } dismissHandle:^{
+        if (HHR) {
+            HHR = NO;
+            PaySuccessViewController *pay = [[PaySuccessViewController alloc]init];
+            [self.navigationController pushViewController:pay animated:YES];
+        }
+    }];
+}
+
+
 
 /*
 #pragma mark - Navigation

@@ -9,7 +9,6 @@
 
 #define bottomH 420
 
-
 #import "HotelDetlisSubViewOneController.h"
 #import "OnlineBookingViewController.h"
 #import "HotelDetailsBottomView.h"
@@ -18,6 +17,7 @@
 #import "CresThirdTableViewCell.h"
 #import "CresFouthTableViewCell.h"
 #import "MsgModel.h"
+
 
 @interface HotelDetlisSubViewOneController ()
 
@@ -35,7 +35,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.navigationItem.title = @"商家详情";
     
     [self setup];
@@ -65,12 +64,11 @@
 -(void)createBottomView {
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    [btn setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-bottomH)];
-    [btn setBackgroundColor:[UIColor colorWithWhite:.5 alpha:.4]];
+    [btn setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-bottomH+20)];
+    [btn addTarget:self action:@selector(dissView) forControlEvents:UIControlEventTouchUpInside];
+    [btn setBackgroundColor:[UIColor colorWithWhite:0.4 alpha:0.4]];
     [btn setHidden:YES];
     
-    [btn addTarget:self action:@selector(dissView) forControlEvents:UIControlEventTouchUpInside];
     [[UIApplication sharedApplication].keyWindow addSubview:self.bjbtn = btn];
     
     _bottomView = [[NSBundle mainBundle]loadNibNamed:@"HotelDetailsBottomView" owner:self options:nil].lastObject;

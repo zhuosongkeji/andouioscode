@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomAlterView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="要求及收费" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnO-cc-48K">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <color key="backgroundColor" red="0.33725490200000002" green="0.76204603910000002" blue="0.62735551599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="IaA-Sr-8lk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8R-vd-Db7">
+                    <rect key="frame" x="0.0" y="336" width="320" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6W-mk-HAw">
+                            <rect key="frame" x="30" y="18.5" width="122.5" height="27"/>
+                            <color key="backgroundColor" red="0.94509803920000002" green="0.9531517625" blue="0.95976561309999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="取消">
+                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eol-Rm-Ea8">
+                            <rect key="frame" x="167.5" y="18.5" width="122.5" height="27"/>
+                            <color key="backgroundColor" red="0.33725490200000002" green="0.76204603910000002" blue="0.62735551599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="同意并继续"/>
+                            <connections>
+                                <action selector="click:" destination="iN0-l3-epB" eventType="touchUpInside" id="hwb-f6-3gM"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Eol-Rm-Ea8" firstAttribute="centerY" secondItem="z6W-mk-HAw" secondAttribute="centerY" id="C3u-Wk-Iv3"/>
+                        <constraint firstAttribute="trailing" secondItem="Eol-Rm-Ea8" secondAttribute="trailing" constant="30" id="Q93-Wb-RTQ"/>
+                        <constraint firstItem="z6W-mk-HAw" firstAttribute="leading" secondItem="Y8R-vd-Db7" secondAttribute="leading" constant="30" id="Qgb-KA-xtA"/>
+                        <constraint firstItem="Eol-Rm-Ea8" firstAttribute="width" secondItem="z6W-mk-HAw" secondAttribute="width" id="Un1-pL-gnV"/>
+                        <constraint firstAttribute="height" constant="64" id="WCB-1m-luW"/>
+                        <constraint firstItem="Eol-Rm-Ea8" firstAttribute="height" secondItem="z6W-mk-HAw" secondAttribute="height" id="ae3-VH-ZWs"/>
+                        <constraint firstItem="z6W-mk-HAw" firstAttribute="centerY" secondItem="Y8R-vd-Db7" secondAttribute="centerY" id="gdq-dP-0yo"/>
+                        <constraint firstItem="Eol-Rm-Ea8" firstAttribute="leading" secondItem="z6W-mk-HAw" secondAttribute="trailing" constant="15" id="liB-tT-jmE"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u5P-lB-P7D">
+                    <rect key="frame" x="0.0" y="44" width="320" height="292"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="u5P-lB-P7D" secondAttribute="trailing" id="4no-4z-VG7"/>
+                <constraint firstAttribute="bottom" secondItem="Y8R-vd-Db7" secondAttribute="bottom" id="A31-aZ-Z4A"/>
+                <constraint firstItem="Y8R-vd-Db7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HHp-H4-r4O"/>
+                <constraint firstItem="nnO-cc-48K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Jyk-b2-a6O"/>
+                <constraint firstItem="u5P-lB-P7D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MLi-mp-gBP"/>
+                <constraint firstItem="u5P-lB-P7D" firstAttribute="top" secondItem="nnO-cc-48K" secondAttribute="bottom" id="Zec-YH-HKf"/>
+                <constraint firstAttribute="trailing" secondItem="Y8R-vd-Db7" secondAttribute="trailing" id="hqi-na-eP2"/>
+                <constraint firstItem="Y8R-vd-Db7" firstAttribute="top" secondItem="u5P-lB-P7D" secondAttribute="bottom" id="p0b-Yj-t16"/>
+                <constraint firstItem="nnO-cc-48K" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rmR-QE-gWY"/>
+                <constraint firstAttribute="trailing" secondItem="nnO-cc-48K" secondAttribute="trailing" id="ylL-jS-y50"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="agreeBtn" destination="Eol-Rm-Ea8" id="2Fy-Wx-F7w"/>
+                <outlet property="cancelBtn" destination="z6W-mk-HAw" id="q6H-s9-P79"/>
+                <outlet property="tableView" destination="u5P-lB-P7D" id="z6d-0o-B8a"/>
+            </connections>
+        </view>
+    </objects>
+</document>

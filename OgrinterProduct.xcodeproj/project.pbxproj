@@ -143,6 +143,10 @@
 		A1DA9CCC239D25F500DD6666 /* CresTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DA9CCA239D25F500DD6666 /* CresTableViewCell.xib */; };
 		A1ECDEFD239B7A6E003D870D /* HotolListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1ECDEFB239B7A6E003D870D /* HotolListViewController.m */; };
 		A1ECDEFE239B7A6E003D870D /* HotolListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1ECDEFC239B7A6E003D870D /* HotolListViewController.xib */; };
+		A1FC4A8B239F27BB00AF3F57 /* CustomAlterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC4A8A239F27BB00AF3F57 /* CustomAlterView.m */; };
+		A1FC4A8D239F288E00AF3F57 /* CustomAlterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FC4A8C239F288E00AF3F57 /* CustomAlterView.xib */; };
+		A1FC4A94239F70E600AF3F57 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC4A92239F70E600AF3F57 /* PaySuccessViewController.m */; };
+		A1FC4A95239F70E600AF3F57 /* PaySuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FC4A93239F70E600AF3F57 /* PaySuccessViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -389,6 +393,12 @@
 		A1ECDEFA239B7A6E003D870D /* HotolListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotolListViewController.h; sourceTree = "<group>"; };
 		A1ECDEFB239B7A6E003D870D /* HotolListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotolListViewController.m; sourceTree = "<group>"; };
 		A1ECDEFC239B7A6E003D870D /* HotolListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotolListViewController.xib; sourceTree = "<group>"; };
+		A1FC4A89239F27BB00AF3F57 /* CustomAlterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAlterView.h; sourceTree = "<group>"; };
+		A1FC4A8A239F27BB00AF3F57 /* CustomAlterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAlterView.m; sourceTree = "<group>"; };
+		A1FC4A8C239F288E00AF3F57 /* CustomAlterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlterView.xib; sourceTree = "<group>"; };
+		A1FC4A91239F70E600AF3F57 /* PaySuccessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaySuccessViewController.h; sourceTree = "<group>"; };
+		A1FC4A92239F70E600AF3F57 /* PaySuccessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaySuccessViewController.m; sourceTree = "<group>"; };
+		A1FC4A93239F70E600AF3F57 /* PaySuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaySuccessViewController.xib; sourceTree = "<group>"; };
 		D9D7F1BA5CA76DD030C19A92 /* Pods_OgrinterProduct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OgrinterProduct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1249,6 +1259,9 @@
 				A15DC107239E60FD008CF287 /* OnlineTableViewCell.h */,
 				A15DC108239E60FD008CF287 /* OnlineTableViewCell.m */,
 				A15DC109239E60FD008CF287 /* OnlineTableViewCell.xib */,
+				A1FC4A89239F27BB00AF3F57 /* CustomAlterView.h */,
+				A1FC4A8A239F27BB00AF3F57 /* CustomAlterView.m */,
+				A1FC4A8C239F288E00AF3F57 /* CustomAlterView.xib */,
 			);
 			path = HotelDetailsView;
 			sourceTree = "<group>";
@@ -1271,6 +1284,9 @@
 				A15DC0FD239E3F04008CF287 /* OnlineBookingViewController.h */,
 				A15DC0FE239E3F04008CF287 /* OnlineBookingViewController.m */,
 				A15DC0FF239E3F04008CF287 /* OnlineBookingViewController.xib */,
+				A1FC4A91239F70E600AF3F57 /* PaySuccessViewController.h */,
+				A1FC4A92239F70E600AF3F57 /* PaySuccessViewController.m */,
+				A1FC4A93239F70E600AF3F57 /* PaySuccessViewController.xib */,
 			);
 			path = HolelChildVc;
 			sourceTree = "<group>";
@@ -1431,9 +1447,11 @@
 				A14FB262238E0E4C006A6511 /* Main.storyboard in Resources */,
 				A14FB31C238FFA76006A6511 /* HXCollectionViewCell.xib in Resources */,
 				A1DA9CCC239D25F500DD6666 /* CresTableViewCell.xib in Resources */,
+				A1FC4A95239F70E600AF3F57 /* PaySuccessViewController.xib in Resources */,
 				A10A9CB1239B35F70049A0D2 /* TCShopingViewController.xib in Resources */,
 				A10A9CBA239B368B0049A0D2 /* BusinessCoursesViewController.xib in Resources */,
 				A15DC0BF239DD52D008CF287 /* HotelDetlisViewController.xib in Resources */,
+				A1FC4A8D239F288E00AF3F57 /* CustomAlterView.xib in Resources */,
 				A15DC0FC239E35E1008CF287 /* CresFouthTableViewCell.xib in Resources */,
 				A15DC0CA239DD875008CF287 /* HotelDetilsTopViewCell.xib in Resources */,
 				A14FB2BF238F57AD006A6511 /* MBProgressHUD.bundle in Resources */,
@@ -1491,6 +1509,7 @@
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/QWAlertView/QWAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
@@ -1501,6 +1520,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QWAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
@@ -1559,6 +1579,7 @@
 				A14FB29E238E4C89006A6511 /* BaseViewController.m in Sources */,
 				A14FB308238FC206006A6511 /* HQIndexBannerSubview.m in Sources */,
 				A15DC0F6239E320E008CF287 /* CresThirdTableViewCell.m in Sources */,
+				A1FC4A94239F70E600AF3F57 /* PaySuccessViewController.m in Sources */,
 				A10A9CCB239B37800049A0D2 /* AutomobileViewController.m in Sources */,
 				A10A9BFB239788680049A0D2 /* ShopHomeSectionView.m in Sources */,
 				A1DA9CCB239D25F500DD6666 /* CresTableViewCell.m in Sources */,
@@ -1614,6 +1635,7 @@
 				A14FB34223912608006A6511 /* ShopingCategoryViewController.m in Sources */,
 				A10A9C072397EC9C0049A0D2 /* RedPacketView.m in Sources */,
 				A14FB315238FE03A006A6511 /* HomeCellModel.m in Sources */,
+				A1FC4A8B239F27BB00AF3F57 /* CustomAlterView.m in Sources */,
 				A14FB3262390C6D1006A6511 /* CitylistViewController.m in Sources */,
 				A14FB311238FD2AC006A6511 /* HomeTableViewCell.m in Sources */,
 				A14FB2BE238F57AD006A6511 /* HUDManager.m in Sources */,

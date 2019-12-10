@@ -23,6 +23,7 @@ use_frameworks!
 	#pod 'UMCSecurityPlugins'
 	#pod 'UMCErrorCatch'
 	pod 'UMCPush'
+	pod 'QWAlertView'
 
 	pod 'UMCShare/UI'
 	pod 'UMCShare/Social/WeChat'
