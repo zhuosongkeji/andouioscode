@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "亲润孕妇化妆品套装BB霜遮瑕孕妇护肤品豆乳补水4件套 (洗面奶+爽肤水+乳液+BB霜)@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "亲润孕妇化妆品套装BB霜遮瑕孕妇护肤品豆乳补水4件套 (洗面奶+爽肤水+乳液+BB霜)@3x.png",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

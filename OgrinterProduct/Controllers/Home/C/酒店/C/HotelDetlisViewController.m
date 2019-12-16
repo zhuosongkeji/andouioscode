@@ -40,6 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     KAdd_Observer(@"leaveTop", self, changeScrollStatus, nil);
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -55,8 +56,7 @@
     self.mTableView.tableFooterView = [UILabel new];
     
     [self.mTableView registerNib:[UINib nibWithNibName:@"HotelDetilsTopViewCell" bundle:nil] forCellReuseIdentifier:@"HotelDetilsTopViewCell"];
-    
-    [self.mTableView registerNib:[UINib nibWithNibName:@"HotelBottomTableViewCell" bundle:nil] forCellReuseIdentifier:@"HotelBottomTableViewCell"];
+
     
     __weak typeof(self) weakSelf = self;
     self.mTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -118,6 +118,7 @@
     self.titleView = [[FSSegmentTitleView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 50) titles:HotelDetailsListArr delegate:self indicatorType:FSIndicatorTypeEqualTitle];
     
     self.titleView.backgroundColor = KSRGBA(255, 255, 255, 255);
+    
     return self.titleView;
 }
 
@@ -135,7 +136,8 @@
         _contentCell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
         
         if (!_contentCell) {
-            _contentCell = [[HotelBottomTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+            
+            _contentCell = [[HotelBottomTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell" withtype:HotelBottomTableViewCellTypeOne];
             _contentCell.contentView.backgroundColor = [UIColor redColor];
             
             NSMutableArray *contentVCs = [NSMutableArray array];

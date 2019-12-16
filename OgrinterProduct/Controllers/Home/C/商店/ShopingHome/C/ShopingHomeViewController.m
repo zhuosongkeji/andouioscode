@@ -8,7 +8,7 @@
 
 
 #import "ShopingHomeViewController.h"
-#import "ShopingShopViewController.h"
+#import "ShopSeckillDetailsViewController.h"
 #import "MDShockBannerView.h"
 #import "ShopHomeSectionView.h"
 #import "ShopHomeViewCell.h"
@@ -81,6 +81,7 @@
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     ShopHomeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShopHomeViewCell"];
     if (!cell) {
         NSLog(@"创建cell");
@@ -88,13 +89,14 @@
     
     [cell setEnumtype:MyEnumValueA];
     cell.itemBlock = ^(NSInteger idex, NSIndexPath *indexpath) {
-
-        ShopingShopViewController *shop = [[ShopingShopViewController alloc]init];
-        [self.navigationController pushViewController:shop animated:YES];
+        ShopSeckillDetailsViewController *seckill = [[ShopSeckillDetailsViewController alloc]init];
+        seckill.seckillType = ShopSeckillDetailsTypeOrder;
+        [self.navigationController pushViewController:seckill animated:YES];
         NSLog(@"%ld===%ld",idex,indexpath.section);
     };
     
     return cell;
+    
 }
 
 
@@ -112,7 +114,7 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 234*5+60;
+    return 234*3+40;
 }
 
 

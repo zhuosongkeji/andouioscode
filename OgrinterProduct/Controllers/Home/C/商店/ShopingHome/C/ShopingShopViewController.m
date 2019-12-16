@@ -25,37 +25,16 @@
 
 @property(nonatomic,strong)NSArray *rightArr;
 
-@property (nonatomic,strong)UIView *searchField;
-
 @property (nonatomic,strong)UIButton *searchBtn;
 
 @end
 
 @implementation ShopingShopViewController
 
-//MARK:-searchField
--(UIView *)searchField{
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
-    if (!_searchField) {
-        _searchField = [[UIView alloc] initWithFrame:CGRectMake(28, 7, KSCREEN_WIDTH-56, 30)];
-        _searchField.backgroundColor = KSRGBA(255, 255, 255, 1);
-        _searchField.layer.cornerRadius = 16;
-        
-        _searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_searchBtn setFrame:CGRectMake(16, 0, _searchField.width-32, 30)];
-        _searchBtn.titleLabel.font = [UIFont systemFontOfSize:12];
-        
-        [_searchBtn setTitle:searchplaceholder forState:0];
-        [_searchBtn setTitle:searchplaceholder forState:UIControlStateHighlighted];
-        [_searchBtn setTitleColor:[UIColor lightGrayColor] forState:0];
-        [_searchBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
-        
-        _searchBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        [_searchBtn addTarget:self action:@selector(searchaction) forControlEvents:UIControlEventTouchUpInside];
-        [_searchField addSubview:_searchBtn];
-    }
-    
-    return _searchField;
 }
 
 - (void)viewDidLoad {
@@ -68,91 +47,115 @@
     
     [self.rigthTableView registerNib:[UINib nibWithNibName:@"ShopHomeViewCell" bundle:nil] forCellReuseIdentifier:@"ShopHomeViewCell"];
     
-    self.navigationItem.titleView = self.searchField;
-    
     // Do any additional setup after loading the view from its nib.
 }
 
 
-//MARK:- table
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    if (tableView == self.rigthTableView) {
-        return [self.leftArr count];
-    }
+#pragma mark - tableView 数据源代理方法 -
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    if (tableView == self.leftTbleView) return [self.leftArr count];
     return 1;
 }
 
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (tableView == self.leftTbleView)
-        return self.leftArr.count;
-    else if (tableView == self.rigthTableView)
-        return 1;
-    else
-        return 0;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
+    if (tableView == self.leftTbleView) return 1;
+    return [self.leftArr count];
 }
 
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    // 左边的 view
     if (tableView == self.leftTbleView) {
+        
         static NSString *idfier = @"idfier";
+        
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idfier];
+        
         if (!cell) {
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:idfier];
+            
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
         }
-        cell.textLabel.text = [self.leftArr objectAtIndex:indexPath.row];
+        
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
-        cell.textLabel.font = [UIFont systemFontOfSize:14];
-        cell.textLabel.textColor = [UIColor lightGrayColor];
+        cell.textLabel.text = self.leftArr[indexPath.row];
         
         return cell;
+        // 右边的 view
+    } else {
         
-    }else if (tableView == self.rigthTableView){
-        ShopHomeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShopHomeViewCell"];
+       ShopHomeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShopHomeViewCell"];
+        
         if (!cell) {
-            NSLog(@"创建ShopHomeViewCell");
+            NSLog(@"xhuangjian");
         }
         
         [cell setEnumtype:MyEnumValueB];
-        cell.itemBlock = ^(NSInteger idex, NSIndexPath *indexpath) {
-            
-        };
         
         return cell;
         
-    }else {
-        
-        return nil;
     }
     
+    return nil;
 }
 
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (tableView == self.leftTbleView) {
-        [tableView deselectRowAtIndexPath:indexPath animated:NO];
-        [self.rigthTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath.row] animated:NO scrollPosition:UITableViewScrollPositionBottom];
-    }
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
+    if (tableView == self.rigthTableView) return [NSString stringWithFormat:@"第 %ld 组", section];
+    
+    return nil;
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (tableView == _leftTbleView) {
+    if (tableView == self.leftTbleView) {
         return 50;
     }
-    return KSCREEN_HEIGHT-2;
+    return 1300;
 }
 
 
-//MARK:- searchaction
--(void)searchaction {
-    SearchResrultViewController *result = [[SearchResrultViewController alloc]init];
-    result.type = SearchCollectionViewtypeTwo;
-    [self.navigationController pushViewController:result animated:YES];
+//MARK: - 一个方法就能搞定 右边滑动时跟左边的联动
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    // 如果是 左侧的 tableView 直接return
+    if (scrollView == self.leftTbleView) return;
+    
+    // 取出显示在 视图 且最靠上 的 cell 的 indexPath
+    NSIndexPath *topHeaderViewIndexpath = [[self.rigthTableView indexPathsForVisibleRows] firstObject];
+    
+    // 左侧 talbelView 移动的 indexPath
+    NSIndexPath *moveToIndexpath = [NSIndexPath indexPathForRow:topHeaderViewIndexpath.section inSection:0];
+    
+    // 移动 左侧 tableView 到 指定 indexPath 居中显示
+    [self.leftTbleView selectRowAtIndexPath:moveToIndexpath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+    
 }
+
+//MARK: - 点击 cell 的代理方法
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // 选中 左侧 的 tableView
+    if (tableView == self.leftTbleView) {
+        
+        NSIndexPath *moveToIndexPath = [NSIndexPath indexPathForRow:0 inSection:indexPath.row];
+        
+        // 将右侧 tableView 移动到指定位置
+        [self.rigthTableView selectRowAtIndexPath:moveToIndexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
+        
+        // 取消选中效果
+        [self.rigthTableView deselectRowAtIndexPath:moveToIndexPath animated:YES];
+    }
+}
+
+
+////MARK:- searchaction
+//-(void)searchaction {
+//    SearchResrultViewController *result = [[SearchResrultViewController alloc]init];
+//    result.type = SearchCollectionViewtypeTwo;
+//    [self.navigationController pushViewController:result animated:YES];
+//}
 
 
 //-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {

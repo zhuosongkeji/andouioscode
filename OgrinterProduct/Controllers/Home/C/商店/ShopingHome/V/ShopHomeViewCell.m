@@ -12,6 +12,7 @@
 #import "HXCollectionViewCell.h"
 #import "CaseCluessKeybordCollectionHeadView.h"
 
+
 @interface ShopHomeViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate>
 
 @property (nonatomic,strong)NSMutableArray *shops;
@@ -35,10 +36,10 @@
 
 -(void)setEnumtype:(MyEnum)enumtype{
     _enumtype = enumtype;
-    
     self.titArr = @[@"一类",@"二类",@"三类"];
     [self setup];
 }
+
 
 //MARK:- setup
 -(void)setup{
@@ -56,7 +57,7 @@
         //注册head
         [self.mCollectionView registerNib:[UINib nibWithNibName:@"CaseCluessKeybordCollectionHeadView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CaseCluessKeybordCollectionHeadView"];
     }else if (_enumtype == MyEnumValueB){
-        self.mCollectionView.scrollEnabled = YES;
+        self.mCollectionView.scrollEnabled = NO;
         [self.mCollectionView registerNib:[UINib nibWithNibName:@"HXCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"HXCollectionViewCell"];
         //注册head
         [self.mCollectionView registerNib:[UINib nibWithNibName:@"CaseCluessKeybordCollectionHeadView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CaseCluessKeybordCollectionHeadView"];
@@ -79,9 +80,17 @@
     }
 }
 
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    if (_enumtype == MyEnumValueA) {
+        return 6;
+    }else if (_enumtype == MyEnumValueB){
+        return 9;
+    }else{
+        return 0;
+    }
 }
+
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (_enumtype == MyEnumValueA) {

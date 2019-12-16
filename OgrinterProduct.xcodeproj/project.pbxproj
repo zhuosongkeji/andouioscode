@@ -109,8 +109,6 @@
 		A14FB3262390C6D1006A6511 /* CitylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FB3252390C6D1006A6511 /* CitylistViewController.m */; };
 		A14FB32A2390E6B1006A6511 /* HotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FB3282390E6B1006A6511 /* HotTableViewCell.m */; };
 		A14FB32E2390E74D006A6511 /* HotCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FB32D2390E74D006A6511 /* HotCollectionViewCell.m */; };
-		A14FB34223912608006A6511 /* ShopingCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FB34023912608006A6511 /* ShopingCategoryViewController.m */; };
-		A14FB34323912608006A6511 /* ShopingCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14FB34123912608006A6511 /* ShopingCategoryViewController.xib */; };
 		A14FB34A2391269B006A6511 /* ShopingHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FB3482391269B006A6511 /* ShopingHomeViewController.m */; };
 		A14FB34B2391269B006A6511 /* ShopingHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14FB3492391269B006A6511 /* ShopingHomeViewController.xib */; };
 		A14FB34F239126CB006A6511 /* ShoingMsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FB34D239126CB006A6511 /* ShoingMsgViewController.m */; };
@@ -143,6 +141,12 @@
 		A1DA9CCC239D25F500DD6666 /* CresTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DA9CCA239D25F500DD6666 /* CresTableViewCell.xib */; };
 		A1ECDEFD239B7A6E003D870D /* HotolListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1ECDEFB239B7A6E003D870D /* HotolListViewController.m */; };
 		A1ECDEFE239B7A6E003D870D /* HotolListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1ECDEFC239B7A6E003D870D /* HotolListViewController.xib */; };
+		A1F4DFE023A1D54F00B02880 /* ShopSeckillDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F4DFDE23A1D54F00B02880 /* ShopSeckillDetailsViewController.m */; };
+		A1F4DFE123A1D54F00B02880 /* ShopSeckillDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F4DFDF23A1D54F00B02880 /* ShopSeckillDetailsViewController.xib */; };
+		A1F4DFE523A1EB9B00B02880 /* SeckillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F4DFE323A1EB9B00B02880 /* SeckillTableViewCell.m */; };
+		A1F4DFE623A1EB9B00B02880 /* SeckillTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F4DFE423A1EB9B00B02880 /* SeckillTableViewCell.xib */; };
+		A1F4E03023A48E4F00B02880 /* ShopSeckillDetailsSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F4E02E23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.m */; };
+		A1F4E03123A48E4F00B02880 /* ShopSeckillDetailsSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F4E02F23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.xib */; };
 		A1FC4A8B239F27BB00AF3F57 /* CustomAlterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC4A8A239F27BB00AF3F57 /* CustomAlterView.m */; };
 		A1FC4A8D239F288E00AF3F57 /* CustomAlterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FC4A8C239F288E00AF3F57 /* CustomAlterView.xib */; };
 		A1FC4A94239F70E600AF3F57 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC4A92239F70E600AF3F57 /* PaySuccessViewController.m */; };
@@ -210,9 +214,9 @@
 		A10A9C262398E1490049A0D2 /* SearchResrultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResrultViewController.xib; sourceTree = "<group>"; };
 		A10A9C792399EF100049A0D2 /* SegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentView.m; sourceTree = "<group>"; };
 		A10A9C7B2399EF110049A0D2 /* SegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentView.h; sourceTree = "<group>"; };
-		A10A9C82239A24E30049A0D2 /* ShopingShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopingShopViewController.h; sourceTree = "<group>"; };
-		A10A9C83239A24E30049A0D2 /* ShopingShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopingShopViewController.m; sourceTree = "<group>"; };
-		A10A9C84239A24E30049A0D2 /* ShopingShopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopingShopViewController.xib; sourceTree = "<group>"; };
+		A10A9C82239A24E30049A0D2 /* ShopingShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ShopingShopViewController.h; path = ../ShopingHome/C/ShopingShopViewController.h; sourceTree = "<group>"; };
+		A10A9C83239A24E30049A0D2 /* ShopingShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ShopingShopViewController.m; path = ../ShopingHome/C/ShopingShopViewController.m; sourceTree = "<group>"; };
+		A10A9C84239A24E30049A0D2 /* ShopingShopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ShopingShopViewController.xib; path = ../ShopingHome/C/ShopingShopViewController.xib; sourceTree = "<group>"; };
 		A10A9C8C239A469A0049A0D2 /* CaseCluessKeybordCollectionHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaseCluessKeybordCollectionHeadView.h; sourceTree = "<group>"; };
 		A10A9C8D239A469A0049A0D2 /* CaseCluessKeybordCollectionHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseCluessKeybordCollectionHeadView.m; sourceTree = "<group>"; };
 		A10A9C8E239A469A0049A0D2 /* CaseCluessKeybordCollectionHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaseCluessKeybordCollectionHeadView.xib; sourceTree = "<group>"; };
@@ -339,9 +343,6 @@
 		A14FB3282390E6B1006A6511 /* HotTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotTableViewCell.m; sourceTree = "<group>"; };
 		A14FB32C2390E74D006A6511 /* HotCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotCollectionViewCell.h; sourceTree = "<group>"; };
 		A14FB32D2390E74D006A6511 /* HotCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotCollectionViewCell.m; sourceTree = "<group>"; };
-		A14FB33F23912608006A6511 /* ShopingCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopingCategoryViewController.h; sourceTree = "<group>"; };
-		A14FB34023912608006A6511 /* ShopingCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopingCategoryViewController.m; sourceTree = "<group>"; };
-		A14FB34123912608006A6511 /* ShopingCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopingCategoryViewController.xib; sourceTree = "<group>"; };
 		A14FB3472391269B006A6511 /* ShopingHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopingHomeViewController.h; sourceTree = "<group>"; };
 		A14FB3482391269B006A6511 /* ShopingHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopingHomeViewController.m; sourceTree = "<group>"; };
 		A14FB3492391269B006A6511 /* ShopingHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopingHomeViewController.xib; sourceTree = "<group>"; };
@@ -393,6 +394,15 @@
 		A1ECDEFA239B7A6E003D870D /* HotolListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotolListViewController.h; sourceTree = "<group>"; };
 		A1ECDEFB239B7A6E003D870D /* HotolListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotolListViewController.m; sourceTree = "<group>"; };
 		A1ECDEFC239B7A6E003D870D /* HotolListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotolListViewController.xib; sourceTree = "<group>"; };
+		A1F4DFDD23A1D54F00B02880 /* ShopSeckillDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopSeckillDetailsViewController.h; sourceTree = "<group>"; };
+		A1F4DFDE23A1D54F00B02880 /* ShopSeckillDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopSeckillDetailsViewController.m; sourceTree = "<group>"; };
+		A1F4DFDF23A1D54F00B02880 /* ShopSeckillDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopSeckillDetailsViewController.xib; sourceTree = "<group>"; };
+		A1F4DFE223A1EB9B00B02880 /* SeckillTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeckillTableViewCell.h; sourceTree = "<group>"; };
+		A1F4DFE323A1EB9B00B02880 /* SeckillTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeckillTableViewCell.m; sourceTree = "<group>"; };
+		A1F4DFE423A1EB9B00B02880 /* SeckillTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeckillTableViewCell.xib; sourceTree = "<group>"; };
+		A1F4E02D23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopSeckillDetailsSubViewController.h; sourceTree = "<group>"; };
+		A1F4E02E23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopSeckillDetailsSubViewController.m; sourceTree = "<group>"; };
+		A1F4E02F23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopSeckillDetailsSubViewController.xib; sourceTree = "<group>"; };
 		A1FC4A89239F27BB00AF3F57 /* CustomAlterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAlterView.h; sourceTree = "<group>"; };
 		A1FC4A8A239F27BB00AF3F57 /* CustomAlterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAlterView.m; sourceTree = "<group>"; };
 		A1FC4A8C239F288E00AF3F57 /* CustomAlterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlterView.xib; sourceTree = "<group>"; };
@@ -471,6 +481,9 @@
 				A10A9C8C239A469A0049A0D2 /* CaseCluessKeybordCollectionHeadView.h */,
 				A10A9C8D239A469A0049A0D2 /* CaseCluessKeybordCollectionHeadView.m */,
 				A10A9C8E239A469A0049A0D2 /* CaseCluessKeybordCollectionHeadView.xib */,
+				A1F4DFE223A1EB9B00B02880 /* SeckillTableViewCell.h */,
+				A1F4DFE323A1EB9B00B02880 /* SeckillTableViewCell.m */,
+				A1F4DFE423A1EB9B00B02880 /* SeckillTableViewCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -481,9 +494,12 @@
 				A14FB3472391269B006A6511 /* ShopingHomeViewController.h */,
 				A14FB3482391269B006A6511 /* ShopingHomeViewController.m */,
 				A14FB3492391269B006A6511 /* ShopingHomeViewController.xib */,
-				A10A9C82239A24E30049A0D2 /* ShopingShopViewController.h */,
-				A10A9C83239A24E30049A0D2 /* ShopingShopViewController.m */,
-				A10A9C84239A24E30049A0D2 /* ShopingShopViewController.xib */,
+				A1F4DFDD23A1D54F00B02880 /* ShopSeckillDetailsViewController.h */,
+				A1F4DFDE23A1D54F00B02880 /* ShopSeckillDetailsViewController.m */,
+				A1F4DFDF23A1D54F00B02880 /* ShopSeckillDetailsViewController.xib */,
+				A1F4E02D23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.h */,
+				A1F4E02E23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.m */,
+				A1F4E02F23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.xib */,
 				A10A9C242398E1490049A0D2 /* SearchResrultViewController.h */,
 				A10A9C252398E1490049A0D2 /* SearchResrultViewController.m */,
 				A10A9C262398E1490049A0D2 /* SearchResrultViewController.xib */,
@@ -1203,9 +1219,9 @@
 		A14FB33A23911D74006A6511 /* ShopingCategory */ = {
 			isa = PBXGroup;
 			children = (
-				A14FB33F23912608006A6511 /* ShopingCategoryViewController.h */,
-				A14FB34023912608006A6511 /* ShopingCategoryViewController.m */,
-				A14FB34123912608006A6511 /* ShopingCategoryViewController.xib */,
+				A10A9C82239A24E30049A0D2 /* ShopingShopViewController.h */,
+				A10A9C83239A24E30049A0D2 /* ShopingShopViewController.m */,
+				A10A9C84239A24E30049A0D2 /* ShopingShopViewController.xib */,
 			);
 			path = ShopingCategory;
 			sourceTree = "<group>";
@@ -1432,9 +1448,9 @@
 				A15DC0E8239E22BE008CF287 /* CresTwoTableViewCell.xib in Resources */,
 				A10A9CCC239B37800049A0D2 /* AutomobileViewController.xib in Resources */,
 				A10A9C02239791180049A0D2 /* ShopCollectionViewCell.xib in Resources */,
-				A14FB34323912608006A6511 /* ShopingCategoryViewController.xib in Resources */,
 				A10A9C90239A469A0049A0D2 /* CaseCluessKeybordCollectionHeadView.xib in Resources */,
 				A10A9C99239A57230049A0D2 /* HotelViewController.xib in Resources */,
+				A1F4E03123A48E4F00B02880 /* ShopSeckillDetailsSubViewController.xib in Resources */,
 				A10A9C202398A9C70049A0D2 /* MsgViewCell.xib in Resources */,
 				A14FB2EE238F6858006A6511 /* MsgViewController.xib in Resources */,
 				A14FB2E9238F683D006A6511 /* FindViewController.xib in Resources */,
@@ -1444,8 +1460,10 @@
 				A10A9C282398E1490049A0D2 /* SearchResrultViewController.xib in Resources */,
 				A14FB264238E0E50006A6511 /* Assets.xcassets in Resources */,
 				A14FB312238FD2AC006A6511 /* HomeTableViewCell.xib in Resources */,
+				A1F4DFE623A1EB9B00B02880 /* SeckillTableViewCell.xib in Resources */,
 				A14FB262238E0E4C006A6511 /* Main.storyboard in Resources */,
 				A14FB31C238FFA76006A6511 /* HXCollectionViewCell.xib in Resources */,
+				A1F4DFE123A1D54F00B02880 /* ShopSeckillDetailsViewController.xib in Resources */,
 				A1DA9CCC239D25F500DD6666 /* CresTableViewCell.xib in Resources */,
 				A1FC4A95239F70E600AF3F57 /* PaySuccessViewController.xib in Resources */,
 				A10A9CB1239B35F70049A0D2 /* TCShopingViewController.xib in Resources */,
@@ -1510,6 +1528,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/QWAlertView/QWAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
@@ -1521,6 +1540,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QWAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
@@ -1583,6 +1603,7 @@
 				A10A9CCB239B37800049A0D2 /* AutomobileViewController.m in Sources */,
 				A10A9BFB239788680049A0D2 /* ShopHomeSectionView.m in Sources */,
 				A1DA9CCB239D25F500DD6666 /* CresTableViewCell.m in Sources */,
+				A1F4DFE523A1EB9B00B02880 /* SeckillTableViewCell.m in Sources */,
 				A14FB34F239126CB006A6511 /* ShoingMsgViewController.m in Sources */,
 				A14FB2B7238F5788006A6511 /* FKHRequestOperation.m in Sources */,
 				A10A9BE7239764D70049A0D2 /* MDMaskView.m in Sources */,
@@ -1618,6 +1639,7 @@
 				A14FB25C238E0E4C006A6511 /* AppDelegate.m in Sources */,
 				A14FB2CE238F5F36006A6511 /* CustomBar.m in Sources */,
 				A14FB2A3238E4CDE006A6511 /* LoginViewController.m in Sources */,
+				A1F4E03023A48E4F00B02880 /* ShopSeckillDetailsSubViewController.m in Sources */,
 				A10A9C0A2397ED7A0049A0D2 /* PacketModel.m in Sources */,
 				A10A9C98239A57230049A0D2 /* HotelViewController.m in Sources */,
 				A10A9CDE239B38380049A0D2 /* loveLoadViewController.m in Sources */,
@@ -1632,7 +1654,6 @@
 				A10A9BF8239786E80049A0D2 /* UIView+MD.m in Sources */,
 				A14FB307238FC206006A6511 /* HQImagePageControl.m in Sources */,
 				A10A9C232398B16D0049A0D2 /* MsgModel.m in Sources */,
-				A14FB34223912608006A6511 /* ShopingCategoryViewController.m in Sources */,
 				A10A9C072397EC9C0049A0D2 /* RedPacketView.m in Sources */,
 				A14FB315238FE03A006A6511 /* HomeCellModel.m in Sources */,
 				A1FC4A8B239F27BB00AF3F57 /* CustomAlterView.m in Sources */,
@@ -1642,6 +1663,7 @@
 				A10A9CC2239B36FC0049A0D2 /* HousePropertyViewController.m in Sources */,
 				A10A9BEB239764D70049A0D2 /* MDBannerCollectionViewCell.m in Sources */,
 				A1ECDEFD239B7A6E003D870D /* HotolListViewController.m in Sources */,
+				A1F4DFE023A1D54F00B02880 /* ShopSeckillDetailsViewController.m in Sources */,
 				A15DC100239E3F04008CF287 /* OnlineBookingViewController.m in Sources */,
 				A14FB2E8238F683D006A6511 /* FindViewController.m in Sources */,
 				A10A9C7D2399EF120049A0D2 /* SegmentView.m in Sources */,

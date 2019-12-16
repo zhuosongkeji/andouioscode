@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -344,20 +343,22 @@
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Otb-dd-REZ">
-                        <rect key="frame" x="16" y="7" width="42" height="34"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层 5" translatesAutoresizingMaskIntoConstraints="NO" id="Otb-dd-REZ">
+                        <rect key="frame" x="16" y="11" width="32" height="26"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="34" id="7Zn-aq-vkQ"/>
-                            <constraint firstAttribute="width" constant="42" id="nVz-yw-UbM"/>
+                            <constraint firstAttribute="height" constant="26" id="7Zn-aq-vkQ"/>
+                            <constraint firstAttribute="width" constant="32" id="nVz-yw-UbM"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UL-xm-A2Z">
-                        <rect key="frame" x="288" y="16" width="16" height="16"/>
+                        <rect key="frame" x="276" y="10" width="28" height="28"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="16" id="eOo-I1-TfT"/>
-                            <constraint firstAttribute="width" constant="16" id="iXA-eC-ToY"/>
+                            <constraint firstAttribute="height" constant="28" id="eOo-I1-TfT"/>
+                            <constraint firstAttribute="width" constant="28" id="iXA-eC-ToY"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                        <state key="normal" image="椭圆 1 拷贝"/>
+                        <state key="selected" image="椭圆 1"/>
                     </button>
                 </subviews>
                 <constraints>
@@ -372,12 +373,16 @@
                 <constraint firstItem="Otb-dd-REZ" firstAttribute="centerY" secondItem="NFP-hm-Kcf" secondAttribute="centerY" id="cnl-MN-1SJ"/>
             </constraints>
             <connections>
+                <outlet property="ImgView" destination="Otb-dd-REZ" id="YIe-3r-QbP"/>
                 <outlet property="sectionTwotitle" destination="54n-fv-bZ8" id="839-e8-Xjx"/>
             </connections>
-            <point key="canvasLocation" x="138" y="467"/>
+            <point key="canvasLocation" x="138" y="471"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="5" width="45" height="33"/>
+        <image name="图层 5" width="25" height="16"/>
+        <image name="椭圆 1" width="10" height="10"/>
+        <image name="椭圆 1 拷贝" width="10" height="10"/>
     </resources>
 </document>

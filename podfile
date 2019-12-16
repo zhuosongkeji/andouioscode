@@ -24,6 +24,7 @@ use_frameworks!
 	#pod 'UMCErrorCatch'
 	pod 'UMCPush'
 	pod 'QWAlertView'
+	pod 'SDCycleScrollView'
 
 	pod 'UMCShare/UI'
 	pod 'UMCShare/Social/WeChat'

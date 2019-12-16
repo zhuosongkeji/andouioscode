@@ -9,7 +9,7 @@
 
 #import "ShopingViewController.h"
 #import "ShopingHomeViewController.h"
-#import "ShopingCategoryViewController.h"
+#import "ShopingShopViewController.h"
 #import "ShoingMsgViewController.h"
 #import "ShoingMineViewController.h"
 #import "SearchResrultViewController.h"
@@ -23,7 +23,7 @@
 
 @property (nonatomic,strong)ShopingHomeViewController *ShopingHomeVc;
 
-@property (nonatomic,strong)ShopingCategoryViewController *ShopingCategoryVc;
+@property (nonatomic,strong)ShopingShopViewController *ShopingCategoryVc;
 @property (nonatomic,strong)ShoingMsgViewController *ShoingMsgVc;
 @property (nonatomic,strong)ShoingMineViewController *ShoingMineVc;
 
@@ -32,6 +32,7 @@
 @property (nonatomic,strong)UIButton *searchBtn;
 
 @property (nonatomic) NSInteger HHR;
+@property (nonatomic) NSInteger index;
 
 @end
 
@@ -93,6 +94,7 @@
 
 //MARK:-segmentView
 - (void)segmentView:(SegmentView *)segmentView didSelectedSegmentAtIndex:(NSInteger)index {
+    self.index = index;
     if (index == 0) {
         if (!_ShopingHomeVc) {
             _ShopingHomeVc = [[ShopingHomeViewController alloc] init];
@@ -112,11 +114,13 @@
         
     } else if (index == 1){
         if (!_ShopingCategoryVc) {
-            _ShopingCategoryVc = [[ShopingCategoryViewController alloc] init];
+            _ShopingCategoryVc = [[ShopingShopViewController alloc] init];
         }
         CGRect frame = CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT - kStatusBarAndNavigationBarH-kStatuTabBarH);
         [self setupChildViewController:_ShopingCategoryVc frame:frame title:TowTabBarData[1]];
-        [_searchField setHidden:YES];
+        if (_searchField && _searchField.isHidden == YES) {
+            [_searchField setHidden:NO];
+        }
     }else if (index == 2){
         if (!_ShoingMsgVc) {
             _ShoingMsgVc = [[ShoingMsgViewController alloc] init];
@@ -138,7 +142,12 @@
 //MARK:- searchaction
 -(void)searchaction {
     SearchResrultViewController *result = [[SearchResrultViewController alloc]init];
-    result.type = SearchCollectionViewtypeOne;
+    if (self.index == 0) {
+        result.type = SearchCollectionViewtypeOne;
+    }else if (self.index == 1){
+        result.type = SearchCollectionViewtypeTwo;
+    }else {}
+    
     [self.navigationController pushViewController:result animated:YES];
 }
 

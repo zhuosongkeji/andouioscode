@@ -6,6 +6,14 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+typedef enum : NSUInteger {
+    
+    HotelBottomTableViewCellTypeOne,
+    HotelBottomTableViewCellTypeTwo,
+    HotelBottomTableViewCellTypeThrid,
+    
+} HotelBottomTableViewCellType;
+
 #import <UIKit/UIKit.h>
 #import "FSScrollContentView.h"
 
@@ -20,6 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *currentTagStr;
 
+@property (nonatomic)HotelBottomTableViewCellType cellType;
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withtype:(HotelBottomTableViewCellType)type;
 
 @end
 

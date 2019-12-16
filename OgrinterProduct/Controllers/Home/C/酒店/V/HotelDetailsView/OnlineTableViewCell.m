@@ -12,6 +12,7 @@
 @interface OnlineTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *sectionTwotitle;
+@property (weak, nonatomic) IBOutlet UIImageView *ImgView;
 
 
 @end
@@ -62,6 +63,7 @@
     
     if (indexPath.section == 1) {
         cell.sectionTwotitle.text = OnlineTitle[indexPath.row];
+        cell.ImgView.image = [UIImage imageNamed:OnlineImg[indexPath.row]];
     }
     
     return cell;

@@ -44,6 +44,7 @@
 
 -(void)setup{
     
+    self.SubViewOnemTableView.tableFooterView = [UILabel new];
     if ([self.title isEqualToString:HotelDetailsListArr[0]]) {
         [self reserve];
         [self createBottomView];
@@ -90,7 +91,6 @@
 //MARK:-预定
 -(void)reserve{
     
-    self.SubViewOnemTableView.tableFooterView = [UILabel new];
     [self.SubViewOnemTableView registerNib:[UINib nibWithNibName:@"CresTableViewCell" bundle:nil] forCellReuseIdentifier:@"CresTableViewCell"];
     
     __weak typeof(self) weakSelf = self;
@@ -102,7 +102,7 @@
 
 //MARK:- comment
 -(void)comment {
-    self.SubViewOnemTableView.tableFooterView = [UILabel new];
+
     [self.SubViewOnemTableView registerNib:[UINib nibWithNibName:@"CresTwoTableViewCell" bundle:nil] forCellReuseIdentifier:@"CresTwoTableViewCell"];
     
     __weak typeof(self) weakSelf = self;
@@ -115,14 +115,13 @@
 //MARK:- introduce
 -(void)introduce {
     
-    self.SubViewOnemTableView.tableFooterView = [UILabel new];
     [self.SubViewOnemTableView registerNib:[UINib nibWithNibName:@"CresThirdTableViewCell" bundle:nil] forCellReuseIdentifier:@"CresThirdTableViewCell"];
 }
 
 
 //MARK:- 环境设施
 -(void)environmental {
-    self.SubViewOnemTableView.tableFooterView = [UILabel new];
+    
     [self.SubViewOnemTableView registerNib:[UINib nibWithNibName:@"CresFouthTableViewCell" bundle:nil] forCellReuseIdentifier:@"CresFouthTableViewCell"];
 }
 
@@ -252,6 +251,7 @@
     self.SubViewOnemTableView.showsVerticalScrollIndicator = _vcCanScroll?YES:NO;
 }
 
+
 //MARK:- view消失
 -(void)dissView{
     
@@ -259,7 +259,9 @@
         _bottomView.frame = CGRectMake(0, KSCREEN_HEIGHT, KSCREEN_WIDTH, bottomH);
         [self.bjbtn setHidden:YES];
     }];
+    
 }
+
 
 -(void)showView{
     [UIView animateWithDuration:0.3 animations:^{
