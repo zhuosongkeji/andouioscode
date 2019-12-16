@@ -55,7 +55,6 @@
 - (void)configTempCellWith:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case 0:{
-           
             break;
         }
             

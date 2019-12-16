@@ -12,6 +12,7 @@
 #import "ZBNReChargeDetailVC.h"
 #import "ZBNSegmenBarVC.h"
 #import "ZBNCashWithDrawalVC.h"
+#import "ZBNWalletRechargeVC.h"
 
 @interface ZBNMyWalletVC ()
 
@@ -58,8 +59,8 @@
     self.headView = headV;
     ADWeakSelf;
     self.headView.cashWithDrawalBtnClickTask = ^{
-        ZBNCashWithDrawalVC *vc = [[ZBNCashWithDrawalVC alloc] init];
-        [weakSelf.navigationController pushViewController:vc animated:YES];
+        ZBNWalletRechargeVC *reVc = [[ZBNWalletRechargeVC alloc] init];
+        [self.navigationController pushViewController:reVc animated:YES];
     };
 }
 
@@ -70,7 +71,7 @@
     self.segmentBarVC.view.frame = CGRectMake(0, 140, self.view.width, self.view.height-64);
     [self.view addSubview:self.segmentBarVC.view];
     //添加控制器
-    NSArray *items = @[@"余额明细", @"提现明细"];
+    NSArray *items = @[@"消费明细", @"充值明细"];
 
     ZBNCostVC *vc1 = [[ZBNCostVC alloc] init];
     

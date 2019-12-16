@@ -34,6 +34,7 @@
     self.rechargeBtnView.layer.cornerRadius = 10;
     self.rechargeBtnView.layer.borderWidth = 1;
     self.rechargeBtnView.layer.borderColor = [UIColor whiteColor].CGColor;
+    
 }
 
 @end

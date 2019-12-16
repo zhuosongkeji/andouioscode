@@ -29,7 +29,7 @@
                                 <constraint firstAttribute="height" constant="30" id="mbU-VT-qdn"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="余额提现">
+                            <state key="normal" title="余额充值">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>

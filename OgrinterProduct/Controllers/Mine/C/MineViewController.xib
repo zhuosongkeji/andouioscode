@@ -35,14 +35,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQx-C9-vmo">
                                 <rect key="frame" x="0.0" y="131" width="414" height="52"/>
                                 <subviews>
-                                    <button opaque="NO" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vy5-6i-Ezy">
+                                    <button opaque="NO" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vy5-6i-Ezy" customClass="Img_lable">
                                         <rect key="frame" x="29" y="2" width="46" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="4GG-Wr-oAE"/>
                                             <constraint firstAttribute="height" constant="46" id="nlE-9P-CeN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <state key="normal" title="商家订单">
+                                        <state key="normal" title="商家订单" image="美食预约">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -59,14 +59,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="301" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69k-hp-LLT">
+                                    <button opaque="NO" tag="301" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69k-hp-LLT" customClass="Img_lable">
                                         <rect key="frame" x="132.5" y="2" width="46" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="Etn-ay-PhN"/>
                                             <constraint firstAttribute="width" constant="46" id="PFQ-cz-Q1Q"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <state key="normal" title="酒店订单">
+                                        <state key="normal" title="酒店订单" image="酒店预订">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -80,14 +80,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="302" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jP7-ew-Zhe">
+                                    <button opaque="NO" tag="302" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jP7-ew-Zhe" customClass="Img_lable">
                                         <rect key="frame" x="236" y="2" width="46" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="5ag-CY-hi2"/>
                                             <constraint firstAttribute="height" constant="46" id="fQi-Tu-8dz"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <state key="normal" title="饭店订单">
+                                        <state key="normal" title="饭店订单" image="商城订单">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -151,14 +151,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywo-h1-zL2">
                                 <rect key="frame" x="0.0" y="191" width="414" height="256"/>
                                 <subviews>
-                                    <button opaque="NO" tag="500" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0s-Fv-e4V">
+                                    <button opaque="NO" tag="500" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0s-Fv-e4V" customClass="Img_lable">
                                         <rect key="frame" x="20" y="2" width="64" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="dCb-I5-Ud8"/>
                                             <constraint firstAttribute="height" constant="60" id="tBK-A0-ETL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="邀请有礼">
+                                        <state key="normal" title="邀请有礼" image="商家入驻">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -175,12 +175,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="501" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bn6-OS-mo9">
+                                    <button opaque="NO" tag="501" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bn6-OS-mo9" customClass="Img_lable">
                                         <rect key="frame" x="123.5" y="2" width="64" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="我的钱包">
+                                        <state key="normal" title="我的钱包" image="我的钱包">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bottomViewBtnClick:" destination="-1" eventType="touchUpInside" id="bbn-iO-tA0"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygf-R1-jHf">
                                         <rect key="frame" x="103.5" y="246" width="103.5" height="10"/>
@@ -189,12 +192,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="502" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4n-RR-J09">
+                                    <button opaque="NO" tag="502" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4n-RR-J09" customClass="Img_lable">
                                         <rect key="frame" x="227" y="2" width="64" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="我的发布">
+                                        <state key="normal" title="我的发布" image="我的发布">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bottomViewBtnClick:" destination="-1" eventType="touchUpInside" id="PLM-lo-i4O"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BJ-Ie-24r">
                                         <rect key="frame" x="207" y="246" width="103.5" height="10"/>
@@ -203,12 +209,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="503" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49x-3Q-6dr">
+                                    <button opaque="NO" tag="503" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49x-3Q-6dr" customClass="Img_lable">
                                         <rect key="frame" x="330.5" y="2" width="64" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="我的贴吧">
+                                        <state key="normal" title="我的贴吧" image="我的贴吧">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bottomViewBtnClick:" destination="-1" eventType="touchUpInside" id="41H-mT-Piw"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnQ-Fy-wXC">
                                         <rect key="frame" x="310.5" y="246" width="103.5" height="10"/>
@@ -217,92 +226,122 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="504" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Dh-85-s5o">
+                                    <button opaque="NO" tag="504" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Dh-85-s5o" customClass="Img_lable">
                                         <rect key="frame" x="20" y="66" width="64" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Fo0-rT-Qrb"/>
                                             <constraint firstAttribute="width" constant="64" id="K5o-tA-HOb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="购物车">
+                                        <state key="normal" title="购物车" image="购物车">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bottomViewBtnClick:" destination="-1" eventType="touchUpInside" id="bEj-z2-EPj"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="505" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuP-Yl-YaU">
+                                    <button opaque="NO" tag="505" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuP-Yl-YaU" customClass="Img_lable">
                                         <rect key="frame" x="123.5" y="66" width="64" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="我的收藏">
+                                        <state key="normal" title="我的收藏" image="我的收藏">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bottomViewBtnClick:" destination="-1" eventType="touchUpInside" id="8pf-qM-im0"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="506" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3b-eD-Hjx">
+                                    <button opaque="NO" tag="506" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3b-eD-Hjx" customClass="Img_lable">
                                         <rect key="frame" x="227" y="66" width="64" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="浏览痕迹">
+                                        <state key="normal" title="浏览痕迹" image="浏览痕迹">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bottomViewBtnClick:" destination="-1" eventType="touchUpInside" id="Ph1-Iy-aDh"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="507" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osy-mD-Xbb">
+                                    <button opaque="NO" tag="507" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osy-mD-Xbb" customClass="Img_lable">
                                         <rect key="frame" x="330.5" y="66" width="64" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="我的地址">
+                                        <state key="normal" title="我的地址" image="我的地址">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bottomViewBtnClick:" destination="-1" eventType="touchUpInside" id="lmC-vJ-H1Y"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="508" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwM-9L-uNO">
+                                    <button opaque="NO" tag="508" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwM-9L-uNO" customClass="Img_lable">
                                         <rect key="frame" x="20" y="130" width="64" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="9Zq-Td-h0V"/>
                                             <constraint firstAttribute="height" constant="60" id="XeA-hl-ztt"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="我的积分">
+                                        <state key="normal" title="我的积分" image="我的积分">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bottomViewBtnClick:" destination="-1" eventType="touchUpInside" id="qie-UZ-35P"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="509" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFk-iT-RQv">
+                                    <button opaque="NO" tag="509" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFk-iT-RQv" customClass="Img_lable">
                                         <rect key="frame" x="123.5" y="130" width="64" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="我的消息">
+                                        <state key="normal" title="我的消息" image="我的消息">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bottomViewBtnClick:" destination="-1" eventType="touchUpInside" id="wmt-2F-ucd"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="510" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIH-g2-ii5">
+                                    <button opaque="NO" tag="510" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIH-g2-ii5" customClass="Img_lable">
                                         <rect key="frame" x="227" y="130" width="64" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="商家入驻">
+                                        <state key="normal" title="商家入驻" image="商家入驻">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bottomViewBtnClick:" destination="-1" eventType="touchUpInside" id="2N4-c7-h3y"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="511" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LnF-9K-Rny">
+                                    <button opaque="NO" tag="511" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LnF-9K-Rny" customClass="Img_lable">
                                         <rect key="frame" x="330.5" y="130" width="64" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="成为配送员">
+                                        <state key="normal" title="成为配送员" image="成为配送员">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bottomViewBtnClick:" destination="-1" eventType="touchUpInside" id="1FO-xh-jZ7"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="512" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bpe-pA-zzv">
+                                    <button opaque="NO" tag="512" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bpe-pA-zzv" customClass="Img_lable">
                                         <rect key="frame" x="20" y="194" width="64" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="UvC-bg-4np"/>
                                             <constraint firstAttribute="height" constant="60" id="s3v-og-CEM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="下载APP">
+                                        <state key="normal" title="下载APP" image="商城订单">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bottomViewBtnClick:" destination="-1" eventType="touchUpInside" id="Vzo-pJ-yEx"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="513" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNd-AT-LNx" userLabel="操作视频">
+                                    <button opaque="NO" tag="513" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNd-AT-LNx" userLabel="操作视频" customClass="Img_lable">
                                         <rect key="frame" x="123.5" y="194" width="64" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="我的直播">
+                                        <state key="normal" title="操作视频" image="操作视频">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bottomViewBtnClick:" destination="-1" eventType="touchUpInside" id="qr2-OF-KqM"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwp-dx-c45" userLabel="我的直播">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwp-dx-c45" userLabel="我的直播">
                                         <rect key="frame" x="227" y="194" width="64" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="操作视频">
+                                        <state key="normal" title="我的直播">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
@@ -417,7 +456,24 @@
                 <constraint firstAttribute="trailing" secondItem="kGP-dV-NOj" secondAttribute="trailing" id="JYB-Ix-DuZ"/>
                 <constraint firstAttribute="bottom" secondItem="kGP-dV-NOj" secondAttribute="bottom" id="vmt-1l-new"/>
             </constraints>
-            <point key="canvasLocation" x="-23222" y="1280"/>
+            <point key="canvasLocation" x="-24580" y="1195"/>
         </view>
     </objects>
+    <resources>
+        <image name="商城订单" width="25" height="24"/>
+        <image name="商家入驻" width="25" height="24"/>
+        <image name="成为配送员" width="29" height="25"/>
+        <image name="我的发布" width="27" height="27"/>
+        <image name="我的地址" width="21" height="26"/>
+        <image name="我的收藏" width="26" height="24"/>
+        <image name="我的消息" width="25" height="24"/>
+        <image name="我的积分" width="29" height="24"/>
+        <image name="我的贴吧" width="26" height="25"/>
+        <image name="我的钱包" width="23" height="27"/>
+        <image name="操作视频" width="28" height="24"/>
+        <image name="浏览痕迹" width="23" height="25"/>
+        <image name="美食预约" width="30" height="25"/>
+        <image name="购物车" width="30" height="25"/>
+        <image name="酒店预订" width="26" height="24"/>
+    </resources>
 </document>
