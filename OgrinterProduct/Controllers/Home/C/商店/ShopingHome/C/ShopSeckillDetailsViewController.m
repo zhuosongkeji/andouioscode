@@ -6,12 +6,16 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+
 #import "ShopSeckillDetailsViewController.h"
 #import "ShopSeckillDetailsSubViewController.h"
+#import "ShopShopkeeperViewController.h"
+#import "QCouponView.h"
 #import "SeckillTableViewCell.h"
 #import "HotelBottomTableViewCell.h"
 #import "FSScrollContentView.h"
 #import "SDCycleScrollView.h"
+
 
 
 @interface ShopSeckillDetailsViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate,FSPageContentViewDelegate,FSSegmentTitleViewDelegate>
@@ -40,10 +44,23 @@
 
 @property (nonatomic,strong)NSArray *VcStrArr;
 
+@property (nonatomic,strong) QCouponView *couponView;
+
 @end
+
 
 @implementation ShopSeckillDetailsViewController
 
+
+//MARK:- couponView
+-(QCouponView *)couponView{
+    if (!_couponView) {
+        _couponView = [[[NSBundle mainBundle]loadNibNamed:@"QCouponView" owner:self options:nil]lastObject];
+        [_couponView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 2*(KSCREEN_HEIGHT/3))];
+    }
+    
+    return _couponView;
+}
 
 
 - (void)viewDidLoad {
@@ -148,6 +165,16 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     // 取消Cell的选中状态
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    if (indexPath.section == 0) {
+        if (indexPath.row == 2) {
+            [self arterShow];
+        }else if (indexPath.row == 3){
+            
+            ShopShopkeeperViewController *shoper = [[ShopShopkeeperViewController alloc]init];
+            [self.navigationController pushViewController:shoper animated:YES];
+        }
+    }
 }
 
 
@@ -222,6 +249,16 @@
         }
     }
     self.mTableView.showsVerticalScrollIndicator = _canScroll?YES:NO;
+}
+
+
+-(void)arterShow{
+    KPreventRepeatClickTime(1)
+    [[QWAlertView sharedMask] show:self.couponView withType:QWAlertViewStyleAlert animationFinish:^{
+        
+    } dismissHandle:^{
+       
+    }];
 }
 
 

@@ -137,6 +137,12 @@
 		A15DC106239E41D4008CF287 /* HotelDetailsBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15DC105239E41D4008CF287 /* HotelDetailsBottomView.xib */; };
 		A15DC10A239E60FD008CF287 /* OnlineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A15DC108239E60FD008CF287 /* OnlineTableViewCell.m */; };
 		A15DC10B239E60FD008CF287 /* OnlineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15DC109239E60FD008CF287 /* OnlineTableViewCell.xib */; };
+		A1CE7CC923A77EB900C22C41 /* QCouponView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE7CC323A77EB800C22C41 /* QCouponView.m */; };
+		A1CE7CCA23A77EB900C22C41 /* QCouponView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CE7CC523A77EB800C22C41 /* QCouponView.xib */; };
+		A1CE7CCB23A77EB900C22C41 /* QCouponTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE7CC623A77EB900C22C41 /* QCouponTableViewCell.m */; };
+		A1CE7CCC23A77EB900C22C41 /* QCouponTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CE7CC723A77EB900C22C41 /* QCouponTableViewCell.xib */; };
+		A1CE7CD023A781AF00C22C41 /* ShopShopkeeperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE7CCE23A781AF00C22C41 /* ShopShopkeeperViewController.m */; };
+		A1CE7CD123A781AF00C22C41 /* ShopShopkeeperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CE7CCF23A781AF00C22C41 /* ShopShopkeeperViewController.xib */; };
 		A1DA9CCB239D25F500DD6666 /* CresTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DA9CC9239D25F500DD6666 /* CresTableViewCell.m */; };
 		A1DA9CCC239D25F500DD6666 /* CresTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DA9CCA239D25F500DD6666 /* CresTableViewCell.xib */; };
 		A1ECDEFD239B7A6E003D870D /* HotolListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1ECDEFB239B7A6E003D870D /* HotolListViewController.m */; };
@@ -496,6 +502,15 @@
 		A15DC107239E60FD008CF287 /* OnlineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlineTableViewCell.h; sourceTree = "<group>"; };
 		A15DC108239E60FD008CF287 /* OnlineTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnlineTableViewCell.m; sourceTree = "<group>"; };
 		A15DC109239E60FD008CF287 /* OnlineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineTableViewCell.xib; sourceTree = "<group>"; };
+		A1CE7CC323A77EB800C22C41 /* QCouponView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCouponView.m; sourceTree = "<group>"; };
+		A1CE7CC423A77EB800C22C41 /* QCouponTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCouponTableViewCell.h; sourceTree = "<group>"; };
+		A1CE7CC523A77EB800C22C41 /* QCouponView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QCouponView.xib; sourceTree = "<group>"; };
+		A1CE7CC623A77EB900C22C41 /* QCouponTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCouponTableViewCell.m; sourceTree = "<group>"; };
+		A1CE7CC723A77EB900C22C41 /* QCouponTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QCouponTableViewCell.xib; sourceTree = "<group>"; };
+		A1CE7CC823A77EB900C22C41 /* QCouponView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCouponView.h; sourceTree = "<group>"; };
+		A1CE7CCD23A781AF00C22C41 /* ShopShopkeeperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopShopkeeperViewController.h; sourceTree = "<group>"; };
+		A1CE7CCE23A781AF00C22C41 /* ShopShopkeeperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopShopkeeperViewController.m; sourceTree = "<group>"; };
+		A1CE7CCF23A781AF00C22C41 /* ShopShopkeeperViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopShopkeeperViewController.xib; sourceTree = "<group>"; };
 		A1DA9CC8239D25F500DD6666 /* CresTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CresTableViewCell.h; sourceTree = "<group>"; };
 		A1DA9CC9239D25F500DD6666 /* CresTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CresTableViewCell.m; sourceTree = "<group>"; };
 		A1DA9CCA239D25F500DD6666 /* CresTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CresTableViewCell.xib; sourceTree = "<group>"; };
@@ -775,6 +790,12 @@
 				A1F4DFE223A1EB9B00B02880 /* SeckillTableViewCell.h */,
 				A1F4DFE323A1EB9B00B02880 /* SeckillTableViewCell.m */,
 				A1F4DFE423A1EB9B00B02880 /* SeckillTableViewCell.xib */,
+				A1CE7CC423A77EB800C22C41 /* QCouponTableViewCell.h */,
+				A1CE7CC623A77EB900C22C41 /* QCouponTableViewCell.m */,
+				A1CE7CC723A77EB900C22C41 /* QCouponTableViewCell.xib */,
+				A1CE7CC823A77EB900C22C41 /* QCouponView.h */,
+				A1CE7CC323A77EB800C22C41 /* QCouponView.m */,
+				A1CE7CC523A77EB800C22C41 /* QCouponView.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -791,6 +812,9 @@
 				A1F4E02D23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.h */,
 				A1F4E02E23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.m */,
 				A1F4E02F23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.xib */,
+				A1CE7CCD23A781AF00C22C41 /* ShopShopkeeperViewController.h */,
+				A1CE7CCE23A781AF00C22C41 /* ShopShopkeeperViewController.m */,
+				A1CE7CCF23A781AF00C22C41 /* ShopShopkeeperViewController.xib */,
 				A10A9C242398E1490049A0D2 /* SearchResrultViewController.h */,
 				A10A9C252398E1490049A0D2 /* SearchResrultViewController.m */,
 				A10A9C262398E1490049A0D2 /* SearchResrultViewController.xib */,
@@ -2215,11 +2239,13 @@
 				F476A46223A7682B00E3018A /* ZBNOrderDetailCellThree.xib in Resources */,
 				F476A44F23A7682B00E3018A /* ZBNSuccessfulWthdrawalsVC.xib in Resources */,
 				A1DA9CCC239D25F500DD6666 /* CresTableViewCell.xib in Resources */,
+				A1CE7CD123A781AF00C22C41 /* ShopShopkeeperViewController.xib in Resources */,
 				A1FC4A95239F70E600AF3F57 /* PaySuccessViewController.xib in Resources */,
 				A10A9CB1239B35F70049A0D2 /* TCShopingViewController.xib in Resources */,
 				F476A49123A7682C00E3018A /* ZBNEntryCellThree.xib in Resources */,
 				A10A9CBA239B368B0049A0D2 /* BusinessCoursesViewController.xib in Resources */,
 				A15DC0BF239DD52D008CF287 /* HotelDetlisViewController.xib in Resources */,
+				A1CE7CCA23A77EB900C22C41 /* QCouponView.xib in Resources */,
 				F476A49823A7682C00E3018A /* ZBNMyIntegerHeadView.xib in Resources */,
 				A1FC4A8D239F288E00AF3F57 /* CustomAlterView.xib in Resources */,
 				F476A46E23A7682B00E3018A /* ZBNOrderTextView.xib in Resources */,
@@ -2230,6 +2256,7 @@
 				A14FB2E4238F682A006A6511 /* MineViewController.xib in Resources */,
 				A14FB2F6238F6A84006A6511 /* HomeViewController.xib in Resources */,
 				F476A46923A7682B00E3018A /* ZBNOrderDetailCellOne.xib in Resources */,
+				A1CE7CCC23A77EB900C22C41 /* QCouponTableViewCell.xib in Resources */,
 				A14FB355239126E5006A6511 /* ShoingMineViewController.xib in Resources */,
 				A10A9C86239A24E30049A0D2 /* ShopingShopViewController.xib in Resources */,
 			);
@@ -2338,6 +2365,7 @@
 				F476A49723A7682C00E3018A /* ZBNMyIntegerHeadView.m in Sources */,
 				A10A9CCB239B37800049A0D2 /* AutomobileViewController.m in Sources */,
 				A10A9BFB239788680049A0D2 /* ShopHomeSectionView.m in Sources */,
+				A1CE7CD023A781AF00C22C41 /* ShopShopkeeperViewController.m in Sources */,
 				A1DA9CCB239D25F500DD6666 /* CresTableViewCell.m in Sources */,
 				A1F4DFE523A1EB9B00B02880 /* SeckillTableViewCell.m in Sources */,
 				A14FB34F239126CB006A6511 /* ShoingMsgViewController.m in Sources */,
@@ -2411,9 +2439,11 @@
 				F476A47523A7682B00E3018A /* ZBNRestaurantWaitEvaluateVC.m in Sources */,
 				F476A4AA23A7683200E3018A /* ZBNSegmenBar.m in Sources */,
 				F476A47423A7682B00E3018A /* ZBNBaseOrderVC.m in Sources */,
+				A1CE7CCB23A77EB900C22C41 /* QCouponTableViewCell.m in Sources */,
 				F476A47D23A7682C00E3018A /* ZBNHotelOrderVC.m in Sources */,
 				A1F4E03023A48E4F00B02880 /* ShopSeckillDetailsSubViewController.m in Sources */,
 				F476A48323A7682C00E3018A /* ZBNShopingCartVC.m in Sources */,
+				A1CE7CC923A77EB900C22C41 /* QCouponView.m in Sources */,
 				F476A49B23A7682C00E3018A /* InviteCourtesyVC.m in Sources */,
 				A10A9C0A2397ED7A0049A0D2 /* PacketModel.m in Sources */,
 				A10A9C98239A57230049A0D2 /* HotelViewController.m in Sources */,
