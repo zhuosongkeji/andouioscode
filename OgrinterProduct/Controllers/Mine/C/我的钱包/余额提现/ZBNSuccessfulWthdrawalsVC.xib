@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZBNSuccessfulWthdrawalsVC">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNU-ki-o4K">
+                    <rect key="frame" x="137.5" y="313.5" width="100" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwg-GU-1pu">
+                            <rect key="frame" x="-157" y="-389" width="414" height="818"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="我的钱包"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="FOe-Pf-Mlh"/>
+                        <constraint firstAttribute="height" constant="40" id="zzP-Co-aOj"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提现申请以成功,请等待后台审核" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIV-eZ-sdo">
+                    <rect key="frame" x="63.5" y="267.5" width="248" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提现申请已成功" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPu-AG-DoS">
+                    <rect key="frame" x="109.5" y="226" width="156.5" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="多边形 1 拷贝 3" translatesAutoresizingMaskIntoConstraints="NO" id="d4C-O1-g3q">
+                    <rect key="frame" x="127.5" y="136" width="120" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="flo-Kf-IGS"/>
+                        <constraint firstAttribute="height" constant="60" id="gmx-ep-rUw"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="QIV-eZ-sdo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1wA-cY-CJk"/>
+                <constraint firstItem="PPu-AG-DoS" firstAttribute="top" secondItem="d4C-O1-g3q" secondAttribute="bottom" constant="30" id="6He-se-OjL"/>
+                <constraint firstItem="PPu-AG-DoS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="g8a-E4-h4w"/>
+                <constraint firstItem="UNU-ki-o4K" firstAttribute="top" secondItem="QIV-eZ-sdo" secondAttribute="bottom" constant="25" id="hW4-QJ-dYT"/>
+                <constraint firstItem="d4C-O1-g3q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nk9-UL-uPm"/>
+                <constraint firstItem="UNU-ki-o4K" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="opV-XM-Swc"/>
+                <constraint firstItem="QIV-eZ-sdo" firstAttribute="top" secondItem="PPu-AG-DoS" secondAttribute="bottom" constant="15" id="pmb-ed-hkl"/>
+                <constraint firstItem="UNU-ki-o4K" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zav-1s-RMN"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="39" y="-79"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="多边形 1 拷贝 3" width="69" height="36"/>
+    </resources>
+</document>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZBNShopingCartVC">
+            <connections>
+                <outlet property="buyButton" destination="CgW-He-5Ie" id="tAo-SS-WP6"/>
+                <outlet property="tableView" destination="WDz-HB-2wK" id="alg-Tq-erZ"/>
+                <outlet property="totalPriceLabel" destination="qnw-xE-FAz" id="Zta-p1-pyX"/>
+                <outlet property="view" destination="zbi-Fl-mIu" id="o3K-cZ-ahP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="zbi-Fl-mIu">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WDz-HB-2wK">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="1KA-fI-k5r"/>
+                        <outlet property="delegate" destination="-1" id="PNK-lO-HDL"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtM-Ls-tEG">
+                    <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全选" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POz-NG-iDj">
+                            <rect key="frame" x="45" y="17" width="29" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43b-Qr-slZ">
+                            <rect key="frame" x="152" y="17" width="9" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合计:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKl-0J-Qui">
+                            <rect key="frame" x="94" y="17" width="33" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgW-He-5Ie">
+                            <rect key="frame" x="348" y="8" width="56" height="34"/>
+                            <state key="normal" title="去结算">
+                                <color key="titleColor" red="0.1960784314" green="0.75686274509999996" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnw-xE-FAz">
+                            <rect key="frame" x="166" y="17" width="27.5" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zv-g3-CVG">
+                            <rect key="frame" x="19" y="16" width="16" height="18"/>
+                            <state key="normal" backgroundImage="dati1"/>
+                            <state key="selected" backgroundImage="勾"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="POz-NG-iDj" firstAttribute="leading" secondItem="CtM-Ls-tEG" secondAttribute="leading" constant="45" id="0YS-Nd-App"/>
+                        <constraint firstItem="POz-NG-iDj" firstAttribute="leading" secondItem="6zv-g3-CVG" secondAttribute="trailing" constant="10" id="0nV-Il-KN5"/>
+                        <constraint firstItem="43b-Qr-slZ" firstAttribute="leading" secondItem="zKl-0J-Qui" secondAttribute="trailing" constant="25" id="2ay-Vi-9Jc"/>
+                        <constraint firstItem="zKl-0J-Qui" firstAttribute="leading" secondItem="POz-NG-iDj" secondAttribute="trailing" constant="20" id="9h8-Pm-dXt"/>
+                        <constraint firstItem="POz-NG-iDj" firstAttribute="baseline" secondItem="zKl-0J-Qui" secondAttribute="baseline" id="Arm-CA-qAk"/>
+                        <constraint firstItem="POz-NG-iDj" firstAttribute="firstBaseline" secondItem="6zv-g3-CVG" secondAttribute="firstBaseline" id="DcN-0l-maz"/>
+                        <constraint firstItem="Ug0-5a-T5P" firstAttribute="trailing" secondItem="CgW-He-5Ie" secondAttribute="trailing" constant="10" id="EAM-SM-01a"/>
+                        <constraint firstAttribute="height" constant="50" id="GcB-Mj-zaR"/>
+                        <constraint firstItem="POz-NG-iDj" firstAttribute="centerY" secondItem="6zv-g3-CVG" secondAttribute="centerY" id="Gtu-d1-Vgq"/>
+                        <constraint firstItem="CgW-He-5Ie" firstAttribute="centerY" secondItem="qnw-xE-FAz" secondAttribute="centerY" id="HgQ-ft-v5l"/>
+                        <constraint firstItem="qnw-xE-FAz" firstAttribute="leading" secondItem="43b-Qr-slZ" secondAttribute="trailing" constant="5" id="KMU-13-lP7"/>
+                        <constraint firstItem="43b-Qr-slZ" firstAttribute="baseline" secondItem="qnw-xE-FAz" secondAttribute="firstBaseline" id="TP2-WH-Sct"/>
+                        <constraint firstItem="6zv-g3-CVG" firstAttribute="centerY" secondItem="CtM-Ls-tEG" secondAttribute="centerY" id="WP6-6t-Qde"/>
+                        <constraint firstItem="zKl-0J-Qui" firstAttribute="baseline" secondItem="43b-Qr-slZ" secondAttribute="baseline" id="X2P-nL-cRZ"/>
+                        <constraint firstItem="43b-Qr-slZ" firstAttribute="baseline" secondItem="qnw-xE-FAz" secondAttribute="baseline" id="bz7-qc-dDG"/>
+                        <constraint firstItem="zKl-0J-Qui" firstAttribute="centerY" secondItem="POz-NG-iDj" secondAttribute="centerY" id="c69-Gx-sSm"/>
+                        <constraint firstItem="qnw-xE-FAz" firstAttribute="centerY" secondItem="43b-Qr-slZ" secondAttribute="centerY" id="gRV-Bp-cbL"/>
+                        <constraint firstItem="qnw-xE-FAz" firstAttribute="baseline" secondItem="CgW-He-5Ie" secondAttribute="firstBaseline" id="mNn-cw-gaO"/>
+                        <constraint firstItem="43b-Qr-slZ" firstAttribute="centerY" secondItem="zKl-0J-Qui" secondAttribute="centerY" id="wPh-Za-dbz"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="Ug0-5a-T5P"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="WDz-HB-2wK" firstAttribute="top" secondItem="eQ3-tB-HEf" secondAttribute="top" id="0im-nP-zNS"/>
+                <constraint firstItem="eQ3-tB-HEf" firstAttribute="trailing" secondItem="CtM-Ls-tEG" secondAttribute="trailing" id="8fp-Nc-XaC"/>
+                <constraint firstItem="WDz-HB-2wK" firstAttribute="leading" secondItem="eQ3-tB-HEf" secondAttribute="leading" id="JNr-lc-bBR"/>
+                <constraint firstItem="eQ3-tB-HEf" firstAttribute="bottom" secondItem="CtM-Ls-tEG" secondAttribute="bottom" id="bjc-QC-znp"/>
+                <constraint firstItem="eQ3-tB-HEf" firstAttribute="trailing" secondItem="WDz-HB-2wK" secondAttribute="trailing" id="erU-Jg-6cg"/>
+                <constraint firstItem="eQ3-tB-HEf" firstAttribute="bottom" secondItem="WDz-HB-2wK" secondAttribute="bottom" id="hEl-4M-Jhi"/>
+                <constraint firstItem="CtM-Ls-tEG" firstAttribute="leading" secondItem="eQ3-tB-HEf" secondAttribute="leading" id="tia-aS-EH6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="eQ3-tB-HEf"/>
+            <point key="canvasLocation" x="-167" y="603"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dati1" width="16" height="16"/>
+        <image name="勾" width="7.5" height="7.5"/>
+    </resources>
+</document>

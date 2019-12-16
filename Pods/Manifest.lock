@@ -76,6 +76,13 @@ PODS:
     - UMCCommon
     - UMCShare/Core
   - YYModel (1.0.4)
+  - ZFPlayer (3.2.15):
+    - ZFPlayer/Core (= 3.2.15)
+  - ZFPlayer/AVPlayer (3.2.15):
+    - ZFPlayer/Core
+  - ZFPlayer/ControlView (3.2.15):
+    - ZFPlayer/Core
+  - ZFPlayer/Core (3.2.15)
 
 DEPENDENCIES:
   - AFNetworking
@@ -102,9 +109,12 @@ DEPENDENCIES:
   - UMCShare/Social/WeChat
   - UMCShare/UI
   - YYModel
+  - ZFPlayer
+  - ZFPlayer/AVPlayer
+  - ZFPlayer/ControlView
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AFNetworking
     - BaiduMapKit
     - IQKeyboardManager
@@ -120,6 +130,7 @@ SPEC REPOS:
     - UMCPush
     - UMCShare
     - YYModel
+    - ZFPlayer
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -137,7 +148,8 @@ SPEC CHECKSUMS:
   UMCPush: 5ab89bdbcc1fe90b1c669ff79213b44dc4821ec5
   UMCShare: aa233aecad67979930fe43f3a2f676023b669439
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  ZFPlayer: b56371acefedad94678503a28a6d34820cfd0da3
 
-PODFILE CHECKSUM: 2b5148ac38ebbe5e49e17e32a88910cc34872be8
+PODFILE CHECKSUM: a99118f96258db977227808aad850a846e916ebd
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
