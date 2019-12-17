@@ -16,8 +16,15 @@
     ZBNRechargeCellTwo *cell = [tableView dequeueReusableCellWithIdentifier:ZBNRechargeCellTwoID];
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNRechargeCellTwo" owner:nil options:nil].lastObject;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    frame.size.height -= 1;
+    [super setFrame:frame];
 }
 
 @end

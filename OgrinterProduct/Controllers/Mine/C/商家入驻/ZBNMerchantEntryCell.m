@@ -46,6 +46,7 @@
     ZBNMerchantEntryCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"ZBNMerchantEntryCell" owner:self options:nil] objectAtIndex:index];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         NSLog(@"创建");
     }
     return cell;
@@ -70,15 +71,5 @@
 }
 
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 @end

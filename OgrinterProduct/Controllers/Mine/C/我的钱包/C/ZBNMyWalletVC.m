@@ -44,6 +44,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"我的钱包";
+    
     self.view.backgroundColor = [UIColor whiteColor];
     // 设置headerView
     [self setupHeadView];
@@ -59,9 +61,18 @@
     self.headView = headV;
     ADWeakSelf;
     self.headView.cashWithDrawalBtnClickTask = ^{
-        ZBNWalletRechargeVC *reVc = [[ZBNWalletRechargeVC alloc] init];
-        [self.navigationController pushViewController:reVc animated:YES];
+        ZBNCashWithDrawalVC *caVc = [[ZBNCashWithDrawalVC alloc] init];
+        [weakSelf.navigationController pushViewController:caVc animated:YES];
     };
+    
+    self.headView.reChargeBtnClickTask = ^(NSString * _Nonnull money) {
+        NSLog(@"%@",money);
+        ZBNWalletRechargeVC *reVC = [[ZBNWalletRechargeVC alloc] init];
+        reVC.moneyText = money;
+        [weakSelf.navigationController pushViewController:reVC animated:YES];
+    };
+    
+    
 }
 
 - (void)setupSegmen
@@ -87,5 +98,6 @@
     //少量标签需要均分的情形
     self.segmentBarVC.segmentBar.isDivideEqually = YES;
 }
+
 
 @end

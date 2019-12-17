@@ -27,7 +27,7 @@
     self.view.backgroundColor = KSRGBA(240, 240, 240, 1);
     self.navigationItem.title = @"商家入驻";
     self.tableView.contentInset = UIEdgeInsetsMake(15, 0, 0, 0);
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"ZBNMerchantEntryCell" bundle:nil] forCellReuseIdentifier:@"ZBNMerchantEntryCell"];
     
 }

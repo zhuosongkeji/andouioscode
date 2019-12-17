@@ -24,8 +24,15 @@
     ZBNEntryCellOne *cell = [tableView dequeueReusableCellWithIdentifier:ZBNEntryCellOneID];
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNEntryCellOne" owner:nil options:nil].lastObject;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    frame.size.height -= 1;
+    [super setFrame:frame];
 }
 
 

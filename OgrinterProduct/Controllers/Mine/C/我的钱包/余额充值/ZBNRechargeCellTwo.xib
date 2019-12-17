@@ -28,7 +28,10 @@
                     <constraint firstItem="frs-uA-EBh" firstAttribute="leading" secondItem="A6d-yP-bZm" secondAttribute="leading" constant="15" id="vos-RV-gTb"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="71" y="-3"/>
+            <connections>
+                <outlet property="textOne" destination="frs-uA-EBh" id="Yma-cb-FwA"/>
+            </connections>
+            <point key="canvasLocation" x="-42" y="-3"/>
         </tableViewCell>
     </objects>
 </document>

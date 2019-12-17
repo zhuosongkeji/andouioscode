@@ -15,7 +15,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *headImageV;
 
+@property (weak, nonatomic) IBOutlet UIView *topOrderView;
 
 
 @end
@@ -26,8 +28,9 @@
     [super viewDidLoad];
     
     self.mTableView.tableFooterView = [UILabel new];
-    // Do any additional setup after loading the view from its nib.
+    [self setupUI];
 }
+
 
 
 //MARK:-tableView
@@ -66,7 +69,23 @@
 }
 
 
+/*! 我的订单view按钮的点击事件 */
 
+- (IBAction)OrderViewBtnClick:(UIButton *)sender {
+    
+    NSLog(@"你点击了待付款按钮");
+    
+}
+
+- (void)setupUI
+{
+    self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
+    self.topOrderView.layer.cornerRadius = 10;
+    self.topOrderView.layer.borderWidth = 1;
+    self.topOrderView.layer.borderColor =  KSRGBA(241, 241, 241, 1).CGColor;
+}
+
+/*! 中间View按钮的点击事件 */
 - (IBAction)middleViewBtnClick:(UIButton *)sender {
     // 商家订单
     if (sender.tag == 300) {
@@ -78,7 +97,7 @@
     }
 }
 
-
+/*! 底部View按钮的点击事件 */
 - (IBAction)bottomViewBtnClick:(UIButton *)sender {
     
     if (sender.tag == 500) { // 邀请有礼

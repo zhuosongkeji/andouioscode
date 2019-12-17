@@ -8,6 +8,14 @@
 
 #import "ZBNCashWithDrawalCell.h"
 
+
+@interface ZBNCashWithDrawalCell ()
+
+@property (weak, nonatomic) IBOutlet UIView *labelView;
+
+
+@end
+
 @implementation ZBNCashWithDrawalCell
 
 
@@ -17,19 +25,21 @@
     ZBNCashWithDrawalCell *cell = [tableView dequeueReusableCellWithIdentifier:ZBNCashWithDrawalCellID];
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNCashWithDrawalCell" owner:nil options:nil].lastObject;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+- (void)setFrame:(CGRect)frame
+{
+    frame.size.height -= 1;
+    [super setFrame:frame];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.labelView.layer.cornerRadius = self.labelView.height * 0.5;
 }
 
 @end

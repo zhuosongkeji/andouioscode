@@ -265,6 +265,7 @@
 		F476A4CD23A7888900E3018A /* ZBNRechargeCellThree.xib in Resources */ = {isa = PBXBuildFile; fileRef = F476A4CB23A7888900E3018A /* ZBNRechargeCellThree.xib */; };
 		F476A4D123A7889F00E3018A /* ZBNRechargeCellFour.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A4CF23A7889F00E3018A /* ZBNRechargeCellFour.m */; };
 		F476A4D223A7889F00E3018A /* ZBNRechargeCellFour.xib in Resources */ = {isa = PBXBuildFile; fileRef = F476A4D023A7889F00E3018A /* ZBNRechargeCellFour.xib */; };
+		F4DBD0F123A8BA0C0086C717 /* ZBNNewAddressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DBD0F023A8BA0C0086C717 /* ZBNNewAddressVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -716,6 +717,7 @@
 		F476A4CE23A7889F00E3018A /* ZBNRechargeCellFour.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNRechargeCellFour.h; sourceTree = "<group>"; };
 		F476A4CF23A7889F00E3018A /* ZBNRechargeCellFour.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNRechargeCellFour.m; sourceTree = "<group>"; };
 		F476A4D023A7889F00E3018A /* ZBNRechargeCellFour.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNRechargeCellFour.xib; sourceTree = "<group>"; };
+		F4DBD0F023A8BA0C0086C717 /* ZBNNewAddressVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNNewAddressVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1759,6 +1761,7 @@
 			isa = PBXGroup;
 			children = (
 				F476A3B223A7682600E3018A /* ZBNNewAddressVC.m */,
+				F4DBD0F023A8BA0C0086C717 /* ZBNNewAddressVC.xib */,
 				F476A3B323A7682600E3018A /* ZBNMyAddressModel.m */,
 				F476A3B423A7682600E3018A /* ZBNMyAddressVC.m */,
 				F476A3B523A7682600E3018A /* ZBNMyAddressCell.h */,
@@ -1944,17 +1947,17 @@
 		F476A41723A7682A00E3018A /* 商家入驻 */ = {
 			isa = PBXGroup;
 			children = (
+				F476A42123A7682A00E3018A /* ZBNEntryCell */,
+				F476A41A23A7682A00E3018A /* ZBNEntryView */,
 				F476A41823A7682A00E3018A /* ZBNMerchantEntryCell.m */,
 				F476A41923A7682A00E3018A /* ZBNShoppingMallEntryVC.h */,
-				F476A41A23A7682A00E3018A /* ZBNEntryView */,
 				F476A41E23A7682A00E3018A /* ZBNMerchantEntryCell.xib */,
-				F476A41F23A7682A00E3018A /* ZBNHotelEntryVC.h */,
 				F476A42023A7682A00E3018A /* ZBNMerchantEntry.h */,
-				F476A42123A7682A00E3018A /* ZBNEntryCell */,
+				F476A42E23A7682A00E3018A /* ZBNMerchantEntry.m */,
 				F476A42B23A7682A00E3018A /* ZBNShoppingMallEntryVC.m */,
 				F476A42C23A7682A00E3018A /* ZBNMerchantEntryCell.h */,
 				F476A42D23A7682A00E3018A /* ZBNMerchantEntry.xib */,
-				F476A42E23A7682A00E3018A /* ZBNMerchantEntry.m */,
+				F476A41F23A7682A00E3018A /* ZBNHotelEntryVC.h */,
 				F476A42F23A7682A00E3018A /* ZBNHotelEntryVC.m */,
 			);
 			path = "商家入驻";
@@ -2058,8 +2061,8 @@
 				F476A4CA23A7888900E3018A /* ZBNRechargeCellThree.m */,
 				F476A4CB23A7888900E3018A /* ZBNRechargeCellThree.xib */,
 				F476A4CE23A7889F00E3018A /* ZBNRechargeCellFour.h */,
-				F476A4CF23A7889F00E3018A /* ZBNRechargeCellFour.m */,
 				F476A4D023A7889F00E3018A /* ZBNRechargeCellFour.xib */,
+				F476A4CF23A7889F00E3018A /* ZBNRechargeCellFour.m */,
 			);
 			path = "余额充值";
 			sourceTree = "<group>";
@@ -2223,6 +2226,7 @@
 				F476A48223A7682C00E3018A /* ZBNShopingCartVC.xib in Resources */,
 				F476A44A23A7682B00E3018A /* ZBNMyWalletHeadView.xib in Resources */,
 				A15DC0DD239E2003008CF287 /* HotelDetlisSubViewOneController.xib in Resources */,
+				F4DBD0F123A8BA0C0086C717 /* ZBNNewAddressVC.xib in Resources */,
 				A10A9C282398E1490049A0D2 /* SearchResrultViewController.xib in Resources */,
 				A14FB264238E0E50006A6511 /* Assets.xcassets in Resources */,
 				A14FB312238FD2AC006A6511 /* HomeTableViewCell.xib in Resources */,

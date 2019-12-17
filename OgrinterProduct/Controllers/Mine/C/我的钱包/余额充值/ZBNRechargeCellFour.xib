@@ -29,28 +29,39 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dati1" translatesAutoresizingMaskIntoConstraints="NO" id="Y1g-hQ-1YT">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zg-54-vXn">
                         <rect key="frame" x="731" y="33" width="20" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="Oey-Vz-H9b"/>
-                            <constraint firstAttribute="height" constant="20" id="pMD-VO-ZNh"/>
+                            <constraint firstAttribute="width" constant="20" id="3aB-cX-Wkb"/>
+                            <constraint firstAttribute="height" constant="20" id="hds-6m-LAL"/>
                         </constraints>
-                    </imageView>
+                        <state key="normal" image="dati1"/>
+                        <state key="selected" image="多边形 1 拷贝 3"/>
+                        <connections>
+                            <action selector="selectedBtnClick:" destination="yyL-7f-idI" eventType="touchUpInside" id="h8u-Y7-V3w"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Y1g-hQ-1YT" firstAttribute="centerY" secondItem="Xjm-lF-aHm" secondAttribute="centerY" id="55T-qY-6fv"/>
+                    <constraint firstAttribute="trailing" secondItem="9Zg-54-vXn" secondAttribute="trailing" constant="15" id="6yj-I0-zoD"/>
                     <constraint firstItem="Xjm-lF-aHm" firstAttribute="centerY" secondItem="pdk-f3-qd8" secondAttribute="centerY" id="A2Q-Xq-UYT"/>
-                    <constraint firstAttribute="trailing" secondItem="Y1g-hQ-1YT" secondAttribute="trailing" constant="15" id="Avi-f8-YrM"/>
                     <constraint firstItem="Xjm-lF-aHm" firstAttribute="leading" secondItem="l22-Vt-WAO" secondAttribute="trailing" constant="15" id="Bbj-pL-Di4"/>
+                    <constraint firstItem="9Zg-54-vXn" firstAttribute="centerY" secondItem="Xjm-lF-aHm" secondAttribute="centerY" id="Opw-XV-mjt"/>
                     <constraint firstItem="l22-Vt-WAO" firstAttribute="centerY" secondItem="pdk-f3-qd8" secondAttribute="centerY" id="Vte-SW-IJ0"/>
                     <constraint firstItem="l22-Vt-WAO" firstAttribute="leading" secondItem="pdk-f3-qd8" secondAttribute="leading" constant="15" id="bXx-w0-ytb"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="-70" y="35"/>
+            <connections>
+                <outlet property="iconImagev" destination="l22-Vt-WAO" id="QXw-a5-k3J"/>
+                <outlet property="selectedBtn" destination="9Zg-54-vXn" id="chS-ZA-n5C"/>
+                <outlet property="textOne" destination="Xjm-lF-aHm" id="OCe-0y-IRf"/>
+            </connections>
+            <point key="canvasLocation" x="-222" y="27"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="dati1" width="16" height="16"/>
         <image name="图层 5" width="25" height="16"/>
+        <image name="多边形 1 拷贝 3" width="69" height="36"/>
     </resources>
 </document>
