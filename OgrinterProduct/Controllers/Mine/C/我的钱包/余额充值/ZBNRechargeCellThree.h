@@ -11,6 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNRechargeCellThree : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *numberLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *textOne;
+
 + (instancetype)registerCellForTableView:(UITableView *)tableView;
 @end
 

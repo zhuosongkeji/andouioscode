@@ -60,7 +60,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="Bi0-PF-js0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="eml-iv-NmZ"/>
                     <constraint firstItem="Bi0-PF-js0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="j5T-vV-6ZG"/>
@@ -68,8 +68,9 @@
                     <constraint firstAttribute="bottom" secondItem="Bi0-PF-js0" secondAttribute="bottom" constant="15" id="vXm-Tp-cwX"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
-            <point key="canvasLocation" x="-642.02898550724638" y="-175.11160714285714"/>
+            <point key="canvasLocation" x="-738" y="-119"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Merchant Entry CellTwo" rowHeight="92" id="Ucb-YJ-6dS" userLabel="Merchant Entry CellTwo" customClass="ZBNMerchantEntryCell">
             <rect key="frame" x="0.0" y="0.0" width="338" height="92"/>
@@ -121,7 +122,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="M7c-tM-oQA" secondAttribute="bottom" constant="15" id="7de-Q0-7Ax"/>
                     <constraint firstItem="M7c-tM-oQA" firstAttribute="top" secondItem="0yO-4t-La6" secondAttribute="top" constant="15" id="R60-r4-Tn5"/>
@@ -129,8 +130,9 @@
                     <constraint firstAttribute="trailing" secondItem="M7c-tM-oQA" secondAttribute="trailing" constant="10" id="o74-jB-PRt"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="Gmd-bM-BBd"/>
-            <point key="canvasLocation" x="-667" y="-447"/>
+            <point key="canvasLocation" x="-755" y="-441"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Merchant Entry CellThree" rowHeight="85" id="krR-6f-hdu" userLabel="Merchant Entry CellThree" customClass="ZBNMerchantEntryCell">
             <rect key="frame" x="0.0" y="0.0" width="297" height="85"/>
@@ -182,7 +184,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="ltv-lO-cHG" firstAttribute="leading" secondItem="XXs-0j-ibv" secondAttribute="leading" constant="10" id="30L-WK-qef"/>
                     <constraint firstAttribute="bottom" secondItem="ltv-lO-cHG" secondAttribute="bottom" constant="15" id="JBe-sf-bdl"/>
@@ -190,18 +192,19 @@
                     <constraint firstItem="ltv-lO-cHG" firstAttribute="top" secondItem="XXs-0j-ibv" secondAttribute="top" constant="15" id="iKx-uX-Jna"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="sw0-fc-V3R"/>
             <point key="canvasLocation" x="-70.28985507246378" y="127.56696428571428"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Merchant Entry CellFour" rowHeight="66" id="DUv-GB-DIG" userLabel="Merchant Entry CellFour" customClass="ZBNMerchantEntryCell">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="66"/>
+            <rect key="frame" x="0.0" y="0.0" width="450" height="66"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DUv-GB-DIG" id="DKa-6a-acP">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="66"/>
+                <rect key="frame" x="0.0" y="0.0" width="450" height="66"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHH-71-CD5">
-                        <rect key="frame" x="10" y="15" width="280" height="36"/>
+                        <rect key="frame" x="10" y="15" width="430" height="36"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="菜市场商家入驻" translatesAutoresizingMaskIntoConstraints="NO" id="8MF-nk-zIh">
                                 <rect key="frame" x="15" y="3" width="30" height="30"/>
@@ -223,7 +226,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="返回 拷贝 3" translatesAutoresizingMaskIntoConstraints="NO" id="0Uq-ML-o2N">
-                                <rect key="frame" x="245" y="10.5" width="15" height="15"/>
+                                <rect key="frame" x="395" y="10.5" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="EY1-Ac-F2j"/>
                                     <constraint firstAttribute="height" constant="15" id="Mnq-fO-1lE"/>
@@ -243,7 +246,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="mHH-71-CD5" secondAttribute="trailing" constant="10" id="Rh9-RU-1ZI"/>
                     <constraint firstItem="mHH-71-CD5" firstAttribute="leading" secondItem="DKa-6a-acP" secondAttribute="leading" constant="10" id="bJ9-r7-fPd"/>
@@ -251,18 +254,19 @@
                     <constraint firstAttribute="bottom" secondItem="mHH-71-CD5" secondAttribute="bottom" constant="15" id="vj7-5P-oz7"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="qZN-UY-TmX"/>
-            <point key="canvasLocation" x="-39" y="-261"/>
+            <point key="canvasLocation" x="-712" y="-355"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Merchant Entry CellFive" rowHeight="91" id="lnT-u5-ueI" userLabel="Merchant Entry CellFive" customClass="ZBNMerchantEntryCell">
-            <rect key="frame" x="0.0" y="0.0" width="343" height="91"/>
+            <rect key="frame" x="0.0" y="0.0" width="275" height="91"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lnT-u5-ueI" id="JPV-Xo-AC5">
-                <rect key="frame" x="0.0" y="0.0" width="343" height="91"/>
+                <rect key="frame" x="0.0" y="0.0" width="275" height="91"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rYh-CA-8IG">
-                        <rect key="frame" x="10" y="15" width="323" height="61"/>
+                        <rect key="frame" x="10" y="15" width="255" height="61"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="农家乐入驻" translatesAutoresizingMaskIntoConstraints="NO" id="Ee3-cI-VHp">
                                 <rect key="frame" x="15" y="15.5" width="30" height="30"/>
@@ -284,7 +288,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="返回 拷贝 3" translatesAutoresizingMaskIntoConstraints="NO" id="ZKU-gK-1C2">
-                                <rect key="frame" x="288" y="23" width="15" height="15"/>
+                                <rect key="frame" x="220" y="23" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="EaT-no-Po9"/>
                                     <constraint firstAttribute="width" constant="15" id="TpJ-xI-fKI"/>
@@ -304,7 +308,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="rYh-CA-8IG" secondAttribute="trailing" constant="10" id="AbL-0x-Gsd"/>
                     <constraint firstAttribute="bottom" secondItem="rYh-CA-8IG" secondAttribute="bottom" constant="15" id="dVO-r3-Ub4"/>
@@ -312,8 +316,9 @@
                     <constraint firstItem="rYh-CA-8IG" firstAttribute="top" secondItem="JPV-Xo-AC5" secondAttribute="top" constant="15" id="uWP-nl-qTF"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="VK7-FX-KTn"/>
-            <point key="canvasLocation" x="-641" y="-257"/>
+            <point key="canvasLocation" x="-838" y="-206"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Merchant Entry CellSix" rowHeight="82" id="H4n-fM-blw" userLabel="Merchant Entry CellSix" customClass="ZBNMerchantEntryCell">
             <rect key="frame" x="0.0" y="0.0" width="342" height="82"/>
@@ -365,7 +370,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="bOW-9f-BZQ" secondAttribute="bottom" constant="15" id="05H-GK-pgG"/>
                     <constraint firstItem="bOW-9f-BZQ" firstAttribute="leading" secondItem="hId-Hr-2pL" secondAttribute="leading" constant="10" id="0hD-qH-MUL"/>
@@ -373,8 +378,9 @@
                     <constraint firstAttribute="trailing" secondItem="bOW-9f-BZQ" secondAttribute="trailing" constant="10" id="zKe-Fb-A1B"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="cFr-tK-JNi"/>
-            <point key="canvasLocation" x="-642" y="-335"/>
+            <point key="canvasLocation" x="-839" y="-288"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -32,6 +32,7 @@
     ZBNMyAddressCell *cell = [tableView dequeueReusableCellWithIdentifier:addressCellID];
     if (cell == nil) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNMyAddressCell" owner:nil options:nil].lastObject;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
 }
@@ -65,6 +66,12 @@
     
 }
 
+- (void)setFrame:(CGRect)frame
+{
+    
+    frame.size.height -= 1;
+    [super setFrame:frame];
+}
 
 
 @end

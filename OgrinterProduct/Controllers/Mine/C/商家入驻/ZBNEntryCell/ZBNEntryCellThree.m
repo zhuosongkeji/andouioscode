@@ -16,6 +16,7 @@
     ZBNEntryCellThree *cell = [tableView dequeueReusableCellWithIdentifier:ZBNEntryCellThreeID];
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNEntryCellThree" owner:nil options:nil].lastObject;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
 }

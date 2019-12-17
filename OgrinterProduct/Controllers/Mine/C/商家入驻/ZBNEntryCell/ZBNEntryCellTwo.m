@@ -22,6 +22,7 @@
     ZBNEntryCellTwo *cell = [tableView dequeueReusableCellWithIdentifier:ZBNEntryCellTwoID];
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNEntryCellTwo" owner:nil options:nil].lastObject;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
 }

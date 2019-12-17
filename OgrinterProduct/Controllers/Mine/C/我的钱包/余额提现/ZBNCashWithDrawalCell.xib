@@ -20,34 +20,47 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWd-FH-rqF">
                         <rect key="frame" x="0.0" y="110" width="468" height="50"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uqx-3e-fiV">
-                                <rect key="frame" x="15" y="15" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="4wU-Cd-AWb"/>
-                                    <constraint firstAttribute="height" constant="20" id="FJM-8D-gJM"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前余额:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJY-Ag-hFE">
-                                <rect key="frame" x="40" y="16.5" width="61.5" height="17"/>
+                                <rect key="frame" x="35" y="16.5" width="61.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sm4-94-DSU">
-                                <rect key="frame" x="106.5" y="16.5" width="38" height="17"/>
+                                <rect key="frame" x="101.5" y="16.5" width="38" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6e-Mw-kKc">
+                                <rect key="frame" x="15" y="17.5" width="15" height="15"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfE-Qt-lfj">
+                                        <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="sfE-Qt-lfj" secondAttribute="bottom" id="Fs2-9A-5Q8"/>
+                                    <constraint firstItem="sfE-Qt-lfj" firstAttribute="leading" secondItem="h6e-Mw-kKc" secondAttribute="leading" id="LmJ-nJ-6mC"/>
+                                    <constraint firstAttribute="width" constant="15" id="bhd-ru-rUR"/>
+                                    <constraint firstAttribute="trailing" secondItem="sfE-Qt-lfj" secondAttribute="trailing" id="cLl-de-54R"/>
+                                    <constraint firstAttribute="height" constant="15" id="i1s-OI-5P8"/>
+                                    <constraint firstItem="sfE-Qt-lfj" firstAttribute="top" secondItem="h6e-Mw-kKc" secondAttribute="top" id="kbH-ue-ezf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Sm4-94-DSU" firstAttribute="centerY" secondItem="GWd-FH-rqF" secondAttribute="centerY" id="06a-PI-ySx"/>
+                            <constraint firstItem="dJY-Ag-hFE" firstAttribute="leading" secondItem="h6e-Mw-kKc" secondAttribute="trailing" constant="5" id="0GE-Pe-9dA"/>
+                            <constraint firstItem="h6e-Mw-kKc" firstAttribute="leading" secondItem="GWd-FH-rqF" secondAttribute="leading" constant="15" id="8wJ-qi-z6T"/>
                             <constraint firstItem="Sm4-94-DSU" firstAttribute="leading" secondItem="dJY-Ag-hFE" secondAttribute="trailing" constant="5" id="A4N-3T-ew3"/>
-                            <constraint firstItem="uqx-3e-fiV" firstAttribute="centerY" secondItem="GWd-FH-rqF" secondAttribute="centerY" id="FpP-YR-0yW"/>
                             <constraint firstItem="dJY-Ag-hFE" firstAttribute="centerY" secondItem="GWd-FH-rqF" secondAttribute="centerY" id="RZW-Gm-bMk"/>
-                            <constraint firstItem="uqx-3e-fiV" firstAttribute="leading" secondItem="GWd-FH-rqF" secondAttribute="leading" constant="15" id="pfw-ai-oP0"/>
-                            <constraint firstItem="dJY-Ag-hFE" firstAttribute="leading" secondItem="uqx-3e-fiV" secondAttribute="trailing" constant="5" id="qcz-4v-dk0"/>
+                            <constraint firstItem="h6e-Mw-kKc" firstAttribute="centerY" secondItem="GWd-FH-rqF" secondAttribute="centerY" id="qtD-af-9sV"/>
                             <constraint firstAttribute="height" constant="50" id="wc7-Cs-DVo"/>
                         </constraints>
                     </view>
@@ -86,7 +99,7 @@
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nE2-1W-zTd">
                         <rect key="frame" x="15" y="109" width="453" height="1"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="iR0-Yo-Vqv"/>
                         </constraints>
@@ -108,7 +121,10 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
-            <point key="canvasLocation" x="-37.681159420289859" y="81.696428571428569"/>
+            <connections>
+                <outlet property="labelView" destination="h6e-Mw-kKc" id="QrH-Vx-oE0"/>
+            </connections>
+            <point key="canvasLocation" x="-323" y="29"/>
         </tableViewCell>
     </objects>
 </document>

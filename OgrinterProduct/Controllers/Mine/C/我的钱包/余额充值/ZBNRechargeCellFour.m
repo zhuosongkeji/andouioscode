@@ -8,7 +8,17 @@
 
 #import "ZBNRechargeCellFour.h"
 
+
+@interface ZBNRechargeCellFour ()
+
+@property (weak, nonatomic) IBOutlet UIButton *selectedBtn;
+
+
+@end
+
 @implementation ZBNRechargeCellFour
+- (IBAction)selectedBtnClick:(UIButton *)sender {
+}
 
 + (instancetype)registerCellForTableView:(UITableView *)tableView
 {
@@ -16,8 +26,15 @@
     ZBNRechargeCellFour *cell = [tableView dequeueReusableCellWithIdentifier:ZBNRechargeCellFourID];
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNRechargeCellFour" owner:nil options:nil].lastObject;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    frame.size.height -= 1;
+    [super setFrame:frame];
 }
 
 @end

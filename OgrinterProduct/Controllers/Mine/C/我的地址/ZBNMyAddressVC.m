@@ -27,8 +27,12 @@ static NSString * const ZBNMyAddressCellID = @"address";
     [super viewDidLoad];
     // 初始化模型数据
     [self initModel];
+    
     self.navigationItem.title = @"我的地址";
+    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     
     [self setupFooterView];
     
@@ -38,7 +42,7 @@ static NSString * const ZBNMyAddressCellID = @"address";
 - (void)setupFooterView
 {
     ZBNEntryFooterView *footerView = [ZBNEntryFooterView viewFromXib];
-    footerView.height = 200;
+    footerView.height = 150;
     self.tableView.tableFooterView = footerView;
     self.footerView = footerView;
     self.footerView.setButtonText(@"新增地址");

@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNRechargeCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
+
 
 + (instancetype)registerCellForTableView:(UITableView *)tableView;
 

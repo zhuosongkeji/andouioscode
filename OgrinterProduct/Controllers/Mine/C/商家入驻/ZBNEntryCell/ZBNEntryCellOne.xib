@@ -51,7 +51,7 @@
                 <outlet property="textOne" destination="xWg-v0-qze" id="cY2-Ge-rzQ"/>
                 <outlet property="textTwo" destination="Lss-SW-oem" id="zfn-nF-VFb"/>
             </connections>
-            <point key="canvasLocation" x="-337" y="14"/>
+            <point key="canvasLocation" x="114" y="36"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -20,54 +20,78 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46Y-TM-HB6">
-                    <rect key="frame" x="508" y="21" width="60" height="30"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9q-kQ-eRY">
-                            <rect key="frame" x="5" y="0.0" width="50" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="mbU-VT-qdn"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="余额充值">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="cashWithDrawalClick:" destination="IHM-3N-iLw" eventType="touchUpInside" id="74w-Q0-w3M"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.36862745099999999" green="0.82745098039999998" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="1XP-6g-4XK"/>
-                        <constraint firstAttribute="trailing" secondItem="W9q-kQ-eRY" secondAttribute="trailing" constant="5" id="1l5-jU-2oW"/>
-                        <constraint firstItem="W9q-kQ-eRY" firstAttribute="leading" secondItem="46Y-TM-HB6" secondAttribute="leading" constant="5" id="PZJ-cA-VaX"/>
-                        <constraint firstAttribute="width" constant="60" id="cW6-JY-XQe"/>
-                        <constraint firstItem="W9q-kQ-eRY" firstAttribute="centerY" secondItem="46Y-TM-HB6" secondAttribute="centerY" id="lWc-8q-Aya"/>
-                    </constraints>
-                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前余额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbC-O2-J2z">
                     <rect key="frame" x="35" y="41" width="57.5" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghr-qF-rkK">
+                    <rect key="frame" x="538" y="26" width="60" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObS-BK-XYX">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="余额提现">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="cashWithDrawalClick:" destination="IHM-3N-iLw" eventType="touchUpInside" id="EOB-Kh-XMr"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="06q-El-Nvc"/>
+                        <constraint firstItem="ObS-BK-XYX" firstAttribute="top" secondItem="ghr-qF-rkK" secondAttribute="top" id="Jsj-7F-6y6"/>
+                        <constraint firstAttribute="width" constant="60" id="XtL-Qq-2ss"/>
+                        <constraint firstAttribute="bottom" secondItem="ObS-BK-XYX" secondAttribute="bottom" id="Ycv-Yb-IER"/>
+                        <constraint firstItem="ObS-BK-XYX" firstAttribute="leading" secondItem="ghr-qF-rkK" secondAttribute="leading" id="iD6-Q6-AX8"/>
+                        <constraint firstAttribute="trailing" secondItem="ObS-BK-XYX" secondAttribute="trailing" id="ndV-ep-55c"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hzc-VK-xK6">
+                    <rect key="frame" x="463" y="26" width="60" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4v1-ad-Ujb">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="余额充值"/>
+                            <connections>
+                                <action selector="reChargeBtnClick:" destination="IHM-3N-iLw" eventType="touchUpInside" id="rcf-N8-gaF"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="4v1-ad-Ujb" secondAttribute="trailing" id="C9X-cu-Cph"/>
+                        <constraint firstAttribute="bottom" secondItem="4v1-ad-Ujb" secondAttribute="bottom" id="ZJR-F1-AWg"/>
+                        <constraint firstAttribute="height" constant="30" id="fvN-0j-92y"/>
+                        <constraint firstItem="4v1-ad-Ujb" firstAttribute="leading" secondItem="Hzc-VK-xK6" secondAttribute="leading" id="l6b-5n-l6y"/>
+                        <constraint firstItem="4v1-ad-Ujb" firstAttribute="top" secondItem="Hzc-VK-xK6" secondAttribute="top" id="pvB-Vt-igI"/>
+                        <constraint firstAttribute="width" constant="60" id="tqA-Wp-FVm"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.36862745099999999" green="0.82745098039999998" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="GaC-0f-X8R" firstAttribute="bottom" secondItem="W9q-kQ-eRY" secondAttribute="centerY" id="O7m-8Z-wEC"/>
+                <constraint firstItem="5XX-sS-JeF" firstAttribute="trailing" secondItem="ghr-qF-rkK" secondAttribute="trailing" constant="15" id="0cY-zO-d27"/>
+                <constraint firstItem="ghr-qF-rkK" firstAttribute="centerY" secondItem="XbC-O2-J2z" secondAttribute="top" id="AWn-Gb-spZ"/>
+                <constraint firstItem="Hzc-VK-xK6" firstAttribute="centerY" secondItem="ghr-qF-rkK" secondAttribute="centerY" id="W7L-VP-tpe"/>
                 <constraint firstItem="5XX-sS-JeF" firstAttribute="bottom" secondItem="XbC-O2-J2z" secondAttribute="bottom" constant="35" id="Z6K-RL-0DQ"/>
+                <constraint firstItem="ghr-qF-rkK" firstAttribute="leading" secondItem="Hzc-VK-xK6" secondAttribute="trailing" constant="15" id="d8Z-hZ-gDe"/>
                 <constraint firstItem="XbC-O2-J2z" firstAttribute="leading" secondItem="GaC-0f-X8R" secondAttribute="leading" id="eGm-Gq-KfX"/>
-                <constraint firstItem="5XX-sS-JeF" firstAttribute="trailing" secondItem="46Y-TM-HB6" secondAttribute="trailing" constant="45" id="fET-0e-aKK"/>
                 <constraint firstItem="XbC-O2-J2z" firstAttribute="top" secondItem="GaC-0f-X8R" secondAttribute="bottom" constant="5" id="hvA-ff-yMA"/>
                 <constraint firstItem="GaC-0f-X8R" firstAttribute="leading" secondItem="5XX-sS-JeF" secondAttribute="leading" constant="35" id="sud-Ha-D6C"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="5XX-sS-JeF"/>
             <connections>
-                <outlet property="rechargeBtnView" destination="46Y-TM-HB6" id="sYc-gl-303"/>
+                <outlet property="cashWithdrawalBtnView" destination="ghr-qF-rkK" id="F32-n4-lCl"/>
+                <outlet property="moneyLabel" destination="GaC-0f-X8R" id="x0h-FH-xzI"/>
+                <outlet property="rechargeBtnView" destination="Hzc-VK-xK6" id="xaI-Rr-cDV"/>
             </connections>
-            <point key="canvasLocation" x="-22428" y="-440"/>
+            <point key="canvasLocation" x="-20401" y="-24"/>
         </view>
     </objects>
 </document>

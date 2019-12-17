@@ -20,7 +20,7 @@
                         <constraint firstAttribute="height" constant="44" id="4NP-y5-DgT"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="申请入驻" backgroundImage="btnBack_zhou">
+                    <state key="normal" title="申请入驻" backgroundImage="底部按钮背景">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -28,7 +28,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.94545521396849319" green="0.94660568486301366" blue="0.94315427216849312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lnd-io-iKY" secondAttribute="trailing" constant="25" id="FnL-jw-S7U"/>
                 <constraint firstItem="lnd-io-iKY" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="QHt-bq-FA4"/>
@@ -39,10 +39,10 @@
             <connections>
                 <outlet property="middleBtn" destination="lnd-io-iKY" id="KSb-ae-aHI"/>
             </connections>
-            <point key="canvasLocation" x="-295" y="18"/>
+            <point key="canvasLocation" x="-330" y="39"/>
         </view>
     </objects>
     <resources>
-        <image name="btnBack_zhou" width="345" height="45"/>
+        <image name="底部按钮背景" width="345" height="45"/>
     </resources>
 </document>

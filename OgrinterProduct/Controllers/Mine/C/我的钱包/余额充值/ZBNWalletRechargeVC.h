@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNWalletRechargeVC : UITableViewController
 
+@property (nonatomic, copy) void(^moneyLabelText)(NSString *moneyText);
+
+@property (nonatomic, copy) NSString *moneyText;
+
 @end
 
 NS_ASSUME_NONNULL_END
