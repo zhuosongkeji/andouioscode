@@ -124,6 +124,21 @@
 }
 
 
+//MARK:-
+- (IBAction)btnClick:(UIButton *)sender {
+    KPreventRepeatClickTime(1)
+    if (sender.tag == 10008) {
+        ShopSeckillDetailsViewController *seckill = [[ShopSeckillDetailsViewController alloc]init];
+        seckill.seckillType = ShopSeckillDetailsTypeKill;
+        [self.navigationController pushViewController:seckill animated:YES];
+    }else if (sender.tag == 10009){
+        
+    }else{
+        
+    }
+}
+
+
 ////MARK:-scrollView
 //-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 //    CGFloat offY = scrollView.contentOffset.y;

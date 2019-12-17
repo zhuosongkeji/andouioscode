@@ -11,6 +11,7 @@ typedef enum : NSUInteger {
     MyEnumValueA,
     MyEnumValueB,
     MyEnumValueC,
+    MyEnumValueD,
     
 } MyEnum;
 
