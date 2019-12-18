@@ -11,7 +11,8 @@
 #import "CustomSectionView.h"
 #import "HomeTableViewCell.h"
 #import "CitylistViewController.h"
-#import "ShopingViewController.h"
+//#import "ShopingViewController.h"
+//#import "OnlineOrderViewController.h"
 
 #import "HQFlowView.h"
 #import "MarqueeView.h"
@@ -37,7 +38,6 @@
 @end
 
 @implementation HomeViewController
-
 
 //MARK:-imgArr
 -(NSMutableArray *)imgArr {
@@ -70,8 +70,7 @@
 }
 
 
-- (HQImagePageControl *)pageC
-{
+- (HQImagePageControl *)pageC{
     if (!_pageC) {
         if (!_pageC) {
             _pageC = [[HQImagePageControl alloc]initWithFrame:CGRectMake(0, self.topBananerView.frame.size.height - 35, KSCREEN_WIDTH, 7.5)];
@@ -103,18 +102,18 @@
     [super viewDidLoad];
     self.navigationItem.title = @"";
     
+    [self openRedPacket];
+    // Do any additional setup after loading the view from its nib.
+}
+
+//MARK:- openRedPacket
+- (void)openRedPacket {
+    
     [self.topBananerView addSubview:self.pageFlowView];
     [self.noticebjView addSubview:self.queeView];
     [self.pageFlowView addSubview:self.pageC];
     [self.pageFlowView reloadData];//刷新轮播
     
-    [self openRedPacket];
-    // Do any additional setup after loading the view from its nib.
-}
-
-
-//MARK:- openRedPacket
-- (void)openRedPacket {
     PacketModel *data = ({
         PacketModel *data = [[PacketModel alloc]init];
         data.money = 128.00;
@@ -140,23 +139,11 @@
 
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
     if (subIndex == 0) {
-//        商城
-//        CustomBarViewController *tabbar = [[CustomBarViewController alloc]initFrame:CustomBarTypeTwo];
-//        UIWindow *window = [[UIApplication sharedApplication].delegate window];
-//        CATransition *animation = [CATransition animation];
-//        [animation setType:kCATransitionPush];
-//        [animation setSubtype:kCATransitionFromRight];
-//        [animation setDuration:0.3];
-//        [[window layer] addAnimation:animation forKey:nil];
-//        window.rootViewController = tabbar;
-        
-        ShopingViewController *shop = [[ShopingViewController alloc]init];
-        shop.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:shop animated:YES];
-    }else if (subIndex == 1){
-        [self pushViewControllerWithString:ControllerVCArr[0]];
+        [self pushViewControllerwithString:ControllerVCArr[subIndex]];
+    }else if(subIndex == 1){
+        [self pushViewControllerWithString:ControllerVCArr[subIndex]];
     }else {
-        
+        [HUDManager showTextHud:OtherMsg];
     }
 }
 
@@ -166,16 +153,14 @@
     return self.imgArr.count;
 }
 
-
 - (HQIndexBannerSubview *)flowView:(HQFlowView *)flowView cellForPageAtIndex:(NSInteger)index {
     
     HQIndexBannerSubview *bannerView = (HQIndexBannerSubview *)[flowView dequeueReusableCell];
     
     if (!bannerView) {
-        bannerView = [[HQIndexBannerSubview alloc] initWithFrame:CGRectMake(0, 0, self.pageFlowView.frame.size.width, self.pageFlowView.frame.size.height)];
+        bannerView = [[HQIndexBannerSubview alloc] initWithFrame:CGRectMake(0, 0, self.pageFlowView.width, self.pageFlowView.height)];
         bannerView.layer.cornerRadius = 5;
         bannerView.layer.masksToBounds = YES;
-        bannerView.coverView.backgroundColor = [UIColor darkGrayColor];
     }
     //在这里下载网络图片
     //    [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:self.advArray[index]] placeholderImage:nil];
@@ -185,11 +170,9 @@
     return bannerView;
 }
 
-
 - (void)didScrollToPage:(NSInteger)pageNumber inFlowView:(HQFlowView *)flowView {
     [self.pageFlowView.pageControl setCurrentPage:pageNumber];
 }
-
 
 //MARK:- tableView
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -198,16 +181,14 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0 || section == 1) {
+    if (section == 0 || section == 1)
         return 1;
-    }else {
+    else
         return 3;
-    }
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     HomeTableViewCell *cell = [HomeTableViewCell tempTableViewCellWith:tableView indexPath:indexPath];
     
     [cell configTempCellWith:indexPath];
@@ -216,17 +197,20 @@
 }
 
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    // 取消Cell的选中状态
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-}
-
-
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
     CustomSectionView *v = [[NSBundle mainBundle] loadNibNamed:@"CustomSectionView" owner:self options:nil].lastObject;
+    
     v.titimgView.image = [UIImage imageNamed:HomeSectionArr[section]];
     v.backgroundColor = [UIColor whiteColor];
     [v setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 54)];
+    
+    __weak typeof(&*self)WeakSelf = self;
+    v.btnclickBlock = ^(UIButton * _Nonnull btn) {
+        if (section == 3) {
+            [WeakSelf pushViewControllerWithString:@"OnlineOrderViewController"];
+        }
+    };
     
     return v;
 }
@@ -238,40 +222,19 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0 || indexPath.section == 1) {
-        return 138;
-    }else if (indexPath.section == 2){
-        return 178;
-    }else if (indexPath.section == 3) {
-        return 222;
-    }else{
-        return 0;
-    }
-        
-}
-
-
-- (void)dealloc {
-    self.pageFlowView.delegate = nil;
-    self.pageFlowView.dataSource = nil;
-    [self.pageFlowView stopTimer];
-    
+    return [[@[@"138",@"138",@"178",@"222"] objectAtIndex:indexPath.section] floatValue];
 }
 
 
 -(UIButton *)createbtn {
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.titleLabel.font = [UIFont systemFontOfSize:12];
     
+    btn.titleLabel.font = [UIFont systemFontOfSize:12];
     [btn setFrame:CGRectMake(0, 0, 64, 17)];
     [btn setTitle:_loctionStr forState:UIControlStateNormal];
-    
     [btn addTarget:self action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];
-//    [btn setImage:[UIImage imageNamed:@"image"] forState:UIControlStateNormal];
-//    [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, - btn.imageView.image.size.width, 0, btn.imageView.image.size.width)];
-//    [btn setImageEdgeInsets:UIEdgeInsetsMake(0, btn.titleLabel.bounds.size.width, 0, -btn.titleLabel.bounds.size.width)];
-    
+
     return btn;
 }
 
@@ -280,20 +243,14 @@
     _loctionStr = loctionStr;
     if (!loctionStr)
         [HUDManager showTextHud:loctionError];
-    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:[self createbtn]];
 }
 
-
 //MARK:-
 -(void)action:(UIButton *)item{
-    CitylistViewController *citylist = [[CitylistViewController alloc] init];
-    citylist.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:citylist animated:YES];
+    [self pushViewControllerwithString:@"CitylistViewController"];
 }
 
-
-//ControllerVCArr
 //MARK:-withBtnClick
 - (IBAction)withBtnClick:(UIButton *)sender {
     KPreventRepeatClickTime(1)
@@ -303,12 +260,11 @@
 //    [self pushViewControllerWithString:ControllerVCArr[sender.tag-1000]];
 }
 
-#pragma mark - vc push
--(void)pushViewControllerWithString:(NSString *)nameStr{
-    Class class = NSClassFromString(nameStr);
-    UIViewController *vc = [[class alloc]initWithNibName:nameStr bundle:nil];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
+- (void)dealloc {
+    self.pageFlowView.delegate = nil;
+    self.pageFlowView.dataSource = nil;
+    [self.pageFlowView stopTimer];
+    
 }
 
 /*

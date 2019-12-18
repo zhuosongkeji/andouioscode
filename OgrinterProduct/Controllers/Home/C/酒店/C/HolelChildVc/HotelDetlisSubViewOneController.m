@@ -274,6 +274,7 @@
 -(void)pushToController {
     
     OnlineBookingViewController *online = [[OnlineBookingViewController alloc]init];
+    online.payType = OnlineBookingViewHotelPay;
     [self.navigationController pushViewController:online animated:YES];
 }
 

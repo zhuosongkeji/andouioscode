@@ -4,12 +4,12 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
-        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellOne" rowHeight="98" id="uP1-7z-GyN" customClass="OnlineTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -58,6 +58,7 @@
             </tableViewCellContentView>
             <point key="canvasLocation" x="138" y="51"/>
         </tableViewCell>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellTwo" rowHeight="72" id="cul-4W-sVJ" customClass="OnlineTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -139,7 +140,52 @@
             </constraints>
             <point key="canvasLocation" x="138" y="134"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellThrid" rowHeight="41" id="seO-Tg-elM" customClass="OnlineTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellThrid" rowHeight="88" id="Bt9-Mk-Nyh" customClass="OnlineTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bt9-Mk-Nyh" id="pfd-WM-w6z">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="94.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="王杨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtp-fa-hi4">
+                        <rect key="frame" x="16" y="16" width="29" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="重庆市南岸区南坪东路斜对面女子医院39-106菜鸟驿站附264号楼" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zST-lJ-OSW">
+                        <rect key="frame" x="16" y="45" width="288" height="31.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19923803819" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Uc-Rh-f3I">
+                        <rect key="frame" x="213" y="16" width="91" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="分割线" translatesAutoresizingMaskIntoConstraints="NO" id="LBz-g0-Qqv">
+                        <rect key="frame" x="0.0" y="90.5" width="320" height="4"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="4" id="aP9-3t-h2w"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="LBz-g0-Qqv" secondAttribute="bottom" id="6lf-b7-es3"/>
+                    <constraint firstItem="dtp-fa-hi4" firstAttribute="top" secondItem="pfd-WM-w6z" secondAttribute="top" constant="16" id="9qt-pL-T8S"/>
+                    <constraint firstAttribute="trailing" secondItem="5Uc-Rh-f3I" secondAttribute="trailing" constant="16" id="ELo-Sl-UD8"/>
+                    <constraint firstAttribute="trailing" secondItem="zST-lJ-OSW" secondAttribute="trailing" constant="16" id="Icd-Hu-y9V"/>
+                    <constraint firstAttribute="trailing" secondItem="LBz-g0-Qqv" secondAttribute="trailing" id="RLL-Th-rnU"/>
+                    <constraint firstItem="dtp-fa-hi4" firstAttribute="leading" secondItem="pfd-WM-w6z" secondAttribute="leading" constant="16" id="WaA-tb-2XV"/>
+                    <constraint firstItem="zST-lJ-OSW" firstAttribute="leading" secondItem="pfd-WM-w6z" secondAttribute="leading" constant="16" id="bSG-Ta-LzJ"/>
+                    <constraint firstItem="5Uc-Rh-f3I" firstAttribute="centerY" secondItem="dtp-fa-hi4" secondAttribute="centerY" id="gQV-Mw-F3z"/>
+                    <constraint firstItem="zST-lJ-OSW" firstAttribute="top" secondItem="dtp-fa-hi4" secondAttribute="bottom" constant="12" id="lSP-O4-4Cv"/>
+                    <constraint firstItem="LBz-g0-Qqv" firstAttribute="leading" secondItem="pfd-WM-w6z" secondAttribute="leading" id="wP1-0v-IJF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="138" y="212"/>
+        </tableViewCell>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellFouth" rowHeight="41" id="seO-Tg-elM" customClass="OnlineTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="seO-Tg-elM" id="Gt0-4e-GiN">
@@ -196,9 +242,9 @@
             <constraints>
                 <constraint firstItem="e2Z-7N-f4r" firstAttribute="centerY" secondItem="seO-Tg-elM" secondAttribute="centerY" id="dmo-Fq-u73"/>
             </constraints>
-            <point key="canvasLocation" x="137.68115942028987" y="198.88392857142856"/>
+            <point key="canvasLocation" x="138" y="277"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellFouth" rowHeight="41" id="qSA-dg-8sR" customClass="OnlineTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellFive" rowHeight="41" id="qSA-dg-8sR" customClass="OnlineTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qSA-dg-8sR" id="Cpg-sz-Hnn">
@@ -231,9 +277,9 @@
             <constraints>
                 <constraint firstItem="b9A-BI-g7Y" firstAttribute="centerY" secondItem="qSA-dg-8sR" secondAttribute="centerY" id="EjX-Xx-BPn"/>
             </constraints>
-            <point key="canvasLocation" x="138" y="254"/>
+            <point key="canvasLocation" x="138" y="331"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellFive" rowHeight="41" id="P9F-im-7n7" customClass="OnlineTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellSix" rowHeight="41" id="P9F-im-7n7" customClass="OnlineTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P9F-im-7n7" id="LNC-y7-zAk">
@@ -266,9 +312,9 @@
             <constraints>
                 <constraint firstItem="PhD-Dn-RG6" firstAttribute="centerY" secondItem="P9F-im-7n7" secondAttribute="centerY" id="AWN-MG-rUl"/>
             </constraints>
-            <point key="canvasLocation" x="138" y="308"/>
+            <point key="canvasLocation" x="138" y="390"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OnlineTableViewCellSix" rowHeight="41" id="aIG-iO-hph" customClass="OnlineTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OnlineTableViewCellSeven" rowHeight="41" id="aIG-iO-hph" customClass="OnlineTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aIG-iO-hph" id="Bny-Os-oVY">
@@ -297,9 +343,9 @@
             <constraints>
                 <constraint firstItem="YWh-EX-0e4" firstAttribute="centerY" secondItem="aIG-iO-hph" secondAttribute="centerY" id="LFC-RS-PBC"/>
             </constraints>
-            <point key="canvasLocation" x="138" y="362"/>
+            <point key="canvasLocation" x="138" y="447"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OnlineTableViewCellSeven" rowHeight="41" id="amU-2i-k5b" customClass="OnlineTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OnlineTableViewCellEight" rowHeight="41" id="amU-2i-k5b" customClass="OnlineTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="amU-2i-k5b" id="rg7-h7-ygV">
@@ -328,9 +374,9 @@
             <constraints>
                 <constraint firstItem="Akf-3y-91g" firstAttribute="centerY" secondItem="amU-2i-k5b" secondAttribute="centerY" id="4uL-k8-b2h"/>
             </constraints>
-            <point key="canvasLocation" x="138" y="413"/>
+            <point key="canvasLocation" x="138" y="504"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellEnit" rowHeight="41" id="NFP-hm-Kcf" customClass="OnlineTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellNine" rowHeight="41" id="NFP-hm-Kcf" customClass="OnlineTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NFP-hm-Kcf" id="DWy-Jo-ECV">
@@ -359,6 +405,9 @@
                         <fontDescription key="fontDescription" type="system" pointSize="8"/>
                         <state key="normal" image="椭圆 1 拷贝"/>
                         <state key="selected" image="椭圆 1"/>
+                        <connections>
+                            <action selector="btnClick:" destination="NFP-hm-Kcf" eventType="touchUpInside" id="fGD-PH-4Id"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -375,12 +424,14 @@
             <connections>
                 <outlet property="ImgView" destination="Otb-dd-REZ" id="YIe-3r-QbP"/>
                 <outlet property="sectionTwotitle" destination="54n-fv-bZ8" id="839-e8-Xjx"/>
+                <outlet property="selectBtn" destination="3UL-xm-A2Z" id="Lje-Bh-q4r"/>
             </connections>
-            <point key="canvasLocation" x="138" y="471"/>
+            <point key="canvasLocation" x="138" y="556"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="5" width="45" height="33"/>
+        <image name="分割线" width="250" height="2"/>
         <image name="图层 5" width="25" height="16"/>
         <image name="椭圆 1" width="10" height="10"/>
         <image name="椭圆 1 拷贝" width="10" height="10"/>

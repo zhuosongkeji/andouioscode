@@ -1,3 +1,4 @@
+
 //
 //  ShoingMsgViewController.m
 //  OgrinterProduct
@@ -6,18 +7,23 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+
 #import "ShoingMsgViewController.h"
+
 
 @interface ShoingMsgViewController ()
 
 @end
 
+
 @implementation ShoingMsgViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
 }
+
 
 /*
 #pragma mark - Navigation

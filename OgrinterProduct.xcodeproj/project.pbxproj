@@ -157,6 +157,8 @@
 		A1F73CFA23A881A1001D86EF /* ShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F73CF923A881A1001D86EF /* ShareView.xib */; };
 		A1F73D0823A8C86D001D86EF /* BeserveView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F73D0723A8C86D001D86EF /* BeserveView.m */; };
 		A1F73D0A23A8C886001D86EF /* BeserveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F73D0923A8C886001D86EF /* BeserveView.xib */; };
+		A1F73D3A23A9F439001D86EF /* OnlineOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F73D3823A9F439001D86EF /* OnlineOrderViewController.m */; };
+		A1F73D3B23A9F439001D86EF /* OnlineOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F73D3923A9F439001D86EF /* OnlineOrderViewController.xib */; };
 		A1FC4A8B239F27BB00AF3F57 /* CustomAlterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC4A8A239F27BB00AF3F57 /* CustomAlterView.m */; };
 		A1FC4A8D239F288E00AF3F57 /* CustomAlterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FC4A8C239F288E00AF3F57 /* CustomAlterView.xib */; };
 		A1FC4A94239F70E600AF3F57 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC4A92239F70E600AF3F57 /* PaySuccessViewController.m */; };
@@ -537,6 +539,9 @@
 		A1F73D0623A8C86D001D86EF /* BeserveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeserveView.h; sourceTree = "<group>"; };
 		A1F73D0723A8C86D001D86EF /* BeserveView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeserveView.m; sourceTree = "<group>"; };
 		A1F73D0923A8C886001D86EF /* BeserveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeserveView.xib; sourceTree = "<group>"; };
+		A1F73D3723A9F439001D86EF /* OnlineOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlineOrderViewController.h; sourceTree = "<group>"; };
+		A1F73D3823A9F439001D86EF /* OnlineOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnlineOrderViewController.m; sourceTree = "<group>"; };
+		A1F73D3923A9F439001D86EF /* OnlineOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineOrderViewController.xib; sourceTree = "<group>"; };
 		A1FC4A89239F27BB00AF3F57 /* CustomAlterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAlterView.h; sourceTree = "<group>"; };
 		A1FC4A8A239F27BB00AF3F57 /* CustomAlterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAlterView.m; sourceTree = "<group>"; };
 		A1FC4A8C239F288E00AF3F57 /* CustomAlterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlterView.xib; sourceTree = "<group>"; };
@@ -1417,6 +1422,9 @@
 				A14FB2F4238F6A84006A6511 /* HomeViewController.xib */,
 				A14FB3242390C6D0006A6511 /* CitylistViewController.h */,
 				A14FB3252390C6D1006A6511 /* CitylistViewController.m */,
+				A1F73D3723A9F439001D86EF /* OnlineOrderViewController.h */,
+				A1F73D3823A9F439001D86EF /* OnlineOrderViewController.m */,
+				A1F73D3923A9F439001D86EF /* OnlineOrderViewController.xib */,
 				A10A9CE0239B38600049A0D2 /* 直播中心 */,
 				A10A9CD6239B38060049A0D2 /* 爱心帮助 */,
 				A10A9CCD239B37A50049A0D2 /* 众筹信息 */,
@@ -2237,6 +2245,7 @@
 				F476A45023A7682B00E3018A /* ZBNCashWithDrawalCell.xib in Resources */,
 				F476A45823A7682B00E3018A /* ZBNMyAddressCell.xib in Resources */,
 				F476A4D223A7889F00E3018A /* ZBNRechargeCellFour.xib in Resources */,
+				A1F73D3B23A9F439001D86EF /* OnlineOrderViewController.xib in Resources */,
 				A14FB2E9238F683D006A6511 /* FindViewController.xib in Resources */,
 				A15DC106239E41D4008CF287 /* HotelDetailsBottomView.xib in Resources */,
 				A10A9C1B2398A1970049A0D2 /* address.plist in Resources */,
@@ -2366,6 +2375,7 @@
 				A14FB291238E295B006A6511 /* UMShareManege.m in Sources */,
 				F476A45223A7682B00E3018A /* ZBNCashWithDrawalCell.m in Sources */,
 				A15DC0C5239DD78A008CF287 /* HotelDetilsBaseTableView.m in Sources */,
+				A1F73D3A23A9F439001D86EF /* OnlineOrderViewController.m in Sources */,
 				A15DC104239E41C8008CF287 /* HotelDetailsBottomView.m in Sources */,
 				A14FB323239017BC006A6511 /* UIView+HHAddition.m in Sources */,
 				A14FB2A8238E4DF6006A6511 /* RegisterViewController.m in Sources */,

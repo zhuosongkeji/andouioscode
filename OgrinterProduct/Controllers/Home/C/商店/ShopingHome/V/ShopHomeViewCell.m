@@ -45,12 +45,12 @@
 -(void)setup{
     
     WSLWaterFlowLayout *layout = [[WSLWaterFlowLayout alloc]init];
+    
     layout.delegate = self;
     
     [self.mCollectionView setCollectionViewLayout:layout];
     self.mCollectionView.delegate = self;
     self.mCollectionView.dataSource = self;
-    
     
     if (_enumtype == MyEnumValueA || _enumtype == MyEnumValueC) {
         self.mCollectionView.scrollEnabled = NO;
@@ -72,14 +72,8 @@
 
 //MARK:-collection
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    if (_enumtype == MyEnumValueA) {
-        return 1;
-    }else if (_enumtype == MyEnumValueB){
+    if (_enumtype == MyEnumValueB) {
         return 3;
-    }else if (_enumtype == MyEnumValueC){
-        return 1;
-    }else if (_enumtype == MyEnumValueD){
-        return 1;
     }else{
         return 1;
     }
@@ -87,16 +81,10 @@
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (_enumtype == MyEnumValueA) {
-        return 6;
-    }else if (_enumtype == MyEnumValueB){
+    if (_enumtype == MyEnumValueB) {
         return 9;
-    }else if (_enumtype == MyEnumValueC){
+    }else {
         return 6;
-    }else if (_enumtype == MyEnumValueD){
-        return 6;
-    }else{
-        return 0;
     }
 }
 

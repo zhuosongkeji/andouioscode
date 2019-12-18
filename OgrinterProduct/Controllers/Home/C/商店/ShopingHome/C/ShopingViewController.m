@@ -10,7 +10,7 @@
 #import "ShopingViewController.h"
 #import "ShopingHomeViewController.h"
 #import "ShopingShopViewController.h"
-#import "ShoingMsgViewController.h"
+#import "ZBNShopingCartVC.h"
 #import "ShoingMineViewController.h"
 #import "SearchResrultViewController.h"
 #import "SegmentView.h"
@@ -24,7 +24,7 @@
 @property (nonatomic,strong)ShopingHomeViewController *ShopingHomeVc;
 
 @property (nonatomic,strong)ShopingShopViewController *ShopingCategoryVc;
-@property (nonatomic,strong)ShoingMsgViewController *ShoingMsgVc;
+@property (nonatomic,strong)ZBNShopingCartVC *ShoingMsgVc;
 @property (nonatomic,strong)ShoingMineViewController *ShoingMineVc;
 
 @property (nonatomic,strong)UIView *searchField;
@@ -33,6 +33,9 @@
 
 @property (nonatomic) NSInteger HHR;
 @property (nonatomic) NSInteger index;
+
+@property (nonatomic,strong)UIView *titleView;
+@property (nonatomic,strong)UILabel *titletxet;
 
 @end
 
@@ -63,6 +66,20 @@
     
     
     return _searchField;
+}
+
+
+-(UIView *)titleView{
+    if (!_titleView) {
+        _titleView = [[UIView alloc]initWithFrame:CGRectMake(28, 7, KSCREEN_WIDTH-56, 30)];
+        _titleView.backgroundColor = [UIColor clearColor];
+        _titletxet = [[UILabel alloc]initWithFrame:CGRectMake(0, 5, KSCREEN_WIDTH-56, 21)];
+        _titletxet.textColor = KSRGBA(255, 255, 255, 1);
+        _titletxet.font = [UIFont systemFontOfSize:18];
+        _titletxet.textAlignment = NSTextAlignmentCenter;
+        [_titleView addSubview:_titletxet];
+    }
+    return _titleView;
 }
 
 
@@ -108,9 +125,7 @@
             frame = CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT - kStatusBarAndNavigationBarH-kStatuTabBarH);
         }
         [self setupChildViewController:_ShopingHomeVc frame:frame title:TowTabBarData[0]];
-        if (_searchField && _searchField.isHidden == YES) {
-            [_searchField setHidden:NO];
-        }
+        self.navigationItem.titleView = self.searchField;
         
     } else if (index == 1){
         if (!_ShopingCategoryVc) {
@@ -118,23 +133,23 @@
         }
         CGRect frame = CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT - kStatusBarAndNavigationBarH-kStatuTabBarH);
         [self setupChildViewController:_ShopingCategoryVc frame:frame title:TowTabBarData[1]];
-        if (_searchField && _searchField.isHidden == YES) {
-            [_searchField setHidden:NO];
-        }
+        self.navigationItem.titleView = self.searchField;
     }else if (index == 2){
         if (!_ShoingMsgVc) {
-            _ShoingMsgVc = [[ShoingMsgViewController alloc] init];
+            _ShoingMsgVc = [[ZBNShopingCartVC alloc] init];
         }
         CGRect frame = CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT - kStatusBarAndNavigationBarH-kStatuTabBarH);
         [self setupChildViewController:_ShoingMsgVc frame:frame title:TowTabBarData[2]];
-        [_searchField setHidden:YES];
+        self.navigationItem.titleView = self.titleView;
+        _titletxet.text = @"购物车";
     }else{
         if (!_ShoingMineVc) {
             _ShoingMineVc = [[ShoingMineViewController alloc] init];
         }
         CGRect frame = CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT - kStatusBarAndNavigationBarH-kStatuTabBarH);
         [self setupChildViewController:_ShoingMineVc frame:frame title:TowTabBarData[3]];
-        [_searchField setHidden:YES];
+        self.navigationItem.titleView = self.titleView;
+        _titletxet.text = @"消息";
     }
 }
 

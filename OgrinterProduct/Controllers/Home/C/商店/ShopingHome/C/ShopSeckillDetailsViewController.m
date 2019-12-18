@@ -11,6 +11,7 @@
 
 #import "ShopSeckillDetailsViewController.h"
 #import "ShopSeckillDetailsSubViewController.h"
+#import "OnlineBookingViewController.h"
 #import "ShopShopkeeperViewController.h"
 #import "QCouponView.h"
 #import "SeckillTableViewCell.h"
@@ -366,7 +367,9 @@
 
 
 -(void)pushToPayController {
-    
+    OnlineBookingViewController *Online = [[OnlineBookingViewController alloc]init];
+    Online.payType = OnlineBookingViewProductPay;
+    [self.navigationController pushViewController:Online animated:YES];
 }
 
 

@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseViewController : UIViewController
 
+
+-(void)pushViewControllerWithString:(NSString *)nibnameStr;
+
+-(void)pushViewControllerwithString:(NSString *)nameStr;
+
 @end
 
 NS_ASSUME_NONNULL_END

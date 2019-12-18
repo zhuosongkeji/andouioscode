@@ -22,6 +22,24 @@
     // Do any additional setup after loading the view.
 }
 
+/*! 加载bix */
+#pragma mark - nibvc push
+-(void)pushViewControllerWithString:(NSString *)nibnameStr{
+    Class class = NSClassFromString(nibnameStr);
+    UIViewController *vc = [[class alloc]initWithNibName:nibnameStr bundle:nil];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+/*! 加载非bix */
+#pragma mark - vc push
+-(void)pushViewControllerwithString:(NSString *)nameStr{
+    Class class = NSClassFromString(nameStr);
+    UIViewController *vc = [[class alloc]initWithNibName:nil bundle:nil];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 /*
 #pragma mark - Navigation
 
