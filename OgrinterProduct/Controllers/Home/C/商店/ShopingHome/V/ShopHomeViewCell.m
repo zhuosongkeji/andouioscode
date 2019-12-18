@@ -51,20 +51,21 @@
     self.mCollectionView.delegate = self;
     self.mCollectionView.dataSource = self;
     
-    if (_enumtype == MyEnumValueA) {
+    
+    if (_enumtype == MyEnumValueA || _enumtype == MyEnumValueC) {
         self.mCollectionView.scrollEnabled = NO;
         [self.mCollectionView registerNib:[UINib nibWithNibName:@"ShopCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"ShopCollectionViewCell"];
-        //注册head
-        [self.mCollectionView registerNib:[UINib nibWithNibName:@"CaseCluessKeybordCollectionHeadView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CaseCluessKeybordCollectionHeadView"];
+
     }else if (_enumtype == MyEnumValueB){
         self.mCollectionView.scrollEnabled = NO;
         [self.mCollectionView registerNib:[UINib nibWithNibName:@"HXCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"HXCollectionViewCell"];
-        //注册head
-        [self.mCollectionView registerNib:[UINib nibWithNibName:@"CaseCluessKeybordCollectionHeadView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CaseCluessKeybordCollectionHeadView"];
         
-    }else{
+    }else if (_enumtype == MyEnumValueD){
         [self.mCollectionView registerNib:[UINib nibWithNibName:@"HXCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"HXCollectionViewCell"];
-    }
+    }else{}
+    
+    //注册head
+    [self.mCollectionView registerNib:[UINib nibWithNibName:@"CaseCluessKeybordCollectionHeadView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CaseCluessKeybordCollectionHeadView"];
     
 }
 
@@ -75,6 +76,10 @@
         return 1;
     }else if (_enumtype == MyEnumValueB){
         return 3;
+    }else if (_enumtype == MyEnumValueC){
+        return 1;
+    }else if (_enumtype == MyEnumValueD){
+        return 1;
     }else{
         return 1;
     }
@@ -86,6 +91,10 @@
         return 6;
     }else if (_enumtype == MyEnumValueB){
         return 9;
+    }else if (_enumtype == MyEnumValueC){
+        return 6;
+    }else if (_enumtype == MyEnumValueD){
+        return 6;
     }else{
         return 0;
     }
@@ -93,20 +102,22 @@
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (_enumtype == MyEnumValueA) {
+    if (_enumtype == MyEnumValueA || _enumtype == MyEnumValueC) {
         ShopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ShopCollectionViewCell" forIndexPath:indexPath];
         //    cell.shop = self.shops[indexPath.item];
+        
         return cell;
+        
     }else if (_enumtype == MyEnumValueB){
         ShopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HXCollectionViewCell" forIndexPath:indexPath];
         //    cell.shop = self.shops[indexPath.item];
         return cell;
-    }else{
+    }else if (_enumtype == MyEnumValueD){
         ShopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HXCollectionViewCell" forIndexPath:indexPath];
         //    cell.shop = self.shops[indexPath.item];
         return cell;
     }
-    
+    return nil;
 }
 
 
@@ -138,7 +149,7 @@
 
 //MARK:-WSLWaterFlowLayout
 - (CGSize)waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (_enumtype == MyEnumValueA) {
+    if (_enumtype == MyEnumValueA || _enumtype == MyEnumValueC) {
         return CGSizeMake((KSCREEN_WIDTH-30)/2,234);
     }else if (_enumtype == MyEnumValueB){
         return CGSizeMake((KSCREEN_WIDTH-40)/3,120);
@@ -147,8 +158,9 @@
     }
 }
 
+
 -(CGFloat)columnCountInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
-    if (_enumtype == MyEnumValueA) {
+    if (_enumtype == MyEnumValueA || _enumtype == MyEnumValueC) {
         return 2;
     }else if (_enumtype == MyEnumValueB){
         return 3;
@@ -159,7 +171,7 @@
 
 /** 行数*/
 -(CGFloat)rowCountInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
-    if (_enumtype == MyEnumValueA) {
+    if (_enumtype == MyEnumValueA || _enumtype == MyEnumValueC) {
         return 5;
     }else if (_enumtype == MyEnumValueB){
         return 4;
@@ -183,7 +195,7 @@
 
 //MARK:- Header and Footer
 - (CGSize)waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForHeaderViewInSection:(NSInteger)section {
-    if (_enumtype == MyEnumValueA) {
+    if (_enumtype == MyEnumValueA || _enumtype == MyEnumValueC) {
         CGSize size={0,0};
         return size;
     }else if (_enumtype == MyEnumValueB){

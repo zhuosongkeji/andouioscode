@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShopShopkeeperViewController">
             <connections>
                 <outlet property="mTableView" destination="bxh-8W-XX4" id="fGu-eV-a3a"/>
+                <outlet property="topimgView" destination="pNf-4u-0C9" id="vvY-mg-q39"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -77,7 +78,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bxh-8W-XX4">
-                    <rect key="frame" x="0.0" y="280" width="414" height="616"/>
+                    <rect key="frame" x="0.0" y="290" width="414" height="606"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="301-5g-DIO"/>
@@ -88,7 +89,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="GTE-xU-teq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9cR-tE-qZ4"/>
-                <constraint firstItem="bxh-8W-XX4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="280" id="MEQ-Rh-etz"/>
+                <constraint firstItem="bxh-8W-XX4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="290" id="MEQ-Rh-etz"/>
                 <constraint firstAttribute="bottom" secondItem="bxh-8W-XX4" secondAttribute="bottom" id="OjY-KA-lE9"/>
                 <constraint firstItem="bxh-8W-XX4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SKS-eu-sqM"/>
                 <constraint firstItem="GTE-xU-teq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Z6C-zy-2XO"/>

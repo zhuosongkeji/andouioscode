@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShopSeckillDetailsViewController">
             <connections>
+                <outlet property="bannerbjlable" destination="xb6-kf-jLC" id="anh-zb-lAm"/>
                 <outlet property="bannernumLable" destination="S9A-Fd-6sE" id="7yL-Rs-5xr"/>
                 <outlet property="mTableView" destination="rD0-nO-GYo" id="zor-5J-z9R"/>
+                <outlet property="shareBtn" destination="Hci-dR-fsQ" id="mQ6-uk-aY6"/>
                 <outlet property="topBannerbjView" destination="ALj-RK-CgE" id="w5U-sg-gra"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -48,12 +52,25 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hci-dR-fsQ">
+                                        <rect key="frame" x="366" y="28" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="IGN-Pv-VNa"/>
+                                            <constraint firstAttribute="width" constant="32" id="OXh-bg-pic"/>
+                                        </constraints>
+                                        <state key="normal" image="分享"/>
+                                        <connections>
+                                            <action selector="shareClick:" destination="-1" eventType="touchUpInside" id="mqW-sb-1hn"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.8327878433" blue="0.64305866980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Hci-dR-fsQ" firstAttribute="top" secondItem="ALj-RK-CgE" secondAttribute="top" constant="28" id="4gx-Ic-lbq"/>
                                     <constraint firstItem="S9A-Fd-6sE" firstAttribute="width" secondItem="xb6-kf-jLC" secondAttribute="width" id="FgG-qh-vSe"/>
                                     <constraint firstItem="S9A-Fd-6sE" firstAttribute="height" secondItem="xb6-kf-jLC" secondAttribute="height" id="P3b-fo-bDU"/>
                                     <constraint firstItem="S9A-Fd-6sE" firstAttribute="centerX" secondItem="xb6-kf-jLC" secondAttribute="centerX" id="Wui-AH-NnR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hci-dR-fsQ" secondAttribute="trailing" constant="16" id="fPJ-t5-bMc"/>
                                     <constraint firstAttribute="height" constant="280" id="ffK-og-xqq"/>
                                     <constraint firstAttribute="trailing" secondItem="S9A-Fd-6sE" secondAttribute="trailing" constant="16" id="jST-N4-SqW"/>
                                     <constraint firstAttribute="bottom" secondItem="S9A-Fd-6sE" secondAttribute="bottom" constant="8" id="qbm-aU-fPJ"/>
@@ -76,42 +93,57 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giA-Om-ujg">
                     <rect key="frame" x="0.0" y="832" width="414" height="64"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4j6-40-quE" customClass="Img_lable">
+                        <button opaque="NO" tag="2000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4j6-40-quE" customClass="Img_lable">
                             <rect key="frame" x="10" y="0.0" width="62.5" height="64"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="店铺">
                                 <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="joinCartClick:" destination="-1" eventType="touchUpInside" id="MSR-c8-pNj"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ig4-su-OPV" customClass="Img_lable">
+                        <button opaque="NO" tag="2001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ig4-su-OPV" customClass="Img_lable">
                             <rect key="frame" x="72.5" y="0.0" width="62" height="64"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="客服">
                                 <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="joinCartClick:" destination="-1" eventType="touchUpInside" id="ngG-iV-ARn"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A04-Bb-YJQ" customClass="Img_lable">
+                        <button opaque="NO" tag="2002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A04-Bb-YJQ" customClass="Img_lable">
                             <rect key="frame" x="134.5" y="0.0" width="62.5" height="64"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="购物车">
                                 <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="joinCartClick:" destination="-1" eventType="touchUpInside" id="iOs-Va-pqp"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62C-E0-lgX">
+                        <button opaque="NO" tag="2003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62C-E0-lgX">
                             <rect key="frame" x="207" y="0.0" width="103.5" height="64"/>
                             <color key="backgroundColor" red="0.95842248200000002" green="0.64973455670000002" blue="0.40560734269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="加入购物车">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="joinCartClick:" destination="-1" eventType="touchUpInside" id="e5r-A0-LZZ"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcC-py-snA">
+                        <button opaque="NO" tag="2004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcC-py-snA">
                             <rect key="frame" x="310.5" y="0.0" width="103.5" height="64"/>
                             <color key="backgroundColor" red="0.88868540529999995" green="0.20830759409999999" blue="0.18837797640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="立即购买">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="joinCartClick:" destination="-1" eventType="touchUpInside" id="VQO-bM-dqx"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,4 +185,7 @@
             <point key="canvasLocation" x="-83" y="-869"/>
         </view>
     </objects>
+    <resources>
+        <image name="分享" width="40" height="40"/>
+    </resources>
 </document>

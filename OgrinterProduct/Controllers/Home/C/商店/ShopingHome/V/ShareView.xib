@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ShareView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="178"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svB-yU-FV1" customClass="Img_lable">
+                    <rect key="frame" x="16" y="24" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="svB-yU-FV1" secondAttribute="height" multiplier="1:1" id="8EX-SZ-qUx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="微信" image="whcat">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HI3-A9-rNM" customClass="Img_lable">
+                    <rect key="frame" x="92" y="24" width="60" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="朋友圈" image="pyq">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhf-Bk-TE6" customClass="Img_lable">
+                    <rect key="frame" x="168" y="24" width="60" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="QQ" image="qq (1)">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQA-er-1bn" customClass="Img_lable">
+                    <rect key="frame" x="244" y="24" width="60" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="QQ空间" image="QQkj">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdv-eg-3aJ" customClass="Img_lable">
+                    <rect key="frame" x="16" y="94" width="60" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="新浪微博" image="xlwb">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Tdv-eg-3aJ" firstAttribute="centerX" secondItem="svB-yU-FV1" secondAttribute="centerX" id="3d6-Vd-bmc"/>
+                <constraint firstItem="HI3-A9-rNM" firstAttribute="leading" secondItem="svB-yU-FV1" secondAttribute="trailing" constant="16" id="4lf-g8-s8J"/>
+                <constraint firstItem="dQA-er-1bn" firstAttribute="centerY" secondItem="svB-yU-FV1" secondAttribute="centerY" id="7T9-wp-8Y8"/>
+                <constraint firstItem="svB-yU-FV1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="A8G-jb-HRO"/>
+                <constraint firstItem="Yhf-Bk-TE6" firstAttribute="leading" secondItem="HI3-A9-rNM" secondAttribute="trailing" constant="16" id="HaY-sb-Bx6"/>
+                <constraint firstItem="Yhf-Bk-TE6" firstAttribute="centerY" secondItem="svB-yU-FV1" secondAttribute="centerY" id="MEC-OF-L22"/>
+                <constraint firstItem="Tdv-eg-3aJ" firstAttribute="top" secondItem="svB-yU-FV1" secondAttribute="bottom" constant="10" id="Pbq-Ms-mH1"/>
+                <constraint firstItem="HI3-A9-rNM" firstAttribute="centerY" secondItem="svB-yU-FV1" secondAttribute="centerY" id="UI2-aP-4b1"/>
+                <constraint firstItem="Tdv-eg-3aJ" firstAttribute="height" secondItem="svB-yU-FV1" secondAttribute="height" id="Way-Xx-sYd"/>
+                <constraint firstItem="Yhf-Bk-TE6" firstAttribute="height" secondItem="svB-yU-FV1" secondAttribute="height" id="WoW-vL-Wf6"/>
+                <constraint firstItem="dQA-er-1bn" firstAttribute="width" secondItem="svB-yU-FV1" secondAttribute="width" id="aPO-qd-x9e"/>
+                <constraint firstItem="HI3-A9-rNM" firstAttribute="height" secondItem="svB-yU-FV1" secondAttribute="height" id="byK-K3-vsN"/>
+                <constraint firstItem="HI3-A9-rNM" firstAttribute="width" secondItem="svB-yU-FV1" secondAttribute="width" id="dUc-JB-JVa"/>
+                <constraint firstAttribute="trailing" secondItem="dQA-er-1bn" secondAttribute="trailing" constant="16" id="fD4-DW-LLV"/>
+                <constraint firstItem="Yhf-Bk-TE6" firstAttribute="width" secondItem="svB-yU-FV1" secondAttribute="width" id="mgo-B1-RtZ"/>
+                <constraint firstItem="Tdv-eg-3aJ" firstAttribute="width" secondItem="svB-yU-FV1" secondAttribute="width" id="q3i-LC-0cx"/>
+                <constraint firstItem="svB-yU-FV1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="q8T-4v-arX"/>
+                <constraint firstItem="dQA-er-1bn" firstAttribute="leading" secondItem="Yhf-Bk-TE6" secondAttribute="trailing" constant="16" id="uZd-4F-Puv"/>
+                <constraint firstItem="dQA-er-1bn" firstAttribute="height" secondItem="svB-yU-FV1" secondAttribute="height" id="wpj-nO-sXm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.8840579710145" y="44.196428571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="QQkj" width="27.5" height="27.5"/>
+        <image name="pyq" width="27.5" height="27.5"/>
+        <image name="qq (1)" width="27.5" height="27.5"/>
+        <image name="whcat" width="27.5" height="27.5"/>
+        <image name="xlwb" width="27.5" height="27.5"/>
+    </resources>
+</document>

@@ -92,7 +92,7 @@
 
         // 初始位置 设置
         CGFloat x = 0.f;
-        CGFloat y = kStatusBarAndNavigationBarH+view.height;
+        CGFloat y = CGRectGetMaxY(view.frame)+kStatusBarAndNavigationBarH;
         CGFloat w = kWidth;
         CGFloat h = kHeight - y;
         
