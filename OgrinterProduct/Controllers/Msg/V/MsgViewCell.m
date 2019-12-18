@@ -58,7 +58,7 @@
     for (int i = 0; i < 5; i ++) {
         
         UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(8+i*17,3,12,12)];
-        imgView.image = [UIImage imageNamed:@"形状 3 拷贝 4"];
+        imgView.image = [UIImage imageNamed:@"start"];
         
         [self.sharbjView addSubview:imgView];
     }
@@ -70,5 +70,6 @@
 
     // Configure the view for the selected state
 }
+
 
 @end

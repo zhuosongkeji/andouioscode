@@ -25,7 +25,7 @@
 }
 
 
-+ (instancetype)tempTableViewCellWith:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath{
++ (instancetype)tempTableViewCellWith:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath withTpye:(NSInteger)type{
     
     NSString *identifier = @"";
     NSInteger index = 0;
@@ -33,26 +33,54 @@
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             identifier = @"OnlineTableViewCellOne";
+            index = indexPath.row;
         }else if (indexPath.row == 1){
-            identifier = @"OnlineTableViewCellTwo";
+            if (type == 0) {
+                identifier = @"OnlineTableViewCellTwo";
+                index = indexPath.row;
+            }else if (type == 1){
+                identifier = @"OnlineTableViewCellThrid";
+                index = 2;
+            }else if (type == 2){
+                
+            }
+            
         }else if (indexPath.row == 2){
-            identifier = @"OnlineTableViewCellThrid";
+            if (type == 0) {
+                identifier = @"OnlineTableViewCellFouth";
+                index = 3;
+            }else if (type == 1){
+                identifier = @"OnlineTableViewCellSeven";
+                index = 6;
+            }else if (type == 2){
+                
+            }
+            
         }else if (indexPath.row == 3){
-            identifier = @"OnlineTableViewCellFouth";
+            if (type == 0) {
+                identifier = @"OnlineTableViewCellFive";
+                index = 4;
+            }else if (type == 1){
+                identifier = @"OnlineTableViewCellEight";
+                index = 7;
+            }else if (type == 2){
+                
+            }
         }else if (indexPath.row == 4){
-            identifier = @"OnlineTableViewCellFive";
-        }else if (indexPath.row == 5){
             identifier = @"OnlineTableViewCellSix";
-        }else {
+            index = 5;
+        }else if (indexPath.row == 5){
             identifier = @"OnlineTableViewCellSeven";
-        }
-        
-        index = indexPath.row;
+            index = 6;
+        }else if(indexPath.row == 6){
+            identifier = @"OnlineTableViewCellEight";
+            index = 7;
+        }else{}
         
     }else {
         
-        identifier = @"OnlineTableViewCellEnit";
-        index = 7;
+        identifier = @"OnlineTableViewCellNine";
+        index = 8;
     }
     
     OnlineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
@@ -94,5 +122,13 @@
 
     // Configure the view for the selected state
 }
+
+
+- (IBAction)btnClick:(UIButton *)sender {
+    KPreventRepeatClickTime(1);
+    [self.xlDelegate handleSelectedButtonActionWithSelectedIndexPath:self.selectedIndexPath];
+}
+
+
 
 @end

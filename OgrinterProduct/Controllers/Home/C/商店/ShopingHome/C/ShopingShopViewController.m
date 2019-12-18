@@ -21,13 +21,14 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *righttoTop;
 
+
 @property(nonatomic,strong)NSArray *leftArr;
-
 @property(nonatomic,strong)NSArray *rightArr;
-
 @property (nonatomic,strong)UIButton *searchBtn;
 
+
 @end
+
 
 @implementation ShopingShopViewController
 
@@ -36,6 +37,7 @@
     [super viewWillAppear:animated];
     
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,23 +48,25 @@
     self.rigthTableView.tableFooterView = [UILabel new];
     
     [self.rigthTableView registerNib:[UINib nibWithNibName:@"ShopHomeViewCell" bundle:nil] forCellReuseIdentifier:@"ShopHomeViewCell"];
-    
     // Do any additional setup after loading the view from its nib.
 }
 
 
 #pragma mark - tableView 数据源代理方法 -
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    if (tableView == self.leftTbleView) return [self.leftArr count];
+    if (tableView == self.leftTbleView)
+        return [self.leftArr count];
     return 1;
 }
 
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    if (tableView == self.leftTbleView) return 1;
+    if (tableView == self.leftTbleView)
+        return 1;
     return [self.leftArr count];
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -70,11 +74,9 @@
     if (tableView == self.leftTbleView) {
         
         static NSString *idfier = @"idfier";
-        
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idfier];
         
         if (!cell) {
-            
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
         }
         
@@ -86,24 +88,24 @@
     } else {
         
        ShopHomeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShopHomeViewCell"];
-        
         if (!cell) {
             NSLog(@"xhuangjian");
         }
         
         [cell setEnumtype:MyEnumValueB];
-        
+        cell.itemBlock = ^(NSInteger idex, NSIndexPath * _Nullable indexpath) {
+            
+        };
         return cell;
-        
     }
     
     return nil;
 }
 
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
-    if (tableView == self.rigthTableView) return [NSString stringWithFormat:@"第 %ld 组", section];
-    
+    if (tableView == self.rigthTableView)
+        return [NSString stringWithFormat:@"第 %ld 组", section];
     return nil;
 }
 
@@ -119,32 +121,26 @@
 //MARK: - 一个方法就能搞定 右边滑动时跟左边的联动
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    // 如果是 左侧的 tableView 直接return
-    if (scrollView == self.leftTbleView) return;
-    
-    // 取出显示在 视图 且最靠上 的 cell 的 indexPath
+    if (scrollView == self.leftTbleView)
+        return;
+
     NSIndexPath *topHeaderViewIndexpath = [[self.rigthTableView indexPathsForVisibleRows] firstObject];
-    
-    // 左侧 talbelView 移动的 indexPath
     NSIndexPath *moveToIndexpath = [NSIndexPath indexPathForRow:topHeaderViewIndexpath.section inSection:0];
     
-    // 移动 左侧 tableView 到 指定 indexPath 居中显示
     [self.leftTbleView selectRowAtIndexPath:moveToIndexpath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
     
 }
 
+
 //MARK: - 点击 cell 的代理方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // 选中 左侧 的 tableView
     if (tableView == self.leftTbleView) {
         
         NSIndexPath *moveToIndexPath = [NSIndexPath indexPathForRow:0 inSection:indexPath.row];
         
-        // 将右侧 tableView 移动到指定位置
         [self.rigthTableView selectRowAtIndexPath:moveToIndexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
         
-        // 取消选中效果
         [self.rigthTableView deselectRowAtIndexPath:moveToIndexPath animated:YES];
     }
 }

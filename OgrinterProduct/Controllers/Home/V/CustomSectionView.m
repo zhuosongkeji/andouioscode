@@ -10,6 +10,18 @@
 
 @implementation CustomSectionView
 
+
+-(void)awakeFromNib{
+    [super awakeFromNib];
+}
+
+
+- (IBAction)btnclick:(UIButton *)sender {
+    KPreventRepeatClickTime(1)
+    _btnclickBlock(sender);
+}
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

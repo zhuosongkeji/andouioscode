@@ -13,8 +13,7 @@
 #import "PaySuccessViewController.h"
 
 
-@interface OnlineBookingViewController ()<UITableViewDelegate,UITableViewDataSource>
-{
+@interface OnlineBookingViewController ()<UITableViewDelegate,UITableViewDataSource,OnlineTableViewCellDelegate>{
     
     BOOL HHR;
 }
@@ -25,6 +24,8 @@
 
 @property (nonatomic,weak)UIButton *bjbtn;
 
+@property (assign, nonatomic) NSIndexPath *selectedIndexPath;//单选，当前选中的行
+
 @end
 
 @implementation OnlineBookingViewController
@@ -34,10 +35,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"在线预订";
-    
     [self setup];
-    [self createAlter];
+    if (self.payType == OnlineBookingViewHotelPay) {
+        self.navigationItem.title = OnlinTitleArr[0];
+         [self createAlter];
+    }else if (self.payType == OnlineBookingViewProductPay){
+        self.navigationItem.title = OnlinTitleArr[1];
+    }else if (self.payType == OnlineBookingViewOrderPay){
+        
+    }else{}
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -66,16 +73,32 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return 7;
+        if (self.payType == 0) {
+            return 7;
+        }else if (self.payType == 1){
+            return 4;
+        }else if (self.payType == 2){
+            return 0;
+        }else{return 0;}
     }
     return 4;
 }
 
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    OnlineTableViewCell *cell = [OnlineTableViewCell tempTableViewCellWith:self.mTableView indexPath:indexPath];
+    OnlineTableViewCell *cell = [OnlineTableViewCell tempTableViewCellWith:self.mTableView indexPath:indexPath withTpye:self.payType];
     
     [cell configTempCellWith:indexPath];
+    
+    cell.xlDelegate = self;
+    
+    
+    cell.selectedIndexPath = indexPath;
+    if (_selectedIndexPath == indexPath)
+        cell.selectBtn.selected = YES;
+    else
+        cell.selectBtn.selected = NO;
     
     return cell;
 }
@@ -96,13 +119,23 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 44;
+    if (section == 1) {
+        return 44;
+    }
+    return 0;
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        return [[@[@"105",@"79",@"50",@"50",@"50",@"50",@"50"] objectAtIndex:indexPath.row] floatValue];
+        if (self.payType == 0) {
+            return [[@[@"105",@"79",@"50",@"50",@"50",@"50",@"50"] objectAtIndex:indexPath.row] floatValue];
+        }else if (self.payType == 1){
+            return [[@[@"105",@"95",@"50",@"50"] objectAtIndex:indexPath.row] floatValue];
+        }else if (self.payType == 2){
+            return 0;
+        }else {return 0;}
+        
     }else if (indexPath.section == 1){
         return 50;
     }
@@ -129,6 +162,18 @@
 }
 
 
+//MARK:-
+- (void)handleSelectedButtonActionWithSelectedIndexPath:(NSIndexPath *)selectedIndexPath{
+    if (selectedIndexPath.section == 1) {
+        OnlineTableViewCell *celled = [self.mTableView cellForRowAtIndexPath:_selectedIndexPath];
+        celled.selectBtn.selected = NO;
+        //记录当前选中的位置索引
+        _selectedIndexPath = selectedIndexPath;
+        //当前选择的打勾
+        OnlineTableViewCell *cell = [self.mTableView cellForRowAtIndexPath:selectedIndexPath];
+        cell.selectBtn.selected = YES;
+    }
+}
 
 /*
 #pragma mark - Navigation

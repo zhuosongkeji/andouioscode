@@ -52,7 +52,7 @@
 #define OnlineTitle @[@"银联支付",@"微信支付",@"支付宝支付",@"余额支付"]
 #define OnlineImg @[@"图层 5",@"微信支付",@"zhifub",@"矩形 60"]
 
-#define ControllerVCArr @[@"HotelViewController",@"HotelViewController",@"NongJialeViewController",@"TCShopingViewController",@"BusinessCoursesViewController",@"HousePropertyViewController",@"AutomobileViewController",@"CrowdFundingViewController",@"loveLoadViewController",@"LiveBroadcastViewController"]
+#define ControllerVCArr @[@"ShopingViewController",@"HotelViewController"]
 
 //MARK:- login
 #define NphoneNumber @"手机号码格式不正确"
@@ -78,6 +78,7 @@
 #define searchplaceholder @"请输入关键字搜索"
 #define GuessYlike @"猜你喜欢"
 
+#define OnlinTitleArr @[@"在线预订",@"在线下单",@"在线支付"]
 
 //MARK:-
 #define imgStr(img) [UIImage imageNamed:img]

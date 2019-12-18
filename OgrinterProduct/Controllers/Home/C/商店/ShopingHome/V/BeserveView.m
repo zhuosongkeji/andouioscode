@@ -6,6 +6,7 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+
 #import "BeserveView.h"
 
 @interface BeserveView()
@@ -26,6 +27,7 @@
     [super awakeFromNib];
     [self setup];
 }
+
 
 
 -(void)setup{

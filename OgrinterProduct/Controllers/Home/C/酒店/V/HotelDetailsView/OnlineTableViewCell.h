@@ -6,14 +6,30 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
 
+
 NS_ASSUME_NONNULL_BEGIN
+
+@protocol OnlineTableViewCellDelegate <NSObject>
+
+- (void)handleSelectedButtonActionWithSelectedIndexPath:(NSIndexPath *)selectedIndexPath;
+
+@end
+
 
 @interface OnlineTableViewCell : UITableViewCell
 
 
-+ (instancetype)tempTableViewCellWith:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath;
+@property (nonatomic,weak)id<OnlineTableViewCellDelegate> xlDelegate;
+
+@property (assign, nonatomic) NSIndexPath *selectedIndexPath;
+
+@property (weak, nonatomic) IBOutlet UIButton *selectBtn;
+
++ (instancetype)tempTableViewCellWith:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath withTpye:(NSInteger)type;
+
 
 - (void)configTempCellWith:(NSIndexPath *)indexPath;
 

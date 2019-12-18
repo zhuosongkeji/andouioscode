@@ -10,8 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^MoreBtnClickBlock)(UIButton *btn);
+
 @interface CustomSectionView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *titimgView;
+
+@property (nonatomic,copy) MoreBtnClickBlock btnclickBlock;
 
 @end
 

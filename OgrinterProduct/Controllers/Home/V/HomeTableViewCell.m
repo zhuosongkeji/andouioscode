@@ -18,7 +18,12 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView1;
 @property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView2;
 
+@property (weak, nonatomic) IBOutlet UIView *startbjView;
+
+
+
 @end
+
 
 @implementation HomeTableViewCell
 
@@ -50,11 +55,14 @@
     WSLWaterFlowLayout *mylayout = [[WSLWaterFlowLayout alloc]init];
     mylayout.delegate = self;
     
+    [self setupStar];
+    
     [collectionView setCollectionViewLayout:mylayout];
     collectionView.delegate = self;
     collectionView.dataSource = self;
     
     [collectionView registerNib:[UINib nibWithNibName:@"HXCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"HXCollectionViewCell"];
+    
 }
 
 
@@ -233,6 +241,14 @@
 /** 边缘之间的间距*/
 -(UIEdgeInsets)edgeInsetInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
     return UIEdgeInsetsMake(10, 10, 10, 10);
+}
+
+-(void)setupStar {
+    for (int i = 0; i < 5; i ++) {
+        UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(8+i*17,3,12,12)];
+        imgView.image = [UIImage imageNamed:@"start"];
+        [self.startbjView addSubview:imgView];
+    }
 }
 
 
