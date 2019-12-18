@@ -15,12 +15,10 @@
 
 @implementation ZBNMyNewsVC
 
-static NSString * const ZBNMyNewsCellID = @"news";
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.tableView registerNib:[UINib nibWithNibName:@"ZBNMyNewsCell" bundle:nil] forCellReuseIdentifier:ZBNMyNewsCellID];
+    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 #pragma mark - Table view data source
@@ -33,14 +31,14 @@ static NSString * const ZBNMyNewsCellID = @"news";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZBNMyNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:ZBNMyNewsCellID];
+    ZBNMyNewsCell *cell = [ZBNMyNewsCell registerCellForTable:tableView];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 66;
+    return 50;
 }
 
 @end

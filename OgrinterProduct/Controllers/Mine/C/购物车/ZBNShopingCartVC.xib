@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZBNShopingCartVC">
             <connections>
+                <outlet property="allSelectedBtn" destination="6zv-g3-CVG" id="Khi-gO-oc4"/>
                 <outlet property="buyButton" destination="CgW-He-5Ie" id="tAo-SS-WP6"/>
                 <outlet property="tableView" destination="WDz-HB-2wK" id="alg-Tq-erZ"/>
                 <outlet property="totalPriceLabel" destination="qnw-xE-FAz" id="Zta-p1-pyX"/>
@@ -30,9 +31,9 @@
                     </connections>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtM-Ls-tEG">
-                    <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                    <rect key="frame" x="0.0" y="846" width="414" height="50"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全选" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POz-NG-iDj">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全选" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POz-NG-iDj">
                             <rect key="frame" x="45" y="17" width="29" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
@@ -44,16 +45,20 @@
                             <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合计:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKl-0J-Qui">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合计:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKl-0J-Qui">
                             <rect key="frame" x="94" y="17" width="33" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgW-He-5Ie">
-                            <rect key="frame" x="348" y="8" width="56" height="34"/>
+                            <rect key="frame" x="361" y="10.5" width="43" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="去结算">
                                 <color key="titleColor" red="0.1960784314" green="0.75686274509999996" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="disabled">
+                                <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnw-xE-FAz">
@@ -66,6 +71,9 @@
                             <rect key="frame" x="19" y="16" width="16" height="18"/>
                             <state key="normal" backgroundImage="dati1"/>
                             <state key="selected" backgroundImage="勾"/>
+                            <connections>
+                                <action selector="allSelectedBtnClick:" destination="-1" eventType="touchUpInside" id="kyP-Lh-nqd"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -98,13 +106,13 @@
                 <constraint firstItem="WDz-HB-2wK" firstAttribute="top" secondItem="eQ3-tB-HEf" secondAttribute="top" id="0im-nP-zNS"/>
                 <constraint firstItem="eQ3-tB-HEf" firstAttribute="trailing" secondItem="CtM-Ls-tEG" secondAttribute="trailing" id="8fp-Nc-XaC"/>
                 <constraint firstItem="WDz-HB-2wK" firstAttribute="leading" secondItem="eQ3-tB-HEf" secondAttribute="leading" id="JNr-lc-bBR"/>
-                <constraint firstItem="eQ3-tB-HEf" firstAttribute="bottom" secondItem="CtM-Ls-tEG" secondAttribute="bottom" id="bjc-QC-znp"/>
+                <constraint firstAttribute="bottom" secondItem="CtM-Ls-tEG" secondAttribute="bottom" id="bjc-QC-znp"/>
                 <constraint firstItem="eQ3-tB-HEf" firstAttribute="trailing" secondItem="WDz-HB-2wK" secondAttribute="trailing" id="erU-Jg-6cg"/>
                 <constraint firstItem="eQ3-tB-HEf" firstAttribute="bottom" secondItem="WDz-HB-2wK" secondAttribute="bottom" id="hEl-4M-Jhi"/>
                 <constraint firstItem="CtM-Ls-tEG" firstAttribute="leading" secondItem="eQ3-tB-HEf" secondAttribute="leading" id="tia-aS-EH6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="eQ3-tB-HEf"/>
-            <point key="canvasLocation" x="-167" y="603"/>
+            <point key="canvasLocation" x="-1557" y="108"/>
         </view>
     </objects>
     <resources>

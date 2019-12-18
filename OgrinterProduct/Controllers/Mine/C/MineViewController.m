@@ -17,8 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImageV;
 
-@property (weak, nonatomic) IBOutlet UIView *topOrderView;
-
 
 @end
 
@@ -28,9 +26,9 @@
     [super viewDidLoad];
     
     self.mTableView.tableFooterView = [UILabel new];
-    [self setupUI];
+   
+    self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
 }
-
 
 
 //MARK:-tableView
@@ -66,23 +64,6 @@
     UIViewController *vc = [[class alloc]initWithNibName:nil bundle:nil];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-
-/*! 我的订单view按钮的点击事件 */
-
-- (IBAction)OrderViewBtnClick:(UIButton *)sender {
-    
-    NSLog(@"你点击了待付款按钮");
-    
-}
-
-- (void)setupUI
-{
-    self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
-    self.topOrderView.layer.cornerRadius = 10;
-    self.topOrderView.layer.borderWidth = 1;
-    self.topOrderView.layer.borderColor =  KSRGBA(241, 241, 241, 1).CGColor;
 }
 
 /*! 中间View按钮的点击事件 */

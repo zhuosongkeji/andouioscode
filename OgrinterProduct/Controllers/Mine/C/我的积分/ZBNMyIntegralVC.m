@@ -18,7 +18,7 @@
     
     self.navigationItem.title = @"我的积分";
     ZBNMyIntegerHeadView *headView = [ZBNMyIntegerHeadView viewFromXib];
-    headView.height = 150;
+    headView.height = 180;
     self.tableView.tableHeaderView = headView;
     
 }
@@ -36,7 +36,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 55;
+    return 48;
 }
 
 

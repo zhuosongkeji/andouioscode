@@ -22,6 +22,10 @@
 @property (nonatomic, strong) NSMutableArray *goodsCar;
 /** 商品数据 */
 @property (nonatomic, strong) NSMutableArray *goodsArray;
+
+@property (weak, nonatomic) IBOutlet UIButton *allSelectedBtn;
+
+
 @end
 
 @implementation ZBNShopingCartVC
@@ -59,30 +63,38 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
+
+
+- (IBAction)allSelectedBtnClick:(UIButton *)sender {
+    
+    
+    
+    
+}
+
+
+
+
 #pragma mark - Table view data source
 
-
+/*! 设置有多少数据 */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     return self.goodsArray.count;
 }
-
+/*! 设置没个Cell的数据 */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZBNShoppingCartCell *cell = [tableView dequeueReusableCellWithIdentifier:ZBNShopingCartCellID];
     cell.delegate = self;
     cell.shoppingCartModel = self.goodsArray[indexPath.row];
-    cell.deleteBtnClick = ^(ZBNShoppingCartModel * _Nonnull catModel) {
-        [self.goodsArray removeObject:catModel];
-        [self.tableView reloadData];
-    };
     return cell;
 }
 
-
+/*! 设置行高 */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 180;
+    return 142;
 }
 
 
@@ -101,14 +113,15 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
 
 - (void)shoppingCartCellDidClickPlusButton:(ZBNShoppingCartCell *)shoppingCartCell
 {
+    // 计算总价
     int totalPrice = self.totalPriceLabel.text.intValue + shoppingCartCell.shoppingCartModel.money.intValue;
-    
+    // 设置总价
     self.totalPriceLabel.text = [NSString stringWithFormat:@"%d",totalPrice];
-    
+    // 设置按钮可以点击
     self.buyButton.enabled = YES;
-    
+    // 如果商品已经在购物车中添加过,
     if ([self.goodsCar containsObject:shoppingCartCell.shoppingCartModel]) return;
-    
+    // 添加到购物车
     [self.goodsCar addObject:shoppingCartCell.shoppingCartModel];
     
 }

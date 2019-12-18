@@ -60,6 +60,10 @@
 /*! 删除按钮的点击 */
 - (IBAction)deleteBtnClick:(UIButton *)sender {
     
+    [ZBNAlertTool zbn_alertTitle:@"您确定要删除吗?" type:UIAlertControllerStyleAlert message:@"删老就没得老喔~" didTask:^{
+        
+    }];
+    
 }
 /*! 编辑按钮的点击 */
 - (IBAction)editBtnClick:(UIButton *)sender {

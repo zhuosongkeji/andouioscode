@@ -17,23 +17,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层 5" translatesAutoresizingMaskIntoConstraints="NO" id="l22-Vt-WAO">
-                        <rect key="frame" x="15" y="25.5" width="35" height="35"/>
+                        <rect key="frame" x="15" y="28" width="30" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="35" id="36k-P1-lZt"/>
-                            <constraint firstAttribute="height" constant="35" id="uYu-sU-1WR"/>
+                            <constraint firstAttribute="width" constant="30" id="36k-P1-lZt"/>
+                            <constraint firstAttribute="height" constant="30" id="uYu-sU-1WR"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="银联支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjm-lF-aHm">
-                        <rect key="frame" x="65" y="32.5" width="69.5" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="银联支付" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjm-lF-aHm">
+                        <rect key="frame" x="60" y="36" width="49.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zg-54-vXn">
-                        <rect key="frame" x="731" y="33" width="20" height="20"/>
+                        <rect key="frame" x="736" y="35.5" width="15" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="3aB-cX-Wkb"/>
-                            <constraint firstAttribute="height" constant="20" id="hds-6m-LAL"/>
+                            <constraint firstAttribute="width" constant="15" id="3aB-cX-Wkb"/>
+                            <constraint firstAttribute="height" constant="15" id="hds-6m-LAL"/>
                         </constraints>
                         <state key="normal" image="dati1"/>
                         <state key="selected" image="多边形 1 拷贝 3"/>
@@ -56,7 +56,7 @@
                 <outlet property="selectedBtn" destination="9Zg-54-vXn" id="chS-ZA-n5C"/>
                 <outlet property="textOne" destination="Xjm-lF-aHm" id="OCe-0y-IRf"/>
             </connections>
-            <point key="canvasLocation" x="-222" y="27"/>
+            <point key="canvasLocation" x="-451" y="69"/>
         </tableViewCell>
     </objects>
     <resources>

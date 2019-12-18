@@ -16,6 +16,7 @@ typedef void(^DeleteBtnClickTask)(ZBNShoppingCartModel *catModel);
 @protocol ZBNShoppingCartCellDelegate <NSObject>
 - (void)shoppingCartCellDidClickPlusButton:(ZBNShoppingCartCell *)shoppingCartCell;
 - (void)shoppingCartCellDidClickReduceButton:(ZBNShoppingCartCell *)shoppingCartCell;
+- (void)shoppingCartCellDidClickSelectedButton:(ZBNShoppingCartCell *)shoppingCartCell;
 @end
 
 @interface ZBNShoppingCartCell : UITableViewCell

@@ -8,11 +8,13 @@
 
 #import <AVKit/AVKit.h>
 
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNCommenOrderCell : UITableViewCell
 
 + (instancetype)regiserCellForTable:(UITableView *)tableView;
+
 
 @end
 

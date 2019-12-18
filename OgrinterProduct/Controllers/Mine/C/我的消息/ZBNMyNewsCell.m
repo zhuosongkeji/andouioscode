@@ -23,10 +23,22 @@
     self.userIconView.image = [UIImage circleImageNamed:@"yxj"];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+/*! 注册cell */
++ (instancetype)registerCellForTable:(UITableView *)tableView
+{
+    static NSString  * const ZBNMyNewsCellID = @"news";
+    ZBNMyNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:ZBNMyNewsCellID];
+    if (cell == nil) {
+        cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNMyNewsCell" owner:nil options:nil].lastObject;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    return cell;
+}
 
-
+- (void)setFrame:(CGRect)frame
+{
+    frame.size.height -= 1;
+    [super setFrame:frame];
 }
 
 @end

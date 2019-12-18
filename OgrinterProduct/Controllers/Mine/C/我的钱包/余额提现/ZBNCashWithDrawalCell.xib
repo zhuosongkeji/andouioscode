@@ -67,34 +67,37 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ToO-jc-G0F">
                         <rect key="frame" x="0.0" y="0.0" width="468" height="109"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="900" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2W-dg-yaC">
-                                <rect key="frame" x="15" y="70" width="37.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额提现" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIy-2l-ysq">
+                                <rect key="frame" x="15" y="15" width="57.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmw-zB-4S1">
-                                <rect key="frame" x="395" y="67.5" width="58" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mge-JM-CvE">
+                                <rect key="frame" x="403" y="67" width="50" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="BBd-ET-rRi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="全部提现">
-                                    <color key="titleColor" red="0.1960784314" green="0.75686274509999996" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.36862745099999999" green="0.82745098039999998" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额提现" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIy-2l-ysq">
-                                <rect key="frame" x="15" y="23" width="57.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="900" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="26D-n2-CXR">
+                                <rect key="frame" x="15" y="70" width="373" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="K2W-dg-yaC" secondAttribute="bottom" constant="15" id="3CX-sm-sY4"/>
-                            <constraint firstItem="kmw-zB-4S1" firstAttribute="centerY" secondItem="K2W-dg-yaC" secondAttribute="centerY" id="TIf-SJ-H5y"/>
-                            <constraint firstAttribute="trailing" secondItem="kmw-zB-4S1" secondAttribute="trailing" constant="15" id="ZQg-XP-qIo"/>
-                            <constraint firstItem="K2W-dg-yaC" firstAttribute="top" secondItem="bIy-2l-ysq" secondAttribute="bottom" constant="30" id="aS3-us-zZI"/>
+                            <constraint firstAttribute="trailing" secondItem="mge-JM-CvE" secondAttribute="trailing" constant="15" id="3Hm-T9-kvK"/>
+                            <constraint firstItem="26D-n2-CXR" firstAttribute="leading" secondItem="ToO-jc-G0F" secondAttribute="leading" constant="15" id="3Zi-dL-bxe"/>
+                            <constraint firstItem="mge-JM-CvE" firstAttribute="leading" secondItem="26D-n2-CXR" secondAttribute="trailing" constant="15" id="4bA-uX-GBQ"/>
+                            <constraint firstAttribute="bottom" secondItem="mge-JM-CvE" secondAttribute="bottom" constant="15" id="e26-5e-H1a"/>
                             <constraint firstItem="bIy-2l-ysq" firstAttribute="leading" secondItem="ToO-jc-G0F" secondAttribute="leading" constant="15" id="mBF-nE-HsS"/>
-                            <constraint firstItem="K2W-dg-yaC" firstAttribute="leading" secondItem="ToO-jc-G0F" secondAttribute="leading" constant="15" id="x1d-xl-sOh"/>
+                            <constraint firstItem="26D-n2-CXR" firstAttribute="centerY" secondItem="mge-JM-CvE" secondAttribute="centerY" id="p1o-eV-tpU"/>
+                            <constraint firstItem="bIy-2l-ysq" firstAttribute="top" secondItem="ToO-jc-G0F" secondAttribute="top" constant="15" id="y6y-YX-a7w"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nE2-1W-zTd">
@@ -124,7 +127,7 @@
             <connections>
                 <outlet property="labelView" destination="h6e-Mw-kKc" id="QrH-Vx-oE0"/>
             </connections>
-            <point key="canvasLocation" x="-323" y="29"/>
+            <point key="canvasLocation" x="168" y="53"/>
         </tableViewCell>
     </objects>
 </document>

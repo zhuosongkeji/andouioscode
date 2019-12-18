@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNMyNewsCell : UITableViewCell
 
+/*! 注册cell */
++ (instancetype)registerCellForTable:(UITableView *)tableView;
 @end
 
 NS_ASSUME_NONNULL_END
