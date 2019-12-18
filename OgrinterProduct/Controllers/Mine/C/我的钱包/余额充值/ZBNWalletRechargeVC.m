@@ -12,6 +12,7 @@
 #import "ZBNRechargeCellThree.h"
 #import "ZBNRechargeCellFour.h"
 #import "ZBNEntryFooterView.h"
+#import "ZBNRechargeCellFive.h"
 
 @interface ZBNWalletRechargeVC ()
 
@@ -76,7 +77,8 @@
     } else if (indexPath.section == 1) {
         ZBNRechargeCellTwo *twoCell = [ZBNRechargeCellTwo registerCellForTableView:tableView];
         if (indexPath.row == 1) {
-            twoCell.textOne.text = @"999";
+            ZBNRechargeCellFive *fiveCell = [ZBNRechargeCellFive registerCleeForTableView:tableView];
+            return fiveCell;
         }
         return twoCell;
     } else if (indexPath.section == 2) {
@@ -90,7 +92,7 @@
             return twoCell;
         } else if (indexPath.row == 4) {
             ZBNRechargeCellThree *threeCell = [ZBNRechargeCellThree registerCellForTableView:tableView];
-            threeCell.numberLabel.text = @"622202***323";
+            threeCell.numberText.placeholder = @"622202***323";
             threeCell.textOne.text = @"请输入账号";
             return threeCell;
         } else {
@@ -112,7 +114,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60;
+    return 48;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

@@ -8,9 +8,9 @@
 
 #import "ZBNCashWithDrawalVC.h"
 #import "ZBNCashWithDrawalCell.h"
-#import "ZBNEntryCellOne.h"
 #import "ZBNEntryFooterView.h"
 #import "ZBNSuccessfulWthdrawalsVC.h"
+#import "ZBNRechargeCellThree.h"
 
 @interface ZBNCashWithDrawalVC ()
 
@@ -71,15 +71,11 @@
         ZBNCashWithDrawalCell *cell = [ZBNCashWithDrawalCell regiserCellForTableView:tableView];
         return cell;
     } else {
-        ZBNEntryCellOne *cell = [ZBNEntryCellOne registerCellForTableView:tableView];
-        if (indexPath.row == 0) {
-            cell.textOne.text = @"联系方式";
-            cell.textTwo.text = @"8888-8888";
-        } else {
-            cell.textOne.text = @"请输入账号";
-            cell.textTwo.text = @"62332***425252";
+        ZBNRechargeCellThree *threeCell = [ZBNRechargeCellThree registerCellForTableView:tableView];
+        if (indexPath.row == 1) {
+            threeCell.textOne.text = @"请输入提现账号:";
         }
-        return cell;
+        return threeCell;
     }
 }
 
@@ -88,7 +84,7 @@
     if (indexPath.section == 0) {
         return 150;
     } else {
-        return 60;
+        return 48;
     }
 }
 

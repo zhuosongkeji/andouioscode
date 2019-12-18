@@ -12,6 +12,7 @@
 
 
 
+
 @end
 
 @implementation ZBNNewAddressVC
@@ -21,6 +22,19 @@
     self.navigationItem.title = @"新增地址";
 }
 
+- (IBAction)newAddressBtnClick:(UIButton *)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+
+- (IBAction)selectedAddBtnClick:(UIButton *)sender {
+    
+    
+    
+    
+}
 
 
 @end

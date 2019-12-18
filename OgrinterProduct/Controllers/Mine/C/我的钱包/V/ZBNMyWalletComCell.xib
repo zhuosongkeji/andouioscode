@@ -18,14 +18,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="购买商品消费余额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFC-dp-yah">
-                        <rect key="frame" x="15" y="15" width="114.5" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="10" y="5" width="106.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-08-22 14:26" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ous-Nc-lwZ">
-                        <rect key="frame" x="15" y="44.5" width="104.5" height="14.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <rect key="frame" x="10" y="45.5" width="97" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -47,11 +47,11 @@
                     <constraint firstItem="ous-Nc-lwZ" firstAttribute="leading" secondItem="fFC-dp-yah" secondAttribute="leading" id="2JL-UV-VTr"/>
                     <constraint firstAttribute="trailing" secondItem="JnM-8t-tN3" secondAttribute="trailing" constant="15" id="7BW-mP-6Km"/>
                     <constraint firstItem="Fia-Bc-AMr" firstAttribute="leading" secondItem="xbu-vQ-GCT" secondAttribute="leading" constant="15" id="JXO-Yg-UNP"/>
-                    <constraint firstItem="fFC-dp-yah" firstAttribute="top" secondItem="xbu-vQ-GCT" secondAttribute="top" constant="15" id="JdY-eF-LJU"/>
+                    <constraint firstItem="fFC-dp-yah" firstAttribute="top" secondItem="xbu-vQ-GCT" secondAttribute="top" constant="5" id="JdY-eF-LJU"/>
                     <constraint firstAttribute="bottom" secondItem="ous-Nc-lwZ" secondAttribute="bottom" constant="5" id="Qlc-AG-U1P"/>
                     <constraint firstItem="JnM-8t-tN3" firstAttribute="centerY" secondItem="xbu-vQ-GCT" secondAttribute="centerY" id="aov-rx-6xq"/>
                     <constraint firstAttribute="trailing" secondItem="Fia-Bc-AMr" secondAttribute="trailing" constant="15" id="cQg-U1-Ufl"/>
-                    <constraint firstItem="fFC-dp-yah" firstAttribute="leading" secondItem="xbu-vQ-GCT" secondAttribute="leading" constant="15" id="e0f-Ny-1NP"/>
+                    <constraint firstItem="fFC-dp-yah" firstAttribute="leading" secondItem="xbu-vQ-GCT" secondAttribute="leading" constant="10" id="e0f-Ny-1NP"/>
                     <constraint firstAttribute="bottom" secondItem="Fia-Bc-AMr" secondAttribute="bottom" id="xK2-0l-5sU"/>
                 </constraints>
             </tableViewCellContentView>

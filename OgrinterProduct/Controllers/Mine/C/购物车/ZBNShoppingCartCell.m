@@ -88,7 +88,14 @@
 
 
 - (IBAction)selecBtnClick:(UIButton *)sender {
-    sender.selected = YES;
+    
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        self.shoppingCartModel.selected = YES;
+    } else {
+        self.shoppingCartModel.selected = NO;
+    }
+    
     
 }
 

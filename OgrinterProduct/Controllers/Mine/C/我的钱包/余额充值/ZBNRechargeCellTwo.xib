@@ -16,9 +16,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="434" height="40"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="充值金额:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frs-uA-EBh">
-                        <rect key="frame" x="15" y="11.5" width="62" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="充值金额:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frs-uA-EBh">
+                        <rect key="frame" x="15" y="13" width="53" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -31,7 +31,7 @@
             <connections>
                 <outlet property="textOne" destination="frs-uA-EBh" id="Yma-cb-FwA"/>
             </connections>
-            <point key="canvasLocation" x="-42" y="-3"/>
+            <point key="canvasLocation" x="-19" y="5"/>
         </tableViewCell>
     </objects>
 </document>

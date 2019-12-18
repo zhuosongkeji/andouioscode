@@ -7,6 +7,8 @@
 //
 
 #import "ZBNCommenOrderCell.h"
+#import "ZBNOrderImageView.h"
+#import "ZBNOrderModel.h"
 
 @interface ZBNCommenOrderCell ()
 
@@ -20,9 +22,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *orderDetailBtn;
 @property (weak, nonatomic) IBOutlet UIButton *payBtn;
 
+@property (weak, nonatomic) ZBNOrderImageView *orderImagev;
+
 @end
 
 @implementation ZBNCommenOrderCell
+
 
 
 - (IBAction)orderBtnClick:(UIButton *)sender {
@@ -42,5 +47,9 @@
     }
     return cell;
 }
+
+
+
+
 
 @end

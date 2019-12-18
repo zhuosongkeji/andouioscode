@@ -8,8 +8,11 @@
 
 #import "ZBNHotelAllOrderVC.h"
 #import "ZBNCommenOrderCell.h"
+#import "ZBNOrderModel.h"
 
 @interface ZBNHotelAllOrderVC ()
+
+@property (nonatomic, strong) NSMutableArray *array;
 
 @end
 
@@ -17,10 +20,27 @@
 
 static NSString * const ZBNHotelAllOrderCellID = @"OrderCommenCell";
 
+- (NSMutableArray *)array
+{
+    if (!_array) {
+        _array = [NSMutableArray array];
+    }
+    return _array;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setupTable];
+}
+
+- (void)initModel
+{
+    for (int i = 0; i < 10; i++) {
+        ZBNOrderModel *model = [[ZBNOrderModel alloc] init];
+        [self.array addObject:model];
+    }
 }
 
 - (void)setupTable {
@@ -35,7 +55,7 @@ static NSString * const ZBNHotelAllOrderCellID = @"OrderCommenCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 2;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -46,7 +66,7 @@ static NSString * const ZBNHotelAllOrderCellID = @"OrderCommenCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 200;
+    return 314;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

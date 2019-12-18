@@ -7,6 +7,7 @@
 //
 
 #import "ZBNSuccessfulWthdrawalsVC.h"
+#import "ZBNMyWalletVC.h"
 
 @interface ZBNSuccessfulWthdrawalsVC ()
 @property (weak, nonatomic) IBOutlet UIView *btnBackView;
@@ -20,6 +21,16 @@
     
 }
 
+- (IBAction)myWalletBtnClick:(UIButton *)sender {
+    
+    for (UIViewController *vc in self.navigationController.viewControllers) {
+        if ([vc isKindOfClass:[ZBNMyWalletVC class]]) {
+            ZBNMyWalletVC *walletVc = (ZBNMyWalletVC *)vc;
+            [self.navigationController popToViewController:walletVc animated:YES];
+        }
+    }
+    
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {

@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="447" height="161"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnd-io-iKY">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnd-io-iKY">
                     <rect key="frame" x="25" y="58.5" width="397" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="4NP-y5-DgT"/>
@@ -39,7 +39,7 @@
             <connections>
                 <outlet property="middleBtn" destination="lnd-io-iKY" id="KSb-ae-aHI"/>
             </connections>
-            <point key="canvasLocation" x="-330" y="39"/>
+            <point key="canvasLocation" x="134" y="67"/>
         </view>
     </objects>
     <resources>
