@@ -46,9 +46,9 @@
 -(UIView *)searchField{
     
     if (!_searchField) {
-        _searchField = [[UIView alloc] initWithFrame:CGRectMake(28, 7, KSCREEN_WIDTH-56, 30)];
+        _searchField = [[UIView alloc] initWithFrame:CGRectMake(28, 7, KSCREEN_WIDTH-100, 30)];
         _searchField.backgroundColor = KSRGBA(255, 255, 255, 1);
-        _searchField.layer.cornerRadius = 16;
+        _searchField.layer.cornerRadius = 14;
         
         _searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_searchBtn setFrame:CGRectMake(16, 0, _searchField.width-32, 30)];
@@ -97,6 +97,7 @@
     
     self.navigationItem.titleView = self.searchField;
     // Do any additional setup after loading the view.
+    
 }
 
 

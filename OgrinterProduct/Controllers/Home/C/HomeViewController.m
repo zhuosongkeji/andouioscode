@@ -6,6 +6,9 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+
+#define BannerApi @"index/index"
+
 #import "HomeViewController.h"
 #import "HQImagePageControl.h"
 #import "CustomSectionView.h"
@@ -103,6 +106,11 @@
     self.navigationItem.title = @"";
     
     [self openRedPacket];
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,BannerApi] params:@{} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        NSLog(@"%@",serverInfo);
+    }];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -137,6 +145,7 @@
 }
 
 
+
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
     if (subIndex == 0) {
         [self pushViewControllerwithString:ControllerVCArr[subIndex]];
@@ -168,11 +177,13 @@
     bannerView.mainImageView.image = [UIImage imageNamed:self.imgArr[index]];
     
     return bannerView;
+    
 }
 
 - (void)didScrollToPage:(NSInteger)pageNumber inFlowView:(HQFlowView *)flowView {
     [self.pageFlowView.pageControl setCurrentPage:pageNumber];
 }
+
 
 //MARK:- tableView
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

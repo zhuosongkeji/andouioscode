@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 #import "RetrievepsdViewController.h"
+#import "UMShareManege.h"
 
 
 @interface LoginViewController ()
@@ -72,6 +73,35 @@
 //MARK:- 三方登录
 - (IBAction)loginwithThrid:(UIButton *)sender {
     //提示该功能暂未开放
+    KPreventRepeatClickTime(1)
+    
+    if (![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_WechatSession]) {
+        [HUDManager showTextHud:@"请安装微信客户端后在尝试!"];
+        return;
+    }
+    
+    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController:self completion:^(id result, NSError *error) {
+        
+        if (error) {
+            NSLog(@"%@",error);
+        } else {
+            UMSocialUserInfoResponse *resp = result;
+            // 授权信息
+            NSLog(@"Wechat uid: %@", resp.uid);
+            NSLog(@"Wechat openid: %@", resp.openid);
+            NSLog(@"Wechat unionid: %@", resp.unionId);
+            NSLog(@"Wechat accessToken: %@", resp.accessToken);
+            NSLog(@"Wechat refreshToken: %@", resp.refreshToken);
+            NSLog(@"Wechat expiration: %@", resp.expiration);
+            // 用户信息
+            NSLog(@"Wechat name: %@", resp.name);
+            NSLog(@"Wechat iconurl: %@", resp.iconurl);
+            NSLog(@"Wechat gender: %@", resp.unionGender);
+            // 第三方平台SDK源数据
+            NSLog(@"Wechat originalResponse: %@", resp.originalResponse);
+        }
+        
+    }];
 }
 
 

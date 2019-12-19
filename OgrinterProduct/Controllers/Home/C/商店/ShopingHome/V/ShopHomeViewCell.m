@@ -73,7 +73,7 @@
 //MARK:-collection
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     if (_enumtype == MyEnumValueB) {
-        return 3;
+        return 1;
     }else{
         return 1;
     }
@@ -162,7 +162,7 @@
     if (_enumtype == MyEnumValueA || _enumtype == MyEnumValueC) {
         return 5;
     }else if (_enumtype == MyEnumValueB){
-        return 4;
+        return 3;
     }else{
         return 1;
     }

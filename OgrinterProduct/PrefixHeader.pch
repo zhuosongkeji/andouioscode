@@ -9,6 +9,15 @@
 #ifndef PrefixHeader_h
 #define PrefixHeader_h
 
+#ifdef DEBUG
+//Debug状态下的测试API
+#define API_BASE_URL_STRING     @"http://192.168.0.110/andou/public/index.php/api/"
+#else
+//Release状态下的线上API
+#define API_BASE_URL_STRING     @"http://www.companydomain.com/api/"
+
+#endif
+
 
 #define UMKEY @"5bf77bb3b465f5ec3000007e"
 #define WeChatAPPKEY @"wx617c77c82218ea2c"
@@ -147,6 +156,7 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 // 弱引用
 #define ADWeakSelf __weak typeof(self) weakSelf = self;
 
+
 #import "HUDManager.h"
 #import "FKHRequestManager.h"
 #import "MJRefresh.h"
@@ -158,5 +168,6 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #import "QWAlertView.h"
 #import "UIImage+ZBNExtension.h"
 #import "ZBNAlertTool.h"
+
 
 #endif /* PrefixHeader_h */

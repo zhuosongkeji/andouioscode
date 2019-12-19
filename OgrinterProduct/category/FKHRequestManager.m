@@ -134,11 +134,11 @@ static AFHttpClientManager *client = nil;
     
     [AFHttpClientManager  requestSerializerSetting:client.requestSerializer];
     
-    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
-    if (dic) {
-        NSString *token = [NSString stringWithFormat:@"%@",dic[@"token"]];
-        [client.requestSerializer setValue:token forHTTPHeaderField:@"token"];
-    }
+//    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+//    if (dic) {
+//        NSString *token = [NSString stringWithFormat:@"%@",dic[@"token"]];
+//        [client.requestSerializer setValue:token forHTTPHeaderField:@"token"];
+//    }
     
     [FKHRequestManager requestWidth:requestMethod requestManager:client pathUrl:pathUrl params:params requestCount:0 complement:result];
     

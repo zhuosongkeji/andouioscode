@@ -13,13 +13,15 @@
 #import "ShopSeckillDetailsSubViewController.h"
 #import "OnlineBookingViewController.h"
 #import "ShopShopkeeperViewController.h"
-#import "QCouponView.h"
 #import "SeckillTableViewCell.h"
 #import "HotelBottomTableViewCell.h"
 #import "FSScrollContentView.h"
 #import "SDCycleScrollView.h"
+#import <UMShare/UMShare.h>
+#import <UMCommon/UMCommon.h>
 #import "BeserveView.h"
-#import "ShareView.h"
+#import "QCouponView.h"
+//#import "ShareView.h"
 
 
 
@@ -31,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *SPrice;//实际价格
 @property (weak, nonatomic) IBOutlet UILabel *dowuplable;//倒计时
 @property (weak, nonatomic) IBOutlet UILabel *bannerbjlable;
+
 @property (weak, nonatomic) IBOutlet UILabel *bannernumLable;
 @property (weak, nonatomic) IBOutlet UILabel *cpcontent;//产品说明
 @property (weak, nonatomic) IBOutlet UILabel *gittype;//货运方式
@@ -41,25 +44,21 @@
 @property (weak, nonatomic) IBOutlet UIImageView *cpIcon;
 @property (weak, nonatomic) IBOutlet UILabel *cptitle;
 @property (weak, nonatomic) IBOutlet UILabel *cpremark;//产品备注
-
 @property (weak, nonatomic) IBOutlet UIButton *collect;//收藏
 @property (weak, nonatomic) IBOutlet UIButton *shareBtn;
 
-@property (nonatomic, strong) FSSegmentTitleView *titleView;
-@property (nonatomic, assign) BOOL canScroll;
 @property (nonatomic, strong) HotelBottomTableViewCell *contentCell;
-
-@property (nonatomic,strong)NSArray *VcStrArr;
-
+@property (nonatomic, strong) FSSegmentTitleView *titleView;
 @property (nonatomic,strong) QCouponView *couponView;
+@property (nonatomic,strong) BeserveView *bottomView;
 
+@property (nonatomic, assign) BOOL canScroll;
+@property (nonatomic,strong)NSArray *VcStrArr;
 @property (nonatomic,strong)SDCycleScrollView *cycleScrollView;
 
-@property (nonatomic,strong)ShareView *shareView;
+//@property (nonatomic,strong)ShareView *shareView;
 
 @property (nonatomic,weak)UIButton *bjbtn;
-
-@property (nonatomic,strong)BeserveView *bottomView;
 
 @end
 
@@ -88,20 +87,17 @@
         _couponView = [[[NSBundle mainBundle]loadNibNamed:@"QCouponView" owner:self options:nil]lastObject];
         [_couponView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 2*(KSCREEN_HEIGHT/3))];
     }
-    
     return _couponView;
 }
 
 
--(ShareView *)shareView{
-    if (!_shareView) {
-        _shareView = [[[NSBundle mainBundle]loadNibNamed:@"ShareView" owner:self options:nil] lastObject];
-        [_shareView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH-64, 178)];
-    }
-    return _shareView;
-}
-
-
+//-(ShareView *)shareView{
+//    if (!_shareView) {
+//        _shareView = [[[NSBundle mainBundle]loadNibNamed:@"ShareView" owner:self options:nil] lastObject];
+//        [_shareView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH-64, 178)];
+//    }
+//    return _shareView;
+//}
 
 
 //MARK:-viewDidLoad
@@ -214,9 +210,7 @@
             _contentCell.pageContentView = [[FSPageContentView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-kStatusBarAndNavigationBarH - 50) childVCs:contentVCs parentVC:self delegate:self];
             [_contentCell.contentView addSubview:_contentCell.pageContentView];
         }
-        
         return _contentCell;
-        
     }
     
     return nil;
@@ -225,14 +219,11 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    // 取消Cell的选中状态
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    
     if (indexPath.section == 0) {
         if (indexPath.row == 2) {
             [self arterShow];
         }else if (indexPath.row == 3){
-            
             ShopShopkeeperViewController *shoper = [[ShopShopkeeperViewController alloc]init];
             [self.navigationController pushViewController:shoper animated:YES];
         }
@@ -246,10 +237,8 @@
             return [[@[@"84",@"40",@"40",@"64"] objectAtIndex:indexPath.row] floatValue];
         }else if (self.seckillType == ShopSeckillDetailsTypeKill){
             return [[@[@"45",@"65",@"40",@"64"] objectAtIndex:indexPath.row] floatValue];
-        }
-        
+        }else{}
     }else{
-        
         return KSCREEN_HEIGHT-kStatusBarAndNavigationBarH-50;
     }
     
@@ -267,7 +256,6 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     self.titleView = [[FSSegmentTitleView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 50) titles:SeckillDetailsListArr delegate:self indicatorType:FSIndicatorTypeEqualTitle];
-    
     self.titleView.backgroundColor = KSRGBA(255, 255, 255, 255);
     
     return self.titleView;
@@ -329,10 +317,28 @@
 - (IBAction)shareClick:(UIButton *)sender {
     KPreventRepeatClickTime(1)
     
-    [[QWAlertView sharedMask] show:self.shareView withType:QWAlertViewStyleAlert animationFinish:^{
-        
-    } dismissHandle:^{
-        
+//    [[QWAlertView sharedMask] show:self.shareView withType:QWAlertViewStyleAlert animationFinish:^{
+//
+//    } dismissHandle:^{
+//
+//    }];
+    
+//    NSArray *baseDisplaySnsPlatforms = @[@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_QQ),@(UMSocialPlatformType_Sina)];
+//    [UMSocialUIManager setPreDefinePlatforms:baseDisplaySnsPlatforms];
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    
+    UMShareWebpageObject*shareObject = [UMShareWebpageObject shareObjectWithTitle:@"挑战你的记忆力"descr:@"鱼的记忆有七秒，你的呢？"thumImage:[UIImage imageNamed:@"loginIcon"]];
+    
+    shareObject.webpageUrl = @"www.baidu.com";
+    messageObject.shareObject= shareObject;
+    
+    [[UMSocialManager defaultManager]shareToPlatform:UMSocialPlatformType_WechatSession  messageObject:messageObject currentViewController:nil completion:^(id result, NSError *error) {
+        if (error) {
+            NSLog(@"分享失败：%@",error);
+            [HUDManager showTextHud:@"分享失败!未安装应用"];
+        }else{
+            NSLog(@"分享 result = %@",result);
+        }
     }];
 }
 
@@ -345,7 +351,6 @@
         [HUDManager showTextHud:OtherMsg];
     }
 }
-
 
 //MARK:- view消失
 -(void)dissView{
@@ -376,7 +381,6 @@
 //MARK:- dealloc
 -(void)dealloc {
     KRemove_Observer(self);
-    
 }
 
 
