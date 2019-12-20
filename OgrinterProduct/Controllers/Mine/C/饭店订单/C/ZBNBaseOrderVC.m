@@ -8,6 +8,7 @@
 
 #import "ZBNBaseOrderVC.h"
 #import "ZBNCommenOrderCell.h"
+#import "ZBNRestaurantOrderDetailVC.h"
 
 @interface ZBNBaseOrderVC ()
 
@@ -17,6 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = ZBNCommonBgColor;
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self setupTable];
 }
@@ -42,6 +47,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZBNCommenOrderCell *cell = [ZBNCommenOrderCell regiserCellForTable:tableView];
+    ADWeakSelf;
+    cell.orderDetailClickTask = ^{
+        ZBNRestaurantOrderDetailVC *detailVc = [[ZBNRestaurantOrderDetailVC alloc] init];
+        [weakSelf.navigationController pushViewController:detailVc animated:YES];
+    };
     return cell;
 }
 

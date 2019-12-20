@@ -7,7 +7,6 @@
 //
 
 #import "ZBNCommenOrderCell.h"
-#import "ZBNOrderImageView.h"
 #import "ZBNOrderModel.h"
 
 @interface ZBNCommenOrderCell ()
@@ -22,15 +21,18 @@
 @property (weak, nonatomic) IBOutlet UIButton *orderDetailBtn;
 @property (weak, nonatomic) IBOutlet UIButton *payBtn;
 
-@property (weak, nonatomic) ZBNOrderImageView *orderImagev;
+
 
 @end
 
 @implementation ZBNCommenOrderCell
 
 
-
+/*! 订单详情点击 */
 - (IBAction)orderBtnClick:(UIButton *)sender {
+    if (self.orderDetailClickTask) {
+        self.orderDetailClickTask();
+    }
 }
 
 
@@ -44,6 +46,7 @@
     ZBNCommenOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:ZBNCommenOrderCellID];
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNCommenOrderCell" owner:nil options:nil].lastObject;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
 }

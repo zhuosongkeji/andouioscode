@@ -80,7 +80,7 @@
                                             <constraint firstAttribute="height" constant="46" id="nlE-9P-CeN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <state key="normal" title="商家订单" image="美食预约">
+                                        <state key="normal" title="饭店订单" image="美食预约">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -125,7 +125,7 @@
                                             <constraint firstAttribute="height" constant="46" id="fQi-Tu-8dz"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <state key="normal" title="饭店订单" image="商城订单">
+                                        <state key="normal" title="商城订单" image="商城订单">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -494,7 +494,7 @@
                 <constraint firstAttribute="trailing" secondItem="kGP-dV-NOj" secondAttribute="trailing" id="JYB-Ix-DuZ"/>
                 <constraint firstAttribute="bottom" secondItem="kGP-dV-NOj" secondAttribute="bottom" id="vmt-1l-new"/>
             </constraints>
-            <point key="canvasLocation" x="-27203" y="61"/>
+            <point key="canvasLocation" x="-26330" y="224"/>
         </view>
         <view contentMode="scaleToFill" id="rOc-2d-Yzc">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>

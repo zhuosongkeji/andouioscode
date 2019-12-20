@@ -41,12 +41,12 @@
                         <rect key="frame" x="0.0" y="270" width="610" height="44"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCd-dr-P1b">
-                                <rect key="frame" x="485" y="8.5" width="55" height="27"/>
+                                <rect key="frame" x="470" y="9" width="55" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="U4U-KJ-4uh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="订单详情">
+                                <state key="normal" title="订单详情" backgroundImage="圆角矩形 7">
                                     <color key="titleColor" red="0.19517872429999999" green="0.75638860210000003" blue="0.64232347899999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -54,12 +54,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjD-ey-G2c">
-                                <rect key="frame" x="555" y="8.5" width="40" height="27"/>
+                                <rect key="frame" x="540" y="9" width="55" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="IV8-wb-Zbg"/>
+                                    <constraint firstAttribute="width" constant="55" id="IV8-wb-Zbg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="去付款">
+                                <state key="normal" title="去付款" backgroundImage="圆角矩形 7">
                                     <color key="titleColor" red="0.19517872429999999" green="0.75638860210000003" blue="0.64232347899999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -67,7 +67,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zga-aV-EhH">
-                                <rect key="frame" x="0.0" y="43" width="555" height="1"/>
+                                <rect key="frame" x="0.0" y="43" width="540" height="1"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="gc4-3P-EnS"/>
@@ -123,7 +123,7 @@
                         <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfA-te-961" customClass="ZBNOrderImageView">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfA-te-961">
                         <rect key="frame" x="15" y="110.5" width="580" height="119"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层 37" translatesAutoresizingMaskIntoConstraints="NO" id="dUK-6p-gr4">
@@ -161,7 +161,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="SB7-SY-tAe" firstAttribute="leading" secondItem="dUK-6p-gr4" secondAttribute="trailing" constant="15" id="5OU-Dc-EsY"/>
                             <constraint firstItem="ZdM-CW-w8h" firstAttribute="leading" secondItem="SB7-SY-tAe" secondAttribute="leading" id="7Cv-3c-iyO"/>
@@ -218,11 +218,12 @@
                 <outlet property="userIconV" destination="EHM-bB-0vE" id="hW1-JE-ZwD"/>
                 <outlet property="userNameL" destination="Acd-7M-33L" id="gzL-pc-hLq"/>
             </connections>
-            <point key="canvasLocation" x="-1027.536231884058" y="7.3660714285714279"/>
+            <point key="canvasLocation" x="-883" y="143"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="图层 37" width="110" height="127"/>
         <image name="图层 533" width="80" height="73.5"/>
+        <image name="圆角矩形 7" width="76" height="26"/>
     </resources>
 </document>

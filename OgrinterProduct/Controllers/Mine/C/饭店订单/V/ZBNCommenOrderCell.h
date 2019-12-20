@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)regiserCellForTable:(UITableView *)tableView;
 
+@property (nonatomic, copy) void(^orderDetailClickTask)(void);
 
 @end
 

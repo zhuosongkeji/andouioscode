@@ -8,11 +8,9 @@
 
 #import "ZBNHotelAllOrderVC.h"
 #import "ZBNCommenOrderCell.h"
-#import "ZBNOrderModel.h"
+#import "ZBNWaitDeliverDetailVC.h"
 
 @interface ZBNHotelAllOrderVC ()
-
-@property (nonatomic, strong) NSMutableArray *array;
 
 @end
 
@@ -20,34 +18,22 @@
 
 static NSString * const ZBNHotelAllOrderCellID = @"OrderCommenCell";
 
-- (NSMutableArray *)array
-{
-    if (!_array) {
-        _array = [NSMutableArray array];
-    }
-    return _array;
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = ZBNCommonBgColor;
+    
     [self setupTable];
 }
 
-- (void)initModel
-{
-    for (int i = 0; i < 10; i++) {
-        ZBNOrderModel *model = [[ZBNOrderModel alloc] init];
-        [self.array addObject:model];
-    }
-}
+
 
 - (void)setupTable {
     
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.tableView registerNib:[UINib nibWithNibName:@"ZBNCommenOrderCell" bundle:nil] forCellReuseIdentifier:ZBNHotelAllOrderCellID];
+   
 }
 
 #pragma mark - Table view data source
@@ -60,7 +46,12 @@ static NSString * const ZBNHotelAllOrderCellID = @"OrderCommenCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZBNCommenOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:ZBNHotelAllOrderCellID];
+    ZBNCommenOrderCell *cell = [ZBNCommenOrderCell regiserCellForTable:tableView];
+    ADWeakSelf;
+    cell.orderDetailClickTask = ^{
+        ZBNWaitDeliverDetailVC *vc = [[ZBNWaitDeliverDetailVC alloc] init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
     return cell;
 }
 

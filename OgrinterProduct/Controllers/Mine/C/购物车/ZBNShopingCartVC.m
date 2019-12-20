@@ -94,7 +94,7 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
 /*! 设置行高 */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 142;
+    return 155;
 }
 
 
@@ -125,6 +125,19 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
     [self.goodsCar addObject:shoppingCartCell.shoppingCartModel];
     
 }
+
+//- (void)shoppingCartCellDidClickSelectedButton:(ZBNShoppingCartCell *)shoppingCartCell
+//{
+//    // 计算总价
+//    
+//   
+//    
+//    int totalPrice = self.totalPriceLabel.text.intValue + shoppingCartCell.shoppingCartModel.money.intValue * shoppingCartCell.shoppingCartModel.count;
+//    
+//    self.totalPriceLabel.text = [NSString stringWithFormat:@"%d",totalPrice];
+//    
+//    
+//}
 
 
 @end

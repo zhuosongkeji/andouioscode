@@ -30,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *goosCountLabel;
 /*! 总数量label的背景view */
 @property (weak, nonatomic) IBOutlet UIView *labelView;
+@property (weak, nonatomic) IBOutlet UIView *plusBackView;
+@property (weak, nonatomic) IBOutlet UIView *reduceBackView;
 
 @property (nonatomic, strong) NSMutableArray *selectedArry;
 
@@ -44,7 +46,7 @@
     _shoppingCartModel = shoppingCartModel;
     
     
-    self.selectedBtn.selected = shoppingCartModel.isSelected;
+//    self.selectedBtn.selected = shoppingCartModel.isSelected;
     self.goodsImagev.image = [UIImage imageNamed:shoppingCartModel.image];
     self.goodsIntrolLabel.text = shoppingCartModel.name;
     self.goodsPrice.text = shoppingCartModel.money;
@@ -89,14 +91,12 @@
 
 - (IBAction)selecBtnClick:(UIButton *)sender {
     
-    sender.selected = !sender.selected;
-    if (sender.selected) {
-        self.shoppingCartModel.selected = YES;
-    } else {
-        self.shoppingCartModel.selected = NO;
-    }
-    
-    
+//    sender.selected = !sender.selected;
+//    self.shoppingCartModel.selected = YES;
+//    
+//    if ([self.delegate respondsToSelector:@selector(shoppingCartCellDidClickSelectedButton:)]) {
+//        [self.delegate shoppingCartCellDidClickSelectedButton:self];
+//    }
 }
 
 
@@ -106,10 +106,14 @@
     [super awakeFromNib];
    
     
-    
-    self.labelView.backgroundColor = [UIColor clearColor];
-    self.labelView.layer.borderWidth = 1;
+    self.labelView.layer.borderWidth = 0.5;
     self.labelView.layer.borderColor = [UIColor colorWithRed:100/255.0 green:100/255.0  blue:100/255.0  alpha:1].CGColor;
+    
+    self.reduceBackView.layer.borderWidth = 0.5;
+       self.reduceBackView.layer.borderColor = [UIColor colorWithRed:100/255.0 green:100/255.0  blue:100/255.0  alpha:1].CGColor;
+    
+    self.plusBackView.layer.borderWidth = 0.5;
+    self.plusBackView.layer.borderColor = [UIColor colorWithRed:100/255.0 green:100/255.0  blue:100/255.0  alpha:1].CGColor;
     
     self.userIconV.layer.cornerRadius = 5;
     

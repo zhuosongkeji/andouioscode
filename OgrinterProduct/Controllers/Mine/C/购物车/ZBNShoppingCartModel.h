@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, getter=isSelected) BOOL selected;
 /*! 是否删除 */
 @property (nonatomic, assign) BOOL isDelete;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

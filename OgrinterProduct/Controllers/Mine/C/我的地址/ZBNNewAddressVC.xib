@@ -311,7 +311,7 @@
                 <constraint firstItem="Dh7-20-BTx" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yhX-3z-XGN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-471" y="36"/>
+            <point key="canvasLocation" x="-1194" y="-201"/>
         </view>
     </objects>
     <resources>

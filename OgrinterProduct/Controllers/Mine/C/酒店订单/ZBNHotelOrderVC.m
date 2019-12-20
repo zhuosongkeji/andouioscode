@@ -61,7 +61,7 @@
         [self.segmentBarVC setUpWithItems:items childVCs:@[vc1,stayInVc, vc2, vc3]];
         //设置样式
         [self.segmentBarVC.segmentBar updateWithConfig:^(ZBNSegmenBarConfig *config) {
-            config.itemNColor([UIColor blackColor]).itemSColor([UIColor colorWithRed:50/255.0 green:193/255.0 blue:164/255.0 alpha:1]).itemF([UIFont systemFontOfSize:16]).itemBColor([UIColor whiteColor]).indicatorH(0);
+            config.itemNColor([UIColor blackColor]).itemSColor([UIColor colorWithRed:50/255.0 green:193/255.0 blue:164/255.0 alpha:1]).itemF([UIFont systemFontOfSize:13]).itemBColor([UIColor whiteColor]).indicatorH(0);
             config.indicatorExtraW = 0;
         }];
 
