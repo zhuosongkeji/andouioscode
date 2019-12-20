@@ -14,8 +14,8 @@
 #import "CustomSectionView.h"
 #import "HomeTableViewCell.h"
 #import "CitylistViewController.h"
-//#import "ShopingViewController.h"
-//#import "OnlineOrderViewController.h"
+#import "iCarousel.h"
+
 
 #import "HQFlowView.h"
 #import "MarqueeView.h"
@@ -23,7 +23,7 @@
 #import "PacketModel.h"
 
 
-@interface HomeViewController ()<HQFlowViewDelegate,HQFlowViewDataSource,UITableViewDataSource,UITableViewDelegate>{
+@interface HomeViewController ()<HQFlowViewDelegate,HQFlowViewDataSource,UITableViewDataSource,UITableViewDelegate,iCarouselDelegate,iCarouselDataSource>{
     NSArray *imgArrs;
 }
 
@@ -32,11 +32,17 @@
 @property (weak, nonatomic) IBOutlet UIView *topBananerView;
 @property (weak, nonatomic) IBOutlet UIView *noticeView;
 @property (weak, nonatomic) IBOutlet UIView *noticebjView;
+@property (weak, nonatomic) IBOutlet UIView *iCarouselBJView;
 
+@property (nonatomic,strong) iCarousel *icarousel;
 @property (nonatomic, strong) HQImagePageControl *pageC;
 @property (nonatomic, strong) HQFlowView *pageFlowView;
+
 @property (nonatomic,strong) NSMutableArray *imgArr;
+@property (nonatomic,strong) NSMutableArray *imgOArr;
 @property (nonatomic,strong) MarqueeView *queeView;
+
+@property (nonatomic, strong) UIView *selectView;
 
 @end
 
@@ -51,6 +57,24 @@
                    @"image4", nil];
     }
     return _imgArr;
+}
+
+
+//MARK:-imgArr
+-(NSMutableArray *)imgOArr {
+    if (!_imgOArr) {
+        _imgOArr = [NSMutableArray arrayWithObjects:@"1",
+                   @"2",
+                   @"5",
+                    @"1",@"2",
+                    @"5",
+                    @"1",
+                    @"2",@"5",
+                    @"1",
+                    @"2",
+                    @"5", nil];
+    }
+    return _imgOArr;
 }
 
 
@@ -99,19 +123,43 @@
 }
 
 
+//MARK:- iCarousel
+-(iCarousel *)icarousel{
+    if (_icarousel == nil) {
+        _icarousel = [[iCarousel alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 150)];
+        _icarousel.delegate = self;
+        _icarousel.dataSource = self;
+        _icarousel.bounces = YES;
+        _icarousel.pagingEnabled = NO;
+        _icarousel.type = iCarouselTypeRotary;
+    }
+    return _icarousel;
+}
+
+
 //MARK:- viewDidLoad
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     self.navigationItem.title = @"";
     
-    [self openRedPacket];
-    
+    [self setup];
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,BannerApi] params:@{} complement:^(ServerResponseInfo * _Nullable serverInfo) {
         NSLog(@"%@",serverInfo);
     }];
     
     // Do any additional setup after loading the view from its nib.
+}
+
+
+-(void)setup{
+    
+    self.mTableView.tableFooterView = [UILabel new];
+    [self.mTableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCell"];
+    
+    [self.iCarouselBJView addSubview:self.icarousel];
+    [self openRedPacket];
+    
 }
 
 //MARK:- openRedPacket
@@ -137,6 +185,7 @@
         NSLog(@"领取500.0");
     }];
 }
+
 
 
 //MARK:- FlowViewDelegate
@@ -209,11 +258,26 @@
 
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    CustomSectionView *v;
+    @try {
+        v = [[NSBundle mainBundle] loadNibNamed:@"CustomSectionView" owner:self options:nil].lastObject;
+    } @catch (NSException *exception) {
+        NSLog(@"exception = %@", exception);
+    } @finally {
+        
+    }
     
-    CustomSectionView *v = [[NSBundle mainBundle] loadNibNamed:@"CustomSectionView" owner:self options:nil].lastObject;
+    if (section != 0) {
+        v.titimgView.hidden = YES;
+        v.titleLabel.hidden = NO;
+        v.contentLabel.hidden = NO;
+    }else{
+        v.titimgView.hidden = NO;
+        v.titleLabel.hidden = YES;
+        v.contentLabel.hidden = YES;
+    }
     
-    v.titimgView.image = [UIImage imageNamed:HomeSectionArr[section]];
-    v.backgroundColor = [UIColor whiteColor];
+    v.backgroundColor = KSRGBA(255, 255, 255, 1);
     [v setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 54)];
     
     __weak typeof(&*self)WeakSelf = self;
@@ -257,25 +321,86 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:[self createbtn]];
 }
 
+
 //MARK:-
 -(void)action:(UIButton *)item{
     [self pushViewControllerwithString:@"CitylistViewController"];
 }
 
-//MARK:-withBtnClick
-- (IBAction)withBtnClick:(UIButton *)sender {
-    KPreventRepeatClickTime(1)
-    [HUDManager showTextHud:OtherMsg];
-    return;
-    
-//    [self pushViewControllerWithString:ControllerVCArr[sender.tag-1000]];
+
+//MARK:- iCarouselDataSource
+-(NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel{
+    return self.imgOArr.count;
 }
+
+-(UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view{
+    
+    UIImage *image = [UIImage imageNamed:[self.imgOArr objectAtIndex:index]];
+    if (view == nil) {
+        view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 120, 140)];
+        view.backgroundColor = [UIColor clearColor];
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 116, 136)];
+        imageView.tag = 1000+index;
+        [view addSubview:imageView];
+    }
+    UIImageView *imageView = [view viewWithTag:1000+index];
+    imageView.image = image;
+    
+    return view;
+}
+
+
+#pragma mark - iCarouselDelegate
+- (void)carouselDidEndScrollingAnimation:(iCarousel *)carousel{
+    UIView *view = carousel.currentItemView;
+    view.backgroundColor = [UIColor whiteColor];
+    self.selectView = view;
+//    self.filmNameLab.text = self.filmNameArr[carousel.currentItemIndex];
+}
+
+
+- (void)carouselDidScroll:(iCarousel *)carousel{
+//    NSLog(@"___2 %lu",carousel.currentItemIndex);
+    if (self.selectView != carousel.currentItemView) {
+        self.selectView.backgroundColor = [UIColor clearColor];
+        UIView *view = carousel.currentItemView;
+        view.backgroundColor = [UIColor whiteColor];
+//        self.filmNameLab.text = self.filmNameArr[carousel.currentItemIndex];
+    }
+}
+
+- (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel{
+    NSLog(@"___3 %lu",carousel.currentItemIndex);
+    self.selectView = carousel.currentItemView;
+}
+
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index{
+    NSLog(@"点击了第%ld个",index);
+}
+
+-(CATransform3D)carousel:(iCarousel *)carousel itemTransformForOffset:(CGFloat)offset baseTransform:(CATransform3D)transform{
+    
+    static CGFloat max_sacle = 1.0f;
+    static CGFloat min_scale = 0.6f;
+    
+    if (offset <= 1 && offset >= -1) {
+        float tempScale = offset < 0 ? 1+offset : 1-offset;
+        float slope = (max_sacle - min_scale) / 1;
+        CGFloat scale = min_scale + slope * tempScale;
+        transform = CATransform3DScale(transform, scale, scale, 1);
+    }else{
+        transform = CATransform3DScale(transform, min_scale, min_scale,1);
+    }
+    return CATransform3DTranslate(transform, offset *self.icarousel.itemWidth * 1.2, 0.0, 0.0);
+    
+}
+
 
 - (void)dealloc {
     self.pageFlowView.delegate = nil;
     self.pageFlowView.dataSource = nil;
     [self.pageFlowView stopTimer];
-    
 }
 
 /*
