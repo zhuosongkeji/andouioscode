@@ -24,7 +24,7 @@
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    self.view.backgroundColor = ZBNCommonBgColor;
+//    self.view.backgroundColor = ZBNCommonBgColor;
     [self setupFooterView];
 }
 

@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = ZBNCommonBgColor;
+//    self.view.backgroundColor = ZBNCommonBgColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 

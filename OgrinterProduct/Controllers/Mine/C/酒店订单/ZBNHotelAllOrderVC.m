@@ -22,7 +22,7 @@ static NSString * const ZBNHotelAllOrderCellID = @"OrderCommenCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = ZBNCommonBgColor;
+//    self.view.backgroundColor = ZBNCommonBgColor;
     
     [self setupTable];
 }
