@@ -42,22 +42,43 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="在线直播" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcV-Cz-Qpz">
+                    <rect key="frame" x="16" y="11.5" width="57.5" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="xYm-mM-yeW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AHDHJSJFH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZq-r7-xy8">
+                    <rect key="frame" x="16" y="36.5" width="66" height="13.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="hF3-of-CFn" firstAttribute="centerY" secondItem="BTo-Kq-kIe" secondAttribute="centerY" id="3Ro-UA-bN9"/>
                 <constraint firstItem="BTo-Kq-kIe" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3e4-ml-UGS"/>
                 <constraint firstAttribute="bottom" secondItem="BK4-d4-I0A" secondAttribute="bottom" id="OYp-e6-awW"/>
+                <constraint firstItem="AcV-Cz-Qpz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="RL4-P0-wgJ"/>
                 <constraint firstItem="BTo-Kq-kIe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="RnW-yE-kdH"/>
+                <constraint firstItem="fZq-r7-xy8" firstAttribute="top" secondItem="AcV-Cz-Qpz" secondAttribute="bottom" constant="4" id="h2u-Zr-XEw"/>
                 <constraint firstAttribute="trailing" secondItem="BK4-d4-I0A" secondAttribute="trailing" id="jhe-BC-pyW"/>
                 <constraint firstItem="BK4-d4-I0A" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rDN-gc-Fj6"/>
+                <constraint firstItem="fZq-r7-xy8" firstAttribute="leading" secondItem="AcV-Cz-Qpz" secondAttribute="leading" id="vtw-AP-tbC"/>
+                <constraint firstItem="AcV-Cz-Qpz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-10" id="vwP-yF-svg"/>
                 <constraint firstAttribute="trailing" secondItem="hF3-of-CFn" secondAttribute="trailing" constant="16" id="zHS-zc-TzZ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="contentLabel" destination="fZq-r7-xy8" id="EHv-Dy-hDd"/>
                 <outlet property="titimgView" destination="BTo-Kq-kIe" id="fdy-72-Wf4"/>
+                <outlet property="titleLabel" destination="AcV-Cz-Qpz" id="aMX-3q-5El"/>
             </connections>
-            <point key="canvasLocation" x="73.913043478260875" y="-168.08035714285714"/>
+            <point key="canvasLocation" x="-86.956521739130437" y="-183.48214285714286"/>
         </view>
     </objects>
     <resources>

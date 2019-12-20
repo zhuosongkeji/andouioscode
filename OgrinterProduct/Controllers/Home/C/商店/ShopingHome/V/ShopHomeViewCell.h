@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) MyEnum enumtype;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -14,6 +14,8 @@ typedef void(^MoreBtnClickBlock)(UIButton *btn);
 
 @interface CustomSectionView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *titimgView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
 @property (nonatomic,copy) MoreBtnClickBlock btnclickBlock;
 

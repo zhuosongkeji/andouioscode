@@ -27,11 +27,13 @@
 
 @implementation HomeTableViewCell
 
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     
     // Initialization code
 }
+
 
 -(void)setup {
     
@@ -96,7 +98,14 @@
     
     HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"HomeTableViewCell" owner:self options:nil] objectAtIndex:index];
+        @try {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"HomeTableViewCell" owner:self options:nil] objectAtIndex:index];
+        } @catch (NSException *exception) {
+            NSLog(@"cell == exception %@",exception);
+        } @finally {
+            
+        }
+//        cell = [[[NSBundle mainBundle] loadNibNamed:@"HomeTableViewCell" owner:self options:nil] objectAtIndex:index];
         NSLog(@"创建");
     }
     

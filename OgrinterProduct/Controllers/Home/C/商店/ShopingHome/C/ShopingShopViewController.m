@@ -6,10 +6,13 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+
 #import "ShopingShopViewController.h"
+#import "CategoryShopDetailsViewController.h"
 #import "SearchResrultViewController.h"
 #import "ShopHomeViewCell.h"
 #import "MDBannerModel.h"
+
 
 @interface ShopingShopViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -94,7 +97,8 @@
         
         [cell setEnumtype:MyEnumValueB];
         cell.itemBlock = ^(NSInteger idex, NSIndexPath * _Nullable indexpath) {
-            
+            CategoryShopDetailsViewController *category = [[CategoryShopDetailsViewController alloc]init];
+            [self.navigationController pushViewController:category animated:YES];
         };
         return cell;
     }
@@ -114,7 +118,7 @@
     if (tableView == self.leftTbleView) {
         return 50;
     }
-    return 1300;
+    return 460;
 }
 
 
@@ -123,10 +127,8 @@
     
     if (scrollView == self.leftTbleView)
         return;
-
     NSIndexPath *topHeaderViewIndexpath = [[self.rigthTableView indexPathsForVisibleRows] firstObject];
     NSIndexPath *moveToIndexpath = [NSIndexPath indexPathForRow:topHeaderViewIndexpath.section inSection:0];
-    
     [self.leftTbleView selectRowAtIndexPath:moveToIndexpath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
     
 }
@@ -136,11 +138,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (tableView == self.leftTbleView) {
-        
         NSIndexPath *moveToIndexPath = [NSIndexPath indexPathForRow:0 inSection:indexPath.row];
-        
         [self.rigthTableView selectRowAtIndexPath:moveToIndexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
-        
         [self.rigthTableView deselectRowAtIndexPath:moveToIndexPath animated:YES];
     }
 }

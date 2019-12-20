@@ -163,6 +163,9 @@
 		A1FC4A8D239F288E00AF3F57 /* CustomAlterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FC4A8C239F288E00AF3F57 /* CustomAlterView.xib */; };
 		A1FC4A94239F70E600AF3F57 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC4A92239F70E600AF3F57 /* PaySuccessViewController.m */; };
 		A1FC4A95239F70E600AF3F57 /* PaySuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FC4A93239F70E600AF3F57 /* PaySuccessViewController.xib */; };
+		A1FD1B6923AB471500AE0835 /* CategoryShopDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD1B6723AB471500AE0835 /* CategoryShopDetailsViewController.m */; };
+		A1FD1B6A23AB471500AE0835 /* CategoryShopDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FD1B6823AB471500AE0835 /* CategoryShopDetailsViewController.xib */; };
+		A1FD1B8823AC6E7800AE0835 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD1B8523AC6E7800AE0835 /* iCarousel.m */; };
 		F44DF88423AA067900A7D902 /* ZBNStayInOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F44DF88323AA067900A7D902 /* ZBNStayInOrderVC.m */; };
 		F44DF88823AA15F800A7D902 /* ZBNRechargeCellFive.m in Sources */ = {isa = PBXBuildFile; fileRef = F44DF88623AA15F800A7D902 /* ZBNRechargeCellFive.m */; };
 		F44DF88923AA15F800A7D902 /* ZBNRechargeCellFive.xib in Resources */ = {isa = PBXBuildFile; fileRef = F44DF88723AA15F800A7D902 /* ZBNRechargeCellFive.xib */; };
@@ -571,6 +574,11 @@
 		A1FC4A91239F70E600AF3F57 /* PaySuccessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaySuccessViewController.h; sourceTree = "<group>"; };
 		A1FC4A92239F70E600AF3F57 /* PaySuccessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaySuccessViewController.m; sourceTree = "<group>"; };
 		A1FC4A93239F70E600AF3F57 /* PaySuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaySuccessViewController.xib; sourceTree = "<group>"; };
+		A1FD1B6623AB471500AE0835 /* CategoryShopDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CategoryShopDetailsViewController.h; path = OgrinterProduct/Controllers/Home/C/CategoryShopDetailsViewController.h; sourceTree = SOURCE_ROOT; };
+		A1FD1B6723AB471500AE0835 /* CategoryShopDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CategoryShopDetailsViewController.m; path = OgrinterProduct/Controllers/Home/C/CategoryShopDetailsViewController.m; sourceTree = SOURCE_ROOT; };
+		A1FD1B6823AB471500AE0835 /* CategoryShopDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategoryShopDetailsViewController.xib; path = OgrinterProduct/Controllers/Home/C/CategoryShopDetailsViewController.xib; sourceTree = SOURCE_ROOT; };
+		A1FD1B8523AC6E7800AE0835 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		A1FD1B8623AC6E7800AE0835 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		D9D7F1BA5CA76DD030C19A92 /* Pods_OgrinterProduct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OgrinterProduct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44DF88223AA067900A7D902 /* ZBNStayInOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNStayInOrderVC.h; sourceTree = "<group>"; };
 		F44DF88323AA067900A7D902 /* ZBNStayInOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNStayInOrderVC.m; sourceTree = "<group>"; };
@@ -1302,6 +1310,7 @@
 				A14FB29F238E4CBB006A6511 /* loginresgin */,
 				A14FB28E238E2939006A6511 /* UemgShareLogin */,
 				A1DA9C98239CF20A00DD6666 /* Custom */,
+				A1FD1B8423AC6E7800AE0835 /* iCarousel */,
 				A14FB2AF238F5770006A6511 /* category */,
 				A14FB260238E0E4C006A6511 /* Main.storyboard */,
 				A14FB263238E0E50006A6511 /* Assets.xcassets */,
@@ -1644,6 +1653,9 @@
 				A1F73CF223A880CB001D86EF /* ShopingShopViewController.h */,
 				A1F73CF323A880CB001D86EF /* ShopingShopViewController.m */,
 				A1F73CF123A880CB001D86EF /* ShopingShopViewController.xib */,
+				A1FD1B6623AB471500AE0835 /* CategoryShopDetailsViewController.h */,
+				A1FD1B6723AB471500AE0835 /* CategoryShopDetailsViewController.m */,
+				A1FD1B6823AB471500AE0835 /* CategoryShopDetailsViewController.xib */,
 			);
 			path = ShopingCategory;
 			sourceTree = "<group>";
@@ -1727,6 +1739,15 @@
 				A1FC4A93239F70E600AF3F57 /* PaySuccessViewController.xib */,
 			);
 			path = HolelChildVc;
+			sourceTree = "<group>";
+		};
+		A1FD1B8423AC6E7800AE0835 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				A1FD1B8523AC6E7800AE0835 /* iCarousel.m */,
+				A1FD1B8623AC6E7800AE0835 /* iCarousel.h */,
+			);
+			path = iCarousel;
 			sourceTree = "<group>";
 		};
 		E3CD6EC2EBE0FEF0B7882BD3 /* Frameworks */ = {
@@ -2358,6 +2379,11 @@
 				TargetAttributes = {
 					A14FB256238E0E4C006A6511 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					A14FB26E238E0E50006A6511 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -2420,6 +2446,7 @@
 				A10A9BF5239784400049A0D2 /* ShopHomeViewCell.xib in Resources */,
 				F4FAC29023AC63B600C235EA /* ZBNSHApplyForRefundCell.xib in Resources */,
 				F476A4AE23A7684500E3018A /* wine.plist in Resources */,
+				A1FD1B6A23AB471500AE0835 /* CategoryShopDetailsViewController.xib in Resources */,
 				A10A9BE9239764D70049A0D2 /* MDBannerCollectionViewCell.xib in Resources */,
 				F4FAC2A523AC79BE00C235EA /* ZBNShoppingMallEntryCell.xib in Resources */,
 				F476A44823A7682B00E3018A /* ZBNMyPostCommenCell.xib in Resources */,
@@ -2653,6 +2680,7 @@
 				F476A49623A7682C00E3018A /* ZBNMyIntegralVC.m in Sources */,
 				F476A47E23A7682C00E3018A /* ZBNHotelWaitEvaluateOrderVC.m in Sources */,
 				A15DC0C9239DD875008CF287 /* HotelDetilsTopViewCell.m in Sources */,
+				A1FD1B6923AB471500AE0835 /* CategoryShopDetailsViewController.m in Sources */,
 				F476A48723A7682C00E3018A /* ZBNMyCollectionVC.m in Sources */,
 				A15DC0DC239E2003008CF287 /* HotelDetlisSubViewOneController.m in Sources */,
 				F476A47923A7682B00E3018A /* ZBNRestaurantBookOrderVC.m in Sources */,
@@ -2697,6 +2725,7 @@
 				F476A4B623A7844A00E3018A /* ZBNRechargeCell.m in Sources */,
 				A10A9C1423989A4D0049A0D2 /* DropMenuView.m in Sources */,
 				A14FB2E3238F682A006A6511 /* MineViewController.m in Sources */,
+				A1FD1B8823AC6E7800AE0835 /* iCarousel.m in Sources */,
 				F476A49923A7682C00E3018A /* ZBNOperationVideoVC.m in Sources */,
 				F4FAC2BA23ACAA7300C235EA /* ZBNEvaluateGoodsCell.m in Sources */,
 				A14FB2C7238F5BFA006A6511 /* CustomNavigationController.m in Sources */,
