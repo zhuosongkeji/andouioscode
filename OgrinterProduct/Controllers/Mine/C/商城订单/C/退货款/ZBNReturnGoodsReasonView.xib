@@ -232,7 +232,7 @@
                 <outletCollection property="selectedBtnArray" destination="h7N-0w-RSg" id="EZI-Ru-vKU"/>
                 <outletCollection property="selectedBtnArray" destination="WZv-c5-jV9" id="mAS-hJ-Vxd"/>
             </connections>
-            <point key="canvasLocation" x="-1197" y="113"/>
+            <point key="canvasLocation" x="-638" y="97"/>
         </view>
     </objects>
     <resources>

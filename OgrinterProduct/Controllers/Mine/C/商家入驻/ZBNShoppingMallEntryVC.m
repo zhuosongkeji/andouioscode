@@ -32,7 +32,7 @@
     self.tableView.sectionHeaderHeight = 0;
     self.tableView.sectionFooterHeight = 0;
     self.tableView.contentInset = UIEdgeInsetsMake(- 30, 0, 0, 0);
-    
+    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     
     

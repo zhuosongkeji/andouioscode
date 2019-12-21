@@ -20,6 +20,7 @@ static NSString * const ZBNShoppingHallAllOrderCellID = @"OrderCommenCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"ZBNCommenOrderCell" bundle:nil] forCellReuseIdentifier:ZBNShoppingHallAllOrderCellID];
