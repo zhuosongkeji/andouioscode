@@ -15,6 +15,7 @@
                 <outlet property="mTableView" destination="Z46-n5-CFx" id="soI-p5-IAj"/>
                 <outlet property="noticeView" destination="Xz4-cV-fCs" id="JtU-hA-3Ds"/>
                 <outlet property="noticebjView" destination="DTh-YJ-yFO" id="CmS-si-Uv0"/>
+                <outlet property="toTop" destination="gx9-4U-sOv" id="bN4-5Z-Rxp"/>
                 <outlet property="topBananerView" destination="xV6-tf-i1U" id="Q5p-8j-gpf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

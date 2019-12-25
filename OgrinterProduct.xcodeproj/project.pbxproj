@@ -151,6 +151,17 @@
 		A1F4DFE623A1EB9B00B02880 /* SeckillTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F4DFE423A1EB9B00B02880 /* SeckillTableViewCell.xib */; };
 		A1F4E03023A48E4F00B02880 /* ShopSeckillDetailsSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F4E02E23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.m */; };
 		A1F4E03123A48E4F00B02880 /* ShopSeckillDetailsSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F4E02F23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.xib */; };
+		A1F5515C23B0FCB500416682 /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F5515923B0FCB400416682 /* WRNavigationBar.m */; };
+		A1F5515D23B0FCB500416682 /* WRCustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F5515B23B0FCB500416682 /* WRCustomNavigationBar.m */; };
+		A1F5516023B2099600416682 /* MdBannerListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F5515F23B2099600416682 /* MdBannerListModel.m */; };
+		A1F6BDA023ADC8A60063AEF8 /* CategorySetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BD9E23ADC8A60063AEF8 /* CategorySetingViewController.m */; };
+		A1F6BDA123ADC8A60063AEF8 /* CategorySetingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F6BD9F23ADC8A60063AEF8 /* CategorySetingViewController.xib */; };
+		A1F6BDAD23ADF7B50063AEF8 /* CustomMoveView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BDA423ADF7B40063AEF8 /* CustomMoveView.m */; };
+		A1F6BDAE23ADF7B50063AEF8 /* CGControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BDA823ADF7B40063AEF8 /* CGControl.m */; };
+		A1F6BDAF23ADF7B50063AEF8 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BDA923ADF7B40063AEF8 /* UIColor+Extensions.m */; };
+		A1F6BDB023ADF7B50063AEF8 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BDAA23ADF7B50063AEF8 /* UIView+Extension.m */; };
+		A1F6BDB123ADF7B50063AEF8 /* CustomTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BDAC23ADF7B50063AEF8 /* CustomTopCell.m */; };
+		A1F6BDB323ADFA740063AEF8 /* custom.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1F6BDB223ADFA730063AEF8 /* custom.plist */; };
 		A1F73CF423A880CB001D86EF /* ShopingShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F73CF123A880CB001D86EF /* ShopingShopViewController.xib */; };
 		A1F73CF523A880CB001D86EF /* ShopingShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F73CF323A880CB001D86EF /* ShopingShopViewController.m */; };
 		A1F73CF823A88196001D86EF /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F73CF723A88196001D86EF /* ShareView.m */; };
@@ -556,6 +567,26 @@
 		A1F4E02D23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopSeckillDetailsSubViewController.h; sourceTree = "<group>"; };
 		A1F4E02E23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopSeckillDetailsSubViewController.m; sourceTree = "<group>"; };
 		A1F4E02F23A48E4F00B02880 /* ShopSeckillDetailsSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopSeckillDetailsSubViewController.xib; sourceTree = "<group>"; };
+		A1F5515823B0FCB400416682 /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
+		A1F5515923B0FCB400416682 /* WRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRNavigationBar.m; sourceTree = "<group>"; };
+		A1F5515A23B0FCB500416682 /* WRCustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCustomNavigationBar.h; sourceTree = "<group>"; };
+		A1F5515B23B0FCB500416682 /* WRCustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCustomNavigationBar.m; sourceTree = "<group>"; };
+		A1F5515E23B2099600416682 /* MdBannerListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MdBannerListModel.h; sourceTree = "<group>"; };
+		A1F5515F23B2099600416682 /* MdBannerListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MdBannerListModel.m; sourceTree = "<group>"; };
+		A1F6BD9D23ADC8A60063AEF8 /* CategorySetingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CategorySetingViewController.h; path = "OgrinterProduct/Controllers/Home/C/商店/ShopMsg/CategorySetingViewController.h"; sourceTree = SOURCE_ROOT; };
+		A1F6BD9E23ADC8A60063AEF8 /* CategorySetingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CategorySetingViewController.m; path = "OgrinterProduct/Controllers/Home/C/商店/ShopMsg/CategorySetingViewController.m"; sourceTree = SOURCE_ROOT; };
+		A1F6BD9F23ADC8A60063AEF8 /* CategorySetingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategorySetingViewController.xib; path = "OgrinterProduct/Controllers/Home/C/商店/ShopMsg/CategorySetingViewController.xib"; sourceTree = SOURCE_ROOT; };
+		A1F6BDA323ADF7B40063AEF8 /* CGControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGControl.h; sourceTree = "<group>"; };
+		A1F6BDA423ADF7B40063AEF8 /* CustomMoveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMoveView.m; sourceTree = "<group>"; };
+		A1F6BDA523ADF7B40063AEF8 /* CustomMoveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMoveView.h; sourceTree = "<group>"; };
+		A1F6BDA623ADF7B40063AEF8 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		A1F6BDA723ADF7B40063AEF8 /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
+		A1F6BDA823ADF7B40063AEF8 /* CGControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGControl.m; sourceTree = "<group>"; };
+		A1F6BDA923ADF7B40063AEF8 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
+		A1F6BDAA23ADF7B50063AEF8 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		A1F6BDAB23ADF7B50063AEF8 /* CustomTopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTopCell.h; sourceTree = "<group>"; };
+		A1F6BDAC23ADF7B50063AEF8 /* CustomTopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTopCell.m; sourceTree = "<group>"; };
+		A1F6BDB223ADFA730063AEF8 /* custom.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = custom.plist; sourceTree = "<group>"; };
 		A1F73CF123A880CB001D86EF /* ShopingShopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShopingShopViewController.xib; path = "OgrinterProduct/Controllers/Home/C/商店/ShopingHome/C/ShopingShopViewController.xib"; sourceTree = SOURCE_ROOT; };
 		A1F73CF223A880CB001D86EF /* ShopingShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopingShopViewController.h; path = "OgrinterProduct/Controllers/Home/C/商店/ShopingHome/C/ShopingShopViewController.h"; sourceTree = SOURCE_ROOT; };
 		A1F73CF323A880CB001D86EF /* ShopingShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopingShopViewController.m; path = "OgrinterProduct/Controllers/Home/C/商店/ShopingHome/C/ShopingShopViewController.m"; sourceTree = SOURCE_ROOT; };
@@ -848,6 +879,8 @@
 			children = (
 				A10A9BE2239764D70049A0D2 /* MDBannerModel.h */,
 				A10A9BE5239764D70049A0D2 /* MDBannerModel.m */,
+				A1F5515E23B2099600416682 /* MdBannerListModel.h */,
+				A1F5515F23B2099600416682 /* MdBannerListModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -1321,6 +1354,7 @@
 				A10A9C172398A1970049A0D2 /* categories.plist */,
 				F476A4AD23A7684500E3018A /* wine.plist */,
 				A10A9C162398A1970049A0D2 /* sorts.plist */,
+				A1F6BDB223ADFA730063AEF8 /* custom.plist */,
 				A14FB269238E0E50006A6511 /* main.m */,
 			);
 			path = OgrinterProduct;
@@ -1383,6 +1417,7 @@
 		A14FB2AF238F5770006A6511 /* category */ = {
 			isa = PBXGroup;
 			children = (
+				A1F6BDA223ADF5770063AEF8 /* MoveCollection */,
 				A14FB2BA238F57AC006A6511 /* YWHudManager */,
 				A14FB2B4238F5787006A6511 /* FKHOperationAdapter.h */,
 				A14FB2B2238F5787006A6511 /* FKHRequestManager.h */,
@@ -1656,6 +1691,9 @@
 				A1FD1B6623AB471500AE0835 /* CategoryShopDetailsViewController.h */,
 				A1FD1B6723AB471500AE0835 /* CategoryShopDetailsViewController.m */,
 				A1FD1B6823AB471500AE0835 /* CategoryShopDetailsViewController.xib */,
+				A1F6BD9D23ADC8A60063AEF8 /* CategorySetingViewController.h */,
+				A1F6BD9E23ADC8A60063AEF8 /* CategorySetingViewController.m */,
+				A1F6BD9F23ADC8A60063AEF8 /* CategorySetingViewController.xib */,
 			);
 			path = ShopingCategory;
 			sourceTree = "<group>";
@@ -1719,6 +1757,7 @@
 		A1DA9C98239CF20A00DD6666 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				A1F5515723B0FC9C00416682 /* WRNavigationBar */,
 				A15DC0D1239DE0B8008CF287 /* CustomSegmentView */,
 				A15DC0D0239DE093008CF287 /* SegmentViews */,
 			);
@@ -1739,6 +1778,34 @@
 				A1FC4A93239F70E600AF3F57 /* PaySuccessViewController.xib */,
 			);
 			path = HolelChildVc;
+			sourceTree = "<group>";
+		};
+		A1F5515723B0FC9C00416682 /* WRNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				A1F5515A23B0FCB500416682 /* WRCustomNavigationBar.h */,
+				A1F5515B23B0FCB500416682 /* WRCustomNavigationBar.m */,
+				A1F5515823B0FCB400416682 /* WRNavigationBar.h */,
+				A1F5515923B0FCB400416682 /* WRNavigationBar.m */,
+			);
+			path = WRNavigationBar;
+			sourceTree = "<group>";
+		};
+		A1F6BDA223ADF5770063AEF8 /* MoveCollection */ = {
+			isa = PBXGroup;
+			children = (
+				A1F6BDA323ADF7B40063AEF8 /* CGControl.h */,
+				A1F6BDA823ADF7B40063AEF8 /* CGControl.m */,
+				A1F6BDA523ADF7B40063AEF8 /* CustomMoveView.h */,
+				A1F6BDA423ADF7B40063AEF8 /* CustomMoveView.m */,
+				A1F6BDAB23ADF7B50063AEF8 /* CustomTopCell.h */,
+				A1F6BDAC23ADF7B50063AEF8 /* CustomTopCell.m */,
+				A1F6BDA723ADF7B40063AEF8 /* UIColor+Extensions.h */,
+				A1F6BDA923ADF7B40063AEF8 /* UIColor+Extensions.m */,
+				A1F6BDA623ADF7B40063AEF8 /* UIView+Extension.h */,
+				A1F6BDAA23ADF7B50063AEF8 /* UIView+Extension.m */,
+			);
+			path = MoveCollection;
 			sourceTree = "<group>";
 		};
 		A1FD1B8423AC6E7800AE0835 /* iCarousel */ = {
@@ -2444,6 +2511,7 @@
 				F4FAC2A023AC731100C235EA /* ZBNHotelEntryCell.xib in Resources */,
 				A15DC101239E3F04008CF287 /* OnlineBookingViewController.xib in Resources */,
 				A10A9BF5239784400049A0D2 /* ShopHomeViewCell.xib in Resources */,
+				A1F6BDB323ADFA740063AEF8 /* custom.plist in Resources */,
 				F4FAC29023AC63B600C235EA /* ZBNSHApplyForRefundCell.xib in Resources */,
 				F476A4AE23A7684500E3018A /* wine.plist in Resources */,
 				A1FD1B6A23AB471500AE0835 /* CategoryShopDetailsViewController.xib in Resources */,
@@ -2514,6 +2582,7 @@
 				A1CE7CCA23A77EB900C22C41 /* QCouponView.xib in Resources */,
 				F476A49823A7682C00E3018A /* ZBNMyIntegerHeadView.xib in Resources */,
 				A1FC4A8D239F288E00AF3F57 /* CustomAlterView.xib in Resources */,
+				A1F6BDA123ADC8A60063AEF8 /* CategorySetingViewController.xib in Resources */,
 				A15DC0FC239E35E1008CF287 /* CresFouthTableViewCell.xib in Resources */,
 				A15DC0CA239DD875008CF287 /* HotelDetilsTopViewCell.xib in Resources */,
 				A14FB2BF238F57AD006A6511 /* MBProgressHUD.bundle in Resources */,
@@ -2610,6 +2679,7 @@
 				A15DC104239E41C8008CF287 /* HotelDetailsBottomView.m in Sources */,
 				A14FB323239017BC006A6511 /* UIView+HHAddition.m in Sources */,
 				A14FB2A8238E4DF6006A6511 /* RegisterViewController.m in Sources */,
+				A1F5515C23B0FCB500416682 /* WRNavigationBar.m in Sources */,
 				A14FB322239017BC006A6511 /* MarqueeView.m in Sources */,
 				F476A44E23A7682B00E3018A /* ZBNCashWithDrawalVC.m in Sources */,
 				F476A47F23A7682C00E3018A /* ZBNHotelCancelOrderVC.m in Sources */,
@@ -2621,6 +2691,7 @@
 				F476A44C23A7682B00E3018A /* ZBNCostVC.m in Sources */,
 				A14FB29E238E4C89006A6511 /* BaseViewController.m in Sources */,
 				F4FAC25B23ABC4CE00C235EA /* ZBNShoppingHallWaitPaymentOrderCell.m in Sources */,
+				A1F5516023B2099600416682 /* MdBannerListModel.m in Sources */,
 				F4FAC27F23ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.m in Sources */,
 				A14FB308238FC206006A6511 /* HQIndexBannerSubview.m in Sources */,
 				F476A4C823A7878000E3018A /* ZBNRechargeCellTwo.m in Sources */,
@@ -2645,6 +2716,7 @@
 				A10A9BE7239764D70049A0D2 /* MDMaskView.m in Sources */,
 				A14FB26A238E0E50006A6511 /* main.m in Sources */,
 				F476A4B223A783E200E3018A /* ZBNWalletRechargeVC.m in Sources */,
+				A1F6BDB023ADF7B50063AEF8 /* UIView+Extension.m in Sources */,
 				F44DF88F23AA2C8F00A7D902 /* ZBNChooseAddressVC.m in Sources */,
 				F4FAC2A423AC79BE00C235EA /* ZBNShoppingMallEntryCell.m in Sources */,
 				A14FB2F5238F6A84006A6511 /* HomeViewController.m in Sources */,
@@ -2657,6 +2729,7 @@
 				F476A45B23A7682B00E3018A /* ZBNShoppingHallOrderVC.m in Sources */,
 				F476A4AB23A7683200E3018A /* ZBNSegmenBarConfig.m in Sources */,
 				F4FAC26A23ABC72D00C235EA /* ZBNSHReturnGoodsOrderCell.m in Sources */,
+				A1F5515D23B0FCB500416682 /* WRCustomNavigationBar.m in Sources */,
 				A14FB2ED238F6858006A6511 /* MsgViewController.m in Sources */,
 				F44DF88423AA067900A7D902 /* ZBNStayInOrderVC.m in Sources */,
 				F476A44423A7682B00E3018A /* ZBNMyNewsCell.m in Sources */,
@@ -2678,6 +2751,7 @@
 				A15DC0D7239DE0CE008CF287 /* FSSegmentTitleView.m in Sources */,
 				F476A48023A7682C00E3018A /* ZBNShoppingCartModel.m in Sources */,
 				F476A49623A7682C00E3018A /* ZBNMyIntegralVC.m in Sources */,
+				A1F6BDA023ADC8A60063AEF8 /* CategorySetingViewController.m in Sources */,
 				F476A47E23A7682C00E3018A /* ZBNHotelWaitEvaluateOrderVC.m in Sources */,
 				A15DC0C9239DD875008CF287 /* HotelDetilsTopViewCell.m in Sources */,
 				A1FD1B6923AB471500AE0835 /* CategoryShopDetailsViewController.m in Sources */,
@@ -2688,6 +2762,7 @@
 				A14FB354239126E5006A6511 /* ShoingMineViewController.m in Sources */,
 				A14FB2B9238F5788006A6511 /* NSObject+Timecutdow.m in Sources */,
 				A10A9C272398E1490049A0D2 /* SearchResrultViewController.m in Sources */,
+				A1F6BDAE23ADF7B50063AEF8 /* CGControl.m in Sources */,
 				A14FB32E2390E74D006A6511 /* HotCollectionViewCell.m in Sources */,
 				A14FB2B8238F5788006A6511 /* FKHRequestManager.m in Sources */,
 				F4FAC2B623ACAA5900C235EA /* ZBNEvaluateGoodsVC.m in Sources */,
@@ -2733,8 +2808,10 @@
 				A10A9CB9239B368B0049A0D2 /* BusinessCoursesViewController.m in Sources */,
 				F476A45423A7682B00E3018A /* ZBNMyWalletComCell.m in Sources */,
 				A10A9CA7239B35680049A0D2 /* NongJialeViewController.m in Sources */,
+				A1F6BDAF23ADF7B50063AEF8 /* UIColor+Extensions.m in Sources */,
 				A10A9BE8239764D70049A0D2 /* MDShockBannerView.m in Sources */,
 				A10A9BF4239784400049A0D2 /* ShopHomeViewCell.m in Sources */,
+				A1F6BDAD23ADF7B50063AEF8 /* CustomMoveView.m in Sources */,
 				F45231CA23AB7B5E005CBE6A /* ZBNRestaurantOrderDetailVC.m in Sources */,
 				A10A9C1523989A4D0049A0D2 /* MenuScreeningView.m in Sources */,
 				F4FAC28323AC568900C235EA /* ZBNWaitDeliverDetailVC.m in Sources */,
@@ -2747,6 +2824,7 @@
 				A10A9C072397EC9C0049A0D2 /* RedPacketView.m in Sources */,
 				A14FB315238FE03A006A6511 /* HomeCellModel.m in Sources */,
 				F476A47223A7682B00E3018A /* ZBNBecomeDistributor.m in Sources */,
+				A1F6BDB123ADF7B50063AEF8 /* CustomTopCell.m in Sources */,
 				F476A49A23A7682C00E3018A /* ZBNMyPostBarVC.m in Sources */,
 				A1FC4A8B239F27BB00AF3F57 /* CustomAlterView.m in Sources */,
 				A14FB3262390C6D1006A6511 /* CitylistViewController.m in Sources */,

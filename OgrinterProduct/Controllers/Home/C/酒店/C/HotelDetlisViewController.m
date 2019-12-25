@@ -31,6 +31,7 @@
 
 @property (nonatomic,strong)NSArray *VcStrArr;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
 
 @end
 
@@ -42,6 +43,7 @@
     
     
     KAdd_Observer(@"leaveTop", self, changeScrollStatus, nil);
+    self.toTop.constant = kStatusBarAndNavigationBarH;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self setup];
@@ -86,12 +88,14 @@
     return 2;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 1) {
         return 1;
     }
     return 2;
 }
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
@@ -149,7 +153,7 @@
                 [contentVCs addObject:vc];
             }
             _contentCell.viewControllers = contentVCs;
-            _contentCell.pageContentView = [[FSPageContentView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-kStatusBarAndNavigationBarH - 50) childVCs:contentVCs parentVC:self delegate:self];
+            _contentCell.pageContentView = [[FSPageContentView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-kStatusBarAndNavigationBarH) childVCs:contentVCs parentVC:self delegate:self];
             [_contentCell.contentView addSubview:_contentCell.pageContentView];
         }
         
@@ -174,6 +178,7 @@
 - (void)FSContentViewDidScroll:(FSPageContentView *)contentView startIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex progress:(CGFloat)progress{
     self.mTableView.scrollEnabled = NO;//pageView开始滚动主tableview禁止滑动
 }
+
 
 #pragma mark UIScrollView
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

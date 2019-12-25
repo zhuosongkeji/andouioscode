@@ -16,7 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
+}
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.childViewControllers.count > 0) {
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+    [super pushViewController:viewController animated:animated];
 }
 
 

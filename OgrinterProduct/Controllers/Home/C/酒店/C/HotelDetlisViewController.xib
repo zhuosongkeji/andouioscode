@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HotelDetlisViewController">
             <connections>
                 <outlet property="mTableView" destination="HzU-gd-zzu" id="3U7-1X-Rgr"/>
+                <outlet property="toTop" destination="g6n-tD-aqZ" id="a4b-RE-Yua"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

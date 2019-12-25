@@ -46,6 +46,7 @@
     [_searchBar resignFirstResponder];
 }
 
+
 #pragma mark - shops
 - (NSMutableArray *)dataArr {
     if (!_dataArr) {
@@ -80,7 +81,7 @@
     WSLWaterFlowLayout *layout = [[WSLWaterFlowLayout alloc]init];
     layout.delegate = self;
     
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT) collectionViewLayout:layout];
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, kStatusBarAndNavigationBarH, KSCREEN_WIDTH, KSCREEN_HEIGHT) collectionViewLayout:layout];
     
     collectionView.delegate = self;
     collectionView.dataSource = self;
@@ -104,7 +105,8 @@
 //MARK:- 加载tableView
 -(UITableView *)createmTableView {
     
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kStatusBarAndNavigationBarH, KSCREEN_WIDTH, KSCREEN_HEIGHT) style:UITableViewStylePlain];
+    
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.showsHorizontalScrollIndicator = NO;
@@ -135,6 +137,7 @@
         if ([v isKindOfClass:[NSClassFromString(@"UINavigationButton") class]]) {
             UIButton *cancel = (UIButton *)v;
             [cancel setTitle:@"取消" forState:UIControlStateNormal];
+            [cancel setTitleColor:KSRGBA(255, 255, 255, 1) forState:UIControlStateNormal];
             cancel.titleLabel.font = [UIFont systemFontOfSize:13];
         }
     }
@@ -154,6 +157,7 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.dataArr count];
 }
+
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (self.type == SearchCollectionViewtypeOne) {
@@ -219,6 +223,7 @@
         return CGSizeMake(0,0);
     }
 }
+
 
 -(CGFloat)columnCountInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
     if (self.type == SearchCollectionViewtypeOne) {

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,6 +13,7 @@
             <connections>
                 <outlet property="headImageV" destination="2J5-SM-h3D" id="D8a-Me-yIX"/>
                 <outlet property="mTableView" destination="kGP-dV-NOj" id="XgD-j2-92t"/>
+                <outlet property="toTop" destination="Ib9-kd-ocA" id="rj0-9H-h1c"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -55,7 +58,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="0nM-u3-n5f"/>
                                     <constraint firstItem="nBt-rX-hP9" firstAttribute="centerY" secondItem="2J5-SM-h3D" secondAttribute="centerY" id="1H3-zO-Eiv"/>
@@ -494,7 +497,7 @@
                 <constraint firstAttribute="trailing" secondItem="kGP-dV-NOj" secondAttribute="trailing" id="JYB-Ix-DuZ"/>
                 <constraint firstAttribute="bottom" secondItem="kGP-dV-NOj" secondAttribute="bottom" id="vmt-1l-new"/>
             </constraints>
-            <point key="canvasLocation" x="-26330" y="224"/>
+            <point key="canvasLocation" x="-26693" y="173"/>
         </view>
         <view contentMode="scaleToFill" id="rOc-2d-Yzc">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>

@@ -10,8 +10,13 @@
 
 @interface MDBannerModel : NSObject
 
-@property(nonatomic,strong)NSString *url;
-@property(nonatomic,strong)NSString *img;
-@property(nonatomic,strong)NSString *bgImg;
+
+@property(nonatomic,strong)NSDictionary *dataDic;
+
+
+-(instancetype)initWithDict:(NSDictionary *)dict;
+
++(instancetype)initWithDict:(NSDictionary *)dict;
 
 @end
+

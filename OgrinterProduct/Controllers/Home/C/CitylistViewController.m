@@ -25,7 +25,7 @@
 //MARK:-mTableView懒加载
 -(UITableView *)mTableView{
     if (!_mTableView) {
-        _mTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-kStatusBarAndNavigationBarH) style:UITableViewStylePlain];
+        _mTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kStatusBarAndNavigationBarH, KSCREEN_WIDTH, KSCREEN_HEIGHT-kStatusBarAndNavigationBarH) style:UITableViewStylePlain];
         _mTableView.delegate = self;
         _mTableView.dataSource = self;
         _mTableView.sectionIndexColor = [UIColor darkGrayColor];
@@ -36,7 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"城市";
+    self.navigationItem.title = @"城市列表";
     self.dataNameArr = [NSMutableArray array];
     for (NSDictionary *dict in cityArr) {
         [self.dataNameArr addObject:dict[@"name"]];

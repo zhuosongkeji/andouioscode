@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnlineBookingViewController">
             <connections>
                 <outlet property="mTableView" destination="g8i-uG-KNg" id="LNj-qi-rf0"/>
+                <outlet property="toTop" destination="gBa-79-Hmh" id="qfb-3w-1tI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

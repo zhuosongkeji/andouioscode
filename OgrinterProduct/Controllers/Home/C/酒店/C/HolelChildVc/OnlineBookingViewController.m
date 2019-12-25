@@ -24,6 +24,8 @@
 
 @property (nonatomic,weak)UIButton *bjbtn;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
+
 @property (assign, nonatomic) NSIndexPath *selectedIndexPath;//单选，当前选中的行
 
 @end
@@ -51,6 +53,7 @@
 
 -(void)setup{
     
+    self.toTop.constant = kStatusBarAndNavigationBarH;
     self.mTableView.tableFooterView = [UILabel new];
     [self.mTableView registerNib:[UINib nibWithNibName:@"OnlineTableViewCell" bundle:nil] forCellReuseIdentifier:@"OnlineTableViewCell"];
 }

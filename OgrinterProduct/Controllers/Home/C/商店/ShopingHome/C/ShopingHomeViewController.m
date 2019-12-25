@@ -6,6 +6,8 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+#define shopApi @"goods/index"
+
 
 #import "ShopingHomeViewController.h"
 #import "ShopSeckillDetailsViewController.h"
@@ -13,6 +15,7 @@
 #import "ShopHomeSectionView.h"
 #import "ShopHomeViewCell.h"
 #import "MDBannerModel.h"
+#import "MdBannerListModel.h"
 
 
 @interface ShopingHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -23,6 +26,9 @@
 
 @property (weak, nonatomic) IBOutlet UIView *topBannerView;
 
+@property (nonatomic,strong)NSMutableArray *dataArr;
+
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
 
 
@@ -32,22 +38,30 @@
 @implementation ShopingHomeViewController
 
 
+-(NSMutableArray *)dataArr{
+    if (!_dataArr) {
+        _dataArr = [NSMutableArray array];
+    }
+    return _dataArr;
+}
+
 //MARK:- MDShockBannerView
 -(MDShockBannerView *)bannerView {
     if (!_bannerView) {
         _bannerView = [[MDShockBannerView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, bannerH)];
         _bannerView.pageSelectImage = [UIImage imageNamed:@"dati2"];
         _bannerView.pageUnselectImage = [UIImage imageNamed:@"dati1"];
-        MDBannerModel *model = [[MDBannerModel alloc]init];
-        MDBannerModel *model2 = [[MDBannerModel alloc]init];
-        model.img = @"http://md-juhe.oss-cn-hangzhou.aliyuncs.com/upload/ad/20180417/6265b5b9bf8686f009cf44c366cfa4abd26b1a79.png";
-        model.bgImg = @"http://md-juhe.oss-cn-hangzhou.aliyuncs.com/upload/ad/20180417/9bc42ce40490c854eab2e9969ac8e328caab0a17.png";
-        
-        model2.img = @"http://md-juhe.oss-cn-hangzhou.aliyuncs.com/upload/ad/20180417/16f7ab6124ae4688f0adef43ff3ab3b1f09ccc67.png";
-        model2.bgImg = @"http://md-juhe.oss-cn-hangzhou.aliyuncs.com/upload/ad/20180417/9bc42ce40490c854eab2e9969ac8e328caab0a17.png";
-        
-        _bannerView.banners = @[model,model2];
-        
+        if (self.dataArr) {
+            MDBannerModel *model = [self.dataArr objectAtIndex:0];
+            NSArray *array = [model.dataDic objectForKey:@"banner"];
+            NSMutableArray *listArr = [NSMutableArray array];
+            for (int i = 0; i < [array count]; i ++) {
+                MdBannerListModel *list = array[i];
+                list.bgImg = @"http://md-juhe.oss-cn-hangzhou.aliyuncs.com/upload/ad/20180417/9bc42ce40490c854eab2e9969ac8e328caab0a17.png";
+                [listArr addObject:list];
+            }
+            _bannerView.banners = listArr;
+        }
     }
     
     return _bannerView;
@@ -57,21 +71,45 @@
 //MARK:- viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.toTop.constant = kStatusBarAndNavigationBarHeight;
-    self.mTableView.tableFooterView = [UILabel new];
     
-    [self.topBannerView addSubview:self.bannerView];
-    
-    [self.mTableView registerNib:[UINib nibWithNibName:@"ShopHomeViewCell" bundle:nil] forCellReuseIdentifier:@"ShopHomeViewCell"];
-    
+    [self setup];
+    [self loadNetWork];
     // Do any additional setup after loading the view from its nib.
 }
 
 
+-(void)loadNetWork{
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopApi];
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            NSDictionary *dict = serverInfo.response[@"data"];
+            MDBannerModel *model = [[MDBannerModel alloc] initWithDict:dict];
+            [self.dataArr addObject:model];
+            
+            [self.topBannerView addSubview:self.bannerView];
+            [self.mTableView reloadData];
+            [self.mTableView.mj_header endRefreshing];
+        }
+    }];
+}
+
+
+-(void)setup{
+    
+    self.mTableView.tableFooterView = [UILabel new];
+    
+    [self.mTableView registerNib:[UINib nibWithNibName:@"ShopHomeViewCell" bundle:nil] forCellReuseIdentifier:@"ShopHomeViewCell"];
+    
+    self.mTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self loadNetWork];
+    }];
+    
+    [self.mTableView.mj_header beginRefreshing];
+}
+
 //MARK: -TableViewDelegate or dataScroe
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 5;
+    return 2;
 }
 
 
@@ -88,6 +126,7 @@
     }
     
     [cell setEnumtype:MyEnumValueA];
+    
     cell.itemBlock = ^(NSInteger idex, NSIndexPath *indexpath) {
         ShopSeckillDetailsViewController *seckill = [[ShopSeckillDetailsViewController alloc]init];
         seckill.seckillType = ShopSeckillDetailsTypeOrder;
