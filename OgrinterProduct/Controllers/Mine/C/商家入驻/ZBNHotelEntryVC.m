@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.navigationItem.title = @"酒店入驻";
 
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;

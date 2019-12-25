@@ -35,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.navigationItem.title = @"商城订单";
     [self setupSegmen];
 }

@@ -162,14 +162,7 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 // 弱引用
 #define ADWeakSelf __weak typeof(self) weakSelf = self;
 
-//<<<<<<< HEAD
-//// 颜色
-//#define ZBNARGBColor(a, r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/255.0]
-//#define ZBNColor(r, g, b) ZBNARGBColor(255, (r), (g), (b))
-//#define ZBNGrayColor(v) ZBNColor((v), (v), (v))
-//#define ZBNCommonBgColor ZBNGrayColor(241)
-//=======
-//>>>>>>> 39a962f7aaeeea9a1a5dad36925246a391d4a9fb
+
 
 #import "HUDManager.h"
 #import "FKHRequestManager.h"
