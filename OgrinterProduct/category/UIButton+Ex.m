@@ -11,8 +11,9 @@
 @implementation UIButton (Ex)
 
 - (void)layoutButtonWithEdgeInsetsStyle:(TYButtonEdgeInsetsStyle)style
-                        imageTitleSpace:(CGFloat)space
-{
+                        imageTitleSpace:(CGFloat)space {
+    
+    
     // 1. 得到imageView和titleLabel的宽、高
     CGFloat imageWidth = self.imageView.frame.size.width;
     CGFloat imageHeight = self.imageView.frame.size.height;

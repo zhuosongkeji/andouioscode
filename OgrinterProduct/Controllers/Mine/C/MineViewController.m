@@ -10,8 +10,8 @@
 
 
 
-
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
 
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 
@@ -25,8 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.toTop.constant = kStatusBarAndNavigationBarH;
     self.mTableView.tableFooterView = [UILabel new];
-   
     self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
 }
 

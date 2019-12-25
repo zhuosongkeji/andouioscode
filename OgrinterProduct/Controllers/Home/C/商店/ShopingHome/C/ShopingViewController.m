@@ -13,6 +13,7 @@
 #import "ZBNShopingCartVC.h"
 #import "ShoingMineViewController.h"
 #import "SearchResrultViewController.h"
+#import "CategorySetingViewController.h"
 #import "SegmentView.h"
 
 
@@ -20,7 +21,6 @@
 
 
 @property (nonatomic,strong) SegmentView *segmentView;
-
 @property (nonatomic,strong)ShopingHomeViewController *ShopingHomeVc;
 
 @property (nonatomic,strong)ShopingShopViewController *ShopingCategoryVc;
@@ -28,8 +28,8 @@
 @property (nonatomic,strong)ShoingMineViewController *ShoingMineVc;
 
 @property (nonatomic,strong)UIView *searchField;
-
 @property (nonatomic,strong)UIButton *searchBtn;
+@property (nonatomic,strong)UIButton *rightitem;
 
 @property (nonatomic) NSInteger HHR;
 @property (nonatomic) NSInteger index;
@@ -64,7 +64,6 @@
         [_searchField addSubview:_searchBtn];
     }
     
-    
     return _searchField;
 }
 
@@ -87,10 +86,13 @@
     [super viewDidLoad];
     
     self.HHR = 0;
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.rightitem];
+    
     [self segmentView:self.segmentView didSelectedSegmentAtIndex:0];
     
     self.segmentView = [[SegmentView alloc]initWithTitles:TowTabBarData];
-    _segmentView.frame = CGRectMake(0, KSCREEN_HEIGHT - kStatusBarAndNavigationBarH-kStatuTabBarH, KSCREEN_WIDTH, kStatuTabBarH);
+    _segmentView.frame = CGRectMake(0, KSCREEN_HEIGHT -kStatuTabBarH, KSCREEN_WIDTH, kStatuTabBarH);
     
     _segmentView.delegate = self;
     [self.view addSubview:_segmentView];
@@ -118,39 +120,44 @@
             _ShopingHomeVc = [[ShopingHomeViewController alloc] init];
         }
         CGRect frame;
-        if (self.HHR == 0) {
-            self.HHR = 1;
-            frame = CGRectMake(0, 0, KSCREEN_WIDTH,
-                               KSCREEN_HEIGHT -kStatuTabBarH);
-        }else{
-            frame = CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT - kStatusBarAndNavigationBarH-kStatuTabBarH);
-        }
+//        if (self.HHR == 0) {
+//            self.HHR = 1;
+//            frame = CGRectMake(0, 0, KSCREEN_WIDTH,
+//                               KSCREEN_HEIGHT -kStatuTabBarH);
+//        }else{
+            frame = CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT - kStatuTabBarH);
+//        }
         [self setupChildViewController:_ShopingHomeVc frame:frame title:TowTabBarData[0]];
         self.navigationItem.titleView = self.searchField;
+        [_rightitem setHidden:YES];
         
     } else if (index == 1){
         if (!_ShopingCategoryVc) {
             _ShopingCategoryVc = [[ShopingShopViewController alloc] init];
         }
-        CGRect frame = CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT - kStatusBarAndNavigationBarH-kStatuTabBarH);
+        CGRect frame = CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT - kStatuTabBarH);
         [self setupChildViewController:_ShopingCategoryVc frame:frame title:TowTabBarData[1]];
         self.navigationItem.titleView = self.searchField;
+        [_rightitem setHidden:NO];
     }else if (index == 2){
         if (!_ShoingMsgVc) {
             _ShoingMsgVc = [[ZBNShopingCartVC alloc] init];
         }
-        CGRect frame = CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT - kStatusBarAndNavigationBarH-kStatuTabBarH);
+        CGRect frame = CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT - kStatuTabBarH);
         [self setupChildViewController:_ShoingMsgVc frame:frame title:TowTabBarData[2]];
         self.navigationItem.titleView = self.titleView;
         _titletxet.text = @"购物车";
+        [_rightitem setHidden:YES];
     }else{
         if (!_ShoingMineVc) {
             _ShoingMineVc = [[ShoingMineViewController alloc] init];
         }
-        CGRect frame = CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT - kStatusBarAndNavigationBarH-kStatuTabBarH);
+        
+        CGRect frame = CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT - kStatuTabBarH);
         [self setupChildViewController:_ShoingMineVc frame:frame title:TowTabBarData[3]];
         self.navigationItem.titleView = self.titleView;
         _titletxet.text = @"消息";
+        [_rightitem setHidden:YES];
     }
 }
 
@@ -165,6 +172,26 @@
     }else {}
     
     [self.navigationController pushViewController:result animated:YES];
+}
+
+
+-(void)btnAction:(UIButton *)action {
+    KPreventRepeatClickTime(1)
+    CategorySetingViewController *set = [[CategorySetingViewController alloc]init];
+    [self.navigationController pushViewController:set animated:YES];
+}
+
+
+-(UIButton *)rightitem {
+    
+    if (!_rightitem) {
+        _rightitem = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_rightitem setFrame:CGRectMake(0, 0, 30, 30)];
+        [_rightitem setBackgroundImage:[UIImage imageNamed:@"category"] forState:0];
+        [_rightitem addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_rightitem setHidden:YES];
+    }
+    return _rightitem;
 }
 
 /*

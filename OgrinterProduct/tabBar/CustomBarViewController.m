@@ -12,17 +12,13 @@
 #import "MsgViewController.h"
 #import "FindViewController.h"
 #import "MineViewController.h"
-//#import "ShopingHomeViewController.h"
-//#import "ShopingCategoryViewController.h"
-//#import "ShoingMsgViewController.h"
-//#import "ShoingMineViewController.h"
+#import "CustomNavigationController.h"
 #import <CoreLocation/CoreLocation.h>
-
 
 #import "CustomBar.h"
 
 
-@interface CustomBarViewController ()<CLLocationManagerDelegate>
+@interface CustomBarViewController ()<CLLocationManagerDelegate,UITabBarControllerDelegate>
 
 @property (nonatomic,strong)HomeViewController *hvc;
 @property (nonatomic, strong) CLLocationManager* locationManager;
@@ -43,6 +39,8 @@
     
     if (self) {
         
+        KAdd_Observer(@"tabBarController", self, cancallogin, nil);
+
         if (type == CustomBarTypeOne) {
             [self loadsubControlOne];
             [self initloction];
@@ -133,18 +131,28 @@
     
     [[UITabBar appearance] setTintColor:KSDUAULTCOLORE];
     
-    UINavigationController* nav = [[navVc alloc] initWithRootViewController:childController];
+    CustomNavigationController* nav = [[navVc alloc] initWithRootViewController:childController];
     UIColor* color = [UIColor whiteColor];
     
-    NSDictionary* dict = [NSDictionary dictionaryWithObject:color forKey:NSForegroundColorAttributeName];
-    nav.navigationBar.titleTextAttributes= dict;
-    
-    [nav.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav"] forBarMetrics:UIBarMetricsDefault];
+    // 设置导航栏默认的背景颜色
+    [WRNavigationBar wr_setDefaultNavBarBarTintColor:KSDUAULTCOLORE];
+    // 设置导航栏所有按钮的默认颜色
+    [WRNavigationBar wr_setDefaultNavBarTintColor:[UIColor whiteColor]];
+    // 设置导航栏标题默认颜色
+    [WRNavigationBar wr_setDefaultNavBarTitleColor:[UIColor whiteColor]];
+    // 统一设置状态栏样式
+    [WRNavigationBar wr_setDefaultStatusBarStyle:UIStatusBarStyleLightContent];
+    // 如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
+    [WRNavigationBar wr_setDefaultNavBarShadowImageHidden:YES];
     
     [self addChildViewController:nav];
 }
 
 
+#pragma mark -NSNotification
+-(void)cancallogin  {
+    self.selectedIndex = 1;
+}
 
 //-(UIImage*)convertViewToImage {
 //
@@ -222,6 +230,11 @@
         }
     }];
     [manager stopUpdatingLocation];
+}
+
+
+-(void)dealloc{
+    KRemove_Observer(self);
 }
 
 

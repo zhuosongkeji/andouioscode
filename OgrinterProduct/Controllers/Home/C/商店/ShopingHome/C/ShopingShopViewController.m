@@ -29,6 +29,10 @@
 @property(nonatomic,strong)NSArray *rightArr;
 @property (nonatomic,strong)UIButton *searchBtn;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftTotop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightTotop;
+
+
 
 @end
 
@@ -47,11 +51,22 @@
     
     self.leftArr = @[@"玩具",@"娱乐",@"商品",@"电影",@"其他"];
     
+    [self setup];
+    // Do any additional setup after loading the view from its nib.
+}
+
+
+-(void)setup{
+    
+    
+    self.leftTotop.constant = kStatusBarAndNavigationBarH;
+    self.rightTotop.constant = kStatusBarAndNavigationBarH;
+    
     self.leftTbleView.tableFooterView = [UILabel new];
     self.rigthTableView.tableFooterView = [UILabel new];
     
     [self.rigthTableView registerNib:[UINib nibWithNibName:@"ShopHomeViewCell" bundle:nil] forCellReuseIdentifier:@"ShopHomeViewCell"];
-    // Do any additional setup after loading the view from its nib.
+    
 }
 
 
@@ -69,6 +84,7 @@
         return 1;
     return [self.leftArr count];
 }
+
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

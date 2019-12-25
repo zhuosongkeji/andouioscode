@@ -12,7 +12,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShopingShopViewController">
             <connections>
                 <outlet property="leftTbleView" destination="zbS-kE-LCv" id="1nY-4z-SCI"/>
+                <outlet property="leftTotop" destination="cEg-ah-dFl" id="0kP-xu-adG"/>
                 <outlet property="lefttoTop" destination="cEg-ah-dFl" id="kG5-KR-QlH"/>
+                <outlet property="rightTotop" destination="Bfg-6e-QY0" id="fl9-L6-Nnt"/>
                 <outlet property="righttoTop" destination="Bfg-6e-QY0" id="0Tq-NK-qRu"/>
                 <outlet property="rigthTableView" destination="fcg-j7-FVA" id="pgj-LS-i3V"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

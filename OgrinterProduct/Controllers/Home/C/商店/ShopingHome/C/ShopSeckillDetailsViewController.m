@@ -105,12 +105,11 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"商品详情";
-    
-    KAdd_Observer(@"OtherTop", self, changeScroll, nil);
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self setup];
     [self createBottomView];
+    [self shareitem];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -118,6 +117,9 @@
 -(void)setup{
     
     self.canScroll = YES;
+    
+    KAdd_Observer(@"OtherTop", self, changeScroll, nil);
+    [self wr_setNavBarBackgroundAlpha:0];
     
     self.mTableView.tableFooterView = [UILabel new];
     [self.mTableView registerNib:[UINib nibWithNibName:@"SeckillTableViewCell" bundle:nil] forCellReuseIdentifier:@"SeckillTableViewCell"];
@@ -133,12 +135,8 @@
 //MARK:-createBottomView
 -(void)createBottomView {
     
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-bottomH+58)];
-    [btn addTarget:self action:@selector(dissView) forControlEvents:UIControlEventTouchUpInside];
-    [btn setBackgroundColor:[UIColor colorWithWhite:0.4 alpha:0.4]];
+    UIButton *btn = [self createbtn:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-bottomH+58) Action:@selector(dissView) BackGroundColor:[UIColor colorWithWhite:0.4 alpha:0.4]];
     [btn setHidden:YES];
-    
     [[UIApplication sharedApplication].keyWindow addSubview:self.bjbtn = btn];
     
     _bottomView = [[NSBundle mainBundle]loadNibNamed:@"BeserveView" owner:self options:nil].lastObject;
@@ -151,6 +149,15 @@
     };
     
     [[UIApplication sharedApplication].keyWindow addSubview:_bottomView];
+}
+
+
+-(void)shareitem{
+    
+    UIButton *btn = [self createbtn:CGRectMake(0, 0, 32, 32) Action:@selector(shareClick:) BackGroundColor:nil];
+   
+    [btn setBackgroundImage:[UIImage imageNamed:@"分享"] forState:0];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
 }
 
 
@@ -207,7 +214,7 @@
                 [contentVCs addObject:vc];
             }
             _contentCell.viewControllers = contentVCs;
-            _contentCell.pageContentView = [[FSPageContentView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-kStatusBarAndNavigationBarH - 50) childVCs:contentVCs parentVC:self delegate:self];
+            _contentCell.pageContentView = [[FSPageContentView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-kStatusBarAndNavigationBarH) childVCs:contentVCs parentVC:self delegate:self];
             [_contentCell.contentView addSubview:_contentCell.pageContentView];
         }
         return _contentCell;
@@ -239,7 +246,7 @@
             return [[@[@"45",@"65",@"40",@"64"] objectAtIndex:indexPath.row] floatValue];
         }else{}
     }else{
-        return KSCREEN_HEIGHT-kStatusBarAndNavigationBarH-50;
+        return KSCREEN_HEIGHT-kStatusBarAndNavigationBarH;
     }
     
     return 0;
@@ -314,7 +321,7 @@
 
 
 //MARK:- shareClick
-- (IBAction)shareClick:(UIButton *)sender {
+- (void)shareClick:(UIButton *)sender {
     KPreventRepeatClickTime(1)
     
 //    [[QWAlertView sharedMask] show:self.shareView withType:QWAlertViewStyleAlert animationFinish:^{
@@ -342,7 +349,7 @@
     }];
 }
 
-
+//分享
 - (IBAction)joinCartClick:(UIButton *)sender {
     KPreventRepeatClickTime(1)
     if (sender.tag == 2004) {
@@ -375,6 +382,19 @@
     OnlineBookingViewController *Online = [[OnlineBookingViewController alloc]init];
     Online.payType = OnlineBookingViewProductPay;
     [self.navigationController pushViewController:Online animated:YES];
+}
+
+
+-(UIButton *)createbtn:(CGRect)rect Action:(SEL)action BackGroundColor:(UIColor *)color{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:rect];
+    
+    [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    if (color)
+        [btn setBackgroundColor:color];
+    
+    
+    return btn;
 }
 
 

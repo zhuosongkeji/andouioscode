@@ -29,14 +29,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.toTop.constant = MenuHeight;
+    self.toTop.constant = kStatusBarAndNavigationBarH+MenuHeight;
     
-    _menuScreeningView = [[MenuScreeningView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, MenuHeight)];
+    _menuScreeningView = [[MenuScreeningView alloc]initWithFrame:CGRectMake(0, kStatusBarAndNavigationBarH, KSCREEN_WIDTH, MenuHeight)];
     _menuScreeningView.backgroundColor = KSRGBA(255, 255, 255, 1);
     [self.view addSubview:_menuScreeningView];
     
     [self.mTableView registerNib:[UINib nibWithNibName:@"MsgViewCell" bundle:nil] forCellReuseIdentifier:@"MsgViewCell"];
     // Do any additional setup after loading the view from its nib.
+    
 }
 
 
@@ -46,9 +47,11 @@
 }
 
 
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 10;
 }
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -74,7 +77,6 @@
     // 取消Cell的选中状态
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
-
 
 
 /*

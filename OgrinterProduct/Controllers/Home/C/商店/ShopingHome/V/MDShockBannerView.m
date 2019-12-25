@@ -11,7 +11,8 @@
 #import <UIKit/UIKit.h>
 #import "MDShockBannerView.h"
 #import "MDMaskView.h"
-#import "MDBannerModel.h"
+//#import "MDBannerModel.h"
+#import "MdBannerListModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MDBannerCollectionViewCell.h"
 
@@ -143,7 +144,7 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     MDBannerCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
     NSInteger index = [self pageControlIndexWithCurrentCellIndex:indexPath.item];
-    MDBannerModel *model = self.banners[index];
+    MdBannerListModel *model = self.banners[index];
     [cell.i_img sd_setImageWithURL:[NSURL URLWithString:model.img]];
     return cell;
 }
@@ -173,9 +174,9 @@
             NSInteger topIndex = (itemIndex - 1 < 0) ? self.banners.count - 1 : itemIndex - 1;
             NSInteger bottomIndex = itemIndex;
             
-            MDBannerModel *model1 = _banners[topIndex];
+            MdBannerListModel *model1 = _banners[topIndex];
             [self.topImage sd_setImageWithURL:[NSURL URLWithString:model1.bgImg]];
-            MDBannerModel *model2 = _banners[bottomIndex];
+            MdBannerListModel *model2 = _banners[bottomIndex];
             [self.bottomImage sd_setImageWithURL:[NSURL URLWithString:model2.bgImg]];
             
             [UIView animateWithDuration:0.5 animations:^{
@@ -195,9 +196,9 @@
             NSInteger topIndex = (itemIndex + 1 >= self.banners.count) ? 0 : itemIndex + 1;
             NSInteger bottomIndex = itemIndex;
             
-            MDBannerModel *model1 = _banners[topIndex];
+            MdBannerListModel *model1 = _banners[topIndex];
             [self.topImage sd_setImageWithURL:[NSURL URLWithString:model1.bgImg]];
-            MDBannerModel *model2 = _banners[bottomIndex];
+            MdBannerListModel *model2 = _banners[bottomIndex];
             [self.bottomImage sd_setImageWithURL:[NSURL URLWithString:model2.bgImg]];
             
             [UIView animateWithDuration:0.5 animations:^{
@@ -220,9 +221,9 @@
             NSInteger topIndex = (itemIndex - 1 < 0) ? self.banners.count - 1 : itemIndex - 1;
             NSInteger bottomIndex = itemIndex;
             
-            MDBannerModel *model1 = _banners[topIndex];
+            MdBannerListModel *model1 = _banners[topIndex];
             [self.topImage sd_setImageWithURL:[NSURL URLWithString:model1.bgImg]];
-            MDBannerModel *model2 = _banners[bottomIndex];
+            MdBannerListModel *model2 = _banners[bottomIndex];
             [self.bottomImage sd_setImageWithURL:[NSURL URLWithString:model2.bgImg]];
             
             [UIView animateWithDuration:0.5 animations:^{
@@ -240,9 +241,9 @@
             NSInteger topIndex = (itemIndex + 1 >= self.banners.count) ? 0 : itemIndex + 1;
             NSInteger bottomIndex = itemIndex;
             
-            MDBannerModel *model1 = _banners[topIndex];
+            MdBannerListModel *model1 = _banners[topIndex];
             [self.topImage sd_setImageWithURL:[NSURL URLWithString:model1.bgImg]];
-            MDBannerModel *model2 = _banners[bottomIndex];
+            MdBannerListModel *model2 = _banners[bottomIndex];
             [self.bottomImage sd_setImageWithURL:[NSURL URLWithString:model2.bgImg]];
             
             [UIView animateWithDuration:0.5 animations:^{
@@ -402,14 +403,14 @@
     self.pageControl.currentPage = index;
     
     if (index + 1 > banners.count - 1){
-        MDBannerModel *model = banners[0];
+        MdBannerListModel *model = banners[0];
         [self.bottomImage sd_setImageWithURL:[NSURL URLWithString:model.bgImg]];
     }else{
-        MDBannerModel *model = banners[index + 1];
+        MdBannerListModel *model = banners[index + 1];
         [self.bottomImage sd_setImageWithURL:[NSURL URLWithString:model.bgImg]];
     }
 
-    MDBannerModel *model = banners[index];
+    MdBannerListModel *model = banners[index];
     [self.topImage sd_setImageWithURL:[NSURL URLWithString:model.bgImg]];
 
     if (_autoScroll){

@@ -16,7 +16,6 @@
 #import "CitylistViewController.h"
 #import "iCarousel.h"
 
-
 #import "HQFlowView.h"
 #import "MarqueeView.h"
 #import "RedPacketView.h"
@@ -43,10 +42,16 @@
 @property (nonatomic,strong) MarqueeView *queeView;
 
 @property (nonatomic, strong) UIView *selectView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
+@property(nonatomic,strong)UIView *imgView;
+@property (nonatomic)CGFloat ralpha;
+
 
 @end
 
+
 @implementation HomeViewController
+
 
 //MARK:-imgArr
 -(NSMutableArray *)imgArr {
@@ -77,7 +82,6 @@
     return _imgOArr;
 }
 
-
 - (HQFlowView *)pageFlowView {
     if (!_pageFlowView) {
         
@@ -95,7 +99,6 @@
     }
     return _pageFlowView;
 }
-
 
 - (HQImagePageControl *)pageC{
     if (!_pageC) {
@@ -136,31 +139,30 @@
     return _icarousel;
 }
 
-
 //MARK:- viewDidLoad
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.navigationItem.title = @"";
     
     [self setup];
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,BannerApi] params:@{} complement:^(ServerResponseInfo * _Nullable serverInfo) {
-        NSLog(@"%@",serverInfo);
-    }];
-    
+    [self openRedPacket];
+    [self loadNetWork];
+
     // Do any additional setup after loading the view from its nib.
 }
 
 
 -(void)setup{
     
+    self.navigationItem.title = @"";
+    [self wr_setNavBarBackgroundAlpha:0];
+    
     self.mTableView.tableFooterView = [UILabel new];
     [self.mTableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCell"];
-    
     [self.iCarouselBJView addSubview:self.icarousel];
-    [self openRedPacket];
     
 }
+
 
 //MARK:- openRedPacket
 - (void)openRedPacket {
@@ -187,12 +189,16 @@
 }
 
 
+-(void)loadNetWork {
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,BannerApi] params:@{} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        NSLog(@"%@",serverInfo);
+    }];
+}
 
 //MARK:- FlowViewDelegate
 - (CGSize)sizeForPageInFlowView:(HQFlowView *)flowView {
     return CGSizeMake(KSCREEN_WIDTH - 2*30, self.topBananerView.frame.size.height-2*3);
 }
-
 
 
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
@@ -250,7 +256,6 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeTableViewCell *cell = [HomeTableViewCell tempTableViewCellWith:tableView indexPath:indexPath];
-    
     [cell configTempCellWith:indexPath];
     
     return cell;
@@ -284,7 +289,9 @@
     v.btnclickBlock = ^(UIButton * _Nonnull btn) {
         if (section == 3) {
             [WeakSelf pushViewControllerWithString:@"OnlineOrderViewController"];
-        }
+        }else if (section == 0){
+            KPost_Notify(@"tabBarController", nil, nil);
+        }else{[HUDManager showTextHud:OtherMsg];}
     };
     
     return v;
@@ -301,16 +308,15 @@
 }
 
 
--(UIButton *)createbtn {
-    
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    btn.titleLabel.font = [UIFont systemFontOfSize:12];
-    [btn setFrame:CGRectMake(0, 0, 64, 17)];
-    [btn setTitle:_loctionStr forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];
-
-    return btn;
+#pragma mark - scrollViewDidScroll
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView == self.mTableView) {
+        CGFloat conOffY = scrollView.contentOffset.y;
+        CGFloat maxAlphaOffset = 168;
+        CGFloat alpha = (conOffY) / (maxAlphaOffset);
+        
+        [self wr_setNavBarBackgroundAlpha:alpha];
+    }
 }
 
 
@@ -366,7 +372,6 @@
         self.selectView.backgroundColor = [UIColor clearColor];
         UIView *view = carousel.currentItemView;
         view.backgroundColor = [UIColor whiteColor];
-//        self.filmNameLab.text = self.filmNameArr[carousel.currentItemIndex];
     }
 }
 
@@ -397,10 +402,30 @@
 }
 
 
+- (void)setNeedsNavigationBackground:(CGFloat)alpha hidden:(BOOL)hidden{
+    if (alpha >= 1)
+        hidden = NO;
+    [self.navigationController.navigationBar.subviews objectAtIndex:0].hidden = hidden;
+    [self.navigationController.navigationBar.subviews objectAtIndex:0].alpha = alpha;
+}
+
 - (void)dealloc {
     self.pageFlowView.delegate = nil;
     self.pageFlowView.dataSource = nil;
     [self.pageFlowView stopTimer];
+}
+
+
+-(UIButton *)createbtn {
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    btn.titleLabel.font = [UIFont systemFontOfSize:12];
+    [btn setFrame:CGRectMake(0, 0, 64, 17)];
+    [btn setTitle:_loctionStr forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];
+    
+    return btn;
 }
 
 /*

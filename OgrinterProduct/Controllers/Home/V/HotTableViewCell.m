@@ -12,7 +12,6 @@
 @interface HotTableViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 
-
 @end
 
 @implementation HotTableViewCell
@@ -44,8 +43,8 @@
     if (indexPath.row == 0) {
         title = @"定位城市";
         
-        UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 42, 18, 22)];
-        imgView.image = [UIImage imageNamed:@"圆角矩形 2"];
+        UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(12, 42, 12, 16)];
+        imgView.image = [UIImage imageNamed:@"地址"];
         UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(40, 42, KSCREEN_WIDTH, 21)];
         title.text = @"重庆";
         title.font = [UIFont systemFontOfSize:14];

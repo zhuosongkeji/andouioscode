@@ -9,15 +9,21 @@
 #ifndef PrefixHeader_h
 #define PrefixHeader_h
 
+
 #ifdef DEBUG
+
 //Debug状态下的测试API
-#define API_BASE_URL_STRING     @"http://192.168.0.110/andou/public/index.php/api/"
+#define API_BASE_URL_STRING     @"http://andou.zhuosongkj.com/index.php/api/"
 #else
+
 //Release状态下的线上API
 #define API_BASE_URL_STRING     @"http://www.companydomain.com/api/"
 
+
 #endif
 
+
+#define imgServer @"http://andou.zhuosongkj.com"
 
 #define UMKEY @"5bf77bb3b465f5ec3000007e"
 #define WeChatAPPKEY @"wx617c77c82218ea2c"
@@ -105,7 +111,7 @@
 
 #define KSRGBA(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
 
-#define KSDUAULTCOLORE KSRGBA(85, 205, 158, 0.8)
+#define KSDUAULTCOLORE KSRGBA(85, 205, 158, 1)
 
 /*
  *随机颜色
@@ -176,6 +182,7 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #import "QWAlertView.h"
 #import "UIImage+ZBNExtension.h"
 #import "ZBNAlertTool.h"
+#import "WRNavigationBar.h"
 
 
 #endif /* PrefixHeader_h */

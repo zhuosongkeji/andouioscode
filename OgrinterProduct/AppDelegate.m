@@ -34,6 +34,11 @@
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = KSRGBA(240, 240, 240, 1);
+    
+    if (@available(iOS 11.0, *)){
+        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    }
     
     self.customBar = [[CustomBarViewController alloc]initFrame:CustomBarTypeOne];
     self.window.rootViewController = self.customBar;
