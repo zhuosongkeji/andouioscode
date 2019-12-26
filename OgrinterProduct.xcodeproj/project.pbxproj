@@ -154,6 +154,7 @@
 		A1F5515C23B0FCB500416682 /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F5515923B0FCB400416682 /* WRNavigationBar.m */; };
 		A1F5515D23B0FCB500416682 /* WRCustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F5515B23B0FCB500416682 /* WRCustomNavigationBar.m */; };
 		A1F5516023B2099600416682 /* MdBannerListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F5515F23B2099600416682 /* MdBannerListModel.m */; };
+		A1F5516323B344ED00416682 /* ShopDetalisModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F5516223B344ED00416682 /* ShopDetalisModel.m */; };
 		A1F6BDA023ADC8A60063AEF8 /* CategorySetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BD9E23ADC8A60063AEF8 /* CategorySetingViewController.m */; };
 		A1F6BDA123ADC8A60063AEF8 /* CategorySetingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F6BD9F23ADC8A60063AEF8 /* CategorySetingViewController.xib */; };
 		A1F6BDAD23ADF7B50063AEF8 /* CustomMoveView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BDA423ADF7B40063AEF8 /* CustomMoveView.m */; };
@@ -573,6 +574,8 @@
 		A1F5515B23B0FCB500416682 /* WRCustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCustomNavigationBar.m; sourceTree = "<group>"; };
 		A1F5515E23B2099600416682 /* MdBannerListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MdBannerListModel.h; sourceTree = "<group>"; };
 		A1F5515F23B2099600416682 /* MdBannerListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MdBannerListModel.m; sourceTree = "<group>"; };
+		A1F5516123B344ED00416682 /* ShopDetalisModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopDetalisModel.h; sourceTree = "<group>"; };
+		A1F5516223B344ED00416682 /* ShopDetalisModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopDetalisModel.m; sourceTree = "<group>"; };
 		A1F6BD9D23ADC8A60063AEF8 /* CategorySetingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CategorySetingViewController.h; path = "OgrinterProduct/Controllers/Home/C/商店/ShopMsg/CategorySetingViewController.h"; sourceTree = SOURCE_ROOT; };
 		A1F6BD9E23ADC8A60063AEF8 /* CategorySetingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CategorySetingViewController.m; path = "OgrinterProduct/Controllers/Home/C/商店/ShopMsg/CategorySetingViewController.m"; sourceTree = SOURCE_ROOT; };
 		A1F6BD9F23ADC8A60063AEF8 /* CategorySetingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategorySetingViewController.xib; path = "OgrinterProduct/Controllers/Home/C/商店/ShopMsg/CategorySetingViewController.xib"; sourceTree = SOURCE_ROOT; };
@@ -881,6 +884,8 @@
 				A10A9BE5239764D70049A0D2 /* MDBannerModel.m */,
 				A1F5515E23B2099600416682 /* MdBannerListModel.h */,
 				A1F5515F23B2099600416682 /* MdBannerListModel.m */,
+				A1F5516123B344ED00416682 /* ShopDetalisModel.h */,
+				A1F5516223B344ED00416682 /* ShopDetalisModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -2727,6 +2732,7 @@
 				A15DC0CE239DDD2B008CF287 /* HotelBottomTableViewCell.m in Sources */,
 				A10A9CF6239B3C610049A0D2 /* ShopingViewController.m in Sources */,
 				F476A45B23A7682B00E3018A /* ZBNShoppingHallOrderVC.m in Sources */,
+				A1F5516323B344ED00416682 /* ShopDetalisModel.m in Sources */,
 				F476A4AB23A7683200E3018A /* ZBNSegmenBarConfig.m in Sources */,
 				F4FAC26A23ABC72D00C235EA /* ZBNSHReturnGoodsOrderCell.m in Sources */,
 				A1F5515D23B0FCB500416682 /* WRCustomNavigationBar.m in Sources */,

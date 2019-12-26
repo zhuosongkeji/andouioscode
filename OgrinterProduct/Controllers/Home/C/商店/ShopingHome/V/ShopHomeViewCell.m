@@ -11,6 +11,7 @@
 #import "ShopCollectionViewCell.h"
 #import "HXCollectionViewCell.h"
 #import "CaseCluessKeybordCollectionHeadView.h"
+#import "MdBannerListModel.h"
 
 
 @interface ShopHomeViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate>
@@ -33,6 +34,13 @@
     return _shops;
 }
 
+
+-(void)setModellist:(NSArray *)modellist{
+    _modellist = modellist;
+    if (modellist) {
+        [self.mCollectionView reloadData];
+    }
+}
 
 -(void)setEnumtype:(MyEnum)enumtype{
     _enumtype = enumtype;
@@ -81,28 +89,38 @@
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (_enumtype == MyEnumValueB) {
+    if (_enumtype == MyEnumValueA) {
+        return [_modellist count];
+    }else if (_enumtype == MyEnumValueB){
         return 9;
-    }else {
+    }else{
         return 6;
     }
 }
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (_enumtype == MyEnumValueA || _enumtype == MyEnumValueC) {
+    if (_enumtype == MyEnumValueA) {
         ShopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ShopCollectionViewCell" forIndexPath:indexPath];
-        //    cell.shop = self.shops[indexPath.item];
+        
+        if ([_modellist count]) {
+            cell.modellists = _modellist[indexPath.item];
+        }
         
         return cell;
         
     }else if (_enumtype == MyEnumValueB){
         ShopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HXCollectionViewCell" forIndexPath:indexPath];
-        //    cell.shop = self.shops[indexPath.item];
+        
         return cell;
+    }else if (_enumtype == MyEnumValueC){
+        ShopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ShopCollectionViewCell" forIndexPath:indexPath];
+        
+        return cell;
+        
     }else if (_enumtype == MyEnumValueD){
         ShopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HXCollectionViewCell" forIndexPath:indexPath];
-        //    cell.shop = self.shops[indexPath.item];
+    
         return cell;
     }
     return nil;

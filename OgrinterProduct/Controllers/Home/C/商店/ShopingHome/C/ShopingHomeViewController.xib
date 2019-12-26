@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShopingHomeViewController">
             <connections>
+                <outlet property="categoryBjView" destination="nCN-fa-HDp" id="bBr-57-S7L"/>
                 <outlet property="mTableView" destination="55A-fs-F6e" id="AJV-Ql-gHH"/>
                 <outlet property="toTop" destination="wsV-Z4-iHv" id="34G-xJ-7Vn"/>
                 <outlet property="topBannerView" destination="dmn-TG-CMG" id="Qnq-zS-EgC"/>

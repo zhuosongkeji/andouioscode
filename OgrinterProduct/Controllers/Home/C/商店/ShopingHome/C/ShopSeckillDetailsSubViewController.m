@@ -6,11 +6,16 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+#define shopDeatils @"goods/details"
+#define shopComment @"goods/comment"
+
 #import "ShopSeckillDetailsSubViewController.h"
 #import "CresTwoTableViewCell.h"
 
 
-@interface ShopSeckillDetailsSubViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ShopSeckillDetailsSubViewController ()<UITableViewDelegate,UITableViewDataSource>{
+    int page;
+}
 
 @property (nonatomic,strong)NSMutableArray *data;
 
@@ -45,6 +50,7 @@
 //MARK:- cp details
 -(void)details {
     
+    [self loadcpdetails];
 }
 
 
@@ -53,23 +59,63 @@
     
     [self.smTableView registerNib:[UINib nibWithNibName:@"CresTwoTableViewCell" bundle:nil] forCellReuseIdentifier:@"CresTwoTableViewCell"];
     
+    page = 0;
+    
     __weak typeof(self) weakSelf = self;
     self.smTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf insertRowAtBottom];
+        page += 1;
+        [weakSelf loadCommectList];
+    }];
+    
+    [self loadCommectList];
+    
+}
+
+
+-(void)loadcpdetails{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopDeatils];
+    NSDictionary *dict = @{@"id":self.cp_id};
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            NSDictionary *dict = serverInfo.response[@"data"];
+//            NSLog(@"%@",dict);
+        }else {
+            [HUDManager showTextHud:loadError];
+        }
+        
     }];
 }
 
 
-- (void)insertRowAtBottom {
-    for (int i = 0; i<20; i++) {
-        [self.data addObject:@"1"];
-    }
-    __weak UITableView *tableView = self.smTableView;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [tableView reloadData];
-        [tableView.mj_footer endRefreshing];
-    });
+-(void)loadCommectList {
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopComment];
+    NSDictionary *dict = @{@"id":self.cp_id,@"page":[NSString stringWithFormat:@"%d",page]};
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            NSDictionary *dict = serverInfo.response[@"data"];
+                        NSLog(@"%@",dict);
+        }else {
+            [HUDManager showTextHud:loadError];
+        }
+        
+    }];
 }
+
+
+//- (void)insertRowAtBottom {
+//    for (int i = 0; i<20; i++) {
+//        [self.data addObject:@"1"];
+//    }
+//    __weak UITableView *tableView = self.smTableView;
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [tableView reloadData];
+//        [tableView.mj_footer endRefreshing];
+//    });
+//}
 
 
 //MARK:- Setter

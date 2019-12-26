@@ -18,15 +18,18 @@
 #import "MdBannerListModel.h"
 
 
-@interface ShopingHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ShopingHomeViewController ()<UITableViewDelegate,UITableViewDataSource>{
+    NSArray *sectionArr;
+}
 
 @property (nonatomic,strong) MDShockBannerView *bannerView;
-
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
-
 @property (weak, nonatomic) IBOutlet UIView *topBannerView;
-
 @property (nonatomic,strong)NSMutableArray *dataArr;
+@property (weak, nonatomic) IBOutlet UIView *categoryBjView;
+
+@property (nonatomic,strong)NSMutableArray *btns;
+@property (nonatomic,strong)NSMutableArray *SDarray;
 
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
@@ -51,19 +54,25 @@
         _bannerView = [[MDShockBannerView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, bannerH)];
         _bannerView.pageSelectImage = [UIImage imageNamed:@"dati2"];
         _bannerView.pageUnselectImage = [UIImage imageNamed:@"dati1"];
-        if (self.dataArr) {
+        if ([self.dataArr count] > 0) {
             MDBannerModel *model = [self.dataArr objectAtIndex:0];
-            NSArray *array = [model.dataDic objectForKey:@"banner"];
+            NSArray *Barray = [model.dataDic objectForKey:@"banner"];
             NSMutableArray *listArr = [NSMutableArray array];
-            for (int i = 0; i < [array count]; i ++) {
-                MdBannerListModel *list = array[i];
+            for (int i = 0; i < [Barray count]; i ++) {
+                MdBannerListModel *list = Barray[i];
                 list.bgImg = @"http://md-juhe.oss-cn-hangzhou.aliyuncs.com/upload/ad/20180417/9bc42ce40490c854eab2e9969ac8e328caab0a17.png";
                 [listArr addObject:list];
             }
             _bannerView.banners = listArr;
+//            NSArray *Carray = [model.dataDic objectForKey:@"category"];
+//            for (int i = 0; i < [Carray count]; i ++ ) {
+//                MdBannerListModel *list = Carray[i];
+//                UIButton *btn = _btns[i];
+//                [btn sd_setImageWithURL:[NSURL URLWithString:list.img] forState:0];
+//                [btn setTitle:list.name forState:0];
+//            }
         }
     }
-    
     return _bannerView;
 }
 
@@ -87,9 +96,12 @@
             [self.dataArr addObject:model];
             
             [self.topBannerView addSubview:self.bannerView];
-            [self.mTableView reloadData];
-            [self.mTableView.mj_header endRefreshing];
+        }else {
+            [HUDManager showTextHud:loadError];
         }
+        
+        [self.mTableView reloadData];
+        [self.mTableView.mj_header endRefreshing];
     }];
 }
 
@@ -100,12 +112,21 @@
     
     [self.mTableView registerNib:[UINib nibWithNibName:@"ShopHomeViewCell" bundle:nil] forCellReuseIdentifier:@"ShopHomeViewCell"];
     
+    _btns = [NSMutableArray array];
+    for (UIButton *b in self.categoryBjView.subviews) {
+        if ([b isKindOfClass:[UIButton class]]) {
+            UIButton *btn = (UIButton *)b;
+            [_btns addObject:btn];
+        }
+    }
+    
     self.mTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self loadNetWork];
     }];
     
     [self.mTableView.mj_header beginRefreshing];
 }
+
 
 //MARK: -TableViewDelegate or dataScroe
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -127,21 +148,39 @@
     
     [cell setEnumtype:MyEnumValueA];
     
+    if ([self.dataArr count] > 0) {
+        MDBannerModel *mode = self.dataArr[0];
+        _SDarray = [NSMutableArray arrayWithObjects:[mode.dataDic objectForKey:@"recommend_goods"],[mode.dataDic objectForKey:@"bargain_goods"], nil];
+        cell.modellist = _SDarray[indexPath.section];
+    }
+    
     cell.itemBlock = ^(NSInteger idex, NSIndexPath *indexpath) {
+        
+        MdBannerListModel *model = [_SDarray[indexpath.section] objectAtIndex:idex];
+        
         ShopSeckillDetailsViewController *seckill = [[ShopSeckillDetailsViewController alloc]init];
         seckill.seckillType = ShopSeckillDetailsTypeOrder;
+        seckill.cpid = model.uid;
+        
         [self.navigationController pushViewController:seckill animated:YES];
-        NSLog(@"%ld===%ld",idex,indexpath.section);
     };
     
     return cell;
-    
 }
 
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     ShopHomeSectionView *v = [[NSBundle mainBundle]loadNibNamed:@"ShopHomeSectionView" owner:self options:nil].lastObject;
+    [v setTag:section];
     v.backgroundColor = KSRGBA(255, 255, 255, 1);
+    v.btnclickBlcok = ^(UIButton *btn) {
+        UIView *view = (UIButton *)btn.superview;
+//        if (view.tag == 0) {
+//            NSLog(@"你点击了%ld",section);
+//        }else if (view.tag == 1){
+//            NSLog(@"你点击了%ld",section);
+//        }else{}
+    };
     
     return v;
 }
@@ -153,7 +192,7 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 234*3+40;
+    return 234*2+30;
 }
 
 
@@ -176,30 +215,6 @@
         
     }
 }
-
-
-////MARK:-scrollView
-//-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-//    CGFloat offY = scrollView.contentOffset.y;
-//    if (offY >= (bannerH-kStatusBarAndNavigationBarH) ) {
-//        [self defnavalpha];
-//    }else{
-//        [self setnavalpha];
-//    }
-//}
-
-
-////MARK:-setnavalpha
-//-(void)setnavalpha{
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-//    self.navigationController.navigationBar.shadowImage = [UIImage new];
-//}
-//
-//
-//-(void)defnavalpha {
-//    self.navigationController.navigationBar.translucent = YES; [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav"] forBarMetrics:UIBarMetricsDefault];
-//}
-
 
 
 /*

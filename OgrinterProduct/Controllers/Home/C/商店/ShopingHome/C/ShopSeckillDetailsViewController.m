@@ -6,6 +6,9 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+#define shopdetails @"goods/goods"
+#define shopcollection @"goods/collection"//收藏或取消收藏
+
 #define bottomH 290
 
 
@@ -21,6 +24,7 @@
 #import <UMCommon/UMCommon.h>
 #import "BeserveView.h"
 #import "QCouponView.h"
+#import "ShopDetalisModel.h"
 //#import "ShareView.h"
 
 
@@ -56,7 +60,7 @@
 @property (nonatomic,strong)NSArray *VcStrArr;
 @property (nonatomic,strong)SDCycleScrollView *cycleScrollView;
 
-//@property (nonatomic,strong)ShareView *shareView;
+@property (nonatomic,strong)NSMutableArray *dataArr;
 
 @property (nonatomic,weak)UIButton *bjbtn;
 
@@ -65,21 +69,26 @@
 
 @implementation ShopSeckillDetailsViewController
 
+-(NSMutableArray *)dataArr {
+    if (!_dataArr) {
+        _dataArr = [NSMutableArray array];
+    }
+    return _dataArr;
+}
+
+
 //MARK:- cycleScrollView
 -(SDCycleScrollView *) cycleScrollView{
     if (!_cycleScrollView){
         
-        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 280) delegate:self placeholderImage:[UIImage imageNamed:@"banner"]];
-//        _cycleScrollView.imageURLStringsGroup = imagesURLStrings;
+        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 280) delegate:self placeholderImage:nil];
         
-        _cycleScrollView.scrollDirection = UICollectionViewScrollDirectionVertical;
-        _cycleScrollView.onlyDisplayText = YES;
-//        _cycleScrollView.imageURLStringsGroup = imagesURLStrings;
+        _cycleScrollView.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        _cycleScrollView.autoScrollTimeInterval = 2.0;
+        
     }
-    
     return _cycleScrollView;
 }
-
 
 //MARK:- couponView
 -(QCouponView *)couponView{
@@ -89,15 +98,6 @@
     }
     return _couponView;
 }
-
-
-//-(ShareView *)shareView{
-//    if (!_shareView) {
-//        _shareView = [[[NSBundle mainBundle]loadNibNamed:@"ShareView" owner:self options:nil] lastObject];
-//        [_shareView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH-64, 178)];
-//    }
-//    return _shareView;
-//}
 
 
 //MARK:-viewDidLoad
@@ -110,7 +110,56 @@
     [self setup];
     [self createBottomView];
     [self shareitem];
+    
+    self.mTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self loadNetWork];
+    }];
+    
+    [self loadNetWork];
     // Do any additional setup after loading the view from its nib.
+}
+
+
+//MARK:- post
+-(void)loadcollection:(NSString *)type{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopcollection];
+    
+    NSDictionary *dict = @{@"id":self.cpid,@"uid":@"",@"type":type};
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            NSDictionary *dict = serverInfo.response[@"data"];
+            NSLog(@"%@",dict);
+            
+        }else {
+            [HUDManager showTextHud:loadError];
+        }
+        
+        [self.mTableView reloadData];
+        [self.mTableView.mj_header endRefreshing];
+    }];
+}
+
+-(void)loadNetWork{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopdetails];
+    NSDictionary *dict = @{@"id":self.cpid};
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            NSDictionary *dict = serverInfo.response[@"data"];
+            ShopDetalisModel *model = [[ShopDetalisModel alloc]initWithDict:dict];
+            [self.dataArr addObject:model];
+            [_cycleScrollView setImageURLStringsGroup:model.bStrArr];
+            
+        }else {
+            [HUDManager showTextHud:loadError];
+        }
+        
+        [self.mTableView reloadData];
+        [self.mTableView.mj_header endRefreshing];
+    }];
 }
 
 
@@ -155,7 +204,6 @@
 -(void)shareitem{
     
     UIButton *btn = [self createbtn:CGRectMake(0, 0, 32, 32) Action:@selector(shareClick:) BackGroundColor:nil];
-   
     [btn setBackgroundImage:[UIImage imageNamed:@"分享"] forState:0];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
 }
@@ -168,19 +216,16 @@
     [self.mTableView.mj_header endRefreshing];
 }
 
-
 //MARK:-
 -(void)changeScroll {
     self.canScroll = YES;
     self.contentCell.cellCanScroll = NO;
 }
 
-
 //MARK:-UITableView
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
 }
-
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
@@ -189,15 +234,26 @@
     return 1;
 }
 
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.section == 0) {
         SeckillTableViewCell *cell = [SeckillTableViewCell tempTableViewCellWith:self.mTableView indexPath:indexPath type:self.seckillType];
         
         [cell configTempCellWith:indexPath];
+        if ([self.dataArr count]) {
+            ShopDetalisModel *model =  self.dataArr[0];
+            cell.dmodelist = model;
+        }
+        
+        cell.selectBlock = ^(UIButton *btn) {
+//            if (btn.selected == YES)
+//                [self loadcollection:@"0"];
+//            else
+//                [self loadcollection:@"1"];
+        };
         
         return cell;
+        
     }else if (indexPath.section == 1) {
         _contentCell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
         
@@ -210,6 +266,7 @@
                 ShopSeckillDetailsSubViewController *vc = [[ShopSeckillDetailsSubViewController alloc]init];
                 vc.title = SeckillDetailsListArr[i];
                 vc.str = vc.title;
+                vc.cp_id = self.cpid;
                 
                 [contentVCs addObject:vc];
             }
@@ -293,8 +350,16 @@
 
 //MARK:- UIScrollView
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat bottomCellOffset = [self.mTableView rectForSection:1].origin.y;
-    if (scrollView.contentOffset.y >= bottomCellOffset) {
+    
+    CGFloat bottomCellOffset = [self.mTableView rectForSection:1].origin.y-kStatusBarAndNavigationBarH;
+    CGFloat conOffY = scrollView.contentOffset.y;
+    CGFloat maxAlphaOffset = 168;
+
+    CGFloat alpha = (conOffY) / (maxAlphaOffset);
+    
+    [self wr_setNavBarBackgroundAlpha:alpha];
+    
+    if (conOffY >= bottomCellOffset) {
         scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
         if (self.canScroll) {
             self.canScroll = NO;
@@ -359,6 +424,7 @@
     }
 }
 
+
 //MARK:- view消失
 -(void)dissView{
     
@@ -371,9 +437,12 @@
 
 
 -(void)showView{
+    
     [UIView animateWithDuration:0.3 animations:^{
         _bottomView.frame = CGRectMake(0, KSCREEN_HEIGHT-bottomH, self.view.frame.size.width, bottomH);
         [self.bjbtn setHidden:NO];
+    } completion:^(BOOL finished) {
+        
     }];
 }
 
@@ -392,7 +461,6 @@
     [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
     if (color)
         [btn setBackgroundColor:color];
-    
     
     return btn;
 }

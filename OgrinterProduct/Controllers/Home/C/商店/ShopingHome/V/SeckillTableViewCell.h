@@ -17,18 +17,25 @@ typedef enum : NSUInteger {
 } ShopSeckillDetailsType;
 
 
+typedef void(^ScBtnClickBlock)(UIButton *btn);
+
 NS_ASSUME_NONNULL_BEGIN
 
+@class ShopDetalisModel;
 
 @interface SeckillTableViewCell : UITableViewCell
 
 
 @property (nonatomic) ShopSeckillDetailsType SeckillType;
 
+@property(nonatomic,strong) ShopDetalisModel *dmodelist;
+
+@property (nonatomic,copy)ScBtnClickBlock selectBlock;
 
 + (instancetype)tempTableViewCellWith:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath type:(ShopSeckillDetailsType)type;
 
 - (void)configTempCellWith:(NSIndexPath *)indexPath;
+
 
 @end
 
