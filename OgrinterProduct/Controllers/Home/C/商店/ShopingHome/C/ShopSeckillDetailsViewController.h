@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ShopSeckillDetailsViewController : UIViewController
 
 @property (nonatomic)ShopSeckillDetailsType seckillType;
+@property (nonatomic,strong)NSString *cpid;
 
 @end
 

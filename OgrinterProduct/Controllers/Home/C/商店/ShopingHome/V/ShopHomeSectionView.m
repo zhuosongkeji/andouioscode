@@ -21,7 +21,10 @@
 }
 
 
-
+- (IBAction)btnclick:(UIButton *)sender {
+    KPreventRepeatClickTime(1)
+    _btnclickBlcok(sender);
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

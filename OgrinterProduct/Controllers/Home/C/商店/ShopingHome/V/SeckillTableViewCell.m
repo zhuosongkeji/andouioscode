@@ -7,6 +7,34 @@
 //
 
 #import "SeckillTableViewCell.h"
+#import "ShopDetalisModel.h"
+
+@interface SeckillTableViewCell()
+
+//一般的产品
+@property (weak, nonatomic) IBOutlet UILabel *cpName;
+@property (weak, nonatomic) IBOutlet UILabel *cPrice;
+@property (weak, nonatomic) IBOutlet UIButton *scBtn;
+
+
+
+
+//秒杀的产品
+
+
+
+//公共的参数
+@property (weak, nonatomic) IBOutlet UILabel *kdLabel;//货运方式
+@property (weak, nonatomic) IBOutlet UILabel *xLabel;//销量
+@property (weak, nonatomic) IBOutlet UILabel *kcLabel;//库存
+
+@property (weak, nonatomic) IBOutlet UIImageView *shopIcon;
+@property (weak, nonatomic) IBOutlet UILabel *shopName;
+@property (weak, nonatomic) IBOutlet UILabel *shopcontent;
+
+
+
+@end
 
 @implementation SeckillTableViewCell
 
@@ -21,6 +49,31 @@
     // Configure the view for the selected state
 }
 
+
+//设置一般的产品详情
+-(void)setDmodelist:(ShopDetalisModel *)dmodelist{
+    _dmodelist = dmodelist;
+    
+    self.cpName.text = _dmodelist.name;
+    self.cPrice.text = [NSString stringWithFormat:@"￥%@",_dmodelist.price];
+    
+    self.kdLabel.text = [NSString stringWithFormat:@"运费：%@",_dmodelist.dilivery];
+    self.xLabel.text = [NSString stringWithFormat:@"销量：%@",_dmodelist.volume];
+    self.kcLabel.text = [NSString stringWithFormat:@"库存：%@",_dmodelist.store_num];
+    
+    [self.shopIcon sd_setImageWithURL:[NSURL URLWithString:_dmodelist.logoimg]];
+    self.shopName.text = [NSString stringWithFormat:@"%@",_dmodelist.logoName];
+//    self.shopcontent.text = [NSString stringWithFormat:@"%@",_dmodelist.logo];
+    
+    if ([_dmodelist.is_collection integerValue] == 0) {
+//        未收藏
+        self.scBtn.selected = NO;
+    }else{
+//        收藏
+        self.scBtn.selected = YES;
+    }
+    
+}
 
 
 + (instancetype)tempTableViewCellWith:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath type:(ShopSeckillDetailsType)type{
@@ -83,8 +136,20 @@
     }else {
         self.selectionStyle = UITableViewCellSelectionStyleDefault;
     }
-    
 }
+
+
+//普通的= 收藏
+- (IBAction)sclick:(UIButton *)sender {
+    _selectBlock(sender);
+}
+
+
+//秒杀的 收藏
+- (IBAction)msclick:(UIButton *)sender {
+    _selectBlock(sender);
+}
+
 
 
 @end

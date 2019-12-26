@@ -19,6 +19,7 @@ typedef void(^didselectItemBlock)(NSInteger idex,NSIndexPath * _Nullable indexpa
 
 #import <UIKit/UIKit.h>
 
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ShopHomeViewCell : UITableViewCell
@@ -26,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) didselectItemBlock itemBlock;
 
 @property (nonatomic) MyEnum enumtype;
+
+@property (nonatomic,strong)NSArray *modellist;
 
 
 @end

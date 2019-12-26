@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^sectionBlcok)(UIButton *btn);
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ShopHomeSectionView : UIView
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLable;
+@property (weak, nonatomic) IBOutlet UILabel *contntLable;
+
+@property (nonatomic,copy)sectionBlcok btnclickBlcok;
 
 @end
 

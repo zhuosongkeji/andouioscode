@@ -104,10 +104,14 @@
                                     <constraint firstAttribute="width" constant="64" id="1KR-ht-bx7"/>
                                     <constraint firstAttribute="height" constant="20" id="kqG-5n-djC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title=" 收藏" image="爱心 (5)">
-                                    <color key="titleColor" red="1" green="0.41058720240000002" blue="0.45229435600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title=" 未收藏" image="爱心 (5)">
+                                    <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <state key="selected" title=" 已收藏" image="爱心 (5)"/>
+                                <connections>
+                                    <action selector="msclick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hdP-IJ-hFm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,10 +158,16 @@
                                     <constraint firstAttribute="height" constant="20" id="B7t-vS-gbD"/>
                                     <constraint firstAttribute="width" constant="64" id="zcZ-c1-q5Y"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title=" 收藏" image="爱心 (5)">
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title=" 未收藏" image="爱心 (5)">
+                                    <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected" title=" 已收藏" image="爱心 (5)">
                                     <color key="titleColor" red="1" green="0.41058720240000002" blue="0.45229435600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="sclick:" destination="L7h-n8-Wgj" eventType="touchUpInside" id="AcJ-sl-dYp"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥228" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwJ-OJ-DPH">
                                 <rect key="frame" x="16" y="53.5" width="37.5" height="16"/>
@@ -187,6 +197,11 @@
                     <constraint firstAttribute="bottom" secondItem="Upo-JQ-rJE" secondAttribute="bottom" id="wtd-L8-GV9"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="cPrice" destination="cwJ-OJ-DPH" id="Lsb-oN-MyS"/>
+                <outlet property="cpName" destination="FXJ-o9-29P" id="bux-gs-M1t"/>
+                <outlet property="scBtn" destination="tKy-W2-Ceb" id="rmb-BL-ovg"/>
+            </connections>
             <point key="canvasLocation" x="247.82608695652175" y="63.616071428571423"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SeckillTableViewCellFouth" rowHeight="104" id="OUj-Eh-RZz" customClass="SeckillTableViewCell">
@@ -236,6 +251,11 @@
                     <constraint firstItem="Gb0-Ze-YMI" firstAttribute="leading" secondItem="6zY-LT-f2V" secondAttribute="leading" id="uho-qT-rri"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="kcLabel" destination="fh1-N3-KwO" id="X71-Ur-ITp"/>
+                <outlet property="kdLabel" destination="iok-KP-t4j" id="fOg-bJ-8PM"/>
+                <outlet property="xLabel" destination="Clx-Fr-lDr" id="Atd-N3-x1R"/>
+            </connections>
             <point key="canvasLocation" x="247.82608695652175" y="133.92857142857142"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SeckillTableViewCellFive" rowHeight="104" id="60T-Yy-85u" customClass="SeckillTableViewCell">
@@ -357,6 +377,11 @@
                     <constraint firstItem="YeL-7c-FXY" firstAttribute="leading" secondItem="SFc-Sk-w6a" secondAttribute="leading" id="doZ-Km-tGB"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="shopIcon" destination="HMW-5d-Ez5" id="lTn-a9-k8Z"/>
+                <outlet property="shopName" destination="Y5W-cm-6g2" id="HYP-Jj-Moq"/>
+                <outlet property="shopcontent" destination="zy2-xD-UW1" id="8xa-7m-KVK"/>
+            </connections>
             <point key="canvasLocation" x="247.82608695652175" y="250.44642857142856"/>
         </tableViewCell>
     </objects>

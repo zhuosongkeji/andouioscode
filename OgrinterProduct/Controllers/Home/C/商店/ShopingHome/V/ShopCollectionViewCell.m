@@ -7,12 +7,34 @@
 //
 
 #import "ShopCollectionViewCell.h"
+#import "MdBannerListModel.h"
+
+
+@interface ShopCollectionViewCell()
+
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
+
+@property (weak, nonatomic) IBOutlet UILabel *name;
+
+@property (weak, nonatomic) IBOutlet UILabel *price;
+
+@end
 
 @implementation ShopCollectionViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+}
+
+
+-(void)setModellists:(MdBannerListModel *)modellists{
+    _modellists = modellists;
+    
+    [self.icon sd_setImageWithURL:[NSURL URLWithString:modellists.img] placeholderImage:[UIImage imageNamed:@""]];
+    self.name.text = modellists.name;
+    self.price.text = [NSString stringWithFormat:@"￥%@",modellists.price];
+    
 }
 
 @end

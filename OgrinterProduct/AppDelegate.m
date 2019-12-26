@@ -27,7 +27,7 @@
 //    KAdd_Observer(@"PushViewController", self, PushViewController, nil);
     //初始化友盟
     [UMConfigure initWithAppkey:UMKEY channel:nil];
-    [UMConfigure setLogEnabled:NO];
+//    [UMConfigure setLogEnabled:NO];
     
     [IQKeyboardManager sharedManager].enable = YES;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;

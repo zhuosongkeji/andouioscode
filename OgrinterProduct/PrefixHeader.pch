@@ -95,6 +95,8 @@
 
 #define OnlinTitleArr @[@"在线预订",@"在线下单",@"在线支付"]
 
+#define loadError @"加载失败!"
+
 //MARK:-
 #define imgStr(img) [UIImage imageNamed:img]
 

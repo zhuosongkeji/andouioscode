@@ -40,7 +40,7 @@
         NSDictionary *dic = categoryArray[j];
         MdBannerListModel *list = [[MdBannerListModel alloc]init];
         list.uid = [NSString stringWithFormat:@"%@",dic[@"id"]];
-        list.img = [NSString stringWithFormat:@"%@",dic[@"img"]];
+        list.img = [NSString stringWithFormat:@"%@%@",imgServer,dic[@"img"]];
         list.name = [NSString stringWithFormat:@"%@",dic[@"name"]];
         [categoryArr addObject:list];
     }
@@ -49,7 +49,7 @@
         NSDictionary *dic = recommenArray[p];
         MdBannerListModel *list = [[MdBannerListModel alloc]init];
         list.uid = [NSString stringWithFormat:@"%@",dic[@"id"]];
-        list.img = [NSString stringWithFormat:@"%@",dic[@"img"]];
+        list.img = [NSString stringWithFormat:@"%@%@",imgServer,dic[@"img"]];
         list.name = [NSString stringWithFormat:@"%@",dic[@"name"]];
         list.price = [NSString stringWithFormat:@"%@",dic[@"price"]];
         [recommendArr addObject:list];
@@ -59,8 +59,9 @@
         NSDictionary *dic = bargainArray[t];
         MdBannerListModel *list = [[MdBannerListModel alloc]init];
         list.uid = [NSString stringWithFormat:@"%@",dic[@"id"]];
-        list.img = [NSString stringWithFormat:@"%@",dic[@"img"]];
+        list.img = [NSString stringWithFormat:@"%@%@",imgServer,dic[@"img"]];
         list.name = [NSString stringWithFormat:@"%@",dic[@"name"]];
+         list.price = [NSString stringWithFormat:@"%@",dic[@"price"]];
         [bargainArr addObject:list];
     }
     
