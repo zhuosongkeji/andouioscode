@@ -67,6 +67,8 @@
 /** 获取当前导航栏在垂直方向上偏移了多少 */
 - (CGFloat)wr_getTranslationY;
 
+
+
 @end
 
 
