@@ -419,6 +419,7 @@ static int wrPushDisplayCount = 0;
 - (void)setNeedsNavigationBarUpdateForShadowImageHidden:(BOOL)hidden {
     self.navigationBar.shadowImage = (hidden == YES) ? [UIImage new] : nil;
 }
+
 - (void)setNeedsNavigationBarUpdateForTitleColor:(UIColor *)titleColor {
     NSDictionary *titleTextAttributes = [self.navigationBar titleTextAttributes];
     if (titleTextAttributes == nil) {
@@ -552,6 +553,15 @@ static int wrPushDisplayCount = 0;
 }
 
 #pragma mark - deal the gesture of return
+
+
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED> __IPHONE_11
+
+- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(nonnull UINavigationItem *)item {
+    return YES;
+}
+#else
+
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item {
     __weak typeof (self) weakSelf = self;
     id<UIViewControllerTransitionCoordinator> coor = [self.topViewController transitionCoordinator];
@@ -570,13 +580,16 @@ static int wrPushDisplayCount = 0;
         }
         return YES;
     }
-    
+
     NSUInteger itemCount = self.navigationBar.items.count;
     NSUInteger n = self.viewControllers.count >= itemCount ? 2 : 1;
     UIViewController *popToVC = self.viewControllers[self.viewControllers.count - n];
     [self popToViewController:popToVC animated:YES];
     return YES;
 }
+
+#endif
+
 
 // deal the gesture of return break off
 - (void)dealInteractionChanges:(id<UIViewControllerTransitionCoordinatorContext>)context {
