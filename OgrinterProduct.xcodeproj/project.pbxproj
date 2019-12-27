@@ -178,6 +178,9 @@
 		A1FD1B6923AB471500AE0835 /* CategoryShopDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD1B6723AB471500AE0835 /* CategoryShopDetailsViewController.m */; };
 		A1FD1B6A23AB471500AE0835 /* CategoryShopDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FD1B6823AB471500AE0835 /* CategoryShopDetailsViewController.xib */; };
 		A1FD1B8823AC6E7800AE0835 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD1B8523AC6E7800AE0835 /* iCarousel.m */; };
+		F4196A0C23B5E66E0067B62C /* ZBNMineSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4196A0B23B5E66E0067B62C /* ZBNMineSettingVC.m */; };
+		F4196A1023B5E68D0067B62C /* ZBNMineSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4196A0E23B5E68D0067B62C /* ZBNMineSettingCell.m */; };
+		F4196A1123B5E68D0067B62C /* ZBNMineSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4196A0F23B5E68D0067B62C /* ZBNMineSettingCell.xib */; };
 		F44DF88423AA067900A7D902 /* ZBNStayInOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F44DF88323AA067900A7D902 /* ZBNStayInOrderVC.m */; };
 		F44DF88823AA15F800A7D902 /* ZBNRechargeCellFive.m in Sources */ = {isa = PBXBuildFile; fileRef = F44DF88623AA15F800A7D902 /* ZBNRechargeCellFive.m */; };
 		F44DF88923AA15F800A7D902 /* ZBNRechargeCellFive.xib in Resources */ = {isa = PBXBuildFile; fileRef = F44DF88723AA15F800A7D902 /* ZBNRechargeCellFive.xib */; };
@@ -614,6 +617,11 @@
 		A1FD1B8523AC6E7800AE0835 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		A1FD1B8623AC6E7800AE0835 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		D9D7F1BA5CA76DD030C19A92 /* Pods_OgrinterProduct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OgrinterProduct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4196A0A23B5E66D0067B62C /* ZBNMineSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNMineSettingVC.h; sourceTree = "<group>"; };
+		F4196A0B23B5E66E0067B62C /* ZBNMineSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNMineSettingVC.m; sourceTree = "<group>"; };
+		F4196A0D23B5E68D0067B62C /* ZBNMineSettingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNMineSettingCell.h; sourceTree = "<group>"; };
+		F4196A0E23B5E68D0067B62C /* ZBNMineSettingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNMineSettingCell.m; sourceTree = "<group>"; };
+		F4196A0F23B5E68D0067B62C /* ZBNMineSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNMineSettingCell.xib; sourceTree = "<group>"; };
 		F44DF88223AA067900A7D902 /* ZBNStayInOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNStayInOrderVC.h; sourceTree = "<group>"; };
 		F44DF88323AA067900A7D902 /* ZBNStayInOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNStayInOrderVC.m; sourceTree = "<group>"; };
 		F44DF88523AA15F700A7D902 /* ZBNRechargeCellFive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNRechargeCellFive.h; sourceTree = "<group>"; };
@@ -1652,6 +1660,11 @@
 				A14FB2E0238F682A006A6511 /* MineViewController.h */,
 				A14FB2E1238F682A006A6511 /* MineViewController.m */,
 				A14FB2E2238F682A006A6511 /* MineViewController.xib */,
+				F4196A0A23B5E66D0067B62C /* ZBNMineSettingVC.h */,
+				F4196A0B23B5E66E0067B62C /* ZBNMineSettingVC.m */,
+				F4196A0D23B5E68D0067B62C /* ZBNMineSettingCell.h */,
+				F4196A0E23B5E68D0067B62C /* ZBNMineSettingCell.m */,
+				F4196A0F23B5E68D0067B62C /* ZBNMineSettingCell.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -2540,6 +2553,7 @@
 				F4FAC27823ABC85E00C235EA /* ZBNSHReturnGoodsDetailCell.xib in Resources */,
 				A10A9CCC239B37800049A0D2 /* AutomobileViewController.xib in Resources */,
 				A10A9C02239791180049A0D2 /* ShopCollectionViewCell.xib in Resources */,
+				F4196A1123B5E68D0067B62C /* ZBNMineSettingCell.xib in Resources */,
 				F4FAC26123ABC53B00C235EA /* ZBNSHDeliverGoodsOrderCell.xib in Resources */,
 				F45231CF23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.xib in Resources */,
 				F476A44323A7682B00E3018A /* ZBNMyNewsCell.xib in Resources */,
@@ -2782,9 +2796,11 @@
 				F476A48A23A7682C00E3018A /* ZBNEntryFooterView.m in Sources */,
 				A14FB25C238E0E4C006A6511 /* AppDelegate.m in Sources */,
 				A14FB2CE238F5F36006A6511 /* CustomBar.m in Sources */,
+				F4196A1023B5E68D0067B62C /* ZBNMineSettingCell.m in Sources */,
 				F4FAC2BE23ACB47100C235EA /* ZBNSHGoAndPayDetailVC.m in Sources */,
 				F476A45C23A7682B00E3018A /* ZBNSHWaitReceivingGoodsOrderVC.m in Sources */,
 				F476A47823A7682B00E3018A /* ZBNRestaurantOrderVC.m in Sources */,
+				F4196A0C23B5E66E0067B62C /* ZBNMineSettingVC.m in Sources */,
 				A14FB2A3238E4CDE006A6511 /* LoginViewController.m in Sources */,
 				F476A47523A7682B00E3018A /* ZBNRestaurantWaitEvaluateVC.m in Sources */,
 				F476A4AA23A7683200E3018A /* ZBNSegmenBar.m in Sources */,

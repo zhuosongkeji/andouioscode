@@ -9,7 +9,6 @@
 #import "MineViewController.h"
 
 
-
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
 
@@ -17,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImageV;
 
+@property (weak, nonatomic) IBOutlet UIView *vipView;
 
 @end
 
@@ -28,6 +28,7 @@
     self.toTop.constant = kStatusBarAndNavigationBarH;
     self.mTableView.tableFooterView = [UILabel new];
     self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
+    self.vipView.layer.cornerRadius = 10;
 }
 
 
@@ -65,6 +66,14 @@
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+
+
+- (IBAction)settingBtnClick:(UIButton *)sender {
+    [self pushViewControllerWithString:@"ZBNMineSettingVC"];
+}
+
+
 
 /*! 中间View按钮的点击事件 */
 - (IBAction)middleViewBtnClick:(UIButton *)sender {

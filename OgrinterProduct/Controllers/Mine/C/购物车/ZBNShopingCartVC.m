@@ -9,7 +9,7 @@
 #import "ZBNShopingCartVC.h"
 #import "ZBNShoppingCartCell.h"
 #import "ZBNShoppingCartModel.h"
-
+#import "FKHRequestManager.h"
 
 @interface ZBNShopingCartVC () <UITableViewDelegate, UITableViewDataSource, ZBNShoppingCartCellDelegate>
 
@@ -53,6 +53,14 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
     
     self.navigationItem.title = @"我的购物车";
     [self setupTable];
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"uid"] = @"uid";
+    param[@"token"] = @"token";
+
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/cart/index" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        NSLog(@"%@",serverInfo.response);
+    }];
    
 }
 
@@ -62,6 +70,10 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
+
+
+
+
 
 
 
@@ -126,18 +138,6 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
     
 }
 
-//- (void)shoppingCartCellDidClickSelectedButton:(ZBNShoppingCartCell *)shoppingCartCell
-//{
-//    // 计算总价
-//    
-//   
-//    
-//    int totalPrice = self.totalPriceLabel.text.intValue + shoppingCartCell.shoppingCartModel.money.intValue * shoppingCartCell.shoppingCartModel.count;
-//    
-//    self.totalPriceLabel.text = [NSString stringWithFormat:@"%d",totalPrice];
-//    
-//    
-//}
 
 
 @end

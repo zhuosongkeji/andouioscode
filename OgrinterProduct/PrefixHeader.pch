@@ -163,6 +163,9 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 // 弱引用
 #define ADWeakSelf __weak typeof(self) weakSelf = self;
 
+// 获取导航栏和状态栏的高度
+#define getRectNavAndStatusHight self.navigationController.navigationBar.frame.size.height+[[UIApplication sharedApplication] statusBarFrame].size.height
+#define getStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
 
 
 #import "HUDManager.h"
