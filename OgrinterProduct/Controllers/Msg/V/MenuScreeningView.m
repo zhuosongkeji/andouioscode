@@ -25,6 +25,7 @@
 @property (nonatomic, strong) DropMenuView *twoLinkageDropMenu;
 @property (nonatomic, strong) DropMenuView *threeLinkageDropMenu;
 
+
 @property (nonatomic, strong) NSArray *addressArr;
 @property (nonatomic, strong) NSArray *categoriesArr;
 @property (nonatomic, strong) NSArray *sortsArr;
@@ -34,6 +35,7 @@
 
 
 @implementation MenuScreeningView
+
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -83,7 +85,6 @@
 #pragma mark - 按钮点击推出菜单 (并且其他的菜单收起)
 -(void)clickButton:(UIButton *)button{
 
-   
     if (button == self.oneLinkageButton) {
         
         [self.twoLinkageDropMenu dismiss];
@@ -96,13 +97,17 @@
         [self.oneLinkageDropMenu dismiss];
         [self.threeLinkageDropMenu dismiss];
     
-        [self.twoLinkageDropMenu creatDropView:self withShowTableNum:2 withData:self.categoriesArr];
+        [self.twoLinkageDropMenu creatDropView:self withShowTableNum:3 withData:self.addressArr];
     
     }else if (button == self.threeLinkageButton){
+        
         [self.oneLinkageDropMenu dismiss];
         [self.twoLinkageDropMenu dismiss];
+        
         [self.threeLinkageDropMenu creatDropView:self withShowTableNum:1 withData:self.sortsArr];
+        
 //        [self.threeLinkageDropMenu creatDropView:self withShowTableNum:3 withData:self.addressArr];
+        
     }
 }
 
@@ -117,7 +122,7 @@
 
 
 #pragma mark - 协议实现
--(void)dropMenuView:(DropMenuView *)view didSelectName:(NSString *)str{
+-(void)dropMenuView:(DropMenuView *)view didSelectName:(NSString *)str uidStr:(NSString *)idStr{
 
     if (view == self.oneLinkageDropMenu) {
      
@@ -133,8 +138,9 @@
     
         [self.threeLinkageButton setTitle:str forState:UIControlStateNormal];
         [self buttonEdgeInsets:self.threeLinkageButton];
-    
     }
+    
+    _selcctblock(idStr);
 }
 
 
@@ -157,6 +163,7 @@
     verticalLine.frame = CGRectMake(button.frame.size.width - 0.5, 3, 0.5, 30);
 }
 
+
 -(void)buttonEdgeInsets:(UIButton *)button{
     
     [button setTitleEdgeInsets:UIEdgeInsetsMake(0, -button.imageView.bounds.size.width + 2, 0, button.imageView.bounds.size.width + 10)];
@@ -166,32 +173,37 @@
 
 
 #pragma mark - 懒加载
-//-(NSArray *)addressArr{
-//    if (_addressArr == nil) {
-//        NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"address.plist" ofType:nil]];
-//        _addressArr = dic[@"address"];
-//    }
-//    return _addressArr;
-//}
+-(NSArray *)addressArr{
+    if (_addressArr == nil) {
+        
+        NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        //要创建的plist文件名 -> 路径
+        NSString *filePath = [docPath stringByAppendingPathComponent:@"districts.plist"];
+        
+        _addressArr = [NSArray arrayWithContentsOfFile:filePath];
+    }
+    return _addressArr;
+}
 
 
 -(NSArray *)categoriesArr{
-
     if (_categoriesArr == nil) {
-        
-        _categoriesArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"categories.plist" ofType:nil]];
+//        _categoriesArr = [NSArray arrayWithContentsOfFile:filePath];
     }
-    
     return _categoriesArr;
 }
 
--(NSArray *)sortsArr{
 
+-(NSArray *)sortsArr{
     if (_sortsArr == nil) {
         
-        _sortsArr =  [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"sorts.plist" ofType:nil]];
+//type_name
+        NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        //要创建的plist文件名 -> 路径
+        NSString *filePath = [docPath stringByAppendingPathComponent:@"merchanttype.plist"];
+        
+        _sortsArr =  [NSArray arrayWithContentsOfFile:filePath];
     }
-    
     return _sortsArr;
 }
 

@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^selectBtnBlock)(NSString *str);
+
 @interface MenuScreeningView : UIView
+
+@property (nonatomic,copy) selectBtnBlock selcctblock;
 
 -(void)menuScreeningViewDismiss;
 

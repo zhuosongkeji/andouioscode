@@ -21,7 +21,6 @@
 @property (nonatomic, assign) BOOL show;   // 按钮点击后 视图显示/隐藏
 @property (nonatomic, assign) CGFloat rowHeightNum; // 设置 rom 高度
 
-
 /* 底层取消按钮 */
 @property (nonatomic, strong) UIButton *cancelButton;
 /** 表视图数组 */
@@ -32,8 +31,6 @@
 @property (nonatomic, assign) NSInteger tableCount;
 /** 数据 */
 @property (nonatomic, strong) NSArray *dataArr;
-
-
 
 
 @end
@@ -109,12 +106,9 @@
                 self.alpha = 1.0f;
             }];
             
-            
             [self loadSelects];
             [self adjustTableViews];
-            
-
-            
+        
         }
         
     }else{
@@ -150,6 +144,7 @@
     }];
     
 }
+
 
 #pragma mark - 重置TableView的 位置
 -(void)adjustTableViews{
@@ -193,8 +188,6 @@
             NSInteger secondSelectRow = ((UITableView *)self.tableViewArr[1]).indexPathForSelectedRow.row ;
             
             count = [self countForChooseTable:idx firstTableSelectRow:firstSelectRow withSecondTableSelectRow:secondSelectRow];
-            
-            
         }
     }];
     
@@ -213,9 +206,7 @@
     }else  if (idx == 1){
         
         if (firstSelectRow == -1) {
-            
             return 0;
-            
         }else{
         
             if (self.tableCount == 2) {
@@ -223,14 +214,10 @@
                 return [self.dataArr[firstSelectRow][@"subcategories"] count];
                 
             }else{
-                
-                return [self.dataArr[firstSelectRow][@"sub"] count];
+                return [self.dataArr[firstSelectRow][@"cities"] count];
             }
         
         }
-    
-        
-        
     }else{
         
         if (secondSelectRow == -1) {
@@ -238,19 +225,12 @@
             return 0;
         }else{
          
-            return [self.dataArr[firstSelectRow][@"sub"][secondSelectRow][@"sub"] count];
-            
+            return [self.dataArr[firstSelectRow][@"cities"][secondSelectRow][@"areas"] count];
         }
     
-
     }
-    
 
 }
-
-
-
-
 
 
 /** 自定义cell */
@@ -259,56 +239,33 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DropCell"];
     cell.textLabel.font = [UIFont systemFontOfSize:14];
     
-
     if (self.tableCount == 1) {
-        
-        
-        cell.textLabel.text = self.dataArr[indexPath.row][@"label"];
-        
-        
+        cell.textLabel.text = self.dataArr[indexPath.row][@"type_name"];
     }else if (self.tableCount == 2){
-        
           NSInteger firstSelectRow = ((UITableView *)self.tableViewArr[0]).indexPathForSelectedRow.row;
-        
         if (tableView == self.tableViewArr[0]) {
-            
             cell.textLabel.text = self.dataArr[indexPath.row][@"name"];
-            
         }else if (tableView == self.tableViewArr[1]){
-
             cell.textLabel.text = self.dataArr[firstSelectRow][@"subcategories"][indexPath.row];
         }
         
     }else if (self.tableCount == 3){
-        
          NSInteger firstSelectRow = ((UITableView *)self.tableViewArr[0]).indexPathForSelectedRow.row;
          NSInteger secondSelectRow = ((UITableView *)self.tableViewArr[1]).indexPathForSelectedRow.row;
-        
         if (tableView == self.tableViewArr[0]) {
-            
             cell.textLabel.text = self.dataArr[indexPath.row][@"name"];
-            
         }else if (tableView == self.tableViewArr[1]){
-            
-            cell.textLabel.text = self.dataArr[firstSelectRow][@"sub"][indexPath.row][@"name"];
-            
+            cell.textLabel.text = self.dataArr[firstSelectRow][@"cities"][indexPath.row][@"name"];
         }else if (tableView == self.tableViewArr[2]){
-            
-            
-           cell.textLabel.text =  self.dataArr[firstSelectRow][@"sub"][secondSelectRow][@"sub"][indexPath.row];
+           cell.textLabel.text =  self.dataArr[firstSelectRow][@"cities"][secondSelectRow][@"areas"][indexPath.row][@"name"];
         }
     }
-
-
     return cell;
-    
-    
 }
 
 
 /** 点击 */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     
     UITableView *secondTableView = self.tableViewArr[1];
     UITableView *thirdTableView = self.tableViewArr[2];
@@ -317,8 +274,7 @@
         
         [self saveSelects];
         [self dismiss];
-        [_delegate dropMenuView:self didSelectName:self.dataArr[indexPath.row][@"label"]];
-        
+        [_delegate dropMenuView:self didSelectName:self.dataArr[indexPath.row][@"type_name"] uidStr:[NSString stringWithFormat:@"%@-",self.dataArr[indexPath.row][@"id"]]];
         
     }else if (self.tableCount == 2){
         
@@ -337,7 +293,7 @@
 
              NSInteger firstSelectRow = ((UITableView *)self.tableViewArr[0]).indexPathForSelectedRow.row;
             
-             [_delegate dropMenuView:self didSelectName:self.dataArr[firstSelectRow][@"subcategories"][indexPath.row]];
+             [_delegate dropMenuView:self didSelectName:self.dataArr[firstSelectRow][@"subcategories"][indexPath.row] uidStr:nil];
         }
         
     }else if (self.tableCount == 3){
@@ -347,7 +303,6 @@
         
         if (tableView == self.tableViewArr[0]) {
 
-            
             if (!secondTableView.superview) {
                 [self.tableViewUnderView addSubview:secondTableView];
             }
@@ -368,20 +323,18 @@
             
             [self saveSelects];
             [self dismiss];
-            [_delegate dropMenuView:self didSelectName:self.dataArr[firstSelectRow][@"sub"][secondSelectRow][@"sub"][indexPath.row]];
+            [_delegate dropMenuView:self didSelectName:self.dataArr[firstSelectRow][@"cities"][secondSelectRow][@"areas"][indexPath.row][@"name"] uidStr:[NSString stringWithFormat:@"%@-%@-%@",self.dataArr[firstSelectRow][@"id"],self.dataArr[firstSelectRow][@"cities"][secondSelectRow][@"id"],self.dataArr[firstSelectRow][@"cities"][secondSelectRow][@"areas"][indexPath.row][@"id"]]];
+            
+//            NSLog(@"省份id = %@ 城市id = %@ 地区id = %@", self.dataArr[firstSelectRow][@"id"],self.dataArr[firstSelectRow][@"cities"][secondSelectRow][@"id"],self.dataArr[firstSelectRow][@"cities"][secondSelectRow][@"areas"][indexPath.row][@"id"]);
            
         }
     }
-    
 }
-
 
 
 #pragma mark - 记录 选择状态
 -(void)saveSelects{
-    
     [self.tableViewArr enumerateObjectsUsingBlock:^(UITableView *tableView, NSUInteger idx, BOOL * _Nonnull stop) {
-        
         selects[idx] = tableView.superview ? tableView.indexPathForSelectedRow.row : -1;
     }];
 }
@@ -390,45 +343,33 @@
 
 #pragma mark - 视图消失
 - (void)dismiss{
-    
     if(self.superview) {
-        
         self.show = !self.show;
-        
         [self endEditing:YES];
-        
-        
         self.alpha = .0f;
         [self.tableViewUnderView.subviews enumerateObjectsUsingBlock:^(UIView *obj, NSUInteger idx, BOOL *stop) {
             [obj removeFromSuperview];
         }];
-        
         [self removeFromSuperview];
         [UIView animateWithDuration:0.2 animations:^{
             if (self.arrowView) {
                 self.arrowView.transform = CGAffineTransformMakeRotation(0);
             }
         }];
-        
     }
 }
 
 /** 底部按钮, 视图消失 */
 -(void)clickCancelButton:(UIButton *)button{
-    
     [self dismiss];
 }
 
 
 /** 懒加载 */
 -(NSArray *)tableViewArr{
-    
     if (_tableViewArr == nil) {
-        
         _tableViewArr = @[[[UITableView alloc] init], [[UITableView alloc] init], [[UITableView alloc] init]];
-        
         for (UITableView *tableView in _tableViewArr) {
-            
             [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"DropCell"];
             tableView.delegate = self;
             tableView.dataSource = self;
@@ -439,7 +380,6 @@
             tableView.rowHeight = self.rowHeightNum;
         }
     }
-    
     return _tableViewArr;
 }
 

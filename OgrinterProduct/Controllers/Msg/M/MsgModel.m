@@ -11,7 +11,19 @@
 @implementation MsgModel
 
 -(instancetype)initWithDict:(NSDictionary *)dict {
+    
     MsgModel *model = [[MsgModel alloc]init];
+    
+    model.address = [NSString stringWithFormat:@"%@",dict[@"address"]];
+    model.created_at = [NSString stringWithFormat:@"%@",dict[@"created_at"]];
+    model.uid = [NSString stringWithFormat:@"%@",dict[@"id"]];
+    model.logo_img = [NSString stringWithFormat:@"%@%@",imgServer,dict[@"logo_img"]];
+    model.merchant_type_id = [NSString stringWithFormat:@"%@",dict[@"merchant_type_id"]];
+    model.name = [NSString stringWithFormat:@"%@",dict[@"name"]];
+    model.praise_num = [NSString stringWithFormat:@"%@",dict[@"praise_num"]];
+    model.price = [NSString stringWithFormat:@"%@",dict[@"price"]];
+    model.stars_all = [NSString stringWithFormat:@"%@",dict[@"stars_all"]];
+    model.tel = [NSString stringWithFormat:@"%@",dict[@"tel"]];
     
     return model;
 }

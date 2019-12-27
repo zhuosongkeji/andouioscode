@@ -123,6 +123,7 @@
         [currentVC wr_toLastViewController];
     }
 }
+
 -(void)clickRight {
     if (self.onClickRightButton) {
         self.onClickRightButton();

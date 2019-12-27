@@ -12,6 +12,7 @@
 #import <UMCommon/UMCommon.h>
 #import "UMShareManege.h"
 #import "IQKeyboardManager.h"
+#import "LoginViewController.h"
 
 
 
@@ -26,7 +27,7 @@
     // Override point for customization after application launch.
 //    KAdd_Observer(@"PushViewController", self, PushViewController, nil);
     //初始化友盟
-    [UMConfigure initWithAppkey:UMKEY channel:nil];
+//    [UMConfigure initWithAppkey:UMKEY channel:nil];
 //    [UMConfigure setLogEnabled:NO];
     
     [IQKeyboardManager sharedManager].enable = YES;
@@ -40,8 +41,14 @@
         [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
     }
     
+    
     self.customBar = [[CustomBarViewController alloc]initFrame:CustomBarTypeOne];
     self.window.rootViewController = self.customBar;
+    
+    
+//    LoginViewController *login = [[LoginViewController alloc]init];
+//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:login];
+//    self.window.rootViewController = nav;
     
     
     [self.window makeKeyAndVisible];
