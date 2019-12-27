@@ -6,6 +6,9 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+#define send_msg @"login/send"
+#define login_reg @"login/reg_p"
+
 #import "RegisterViewController.h"
 
 @interface RegisterViewController ()
@@ -17,15 +20,43 @@
 @property (weak, nonatomic) IBOutlet UITextField *phonepwd;
 
 @property (weak, nonatomic) IBOutlet UIButton *selectbtn;
+@property (weak, nonatomic) IBOutlet UIButton *setmsgBtn;
 
 @end
 
 @implementation RegisterViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.title = @"用户注册";
     // Do any additional setup after loading the view from its nib.
+}
+
+
+//MARK:- 获取验证码
+-(void)loadNetWork{
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,send_msg] params:@{@"phone":self.phoneNumber.text,@"type":@"1"} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
+            [HUDManager showTextHud:sendCode];
+            [NSObject CutTimedowButton:self.setmsgBtn Time:TIMECOUNT];
+        }
+        NSLog(@"%@",serverInfo);
+    }];
+}
+
+
+-(void)loadregisNetWork{
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,login_reg] params:@{@"phone":self.phoneNumber.text,@"password":self.phonepwd.text,@"verify":self.msgCode.text} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
+            [HUDManager hidenHud];
+            
+            [HUDManager showTextHud:regisSuccess];
+        }
+        NSLog(@"%@",serverInfo);
+    }];
 }
 
 
@@ -50,6 +81,7 @@
         return;
     }
     
+    [self loadNetWork];
 }
 
 
@@ -78,6 +110,9 @@
         return;
     }
     
+    [HUDManager showTextHud:loading onView:self.view];
+    
+    [self performSelector:@selector(loadregisNetWork) withObject:nil afterDelay:1];
 }
 
 

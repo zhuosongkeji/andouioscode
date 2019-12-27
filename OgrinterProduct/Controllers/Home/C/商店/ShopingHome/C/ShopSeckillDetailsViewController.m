@@ -8,6 +8,7 @@
 
 #define shopdetails @"goods/goods"
 #define shopcollection @"goods/collection"//收藏或取消收藏
+#define shopspecslist @"goods/specslist"//产品规格
 
 #define bottomH 290
 
@@ -141,6 +142,7 @@
     }];
 }
 
+
 -(void)loadNetWork{
     
     NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopdetails];
@@ -160,6 +162,24 @@
         [self.mTableView reloadData];
         [self.mTableView.mj_header endRefreshing];
     }];
+}
+
+
+-(void)loadshopspecslist{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopspecslist];
+    
+    NSDictionary *dict = @{@"id":self.cpid};
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            NSLog(@"%@",dict);
+        }else {
+            [HUDManager showTextHud:loadError];
+        }
+        
+    }];
+    
 }
 
 
@@ -442,7 +462,7 @@
         _bottomView.frame = CGRectMake(0, KSCREEN_HEIGHT-bottomH, self.view.frame.size.width, bottomH);
         [self.bjbtn setHidden:NO];
     } completion:^(BOOL finished) {
-        
+        [self loadshopspecslist];
     }];
 }
 

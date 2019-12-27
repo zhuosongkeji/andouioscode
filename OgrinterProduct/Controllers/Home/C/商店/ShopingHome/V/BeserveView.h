@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BeserveView : UIView
 
+@property(nonatomic,strong)NSDictionary *dataDic;
+
 @property (nonatomic,copy)GoToPayButtonBlock payBlock;
 
 @end

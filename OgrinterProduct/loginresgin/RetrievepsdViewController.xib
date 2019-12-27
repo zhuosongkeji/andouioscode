@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RetrievepsdViewController">
             <connections>
                 <outlet property="NphonePsd" destination="23X-xM-QdA" id="LOQ-Wp-uYj"/>
+                <outlet property="codeBrn" destination="925-11-uVW" id="xHv-aE-UXZ"/>
                 <outlet property="msgCode" destination="wSI-kA-DE4" id="fQV-Ou-ojr"/>
                 <outlet property="phoneNumber" destination="LCU-EE-O8V" id="kxK-Fs-7nY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

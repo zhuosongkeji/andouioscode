@@ -19,6 +19,7 @@
 @property (nonatomic) NSInteger num;
 
 
+
 @end
 
 
@@ -55,6 +56,12 @@
     
     self.num = 1;
     self.numberlable.text = [NSString stringWithFormat:@"%ld",self.num];
+    
+}
+
+
+-(void)setDataDic:(NSDictionary *)dataDic{
+    _dataDic = dataDic;
     
 }
 

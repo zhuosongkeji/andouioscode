@@ -78,6 +78,7 @@
 #define codeMsgCode @"验证码不正确"
 #define YcodeLength @"邀请码不能为空"
 #define loading @"请稍后..."
+#define regisSuccess @"注册成功"
 #define loginSuccess @"登录注册成功"
 #define isselectdbtn @"请先阅读并勾选用户注册协议"
 

@@ -6,16 +6,21 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+
+#define login_login @"login/login_p"
+
+
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 #import "RetrievepsdViewController.h"
 #import "UMShareManege.h"
+#import "userInfo.h"
 
 
 @interface LoginViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *phonePsword;
 
 @end
@@ -26,11 +31,39 @@
     
     [super viewDidLoad];
     
-    self.navigationController.title = @"登录";
+    self.navigationController.title = @"用户登录";
     // Do any additional setup after loading the view from its nib.
 }
 
 
+-(void)loadloginNetWork{
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,login_login] params:@{@"phone":self.phoneNumber.text,@"password":self.phonePsword.text} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
+            [HUDManager hidenHud];
+            
+            NSDictionary *dict = [serverInfo.response objectForKey:@"data"];
+            
+            userInfo *info = [[userInfo alloc]init];
+            info.uid = [NSString stringWithFormat:@"%@",dict[@"id"]];
+            info.uName = [NSString stringWithFormat:@"%@",dict[@"name"]];
+            info.uPhone = [NSString stringWithFormat:@"%@",dict[@"mobile"]];
+            info.uAcct = [NSString stringWithFormat:@"%@",dict[@"mobile"]];
+            info.token = [NSString stringWithFormat:@"%@",dict[@"token"]];
+            
+            NSData *infoData = [NSKeyedArchiver archivedDataWithRootObject:info];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:infoData forKey:@"infoData"];
+            
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            /*NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"Test"];
+             Model * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];*/
+            
+            [HUDManager showTextHud:loginSuccess];
+        }
+        NSLog(@"%@",serverInfo);
+    }];
+}
 
 //MARK:- login
 - (IBAction)login:(UIButton *)sender {
@@ -49,7 +82,9 @@
         [HUDManager showTextHud:msg];
         return;
     }
+    [HUDManager showTextHud:loading onView:self.view];
     
+    [self performSelector:@selector(loadloginNetWork) withObject:nil afterDelay:1];
 }
 
 

@@ -15,6 +15,7 @@
                 <outlet property="phoneNumber" destination="GB3-nz-4Fu" id="ELw-aw-ufM"/>
                 <outlet property="phonepwd" destination="ak5-8c-OLt" id="t5r-zC-Ewm"/>
                 <outlet property="selectbtn" destination="u4j-bz-Xfl" id="TKM-yl-t9a"/>
+                <outlet property="setmsgBtn" destination="7C7-nz-jd2" id="25u-vt-tLS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -204,6 +205,7 @@
                 <constraint firstItem="b3Z-CO-nhw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Kzd-sr-YKL"/>
                 <constraint firstAttribute="trailing" secondItem="b3Z-CO-nhw" secondAttribute="trailing" id="fLV-JU-Zb5"/>
             </constraints>
+            <point key="canvasLocation" x="-2064" y="127"/>
         </view>
     </objects>
     <resources>

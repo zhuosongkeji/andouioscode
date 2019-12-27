@@ -12,7 +12,7 @@
 @class DropMenuView;
 @protocol DropMenuViewDelegate <NSObject>
 
--(void)dropMenuView:(DropMenuView *)view didSelectName:(NSString *)str;
+-(void)dropMenuView:(DropMenuView *)view didSelectName:(NSString *)str uidStr:(NSString *)idStr;
 
 @end
 
