@@ -146,7 +146,6 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 (isPhoneX);})
 
 #define kStatusBarAndNavigationBarHeight (IPHONE_X ? -88.f : -64.f)
-
 #define kStatusBarAndNavigationBarH (IPHONE_X ? 88.f : 64.f)
 #define kStatuTabBarH (IPHONE_X ? 83.f : 49.f)
 

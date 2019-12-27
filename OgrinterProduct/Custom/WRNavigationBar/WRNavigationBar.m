@@ -556,6 +556,7 @@ static int wrPushDisplayCount = 0;
 
 
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED> __IPHONE_11
+
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(nonnull UINavigationItem *)item {
     return YES;
 }
