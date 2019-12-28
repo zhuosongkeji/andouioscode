@@ -181,6 +181,7 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #import "UIImage+ZBNExtension.h"
 #import "ZBNAlertTool.h"
 #import "WRNavigationBar.h"
+#import "userInfo.h"
 
 
 #endif /* PrefixHeader_h */

@@ -123,9 +123,12 @@
 //MARK:- post
 -(void)loadcollection:(NSString *)type{
     
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    
     NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopcollection];
     
-    NSDictionary *dict = @{@"id":self.cpid,@"uid":@"",@"type":type};
+    NSDictionary *dict = @{@"id":self.cpid,@"uid":unmodel.uid,@"type":type};
     
     
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
