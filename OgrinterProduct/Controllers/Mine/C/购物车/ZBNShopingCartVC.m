@@ -55,8 +55,8 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
     [self setupTable];
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    param[@"uid"] = @"uid";
-    param[@"token"] = @"token";
+    param[@"uid"] = @"19";
+    param[@"token"] = @"088fe92c17cb9c36f3b2d8181b62e983";
 
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/cart/index" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
         NSLog(@"%@",serverInfo.response);

@@ -10,6 +10,9 @@
 #import "ZBNMineSettingCell.h"
 #import "ZBNEntryFooterView.h"
 
+#import "ZBNMineSettingAboutUsVC.h"
+
+
 @interface ZBNMineSettingVC ()
 
 @property (nonatomic, weak) ZBNEntryFooterView *footerV;
@@ -51,6 +54,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZBNMineSettingCell *cell = [ZBNMineSettingCell regiserCellForTable:tableView];
+    // 关于我们的点击
+    ADWeakSelf;
+    cell.aboutUsCellClickTask = ^{
+        ZBNMineSettingAboutUsVC *vc = [[ZBNMineSettingAboutUsVC alloc] init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
     return cell;
 }
 

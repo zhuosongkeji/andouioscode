@@ -28,13 +28,7 @@
     [super pushViewController:viewController animated:animated];
 }
 
-#ifdef __IPHONE_13
 
-- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(nonnull UINavigationItem *)item {
-    return YES;
-}
-
-#endif
 
 
 

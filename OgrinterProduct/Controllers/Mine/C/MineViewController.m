@@ -8,6 +8,9 @@
 
 #import "MineViewController.h"
 
+#import "LoginViewController.h"
+#import "RegisterViewController.h"
+
 
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
@@ -29,6 +32,16 @@
     self.mTableView.tableFooterView = [UILabel new];
     self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
     self.vipView.layer.cornerRadius = 10;
+    
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"uid"] = @"19";
+    param[@"token"] = @"6c859a43fa849d491c270989b8508f75";
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/wallet/personal" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
+
+    }];
+    
+    
 }
 
 
@@ -71,6 +84,15 @@
 
 - (IBAction)settingBtnClick:(UIButton *)sender {
     [self pushViewControllerWithString:@"ZBNMineSettingVC"];
+    
+//    LoginViewController *vc = [[LoginViewController alloc] init];
+//    ADWeakSelf;
+//    vc.loginBtnClickTask = ^{
+//        [weakSelf dismissViewControllerAnimated:YES completion:nil];
+//    };
+//    vc.modalPresentationStyle = 0;
+//    [self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 

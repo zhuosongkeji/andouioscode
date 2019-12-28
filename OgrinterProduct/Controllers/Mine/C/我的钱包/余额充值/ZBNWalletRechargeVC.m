@@ -8,11 +8,7 @@
 
 #import "ZBNWalletRechargeVC.h"
 #import "ZBNRechargeCell.h"
-#import "ZBNRechargeCellTwo.h"
-#import "ZBNRechargeCellThree.h"
-#import "ZBNRechargeCellFour.h"
 #import "ZBNEntryFooterView.h"
-#import "ZBNRechargeCellFive.h"
 
 @interface ZBNWalletRechargeVC ()
 
@@ -22,17 +18,12 @@
 
 @implementation ZBNWalletRechargeVC
 
-- (instancetype)init
-{
-    return [super initWithStyle:UITableViewStyleGrouped];
-}
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationItem.title = @"余额充值";
-    
+    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
+    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
     [self setupTableView];
 }
 
@@ -47,98 +38,24 @@
     self.tableView.tableFooterView = footerV;
 }
 
-
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 4;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 1;
-    } else if (section == 1) {
-        return 2;
-    } else if (section == 2) {
-        return 1;
-    } else {
-        return 5;
-    }
+    return 1;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        ZBNRechargeCell *cell = [ZBNRechargeCell registerCellForTableView:tableView];
-        cell.moneyLabel.text = self.moneyText;
-        return cell;
-    } else if (indexPath.section == 1) {
-        ZBNRechargeCellTwo *twoCell = [ZBNRechargeCellTwo registerCellForTableView:tableView];
-        if (indexPath.row == 1) {
-            ZBNRechargeCellFive *fiveCell = [ZBNRechargeCellFive registerCleeForTableView:tableView];
-            return fiveCell;
-        }
-        return twoCell;
-    } else if (indexPath.section == 2) {
-        ZBNRechargeCellThree *threeCell = [ZBNRechargeCellThree registerCellForTableView:tableView];
-        
-        return threeCell;
-    } else {
-        if (indexPath.row == 0) {
-            ZBNRechargeCellTwo *twoCell = [ZBNRechargeCellTwo registerCellForTableView:tableView];
-            twoCell.textOne.text = @"请选择充值方式";
-            return twoCell;
-        } else if (indexPath.row == 4) {
-            ZBNRechargeCellThree *threeCell = [ZBNRechargeCellThree registerCellForTableView:tableView];
-            threeCell.numberText.placeholder = @"622202***323";
-            threeCell.textOne.text = @"请输入账号";
-            return threeCell;
-        } else {
-            ZBNRechargeCellFour *fourCell = [ZBNRechargeCellFour registerCellForTableView:tableView];
-            if (indexPath.row == 1) {
-                fourCell.textOne.text = @"银联支付";
-            } else if (indexPath.row == 2) {
-                fourCell.textOne.text = @"微信支付";
-                fourCell.iconImagev.image = [UIImage imageNamed:@"微信支付"];
-            } else {
-                fourCell.textOne.text = @"支付宝支付";
-                fourCell.iconImagev.image = [UIImage imageNamed:@"zhifub"];
-            }
-            return fourCell;
-        }
-    }
+    ZBNRechargeCell *cell = [ZBNRechargeCell registerCellForTableView:tableView];
+    return cell;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 48;
+    return 492;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    if (section == 0) {
-        return 0;
-    } else {
-        return 2;
-    }
-}
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 2;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    return [[UIView alloc] init];
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    return [[UIView alloc] init];
-}
 
 @end

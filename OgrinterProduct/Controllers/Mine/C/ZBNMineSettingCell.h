@@ -11,6 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNMineSettingCell : UITableViewCell
+/*! 当点击关于我们 */
+@property (nonatomic, copy) void(^aboutUsCellClickTask)(void);
+/*! 注册Cell */
 + (instancetype)regiserCellForTable:(UITableView *)tableView;
 @end
 
