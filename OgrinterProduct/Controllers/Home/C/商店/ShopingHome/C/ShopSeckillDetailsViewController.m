@@ -111,11 +111,10 @@
     [self setup];
     [self createBottomView];
     [self shareitem];
-    
-    self.mTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self loadNetWork];
-    }];
-    
+
+//    self.mTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        [self loadNetWork];
+//    }];
     [self loadNetWork];
     // Do any additional setup after loading the view from its nib.
 }
@@ -128,7 +127,9 @@
     
     NSDictionary *dict = @{@"id":self.cpid,@"uid":@"",@"type":type};
     
+    
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        
         if ([serverInfo.response[@"code"] integerValue] == 200) {
             NSDictionary *dict = serverInfo.response[@"data"];
             NSLog(@"%@",dict);
@@ -138,8 +139,8 @@
         }
         
         [self.mTableView reloadData];
-        [self.mTableView.mj_header endRefreshing];
     }];
+    
 }
 
 
@@ -160,7 +161,6 @@
         }
         
         [self.mTableView reloadData];
-        [self.mTableView.mj_header endRefreshing];
     }];
 }
 
@@ -188,6 +188,7 @@
     self.canScroll = YES;
     
     KAdd_Observer(@"OtherTop", self, changeScroll, nil);
+    
     [self wr_setNavBarBackgroundAlpha:0];
     
     self.mTableView.tableFooterView = [UILabel new];
@@ -266,10 +267,11 @@
         }
         
         cell.selectBlock = ^(UIButton *btn) {
-//            if (btn.selected == YES)
-//                [self loadcollection:@"0"];
-//            else
-//                [self loadcollection:@"1"];
+            
+            if (btn.selected == YES)
+                [self loadcollection:@"0"];
+            else
+                [self loadcollection:@"1"];
         };
         
         return cell;
