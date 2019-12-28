@@ -138,7 +138,7 @@ static AFHttpClientManager *client = nil;
 //    if (dic) {
 //        NSString *token = [NSString stringWithFormat:@"%@",dic[@"token"]];
 //        [client.requestSerializer setValue:token forHTTPHeaderField:@"token"];
-//    }
+//    }`
     
     [FKHRequestManager requestWidth:requestMethod requestManager:client pathUrl:pathUrl params:params requestCount:0 complement:result];
     

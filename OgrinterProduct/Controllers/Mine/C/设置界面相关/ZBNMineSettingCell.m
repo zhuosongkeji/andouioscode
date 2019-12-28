@@ -10,8 +10,12 @@
 
 
 @interface ZBNMineSettingCell ()
-
+/*! 关于我们 */
 @property (weak, nonatomic) IBOutlet UIView *aboutUsView;
+/*! 意见反馈 */
+@property (weak, nonatomic) IBOutlet UIView *feedbackView;
+
+
 
 @end
 
@@ -51,6 +55,9 @@
     // 关于我们
     UITapGestureRecognizer *aboutUsGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(aboutUsClick)];
     [self.aboutUsView addGestureRecognizer:aboutUsGes];
+    // 意见反馈
+    UITapGestureRecognizer *feedbackGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(feedbackClick)];
+    [self.feedbackView addGestureRecognizer:feedbackGes];
 }
 
 
@@ -62,7 +69,12 @@
     }
 }
 
-
+- (void)feedbackClick
+{
+    if (self.feedbackClickTask) {
+        self.feedbackClickTask();
+    }
+}
 
 
 @end

@@ -43,13 +43,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUu-Qx-oPj">
-                    <rect key="frame" x="191.5" y="866.5" width="31" height="14.5"/>
+                    <rect key="frame" x="191.5" y="836.5" width="31" height="14.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前版本:1.1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xI-YM-wMG">
-                    <rect key="frame" x="162.5" y="834.5" width="89" height="17"/>
+                    <rect key="frame" x="162.5" y="804.5" width="89" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -64,7 +64,7 @@
                 <constraint firstItem="OuL-ed-LKv" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="Cm7-68-Z12"/>
                 <constraint firstItem="gUu-Qx-oPj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P9j-yW-ygL"/>
                 <constraint firstItem="FIc-hv-bYC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ScK-aC-TtO"/>
-                <constraint firstAttribute="bottom" secondItem="gUu-Qx-oPj" secondAttribute="bottom" constant="15" id="Uld-qR-etL"/>
+                <constraint firstAttribute="bottom" secondItem="gUu-Qx-oPj" secondAttribute="bottom" constant="45" id="Uld-qR-etL"/>
                 <constraint firstItem="DaK-wz-elI" firstAttribute="centerX" secondItem="FIc-hv-bYC" secondAttribute="centerX" id="XFB-cG-Q3C"/>
                 <constraint firstItem="FIc-hv-bYC" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="30" id="eFb-pL-rie"/>
                 <constraint firstItem="0xI-YM-wMG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="u3s-zS-Zqm"/>

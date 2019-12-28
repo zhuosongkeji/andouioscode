@@ -417,6 +417,7 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="aboutUsView" destination="cUL-cZ-95A" id="InL-Wk-OT0"/>
+                <outlet property="feedbackView" destination="rf0-5o-Hdm" id="tyZ-0U-NEd"/>
             </connections>
             <point key="canvasLocation" x="1321" y="83"/>
         </tableViewCell>
