@@ -555,31 +555,6 @@ static int wrPushDisplayCount = 0;
 #pragma mark - deal the gesture of return
 
 
-<<<<<<< HEAD
-#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_11
-
-- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(nonnull UINavigationItem *)item {
-    return YES;
-}
-
-#else
-
-- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item {
-    __weak typeof (self) weakSelf = self;
-    id<UIViewControllerTransitionCoordinator> coor = [self.topViewController transitionCoordinator];
-    if ([coor initiallyInteractive] == YES) {
-        NSString *sysVersion = [[UIDevice currentDevice] systemVersion];
-        if ([sysVersion floatValue] >= 10) {
-            [coor notifyWhenInteractionChangesUsingBlock:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-                __strong typeof (self) pThis = weakSelf;
-                [pThis dealInteractionChanges:context];
-            }];
-        } else {
-            [coor notifyWhenInteractionEndsUsingBlock:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-                __strong typeof (self) pThis = weakSelf;
-                [pThis dealInteractionChanges:context];
-            }];
-=======
 
 
 
@@ -605,7 +580,7 @@ static int wrPushDisplayCount = 0;
                 }];
             }
             return YES;
->>>>>>> 905065e064b56e5ea21949f4936cbd4f5a1394c9
+
         }
 
         NSUInteger itemCount = self.navigationBar.items.count;
