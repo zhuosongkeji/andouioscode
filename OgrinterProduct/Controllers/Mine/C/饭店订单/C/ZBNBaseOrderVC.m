@@ -21,15 +21,14 @@
     
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
     [self setupTable];
 }
 
 
 - (void)setupTable
 {
-    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(getStatusBarHeight, 0, 0, 0);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 

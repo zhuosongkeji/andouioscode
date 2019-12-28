@@ -85,6 +85,10 @@
     [HUDManager showTextHud:loading onView:self.view];
     
     [self performSelector:@selector(loadloginNetWork) withObject:nil afterDelay:1];
+    // -- > 执行block
+    if (self.loginBtnClickTask) {
+        self.loginBtnClickTask();
+    }
 }
 
 

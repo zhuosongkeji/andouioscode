@@ -30,11 +30,6 @@
     return cell;
 }
 
-- (void)setFrame:(CGRect)frame
-{
-    frame.size.height -= 1;
-    [super setFrame:frame];
-}
 
 - (void)awakeFromNib
 {
