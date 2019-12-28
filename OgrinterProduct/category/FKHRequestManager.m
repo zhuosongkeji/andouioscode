@@ -6,6 +6,7 @@
 //  Copyright © 2019 fkh. All rights reserved.
 //
 
+
 #ifndef dispatch_main_async_safe
 #define dispatch_main_async_safe(block)\
 if (dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL) == dispatch_queue_get_label(dispatch_get_main_queue())) {\
@@ -19,7 +20,6 @@ dispatch_async(dispatch_get_main_queue(), block);\
 #import "AFNetworking.h"
 #import "FKHRequestOperation.h"
 #import "LoginViewController.h"
-#import "userInfo.h"
 
 
 static NSMutableDictionary *headerDic;

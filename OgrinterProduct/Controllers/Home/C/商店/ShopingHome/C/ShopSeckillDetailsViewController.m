@@ -116,6 +116,7 @@
 //        [self loadNetWork];
 //    }];
     [self loadNetWork];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -123,22 +124,28 @@
 //MARK:- post
 -(void)loadcollection:(NSString *)type{
     
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    
     NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopcollection];
     
-    NSDictionary *dict = @{@"id":self.cpid,@"uid":@"",@"type":type};
-    
+    NSDictionary *dict = @{@"id":self.cpid,@"uid":unmodel.uid,@"type":type};
     
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
         
         if ([serverInfo.response[@"code"] integerValue] == 200) {
-            NSDictionary *dict = serverInfo.response[@"data"];
-            NSLog(@"%@",dict);
+            if ([type isEqualToString:@"0"]) {
+                [HUDManager showTextHud:@"已取消收藏"];
+            }else{
+                [HUDManager showTextHud:@"已收藏"];
+            }
+            
+            [self.mTableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0], nil] withRowAnimation:UITableViewRowAnimationNone];
             
         }else {
             [HUDManager showTextHud:loadError];
         }
-        
-        [self.mTableView reloadData];
+
     }];
     
 }
@@ -419,6 +426,7 @@
     
 //    NSArray *baseDisplaySnsPlatforms = @[@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_QQ),@(UMSocialPlatformType_Sina)];
 //    [UMSocialUIManager setPreDefinePlatforms:baseDisplaySnsPlatforms];
+    
     UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
     
     UMShareWebpageObject*shareObject = [UMShareWebpageObject shareObjectWithTitle:@"挑战你的记忆力"descr:@"鱼的记忆有七秒，你的呢？"thumImage:[UIImage imageNamed:@"loginIcon"]];

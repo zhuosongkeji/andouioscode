@@ -156,6 +156,7 @@
 		A1F5516023B2099600416682 /* MdBannerListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F5515F23B2099600416682 /* MdBannerListModel.m */; };
 		A1F5516323B344ED00416682 /* ShopDetalisModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F5516223B344ED00416682 /* ShopDetalisModel.m */; };
 		A1F5516723B4644A00416682 /* userInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F5516623B4644A00416682 /* userInfo.m */; };
+		A1F5518023B74D1F00416682 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F5517F23B74D1F00416682 /* CommentModel.m */; };
 		A1F6BDA023ADC8A60063AEF8 /* CategorySetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BD9E23ADC8A60063AEF8 /* CategorySetingViewController.m */; };
 		A1F6BDA123ADC8A60063AEF8 /* CategorySetingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F6BD9F23ADC8A60063AEF8 /* CategorySetingViewController.xib */; };
 		A1F6BDAD23ADF7B50063AEF8 /* CustomMoveView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BDA423ADF7B40063AEF8 /* CustomMoveView.m */; };
@@ -573,6 +574,8 @@
 		A1F5516223B344ED00416682 /* ShopDetalisModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopDetalisModel.m; sourceTree = "<group>"; };
 		A1F5516523B4644A00416682 /* userInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = userInfo.h; sourceTree = "<group>"; };
 		A1F5516623B4644A00416682 /* userInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = userInfo.m; sourceTree = "<group>"; };
+		A1F5517E23B74D1F00416682 /* CommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		A1F5517F23B74D1F00416682 /* CommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
 		A1F6BD9D23ADC8A60063AEF8 /* CategorySetingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CategorySetingViewController.h; path = "OgrinterProduct/Controllers/Home/C/商店/ShopMsg/CategorySetingViewController.h"; sourceTree = SOURCE_ROOT; };
 		A1F6BD9E23ADC8A60063AEF8 /* CategorySetingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CategorySetingViewController.m; path = "OgrinterProduct/Controllers/Home/C/商店/ShopMsg/CategorySetingViewController.m"; sourceTree = SOURCE_ROOT; };
 		A1F6BD9F23ADC8A60063AEF8 /* CategorySetingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategorySetingViewController.xib; path = "OgrinterProduct/Controllers/Home/C/商店/ShopMsg/CategorySetingViewController.xib"; sourceTree = SOURCE_ROOT; };
@@ -872,6 +875,8 @@
 				A1F5515F23B2099600416682 /* MdBannerListModel.m */,
 				A1F5516123B344ED00416682 /* ShopDetalisModel.h */,
 				A1F5516223B344ED00416682 /* ShopDetalisModel.m */,
+				A1F5517E23B74D1F00416682 /* CommentModel.h */,
+				A1F5517F23B74D1F00416682 /* CommentModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -2743,6 +2748,7 @@
 				F476A49523A7682C00E3018A /* ZBNHotelEntryVC.m in Sources */,
 				A10A9BE7239764D70049A0D2 /* MDMaskView.m in Sources */,
 				A14FB26A238E0E50006A6511 /* main.m in Sources */,
+				A1F5518023B74D1F00416682 /* CommentModel.m in Sources */,
 				F476A4B223A783E200E3018A /* ZBNWalletRechargeVC.m in Sources */,
 				A1F6BDB023ADF7B50063AEF8 /* UIView+Extension.m in Sources */,
 				F44DF88F23AA2C8F00A7D902 /* ZBNChooseAddressVC.m in Sources */,

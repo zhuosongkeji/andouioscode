@@ -59,7 +59,7 @@
     
     [self.smTableView registerNib:[UINib nibWithNibName:@"CresTwoTableViewCell" bundle:nil] forCellReuseIdentifier:@"CresTwoTableViewCell"];
     
-    page = 0;
+    page = 1;
     
     __weak typeof(self) weakSelf = self;
     self.smTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
@@ -84,7 +84,6 @@
         }else {
             [HUDManager showTextHud:loadError];
         }
-        
     }];
 }
 
