@@ -136,19 +136,11 @@ static AFHttpClientManager *client = nil;
     
     [AFHttpClientManager  requestSerializerSetting:client.requestSerializer];
     
-<<<<<<< HEAD
-//    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
-//    if (dic) {
-//        NSString *token = [NSString stringWithFormat:@"%@",dic[@"token"]];
-//        [client.requestSerializer setValue:token forHTTPHeaderField:@"token"];
-//    }`
-=======
     
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
      userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     if (unmodel.token)
         [client.requestSerializer setValue:unmodel.token forHTTPHeaderField:@"token"];
->>>>>>> 40db4223959fec27c7a2e2f3a271e923554749eb
     
     [FKHRequestManager requestWidth:requestMethod requestManager:client pathUrl:pathUrl params:params requestCount:0 complement:result];
     
