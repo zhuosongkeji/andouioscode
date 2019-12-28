@@ -102,6 +102,7 @@
             [HUDManager showTextHud:loadError];
         }
         
+        [self.smTableView.mj_footer endRefreshing];
     }];
 }
 

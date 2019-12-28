@@ -18,6 +18,8 @@ dispatch_async(dispatch_get_main_queue(), block);\
 #import "FKHRequestManager.h"
 #import "AFNetworking.h"
 #import "FKHRequestOperation.h"
+#import "LoginViewController.h"
+#import "userInfo.h"
 
 
 static NSMutableDictionary *headerDic;
@@ -134,11 +136,19 @@ static AFHttpClientManager *client = nil;
     
     [AFHttpClientManager  requestSerializerSetting:client.requestSerializer];
     
+<<<<<<< HEAD
 //    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
 //    if (dic) {
 //        NSString *token = [NSString stringWithFormat:@"%@",dic[@"token"]];
 //        [client.requestSerializer setValue:token forHTTPHeaderField:@"token"];
 //    }`
+=======
+    
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    if (unmodel.token)
+        [client.requestSerializer setValue:unmodel.token forHTTPHeaderField:@"token"];
+>>>>>>> 40db4223959fec27c7a2e2f3a271e923554749eb
     
     [FKHRequestManager requestWidth:requestMethod requestManager:client pathUrl:pathUrl params:params requestCount:0 complement:result];
     
@@ -238,6 +248,7 @@ static AFHttpClientManager *client = nil;
     
 }
 
+
 + (NSURLSessionDownloadTask *)downLoadRequest:(NSString *__nonnull)pathUrl
                                      filePath:(NSString *_Nullable)filePath
                                  downProgress:(void (^)(double progress))downProgress
@@ -269,6 +280,7 @@ static AFHttpClientManager *client = nil;
     
     return downTask;
 }
+
 
 // 开始下载
 + (void)startResume:(NSURLSessionDownloadTask *_Nullable)downloadTask{
@@ -320,9 +332,20 @@ static AFHttpClientManager *client = nil;
                                             
                                         }else{
                                             
-                                            dispatch_main_async_safe(^{
-                                                result(serverInfo);
-                                            })
+                                            if ([[serverInfo.response objectForKey:@"code"] integerValue] == 202) {
+                                                NSLog(@"请登录");
+                                                UIWindow *window = [UIApplication sharedApplication].keyWindow;
+                                                LoginViewController *login = [[LoginViewController alloc]init];
+                                                UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:login];
+                                            [window.rootViewController presentViewController:nav animated:YES completion:^{
+                                                    
+                                                }];
+                                                
+                                            }else{
+                                                dispatch_main_async_safe(^{
+                                                    result(serverInfo);
+                                                })
+                                            }
                                         }
                                         
                                     }];
