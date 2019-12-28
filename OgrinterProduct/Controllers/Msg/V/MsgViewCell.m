@@ -33,6 +33,16 @@
 //MARK:-
 -(void)setListmodel:(MsgModel *)listmodel {
     _listmodel = listmodel;
+    
+    [self.lockbtn setHidden:NO];
+    [self.shopImgView sd_setImageWithURL:[NSURL URLWithString:listmodel.logo_img] placeholderImage:nil];
+    self.shoptitleLabel.text = listmodel.name;
+    self.shopAddressLabel.text = listmodel.address;
+    self.shopPhoneLabel.text = listmodel.tel;
+    [self.thumbsBrn setTitle:[NSString stringWithFormat:@"   %@",listmodel.praise_num] forState:0];
+    
+    [self setupStar:listmodel.stars_all];
+    
 }
 
 
@@ -48,18 +58,22 @@
     [super awakeFromNib];
     
     self.lockbtn.layer.cornerRadius = 4;
-    [self setupStar];
+//    [self setupStar];
     // Initialization code
 }
 
 
--(void)setupStar {
+-(void)setupStar:(NSString *)stars_all {
     
-    for (int i = 0; i < 5; i ++) {
-        
+    for (UIImageView *imgV in self.sharbjView.subviews) {
+        if ([imgV isKindOfClass:[UIImageView class]]) {
+            [imgV removeFromSuperview];
+        }
+    }
+    
+    for (int i = 0; i < [stars_all integerValue]; i ++) {
         UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(8+i*17,3,12,12)];
         imgView.image = [UIImage imageNamed:@"start"];
-        
         [self.sharbjView addSubview:imgView];
     }
 }

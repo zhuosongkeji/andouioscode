@@ -6,6 +6,7 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+
 #define merchant_merchants @"merchant/merchants"//获取商家列表
 
 #define merchants_two @"merchant/merchants_two"//获取商家列表
@@ -17,11 +18,16 @@
 #import "MsgModel.h"
 
 
-@interface MsgViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface MsgViewController ()<UITableViewDelegate,UITableViewDataSource>{
+    NSInteger t;
+    NSInteger page;
+    BOOL isselect;
+}
 
 @property (nonatomic,strong) MenuScreeningView *menuScreeningView;
 
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
 
 @property (nonatomic,strong)NSMutableArray *shoArr;
@@ -30,11 +36,20 @@
 
 @property (nonatomic,strong)NSMutableArray *categoryArr;
 
-@property (nonatomic,strong)NSDictionary *postDict;
+@property (nonatomic,strong)NSMutableDictionary *postDict;
+
 
 @end
 
 @implementation MsgViewController
+
+
+-(NSMutableDictionary *)postDict {
+    if (!_postDict) {
+        _postDict = [NSMutableDictionary dictionaryWithObject:[NSString stringWithFormat:@"%ld",page] forKey:@"page"];
+    }
+    return _postDict;
+}
 
 
 -(NSMutableArray *)shoArr {
@@ -44,6 +59,7 @@
     }
     return _shoArr;
 }
+
 
 -(NSMutableArray *)categoryArr {
     
@@ -66,7 +82,6 @@
 //MARK:- viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self setup];
     
     // Do any additional setup after loading the view from its nib.
@@ -75,49 +90,93 @@
 
 -(void)setup{
     
-    self.toTop.constant = kStatusBarAndNavigationBarH+MenuHeight;
+    self.toTop.constant = kStatusBarAndNavigationBarH+MenuHeight;t = 0;page = 1;
     
-    _menuScreeningView = [[MenuScreeningView alloc]initWithFrame:CGRectMake(0, kStatusBarAndNavigationBarH, KSCREEN_WIDTH, MenuHeight)];
-    _menuScreeningView.backgroundColor = KSRGBA(255, 255, 255, 1);
-    __weak typeof(&*self)weakSelf = self;
-    _menuScreeningView.selcctblock = ^(NSString *str) {
-        NSArray *array = [str componentsSeparatedByString:@"-"];
-        NSDictionary *dict = nil;
-        if ([array count] == 2) {
-            if ([[[array lastObject] stringValue] isEqualToString:@""]) {
-                dict = @{@"merchant_type_id":array[0]};
-            }else{
-                dict = @{@"type":@""};
-            }
-        }else{
-            dict = @{@"province_id":array[0],@"city_id":array[1],@"area_id":array[2]};
-        }
-        [weakSelf setpostDictwithdict:dict];
-    };
-    
-    [self.view addSubview:_menuScreeningView];
+    [self createMenuScreeningView];
     
     [self.mTableView registerNib:[UINib nibWithNibName:@"MsgViewCell" bundle:nil] forCellReuseIdentifier:@"MsgViewCell"];
+    self.mTableView.tableFooterView = [UILabel new];
     
     self.mTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self loadshoplistWithParams:_postDict];
+        page = 1;
+        if (!isselect)
+            [self.postDict setObject:[NSString stringWithFormat:@"%ld",page] forKey:@"page"];
+        else
+            [self.postDict setObject:[NSString stringWithFormat:@"%ld",page] forKey:@"page"];
+        
+        [self loadshoplistWithParams:self.postDict];
+        
     }];
-    [self loadshoplistWithParams:_postDict];
+    
+    self.mTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        page += 1;
+        if (!isselect)
+             [self.postDict setObject:[NSString stringWithFormat:@"%ld",page] forKey:@"page"];
+        else
+            [self.postDict setObject:[NSString stringWithFormat:@"%ld",page] forKey:@"page"];
+        
+        [self loadshoplistWithParams:self.postDict];
+    }];
+    
+//    [self.mTableView.mj_footer setHidden:YES];
+    [self.mTableView.mj_header beginRefreshing];
     
 }
 
 
--(void)setpostDictwithdict:(NSDictionary *)dict{
-    _postDict = dict;
+-(void)createMenuScreeningView {
     
-    [self loadshoplistWithParams:dict];
+    _menuScreeningView = [[MenuScreeningView alloc]initWithFrame:CGRectMake(0, kStatusBarAndNavigationBarH, KSCREEN_WIDTH, MenuHeight)];
+    _menuScreeningView.backgroundColor = KSRGBA(255, 255, 255, 1);
+    
+    __weak typeof(&*self)weakSelf = self;
+    _menuScreeningView.selcctblock = ^(NSString *str) {
+        NSArray *array = [str componentsSeparatedByString:@"-"];
+        NSDictionary *dict = nil;
+        
+        isselect = YES;
+        page = 1;
+        
+        if ([array count] == 2) {
+            NSString *length = array.lastObject;
+            
+            if (length.length == 0) {
+                
+                dict = @{@"merchant_type_id":array[0]};
+                
+            }else{
+                
+                dict = @{@"type":@""};
+            }
+            
+        }else{
+            
+            dict = @{@"province_id":array[0],@"city_id":array[1],@"area_id":array[2]};
+        }
+        
+        [weakSelf setpostDictwithdict:dict];
+    };
+    
+    [self.view addSubview:_menuScreeningView];
+}
+
+
+-(void)setpostDictwithdict:(NSDictionary *)dict{
+    
+    if (self.postDict)
+        [self.postDict removeAllObjects];
+    
+    [self.postDict setDictionary:dict];
+    [self.postDict setObject:[NSString stringWithFormat:@"%ld",page] forKey:@"page"];
+    
+    [self.mTableView.mj_header beginRefreshing];
 }
 
 
 -(void)loadshoplistWithParams:(NSDictionary *)dict{
     
     NSString *urlStr = nil;
-    if ([dict  isEqual: @{}] || dict == nil) {
+    if (t == 0) {
         urlStr = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,merchant_merchants];
     }else{
         urlStr = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,merchants_two];
@@ -125,28 +184,55 @@
     
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:urlStr params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
         
-        NSDictionary *dict1 = [serverInfo.response objectForKey:@"data"];
-        
-        NSArray *merchants = dict1[@"merchants"];
-        
-        if ([dict  isEqual: @{}] || dict == nil) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            NSDictionary *dict1 = [serverInfo.response objectForKey:@"data"];
             
-            [self creatPlistFileWithArr:dict[@"merchant_type"] Name:@"merchanttype"];
+            NSArray *merchants = dict1[@"merchants"];
             
-            [self creatPlistFileWithArr:dict[@"districts"] Name:@"districts"];
+            if (t == 0) {
+                
+                [self creatPlistFileWithArr:dict[@"merchant_type"] Name:@"merchanttype"];
+                
+                [self creatPlistFileWithArr:dict[@"districts"] Name:@"districts"];
+                t = 1;
+                
+            }else {
+                
+            }
             
-        }else {
+            NSMutableArray *array = [NSMutableArray array];
+            for (int i = 0; i < [merchants count]; i ++) {
+                MsgModel *model = [[MsgModel alloc]initWithDict:merchants[i]];
+                [array addObject:model];
+            }
             
+            if ([self.mTableView.mj_header isRefreshing]) {
+                [self.shoArr removeAllObjects];
+                [self.shoArr addObjectsFromArray:array];
+                [self.mTableView.mj_footer resetNoMoreData];
+            }else if([self.mTableView.mj_footer isRefreshing]){
+                if ([array count] == 0) {
+                    [self.mTableView.mj_footer endRefreshing];
+                    [self.mTableView.mj_footer endRefreshingWithNoMoreData];
+                }else{
+                    [self.shoArr addObjectsFromArray:array];
+                    [self.mTableView.mj_footer endRefreshing];
+                }
+            }else{
+                [self.shoArr removeAllObjects];
+                [self.shoArr addObjectsFromArray:array];
+            }
+            
+            [self.mTableView.mj_header endRefreshing];
+            [self.mTableView reloadData];
+            
+        }else{
+            [HUDManager showTextHud:loadError];
         }
-        
-        for (int i = 0; i < [merchants count]; i ++) {
-            MsgModel *model = [[MsgModel alloc]initWithDict:merchants[i]];
-            [self.shoArr addObject:model];
-        }
-        
-        
     }];
+    
 }
+
 
 
 //MARK:-tableView
@@ -156,7 +242,8 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+//    self.mTableView.mj_footer.hidden = [self.shoArr count]<10;
+    return [self.shoArr count];
 }
 
 
@@ -170,8 +257,14 @@
     cell.selectBlock = ^(UIButton *button) {
         
     };
-//    cell.listmodel =
+
+    if ([self.shoArr count]>0) {
+        cell.listmodel = self.shoArr[indexPath.row];
+        
+    }
+    
     return cell;
+    
 }
 
 

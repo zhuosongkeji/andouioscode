@@ -555,11 +555,12 @@ static int wrPushDisplayCount = 0;
 #pragma mark - deal the gesture of return
 
 
-#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED> __IPHONE_11
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_11
 
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(nonnull UINavigationItem *)item {
     return YES;
 }
+
 #else
 
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item {
