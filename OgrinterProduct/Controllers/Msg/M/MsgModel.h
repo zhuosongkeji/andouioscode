@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSString *stars_all;
 @property (nonatomic,strong)NSString *tel;
 
+
 -(instancetype)initWithDict:(NSDictionary *)dict;
 
 +(instancetype)initWithDict:(NSDictionary *)dict;

@@ -580,6 +580,7 @@ static int wrPushDisplayCount = 0;
                 }];
             }
             return YES;
+
         }
 
         NSUInteger itemCount = self.navigationBar.items.count;
