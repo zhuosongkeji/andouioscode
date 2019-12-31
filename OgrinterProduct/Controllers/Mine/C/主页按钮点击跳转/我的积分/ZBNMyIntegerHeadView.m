@@ -7,8 +7,46 @@
 //
 
 #import "ZBNMyIntegerHeadView.h"
+#import "ZBNMyIntegralModel.h"
+
+@interface ZBNMyIntegerHeadView ()
+/*! 我的积分 */
+@property (weak, nonatomic) IBOutlet UILabel *myIntegerLabel;
+
+@property (nonatomic, strong) ZBNMyIntegralModel *integerM;
+@end
 
 @implementation ZBNMyIntegerHeadView
 
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    [self loadData];
+    
+}
+
+/*! 加载数据 */
+- (void)loadData
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    params[@"uid"] = unmodel.uid;
+    params[@"token"] = unmodel.token;
+    params[@"page"] = @0;
+    ADWeakSelf;
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/opinion/set" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        weakSelf.integerM = [ZBNMyIntegralModel mj_objectWithKeyValues:serverInfo.response[@"data"][@"integral"]];
+        if (weakSelf.integerM.integral) {
+            weakSelf.myIntegerLabel.text = weakSelf.integerM.integral;
+        } else {
+            weakSelf.myIntegerLabel.text = @"您没得积分喔";
+        }
+        
+        NSLog(@"我的积分%@",weakSelf.integerM.integral);
+    }];
+}
 
 @end

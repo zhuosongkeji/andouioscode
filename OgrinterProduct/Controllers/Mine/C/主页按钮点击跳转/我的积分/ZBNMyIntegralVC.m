@@ -12,16 +12,28 @@
 
 @implementation ZBNMyIntegralVC
 
+#pragma mark -- 生命周期方法
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"我的积分";
-    ZBNMyIntegerHeadView *headView = [ZBNMyIntegerHeadView viewFromXib];
-    headView.height = 180;
-    self.tableView.tableHeaderView = headView;
+    // 设置UI界面
+    [self setupUI];
     
 }
+
+- (void)setupUI
+{
+    self.navigationItem.title = @"我的积分";
+    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
+    ZBNMyIntegerHeadView *headView = [ZBNMyIntegerHeadView viewFromXib];
+    headView.height = ZBNHeaderH;
+    self.tableView.tableHeaderView = headView;
+}
+
+
+#pragma mark -- tableView的代理和数据源方法
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

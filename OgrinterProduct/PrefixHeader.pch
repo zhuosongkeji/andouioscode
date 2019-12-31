@@ -168,6 +168,8 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #define getRectNavAndStatusHight self.navigationController.navigationBar.frame.size.height+[[UIApplication sharedApplication] statusBarFrame].size.height
 #define getStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
 
+// 百度地图AK
+#define BaiduAPPKEY @"61tIfFSVH5UzHCuN2p7TBk9XxG9VNGff"
 
 #import "HUDManager.h"
 #import "FKHRequestManager.h"
@@ -182,6 +184,8 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #import "ZBNAlertTool.h"
 #import "WRNavigationBar.h"
 #import "userInfo.h"
+#import "ADConst.h"
+
 
 
 #endif /* PrefixHeader_h */

@@ -417,9 +417,17 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="aboutUsView" destination="cUL-cZ-95A" id="InL-Wk-OT0"/>
+                <outlet property="cacheLabel" destination="o7v-mu-iym" id="c3f-pF-stz"/>
+                <outlet property="downLoadSwitch" destination="gnR-Tz-fCF" id="v1c-Dd-0a9"/>
+                <outlet property="editionLabel" destination="WQK-9r-vN5" id="0Gq-d3-dWb"/>
                 <outlet property="feedbackView" destination="rf0-5o-Hdm" id="tyZ-0U-NEd"/>
+                <outlet property="newsSwitch" destination="mP4-fG-WHK" id="8TH-vK-cDq"/>
+                <outlet property="phoneNumber" destination="Meb-B3-ALu" id="SHi-WG-n2N"/>
+                <outlet property="pwdLabel" destination="CwA-hb-37w" id="v2v-KX-Rmn"/>
+                <outlet property="userIconV" destination="J4H-hJ-Hm6" id="YmK-He-8Kf"/>
+                <outlet property="userName" destination="6LU-3r-yEo" id="rpE-Cf-7wG"/>
             </connections>
-            <point key="canvasLocation" x="1321" y="83"/>
+            <point key="canvasLocation" x="1096" y="22"/>
         </tableViewCell>
     </objects>
     <resources>

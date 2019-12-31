@@ -8,13 +8,29 @@
 
 #import "ZBNMineSettingCell.h"
 
+#import "ZBNMineSettingModel.h"
 
 @interface ZBNMineSettingCell ()
 /*! 关于我们 */
 @property (weak, nonatomic) IBOutlet UIView *aboutUsView;
 /*! 意见反馈 */
 @property (weak, nonatomic) IBOutlet UIView *feedbackView;
-
+/*! 用户的头像 */
+@property (weak, nonatomic) IBOutlet UIImageView *userIconV;
+/*! 用户昵称 */
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+/*! 用户电话 */
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumber;
+/*! 用户密码 */
+@property (weak, nonatomic) IBOutlet UILabel *pwdLabel;
+/*! 新消息通知的开关 */
+@property (weak, nonatomic) IBOutlet UISwitch *newsSwitch;
+/*! 各种网络下载的开关 */
+@property (weak, nonatomic) IBOutlet UISwitch *downLoadSwitch;
+/*! 清空缓存 */
+@property (weak, nonatomic) IBOutlet UILabel *cacheLabel;
+/*! 版本号 */
+@property (weak, nonatomic) IBOutlet UILabel *editionLabel;
 
 
 @end
@@ -22,7 +38,16 @@
 
 @implementation ZBNMineSettingCell
 
-
+/*! 设置模型数据 */
+- (void)setSettingM:(ZBNMineSettingModel *)settingM
+{
+    // 设置数据
+    _settingM = settingM;
+//    [self.userIconV sd_setImageWithURL:[NSURL URLWithString:settingM.avator]];
+    self.userName.text = settingM.name;
+    self.phoneNumber.text = settingM.mobile;
+//    self.pwdLabel.text = [NSString stringWithFormat:@"%@",settingM.password];
+}
 
 
 ///MARK: 生命周期方法

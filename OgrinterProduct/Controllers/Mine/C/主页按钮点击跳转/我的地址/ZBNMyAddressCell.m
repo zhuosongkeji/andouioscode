@@ -39,13 +39,17 @@
 /*! 设置模型数据 */
 - (void)setAddModel:(ZBNMyAddressModel *)addModel
 {
-    
-    if (addModel.isSelcted) {
+    _addModel = addModel;
+    if (addModel.is_defualt) {
         self.defaultAddButton.selected = YES;
     } else {
         self.defaultAddButton.selected = NO;
     }
-    _addModel = addModel;
+    
+    self.nameLabel.text = addModel.name;
+    self.numberLabel.text = addModel.mobile;
+    self.addressLabel.text = [NSString stringWithFormat:@"%@%@%@%@",addModel.province_id,addModel.city_id,addModel.area_id,addModel.address];
+    
 }
 
 
@@ -61,7 +65,9 @@
 - (IBAction)deleteBtnClick:(UIButton *)sender {
     
     [ZBNAlertTool zbn_alertTitle:@"您确定要删除吗?" type:UIAlertControllerStyleAlert message:@"删老就没得老喔~" didTask:^{
-        
+        if (self.deleteAddClickTask) {
+            self.deleteAddClickTask(self.addModel);
+        }
     }];
     
 }

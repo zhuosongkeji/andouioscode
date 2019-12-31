@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class ZBNMineSettingModel;
 @interface ZBNMineSettingCell : UITableViewCell
 /*! 当点击关于我们 */
 @property (nonatomic, copy) void(^aboutUsCellClickTask)(void);
@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*! 注册Cell */
 + (instancetype)regiserCellForTable:(UITableView *)tableView;
+
+/*! 设置界面的模型 */
+@property (nonatomic, strong) ZBNMineSettingModel *settingM;
 
 @end
 

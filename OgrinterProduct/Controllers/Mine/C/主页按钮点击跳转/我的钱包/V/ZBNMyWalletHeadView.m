@@ -28,6 +28,8 @@
     }
 }
 
+
+/*! 余额充值的点击 */
 - (IBAction)reChargeBtnClick:(UIButton *)sender {
     if (self.reChargeBtnClickTask) {
         self.reChargeBtnClickTask(self.moneyLabel.text);

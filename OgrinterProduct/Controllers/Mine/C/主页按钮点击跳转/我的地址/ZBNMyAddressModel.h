@@ -12,8 +12,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNMyAddressModel : NSObject
 
-// 是否选中
-@property (nonatomic, assign) BOOL isSelcted;
+/*! 省地址id */
+@property (nonatomic, copy) NSString *province_id;
+/*! 地址id */
+@property (nonatomic, copy) NSString *id;
+/*! 收货人名字 */
+@property (nonatomic, copy) NSString *name;
+/*! 收货人电话 */
+@property (nonatomic, copy) NSString *mobile;
+/*!是否默认*/
+@property (nonatomic, assign) BOOL is_defualt;
+/*! city_id */
+@property (nonatomic, copy) NSString *city_id;
+/*! 区地址id */
+@property (nonatomic, copy) NSString *area_id;
+/*! 详细地址 */
+@property (nonatomic, copy) NSString *address;
 
 @end
 

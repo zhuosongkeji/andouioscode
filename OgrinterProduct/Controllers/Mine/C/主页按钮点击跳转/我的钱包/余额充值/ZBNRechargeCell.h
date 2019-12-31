@@ -12,10 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNRechargeCell : UITableViewCell
 
+/*! 余额的金额 */
 @property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
-
-
+/*! 快速创建cell */
 + (instancetype)registerCellForTableView:(UITableView *)tableView;
+
+@property (nonatomic, copy) void(^modeBlock)(NSString *mode);
+@property (nonatomic, copy) void(^rechargeNumberBlock)(NSString *rechargeNumber);
+@property (nonatomic, copy) void(^contactNumberBlock)(NSString *contactNumber);
+@property (nonatomic, copy) void(^bankCardNumberBlock)(NSString *bankCardNumber);
 
 @end
 

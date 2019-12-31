@@ -186,6 +186,7 @@
 		F45231CA23AB7B5E005CBE6A /* ZBNRestaurantOrderDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F45231C923AB7B5E005CBE6A /* ZBNRestaurantOrderDetailVC.m */; };
 		F45231CE23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F45231CC23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.m */; };
 		F45231CF23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45231CD23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.xib */; };
+		F46E0F1123BADBEA006FE05D /* ZBNMineSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F46E0F1023BADBEA006FE05D /* ZBNMineSettingModel.m */; };
 		F476A44023A7682B00E3018A /* ZBNBrowseHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A38623A7682400E3018A /* ZBNBrowseHistoryVC.m */; };
 		F476A44123A7682B00E3018A /* ZBNDowmLoadAppVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F476A38923A7682400E3018A /* ZBNDowmLoadAppVC.xib */; };
 		F476A44223A7682B00E3018A /* ZBNDowmLoadAppVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A38A23A7682400E3018A /* ZBNDowmLoadAppVC.m */; };
@@ -265,6 +266,10 @@
 		F476A4B223A783E200E3018A /* ZBNWalletRechargeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A4B123A783E200E3018A /* ZBNWalletRechargeVC.m */; };
 		F476A4B623A7844A00E3018A /* ZBNRechargeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A4B423A7844A00E3018A /* ZBNRechargeCell.m */; };
 		F476A4B723A7844A00E3018A /* ZBNRechargeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F476A4B523A7844A00E3018A /* ZBNRechargeCell.xib */; };
+		F49B6D3D23B9EF2100F1BEBB /* ZBNMineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F49B6D3C23B9EF2100F1BEBB /* ZBNMineModel.m */; };
+		F4ADBE3523B9A28100B62E46 /* ADConst.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ADBE3423B9A28000B62E46 /* ADConst.m */; };
+		F4ADBE3823B9A4BA00B62E46 /* ZBNMyIntegralModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ADBE3723B9A4BA00B62E46 /* ZBNMyIntegralModel.m */; };
+		F4ADBE3B23B9C47000B62E46 /* ZBNRechargeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ADBE3A23B9C47000B62E46 /* ZBNRechargeModel.m */; };
 		F4DBD0F123A8BA0C0086C717 /* ZBNNewAddressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DBD0F023A8BA0C0086C717 /* ZBNNewAddressVC.xib */; };
 		F4E6A7A023B75140006721E9 /* FKHRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6A79F23B75140006721E9 /* FKHRequestManager.m */; };
 		F4E6A7A923B753F2006721E9 /* ZBNMineFeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6A7A223B753F1006721E9 /* ZBNMineFeedbackVC.m */; };
@@ -629,6 +634,8 @@
 		F45231CB23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNRestaurantOrderDetailCell.h; sourceTree = "<group>"; };
 		F45231CC23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNRestaurantOrderDetailCell.m; sourceTree = "<group>"; };
 		F45231CD23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNRestaurantOrderDetailCell.xib; sourceTree = "<group>"; };
+		F46E0F0F23BADBEA006FE05D /* ZBNMineSettingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNMineSettingModel.h; sourceTree = "<group>"; };
+		F46E0F1023BADBEA006FE05D /* ZBNMineSettingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNMineSettingModel.m; sourceTree = "<group>"; };
 		F476A38623A7682400E3018A /* ZBNBrowseHistoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNBrowseHistoryVC.m; sourceTree = "<group>"; };
 		F476A38723A7682400E3018A /* ZBNBrowseHistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNBrowseHistoryVC.h; sourceTree = "<group>"; };
 		F476A38923A7682400E3018A /* ZBNDowmLoadAppVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZBNDowmLoadAppVC.xib; sourceTree = "<group>"; };
@@ -768,6 +775,14 @@
 		F476A4B323A7844A00E3018A /* ZBNRechargeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNRechargeCell.h; sourceTree = "<group>"; };
 		F476A4B423A7844A00E3018A /* ZBNRechargeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNRechargeCell.m; sourceTree = "<group>"; };
 		F476A4B523A7844A00E3018A /* ZBNRechargeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNRechargeCell.xib; sourceTree = "<group>"; };
+		F49B6D3B23B9EF2100F1BEBB /* ZBNMineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNMineModel.h; sourceTree = "<group>"; };
+		F49B6D3C23B9EF2100F1BEBB /* ZBNMineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNMineModel.m; sourceTree = "<group>"; };
+		F4ADBE3323B9A28000B62E46 /* ADConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADConst.h; sourceTree = "<group>"; };
+		F4ADBE3423B9A28000B62E46 /* ADConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADConst.m; sourceTree = "<group>"; };
+		F4ADBE3623B9A4BA00B62E46 /* ZBNMyIntegralModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNMyIntegralModel.h; sourceTree = "<group>"; };
+		F4ADBE3723B9A4BA00B62E46 /* ZBNMyIntegralModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNMyIntegralModel.m; sourceTree = "<group>"; };
+		F4ADBE3923B9C47000B62E46 /* ZBNRechargeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNRechargeModel.h; sourceTree = "<group>"; };
+		F4ADBE3A23B9C47000B62E46 /* ZBNRechargeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNRechargeModel.m; sourceTree = "<group>"; };
 		F4DBD0F023A8BA0C0086C717 /* ZBNNewAddressVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNNewAddressVC.xib; sourceTree = "<group>"; };
 		F4E6A79E23B75140006721E9 /* FKHRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKHRequestManager.h; sourceTree = "<group>"; };
 		F4E6A79F23B75140006721E9 /* FKHRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKHRequestManager.m; sourceTree = "<group>"; };
@@ -1360,6 +1375,8 @@
 				A14FB263238E0E50006A6511 /* Assets.xcassets */,
 				A14FB265238E0E50006A6511 /* LaunchScreen.storyboard */,
 				A14FB28D238E19DE006A6511 /* PrefixHeader.pch */,
+				F4ADBE3323B9A28000B62E46 /* ADConst.h */,
+				F4ADBE3423B9A28000B62E46 /* ADConst.m */,
 				A14FB268238E0E50006A6511 /* Info.plist */,
 				A10A9C182398A1970049A0D2 /* address.plist */,
 				A10A9C172398A1970049A0D2 /* categories.plist */,
@@ -1644,6 +1661,8 @@
 				A14FB2E0238F682A006A6511 /* MineViewController.h */,
 				A14FB2E1238F682A006A6511 /* MineViewController.m */,
 				A14FB2E2238F682A006A6511 /* MineViewController.xib */,
+				F49B6D3B23B9EF2100F1BEBB /* ZBNMineModel.h */,
+				F49B6D3C23B9EF2100F1BEBB /* ZBNMineModel.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1866,6 +1885,8 @@
 				F4E6A7AD23B75417006721E9 /* ZBNMineSettingCell.xib */,
 				F4E6A7B023B75417006721E9 /* ZBNMineSettingVC.h */,
 				F4E6A7B123B75417006721E9 /* ZBNMineSettingVC.m */,
+				F46E0F0F23BADBEA006FE05D /* ZBNMineSettingModel.h */,
+				F46E0F1023BADBEA006FE05D /* ZBNMineSettingModel.m */,
 				F4E6A7A523B753F2006721E9 /* 关于我们 */,
 				F4E6A7A123B753F1006721E9 /* 意见反馈 */,
 			);
@@ -1978,16 +1999,16 @@
 		F476A3B123A7682600E3018A /* 我的地址 */ = {
 			isa = PBXGroup;
 			children = (
+				F476A3B823A7682600E3018A /* ZBNNewAddressVC.h */,
 				F476A3B223A7682600E3018A /* ZBNNewAddressVC.m */,
 				F4DBD0F023A8BA0C0086C717 /* ZBNNewAddressVC.xib */,
+				F476A3B623A7682600E3018A /* ZBNMyAddressModel.h */,
 				F476A3B323A7682600E3018A /* ZBNMyAddressModel.m */,
+				F476A3B923A7682600E3018A /* ZBNMyAddressVC.h */,
 				F476A3B423A7682600E3018A /* ZBNMyAddressVC.m */,
 				F476A3B523A7682600E3018A /* ZBNMyAddressCell.h */,
-				F476A3B623A7682600E3018A /* ZBNMyAddressModel.h */,
-				F476A3B723A7682600E3018A /* ZBNMyAddressCell.xib */,
-				F476A3B823A7682600E3018A /* ZBNNewAddressVC.h */,
-				F476A3B923A7682600E3018A /* ZBNMyAddressVC.h */,
 				F476A3BA23A7682600E3018A /* ZBNMyAddressCell.m */,
+				F476A3B723A7682600E3018A /* ZBNMyAddressCell.xib */,
 				F44DF88D23AA2C8F00A7D902 /* ZBNChooseAddressVC.h */,
 				F44DF88E23AA2C8F00A7D902 /* ZBNChooseAddressVC.m */,
 				F44DF89023AA2CCD00A7D902 /* ZBNChooseAddressVC.xib */,
@@ -2191,11 +2212,13 @@
 		F476A43023A7682A00E3018A /* 我的积分 */ = {
 			isa = PBXGroup;
 			children = (
+				F476A43323A7682A00E3018A /* ZBNMyIntegralVC.h */,
 				F476A43123A7682A00E3018A /* ZBNMyIntegralVC.m */,
 				F476A43223A7682A00E3018A /* ZBNMyIntegerHeadView.h */,
-				F476A43323A7682A00E3018A /* ZBNMyIntegralVC.h */,
 				F476A43423A7682A00E3018A /* ZBNMyIntegerHeadView.m */,
 				F476A43523A7682A00E3018A /* ZBNMyIntegerHeadView.xib */,
+				F4ADBE3623B9A4BA00B62E46 /* ZBNMyIntegralModel.h */,
+				F4ADBE3723B9A4BA00B62E46 /* ZBNMyIntegralModel.m */,
 			);
 			path = "我的积分";
 			sourceTree = "<group>";
@@ -2255,6 +2278,8 @@
 				F476A4B323A7844A00E3018A /* ZBNRechargeCell.h */,
 				F476A4B423A7844A00E3018A /* ZBNRechargeCell.m */,
 				F476A4B523A7844A00E3018A /* ZBNRechargeCell.xib */,
+				F4ADBE3923B9C47000B62E46 /* ZBNRechargeModel.h */,
+				F4ADBE3A23B9C47000B62E46 /* ZBNRechargeModel.m */,
 			);
 			path = "余额充值";
 			sourceTree = "<group>";
@@ -2728,6 +2753,7 @@
 				F476A45223A7682B00E3018A /* ZBNCashWithDrawalCell.m in Sources */,
 				A15DC0C5239DD78A008CF287 /* HotelDetilsBaseTableView.m in Sources */,
 				A1F73D3A23A9F439001D86EF /* OnlineOrderViewController.m in Sources */,
+				F4ADBE3823B9A4BA00B62E46 /* ZBNMyIntegralModel.m in Sources */,
 				A15DC104239E41C8008CF287 /* HotelDetailsBottomView.m in Sources */,
 				A14FB323239017BC006A6511 /* UIView+HHAddition.m in Sources */,
 				A14FB2A8238E4DF6006A6511 /* RegisterViewController.m in Sources */,
@@ -2820,6 +2846,7 @@
 				F4FAC2B623ACAA5900C235EA /* ZBNEvaluateGoodsVC.m in Sources */,
 				F476A44023A7682B00E3018A /* ZBNBrowseHistoryVC.m in Sources */,
 				A10A9CE7239B38930049A0D2 /* LiveBroadcastViewController.m in Sources */,
+				F49B6D3D23B9EF2100F1BEBB /* ZBNMineModel.m in Sources */,
 				F476A47323A7682B00E3018A /* ZBNOrderModel.m in Sources */,
 				F476A45623A7682B00E3018A /* ZBNMyAddressModel.m in Sources */,
 				F476A49223A7682C00E3018A /* ZBNShoppingMallEntryVC.m in Sources */,
@@ -2835,6 +2862,7 @@
 				F476A47523A7682B00E3018A /* ZBNRestaurantWaitEvaluateVC.m in Sources */,
 				F476A4AA23A7683200E3018A /* ZBNSegmenBar.m in Sources */,
 				F476A47423A7682B00E3018A /* ZBNBaseOrderVC.m in Sources */,
+				F46E0F1123BADBEA006FE05D /* ZBNMineSettingModel.m in Sources */,
 				A1CE7CCB23A77EB900C22C41 /* QCouponTableViewCell.m in Sources */,
 				F476A47D23A7682C00E3018A /* ZBNHotelOrderVC.m in Sources */,
 				A1F4E03023A48E4F00B02880 /* ShopSeckillDetailsSubViewController.m in Sources */,
@@ -2847,6 +2875,7 @@
 				A10A9C0A2397ED7A0049A0D2 /* PacketModel.m in Sources */,
 				A10A9C98239A57230049A0D2 /* HotelViewController.m in Sources */,
 				F476A4AC23A7683200E3018A /* UIView+ZBNExtension.m in Sources */,
+				F4ADBE3B23B9C47000B62E46 /* ZBNRechargeModel.m in Sources */,
 				A10A9CDE239B38380049A0D2 /* loveLoadViewController.m in Sources */,
 				F476A45E23A7682B00E3018A /* ZBNShoppingHallAllOrderVC.m in Sources */,
 				F476A4B623A7844A00E3018A /* ZBNRechargeCell.m in Sources */,
@@ -2869,6 +2898,7 @@
 				A10A9C1523989A4D0049A0D2 /* MenuScreeningView.m in Sources */,
 				F4FAC28323AC568900C235EA /* ZBNWaitDeliverDetailVC.m in Sources */,
 				F476A45F23A7682B00E3018A /* ZBNSHReturnGoodsOrderVC.m in Sources */,
+				F4ADBE3523B9A28100B62E46 /* ADConst.m in Sources */,
 				A10A9BF8239786E80049A0D2 /* UIView+MD.m in Sources */,
 				A14FB307238FC206006A6511 /* HQImagePageControl.m in Sources */,
 				A10A9C232398B16D0049A0D2 /* MsgModel.m in Sources */,
@@ -3090,6 +3120,12 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QXHAAL9LSY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OgrinterProduct/Controllers/frameworks",
+					"${SRCROOT}",
+				);
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OgrinterProduct/PrefixHeader.pch";
 				INFOPLIST_FILE = OgrinterProduct/Info.plist;
@@ -3097,9 +3133,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Base.framework",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RXF.OgrinterProduct;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "${SRCROOT}";
 			};
 			name = Debug;
 		};
@@ -3111,6 +3152,12 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QXHAAL9LSY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OgrinterProduct/Controllers/frameworks",
+					"${SRCROOT}",
+				);
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OgrinterProduct/PrefixHeader.pch";
 				INFOPLIST_FILE = OgrinterProduct/Info.plist;
@@ -3118,9 +3165,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Base.framework",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RXF.OgrinterProduct;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "${SRCROOT";
 			};
 			name = Release;
 		};
