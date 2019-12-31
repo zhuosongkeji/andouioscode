@@ -6,11 +6,13 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+
 #import "ZBNMineSettingVC.h"
 #import "ZBNMineSettingCell.h"
 #import "ZBNEntryFooterView.h"
 
 #import "ZBNMineSettingAboutUsVC.h"
+#import "ZBNMineFeedbackVC.h"
 
 
 @interface ZBNMineSettingVC ()
@@ -58,6 +60,11 @@
     ADWeakSelf;
     cell.aboutUsCellClickTask = ^{
         ZBNMineSettingAboutUsVC *vc = [[ZBNMineSettingAboutUsVC alloc] init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    // 反馈
+    cell.feedbackClickTask = ^{
+        ZBNMineFeedbackVC *vc = [[ZBNMineFeedbackVC alloc] init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     return cell;
