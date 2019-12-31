@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import <WebKit/WebKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UITableView *smTableView;
 
+@property (nonatomic,strong)WKWebView *webView;
 
 @property (nonatomic, assign) BOOL isRefresh;
 

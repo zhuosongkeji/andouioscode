@@ -11,9 +11,10 @@
 
 #import "ShopSeckillDetailsSubViewController.h"
 #import "CresTwoTableViewCell.h"
+#import "CommentModel.h"
 
 
-@interface ShopSeckillDetailsSubViewController ()<UITableViewDelegate,UITableViewDataSource>{
+@interface ShopSeckillDetailsSubViewController ()<UITableViewDelegate,UITableViewDataSource,WKUIDelegate,WKNavigationDelegate>{
     int page;
 }
 
@@ -27,6 +28,35 @@
 @implementation ShopSeckillDetailsSubViewController
 
 
+-(NSMutableArray *)data {
+    if (!_data) {
+        _data = [NSMutableArray array];
+    }
+    return _data;
+}
+
+
+-(WKWebView *)webView {
+    if (!_webView) {
+        
+        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+        WKUserContentController *userContentController = [[WKUserContentController alloc]init];
+        configuration.userContentController = userContentController;
+        
+        WKPreferences *preferences = [WKPreferences new];
+        preferences.javaScriptCanOpenWindowsAutomatically = YES;
+        preferences.minimumFontSize = 10.0;
+        configuration.preferences = preferences;
+        
+        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 12, self.view.bounds.size.width, KSCREEN_HEIGHT-kStatusBarAndNavigationBarH-96) configuration:configuration];
+        
+        _webView.UIDelegate = self;
+        _webView.scrollView.delegate = self;
+    }
+    
+    return _webView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -37,11 +67,14 @@
 
 -(void)setup{
     
-    self.smTableView.tableFooterView = [UILabel new];
+    self.view.backgroundColor = KSRGBA(255, 255, 255, 1);
     
     if ([self.title isEqualToString:SeckillDetailsListArr[0]]) {
+        
         [self details];
+        
     }else{
+        
         [self comment];
     }
 }
@@ -50,12 +83,20 @@
 //MARK:- cp details
 -(void)details {
     
+    [self.smTableView removeFromSuperview];
+    self.smTableView.delegate = nil;
+    self.smTableView.dataSource = nil;
+    
     [self loadcpdetails];
 }
 
 
 //MARK:- comment
 -(void)comment {
+    
+    self.smTableView.tableFooterView = [UILabel new];
+    self.smTableView.delegate = self;
+    self.smTableView.dataSource = self;
     
     [self.smTableView registerNib:[UINib nibWithNibName:@"CresTwoTableViewCell" bundle:nil] forCellReuseIdentifier:@"CresTwoTableViewCell"];
     
@@ -66,6 +107,8 @@
         page += 1;
         [weakSelf loadCommectList];
     }];
+    
+    [self.smTableView.mj_footer setHidden:YES];
     
     [self loadCommectList];
     
@@ -79,8 +122,9 @@
     
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([serverInfo.response[@"code"] integerValue] == 200) {
-            NSDictionary *dict = serverInfo.response[@"data"];
-//            NSLog(@"%@",dict);
+            NSString *strHTML = [NSString stringWithFormat:@"%@",[serverInfo.response[@"data"] objectForKey:@"details"]];
+            [self.view addSubview:self.webView];
+            [self.webView loadHTMLString:strHTML baseURL:nil];
         }else {
             [HUDManager showTextHud:loadError];
         }
@@ -95,8 +139,11 @@
     
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([serverInfo.response[@"code"] integerValue] == 200) {
-            NSDictionary *dict = serverInfo.response[@"data"];
-                        NSLog(@"%@",dict);
+            NSArray *array = [serverInfo.response objectForKey:@"data"];
+            for (int i = 0; i < [array count]; i ++) {
+                CommentModel *model = [[CommentModel alloc]init];
+                [self.data addObject:model];
+            }
         }else {
             [HUDManager showTextHud:loadError];
         }
@@ -134,8 +181,9 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     if ([self.title isEqualToString:SeckillDetailsListArr[0]]) {
-        return 3;
+        return 0;
     }else {
+        self.smTableView.mj_footer.hidden = [self.data count]<10;
         return [self.data count];
     }
 }
@@ -144,24 +192,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if ([self.title isEqualToString:SeckillDetailsListArr[0]]){
-        static NSString *idfier = @"idfier";
-        
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idfier];
-        
-        if (!cell) {
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:idfier];
-        }
-        
-        UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 0, KSCREEN_WIDTH-20, 420)];
-        [imgView setImage:[UIImage imageNamed:@"spDetails"]];
-        imgView.contentMode = UIViewContentModeScaleAspectFill;
-        
-        [cell.contentView addSubview:imgView];
-        
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-        return cell;
-        
+        return nil;
     }else {
         
         
@@ -182,7 +213,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if ([self.title isEqualToString:SeckillDetailsListArr[0]]) {
-        return 420;
+        return 0;
     }else {
         return 206;
     }
@@ -211,20 +242,21 @@
         scrollView.contentOffset = CGPointZero;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"OtherTop" object:nil];
     }
+   
     self.smTableView.showsVerticalScrollIndicator = _vcCanScroll?YES:NO;
 }
 
 
-
-- (NSMutableArray *)data {
-    if (!_data) {
-        self.data = [NSMutableArray array];
-        for (int i = 0; i < 20; i++) {
-            [self.data addObject:@"2"];
-        }
-    }
-    return _data;
+//MARK:-WKWebView
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
+    NSLog(@"html加载完成");
+    [ webView evaluateJavaScript:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '300%'" completionHandler:nil];
+    
+    //修改字体颜色  #9098b8
+    [ webView evaluateJavaScript:@"document.getElementsByTagName('body')[0].style.webkitTextFillColor= '#0078f0'" completionHandler:nil];
+    
 }
+
 
 
 /*

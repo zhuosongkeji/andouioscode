@@ -118,7 +118,7 @@
         [self loadshoplistWithParams:self.postDict];
     }];
     
-//    [self.mTableView.mj_footer setHidden:YES];
+    [self.mTableView.mj_footer setHidden:YES];
     [self.mTableView.mj_header beginRefreshing];
     
 }
@@ -242,7 +242,7 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    self.mTableView.mj_footer.hidden = [self.shoArr count]<10;
+    self.mTableView.mj_footer.hidden = [self.shoArr count]<10;
     return [self.shoArr count];
 }
 
