@@ -9,7 +9,10 @@
 #import "SeckillTableViewCell.h"
 #import "ShopDetalisModel.h"
 
-@interface SeckillTableViewCell()
+@interface SeckillTableViewCell(){
+    
+    BOOL select;
+}
 
 //一般的产品
 @property (weak, nonatomic) IBOutlet UILabel *cpName;
@@ -66,10 +69,8 @@
 //    self.shopcontent.text = [NSString stringWithFormat:@"%@",_dmodelist.logo];
     
     if ([_dmodelist.is_collection integerValue] == 0) {
-//        未收藏
         self.scBtn.selected = NO;
-    }else{
-//        收藏
+    }else if ([_dmodelist.is_collection integerValue] == 1) {
         self.scBtn.selected = YES;
     }
     
@@ -141,12 +142,14 @@
 
 //普通的= 收藏
 - (IBAction)sclick:(UIButton *)sender {
+    KPreventRepeatClickTime(1)
     _selectBlock(sender);
 }
 
 
 //秒杀的 收藏
 - (IBAction)msclick:(UIButton *)sender {
+    KPreventRepeatClickTime(1)
     _selectBlock(sender);
 }
 

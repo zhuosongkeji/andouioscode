@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) NSString *created_at;
 
 
+@property(nonatomic,strong)NSArray *listArr;
+
 -(instancetype)initWithDict:(NSDictionary *)dict;
 
 +(instancetype)initWithDict:(NSDictionary *)dict;

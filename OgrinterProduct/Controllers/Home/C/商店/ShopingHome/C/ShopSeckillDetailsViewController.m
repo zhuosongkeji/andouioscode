@@ -115,7 +115,7 @@
 //    self.mTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
 //        [self loadNetWork];
 //    }];
-    [self loadNetWork];
+    [self loadNetWork:@"0"];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -134,31 +134,38 @@
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
         
         if ([serverInfo.response[@"code"] integerValue] == 200) {
-            if ([type isEqualToString:@"0"]) {
+            if ([type isEqualToString:@"0"])
                 [HUDManager showTextHud:@"已取消收藏"];
-            }else{
+            else
                 [HUDManager showTextHud:@"已收藏"];
-            }
             
-            [self.mTableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0], nil] withRowAnimation:UITableViewRowAnimationNone];
-            
-        }else {
+        }else
             [HUDManager showTextHud:loadError];
-        }
-
+        [self loadNetWork:@"1"];
+        
     }];
-    
 }
 
 
--(void)loadNetWork{
+-(void)loadNetWork:(NSString *)type{
+    
+    NSDictionary *dict = nil;
     
     NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopdetails];
-    NSDictionary *dict = @{@"id":self.cpid};
+    
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    if (unmodel.uid)
+        dict = @{@"uid":unmodel.uid,@"id":self.cpid};
+    else
+        dict  = @{@"id":self.cpid};
     
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([serverInfo.response[@"code"] integerValue] == 200) {
             NSDictionary *dict = serverInfo.response[@"data"];
+            
+            [self.dataArr removeAllObjects];
+            
             ShopDetalisModel *model = [[ShopDetalisModel alloc]initWithDict:dict];
             [self.dataArr addObject:model];
             [_cycleScrollView setImageURLStringsGroup:model.bStrArr];
@@ -166,8 +173,12 @@
         }else {
             [HUDManager showTextHud:loadError];
         }
-        
-        [self.mTableView reloadData];
+        if ([type isEqualToString:@"1"]) {
+            [self.mTableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0], nil] withRowAnimation:UITableViewRowAnimationNone];
+
+        }else {
+            [self.mTableView reloadData];
+        }
     }];
 }
 
