@@ -176,6 +176,10 @@
 		A1FC4A8D239F288E00AF3F57 /* CustomAlterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FC4A8C239F288E00AF3F57 /* CustomAlterView.xib */; };
 		A1FC4A94239F70E600AF3F57 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC4A92239F70E600AF3F57 /* PaySuccessViewController.m */; };
 		A1FC4A95239F70E600AF3F57 /* PaySuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FC4A93239F70E600AF3F57 /* PaySuccessViewController.xib */; };
+		A1FC708F23BD8224005BFDC9 /* BeseListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC708D23BD8224005BFDC9 /* BeseListViewCell.m */; };
+		A1FC709023BD8224005BFDC9 /* BeseListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FC708E23BD8224005BFDC9 /* BeseListViewCell.xib */; };
+		A1FC709323BD8AF7005BFDC9 /* BeseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC709223BD8AF7005BFDC9 /* BeseModel.m */; };
+		A1FC709623BD94DD005BFDC9 /* BeseListListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC709523BD94DD005BFDC9 /* BeseListListModel.m */; };
 		A1FD1B6923AB471500AE0835 /* CategoryShopDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD1B6723AB471500AE0835 /* CategoryShopDetailsViewController.m */; };
 		A1FD1B6A23AB471500AE0835 /* CategoryShopDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FD1B6823AB471500AE0835 /* CategoryShopDetailsViewController.xib */; };
 		A1FD1B8823AC6E7800AE0835 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD1B8523AC6E7800AE0835 /* iCarousel.m */; };
@@ -611,6 +615,13 @@
 		A1FC4A91239F70E600AF3F57 /* PaySuccessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaySuccessViewController.h; sourceTree = "<group>"; };
 		A1FC4A92239F70E600AF3F57 /* PaySuccessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaySuccessViewController.m; sourceTree = "<group>"; };
 		A1FC4A93239F70E600AF3F57 /* PaySuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaySuccessViewController.xib; sourceTree = "<group>"; };
+		A1FC708C23BD8224005BFDC9 /* BeseListViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeseListViewCell.h; sourceTree = "<group>"; };
+		A1FC708D23BD8224005BFDC9 /* BeseListViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeseListViewCell.m; sourceTree = "<group>"; };
+		A1FC708E23BD8224005BFDC9 /* BeseListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeseListViewCell.xib; sourceTree = "<group>"; };
+		A1FC709123BD8AF7005BFDC9 /* BeseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeseModel.h; sourceTree = "<group>"; };
+		A1FC709223BD8AF7005BFDC9 /* BeseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeseModel.m; sourceTree = "<group>"; };
+		A1FC709423BD94DD005BFDC9 /* BeseListListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeseListListModel.h; sourceTree = "<group>"; };
+		A1FC709523BD94DD005BFDC9 /* BeseListListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeseListListModel.m; sourceTree = "<group>"; };
 		A1FD1B6623AB471500AE0835 /* CategoryShopDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CategoryShopDetailsViewController.h; path = OgrinterProduct/Controllers/Home/C/CategoryShopDetailsViewController.h; sourceTree = SOURCE_ROOT; };
 		A1FD1B6723AB471500AE0835 /* CategoryShopDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CategoryShopDetailsViewController.m; path = OgrinterProduct/Controllers/Home/C/CategoryShopDetailsViewController.m; sourceTree = SOURCE_ROOT; };
 		A1FD1B6823AB471500AE0835 /* CategoryShopDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategoryShopDetailsViewController.xib; path = OgrinterProduct/Controllers/Home/C/CategoryShopDetailsViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -892,6 +903,10 @@
 				A1F5516223B344ED00416682 /* ShopDetalisModel.m */,
 				A1F5517E23B74D1F00416682 /* CommentModel.h */,
 				A1F5517F23B74D1F00416682 /* CommentModel.m */,
+				A1FC709123BD8AF7005BFDC9 /* BeseModel.h */,
+				A1FC709223BD8AF7005BFDC9 /* BeseModel.m */,
+				A1FC709423BD94DD005BFDC9 /* BeseListListModel.h */,
+				A1FC709523BD94DD005BFDC9 /* BeseListListModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -933,6 +948,9 @@
 				A1F73D0623A8C86D001D86EF /* BeserveView.h */,
 				A1F73D0723A8C86D001D86EF /* BeserveView.m */,
 				A1F73D0923A8C886001D86EF /* BeserveView.xib */,
+				A1FC708C23BD8224005BFDC9 /* BeseListViewCell.h */,
+				A1FC708D23BD8224005BFDC9 /* BeseListViewCell.m */,
+				A1FC708E23BD8224005BFDC9 /* BeseListViewCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -2550,6 +2568,7 @@
 				A1F73D0A23A8C886001D86EF /* BeserveView.xib in Resources */,
 				A14FB30D238FCD13006A6511 /* CustomSectionView.xib in Resources */,
 				F4FAC28823AC56A000C235EA /* ZBNWaitDeliverDetailCell.xib in Resources */,
+				A1FC709023BD8224005BFDC9 /* BeseListViewCell.xib in Resources */,
 				A10A9CE8239B38930049A0D2 /* LiveBroadcastViewController.xib in Resources */,
 				F4FAC26B23ABC72D00C235EA /* ZBNSHReturnGoodsOrderCell.xib in Resources */,
 				A10A9C192398A1970049A0D2 /* sorts.plist in Resources */,
@@ -2776,7 +2795,9 @@
 				A15DC0FB239E35E1008CF287 /* CresFouthTableViewCell.m in Sources */,
 				A15DC0E7239E22BE008CF287 /* CresTwoTableViewCell.m in Sources */,
 				A10A9CFA239B6B5E0049A0D2 /* THDatePickerView.m in Sources */,
+				A1FC709323BD8AF7005BFDC9 /* BeseModel.m in Sources */,
 				A15DC0CE239DDD2B008CF287 /* HotelBottomTableViewCell.m in Sources */,
+				A1FC708F23BD8224005BFDC9 /* BeseListViewCell.m in Sources */,
 				A10A9CF6239B3C610049A0D2 /* ShopingViewController.m in Sources */,
 				F476A45B23A7682B00E3018A /* ZBNShoppingHallOrderVC.m in Sources */,
 				A1F5516323B344ED00416682 /* ShopDetalisModel.m in Sources */,
@@ -2831,6 +2852,7 @@
 				F4FAC2BE23ACB47100C235EA /* ZBNSHGoAndPayDetailVC.m in Sources */,
 				F476A45C23A7682B00E3018A /* ZBNSHWaitReceivingGoodsOrderVC.m in Sources */,
 				F476A47823A7682B00E3018A /* ZBNRestaurantOrderVC.m in Sources */,
+				A1FC709623BD94DD005BFDC9 /* BeseListListModel.m in Sources */,
 				A14FB2A3238E4CDE006A6511 /* LoginViewController.m in Sources */,
 				F476A47523A7682B00E3018A /* ZBNRestaurantWaitEvaluateVC.m in Sources */,
 				F476A4AA23A7683200E3018A /* ZBNSegmenBar.m in Sources */,

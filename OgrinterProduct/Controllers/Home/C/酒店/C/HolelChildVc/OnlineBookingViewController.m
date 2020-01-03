@@ -6,6 +6,8 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+#define order_settlement @"order/settlement"
+
 
 #import "OnlineBookingViewController.h"
 #import "CustomAlterView.h"
@@ -57,6 +59,7 @@
     self.mTableView.tableFooterView = [UILabel new];
     [self.mTableView registerNib:[UINib nibWithNibName:@"OnlineTableViewCell" bundle:nil] forCellReuseIdentifier:@"OnlineTableViewCell"];
 }
+
 
 
 -(void)createAlter{
