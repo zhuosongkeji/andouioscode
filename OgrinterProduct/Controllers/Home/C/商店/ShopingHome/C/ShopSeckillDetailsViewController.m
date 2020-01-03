@@ -10,13 +10,16 @@
 #define shopcollection @"goods/collection"//收藏或取消收藏
 #define shopspecslist @"goods/specslist"//产品规格
 
-#define bottomH 290
+#define order_add_order @"order/add_order"//购买
+
+#define bottomH 3*(KSCREEN_HEIGHT/5)
 
 
 #import "ShopSeckillDetailsViewController.h"
 #import "ShopSeckillDetailsSubViewController.h"
 #import "OnlineBookingViewController.h"
 #import "ShopShopkeeperViewController.h"
+#import "ZBNMyAddressVC.h"
 #import "SeckillTableViewCell.h"
 #import "HotelBottomTableViewCell.h"
 #import "FSScrollContentView.h"
@@ -26,6 +29,7 @@
 #import "BeserveView.h"
 #import "QCouponView.h"
 #import "ShopDetalisModel.h"
+#import "BeseModel.h"
 //#import "ShareView.h"
 
 
@@ -63,7 +67,11 @@
 
 @property (nonatomic,strong)NSMutableArray *dataArr;
 
+@property(nonatomic,strong)NSMutableArray *ggArr;
+
 @property (nonatomic,weak)UIButton *bjbtn;
+
+@property(nonatomic,strong)userInfo * unmodel;
 
 @end
 
@@ -75,6 +83,14 @@
         _dataArr = [NSMutableArray array];
     }
     return _dataArr;
+}
+
+
+-(NSMutableArray *)ggArr {
+    if (!_ggArr) {
+        _ggArr = [NSMutableArray array];
+    }
+    return _ggArr;
 }
 
 
@@ -115,6 +131,7 @@
 //    self.mTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
 //        [self loadNetWork];
 //    }];
+    
     [self loadNetWork:@"0"];
     
     // Do any additional setup after loading the view from its nib.
@@ -124,13 +141,16 @@
 //MARK:- post
 -(void)loadcollection:(NSString *)type{
     
-    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
-    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    NSDictionary *dict = nil;
     
     NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopcollection];
     
-    NSDictionary *dict = @{@"id":self.cpid,@"uid":unmodel.uid,@"type":type};
+    if (self.unmodel)
+        dict = @{@"id":self.cpid,@"uid":self.unmodel.uid,@"type":type};
+    else
+        dict = @{@"id":self.cpid,@"type":type};
     
+
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
         
         if ([serverInfo.response[@"code"] integerValue] == 200) {
@@ -141,6 +161,7 @@
             
         }else
             [HUDManager showTextHud:loadError];
+        
         [self loadNetWork:@"1"];
         
     }];
@@ -153,10 +174,8 @@
     
     NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopdetails];
     
-    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
-    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
-    if (unmodel.uid)
-        dict = @{@"uid":unmodel.uid,@"id":self.cpid};
+    if (self.unmodel.uid)
+        dict = @{@"uid":self.unmodel.uid,@"id":self.cpid};
     else
         dict  = @{@"id":self.cpid};
     
@@ -191,13 +210,38 @@
     
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([serverInfo.response[@"code"] integerValue] == 200) {
+            BeseModel *model = [[BeseModel alloc]initWithDict:[serverInfo.response objectForKey:@"data"]];
+            [_bottomView setListModel:model];
             NSLog(@"%@",dict);
         }else {
             [HUDManager showTextHud:loadError];
         }
         
     }];
+}
+
+
+//MARK:- 结算
+-(void)loadOrderNetWork:(NSDictionary *)dict{
     
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,order_add_order];
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            BeseModel *model = [[BeseModel alloc]initWithDict:[serverInfo.response objectForKey:@"data"]];
+            [_bottomView setListModel:model];
+            NSLog(@"%@",dict);
+        }else if ([serverInfo.response[@"code"] integerValue] == 201){
+            ZBNMyAddressVC *add = [[ZBNMyAddressVC alloc]init];
+            [self.navigationController pushViewController:add animated:YES];
+//            [HUDManager showTextHud:serverInfo.response[@"msg"]];
+            
+            
+        }else{
+            [HUDManager showTextHud:loadError];
+        }
+        
+    }];
 }
 
 
@@ -206,6 +250,10 @@
     self.canScroll = YES;
     
     KAdd_Observer(@"OtherTop", self, changeScroll, nil);
+    
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    
+    self.unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     
     [self wr_setNavBarBackgroundAlpha:0];
     
@@ -231,9 +279,21 @@
     [_bottomView setFrame:CGRectMake(0, KSCREEN_HEIGHT, KSCREEN_WIDTH,bottomH)];
     
     __weak typeof(&*self)WeakSelf = self;
-    _bottomView.payBlock = ^(UIButton *btn) {
-        [WeakSelf dissView];
-        [WeakSelf performSelector:@selector(pushToPayController) withObject:nil afterDelay:0.5];
+    _bottomView.payBlock = ^(UIButton *btn, NSInteger number, NSString *cpId) {
+        
+        NSDictionary *dict = nil;
+        
+        ShopDetalisModel *model =  WeakSelf.dataArr[0];
+        
+        if (WeakSelf.unmodel)
+            dict = @{@"goods_id":WeakSelf.cpid,@"uid":WeakSelf.unmodel.uid,@"merchant_id":model.merchant_id,@"goods_sku_id":cpId,@"num":[@(number) stringValue]};
+        else
+            dict = @{@"goods_id":WeakSelf.cpid,@"uid":@"",@"merchant_id":model.merchant_id,@"goods_sku_id":cpId,@"num":[@(number) stringValue]};
+        
+        [WeakSelf loadOrderNetWork:dict];
+        
+        //        [WeakSelf dissView];
+        //        [WeakSelf performSelector:@selector(pushToPayController) withObject:nil afterDelay:0.5];
     };
     
     [[UIApplication sharedApplication].keyWindow addSubview:_bottomView];
@@ -255,6 +315,7 @@
     [self.mTableView.mj_header endRefreshing];
 }
 
+
 //MARK:-
 -(void)changeScroll {
     self.canScroll = YES;
@@ -266,12 +327,15 @@
     return 2;
 }
 
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
         return 4;
     }
     return 1;
+    
 }
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -473,7 +537,6 @@
         _bottomView.frame = CGRectMake(0, KSCREEN_HEIGHT, KSCREEN_WIDTH, bottomH);
         [self.bjbtn setHidden:YES];
     }];
-    
 }
 
 

@@ -8,13 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^GoToPayButtonBlock)(UIButton *btn);
+typedef void(^GoToPayButtonBlock)(UIButton *btn,NSInteger number,NSString *cpId);
+
+@class BeseModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BeserveView : UIView
 
 @property(nonatomic,strong)NSDictionary *dataDic;
+
+@property(nonatomic,strong)BeseModel *listModel;
 
 @property (nonatomic,copy)GoToPayButtonBlock payBlock;
 
