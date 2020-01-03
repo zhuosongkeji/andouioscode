@@ -151,6 +151,11 @@
 
 - (void)cacheClear
 {
+    if ([self.cacheSizeL.text  isEqual: @"缓存大小(0B)"]) {
+        [HUDManager showTextHud:@"没有缓存"];
+        return;
+    }
+    
     [ZBNAlertTool zbn_alertTitle:@"清除缓存?" type:UIAlertControllerStyleAlert message:nil didTask:^{
         // 清除缓存
         [self clearCache];
@@ -210,6 +215,8 @@
     ADWeakSelf;
     
     
+    
+    self.cacheSizeL.text = @"正在清除缓存";
         // 在子线程
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
     //#warning 睡眠
@@ -226,7 +233,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 // 隐藏弹框
                 
-                
+                [HUDManager showTextHud:@"清除缓存成功"];
                 // 文字
                 weakSelf.cacheSizeL.text = @"暂无缓存";
                 

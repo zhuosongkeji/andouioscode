@@ -28,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.getVerificationCodeBtn.layer.cornerRadius = 5;
+    
     self.leftTime = 60;
 }
 
@@ -55,7 +57,7 @@
             self.timer = timer;
             
         } else {
-            [HUDManager showTextHud:@"发送失败"];
+            [HUDManager showTextHud:@"请输入正确的手机号"];
         }
     }];
     
