@@ -39,7 +39,7 @@
             <connections>
                 <outlet property="myIntegerLabel" destination="1Ck-x4-pWY" id="wPx-tJ-CHF"/>
             </connections>
-            <point key="canvasLocation" x="-1068" y="94"/>
+            <point key="canvasLocation" x="-1097" y="74"/>
         </view>
     </objects>
 </document>

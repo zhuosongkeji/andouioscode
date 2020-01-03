@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! 省地址id */
 @property (nonatomic, copy) NSString *province_id;
 /*! 地址id */
-@property (nonatomic, copy) NSString *id;
+@property (nonatomic, copy) NSString *ID;
 /*! 收货人名字 */
 @property (nonatomic, copy) NSString *name;
 /*! 收货人电话 */
@@ -28,6 +28,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *area_id;
 /*! 详细地址 */
 @property (nonatomic, copy) NSString *address;
+/*! city */
+@property (nonatomic, copy) NSString *city;
+/*! 区地址 */
+@property (nonatomic, copy) NSString *area;
+
+@property (nonatomic, copy) NSString *province;
+
+
 
 @end
 

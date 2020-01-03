@@ -12,16 +12,28 @@
 #import "ZBNEntryFooterView.h"
 #import "ZBNNewAddressVC.h"
 
+
+
 @interface ZBNMyAddressVC ()
 /*! 保存地址模型的数组 */
 @property (nonatomic, strong) NSMutableArray *addressArray;
 
 @property (nonatomic, weak) ZBNEntryFooterView *footerView;
+
+
 @end
 
 @implementation ZBNMyAddressVC
 
 static NSString * const ZBNMyAddressCellID = @"address";
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,6 +44,8 @@ static NSString * const ZBNMyAddressCellID = @"address";
     [self setupTable];
     // 设置底部的view
     [self setupFooterView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"popView" object:nil];
     
 }
 
@@ -98,7 +112,7 @@ static NSString * const ZBNMyAddressCellID = @"address";
                 NSMutableDictionary *params = [NSMutableDictionary dictionary];
                 params[@"uid"] = unmodel.uid;
                 params[@"token"] = unmodel.token;
-                params[@"id"] = model.id;
+                params[@"id"] = model.ID;
                 if (model.is_defualt == YES) {
                     // 如果原本就是默认地址,不做操作
                 } else {
@@ -125,7 +139,7 @@ static NSString * const ZBNMyAddressCellID = @"address";
                 NSMutableDictionary *params = [NSMutableDictionary dictionary];
                 params[@"uid"] = unmodel.uid;
                 params[@"token"] = unmodel.token;
-                params[@"id"] = model.id;
+                params[@"id"] = model.ID;
                 [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/Usersaddress/address_del" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
                     [weakSelf.addressArray removeObject:model];
                     [weakSelf.tableView reloadData];

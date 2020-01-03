@@ -76,7 +76,7 @@
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
         param[@"uid"] = unmodel.uid;
         param[@"token"] = unmodel.token;
-       [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/wallet/personal" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
+       [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNPersonURL params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
            self.model = [ZBNMineModel mj_objectWithKeyValues:serverInfo.response[@"data"]];
            // 如果是vip显示,不是就隐藏
            if (self.model.grade) {
@@ -85,7 +85,7 @@
                self.view.hidden = YES;
            }
            // 设置头像
-           [self.headImageV sd_setImageWithURL:[NSURL URLWithString:self.model.avator]];
+           self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
            // 设置用户名
            self.userName.text = [NSString stringWithFormat:@"%@",self.model.name];
            

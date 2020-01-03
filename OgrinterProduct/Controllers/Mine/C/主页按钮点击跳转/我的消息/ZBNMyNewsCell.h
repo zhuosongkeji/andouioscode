@@ -9,11 +9,15 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class ZBNMyNewsModel;
 @interface ZBNMyNewsCell : UITableViewCell
 
 /*! 注册cell */
 + (instancetype)registerCellForTable:(UITableView *)tableView;
+
+/*! 模型 */
+@property (nonatomic, strong) ZBNMyNewsModel *news;
+
 @end
 
 NS_ASSUME_NONNULL_END

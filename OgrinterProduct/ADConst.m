@@ -15,3 +15,10 @@ CGFloat const ZBNCommonMargin = 10;
 
 /*! 统一头部视图的高度 */
 CGFloat const ZBNHeaderH = 150;
+
+NSString * const ZBNPersonURL = @"http://andou.zhuosongkj.com/api/wallet/personal";
+
+NSString * const ZBNPersonSettingURL = @"http://andou.zhuosongkj.com/api/opinion/set";
+
+NSString * const ZBNSendVCodeURL = @"http://andou.zhuosongkj.com/api/login/send";
+

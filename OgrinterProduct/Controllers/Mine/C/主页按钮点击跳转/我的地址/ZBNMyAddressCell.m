@@ -48,7 +48,7 @@
     
     self.nameLabel.text = addModel.name;
     self.numberLabel.text = addModel.mobile;
-    self.addressLabel.text = [NSString stringWithFormat:@"%@%@%@%@",addModel.province_id,addModel.city_id,addModel.area_id,addModel.address];
+    self.addressLabel.text = [NSString stringWithFormat:@"%@%@%@%@",addModel.province,addModel.city,addModel.area,addModel.address];
     
 }
 
@@ -71,8 +71,12 @@
     }];
     
 }
+
+
 /*! 编辑按钮的点击 */
 - (IBAction)editBtnClick:(UIButton *)sender {
+    
+    
     
 }
 
