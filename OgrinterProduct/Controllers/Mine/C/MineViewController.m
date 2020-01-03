@@ -10,40 +10,88 @@
 
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "ZBNMineModel.h"
+#import "ZBNMineSettingModel.h"
 
 
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
 
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 
+
+/********************************begin-- 数据相关*************************************/
+/*! 头像 */
 @property (weak, nonatomic) IBOutlet UIImageView *headImageV;
-
+/*! vipView */
 @property (weak, nonatomic) IBOutlet UIView *vipView;
-
+/*! 用户名 */
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+/*! 等级 */
+@property (weak, nonatomic) IBOutlet UILabel *gradeLabel;
+/*! 模型 */
+@property (nonatomic, strong) ZBNMineModel *model;
+@property (nonatomic, strong) ZBNMineSettingModel *settingM;
+/********************************end-- 数据相关**************************************/
 @end
 
 @implementation MineViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 设置界面相关
+    [self setupUI];
+    // 加载数据
+    [self loadData];
+    
+    // 接收登录成功过的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"loginOK" object:nil];
+    
+}
+
+// 控制器销毁时调用
+- (void)dealloc
+{
+    // 移除通知
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"loginOK" object:nil];
+}
+
+#pragma mark -- UI
+- (void)setupUI
+{
     self.toTop.constant = kStatusBarAndNavigationBarH;
     self.mTableView.tableFooterView = [UILabel new];
     self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
     self.vipView.layer.cornerRadius = 10;
-    
-    
-    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    param[@"uid"] = @"19";
-    param[@"token"] = @"6c859a43fa849d491c270989b8508f75";
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/wallet/personal" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
-
-    }];
-    
-    
 }
 
+#pragma mark -- loadData
+- (void)loadData
+{
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+        param[@"uid"] = unmodel.uid;
+        param[@"token"] = unmodel.token;
+       [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNPersonURL params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
+           self.model = [ZBNMineModel mj_objectWithKeyValues:serverInfo.response[@"data"]];
+           // 如果是vip显示,不是就隐藏
+           if (self.model.grade) {
+               self.gradeLabel.text = [NSString stringWithFormat:@"%@", self.model.grade];
+           } else {
+               self.view.hidden = YES;
+           }
+           // 设置头像
+           self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
+           // 设置用户名
+           self.userName.text = [NSString stringWithFormat:@"%@",self.model.name];
+           
+           
+       }];
+}
 
 //MARK:-tableView
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -82,18 +130,13 @@
 
 
 
+/*! 设置按钮的点击 */
 - (IBAction)settingBtnClick:(UIButton *)sender {
     [self pushViewControllerWithString:@"ZBNMineSettingVC"];
     
-//    LoginViewController *vc = [[LoginViewController alloc] init];
-//    ADWeakSelf;
-//    vc.loginBtnClickTask = ^{
-//        [weakSelf dismissViewControllerAnimated:YES completion:nil];
-//    };
-//    vc.modalPresentationStyle = 0;
-//    [self presentViewController:vc animated:YES completion:nil];
-    
 }
+
+
 
 
 

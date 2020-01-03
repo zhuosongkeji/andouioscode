@@ -60,6 +60,11 @@
              Model * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];*/
             
             [HUDManager showTextHud:loginSuccess];
+            // 发送登录成功过得通知
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOK" object:nil];
+            // 退出登录界面
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
         }
         NSLog(@"%@",serverInfo);
     }];

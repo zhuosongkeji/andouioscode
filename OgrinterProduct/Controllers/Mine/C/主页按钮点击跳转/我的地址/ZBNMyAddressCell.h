@@ -19,6 +19,8 @@ typedef void(^DefaultBtnClickTask)(ZBNMyAddressModel *model);
 @property (nonatomic, strong) ZBNMyAddressModel *addModel;
 /*! 点击设置默认地址按钮的Block */
 @property (nonatomic, copy) DefaultBtnClickTask DefaultClickTask;
+
+@property (nonatomic, copy) void(^deleteAddClickTask)(ZBNMyAddressModel *model);
 /*! 注册cell */
 + (instancetype)registerCellForTable:(UITableView *)tableView;
 

@@ -131,7 +131,7 @@
                 <outlet property="nameLabel" destination="1dj-DL-tgR" id="teV-Sz-jKD"/>
                 <outlet property="numberLabel" destination="8AI-ZC-7iM" id="DgV-Ov-NEo"/>
             </connections>
-            <point key="canvasLocation" x="177" y="74"/>
+            <point key="canvasLocation" x="103" y="38"/>
         </tableViewCell>
     </objects>
     <resources>

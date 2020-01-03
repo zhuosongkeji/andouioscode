@@ -9,9 +9,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineViewController">
             <connections>
+                <outlet property="gradeLabel" destination="nPS-sA-YMQ" id="F2t-VQ-Awx"/>
                 <outlet property="headImageV" destination="2J5-SM-h3D" id="D8a-Me-yIX"/>
                 <outlet property="mTableView" destination="kGP-dV-NOj" id="XgD-j2-92t"/>
                 <outlet property="toTop" destination="Ib9-kd-ocA" id="rj0-9H-h1c"/>
+                <outlet property="userName" destination="nBt-rX-hP9" id="inX-uK-lML"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="vipView" destination="LyH-Q4-9Tt" id="8j0-lk-H8T"/>
             </connections>
@@ -60,12 +62,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyH-Q4-9Tt">
-                                        <rect key="frame" x="90" y="76" width="30" height="20"/>
+                                        <rect key="frame" x="90" y="76" width="40" height="20"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pM1-qf-S7n">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIP" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pM1-qf-S7n">
+                                                <rect key="frame" x="5" y="0.0" width="15" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="15" id="5Bi-GF-4ED"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter-CondensedBold" family="American Typewriter" pointSize="10"/>
                                                 <color key="textColor" red="0.19517872429999999" green="0.75638860210000003" blue="0.64232347899999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPS-sA-YMQ">
+                                                <rect key="frame" x="20" y="0.0" width="20" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -73,10 +84,13 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="pM1-qf-S7n" secondAttribute="bottom" id="7oK-cX-zPl"/>
                                             <constraint firstItem="pM1-qf-S7n" firstAttribute="top" secondItem="LyH-Q4-9Tt" secondAttribute="top" id="AIN-eT-xz9"/>
-                                            <constraint firstAttribute="trailing" secondItem="pM1-qf-S7n" secondAttribute="trailing" id="DGp-mV-oF9"/>
-                                            <constraint firstItem="pM1-qf-S7n" firstAttribute="leading" secondItem="LyH-Q4-9Tt" secondAttribute="leading" id="KE1-9V-VxC"/>
-                                            <constraint firstAttribute="width" constant="30" id="nkW-ra-8Fj"/>
+                                            <constraint firstItem="nPS-sA-YMQ" firstAttribute="leading" secondItem="pM1-qf-S7n" secondAttribute="trailing" id="ALl-p7-aOq"/>
+                                            <constraint firstItem="pM1-qf-S7n" firstAttribute="leading" secondItem="LyH-Q4-9Tt" secondAttribute="leading" constant="5" id="KE1-9V-VxC"/>
+                                            <constraint firstItem="nPS-sA-YMQ" firstAttribute="top" secondItem="LyH-Q4-9Tt" secondAttribute="top" id="b2b-4V-6zb"/>
+                                            <constraint firstAttribute="width" constant="40" id="nkW-ra-8Fj"/>
                                             <constraint firstAttribute="height" constant="20" id="prf-sP-wat"/>
+                                            <constraint firstAttribute="trailing" secondItem="nPS-sA-YMQ" secondAttribute="trailing" id="qIG-J9-9Qh"/>
+                                            <constraint firstAttribute="bottom" secondItem="nPS-sA-YMQ" secondAttribute="bottom" id="tha-CT-amd"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -521,7 +535,7 @@
                 <constraint firstAttribute="trailing" secondItem="kGP-dV-NOj" secondAttribute="trailing" id="JYB-Ix-DuZ"/>
                 <constraint firstAttribute="bottom" secondItem="kGP-dV-NOj" secondAttribute="bottom" id="vmt-1l-new"/>
             </constraints>
-            <point key="canvasLocation" x="-27613" y="611"/>
+            <point key="canvasLocation" x="-27406" y="1148"/>
         </view>
     </objects>
     <resources>

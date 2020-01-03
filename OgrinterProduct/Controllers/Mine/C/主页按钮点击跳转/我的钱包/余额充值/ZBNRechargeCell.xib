@@ -156,7 +156,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGr-dM-jme">
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGr-dM-jme">
                                 <rect key="frame" x="512" y="14" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="LBV-Wn-eE7"/>
@@ -164,6 +164,9 @@
                                 </constraints>
                                 <state key="normal" image="dati1"/>
                                 <state key="selected" image="多边形 1 拷贝 3"/>
+                                <connections>
+                                    <action selector="payBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Tv8-ad-HIC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -193,7 +196,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wo-hw-dU7">
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wo-hw-dU7">
                                 <rect key="frame" x="512" y="14" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="Q5c-Xq-DLu"/>
@@ -201,6 +204,9 @@
                                 </constraints>
                                 <state key="normal" image="dati1"/>
                                 <state key="selected" image="多边形 1 拷贝 3"/>
+                                <connections>
+                                    <action selector="payBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="IRK-J7-TvD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -230,7 +236,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hG-wb-2Ag">
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hG-wb-2Ag">
                                 <rect key="frame" x="512" y="14" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="LGy-Cd-xrd"/>
@@ -238,6 +244,9 @@
                                 </constraints>
                                 <state key="normal" image="dati1"/>
                                 <state key="selected" image="多边形 1 拷贝 3"/>
+                                <connections>
+                                    <action selector="payBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qzW-cu-rqJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -338,8 +347,15 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="LabelView" destination="dY1-sl-B9k" id="ivy-lD-bwA"/>
+                <outlet property="bankCardNumber" destination="STd-c6-h4S" id="Z9f-P3-LcP"/>
+                <outlet property="contactNumber" destination="QTT-bN-679" id="2G3-9j-eOs"/>
+                <outlet property="moneyLabel" destination="4hp-CG-wuQ" id="dP3-hO-v9q"/>
+                <outlet property="rechargeNumber" destination="pJs-io-LA1" id="sfg-nI-pXk"/>
+                <outlet property="unionPayBtn" destination="SGr-dM-jme" id="OHz-f5-X68"/>
+                <outlet property="weChartBtn" destination="7Wo-hw-dU7" id="66U-X9-wGe"/>
+                <outlet property="zfbBtn" destination="3hG-wb-2Ag" id="VGV-t9-QIA"/>
             </connections>
-            <point key="canvasLocation" x="-93" y="75"/>
+            <point key="canvasLocation" x="349" y="32"/>
         </tableViewCell>
     </objects>
     <resources>

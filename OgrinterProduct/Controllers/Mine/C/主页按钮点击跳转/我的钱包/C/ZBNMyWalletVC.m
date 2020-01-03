@@ -56,7 +56,7 @@
 - (void)setupHeadView
 {
     ZBNMyWalletHeadView *headV = [ZBNMyWalletHeadView viewFromXib];
-    headV.frame =CGRectMake(0, getRectNavAndStatusHight, self.view.width, 150);
+    headV.frame =CGRectMake(0, getRectNavAndStatusHight, self.view.width, ZBNHeaderH);
     [self.view addSubview:headV];
     self.headView = headV;
     ADWeakSelf;

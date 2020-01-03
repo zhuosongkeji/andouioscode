@@ -55,7 +55,7 @@
                 <constraint firstItem="BXl-u0-ndo" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="muK-kE-AAP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-42" y="147"/>
+            <point key="canvasLocation" x="-17" y="228"/>
         </view>
     </objects>
     <resources>

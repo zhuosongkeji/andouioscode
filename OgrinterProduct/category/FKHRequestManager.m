@@ -326,17 +326,25 @@ static AFHttpClientManager *client = nil;
                                             
                                             if ([[serverInfo.response objectForKey:@"code"] integerValue] == 202) {
                                                 NSLog(@"请登录");
-                                                UIWindow *window = [UIApplication sharedApplication].keyWindow;
-                                                LoginViewController *login = [[LoginViewController alloc]init];
-                                                UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:login];
-                                            [window.rootViewController presentViewController:nav animated:YES completion:^{
-                                                    
-                                                }];
                                                 
+                                                dispatch_main_async_safe(^{
+                                                    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+                                                    LoginViewController *login = [[LoginViewController alloc]init];
+//                                                    login.modalPresentationStyle = 0;
+                                                    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:login];
+                                                    nav.modalPresentationStyle = 0;
+                                                    [window.rootViewController presentViewController:nav animated:YES completion:^{
+                                                        
+                                                    }];
+                                                });
+                                                    
+                                                    
+                                                
+                                            
                                             }else{
                                                 dispatch_main_async_safe(^{
                                                     result(serverInfo);
-                                                })
+                                                });
                                             }
                                         }
                                         

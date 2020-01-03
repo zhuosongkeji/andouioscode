@@ -46,7 +46,6 @@
     _shoppingCartModel = shoppingCartModel;
     
     
-//    self.selectedBtn.selected = shoppingCartModel.isSelected;
     self.goodsImagev.image = [UIImage imageNamed:shoppingCartModel.image];
     self.goodsIntrolLabel.text = shoppingCartModel.name;
     self.goodsPrice.text = shoppingCartModel.money;
@@ -88,15 +87,20 @@
     
 }
 
-
+/*! 当购物车Cell选择按点击的时候 */
 - (IBAction)selecBtnClick:(UIButton *)sender {
     
-//    sender.selected = !sender.selected;
-//    self.shoppingCartModel.selected = YES;
-//    
-//    if ([self.delegate respondsToSelector:@selector(shoppingCartCellDidClickSelectedButton:)]) {
-//        [self.delegate shoppingCartCellDidClickSelectedButton:self];
-//    }
+    sender.selected = !sender.selected;
+    if (self.selectedBtn.selected == YES) {
+        self.shoppingCartModel.selected = YES;
+    } else {
+        self.shoppingCartModel.selected = NO;
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(shoppingCartCellDidClickSelectedButton:)]) {
+        [self.delegate shoppingCartCellDidClickSelectedButton:self];
+    }
+    
 }
 
 

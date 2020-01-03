@@ -10,7 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+@class ZBNMineSettingModel;
 @interface MineViewController : BaseViewController
+
 
 @end
 

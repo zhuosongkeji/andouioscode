@@ -46,7 +46,6 @@
 {
     // 发送网络请求 --> 因为这里是单组数据我就直接取值了
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/index/about" params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
-        NSLog(@"%@",serverInfo.response);
         // content
         self.aboutUsLabel.text = serverInfo.response[@"data"][@"content"];
         self.introLabel.text = serverInfo.response[@"data"][@"title"];
