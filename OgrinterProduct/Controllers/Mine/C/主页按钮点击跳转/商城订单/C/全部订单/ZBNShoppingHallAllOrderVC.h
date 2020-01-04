@@ -6,11 +6,11 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //  全部订单
 
-#import <UIKit/UIKit.h>
+#import "ZBNSHBaseOrderVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZBNShoppingHallAllOrderVC : UITableViewController
+@interface ZBNShoppingHallAllOrderVC : ZBNSHBaseOrderVC
 
 @end
 

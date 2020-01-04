@@ -9,11 +9,9 @@
 #import "ZBNWaitDeliverDetailVC.h"
 #import "ZBNWaitDeliverDetailCell.h"
 #import "ZBNSHApplyForRefundVC.h"
-#import "ZBNWaitPayHeaderView.h"
 
 @interface ZBNWaitDeliverDetailVC ()
 
-@property (nonatomic, weak) ZBNWaitPayHeaderView *headerView;
 
 @end
 
@@ -23,20 +21,11 @@
     [super viewDidLoad];
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self setHeaderView];
+   
 }
 
 
-- (void)setHeaderView
-{
-    ZBNWaitPayHeaderView *headerV = [ZBNWaitPayHeaderView viewFromXib];
-    headerV.height = 145;
-    headerV.setLabelOneText(@"待收货");
-    headerV.setSubLabelOneText(@"等待买家收货");
-    headerV.setImageVImage(@"组 3-3");
-    self.headerView = headerV;
-    self.tableView.tableHeaderView = headerV;
-}
+
 
 
 #pragma mark - Table view data source

@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNSHGoAndPayDetailVC : UITableViewController
 
+@property (nonatomic, copy) NSString *getOrderNum;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -1,45 +1,33 @@
 //
-//  ZBNSHGoAndPayDetailVC.m
+//  ZBNSHZDeliverGoodsDOVC.m
 //  OgrinterProduct
 //
-//  Created by 周芳圆 on 2019/12/20.
-//  Copyright © 2019 RXF. All rights reserved.
-//
+//  Created by 周芳圆 on 2020/1/4.
+//  Copyright © 2020 RXF. All rights reserved.
+//  待发货订单详情
 
-#import "ZBNSHGoAndPayDetailVC.h"
+#import "ZBNSHZDeliverGoodsDOVC.h"
 
-#import "ZBNSHGoAndPayDetailCell.h"
-#import "ZBNSHCommonHeadV.h"
-
-#import "ZBNSHOrderDetailComM.h"
-#import "ZBNSHOrderUserInfoM.h"
+#import "ZBNSHZDeliverGoodsDOCell.h"
 #import "ZBNSHOrderDetailsM.h"
+#import "ZBNSHOrderDetailComM.h"
 
-@interface ZBNSHGoAndPayDetailVC ()
+@interface ZBNSHZDeliverGoodsDOVC ()
 
-@property (nonatomic, weak) ZBNSHCommonHeadV *headV;
-
-@property (nonatomic, strong) ZBNSHOrderUserInfoM *userInfoM;
 @property (nonatomic, strong) ZBNSHOrderDetailsM *detailsM;
 @property (nonatomic, strong) ZBNSHOrderDetailComM *comM;
 
-@property (nonatomic, strong) NSMutableArray *detailArr;
-
 @end
 
-@implementation ZBNSHGoAndPayDetailVC
+@implementation ZBNSHZDeliverGoodsDOVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // 设置UI视图
+    // 设置UI
     [self setupUI];
-    // 设置头部视图
-    [self setupHeaderView];
     // 加载数据
     [self loadData];
-
-    
 }
 
 
@@ -50,16 +38,6 @@
     self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
 }
 
-- (void)setupHeaderView
-{
-    ZBNSHCommonHeadV *headV = [ZBNSHCommonHeadV viewFromXib];
-    headV.height = ZBNHeaderH;
-    headV.setLabelOneText(@"待付款").setSubLabelOneText(@"等待买家付款").setImageVImage(@"组 3-2");
-    self.tableView.tableHeaderView = headV;
-    self.headV = headV;
-}
-
-/*! 加载模型数据 */
 - (void)loadData
 {
     ADWeakSelf;
@@ -70,27 +48,24 @@
         params[@"uid"] = @"1";
     //    params[@"token"] = unmodel.token;
         params[@"token"] = @"94e31eee8b8237c4d98e965dbcbc44b5";
-        params[@"order_sn"] = self.getOrderNum;
+        params[@"order_sn"] = self.order_num;
         [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/order/details" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
             self.comM = [ZBNSHOrderDetailComM mj_objectWithKeyValues:serverInfo.response[@"data"]];
             self.detailsM = [ZBNSHOrderDetailsM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"details"][0]];
-            NSLog(@"%@1111111",self.detailsM.attr_value);
             [weakSelf.tableView reloadData];
         }];
 }
 
+
 #pragma mark - Table view data source
 
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZBNSHGoAndPayDetailCell *cell = [ZBNSHGoAndPayDetailCell regiserCellForTable:tableView];
+    ZBNSHZDeliverGoodsDOCell *cell= [ZBNSHZDeliverGoodsDOCell regiserCellForTable:tableView];
     cell.comM = self.comM;
     cell.detailM = self.detailsM;
     return cell;
@@ -98,8 +73,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 500;
+    return 495;
 }
-
 
 @end

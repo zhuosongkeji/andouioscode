@@ -14,10 +14,9 @@
 
 @implementation ZBNSHWaitEvaluateOrderVC
 
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
+- (ZBNCommonType)type
+{
+    return 50;
 }
+
 @end

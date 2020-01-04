@@ -32,6 +32,37 @@
     self.leftTime = 60;
 }
 
+
+/*! 确认修改点击 */
+- (IBAction)changePwdClick:(UIButton *)sender {
+   
+    [self sendRequestChangePwd];
+}
+
+
+- (void)sendRequestChangePwd
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"phone"] = self.inputPhoneNumT.text;
+    params[@"verify"] = self.inputVCodeT.text;
+    params[@"new_password"] = self.inputNewPwdT.text;
+    // 发送网络请求
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/login/forget" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([[serverInfo.response  valueForKey:@"code"] integerValue] == 200) {
+            [HUDManager showTextHud:@"修改成功"];
+            [self.navigationController performSelector:@selector(popViewControllerAnimated:) withObject:nil afterDelay:2];
+        } else {
+            [HUDManager showTextHud:@"验证码或手机号填写错误"];
+        }
+    }];
+}
+
+
+- (void)popView
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 /*! 获取验证码点击 */
 - (IBAction)getVCodeBtnClick:(UIButton *)sender {
     

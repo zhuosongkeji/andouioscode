@@ -6,11 +6,11 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //  等待收货订单
 
-#import <UIKit/UIKit.h>
+#import "ZBNSHBaseOrderVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZBNSHWaitReceivingGoodsOrderVC : UITableViewController
+@interface ZBNSHWaitReceivingGoodsOrderVC : ZBNSHBaseOrderVC
 
 @end
 

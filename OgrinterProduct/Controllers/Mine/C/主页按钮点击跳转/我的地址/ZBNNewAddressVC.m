@@ -56,6 +56,8 @@
     [self setupPickerView];
     // 加载数据
     [self loadData];
+    
+    self.is_defualt = @0;
 
 }
 
@@ -77,6 +79,7 @@
 
 
 
+
 /*! 新增地址按钮的点击 */
 - (IBAction)newAddressBtnClick:(UIButton *)sender {
     
@@ -88,13 +91,19 @@
     param[@"uid"] = unmodel.uid;
     param[@"token"] = unmodel.token;
     param[@"name"] = self.reciveGoodsP.text;
-    NSLog(@"%@",self.reciveGoodsP.text);
     param[@"mobile"] = self.phoneNum.text;
     param[@"province_id"] = self.IDPro;
     param[@"city_id"] = self.IDCity;
     param[@"area_id"] = self.IDArea;
     param[@"address"] = self.detailAddTex.text;
-    param[@"is_defualt"] = self.is_defualt;
+    if (self.is_defualt) {
+        param[@"is_defualt"] = self.is_defualt;
+    } else {
+        self.is_defualt = @0;
+        param[@"is_defualt"] = self.is_defualt;
+    }
+    
+    
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/Usersaddress/address_add" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
         
             

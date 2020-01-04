@@ -19,3 +19,5 @@ UIKIT_EXTERN NSString * const ZBNPersonURL;
 UIKIT_EXTERN NSString * const ZBNPersonSettingURL;
 /*! 发送短信验证的URL */
 UIKIT_EXTERN NSString * const ZBNSendVCodeURL;
+/*! 积分明细URL */
+UIKIT_EXTERN NSString * const ZBNIntegerURL;

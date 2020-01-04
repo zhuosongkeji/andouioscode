@@ -22,3 +22,4 @@ NSString * const ZBNPersonSettingURL = @"http://andou.zhuosongkj.com/api/opinion
 
 NSString * const ZBNSendVCodeURL = @"http://andou.zhuosongkj.com/api/login/send";
 
+NSString * const ZBNIntegerURL = @"http://andou.zhuosongkj.com/api/wallet/integral";

@@ -43,11 +43,11 @@
 - (void)setupSegmen
 {
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.segmentBarVC.segmentBar.frame = CGRectMake(0,0 , self.view.width, 50);
+    self.segmentBarVC.segmentBar.frame = CGRectMake(0,getRectNavAndStatusHight, self.view.width, 50);
     self.segmentBarVC.view.frame = CGRectMake(0, 0, self.view.width, self.view.height);
     [self.view addSubview:self.segmentBarVC.view];
     //添加控制器
-    NSArray *items = @[@"全部订单", @"待付款",@"待发货",@"待收货",@"待评价",@"退货/款"];
+    NSArray *items = @[@"全部订单", @"待付款",@"待发货",@"待收货",@"待评价"];
 
     ZBNShoppingHallAllOrderVC *vc1 = [[ZBNShoppingHallAllOrderVC alloc] init];
         
@@ -59,9 +59,9 @@
     
     ZBNSHWaitEvaluateOrderVC *vc5 = [[ZBNSHWaitEvaluateOrderVC alloc] init];
     
-    ZBNSHReturnGoodsOrderVC *vc6 = [[ZBNSHReturnGoodsOrderVC alloc] init];
+//    ZBNSHReturnGoodsOrderVC *vc6 = [[ZBNSHReturnGoodsOrderVC alloc] init];
     
-        [self.segmentBarVC setUpWithItems:items childVCs:@[vc1, vc2, vc4, vc3, vc5, vc6]];
+        [self.segmentBarVC setUpWithItems:items childVCs:@[vc1, vc2, vc4, vc3, vc5]];
         //设置样式
         [self.segmentBarVC.segmentBar updateWithConfig:^(ZBNSegmenBarConfig *config) {
             config.itemNColor([UIColor blackColor]).itemSColor([UIColor colorWithRed:50/255.0 green:193/255.0 blue:164/255.0 alpha:1]).itemF([UIFont systemFontOfSize:13]).itemBColor([UIColor whiteColor]).indicatorH(0);
@@ -69,7 +69,7 @@
         }];
 
         //少量标签需要均分的情形
-        self.segmentBarVC.segmentBar.isDivideEqually = NO;
+        self.segmentBarVC.segmentBar.isDivideEqually = YES;
 }
 
 @end

@@ -12,7 +12,7 @@
 @interface ZBNMyIntegerHeadView ()
 /*! 我的积分 */
 @property (weak, nonatomic) IBOutlet UILabel *myIntegerLabel;
-
+/*! 模型 */
 @property (nonatomic, strong) ZBNMyIntegralModel *integerM;
 @end
 
@@ -23,6 +23,7 @@
 {
     [super awakeFromNib];
     
+    // 加载数据
     [self loadData];
     
 }
@@ -44,8 +45,6 @@
         } else {
             weakSelf.myIntegerLabel.text = @"您没得积分喔";
         }
-        
-        NSLog(@"我的积分%@",weakSelf.integerM.integral);
     }];
 }
 

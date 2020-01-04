@@ -222,7 +222,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="8bg-ys-xtY"/>
-            <point key="canvasLocation" x="-586" y="92"/>
+            <point key="canvasLocation" x="83" y="94"/>
         </tableViewCell>
     </objects>
     <resources>

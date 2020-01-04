@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNMyIntegralModel : NSObject
+
 /*! 上级id */
 @property (nonatomic, copy) NSString *superior_id;
 /*! 流动金额 */
@@ -23,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *state;
 /*! 总积分 */
 @property (nonatomic, copy) NSString *integral;
+
 @end
 
 NS_ASSUME_NONNULL_END
