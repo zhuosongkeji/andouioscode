@@ -10,6 +10,8 @@
 
 #import "ZBNSHGoAndPayDetailVC.h"
 #import "ZBNSHZDeliverGoodsDOVC.h"
+#import "ZBNWaitDeliverDetailVC.h"
+#import "ZBNSHGoAndEvaluateVC.h"  // 发表评论控制器
 
 @interface ZBNSHCommonCell ()
 /*! 商家图标 */
@@ -68,7 +70,9 @@
 - (IBAction)firBtnClick:(UIButton *)sender {
     
     if ([self.commonM.status integerValue] == 40) {
-        NSLog(@"待收货的订单详情");
+        ZBNWaitDeliverDetailVC *vc = [[ZBNWaitDeliverDetailVC alloc] init];
+        vc.getOrderNum = self.commonM.order_id;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
     } else if ([self.commonM.status integerValue] == 50) {
         NSLog(@"待评价的查看物流");
     }
@@ -109,8 +113,9 @@
         [[weakSelf viewController].navigationController pushViewController:vc animated:YES];
     } else if ([self.commonM.status integerValue] == 40) {
         NSLog(@"待收货的确认收货");
-    } else if ([self.commonM.status integerValue] == 50) {
-        NSLog(@"待评价的去评价");
+    } else if ([self.commonM.status integerValue] == 50) { // 待评价的去评价点击
+        ZBNSHGoAndEvaluateVC *VC = [[ZBNSHGoAndEvaluateVC alloc] init];
+        [[self viewController].navigationController pushViewController:VC animated:YES];
     }
     
 }

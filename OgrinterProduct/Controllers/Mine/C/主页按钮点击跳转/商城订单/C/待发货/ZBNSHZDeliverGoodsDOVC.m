@@ -11,11 +11,15 @@
 #import "ZBNSHZDeliverGoodsDOCell.h"
 #import "ZBNSHOrderDetailsM.h"
 #import "ZBNSHOrderDetailComM.h"
+#import "ZBNSHCommonHeadV.h"
 
 @interface ZBNSHZDeliverGoodsDOVC ()
-
+/*! 模型数据 */
 @property (nonatomic, strong) ZBNSHOrderDetailsM *detailsM;
+/*! 模型数据 */
 @property (nonatomic, strong) ZBNSHOrderDetailComM *comM;
+
+@property (nonatomic, weak) ZBNSHCommonHeadV *headV;
 
 @end
 
@@ -26,13 +30,25 @@
     
     // 设置UI
     [self setupUI];
+    // 设置头部视图
+    [self setupHeadV];
     // 加载数据
     [self loadData];
 }
 
 
+- (void)setupHeadV
+{
+    ZBNSHCommonHeadV *headV = [ZBNSHCommonHeadV viewFromXib];
+    headV.height = ZBNHeaderH;
+    headV.setImageVImage(@"组 3").setLabelOneText(@"待发货").setSubLabelOneText(@"商家正积极的给您发货喔");
+    self.tableView.tableHeaderView = headV;
+    self.headV = headV;
+}
+
 - (void)setupUI
 {
+    self.navigationItem.title = @"订单详情";
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);

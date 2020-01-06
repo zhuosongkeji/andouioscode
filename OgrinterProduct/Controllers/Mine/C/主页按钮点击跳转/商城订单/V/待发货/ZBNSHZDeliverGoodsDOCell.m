@@ -65,6 +65,15 @@
     self.address.text = comM.userinfo.address;
     // 电话
     self.phone_num.text = comM.userinfo.mobile;
+    // 合计
+    self.total_money.text = comM.order_money;
+    // 积分
+    self.integer.text = comM.integral;
+    // 运费
+    self.shipping_free.text = comM.shipping_free;
+    // 实际付款
+    self.pay_money.text = comM.pay_money;
+    // 付款方式
 
 }
 

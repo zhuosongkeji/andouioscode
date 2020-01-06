@@ -14,7 +14,9 @@
 CGFloat const ZBNCommonMargin = 10;
 
 /*! 统一头部视图的高度 */
-CGFloat const ZBNHeaderH = 150;
+CGFloat const ZBNHeaderH = 120;
+
+CGFloat const ZBNFooterH = 120;
 
 NSString * const ZBNPersonURL = @"http://andou.zhuosongkj.com/api/wallet/personal";
 

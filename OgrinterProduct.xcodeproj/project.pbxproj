@@ -190,6 +190,14 @@
 		F411AE4C23BDF5E1006016D2 /* ZBNChangePwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F411AE4A23BDF5E1006016D2 /* ZBNChangePwdVC.m */; };
 		F411AE4D23BDF5E1006016D2 /* ZBNChangePwdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F411AE4B23BDF5E1006016D2 /* ZBNChangePwdVC.xib */; };
 		F411AE5023BED041006016D2 /* ZBNMyNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F411AE4F23BED041006016D2 /* ZBNMyNewsModel.m */; };
+		F41B748E23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F41B748D23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.m */; };
+		F41B749223C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F41B749023C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.m */; };
+		F41B749323C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41B749123C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.xib */; };
+		F41B749723C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F41B749523C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.m */; };
+		F41B749823C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41B749623C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.xib */; };
+		F41B749B23C2D9BE0056DC78 /* ZBNSHReadEvaluateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F41B749A23C2D9BE0056DC78 /* ZBNSHReadEvaluateVC.m */; };
+		F41B74A423C2DA040056DC78 /* ZBNSHReadEvaluateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F41B74A223C2DA040056DC78 /* ZBNSHReadEvaluateCell.m */; };
+		F41B74A523C2DA040056DC78 /* ZBNSHReadEvaluateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41B74A323C2DA040056DC78 /* ZBNSHReadEvaluateCell.xib */; };
 		F43E42E523BC748B00D33A7F /* ZBNProvince.m in Sources */ = {isa = PBXBuildFile; fileRef = F43E42E423BC748B00D33A7F /* ZBNProvince.m */; };
 		F43E42E823BC749A00D33A7F /* ZBNCity.m in Sources */ = {isa = PBXBuildFile; fileRef = F43E42E723BC749A00D33A7F /* ZBNCity.m */; };
 		F43E42EB23BC74AC00D33A7F /* ZBNArea.m in Sources */ = {isa = PBXBuildFile; fileRef = F43E42EA23BC74AC00D33A7F /* ZBNArea.m */; };
@@ -256,13 +264,9 @@
 		F476A48523A7682C00E3018A /* ZBNMyCollectionCommenCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A41223A7682900E3018A /* ZBNMyCollectionCommenCell.m */; };
 		F476A48623A7682C00E3018A /* ZBNMyCollectionCommenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F476A41323A7682900E3018A /* ZBNMyCollectionCommenCell.xib */; };
 		F476A48723A7682C00E3018A /* ZBNMyCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A41423A7682900E3018A /* ZBNMyCollectionVC.m */; };
-		F476A48823A7682C00E3018A /* ZBNMerchantEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A41823A7682A00E3018A /* ZBNMerchantEntryCell.m */; };
 		F476A48923A7682C00E3018A /* ZBNEntryFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F476A41C23A7682A00E3018A /* ZBNEntryFooterView.xib */; };
 		F476A48A23A7682C00E3018A /* ZBNEntryFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A41D23A7682A00E3018A /* ZBNEntryFooterView.m */; };
-		F476A48B23A7682C00E3018A /* ZBNMerchantEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F476A41E23A7682A00E3018A /* ZBNMerchantEntryCell.xib */; };
 		F476A49223A7682C00E3018A /* ZBNShoppingMallEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A42B23A7682A00E3018A /* ZBNShoppingMallEntryVC.m */; };
-		F476A49323A7682C00E3018A /* ZBNMerchantEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = F476A42D23A7682A00E3018A /* ZBNMerchantEntry.xib */; };
-		F476A49423A7682C00E3018A /* ZBNMerchantEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A42E23A7682A00E3018A /* ZBNMerchantEntry.m */; };
 		F476A49523A7682C00E3018A /* ZBNHotelEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A42F23A7682A00E3018A /* ZBNHotelEntryVC.m */; };
 		F476A49623A7682C00E3018A /* ZBNMyIntegralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A43123A7682A00E3018A /* ZBNMyIntegralVC.m */; };
 		F476A49723A7682C00E3018A /* ZBNMyIntegerHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A43423A7682A00E3018A /* ZBNMyIntegerHeadView.m */; };
@@ -280,6 +284,9 @@
 		F476A4B223A783E200E3018A /* ZBNWalletRechargeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A4B123A783E200E3018A /* ZBNWalletRechargeVC.m */; };
 		F476A4B623A7844A00E3018A /* ZBNRechargeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A4B423A7844A00E3018A /* ZBNRechargeCell.m */; };
 		F476A4B723A7844A00E3018A /* ZBNRechargeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F476A4B523A7844A00E3018A /* ZBNRechargeCell.xib */; };
+		F4917C7923C312CA00C05CFA /* ZBNMerchantEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4917C7723C312C900C05CFA /* ZBNMerchantEntryVC.m */; };
+		F4917C8223C3132C00C05CFA /* ZBNMerchantEntryTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4917C8023C3132C00C05CFA /* ZBNMerchantEntryTabCell.m */; };
+		F4917C8323C3132C00C05CFA /* ZBNMerchantEntryTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4917C8123C3132C00C05CFA /* ZBNMerchantEntryTabCell.xib */; };
 		F49B6D3D23B9EF2100F1BEBB /* ZBNMineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F49B6D3C23B9EF2100F1BEBB /* ZBNMineModel.m */; };
 		F4ADBE3523B9A28100B62E46 /* ADConst.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ADBE3423B9A28000B62E46 /* ADConst.m */; };
 		F4ADBE3823B9A4BA00B62E46 /* ZBNMyIntegralModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ADBE3723B9A4BA00B62E46 /* ZBNMyIntegralModel.m */; };
@@ -287,8 +294,6 @@
 		F4B6978823BF271300CB0014 /* ZBNSHCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B6978623BF271300CB0014 /* ZBNSHCommonCell.m */; };
 		F4B6978923BF271300CB0014 /* ZBNSHCommonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B6978723BF271300CB0014 /* ZBNSHCommonCell.xib */; };
 		F4B6978C23BF315700CB0014 /* ZBNSHCommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B6978B23BF315700CB0014 /* ZBNSHCommonModel.m */; };
-		F4B6978F23BF413400CB0014 /* ZBNSHWaitReceivingGoodsOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B6978E23BF413300CB0014 /* ZBNSHWaitReceivingGoodsOrderCell.m */; };
-		F4B6979123BF413D00CB0014 /* ZBNSHWaitReceivingGoodsOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B6979023BF413D00CB0014 /* ZBNSHWaitReceivingGoodsOrderCell.xib */; };
 		F4B6979423BF424B00CB0014 /* ZBNSHCommonHeadV.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B6979323BF424B00CB0014 /* ZBNSHCommonHeadV.m */; };
 		F4B6979623BF425D00CB0014 /* ZBNSHCommonHeadV.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B6979523BF425D00CB0014 /* ZBNSHCommonHeadV.xib */; };
 		F4CD169023C0310D0039CE49 /* ZBNSHBaseOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CD168F23C0310D0039CE49 /* ZBNSHBaseOrderVC.m */; };
@@ -298,6 +303,7 @@
 		F4CD169D23C093300039CE49 /* ZBNSHZDeliverGoodsDOVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CD169C23C093300039CE49 /* ZBNSHZDeliverGoodsDOVC.m */; };
 		F4CD16A123C093590039CE49 /* ZBNSHZDeliverGoodsDOCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CD169F23C093590039CE49 /* ZBNSHZDeliverGoodsDOCell.m */; };
 		F4CD16A223C093590039CE49 /* ZBNSHZDeliverGoodsDOCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4CD16A023C093590039CE49 /* ZBNSHZDeliverGoodsDOCell.xib */; };
+		F4D916AD23C33B7A003EBE20 /* UIBarButtonItem+ZBNExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D916AC23C33B7A003EBE20 /* UIBarButtonItem+ZBNExtension.m */; };
 		F4DBD0F123A8BA0C0086C717 /* ZBNNewAddressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DBD0F023A8BA0C0086C717 /* ZBNNewAddressVC.xib */; };
 		F4E6A7A023B75140006721E9 /* FKHRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6A79F23B75140006721E9 /* FKHRequestManager.m */; };
 		F4E6A7A923B753F2006721E9 /* ZBNMineFeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6A7A223B753F1006721E9 /* ZBNMineFeedbackVC.m */; };
@@ -661,6 +667,19 @@
 		F411AE4B23BDF5E1006016D2 /* ZBNChangePwdVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNChangePwdVC.xib; sourceTree = "<group>"; };
 		F411AE4E23BED041006016D2 /* ZBNMyNewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNMyNewsModel.h; sourceTree = "<group>"; };
 		F411AE4F23BED041006016D2 /* ZBNMyNewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNMyNewsModel.m; sourceTree = "<group>"; };
+		F41B748C23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHGoAndEvaluateVC.h; sourceTree = "<group>"; };
+		F41B748D23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHGoAndEvaluateVC.m; sourceTree = "<group>"; };
+		F41B748F23C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHGoAndEvaluateCell.h; sourceTree = "<group>"; };
+		F41B749023C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHGoAndEvaluateCell.m; sourceTree = "<group>"; };
+		F41B749123C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNSHGoAndEvaluateCell.xib; sourceTree = "<group>"; };
+		F41B749423C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHEvaluateSuccessVC.h; sourceTree = "<group>"; };
+		F41B749523C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHEvaluateSuccessVC.m; sourceTree = "<group>"; };
+		F41B749623C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNSHEvaluateSuccessVC.xib; sourceTree = "<group>"; };
+		F41B749923C2D9BE0056DC78 /* ZBNSHReadEvaluateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHReadEvaluateVC.h; sourceTree = "<group>"; };
+		F41B749A23C2D9BE0056DC78 /* ZBNSHReadEvaluateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHReadEvaluateVC.m; sourceTree = "<group>"; };
+		F41B74A123C2DA040056DC78 /* ZBNSHReadEvaluateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHReadEvaluateCell.h; sourceTree = "<group>"; };
+		F41B74A223C2DA040056DC78 /* ZBNSHReadEvaluateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHReadEvaluateCell.m; sourceTree = "<group>"; };
+		F41B74A323C2DA040056DC78 /* ZBNSHReadEvaluateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNSHReadEvaluateCell.xib; sourceTree = "<group>"; };
 		F43E42E323BC748B00D33A7F /* ZBNProvince.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNProvince.h; sourceTree = "<group>"; };
 		F43E42E423BC748B00D33A7F /* ZBNProvince.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNProvince.m; sourceTree = "<group>"; };
 		F43E42E623BC749A00D33A7F /* ZBNCity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNCity.h; sourceTree = "<group>"; };
@@ -779,18 +798,12 @@
 		F476A41423A7682900E3018A /* ZBNMyCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNMyCollectionVC.m; sourceTree = "<group>"; };
 		F476A41523A7682900E3018A /* ZBNMyCollectionCommenCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNMyCollectionCommenCell.h; sourceTree = "<group>"; };
 		F476A41623A7682900E3018A /* ZBNMyCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNMyCollectionVC.h; sourceTree = "<group>"; };
-		F476A41823A7682A00E3018A /* ZBNMerchantEntryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNMerchantEntryCell.m; sourceTree = "<group>"; };
 		F476A41923A7682A00E3018A /* ZBNShoppingMallEntryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNShoppingMallEntryVC.h; sourceTree = "<group>"; };
 		F476A41B23A7682A00E3018A /* ZBNEntryFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNEntryFooterView.h; sourceTree = "<group>"; };
 		F476A41C23A7682A00E3018A /* ZBNEntryFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZBNEntryFooterView.xib; sourceTree = "<group>"; };
 		F476A41D23A7682A00E3018A /* ZBNEntryFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNEntryFooterView.m; sourceTree = "<group>"; };
-		F476A41E23A7682A00E3018A /* ZBNMerchantEntryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZBNMerchantEntryCell.xib; sourceTree = "<group>"; };
 		F476A41F23A7682A00E3018A /* ZBNHotelEntryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNHotelEntryVC.h; sourceTree = "<group>"; };
-		F476A42023A7682A00E3018A /* ZBNMerchantEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNMerchantEntry.h; sourceTree = "<group>"; };
 		F476A42B23A7682A00E3018A /* ZBNShoppingMallEntryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNShoppingMallEntryVC.m; sourceTree = "<group>"; };
-		F476A42C23A7682A00E3018A /* ZBNMerchantEntryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNMerchantEntryCell.h; sourceTree = "<group>"; };
-		F476A42D23A7682A00E3018A /* ZBNMerchantEntry.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZBNMerchantEntry.xib; sourceTree = "<group>"; };
-		F476A42E23A7682A00E3018A /* ZBNMerchantEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNMerchantEntry.m; sourceTree = "<group>"; };
 		F476A42F23A7682A00E3018A /* ZBNHotelEntryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNHotelEntryVC.m; sourceTree = "<group>"; };
 		F476A43123A7682A00E3018A /* ZBNMyIntegralVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNMyIntegralVC.m; sourceTree = "<group>"; };
 		F476A43223A7682A00E3018A /* ZBNMyIntegerHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNMyIntegerHeadView.h; sourceTree = "<group>"; };
@@ -820,6 +833,11 @@
 		F476A4B323A7844A00E3018A /* ZBNRechargeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNRechargeCell.h; sourceTree = "<group>"; };
 		F476A4B423A7844A00E3018A /* ZBNRechargeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNRechargeCell.m; sourceTree = "<group>"; };
 		F476A4B523A7844A00E3018A /* ZBNRechargeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNRechargeCell.xib; sourceTree = "<group>"; };
+		F4917C7723C312C900C05CFA /* ZBNMerchantEntryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZBNMerchantEntryVC.m; path = "/Users/zhoufangyuan/Desktop/最新项目/andouioscode/OgrinterProduct/Controllers/Mine/C/主页按钮点击跳转/商家入驻/ZBNMerchantEntryVC.m"; sourceTree = "<absolute>"; };
+		F4917C7823C312CA00C05CFA /* ZBNMerchantEntryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZBNMerchantEntryVC.h; path = "/Users/zhoufangyuan/Desktop/最新项目/andouioscode/OgrinterProduct/Controllers/Mine/C/主页按钮点击跳转/商家入驻/ZBNMerchantEntryVC.h"; sourceTree = "<absolute>"; };
+		F4917C7F23C3132C00C05CFA /* ZBNMerchantEntryTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNMerchantEntryTabCell.h; sourceTree = "<group>"; };
+		F4917C8023C3132C00C05CFA /* ZBNMerchantEntryTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNMerchantEntryTabCell.m; sourceTree = "<group>"; };
+		F4917C8123C3132C00C05CFA /* ZBNMerchantEntryTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNMerchantEntryTabCell.xib; sourceTree = "<group>"; };
 		F49B6D3B23B9EF2100F1BEBB /* ZBNMineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNMineModel.h; sourceTree = "<group>"; };
 		F49B6D3C23B9EF2100F1BEBB /* ZBNMineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNMineModel.m; sourceTree = "<group>"; };
 		F4ADBE3323B9A28000B62E46 /* ADConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADConst.h; sourceTree = "<group>"; };
@@ -833,9 +851,6 @@
 		F4B6978723BF271300CB0014 /* ZBNSHCommonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNSHCommonCell.xib; sourceTree = "<group>"; };
 		F4B6978A23BF315700CB0014 /* ZBNSHCommonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHCommonModel.h; sourceTree = "<group>"; };
 		F4B6978B23BF315700CB0014 /* ZBNSHCommonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHCommonModel.m; sourceTree = "<group>"; };
-		F4B6978D23BF413300CB0014 /* ZBNSHWaitReceivingGoodsOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNSHWaitReceivingGoodsOrderCell.h; sourceTree = "<group>"; };
-		F4B6978E23BF413300CB0014 /* ZBNSHWaitReceivingGoodsOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNSHWaitReceivingGoodsOrderCell.m; sourceTree = "<group>"; };
-		F4B6979023BF413D00CB0014 /* ZBNSHWaitReceivingGoodsOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZBNSHWaitReceivingGoodsOrderCell.xib; sourceTree = "<group>"; };
 		F4B6979223BF424B00CB0014 /* ZBNSHCommonHeadV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHCommonHeadV.h; sourceTree = "<group>"; };
 		F4B6979323BF424B00CB0014 /* ZBNSHCommonHeadV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHCommonHeadV.m; sourceTree = "<group>"; };
 		F4B6979523BF425D00CB0014 /* ZBNSHCommonHeadV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNSHCommonHeadV.xib; sourceTree = "<group>"; };
@@ -852,6 +867,8 @@
 		F4CD169E23C093590039CE49 /* ZBNSHZDeliverGoodsDOCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHZDeliverGoodsDOCell.h; sourceTree = "<group>"; };
 		F4CD169F23C093590039CE49 /* ZBNSHZDeliverGoodsDOCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHZDeliverGoodsDOCell.m; sourceTree = "<group>"; };
 		F4CD16A023C093590039CE49 /* ZBNSHZDeliverGoodsDOCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNSHZDeliverGoodsDOCell.xib; sourceTree = "<group>"; };
+		F4D916AB23C33B7A003EBE20 /* UIBarButtonItem+ZBNExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+ZBNExtension.h"; sourceTree = "<group>"; };
+		F4D916AC23C33B7A003EBE20 /* UIBarButtonItem+ZBNExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+ZBNExtension.m"; sourceTree = "<group>"; };
 		F4DBD0F023A8BA0C0086C717 /* ZBNNewAddressVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNNewAddressVC.xib; sourceTree = "<group>"; };
 		F4E6A79E23B75140006721E9 /* FKHRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKHRequestManager.h; sourceTree = "<group>"; };
 		F4E6A79F23B75140006721E9 /* FKHRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKHRequestManager.m; sourceTree = "<group>"; };
@@ -1525,6 +1542,8 @@
 				A10A9C9D239A5B640049A0D2 /* Img+lable.m */,
 				A10A9C9B239A5B640049A0D2 /* UIButton+Ex.h */,
 				A10A9C9A239A5B640049A0D2 /* UIButton+Ex.m */,
+				F4D916AB23C33B7A003EBE20 /* UIBarButtonItem+ZBNExtension.h */,
+				F4D916AC23C33B7A003EBE20 /* UIBarButtonItem+ZBNExtension.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -2273,18 +2292,17 @@
 		F476A41723A7682A00E3018A /* 商家入驻 */ = {
 			isa = PBXGroup;
 			children = (
+				F4917C7823C312CA00C05CFA /* ZBNMerchantEntryVC.h */,
+				F4917C7723C312C900C05CFA /* ZBNMerchantEntryVC.m */,
+				F4917C7F23C3132C00C05CFA /* ZBNMerchantEntryTabCell.h */,
+				F4917C8023C3132C00C05CFA /* ZBNMerchantEntryTabCell.m */,
+				F4917C8123C3132C00C05CFA /* ZBNMerchantEntryTabCell.xib */,
 				F476A42123A7682A00E3018A /* ZBNEntryCell */,
 				F476A41A23A7682A00E3018A /* ZBNEntryView */,
-				F476A41823A7682A00E3018A /* ZBNMerchantEntryCell.m */,
-				F476A41923A7682A00E3018A /* ZBNShoppingMallEntryVC.h */,
-				F476A41E23A7682A00E3018A /* ZBNMerchantEntryCell.xib */,
-				F476A42023A7682A00E3018A /* ZBNMerchantEntry.h */,
-				F476A42E23A7682A00E3018A /* ZBNMerchantEntry.m */,
-				F476A42B23A7682A00E3018A /* ZBNShoppingMallEntryVC.m */,
-				F476A42C23A7682A00E3018A /* ZBNMerchantEntryCell.h */,
-				F476A42D23A7682A00E3018A /* ZBNMerchantEntry.xib */,
 				F476A41F23A7682A00E3018A /* ZBNHotelEntryVC.h */,
 				F476A42F23A7682A00E3018A /* ZBNHotelEntryVC.m */,
+				F476A42B23A7682A00E3018A /* ZBNShoppingMallEntryVC.m */,
+				F476A41923A7682A00E3018A /* ZBNShoppingMallEntryVC.h */,
 			);
 			path = "商家入驻";
 			sourceTree = "<group>";
@@ -2439,7 +2457,6 @@
 			children = (
 				F476A3C823A7682700E3018A /* ZBNSHWaitReceivingGoodsOrderVC.h */,
 				F476A3C223A7682700E3018A /* ZBNSHWaitReceivingGoodsOrderVC.m */,
-				F4B6979023BF413D00CB0014 /* ZBNSHWaitReceivingGoodsOrderCell.xib */,
 				F4FAC28123AC568900C235EA /* ZBNWaitDeliverDetailVC.h */,
 				F4FAC28223AC568900C235EA /* ZBNWaitDeliverDetailVC.m */,
 				F4FAC28923AC639100C235EA /* ZBNSHApplyForRefundVC.h */,
@@ -2491,6 +2508,13 @@
 			children = (
 				F476A3C023A7682700E3018A /* ZBNSHWaitEvaluateOrderVC.h */,
 				F476A3C923A7682700E3018A /* ZBNSHWaitEvaluateOrderVC.m */,
+				F41B748C23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.h */,
+				F41B748D23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.m */,
+				F41B749423C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.h */,
+				F41B749523C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.m */,
+				F41B749623C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.xib */,
+				F41B749923C2D9BE0056DC78 /* ZBNSHReadEvaluateVC.h */,
+				F41B749A23C2D9BE0056DC78 /* ZBNSHReadEvaluateVC.m */,
 			);
 			path = "待评价";
 			sourceTree = "<group>";
@@ -2533,6 +2557,12 @@
 		F4FAC29223AC6E5400C235EA /* 待评价 */ = {
 			isa = PBXGroup;
 			children = (
+				F41B748F23C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.h */,
+				F41B749023C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.m */,
+				F41B749123C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.xib */,
+				F41B74A123C2DA040056DC78 /* ZBNSHReadEvaluateCell.h */,
+				F41B74A223C2DA040056DC78 /* ZBNSHReadEvaluateCell.m */,
+				F41B74A323C2DA040056DC78 /* ZBNSHReadEvaluateCell.xib */,
 			);
 			path = "待评价";
 			sourceTree = "<group>";
@@ -2567,8 +2597,6 @@
 		F4FAC29623AC6E7200C235EA /* 待收货 */ = {
 			isa = PBXGroup;
 			children = (
-				F4B6978D23BF413300CB0014 /* ZBNSHWaitReceivingGoodsOrderCell.h */,
-				F4B6978E23BF413300CB0014 /* ZBNSHWaitReceivingGoodsOrderCell.m */,
 				F4FAC28423AC56A000C235EA /* ZBNWaitDeliverDetailCell.h */,
 				F4FAC28523AC56A000C235EA /* ZBNWaitDeliverDetailCell.m */,
 				F4FAC28623AC56A000C235EA /* ZBNWaitDeliverDetailCell.xib */,
@@ -2690,13 +2718,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F476A49323A7682C00E3018A /* ZBNMerchantEntry.xib in Resources */,
 				A15DC10B239E60FD008CF287 /* OnlineTableViewCell.xib in Resources */,
 				F4FAC2BB23ACAA7300C235EA /* ZBNEvaluateGoodsCell.xib in Resources */,
 				F476A48123A7682C00E3018A /* ZBNShoppingCartCell.xib in Resources */,
 				A10A9CD5239B37DE0049A0D2 /* CrowdFundingViewController.xib in Resources */,
 				F4B6979623BF425D00CB0014 /* ZBNSHCommonHeadV.xib in Resources */,
 				A14FB34B2391269B006A6511 /* ShopingHomeViewController.xib in Resources */,
+				F41B749823C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.xib in Resources */,
 				F476A45323A7682B00E3018A /* ZBNMyWalletComCell.xib in Resources */,
 				A14FB2A4238E4CDE006A6511 /* LoginViewController.xib in Resources */,
 				A1F73D0A23A8C886001D86EF /* BeserveView.xib in Resources */,
@@ -2706,6 +2734,7 @@
 				A10A9CE8239B38930049A0D2 /* LiveBroadcastViewController.xib in Resources */,
 				F4FAC26B23ABC72D00C235EA /* ZBNSHReturnGoodsOrderCell.xib in Resources */,
 				A10A9C192398A1970049A0D2 /* sorts.plist in Resources */,
+				F4917C8323C3132C00C05CFA /* ZBNMerchantEntryTabCell.xib in Resources */,
 				A15DC0F7239E320E008CF287 /* CresThirdTableViewCell.xib in Resources */,
 				F4FAC27023ABC74300C235EA /* ZBNSHReturnGoodsOrderCellTwo.xib in Resources */,
 				A14FB2A9238E4DF6006A6511 /* RegisterViewController.xib in Resources */,
@@ -2735,6 +2764,7 @@
 				A14FB267238E0E50006A6511 /* LaunchScreen.storyboard in Resources */,
 				A15DC0E8239E22BE008CF287 /* CresTwoTableViewCell.xib in Resources */,
 				F476A48923A7682C00E3018A /* ZBNEntryFooterView.xib in Resources */,
+				F41B749323C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.xib in Resources */,
 				F44DF89123AA2CCD00A7D902 /* ZBNChooseAddressVC.xib in Resources */,
 				F4FAC27823ABC85E00C235EA /* ZBNSHReturnGoodsDetailCell.xib in Resources */,
 				A10A9CCC239B37800049A0D2 /* AutomobileViewController.xib in Resources */,
@@ -2756,7 +2786,6 @@
 				A15DC106239E41D4008CF287 /* HotelDetailsBottomView.xib in Resources */,
 				A10A9C1B2398A1970049A0D2 /* address.plist in Resources */,
 				F476A44123A7682B00E3018A /* ZBNDowmLoadAppVC.xib in Resources */,
-				F4B6979123BF413D00CB0014 /* ZBNSHWaitReceivingGoodsOrderCell.xib in Resources */,
 				F476A48223A7682C00E3018A /* ZBNShopingCartVC.xib in Resources */,
 				F476A44A23A7682B00E3018A /* ZBNMyWalletHeadView.xib in Resources */,
 				A15DC0DD239E2003008CF287 /* HotelDetlisSubViewOneController.xib in Resources */,
@@ -2767,8 +2796,8 @@
 				A14FB312238FD2AC006A6511 /* HomeTableViewCell.xib in Resources */,
 				A1F4DFE623A1EB9B00B02880 /* SeckillTableViewCell.xib in Resources */,
 				F476A48623A7682C00E3018A /* ZBNMyCollectionCommenCell.xib in Resources */,
+				F41B74A523C2DA040056DC78 /* ZBNSHReadEvaluateCell.xib in Resources */,
 				A14FB262238E0E4C006A6511 /* Main.storyboard in Resources */,
-				F476A48B23A7682C00E3018A /* ZBNMerchantEntryCell.xib in Resources */,
 				A14FB31C238FFA76006A6511 /* HXCollectionViewCell.xib in Resources */,
 				F476A47B23A7682C00E3018A /* ZBNCommenOrderCell.xib in Resources */,
 				A1F4DFE123A1D54F00B02880 /* ShopSeckillDetailsViewController.xib in Resources */,
@@ -2886,6 +2915,7 @@
 				A15DC104239E41C8008CF287 /* HotelDetailsBottomView.m in Sources */,
 				A14FB323239017BC006A6511 /* UIView+HHAddition.m in Sources */,
 				A14FB2A8238E4DF6006A6511 /* RegisterViewController.m in Sources */,
+				F4917C7923C312CA00C05CFA /* ZBNMerchantEntryVC.m in Sources */,
 				A1F5515C23B0FCB500416682 /* WRNavigationBar.m in Sources */,
 				A14FB322239017BC006A6511 /* MarqueeView.m in Sources */,
 				F476A44E23A7682B00E3018A /* ZBNCashWithDrawalVC.m in Sources */,
@@ -2898,6 +2928,7 @@
 				F411AE4123BDDB33006016D2 /* NSString+ZBNExtension.m in Sources */,
 				A15DC0D8239DE0CE008CF287 /* FSPageContentView.m in Sources */,
 				A1F73D0823A8C86D001D86EF /* BeserveView.m in Sources */,
+				F4917C8223C3132C00C05CFA /* ZBNMerchantEntryTabCell.m in Sources */,
 				F476A44C23A7682B00E3018A /* ZBNCostVC.m in Sources */,
 				A14FB29E238E4C89006A6511 /* BaseViewController.m in Sources */,
 				A1F5516023B2099600416682 /* MdBannerListModel.m in Sources */,
@@ -2907,10 +2938,12 @@
 				F4CD16A123C093590039CE49 /* ZBNSHZDeliverGoodsDOCell.m in Sources */,
 				F476A44523A7682B00E3018A /* ZBNMyNewsVC.m in Sources */,
 				A15DC0F6239E320E008CF287 /* CresThirdTableViewCell.m in Sources */,
+				F41B749723C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.m in Sources */,
 				A1FC4A94239F70E600AF3F57 /* PaySuccessViewController.m in Sources */,
 				F4FAC2C223ACB49200C235EA /* ZBNSHGoAndPayDetailCell.m in Sources */,
 				F4B6978823BF271300CB0014 /* ZBNSHCommonCell.m in Sources */,
 				F476A49723A7682C00E3018A /* ZBNMyIntegerHeadView.m in Sources */,
+				F41B748E23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.m in Sources */,
 				A10A9CCB239B37800049A0D2 /* AutomobileViewController.m in Sources */,
 				A10A9BFB239788680049A0D2 /* ShopHomeSectionView.m in Sources */,
 				A1CE7CD023A781AF00C22C41 /* ShopShopkeeperViewController.m in Sources */,
@@ -2994,10 +3027,10 @@
 				F476A45623A7682B00E3018A /* ZBNMyAddressModel.m in Sources */,
 				F476A49223A7682C00E3018A /* ZBNShoppingMallEntryVC.m in Sources */,
 				A10A9C1F2398A9C70049A0D2 /* MsgViewCell.m in Sources */,
-				F476A48823A7682C00E3018A /* ZBNMerchantEntryCell.m in Sources */,
 				F476A48A23A7682C00E3018A /* ZBNEntryFooterView.m in Sources */,
 				A14FB25C238E0E4C006A6511 /* AppDelegate.m in Sources */,
 				A14FB2CE238F5F36006A6511 /* CustomBar.m in Sources */,
+				F41B74A423C2DA040056DC78 /* ZBNSHReadEvaluateCell.m in Sources */,
 				F4FAC2BE23ACB47100C235EA /* ZBNSHGoAndPayDetailVC.m in Sources */,
 				F476A45C23A7682B00E3018A /* ZBNSHWaitReceivingGoodsOrderVC.m in Sources */,
 				F476A47823A7682B00E3018A /* ZBNRestaurantOrderVC.m in Sources */,
@@ -3016,7 +3049,6 @@
 				A1CE7CC923A77EB900C22C41 /* QCouponView.m in Sources */,
 				F476A49B23A7682C00E3018A /* InviteCourtesyVC.m in Sources */,
 				F45231CE23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.m in Sources */,
-				F4B6978F23BF413400CB0014 /* ZBNSHWaitReceivingGoodsOrderCell.m in Sources */,
 				A10A9C0A2397ED7A0049A0D2 /* PacketModel.m in Sources */,
 				A10A9C98239A57230049A0D2 /* HotelViewController.m in Sources */,
 				F476A4AC23A7683200E3018A /* UIView+ZBNExtension.m in Sources */,
@@ -3041,6 +3073,7 @@
 				A1F6BDAD23ADF7B50063AEF8 /* CustomMoveView.m in Sources */,
 				F45231CA23AB7B5E005CBE6A /* ZBNRestaurantOrderDetailVC.m in Sources */,
 				A10A9C1523989A4D0049A0D2 /* MenuScreeningView.m in Sources */,
+				F4D916AD23C33B7A003EBE20 /* UIBarButtonItem+ZBNExtension.m in Sources */,
 				F4FAC28323AC568900C235EA /* ZBNWaitDeliverDetailVC.m in Sources */,
 				F476A45F23A7682B00E3018A /* ZBNSHReturnGoodsOrderVC.m in Sources */,
 				F4ADBE3523B9A28100B62E46 /* ADConst.m in Sources */,
@@ -3049,6 +3082,7 @@
 				F411AE4623BDDF9D006016D2 /* ZBNChangePhoneNumberVC.m in Sources */,
 				A10A9C232398B16D0049A0D2 /* MsgModel.m in Sources */,
 				F476A44D23A7682B00E3018A /* ZBNReChargeDetailVC.m in Sources */,
+				F41B749B23C2D9BE0056DC78 /* ZBNSHReadEvaluateVC.m in Sources */,
 				F476A44223A7682B00E3018A /* ZBNDowmLoadAppVC.m in Sources */,
 				A10A9C072397EC9C0049A0D2 /* RedPacketView.m in Sources */,
 				A14FB315238FE03A006A6511 /* HomeCellModel.m in Sources */,
@@ -3057,6 +3091,7 @@
 				F476A49A23A7682C00E3018A /* ZBNMyPostBarVC.m in Sources */,
 				A1FC4A8B239F27BB00AF3F57 /* CustomAlterView.m in Sources */,
 				A14FB3262390C6D1006A6511 /* CitylistViewController.m in Sources */,
+				F41B749223C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.m in Sources */,
 				F4FAC28B23AC639100C235EA /* ZBNSHApplyForRefundVC.m in Sources */,
 				F476A48523A7682C00E3018A /* ZBNMyCollectionCommenCell.m in Sources */,
 				F476A45A23A7682B00E3018A /* ZBNSHDeliverGoodsOrderVC.m in Sources */,
@@ -3085,7 +3120,6 @@
 				F4E6A7A923B753F2006721E9 /* ZBNMineFeedbackVC.m in Sources */,
 				A14FB2E8238F683D006A6511 /* FindViewController.m in Sources */,
 				A10A9C7D2399EF120049A0D2 /* SegmentView.m in Sources */,
-				F476A49423A7682C00E3018A /* ZBNMerchantEntry.m in Sources */,
 				F4E6A7A023B75140006721E9 /* FKHRequestManager.m in Sources */,
 				F476A44623A7682B00E3018A /* ZBNMyPostVC.m in Sources */,
 				F4FAC27B23ABCA5100C235EA /* ZBNSHWriteLogisticsListVC.m in Sources */,

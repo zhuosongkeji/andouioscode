@@ -132,12 +132,14 @@
     return NO;
 }
 
+
+
 /*! 加载数据 */
 - (void)loadData
 {
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/common/district" params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
         [self.dataArr addObjectsFromArray: serverInfo.response[@"data"]];
-        NSLog(@"%@data",self.dataArr);
+        
     }];
 }
 
@@ -206,6 +208,7 @@
         self.addArrCitys = [ZBNCity mj_objectArrayWithKeyValuesArray:[self.dataArr[_selProvinceIndex] valueForKeyPath:@"cities"]];
         [pickerView reloadComponent:1];
         [pickerView selectRow:0 inComponent:1 animated:YES];
+        [pickerView selectRow:0 inComponent:2 animated:YES];
         self.addArrAreas = [[self.addArrays[_selAreaIndex] valueForKeyPath:@"cities"][0] valueForKeyPath:@"areas"];
         [pickerView reloadComponent:2];
     } else if (component == 1) {
@@ -276,6 +279,11 @@
         _addArrAreas = [NSMutableArray array];
     }
     return _addArrAreas;
+}
+
+- (void)setupText
+{
+    [self pickerView:nil didSelectRow:0 inComponent:0];
 }
 
 @end
