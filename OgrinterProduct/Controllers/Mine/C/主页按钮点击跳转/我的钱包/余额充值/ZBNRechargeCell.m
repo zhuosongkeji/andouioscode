@@ -60,6 +60,12 @@
     if (self.bankCardNumberBlock) {
         self.bankCardNumberBlock(self.bankCardNumber.text);
     }
+    
+    NSLog(@"%@",self.rechargeNumber.text);
+    
+    
+    
+    
 }
 
 - (void)awakeFromNib
@@ -69,6 +75,7 @@
     [self addDelegate];
     
     self.LabelView.layer.cornerRadius = self.LabelView.height * 0.5;
+    
     
 }
 

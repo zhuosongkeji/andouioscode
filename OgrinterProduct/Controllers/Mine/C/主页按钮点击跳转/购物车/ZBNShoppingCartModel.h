@@ -22,8 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *goods_id;
 /*! 商品规格 */
 @property (nonatomic, copy) NSString *goods_sku_id;
-/*! 商户 */
-@property (nonatomic, copy) NSString *merchant_id;
 /*! 购买数量 */
 @property (nonatomic, copy) NSString *num;
 /*! 商品名字 */
@@ -36,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *merchant_name;
 /*! 商家图片 */
 @property (nonatomic, copy) NSString *logo_img;
+
 
 @end
 

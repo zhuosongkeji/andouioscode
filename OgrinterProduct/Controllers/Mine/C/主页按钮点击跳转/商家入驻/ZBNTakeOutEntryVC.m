@@ -1,34 +1,24 @@
 //
-//  ZBNHotelEntryVC.m
+//  ZBNTakeOutEntryVC.m
 //  OgrinterProduct
 //
-//  Created by 周芳圆 on 2019/12/12.
-//  Copyright © 2019 RXF. All rights reserved.
-//  酒店商家入驻
+//  Created by 周芳圆 on 2020/1/7.
+//  Copyright © 2020 RXF. All rights reserved.
+//
 
-#import "ZBNHotelEntryVC.h"
-#import "ZBNHotelEntryCell.h"
+#import "ZBNTakeOutEntryVC.h"
+#import "ZBNTakeOutEntryCell.h"
 #import "ZBNEntryFooterView.h"
-
-@interface ZBNHotelEntryVC ()
-
+@interface ZBNTakeOutEntryVC ()
 @property (nonatomic, weak) ZBNEntryFooterView *footerView;
-
 @end
 
-@implementation ZBNHotelEntryVC
-
+@implementation ZBNTakeOutEntryVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
-    self.navigationItem.title = @"酒店入驻";
-    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
-    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
-    
     [self setupFooter];
-    
+    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
 }
 
 - (void)setupFooter
@@ -39,18 +29,15 @@
     self.footerView = footerV;
 }
 
-
 #pragma mark - Table view data source
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZBNHotelEntryCell *cell = [ZBNHotelEntryCell registerCellForTableView:tableView];
+    ZBNTakeOutEntryCell *cell = [ZBNTakeOutEntryCell registerCellForTableView:tableView];
     return cell;
 }
 
@@ -58,8 +45,5 @@
 {
     return 765;
 }
-
-
-
 
 @end

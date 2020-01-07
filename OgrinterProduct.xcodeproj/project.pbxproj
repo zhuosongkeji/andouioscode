@@ -308,6 +308,9 @@
 		F4CD16A223C093590039CE49 /* ZBNSHZDeliverGoodsDOCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4CD16A023C093590039CE49 /* ZBNSHZDeliverGoodsDOCell.xib */; };
 		F4D916AD23C33B7A003EBE20 /* UIBarButtonItem+ZBNExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D916AC23C33B7A003EBE20 /* UIBarButtonItem+ZBNExtension.m */; };
 		F4DBD0F123A8BA0C0086C717 /* ZBNNewAddressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DBD0F023A8BA0C0086C717 /* ZBNNewAddressVC.xib */; };
+		F4E00E7123C45CA0007EABC3 /* ZBNTakeOutEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E00E7023C45C9F007EABC3 /* ZBNTakeOutEntryVC.m */; };
+		F4E00E7A23C45D05007EABC3 /* ZBNTakeOutEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E00E7823C45D05007EABC3 /* ZBNTakeOutEntryCell.m */; };
+		F4E00E7B23C45D05007EABC3 /* ZBNTakeOutEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E00E7923C45D05007EABC3 /* ZBNTakeOutEntryCell.xib */; };
 		F4E6A7A023B75140006721E9 /* FKHRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6A79F23B75140006721E9 /* FKHRequestManager.m */; };
 		F4E6A7A923B753F2006721E9 /* ZBNMineFeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6A7A223B753F1006721E9 /* ZBNMineFeedbackVC.m */; };
 		F4E6A7AA23B753F2006721E9 /* ZBNMineFeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E6A7A423B753F1006721E9 /* ZBNMineFeedbackVC.xib */; };
@@ -880,6 +883,11 @@
 		F4D916AB23C33B7A003EBE20 /* UIBarButtonItem+ZBNExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+ZBNExtension.h"; sourceTree = "<group>"; };
 		F4D916AC23C33B7A003EBE20 /* UIBarButtonItem+ZBNExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+ZBNExtension.m"; sourceTree = "<group>"; };
 		F4DBD0F023A8BA0C0086C717 /* ZBNNewAddressVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNNewAddressVC.xib; sourceTree = "<group>"; };
+		F4E00E6F23C45C9F007EABC3 /* ZBNTakeOutEntryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNTakeOutEntryVC.h; sourceTree = "<group>"; };
+		F4E00E7023C45C9F007EABC3 /* ZBNTakeOutEntryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNTakeOutEntryVC.m; sourceTree = "<group>"; };
+		F4E00E7723C45D05007EABC3 /* ZBNTakeOutEntryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNTakeOutEntryCell.h; sourceTree = "<group>"; };
+		F4E00E7823C45D05007EABC3 /* ZBNTakeOutEntryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNTakeOutEntryCell.m; sourceTree = "<group>"; };
+		F4E00E7923C45D05007EABC3 /* ZBNTakeOutEntryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNTakeOutEntryCell.xib; sourceTree = "<group>"; };
 		F4E6A79E23B75140006721E9 /* FKHRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKHRequestManager.h; sourceTree = "<group>"; };
 		F4E6A79F23B75140006721E9 /* FKHRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKHRequestManager.m; sourceTree = "<group>"; };
 		F4E6A7A223B753F1006721E9 /* ZBNMineFeedbackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNMineFeedbackVC.m; sourceTree = "<group>"; };
@@ -2323,6 +2331,8 @@
 				F476A42F23A7682A00E3018A /* ZBNHotelEntryVC.m */,
 				F476A42B23A7682A00E3018A /* ZBNShoppingMallEntryVC.m */,
 				F476A41923A7682A00E3018A /* ZBNShoppingMallEntryVC.h */,
+				F4E00E6F23C45C9F007EABC3 /* ZBNTakeOutEntryVC.h */,
+				F4E00E7023C45C9F007EABC3 /* ZBNTakeOutEntryVC.m */,
 			);
 			path = "商家入驻";
 			sourceTree = "<group>";
@@ -2346,6 +2356,9 @@
 				F4FAC2A123AC79BE00C235EA /* ZBNShoppingMallEntryCell.h */,
 				F4FAC2A223AC79BE00C235EA /* ZBNShoppingMallEntryCell.m */,
 				F4FAC2A323AC79BE00C235EA /* ZBNShoppingMallEntryCell.xib */,
+				F4E00E7723C45D05007EABC3 /* ZBNTakeOutEntryCell.h */,
+				F4E00E7823C45D05007EABC3 /* ZBNTakeOutEntryCell.m */,
+				F4E00E7923C45D05007EABC3 /* ZBNTakeOutEntryCell.xib */,
 			);
 			path = ZBNEntryCell;
 			sourceTree = "<group>";
@@ -2748,6 +2761,7 @@
 				F476A45323A7682B00E3018A /* ZBNMyWalletComCell.xib in Resources */,
 				A14FB2A4238E4CDE006A6511 /* LoginViewController.xib in Resources */,
 				A1F73D0A23A8C886001D86EF /* BeserveView.xib in Resources */,
+				F4E00E7B23C45D05007EABC3 /* ZBNTakeOutEntryCell.xib in Resources */,
 				A14FB30D238FCD13006A6511 /* CustomSectionView.xib in Resources */,
 				F4FAC28823AC56A000C235EA /* ZBNWaitDeliverDetailCell.xib in Resources */,
 				A1FC709023BD8224005BFDC9 /* BeseListViewCell.xib in Resources */,
@@ -2955,6 +2969,7 @@
 				A1F5516023B2099600416682 /* MdBannerListModel.m in Sources */,
 				F4FAC27F23ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.m in Sources */,
 				A14FB308238FC206006A6511 /* HQIndexBannerSubview.m in Sources */,
+				F4E00E7A23C45D05007EABC3 /* ZBNTakeOutEntryCell.m in Sources */,
 				F4CD169023C0310D0039CE49 /* ZBNSHBaseOrderVC.m in Sources */,
 				F4CD16A123C093590039CE49 /* ZBNSHZDeliverGoodsDOCell.m in Sources */,
 				F476A44523A7682B00E3018A /* ZBNMyNewsVC.m in Sources */,
@@ -3031,6 +3046,7 @@
 				A15DC0C9239DD875008CF287 /* HotelDetilsTopViewCell.m in Sources */,
 				A1FD1B6923AB471500AE0835 /* CategoryShopDetailsViewController.m in Sources */,
 				F476A48723A7682C00E3018A /* ZBNMyCollectionVC.m in Sources */,
+				F4E00E7123C45CA0007EABC3 /* ZBNTakeOutEntryVC.m in Sources */,
 				A15DC0DC239E2003008CF287 /* HotelDetlisSubViewOneController.m in Sources */,
 				F476A47923A7682B00E3018A /* ZBNRestaurantBookOrderVC.m in Sources */,
 				F4E6A7B323B75417006721E9 /* ZBNMineSettingCell.m in Sources */,
@@ -3323,7 +3339,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QXHAAL9LSY;
+				DEVELOPMENT_TEAM = RVXHKRHB9W;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OgrinterProduct/Controllers/frameworks",
@@ -3443,7 +3459,7 @@
 					"-framework",
 					"\"ZFPlayer\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RXF.OgrinterProduct;
+				PRODUCT_BUNDLE_IDENTIFIER = RXF.OgrinterProduct1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "${SRCROOT}";
@@ -3457,7 +3473,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QXHAAL9LSY;
+				DEVELOPMENT_TEAM = RVXHKRHB9W;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OgrinterProduct/Controllers/frameworks",
@@ -3577,7 +3593,7 @@
 					"-framework",
 					"\"ZFPlayer\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RXF.OgrinterProduct;
+				PRODUCT_BUNDLE_IDENTIFIER = RXF.OgrinterProduct1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "${SRCROOT";

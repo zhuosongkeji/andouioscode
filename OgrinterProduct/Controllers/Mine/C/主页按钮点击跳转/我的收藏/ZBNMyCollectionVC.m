@@ -20,6 +20,7 @@ static NSString * const ZBNMyCollectionCellID = @"collectionCommen";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
     [self.tableView registerNib:[UINib nibWithNibName:@"MsgViewCell" bundle:nil] forCellReuseIdentifier:ZBNMyCollectionCellID];
 }
 

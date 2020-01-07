@@ -282,7 +282,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVY-fm-Wwm" customClass="Img_lable">
-                                        <rect key="frame" x="314.5" y="19" width="96" height="45"/>
+                                        <rect key="frame" x="326" y="41.5" width="73" height="22.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="我的钱包" image="图层 522">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -395,7 +395,7 @@
                                     <button opaque="NO" tag="503" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49x-3Q-6dr" customClass="Img_lable">
                                         <rect key="frame" x="330.5" y="2" width="64" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="我的收藏" image="我的收藏">
+                                        <state key="normal" title="购物车" image="购物车">
                                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -545,10 +545,10 @@
         <image name="头部背景11" width="375" height="215.5"/>
         <image name="我的发布" width="27" height="27"/>
         <image name="我的地址" width="21" height="26"/>
-        <image name="我的收藏" width="26" height="24"/>
         <image name="操作视频" width="28" height="24"/>
         <image name="礼物 55" width="26" height="25"/>
         <image name="美食预约" width="30" height="25"/>
+        <image name="购物车" width="30" height="25"/>
         <image name="酒店预订" width="26" height="24"/>
     </resources>
 </document>

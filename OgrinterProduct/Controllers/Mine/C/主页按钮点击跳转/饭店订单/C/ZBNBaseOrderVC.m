@@ -27,8 +27,7 @@
 
 - (void)setupTable
 {
-    
-    self.tableView.contentInset = UIEdgeInsetsMake(getStatusBarHeight, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(getNavHeight, 0, 0, 0);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
@@ -57,11 +56,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 314;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 

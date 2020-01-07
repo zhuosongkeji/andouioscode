@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) NSMutableArray *dataArr;
 @property (nonatomic, strong) ZBNSHCommonModel *comM;
+@property (nonatomic, copy) NSString *nextPage;
 
 @end
 
@@ -36,11 +37,13 @@
 
 /*! 加载数据 */
 // 加载数据
-- (void)loadData
+- (void)loadNewData
 {
+    [FKHRequestManager cancleRequestWork];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    
     params[@"uid"] = unmodel.uid;
     params[@"token"] = unmodel.token;
     params[@"type"] = @(self.type);
@@ -49,16 +52,51 @@
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/order/index" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         weakSelf.dataArr = [ZBNSHCommonModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
         [weakSelf.tableView reloadData];
+        [weakSelf.tableView.mj_header endRefreshing];
     }];
 }
 
+- (void)loadMoreData
+{
+    [FKHRequestManager cancleRequestWork];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    params[@"uid"] = unmodel.uid;
+    params[@"token"] = unmodel.token;
+    params[@"type"] = @(self.type);
+    params[@"page"] = self.nextPage;
+    ADWeakSelf;
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/order/index" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        NSArray *moreArr = [ZBNSHCommonModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+        [weakSelf.dataArr addObjectsFromArray:moreArr];
+        [weakSelf.tableView reloadData];
+        self.nextPage = [NSString stringWithFormat:@"%d",(self.nextPage.intValue + 1)];
+        [weakSelf.tableView.mj_footer endRefreshing];
+    }];
+}
+
+
+- (void)setupRefresh
+{
+    // 下拉刷新
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    // 自动改变透明度
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    // 马上进入刷新状态
+    [self.tableView.mj_header beginRefreshing];
+    // 上拉刷新
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
    // 设置UI
     [self setupUI];
     // 加载数据
-    [self loadData];
+    [self setupRefresh];
+    
+    self.nextPage = @"2";
 }
 
 - (void)setupUI
