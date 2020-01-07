@@ -29,7 +29,7 @@
 /*! 用户名 */
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 /*! 等级 */
-@property (weak, nonatomic) IBOutlet UILabel *gradeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *integerL;
 /*! 模型 */
 @property (nonatomic, strong) ZBNMineModel *model;
 @property (nonatomic, strong) ZBNMineSettingModel *settingM;
@@ -44,6 +44,8 @@
     
     // 设置界面相关
     [self setupUI];
+    // 设置导航栏
+    [self setupNav];
     // 加载数据
     [self loadData];
     
@@ -68,6 +70,28 @@
     self.vipView.layer.cornerRadius = 10;
 }
 
+- (void)setupNav
+{
+    self.navigationItem.title = @"会员中心";
+    
+    UIBarButtonItem *settingItem = [UIBarButtonItem itemWithImage:@"Settings" highImage:@"" target:self action:@selector(settingClick)];
+    UIBarButtonItem *newsItem = [UIBarButtonItem itemWithImage:@"消息" highImage:@"" target:self action:@selector(newsClick)];
+    
+    self.navigationItem.rightBarButtonItems = @[settingItem, newsItem];
+    
+}
+
+- (void)settingClick
+{
+    [self pushViewControllerWithString:@"ZBNMineSettingVC"];
+}
+
+- (void)newsClick
+{
+    [self pushViewControllerWithString:@"ZBNMyNewsVC"];
+}
+
+
 #pragma mark -- loadData
 - (void)loadData
 {
@@ -78,17 +102,10 @@
         param[@"token"] = unmodel.token;
        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNPersonURL params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
            self.model = [ZBNMineModel mj_objectWithKeyValues:serverInfo.response[@"data"]];
-           // 如果是vip显示,不是就隐藏
-           if (self.model.grade) {
-               self.gradeLabel.text = [NSString stringWithFormat:@"%@", self.model.grade];
-           } else {
-               self.view.hidden = YES;
-           }
            // 设置头像
            self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
            // 设置用户名
            self.userName.text = [NSString stringWithFormat:@"%@",self.model.name];
-           
            
        }];
 }
@@ -155,36 +172,22 @@
 /*! 底部View按钮的点击事件 */
 - (IBAction)bottomViewBtnClick:(UIButton *)sender {
     
-    if (sender.tag == 500) { // 邀请有礼
+    if (sender.tag == 500) { // 商家入驻
+            [self pushViewControllerWithString:@"ZBNMerchantEntryVC"];
+        } else if (sender.tag == 501) {  // 邀请有礼
             [self pushViewControllerWithString:@"InviteCourtesyVC"];
-        } else if (sender.tag == 501) {  // 我的钱包
-            [self pushViewControllerWithString:@"ZBNMyWalletVC"];
-        } else if (sender.tag == 502) {  // 我的发布
-    //        [self pushViewControllerWithString:@"ZBNMyPostVC"];
+        } else if (sender.tag == 502) {  // 下载APP
             [HUDManager showTextHud:OtherMsg];
-        } else if (sender.tag == 503) {  // 我的贴吧
-    //        [self pushViewControllerWithString:@"ZBNMyPostBarVC"];
-            [HUDManager showTextHud:OtherMsg];
-        } else if (sender.tag == 504) { // 购物车
-            [self pushViewControllerWithString:@"ZBNShopingCartVC"];
-        } else if (sender.tag == 505) { // 我的收藏
+        } else if (sender.tag == 503) {  // 我的收藏
             [self pushViewControllerWithString:@"ZBNMyCollectionVC"];
-        } else if (sender.tag == 506) { // 浏览痕迹
-            [self pushViewControllerWithString:@"ZBNBrowseHistoryVC"];
-        } else if (sender.tag == 507) { // 我的地址
-            [self pushViewControllerWithString:@"ZBNMyAddressVC"];
-        } else if (sender.tag == 508) { // 我的积分
-            [self pushViewControllerWithString:@"ZBNMyIntegralVC"];
-        } else if (sender.tag == 509) { // 我的消息
-            [self pushViewControllerWithString:@"ZBNMyNewsVC"];
-        } else if (sender.tag == 510) { // 商家入驻
-            [self pushViewControllerWithString:@"ZBNMerchantEntry"];
-        } else if (sender.tag == 511) { // 成为配送员
+        } else if (sender.tag == 504) { // 操作视频
             [HUDManager showTextHud:OtherMsg];
-        } else if (sender.tag == 512) { // 下载APP
-            [self pushViewControllerWithString:@"ZBNDowmLoadAppVC"];
-        } else if (sender.tag == 513) {  // 操作视频
-            [self pushViewControllerWithString:@"ZBNOperationVideoVC"];
+        } else if (sender.tag == 505) { // 我的地址
+            [self pushViewControllerWithString:@"ZBNMyAddressVC"];
+        } else if (sender.tag == 506) { // 我的二维码
+            [HUDManager showTextHud:OtherMsg];
+        } else if (sender.tag == 507) { // 我的发布
+            [self pushViewControllerWithString:@"ZBNMyPostVC"];
         }
     
 }

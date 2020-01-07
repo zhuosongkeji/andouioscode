@@ -20,36 +20,54 @@
 
 @interface ZBNMineSettingCell ()
 
+// ------------------------用户的头像begin------------------------------->
 /*! 用户的头像 */
 @property (weak, nonatomic) IBOutlet UIImageView *userIconV;
+// ------------------------用户的头像end--------------------------------->
+
+// ------------------------用户的昵称begin------------------------------->
 /*! 用户昵称 */
 @property (weak, nonatomic) IBOutlet UILabel *userName;
-/*! 用户电话 */
-@property (weak, nonatomic) IBOutlet UILabel *phoneNumber;
+// ------------------------用户的昵称end--------------------------------->
+
+// ------------------------用户的密码begin------------------------------->
 /*! 用户密码 */
 @property (weak, nonatomic) IBOutlet UILabel *pwdLabel;
+// ------------------------用户的密码end--------------------------------->
+
+// ------------------------消息开关与网络播放begin------------------------->
 /*! 新消息通知的开关 */
 @property (weak, nonatomic) IBOutlet UISwitch *newsSwitch;
 /*! 各种网络下载的开关 */
 @property (weak, nonatomic) IBOutlet UISwitch *downLoadSwitch;
-/*! 清空缓存 */
-@property (weak, nonatomic) IBOutlet UILabel *cacheLabel;
+// ------------------------消息开关与网络播放end--------------------------->
+
+// ------------------------版本号begin----------------------------------->
 /*! 版本号 */
 @property (weak, nonatomic) IBOutlet UILabel *editionLabel;
 
-/// --------------------------------------------View-------------------------------->
-/*! 电话号码的view */
+// ------------------------版本号end------------------------------------->
+
+// ------------------------清除缓存begin--------------------------------->
+/// /*! 清除缓存 */
+@property (weak, nonatomic) IBOutlet UIView *cacheView;
+/*! 显示缓存大小的label */
+@property (weak, nonatomic) IBOutlet UILabel *cacheSizeL;
+// ------------------------清除缓存end----------------------------------->
+
+// ---------------------电话号码的begin----------------------------------->
+/*! 电话号码 */
 @property (weak, nonatomic) IBOutlet UIView *phoneView;
+/*! 用户电话 */
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumber;
+// ---------------------电话号码的end---------------------------------->
 /*! 关于我们 */
 @property (weak, nonatomic) IBOutlet UIView *aboutUsView;
 /*! 意见反馈 */
 @property (weak, nonatomic) IBOutlet UIView *feedbackView;
 /*! 修改密码 */
 @property (weak, nonatomic) IBOutlet UIView *changePwdView;
-/*! 清除缓存 */
-@property (weak, nonatomic) IBOutlet UIView *cacheView;
-/*! 显示缓存大小的label */
-@property (weak, nonatomic) IBOutlet UILabel *cacheSizeL;
+
 
 @end
 
@@ -81,7 +99,6 @@
     [self setupGes];
     // 计算缓存大小
     [self countCacheSize];
-    
     
 }
 
@@ -151,6 +168,11 @@
 
 - (void)cacheClear
 {
+    if ([self.cacheSizeL.text  isEqual: @"缓存大小(0B)"]) {
+        [HUDManager showTextHud:@"没有缓存"];
+        return;
+    }
+    
     [ZBNAlertTool zbn_alertTitle:@"清除缓存?" type:UIAlertControllerStyleAlert message:nil didTask:^{
         // 清除缓存
         [self clearCache];
@@ -210,6 +232,8 @@
     ADWeakSelf;
     
     
+    
+    self.cacheSizeL.text = @"正在清除缓存";
         // 在子线程
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
     //#warning 睡眠
@@ -226,7 +250,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 // 隐藏弹框
                 
-                
+                [HUDManager showTextHud:@"清除缓存成功"];
                 // 文字
                 weakSelf.cacheSizeL.text = @"暂无缓存";
                 

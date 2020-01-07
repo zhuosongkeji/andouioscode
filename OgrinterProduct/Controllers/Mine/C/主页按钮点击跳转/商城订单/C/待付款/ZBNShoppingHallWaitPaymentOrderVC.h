@@ -6,11 +6,11 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //  等待支付订单
 
-#import <UIKit/UIKit.h>
+#import "ZBNSHBaseOrderVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZBNShoppingHallWaitPaymentOrderVC : UITableViewController
+@interface ZBNShoppingHallWaitPaymentOrderVC : ZBNSHBaseOrderVC
 
 @end
 

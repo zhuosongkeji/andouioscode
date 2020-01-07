@@ -7,12 +7,23 @@
 //
 
 #import "ZBNSHGoAndPayDetailVC.h"
+
 #import "ZBNSHGoAndPayDetailCell.h"
-#import "ZBNWaitPayHeaderView.h"
+#import "ZBNSHCommonHeadV.h"
+
+#import "ZBNSHOrderDetailComM.h"
+#import "ZBNSHOrderUserInfoM.h"
+#import "ZBNSHOrderDetailsM.h"
 
 @interface ZBNSHGoAndPayDetailVC ()
 
-@property (nonatomic, weak) ZBNWaitPayHeaderView *headerView;
+@property (nonatomic, weak) ZBNSHCommonHeadV *headV;
+
+@property (nonatomic, strong) ZBNSHOrderUserInfoM *userInfoM;
+@property (nonatomic, strong) ZBNSHOrderDetailsM *detailsM;
+@property (nonatomic, strong) ZBNSHOrderDetailComM *comM;
+
+@property (nonatomic, strong) NSMutableArray *detailArr;
 
 @end
 
@@ -21,18 +32,51 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+    // 设置UI视图
+    [self setupUI];
+    // 设置头部视图
     [self setupHeaderView];
+    // 加载数据
+    [self loadData];
+
+    
+}
+
+
+- (void)setupUI
+{
+    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
 }
 
 - (void)setupHeaderView
 {
-    ZBNWaitPayHeaderView *headerV = [ZBNWaitPayHeaderView viewFromXib];
-    headerV.height = 145;
-    self.headerView = headerV;
-    self.tableView.tableHeaderView = headerV;
+    ZBNSHCommonHeadV *headV = [ZBNSHCommonHeadV viewFromXib];
+    headV.height = ZBNHeaderH;
+    headV.setLabelOneText(@"待付款").setSubLabelOneText(@"等待买家付款").setImageVImage(@"组 3-2");
+    self.tableView.tableHeaderView = headV;
+    self.headV = headV;
+}
+
+/*! 加载模型数据 */
+- (void)loadData
+{
+    ADWeakSelf;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+        userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    //    params[@"uid"] = unmodel.uid;
+        params[@"uid"] = @"1";
+    //    params[@"token"] = unmodel.token;
+        params[@"token"] = @"94e31eee8b8237c4d98e965dbcbc44b5";
+        params[@"order_sn"] = self.getOrderNum;
+        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/order/details" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+            self.comM = [ZBNSHOrderDetailComM mj_objectWithKeyValues:serverInfo.response[@"data"]];
+            self.detailsM = [ZBNSHOrderDetailsM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"details"][0]];
+            NSLog(@"%@1111111",self.detailsM.attr_value);
+            [weakSelf.tableView reloadData];
+        }];
 }
 
 #pragma mark - Table view data source
@@ -47,6 +91,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZBNSHGoAndPayDetailCell *cell = [ZBNSHGoAndPayDetailCell regiserCellForTable:tableView];
+    cell.comM = self.comM;
+    cell.detailM = self.detailsM;
     return cell;
 }
 

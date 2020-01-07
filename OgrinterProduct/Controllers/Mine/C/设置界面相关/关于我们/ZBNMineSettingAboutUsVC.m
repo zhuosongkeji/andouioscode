@@ -44,7 +44,7 @@
 /*! 加载数据 */
 - (void)loadData
 {
-    // 发送网络请求 --> 因为这里是单组数据我就直接取值了
+    // 发送网络请求 --> 
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/index/about" params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
         // content
         self.aboutUsLabel.text = serverInfo.response[@"data"][@"content"];

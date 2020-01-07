@@ -7,8 +7,7 @@
 //  待发货
 
 #import "ZBNSHDeliverGoodsOrderVC.h"
-#import "ZBNSHDeliverGoodsOrderCell.h"
-#import "ZBNWaitDeliverDetailVC.h"
+
 
 @interface ZBNSHDeliverGoodsOrderVC ()
 
@@ -16,34 +15,9 @@
 
 @implementation ZBNSHDeliverGoodsOrderVC
 
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (ZBNCommonType)type
 {
-    return 4;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ZBNSHDeliverGoodsOrderCell *cell = [ZBNSHDeliverGoodsOrderCell regiserCellForTable:tableView];
-    ADWeakSelf;
-    cell.waitDeliverBtnClickTask = ^{
-        ZBNWaitDeliverDetailVC *detailVc = [[ZBNWaitDeliverDetailVC alloc] init];
-        [weakSelf.navigationController pushViewController:detailVc animated:YES];
-    };
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 310;
+    return 20;
 }
 
 @end

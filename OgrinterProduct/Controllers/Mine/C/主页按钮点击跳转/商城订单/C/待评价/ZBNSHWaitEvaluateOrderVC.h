@@ -6,11 +6,11 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //  等待评价
 
-#import "ZBNShoppingHallAllOrderVC.h"
+#import "ZBNSHBaseOrderVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZBNSHWaitEvaluateOrderVC : ZBNShoppingHallAllOrderVC
+@interface ZBNSHWaitEvaluateOrderVC : ZBNSHBaseOrderVC
 
 @end
 

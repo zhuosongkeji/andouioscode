@@ -352,7 +352,22 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="Wxb-yZ-N4p"/>
-            <point key="canvasLocation" x="-777" y="-6"/>
+            <connections>
+                <outlet property="address" destination="aMR-L6-f8v" id="tGn-XX-aAA"/>
+                <outlet property="attr_value" destination="Ky2-h1-LkO" id="MSM-nw-8wx"/>
+                <outlet property="goodsName" destination="Jhh-Ob-p3s" id="wb4-Ac-POw"/>
+                <outlet property="img" destination="UKI-MW-Uy7" id="rFw-QD-zZM"/>
+                <outlet property="integral" destination="mse-Lp-cpm" id="U65-cU-W6u"/>
+                <outlet property="name" destination="sLg-YW-puK" id="2ud-YR-21P"/>
+                <outlet property="num" destination="bbU-4a-wg1" id="VLc-iI-JTc"/>
+                <outlet property="order_create_time" destination="ylw-gr-ysE" id="vOH-W8-4dN"/>
+                <outlet property="order_money" destination="Fng-OM-MrS" id="E1h-JY-gVK"/>
+                <outlet property="order_num" destination="JDt-eJ-evN" id="1HC-Yg-7Ar"/>
+                <outlet property="pay_money" destination="6oX-5z-Uea" id="Dj9-19-Ip0"/>
+                <outlet property="phone_num" destination="wJa-sU-dn9" id="oDy-dr-ElM"/>
+                <outlet property="price" destination="43l-Le-jaq" id="aPo-la-Fc0"/>
+            </connections>
+            <point key="canvasLocation" x="51" y="69"/>
         </tableViewCell>
     </objects>
     <resources>

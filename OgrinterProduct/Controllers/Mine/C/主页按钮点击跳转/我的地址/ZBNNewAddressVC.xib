@@ -105,7 +105,7 @@
                         <constraint firstItem="Phj-qm-sBM" firstAttribute="leading" secondItem="f8U-FN-nbz" secondAttribute="leading" id="zhL-lF-eQ4"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6OS-Mm-CHj">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6OS-Mm-CHj">
                     <rect key="frame" x="0.0" y="194" width="414" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="街道:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pa5-1R-Rfr">
@@ -310,7 +310,7 @@
                 <constraint firstItem="Dh7-20-BTx" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yhX-3z-XGN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-2499" y="250"/>
+            <point key="canvasLocation" x="-1964" y="192"/>
         </view>
     </objects>
     <resources>

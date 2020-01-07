@@ -19,31 +19,20 @@
 
 @implementation ZBNShoppingMallEntryVC
 
-
-- (instancetype)init
-{
-    return [super initWithStyle:UITableViewStyleGrouped];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    self.navigationItem.title = @"商家入驻";
-    self.tableView.sectionHeaderHeight = 0;
-    self.tableView.sectionFooterHeight = 0;
-    self.tableView.contentInset = UIEdgeInsetsMake(- 30, 0, 0, 0);
+    self.navigationItem.title = @"商城商家入驻";
+    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
-    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
-    
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self setupFooter];
-    
 }
 
 - (void)setupFooter
 {
     ZBNEntryFooterView *footerV = [ZBNEntryFooterView viewFromXib];
-    footerV.height = 150;
+    footerV.height = ZBNFooterH;
     self.tableView.tableFooterView = footerV;
     self.footerView = footerV;
 }

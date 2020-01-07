@@ -276,7 +276,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="fly-dg-nby"/>
-            <point key="canvasLocation" x="140" y="156"/>
+            <point key="canvasLocation" x="127" y="174"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -417,7 +417,6 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="aboutUsView" destination="cUL-cZ-95A" id="InL-Wk-OT0"/>
-                <outlet property="cacheLabel" destination="o7v-mu-iym" id="c3f-pF-stz"/>
                 <outlet property="cacheSizeL" destination="o7v-mu-iym" id="wwm-og-55R"/>
                 <outlet property="cacheView" destination="a0c-v8-bqx" id="VNW-Tk-7k1"/>
                 <outlet property="changePwdView" destination="Iny-LT-zuT" id="zDx-3B-utK"/>
