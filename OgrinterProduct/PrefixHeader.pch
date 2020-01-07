@@ -26,8 +26,8 @@
 #define imgServer @"http://andou.zhuosongkj.com"
 
 #define UMKEY @"5bf77bb3b465f5ec3000007e"
-#define WeChatAPPKEY @"wx617c77c82218ea2c"
-#define WeChatSecret @"c7253e5289986cf4c4c74d1ccc185fb1"
+#define WeChatAPPKEY @"wxa2ea994d7f5b42e9"
+#define WeChatSecret @"9219c2f1d1a844e10ac492e922fd9966"
 #define QQAPPKEY @"100371282"
 #define QQSecret @"aed9b0303e3ed1e27bae87c33761161d"
 #define SinaAPPKEY @"568898243"

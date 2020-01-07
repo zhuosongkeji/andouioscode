@@ -13,11 +13,12 @@
 #import "UMShareManege.h"
 #import "IQKeyboardManager.h"
 #import "LoginViewController.h"
+#import <WechatOpenSDK/WXApi.h>
 
 
 
 
-@interface AppDelegate ()
+@interface AppDelegate ()<WXApiDelegate>
 
 
 
@@ -29,11 +30,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 //    KAdd_Observer(@"PushViewController", self, PushViewController, nil);
-    //初始化友盟
+    
+//    初始化友盟
 //    [UMConfigure initWithAppkey:UMKEY channel:nil];
 //    [UMConfigure setLogEnabled:NO];
-    
-    
+//    [self initUMSDK];
     
     [IQKeyboardManager sharedManager].enable = YES;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
@@ -55,6 +56,7 @@
 //    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:login];
 //    self.window.rootViewController = nav;
     
+    [WXApi registerApp:WeChatAPPKEY universalLink:@"https://"];
     
     [self.window makeKeyAndVisible];
 
@@ -65,10 +67,27 @@
 //MARK:- 加载
 -(void)initUMSDK{
     
-    [UMShareManege setPlaform:UMSocialPlatformType_WechatSession appKey:WeChatAPPKEY appSecret:WeChatSecret redirectURL:nil];
+    [UMShareManege setPlaform:UMSocialPlatformType_WechatSession appKey:WeChatAPPKEY appSecret:WeChatSecret redirectURL:@"https://"];
     [UMShareManege setPlaform:UMSocialPlatformType_QQ appKey:QQAPPKEY appSecret:QQSecret redirectURL:nil];
     [UMShareManege setPlaform:UMSocialPlatformType_Sina appKey:SinaAPPKEY appSecret:SinaSecret redirectURL:SinaRedirectURL];
     
+}
+
+
+
+//MARK:-WX支付成功 回调
+-(void)onResp:(BaseResp*)resp{
+    if ([resp isKindOfClass:[PayResp class]]){
+        PayResp*response=(PayResp*)resp;
+        switch(response.errCode){
+            case WXSuccess:
+                NSLog(@"支付成功");
+                break;
+            default:
+                NSLog(@"支付失败，retcode=%d",resp.errCode);
+                break;
+        }
+    }
 }
 
 
@@ -87,6 +106,9 @@
     BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
     if (!result) {
         // 其他如支付等SDK的回调
+        if ([url.host isEqualToString:@"pay"]) {
+            return [WXApi handleOpenURL:url delegate:(id<WXApiDelegate>)self];
+        }
     }
     
     return result;

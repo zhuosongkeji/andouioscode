@@ -42,10 +42,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>WeChat</string>
+			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx617c77c82218ea2c</string>
+				<string>wxa2ea994d7f5b42e9</string>
 			</array>
 		</dict>
 		<dict>
@@ -65,6 +65,7 @@
 	<array>
 		<string>wechat</string>
 		<string>weixin</string>
+		<string>weixinULAPI</string>
 		<string>sinaweibohd</string>
 		<string>sinaweibo</string>
 		<string>sinaweibosso</string>

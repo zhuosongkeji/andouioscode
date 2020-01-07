@@ -18,45 +18,63 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="pNh-Vq-WoG">
-                        <rect key="frame" x="16" y="10" width="112" height="84.5"/>
+                        <rect key="frame" x="12" y="10" width="105" height="84.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="112" id="8qT-WS-g7l"/>
+                            <constraint firstAttribute="width" constant="105" id="8qT-WS-g7l"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阳光大床双人间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpt-Tf-bld">
-                        <rect key="frame" x="138" y="10" width="100" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阳光大床双人间" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpt-Tf-bld">
+                        <rect key="frame" x="127" y="10" width="127" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WiFi |卫浴 |独立" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRy-Ib-MpZ">
-                        <rect key="frame" x="138" y="35" width="166" height="14.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <rect key="frame" x="127" y="32" width="177" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥1687" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCV-NS-GUO">
-                        <rect key="frame" x="257.5" y="10" width="46.5" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥1687" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCV-NS-GUO">
+                        <rect key="frame" x="264" y="12" width="50" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="CSE-SG-B5t"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.88868540529999995" green="0.20830759409999999" blue="0.18837797640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptf-xs-NVs">
+                        <rect key="frame" x="283.5" y="32" width="28.5" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="pRy-Ib-MpZ" firstAttribute="top" secondItem="vpt-Tf-bld" secondAttribute="bottom" constant="8" id="8Al-xi-CJl"/>
+                    <constraint firstItem="pRy-Ib-MpZ" firstAttribute="top" secondItem="vpt-Tf-bld" secondAttribute="bottom" constant="6" id="8Al-xi-CJl"/>
                     <constraint firstItem="pRy-Ib-MpZ" firstAttribute="leading" secondItem="pNh-Vq-WoG" secondAttribute="trailing" constant="10" id="Db2-LH-gmB"/>
                     <constraint firstAttribute="bottom" secondItem="pNh-Vq-WoG" secondAttribute="bottom" constant="10" id="EeZ-S9-j1x"/>
                     <constraint firstAttribute="trailing" secondItem="pRy-Ib-MpZ" secondAttribute="trailing" constant="16" id="IC4-Fj-JoJ"/>
                     <constraint firstItem="pNh-Vq-WoG" firstAttribute="top" secondItem="lie-05-qP2" secondAttribute="top" constant="10" id="Jhn-fc-ru9"/>
-                    <constraint firstAttribute="trailing" secondItem="QCV-NS-GUO" secondAttribute="trailing" constant="16" id="WP8-Au-Zeq"/>
+                    <constraint firstItem="QCV-NS-GUO" firstAttribute="leading" secondItem="vpt-Tf-bld" secondAttribute="trailing" constant="10" id="PKq-vh-6cM"/>
+                    <constraint firstAttribute="trailing" secondItem="QCV-NS-GUO" secondAttribute="trailing" constant="6" id="WP8-Au-Zeq"/>
                     <constraint firstItem="vpt-Tf-bld" firstAttribute="top" secondItem="lie-05-qP2" secondAttribute="top" constant="10" id="bnU-ql-izf"/>
-                    <constraint firstItem="pNh-Vq-WoG" firstAttribute="leading" secondItem="lie-05-qP2" secondAttribute="leading" constant="16" id="sfS-tf-yff"/>
-                    <constraint firstItem="QCV-NS-GUO" firstAttribute="centerY" secondItem="vpt-Tf-bld" secondAttribute="centerY" id="soz-3L-Ibn"/>
+                    <constraint firstItem="QCV-NS-GUO" firstAttribute="top" secondItem="lie-05-qP2" secondAttribute="top" constant="12" id="kbF-Ky-odj"/>
+                    <constraint firstItem="pNh-Vq-WoG" firstAttribute="leading" secondItem="lie-05-qP2" secondAttribute="leading" constant="12" id="sfS-tf-yff"/>
                     <constraint firstItem="vpt-Tf-bld" firstAttribute="leading" secondItem="pNh-Vq-WoG" secondAttribute="trailing" constant="10" id="vZt-kF-FPH"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vpt-Tf-bld" secondAttribute="trailing" constant="82" id="xGq-Xb-EFs"/>
+                    <constraint firstAttribute="trailing" secondItem="ptf-xs-NVs" secondAttribute="trailing" constant="8" id="z0f-WZ-IXA"/>
+                    <constraint firstItem="ptf-xs-NVs" firstAttribute="centerY" secondItem="pRy-Ib-MpZ" secondAttribute="centerY" id="z1x-Io-gaz"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="138" y="51"/>
+            <connections>
+                <outlet property="number" destination="ptf-xs-NVs" id="7nw-EZ-3ZA"/>
+                <outlet property="shopIcon" destination="pNh-Vq-WoG" id="t6D-ay-b42"/>
+                <outlet property="shopcontnt" destination="pRy-Ib-MpZ" id="hZ2-M7-uFR"/>
+                <outlet property="shoprice" destination="QCV-NS-GUO" id="9GU-uB-T6G"/>
+                <outlet property="shoptitle" destination="vpt-Tf-bld" id="lE7-Cs-phM"/>
+            </connections>
+            <point key="canvasLocation" x="146" y="-12"/>
         </tableViewCell>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellTwo" rowHeight="72" id="cul-4W-sVJ" customClass="OnlineTableViewCell">
@@ -138,6 +156,11 @@
                 <constraint firstItem="xTx-Oh-bsC" firstAttribute="centerX" secondItem="cul-4W-sVJ" secondAttribute="centerX" id="B4o-bk-QYE"/>
                 <constraint firstItem="cgk-8s-mDA" firstAttribute="width" secondItem="cul-4W-sVJ" secondAttribute="width" multiplier="0.5" id="I4v-Z0-zkV"/>
             </constraints>
+            <connections>
+                <outlet property="contentLabel" destination="xTx-Oh-bsC" id="YOy-gd-DTC"/>
+                <outlet property="livedateLabel" destination="jBH-Zj-gDc" id="XTj-f1-VdU"/>
+                <outlet property="rzdateLabel" destination="MAl-MQ-f6u" id="fyO-Rm-e2C"/>
+            </connections>
             <point key="canvasLocation" x="138" y="134"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellThrid" rowHeight="88" id="Bt9-Mk-Nyh" customClass="OnlineTableViewCell">
@@ -153,8 +176,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="重庆市南岸区南坪东路斜对面女子医院39-106菜鸟驿站附264号楼" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zST-lJ-OSW">
-                        <rect key="frame" x="16" y="45" width="288" height="31.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <rect key="frame" x="16" y="45" width="288" height="33.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -176,13 +199,18 @@
                     <constraint firstAttribute="trailing" secondItem="5Uc-Rh-f3I" secondAttribute="trailing" constant="16" id="ELo-Sl-UD8"/>
                     <constraint firstAttribute="trailing" secondItem="zST-lJ-OSW" secondAttribute="trailing" constant="16" id="Icd-Hu-y9V"/>
                     <constraint firstAttribute="trailing" secondItem="LBz-g0-Qqv" secondAttribute="trailing" id="RLL-Th-rnU"/>
+                    <constraint firstItem="LBz-g0-Qqv" firstAttribute="top" secondItem="zST-lJ-OSW" secondAttribute="bottom" constant="12" id="UmT-Wy-cF3"/>
                     <constraint firstItem="dtp-fa-hi4" firstAttribute="leading" secondItem="pfd-WM-w6z" secondAttribute="leading" constant="16" id="WaA-tb-2XV"/>
                     <constraint firstItem="zST-lJ-OSW" firstAttribute="leading" secondItem="pfd-WM-w6z" secondAttribute="leading" constant="16" id="bSG-Ta-LzJ"/>
                     <constraint firstItem="5Uc-Rh-f3I" firstAttribute="centerY" secondItem="dtp-fa-hi4" secondAttribute="centerY" id="gQV-Mw-F3z"/>
-                    <constraint firstItem="zST-lJ-OSW" firstAttribute="top" secondItem="dtp-fa-hi4" secondAttribute="bottom" constant="12" id="lSP-O4-4Cv"/>
                     <constraint firstItem="LBz-g0-Qqv" firstAttribute="leading" secondItem="pfd-WM-w6z" secondAttribute="leading" id="wP1-0v-IJF"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="OrderAddress" destination="zST-lJ-OSW" id="P9X-vK-ZNy"/>
+                <outlet property="OrderName" destination="dtp-fa-hi4" id="Dmv-O9-kro"/>
+                <outlet property="OrderPhone" destination="5Uc-Rh-f3I" id="xEn-h6-tVW"/>
+            </connections>
             <point key="canvasLocation" x="138" y="212"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellFouth" rowHeight="41" id="seO-Tg-elM" customClass="OnlineTableViewCell">
@@ -242,6 +270,9 @@
             <constraints>
                 <constraint firstItem="e2Z-7N-f4r" firstAttribute="centerY" secondItem="seO-Tg-elM" secondAttribute="centerY" id="dmo-Fq-u73"/>
             </constraints>
+            <connections>
+                <outlet property="rzNumber" destination="Jci-es-vjs" id="e2y-Db-oYq"/>
+            </connections>
             <point key="canvasLocation" x="138" y="277"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellFive" rowHeight="41" id="qSA-dg-8sR" customClass="OnlineTableViewCell">
@@ -277,6 +308,9 @@
             <constraints>
                 <constraint firstItem="b9A-BI-g7Y" firstAttribute="centerY" secondItem="qSA-dg-8sR" secondAttribute="centerY" id="EjX-Xx-BPn"/>
             </constraints>
+            <connections>
+                <outlet property="lxrName" destination="ANa-74-Shm" id="wCt-UU-VMt"/>
+            </connections>
             <point key="canvasLocation" x="138" y="331"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellSix" rowHeight="41" id="P9F-im-7n7" customClass="OnlineTableViewCell">
@@ -312,6 +346,9 @@
             <constraints>
                 <constraint firstItem="PhD-Dn-RG6" firstAttribute="centerY" secondItem="P9F-im-7n7" secondAttribute="centerY" id="AWN-MG-rUl"/>
             </constraints>
+            <connections>
+                <outlet property="lxrPhone" destination="CVU-3e-Sn3" id="62h-sm-Vjk"/>
+            </connections>
             <point key="canvasLocation" x="138" y="390"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OnlineTableViewCellSeven" rowHeight="41" id="aIG-iO-hph" customClass="OnlineTableViewCell">
@@ -343,6 +380,9 @@
             <constraints>
                 <constraint firstItem="YWh-EX-0e4" firstAttribute="centerY" secondItem="aIG-iO-hph" secondAttribute="centerY" id="LFC-RS-PBC"/>
             </constraints>
+            <connections>
+                <outlet property="yqjxzlabel" destination="vD7-o9-rN3" id="kwU-uS-Y6v"/>
+            </connections>
             <point key="canvasLocation" x="138" y="447"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OnlineTableViewCellEight" rowHeight="41" id="amU-2i-k5b" customClass="OnlineTableViewCell">
@@ -374,6 +414,9 @@
             <constraints>
                 <constraint firstItem="Akf-3y-91g" firstAttribute="centerY" secondItem="amU-2i-k5b" secondAttribute="centerY" id="4uL-k8-b2h"/>
             </constraints>
+            <connections>
+                <outlet property="jflabel" destination="TSb-cf-Yop" id="dc9-gj-Zxl"/>
+            </connections>
             <point key="canvasLocation" x="138" y="504"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellNine" rowHeight="41" id="NFP-hm-Kcf" customClass="OnlineTableViewCell">
@@ -426,7 +469,7 @@
                 <outlet property="sectionTwotitle" destination="54n-fv-bZ8" id="839-e8-Xjx"/>
                 <outlet property="selectBtn" destination="3UL-xm-A2Z" id="Lje-Bh-q4r"/>
             </connections>
-            <point key="canvasLocation" x="138" y="556"/>
+            <point key="canvasLocation" x="138" y="562"/>
         </tableViewCell>
     </objects>
     <resources>

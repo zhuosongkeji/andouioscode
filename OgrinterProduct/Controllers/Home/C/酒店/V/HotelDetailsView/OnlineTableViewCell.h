@@ -9,6 +9,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class OrderlModel,PaywayModel;
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,6 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,weak)id<OnlineTableViewCellDelegate> xlDelegate;
 
+@property(nonatomic,strong)OrderlModel *modellist1;
+@property(nonatomic,strong)PaywayModel *modellist2;
+
 @property (assign, nonatomic) NSIndexPath *selectedIndexPath;
 
 @property (weak, nonatomic) IBOutlet UIButton *selectBtn;
@@ -32,6 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 - (void)configTempCellWith:(NSIndexPath *)indexPath;
+
 
 @end
 
