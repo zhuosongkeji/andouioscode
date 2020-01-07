@@ -180,6 +180,10 @@
 		A1FC709023BD8224005BFDC9 /* BeseListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FC708E23BD8224005BFDC9 /* BeseListViewCell.xib */; };
 		A1FC709323BD8AF7005BFDC9 /* BeseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC709223BD8AF7005BFDC9 /* BeseModel.m */; };
 		A1FC709623BD94DD005BFDC9 /* BeseListListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC709523BD94DD005BFDC9 /* BeseListListModel.m */; };
+		A1FC70BE23BF149D005BFDC9 /* OrderlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC70BD23BF149D005BFDC9 /* OrderlModel.m */; };
+		A1FC70C123C032A0005BFDC9 /* OrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC70C023C032A0005BFDC9 /* OrderListModel.m */; };
+		A1FC70C423C05AE5005BFDC9 /* PaywayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC70C323C05AE5005BFDC9 /* PaywayModel.m */; };
+		A1FC70C723C2CF6B005BFDC9 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC70C623C2CF6B005BFDC9 /* HomeModel.m */; };
 		A1FD1B6923AB471500AE0835 /* CategoryShopDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD1B6723AB471500AE0835 /* CategoryShopDetailsViewController.m */; };
 		A1FD1B6A23AB471500AE0835 /* CategoryShopDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FD1B6823AB471500AE0835 /* CategoryShopDetailsViewController.xib */; };
 		A1FD1B8823AC6E7800AE0835 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD1B8523AC6E7800AE0835 /* iCarousel.m */; };
@@ -637,6 +641,14 @@
 		A1FC709223BD8AF7005BFDC9 /* BeseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeseModel.m; sourceTree = "<group>"; };
 		A1FC709423BD94DD005BFDC9 /* BeseListListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeseListListModel.h; sourceTree = "<group>"; };
 		A1FC709523BD94DD005BFDC9 /* BeseListListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeseListListModel.m; sourceTree = "<group>"; };
+		A1FC70BC23BF149D005BFDC9 /* OrderlModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderlModel.h; sourceTree = "<group>"; };
+		A1FC70BD23BF149D005BFDC9 /* OrderlModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderlModel.m; sourceTree = "<group>"; };
+		A1FC70BF23C032A0005BFDC9 /* OrderListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListModel.h; sourceTree = "<group>"; };
+		A1FC70C023C032A0005BFDC9 /* OrderListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListModel.m; sourceTree = "<group>"; };
+		A1FC70C223C05AE5005BFDC9 /* PaywayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaywayModel.h; sourceTree = "<group>"; };
+		A1FC70C323C05AE5005BFDC9 /* PaywayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaywayModel.m; sourceTree = "<group>"; };
+		A1FC70C523C2CF6B005BFDC9 /* HomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
+		A1FC70C623C2CF6B005BFDC9 /* HomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		A1FD1B6623AB471500AE0835 /* CategoryShopDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CategoryShopDetailsViewController.h; path = OgrinterProduct/Controllers/Home/C/CategoryShopDetailsViewController.h; sourceTree = SOURCE_ROOT; };
 		A1FD1B6723AB471500AE0835 /* CategoryShopDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CategoryShopDetailsViewController.m; path = OgrinterProduct/Controllers/Home/C/CategoryShopDetailsViewController.m; sourceTree = SOURCE_ROOT; };
 		A1FD1B6823AB471500AE0835 /* CategoryShopDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategoryShopDetailsViewController.xib; path = OgrinterProduct/Controllers/Home/C/CategoryShopDetailsViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -1061,16 +1073,9 @@
 			children = (
 				A10A9C94239A56F00049A0D2 /* C */,
 				A10A9C93239A56ED0049A0D2 /* V */,
-				A10A9C92239A56E30049A0D2 /* M */,
+				A1FC70BB23BF146A005BFDC9 /* M */,
 			);
 			path = "酒店";
-			sourceTree = "<group>";
-		};
-		A10A9C92239A56E30049A0D2 /* M */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = M;
 			sourceTree = "<group>";
 		};
 		A10A9C93239A56ED0049A0D2 /* V */ = {
@@ -1560,6 +1565,8 @@
 			children = (
 				A14FB313238FE03A006A6511 /* HomeCellModel.h */,
 				A14FB314238FE03A006A6511 /* HomeCellModel.m */,
+				A1FC70C523C2CF6B005BFDC9 /* HomeModel.h */,
+				A1FC70C623C2CF6B005BFDC9 /* HomeModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -1879,6 +1886,19 @@
 				A1F6BDAA23ADF7B50063AEF8 /* UIView+Extension.m */,
 			);
 			path = MoveCollection;
+			sourceTree = "<group>";
+		};
+		A1FC70BB23BF146A005BFDC9 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				A1FC70BC23BF149D005BFDC9 /* OrderlModel.h */,
+				A1FC70BD23BF149D005BFDC9 /* OrderlModel.m */,
+				A1FC70BF23C032A0005BFDC9 /* OrderListModel.h */,
+				A1FC70C023C032A0005BFDC9 /* OrderListModel.m */,
+				A1FC70C223C05AE5005BFDC9 /* PaywayModel.h */,
+				A1FC70C323C05AE5005BFDC9 /* PaywayModel.m */,
+			);
+			path = M;
 			sourceTree = "<group>";
 		};
 		A1FD1B8423AC6E7800AE0835 /* iCarousel */ = {
@@ -2844,6 +2864,7 @@
 				F476A45223A7682B00E3018A /* ZBNCashWithDrawalCell.m in Sources */,
 				A15DC0C5239DD78A008CF287 /* HotelDetilsBaseTableView.m in Sources */,
 				A1F73D3A23A9F439001D86EF /* OnlineOrderViewController.m in Sources */,
+				A1FC70C723C2CF6B005BFDC9 /* HomeModel.m in Sources */,
 				F4ADBE3823B9A4BA00B62E46 /* ZBNMyIntegralModel.m in Sources */,
 				A15DC104239E41C8008CF287 /* HotelDetailsBottomView.m in Sources */,
 				A14FB323239017BC006A6511 /* UIView+HHAddition.m in Sources */,
@@ -2883,12 +2904,14 @@
 				A14FB2B7238F5788006A6511 /* FKHRequestOperation.m in Sources */,
 				F476A47723A7682B00E3018A /* ZBNRestaurantAllOrderVC.m in Sources */,
 				F4FAC28723AC56A000C235EA /* ZBNWaitDeliverDetailCell.m in Sources */,
+				A1FC70C423C05AE5005BFDC9 /* PaywayModel.m in Sources */,
 				F476A49523A7682C00E3018A /* ZBNHotelEntryVC.m in Sources */,
 				A10A9BE7239764D70049A0D2 /* MDMaskView.m in Sources */,
 				A14FB26A238E0E50006A6511 /* main.m in Sources */,
 				A1F5518023B74D1F00416682 /* CommentModel.m in Sources */,
 				F476A4B223A783E200E3018A /* ZBNWalletRechargeVC.m in Sources */,
 				A1F6BDB023ADF7B50063AEF8 /* UIView+Extension.m in Sources */,
+				A1FC70BE23BF149D005BFDC9 /* OrderlModel.m in Sources */,
 				F44DF88F23AA2C8F00A7D902 /* ZBNChooseAddressVC.m in Sources */,
 				F4FAC2A423AC79BE00C235EA /* ZBNShoppingMallEntryCell.m in Sources */,
 				A14FB2F5238F6A84006A6511 /* HomeViewController.m in Sources */,
@@ -3031,6 +3054,7 @@
 				F476A47A23A7682B00E3018A /* ZBNCommenOrderCell.m in Sources */,
 				F476A46023A7682B00E3018A /* ZBNSHWaitEvaluateOrderVC.m in Sources */,
 				F476A45123A7682B00E3018A /* ZBNSuccessfulWthdrawalsVC.m in Sources */,
+				A1FC70C123C032A0005BFDC9 /* OrderListModel.m in Sources */,
 				A1F4DFE023A1D54F00B02880 /* ShopSeckillDetailsViewController.m in Sources */,
 				F476A47C23A7682C00E3018A /* ZBNHotelAllOrderVC.m in Sources */,
 				A15DC100239E3F04008CF287 /* OnlineBookingViewController.m in Sources */,
@@ -3239,6 +3263,108 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Base.framework",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"APOpenSdk\"",
+					"-l\"SocialAlipayShare\"",
+					"-l\"SocialDingDing\"",
+					"-l\"SocialEmail\"",
+					"-l\"SocialFacebook\"",
+					"-l\"SocialQQ\"",
+					"-l\"SocialSMS\"",
+					"-l\"SocialSina\"",
+					"-l\"SocialTwitter\"",
+					"-l\"SocialWeChat\"",
+					"-l\"WeChatSDK\"",
+					"-l\"WeiboSDK\"",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"sqlite3.0\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"DTShareKit\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FBSDKShareKit\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"IQKeyboardManager\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Photos\"",
+					"-framework",
+					"\"QWAlertView\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SDCycleScrollView\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TencentOpenAPI\"",
+					"-framework",
+					"\"TwitterCore\"",
+					"-framework",
+					"\"TwitterKit\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UMAnalytics\"",
+					"-framework",
+					"\"UMCommon\"",
+					"-framework",
+					"\"UMCommonLog\"",
+					"-framework",
+					"\"UMPush\"",
+					"-framework",
+					"\"UMShare\"",
+					"-framework",
+					"\"UShareUI\"",
+					"-framework",
+					"\"UserNotifications\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"YYModel\"",
+					"-framework",
+					"\"ZFPlayer\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RXF.OgrinterProduct;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3270,6 +3396,108 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Base.framework",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"APOpenSdk\"",
+					"-l\"SocialAlipayShare\"",
+					"-l\"SocialDingDing\"",
+					"-l\"SocialEmail\"",
+					"-l\"SocialFacebook\"",
+					"-l\"SocialQQ\"",
+					"-l\"SocialSMS\"",
+					"-l\"SocialSina\"",
+					"-l\"SocialTwitter\"",
+					"-l\"SocialWeChat\"",
+					"-l\"WeChatSDK\"",
+					"-l\"WeiboSDK\"",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"sqlite3.0\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"DTShareKit\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FBSDKShareKit\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"IQKeyboardManager\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Photos\"",
+					"-framework",
+					"\"QWAlertView\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SDCycleScrollView\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TencentOpenAPI\"",
+					"-framework",
+					"\"TwitterCore\"",
+					"-framework",
+					"\"TwitterKit\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UMAnalytics\"",
+					"-framework",
+					"\"UMCommon\"",
+					"-framework",
+					"\"UMCommonLog\"",
+					"-framework",
+					"\"UMPush\"",
+					"-framework",
+					"\"UMShare\"",
+					"-framework",
+					"\"UShareUI\"",
+					"-framework",
+					"\"UserNotifications\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"YYModel\"",
+					"-framework",
+					"\"ZFPlayer\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RXF.OgrinterProduct;
 				PRODUCT_NAME = "$(TARGET_NAME)";

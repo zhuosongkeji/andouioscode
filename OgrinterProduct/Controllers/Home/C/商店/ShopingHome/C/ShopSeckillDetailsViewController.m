@@ -73,6 +73,9 @@
 
 @property(nonatomic,strong)userInfo * unmodel;
 
+@property(nonatomic,strong)NSDictionary *ggDict;
+@property(nonatomic,strong)NSString *orderNumberStr;
+
 @end
 
 
@@ -224,23 +227,22 @@
 //MARK:- 结算
 -(void)loadOrderNetWork:(NSDictionary *)dict{
     
-    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,order_add_order];
-    
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,order_add_order] params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([serverInfo.response[@"code"] integerValue] == 200) {
-            BeseModel *model = [[BeseModel alloc]initWithDict:[serverInfo.response objectForKey:@"data"]];
-            [_bottomView setListModel:model];
-            NSLog(@"%@",dict);
+            OnlineBookingViewController *Online = [[OnlineBookingViewController alloc]init];
+            Online.payType = OnlineBookingViewProductPay;
+            Online.order_sn = [[serverInfo.response objectForKey:@"data"] objectForKey:@"order_sn"];
+            
+            [self.navigationController pushViewController:Online animated:YES];
+            
         }else if ([serverInfo.response[@"code"] integerValue] == 201){
+            [HUDManager showTextHud:serverInfo.response[@"msg"]];
             ZBNMyAddressVC *add = [[ZBNMyAddressVC alloc]init];
             [self.navigationController pushViewController:add animated:YES];
-//            [HUDManager showTextHud:serverInfo.response[@"msg"]];
-            
             
         }else{
             [HUDManager showTextHud:loadError];
         }
-        
     }];
 }
 
@@ -271,7 +273,7 @@
 //MARK:-createBottomView
 -(void)createBottomView {
     
-    UIButton *btn = [self createbtn:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-bottomH+58) Action:@selector(dissView) BackGroundColor:[UIColor colorWithWhite:0.4 alpha:0.4]];
+    UIButton *btn = [self createbtn:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-bottomH+58) Action:@selector(dissView:) BackGroundColor:[UIColor colorWithWhite:0.4 alpha:0.4]];
     [btn setHidden:YES];
     [[UIApplication sharedApplication].keyWindow addSubview:self.bjbtn = btn];
     
@@ -281,19 +283,13 @@
     __weak typeof(&*self)WeakSelf = self;
     _bottomView.payBlock = ^(UIButton *btn, NSInteger number, NSString *cpId) {
         
-        NSDictionary *dict = nil;
-        
         ShopDetalisModel *model =  WeakSelf.dataArr[0];
-        
         if (WeakSelf.unmodel)
-            dict = @{@"goods_id":WeakSelf.cpid,@"uid":WeakSelf.unmodel.uid,@"merchant_id":model.merchant_id,@"goods_sku_id":cpId,@"num":[@(number) stringValue]};
+            WeakSelf.ggDict = @{@"goods_id":WeakSelf.cpid,@"uid":WeakSelf.unmodel.uid,@"merchant_id":model.merchant_id,@"goods_sku_id":cpId,@"num":[@(number) stringValue]};
         else
-            dict = @{@"goods_id":WeakSelf.cpid,@"uid":@"",@"merchant_id":model.merchant_id,@"goods_sku_id":cpId,@"num":[@(number) stringValue]};
+            WeakSelf.ggDict = @{@"goods_id":WeakSelf.cpid,@"uid":@"",@"merchant_id":model.merchant_id,@"goods_sku_id":cpId,@"num":[@(number) stringValue]};
         
-        [WeakSelf loadOrderNetWork:dict];
-        
-        //        [WeakSelf dissView];
-        //        [WeakSelf performSelector:@selector(pushToPayController) withObject:nil afterDelay:0.5];
+        [WeakSelf dissView:@"0"];
     };
     
     [[UIApplication sharedApplication].keyWindow addSubview:_bottomView];
@@ -531,11 +527,15 @@
 
 
 //MARK:- view消失
--(void)dissView{
+-(void)dissView:(NSString *)type{
     
     [UIView animateWithDuration:0.3 animations:^{
         _bottomView.frame = CGRectMake(0, KSCREEN_HEIGHT, KSCREEN_WIDTH, bottomH);
         [self.bjbtn setHidden:YES];
+        
+    } completion:^(BOOL finished) {
+        if ([type isEqualToString:@"0"])
+            [self loadOrderNetWork:self.ggDict];
     }];
 }
 
@@ -548,13 +548,6 @@
     } completion:^(BOOL finished) {
         [self loadshopspecslist];
     }];
-}
-
-
--(void)pushToPayController {
-    OnlineBookingViewController *Online = [[OnlineBookingViewController alloc]init];
-    Online.payType = OnlineBookingViewProductPay;
-    [self.navigationController pushViewController:Online animated:YES];
 }
 
 

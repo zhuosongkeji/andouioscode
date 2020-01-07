@@ -191,9 +191,9 @@
             
             if (t == 0) {
                 
-                [self creatPlistFileWithArr:dict[@"merchant_type"] Name:@"merchanttype"];
+                [self creatPlistFileWithArr:dict1[@"merchant_type"] Name:@"merchanttype"];
                 
-                [self creatPlistFileWithArr:dict[@"districts"] Name:@"districts"];
+                [self creatPlistFileWithArr:dict1[@"districts"] Name:@"districts"];
                 t = 1;
                 
             }else {
@@ -283,6 +283,7 @@
 //MARK:-
 #pragma mark - 创建plist文件
 -(void)creatPlistFileWithArr:(NSArray *)array Name:(NSString *)name{
+    
 //将字典保存到document文件->获取appdocument路径
     NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     //要创建的plist文件名 -> 路径

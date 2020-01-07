@@ -8,15 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class HomeModel;
+
 @interface HXCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *imgView1;
 
-@property (weak, nonatomic) IBOutlet UILabel *lable1;
+@property(nonatomic,strong)HomeModel *modelist0;
 
-
-@property (weak, nonatomic) IBOutlet UIImageView *imgView;
-
-@property (weak, nonatomic) IBOutlet UILabel *name;
+@property(nonatomic,strong)HomeModel *modelist1;
 
 @end

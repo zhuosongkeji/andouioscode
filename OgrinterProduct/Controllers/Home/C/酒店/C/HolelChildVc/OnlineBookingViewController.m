@@ -6,18 +6,26 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
-#define order_settlement @"order/settlement"
+#define order_index @"order/details"//订单详情
+
+#define common_payways @"common/pay_ways"//获取支付方式
+
+#define order_pay @"order/pay"
 
 
 #import "OnlineBookingViewController.h"
 #import "CustomAlterView.h"
 #import "OnlineTableViewCell.h"
 #import "PaySuccessViewController.h"
+#import "OrderlModel.h"
+#import "PaywayModel.h"
+#import <WechatOpenSDK/WXApi.h>
 
 
 @interface OnlineBookingViewController ()<UITableViewDelegate,UITableViewDataSource,OnlineTableViewCellDelegate>{
     
     BOOL HHR;
+    NSInteger selectIndexPaths;
 }
 
 
@@ -30,25 +38,49 @@
 
 @property (assign, nonatomic) NSIndexPath *selectedIndexPath;//单选，当前选中的行
 
+@property (nonatomic,strong)NSMutableArray *dataArr;
+
+@property(nonatomic,strong)NSMutableArray *payArr;
+
 @end
 
 @implementation OnlineBookingViewController
 
+
+-(NSMutableArray *)dataArr{
+    
+    if (!_dataArr) {
+        _dataArr = [NSMutableArray array];
+    }
+    return _dataArr;
+}
+
+
+-(NSMutableArray *)payArr{
+    
+    if (!_payArr) {
+        _payArr = [NSMutableArray array];
+    }
+    return _payArr;
+}
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setup];
+    
     if (self.payType == OnlineBookingViewHotelPay) {
         self.navigationItem.title = OnlinTitleArr[0];
          [self createAlter];
     }else if (self.payType == OnlineBookingViewProductPay){
         self.navigationItem.title = OnlinTitleArr[1];
+        [self loadNetWork];
     }else if (self.payType == OnlineBookingViewOrderPay){
         
     }else{}
     
+    [self loadpayways];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -58,6 +90,8 @@
     self.toTop.constant = kStatusBarAndNavigationBarH;
     self.mTableView.tableFooterView = [UILabel new];
     [self.mTableView registerNib:[UINib nibWithNibName:@"OnlineTableViewCell" bundle:nil] forCellReuseIdentifier:@"OnlineTableViewCell"];
+    
+    selectIndexPaths = 100000;
 }
 
 
@@ -69,6 +103,82 @@
         HHR = YES;
     };
 }
+
+
+//MARK:- 在线下单
+-(void)loadNetWork{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,order_index];
+    
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    
+    userInfo *unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"uid":unmodel.uid,@"order_sn":self.order_sn} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            OrderlModel *model = [[OrderlModel alloc]initWithDict:[serverInfo.response objectForKey:@"data"]];
+            
+            [self.dataArr addObject:model];
+             //[self performSelector:@selector(pushToPayController) withObject:nil afterDelay:0.5];
+            [self.mTableView reloadData];
+            
+        }else if ([serverInfo.response[@"code"] integerValue] == 201){
+            
+        }else{
+            [HUDManager showTextHud:loadError];
+        }
+        
+    }];
+}
+
+
+-(void)loadpayways{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,common_payways];
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            
+            NSArray *array = serverInfo.response[@"data"];
+            for (int i = 0; i < [array count]; i ++) {
+                PaywayModel *model = [[PaywayModel alloc]initWithDict:array[i]];
+                [self.payArr addObject:model];
+                [self.mTableView reloadData];
+            }
+        }else if ([serverInfo.response[@"code"] integerValue] == 201){
+            
+        }else{
+            [HUDManager showTextHud:loadError];
+        }
+        
+    }];
+}
+
+
+-(void)loadpayToServer {
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,order_pay];
+    
+    PaywayModel *model = self.payArr[selectIndexPaths];
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo *unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    OrderlModel *Omodel = self.dataArr[0];
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"uid":unmodel.uid,@"sNo":Omodel.order_sn,@"pay_id":model.pid,@"is_integral":@"0"} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            
+            NSDictionary *dict = serverInfo.response[@"data"];
+            [self uploadWx:dict];
+            
+        }else if ([serverInfo.response[@"code"] integerValue] == 201){
+            
+        }else{
+            [HUDManager showTextHud:loadError];
+        }
+        
+    }];
+}
+
 
 
 //MARK:- tableView
@@ -87,7 +197,7 @@
             return 0;
         }else{return 0;}
     }
-    return 4;
+    return [self.payArr count];
 }
 
 
@@ -96,15 +206,25 @@
     OnlineTableViewCell *cell = [OnlineTableViewCell tempTableViewCellWith:self.mTableView indexPath:indexPath withTpye:self.payType];
     
     [cell configTempCellWith:indexPath];
-    
     cell.xlDelegate = self;
     
     
-    cell.selectedIndexPath = indexPath;
-    if (_selectedIndexPath == indexPath)
-        cell.selectBtn.selected = YES;
-    else
-        cell.selectBtn.selected = NO;
+    if (indexPath.section == 0) {
+        if ([self.dataArr count]) {
+            cell.modellist1 = self.dataArr[0];
+        }
+    }else if (indexPath.section == 1){
+        
+        cell.selectedIndexPath = indexPath;
+        if (_selectedIndexPath == indexPath){
+            cell.selectBtn.selected = YES;
+        }else
+            cell.selectBtn.selected = NO;
+        
+        if ([self.payArr count]) {
+            cell.modellist2 = self.payArr[indexPath.row];
+        }
+    }
     
     return cell;
 }
@@ -156,15 +276,54 @@
 
 - (IBAction)orderclick:(UIButton *)sender {
     KPreventRepeatClickTime(1)
-    [[QWAlertView sharedMask] show:_alterView withType:QWAlertViewStyleAlert animationFinish:^{
+    
+    if (self.payType == OnlineBookingViewHotelPay) {
+        self.navigationItem.title = OnlinTitleArr[0];
+        [[QWAlertView sharedMask] show:_alterView withType:QWAlertViewStyleAlert animationFinish:^{
+            
+            
+        } dismissHandle:^{
+            if (HHR) {
+                HHR = NO;
+                PaySuccessViewController *pay = [[PaySuccessViewController alloc]init];
+                [self.navigationController pushViewController:pay animated:YES];
+            }
+        }];
         
-    } dismissHandle:^{
-        if (HHR) {
-            HHR = NO;
-            PaySuccessViewController *pay = [[PaySuccessViewController alloc]init];
-            [self.navigationController pushViewController:pay animated:YES];
+    }else if (self.payType == OnlineBookingViewProductPay){
+        self.navigationItem.title = OnlinTitleArr[1];
+        if (selectIndexPaths == 100000) {
+            [HUDManager showTextHud:@"请选择支付方式"];
+            return;
         }
-    }];
+        
+        [self loadpayToServer];
+        
+    }else if (self.payType == OnlineBookingViewOrderPay){
+        
+    }else{}
+    
+}
+
+
+-(void)uploadWx:(NSDictionary *)dict{
+    
+    PayReq *req = [[PayReq alloc] init];
+    
+    req.openID = [NSString stringWithFormat:@"%@",dict[@"appid"]];
+    //APPID
+    req.partnerId = [NSString stringWithFormat:@"%@",dict[@"mch_id"]]; //商户号
+    req.prepayId = [NSString stringWithFormat:@"%@",dict[@"prepay_id"]];
+    
+    req.nonceStr = [NSString stringWithFormat:@"%@",dict[@"nonce_str"]];
+    
+    req.timeStamp = [dict[@"timestamp"] intValue];
+    
+    req.package = @"Sign=WXPay";
+    
+    req.sign = [NSString stringWithFormat:@"%@",dict[@"sign"]];
+    
+    [WXApi sendReq:req completion:nil];
 }
 
 
@@ -178,6 +337,7 @@
         //当前选择的打勾
         OnlineTableViewCell *cell = [self.mTableView cellForRowAtIndexPath:selectedIndexPath];
         cell.selectBtn.selected = YES;
+        selectIndexPaths = selectedIndexPath.row;
     }
 }
 

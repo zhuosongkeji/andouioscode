@@ -7,9 +7,46 @@
 //
 
 #import "OnlineTableViewCell.h"
+#import "OrderlModel.h"
+#import "OrderListModel.h"
+#import "PaywayModel.h"
 
 
 @interface OnlineTableViewCell ()
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *shopIcon;
+@property (weak, nonatomic) IBOutlet UILabel *shoptitle;
+@property (weak, nonatomic) IBOutlet UILabel *shopcontnt;
+@property (weak, nonatomic) IBOutlet UILabel *shoprice;
+@property (weak, nonatomic) IBOutlet UILabel *number;
+
+
+
+@property (weak, nonatomic) IBOutlet UILabel *rzdateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *livedateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+
+
+
+@property (weak, nonatomic) IBOutlet UILabel *OrderAddress;
+@property (weak, nonatomic) IBOutlet UILabel *OrderName;
+@property (weak, nonatomic) IBOutlet UILabel *OrderPhone;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *rzNumber;
+
+
+@property (weak, nonatomic) IBOutlet UITextField *lxrName;
+
+@property (weak, nonatomic) IBOutlet UITextField *lxrPhone;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *yqjxzlabel;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *jflabel;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *sectionTwotitle;
 @property (weak, nonatomic) IBOutlet UIImageView *ImgView;
@@ -17,7 +54,39 @@
 
 @end
 
+
 @implementation OnlineTableViewCell
+
+
+-(void)setModellist1:(OrderlModel *)modellist1{
+    _modellist1 = modellist1;
+    
+    for (int i = 0; i < [modellist1.listArr count]; i ++) {
+        
+        OrderListModel *model = modellist1.listArr[i];
+        [self.shopIcon sd_setImageWithURL:[NSURL URLWithString:model.detailsimg] placeholderImage:nil];
+        
+        self.shoptitle.text = [NSString stringWithFormat:@"%@",model.detailsname];
+        self.shopcontnt.text = [NSString stringWithFormat:@"规格：%@",model.detailsggStr];
+        
+        self.shoprice.text = [NSString stringWithFormat:@"￥%@",model.detailsprice];
+        self.number.text = [NSString stringWithFormat:@"x%@",model.detailsnum];
+    }
+    
+    
+    self.OrderName.text = modellist1.name;
+    self.OrderPhone.text = modellist1.mobile;
+    self.OrderAddress.text = [NSString stringWithFormat:@"%@%@%@%@",modellist1.province,modellist1.city,modellist1.area,modellist1.address];
+    
+}
+
+
+-(void)setModellist2:(PaywayModel *)modellist2 {
+    
+    _modellist2 = modellist2;
+    self.sectionTwotitle.text = modellist2.pay_way;
+    [self.ImgView sd_setImageWithURL:[NSURL URLWithString:modellist2.logo] placeholderImage:nil];
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -110,7 +179,6 @@
             break;
         }
     
-            
         default:
             break;
     }

@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong)HomeCellModel *listmodel;
 
+@property(nonatomic,strong)NSArray *listArr;
+
 @property(nonatomic)CustomCellStyle style;
 
 

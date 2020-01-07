@@ -28,6 +28,7 @@
 @implementation HomeTableViewCell
 
 
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     
@@ -70,6 +71,13 @@
 
 -(void)setListmodel:(HomeCellModel *)listmodel {
     _listmodel = listmodel;
+    
+}
+
+
+-(void)setListArr:(NSArray *)listArr{
+    _listArr = listArr;
+    [self.mCollectionView1 reloadData];
 }
 
 
@@ -147,12 +155,15 @@
 
 //MARK: - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    
     return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (_style == CustomCellStyleOne || _style == CustomCellStyleTwo) {
+    if (_style == CustomCellStyleOne) {
+        return [_listArr count];
+    }else if (_style == CustomCellStyleTwo){
         return 6;
     }else {
         return 3;
@@ -164,25 +175,15 @@
         
     HXCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HXCollectionViewCell" forIndexPath:indexPath];
     if (_style == CustomCellStyleOne) {
-        [cell.imgView1 setHidden:YES];
-        [cell.lable1 setHidden:YES];
-        [cell.imgView setHidden:NO];
-        [cell.name setHidden:NO];
-        
+        cell.modelist0 = _listArr[indexPath.item];
     }else if (_style == CustomCellStyleTwo){
-        [cell.imgView1 setHidden:NO];
-        [cell.lable1 setHidden:NO];
-        [cell.imgView setHidden:YES];
-        [cell.name setHidden:YES];
-        cell.imgView1.image = [UIImage imageNamed:@"533"];
-        
+        cell.modelist1 = _listArr[indexPath.item];
     }else if (_style == CustomCellStyleThird || _style == CustomCellStyleFouth){
-        [cell.imgView1 setHidden:NO];
-        [cell.lable1 setHidden:YES];
-        [cell.imgView setHidden:YES];
-        [cell.name setHidden:YES];
-        cell.imgView1.image = [UIImage imageNamed:@"图层 520"];
-        
+//        [cell.imgView1 setHidden:NO];
+//        [cell.lable1 setHidden:YES];
+//        [cell.imgView setHidden:YES];
+//        [cell.name setHidden:YES];
+//        cell.imgView1.image = [UIImage imageNamed:@"图层 520"];
     }else{}
     
     return cell;

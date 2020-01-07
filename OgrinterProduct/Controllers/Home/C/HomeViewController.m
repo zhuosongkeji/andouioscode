@@ -20,6 +20,7 @@
 #import "MarqueeView.h"
 #import "RedPacketView.h"
 #import "PacketModel.h"
+#import "HomeModel.h"
 
 
 @interface HomeViewController ()<HQFlowViewDelegate,HQFlowViewDataSource,UITableViewDataSource,UITableViewDelegate,iCarouselDelegate,iCarouselDataSource>{
@@ -37,9 +38,13 @@
 @property (nonatomic, strong) HQImagePageControl *pageC;
 @property (nonatomic, strong) HQFlowView *pageFlowView;
 
+@property (nonatomic,strong) MarqueeView *queeView;
+
 @property (nonatomic,strong) NSMutableArray *imgArr;
 @property (nonatomic,strong) NSMutableArray *imgOArr;
-@property (nonatomic,strong) MarqueeView *queeView;
+@property (nonatomic,strong) NSMutableArray *notisArr;
+@property (nonatomic,strong) NSMutableArray *merchantArr;
+
 
 @property (nonatomic, strong) UIView *selectView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
@@ -56,31 +61,35 @@
 //MARK:-imgArr
 -(NSMutableArray *)imgArr {
     if (!_imgArr) {
-        _imgArr = [NSMutableArray arrayWithObjects:@"image1",
-                   @"image2",
-                   @"image3",
-                   @"image4", nil];
+        _imgArr = [NSMutableArray array];
     }
     return _imgArr;
 }
 
-
 //MARK:-imgArr
 -(NSMutableArray *)imgOArr {
     if (!_imgOArr) {
-        _imgOArr = [NSMutableArray arrayWithObjects:@"1",
-                   @"2",
-                   @"5",
-                    @"1",@"2",
-                    @"5",
-                    @"1",
-                    @"2",@"5",
-                    @"1",
-                    @"2",
-                    @"5", nil];
+        _imgOArr = [NSMutableArray array];
     }
     return _imgOArr;
 }
+
+//MARK:-imgArr
+-(NSMutableArray *)notisArr {
+    if (!_notisArr) {
+        _notisArr = [NSMutableArray array];
+    }
+    return _notisArr;
+}
+
+//MARK:-imgArr
+-(NSMutableArray *)merchantArr {
+    if (!_merchantArr) {
+        _merchantArr = [NSMutableArray array];
+    }
+    return _merchantArr;
+}
+
 
 - (HQFlowView *)pageFlowView {
     if (!_pageFlowView) {
@@ -105,6 +114,7 @@
         if (!_pageC) {
             _pageC = [[HQImagePageControl alloc]initWithFrame:CGRectMake(0, self.topBananerView.frame.size.height - 35, KSCREEN_WIDTH, 7.5)];
         }
+        
         [self.pageFlowView.pageControl setCurrentPage:0];
         self.pageFlowView.pageControl = _pageC;
         
@@ -115,13 +125,20 @@
 
 -(MarqueeView *)queeView{
     if (!_queeView) {
-        _queeView = [[MarqueeView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH - 74,30) withTitle:@[@"安抖App正式上线啦！吃喝玩乐就上安抖",@"各种美食各种嗨！",@"这还是一条测试数据测试数据"]];
+        
+        NSMutableArray *array = [NSMutableArray array];
+        for (int i = 0; i < [_notisArr count]; i ++) {
+            HomeModel *model = _notisArr[i];
+            [array addObject:model.content];
+        }
+        _queeView = [[MarqueeView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH - 74,30) withTitle:array];
         _queeView.titleFont = [UIFont systemFontOfSize:12];
         
         self.queeView.handlerTitleClickCallBack = ^(NSInteger index){
             
         };
     }
+    
     return _queeView;
 }
 
@@ -146,6 +163,7 @@
     
     [self setup];
     [self openRedPacket];
+    
     [self loadNetWork];
 
     // Do any additional setup after loading the view from its nib.
@@ -155,11 +173,11 @@
 -(void)setup{
     
     self.navigationItem.title = @"";
+    
     [self wr_setNavBarBackgroundAlpha:0];
     
     self.mTableView.tableFooterView = [UILabel new];
     [self.mTableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCell"];
-    [self.iCarouselBJView addSubview:self.icarousel];
     
 }
 
@@ -168,9 +186,8 @@
 - (void)openRedPacket {
     
     [self.topBananerView addSubview:self.pageFlowView];
-    [self.noticebjView addSubview:self.queeView];
     [self.pageFlowView addSubview:self.pageC];
-    [self.pageFlowView reloadData];//刷新轮播
+    [self.iCarouselBJView addSubview:self.icarousel];
     
     PacketModel *data = ({
         PacketModel *data = [[PacketModel alloc]init];
@@ -191,9 +208,52 @@
 
 -(void)loadNetWork {
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,BannerApi] params:@{} complement:^(ServerResponseInfo * _Nullable serverInfo) {
-        NSLog(@"%@",serverInfo);
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            NSDictionary *dict = serverInfo.response[@"data"];
+            
+            if ([_imgArr count])
+                [_imgArr removeAllObjects];
+            
+            for (int i = 0; i < [dict[@"banner"] count]; i ++) {
+                HomeModel *model = [[HomeModel alloc]initWithDict:dict[@"banner"][i]];
+                [self.imgArr addObject:model];
+            }
+            
+            if ([_imgOArr count])
+                [_imgOArr removeAllObjects];
+            
+            for (int i = 0; i < [dict[@"merchant_type"] count];  i ++) {
+                HomeModel *model = [[HomeModel alloc]initWithDict:dict[@"merchant_type"][i]];
+                [self.imgOArr addObject:model];
+            }
+            
+            if ([_notisArr count])
+                [_notisArr removeAllObjects];
+            
+            for (int i = 0; i < [dict[@"notice"] count]; i ++) {
+                HomeModel *model = [[HomeModel alloc]initWithDict:dict[@"notice"][i]];
+                [self.notisArr addObject:model];
+            }
+            
+            if ([_merchantArr count])
+                [_merchantArr removeAllObjects];
+            
+            for (int i = 0; i < [dict[@"merchants"] count]; i ++) {
+                HomeModel *model = [[HomeModel alloc]initWithDict:dict[@"merchants"][i]];
+                [self.merchantArr addObject:model];
+            }
+            
+            [self.noticebjView addSubview:self.queeView];
+            [self.pageFlowView reloadData];//刷新轮播
+            [self.icarousel reloadData];
+
+            [self.mTableView reloadData];
+        }else {
+            
+        }
     }];
 }
+
 
 //MARK:- FlowViewDelegate
 - (CGSize)sizeForPageInFlowView:(HQFlowView *)flowView {
@@ -217,19 +277,22 @@
     return self.imgArr.count;
 }
 
+
 - (HQIndexBannerSubview *)flowView:(HQFlowView *)flowView cellForPageAtIndex:(NSInteger)index {
     
     HQIndexBannerSubview *bannerView = (HQIndexBannerSubview *)[flowView dequeueReusableCell];
+    HomeModel *model = self.imgArr[index];
     
     if (!bannerView) {
         bannerView = [[HQIndexBannerSubview alloc] initWithFrame:CGRectMake(0, 0, self.pageFlowView.width, self.pageFlowView.height)];
         bannerView.layer.cornerRadius = 5;
         bannerView.layer.masksToBounds = YES;
     }
+
     //在这里下载网络图片
-    //    [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:self.advArray[index]] placeholderImage:nil];
+        [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:nil];
     //加载本地图片
-    bannerView.mainImageView.image = [UIImage imageNamed:self.imgArr[index]];
+//    bannerView.mainImageView.image = [UIImage imageNamed:self.imgArr[index]];
     
     return bannerView;
     
@@ -257,6 +320,14 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeTableViewCell *cell = [HomeTableViewCell tempTableViewCellWith:tableView indexPath:indexPath];
     [cell configTempCellWith:indexPath];
+    
+    if (indexPath.section == 0) {
+        if ([self.merchantArr count])
+            cell.listArr = self.merchantArr;
+        
+    }else{
+        
+    }
     
     return cell;
 }
@@ -341,19 +412,25 @@
 
 -(UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view{
     
-    UIImage *image = [UIImage imageNamed:[self.imgOArr objectAtIndex:index]];
-    if (view == nil) {
-        view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 120, 140)];
-        view.backgroundColor = [UIColor clearColor];
+    if ([self.imgOArr count] > 0) {
+        HomeModel *model = self.imgOArr[index];
         
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 116, 136)];
-        imageView.tag = 1000+index;
-        [view addSubview:imageView];
+        if (view == nil) {
+            
+            view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 120, 140)];
+            view.backgroundColor = [UIColor clearColor];
+            
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 116, 136)];
+            imageView.tag = 1000+index;
+            [view addSubview:imageView];
+        }
+        UIImageView *imageView = [view viewWithTag:1000+index];
+        
+        [imageView sd_setImageWithURL:[NSURL URLWithString:model.img] completed:nil];
+        
+        return view;
     }
-    UIImageView *imageView = [view viewWithTag:1000+index];
-    imageView.image = image;
-    
-    return view;
+    return nil;
 }
 
 
