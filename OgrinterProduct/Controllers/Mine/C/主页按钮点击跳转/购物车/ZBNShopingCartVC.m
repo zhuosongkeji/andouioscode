@@ -40,10 +40,10 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
     return _goodsCar;
 }
 
-- (NSArray *)goodsArray
+- (NSMutableArray *)goodsArray
 {
     if (!_goodsArray) {
-        self.goodsArray = [ZBNShoppingCartModel mj_objectArrayWithFilename:@"wine.plist"];
+        _goodsArray = [NSMutableArray array];
     }
     return _goodsArray;
 }
@@ -53,7 +53,8 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
     
     self.navigationItem.title = @"我的购物车";
     [self setupTable];
-    
+    // 数据加载
+    [self loadData];
    
 }
 
@@ -64,13 +65,49 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
+- (void)loadData
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    params[@"uid"] = unmodel.uid;
+    params[@"token"] = unmodel.token;
+    ADWeakSelf;
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/order/index" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        weakSelf.goodsArray = [ZBNShoppingCartModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+        [weakSelf.tableView reloadData];
+    }];
+}
+
 
 /*! 全选按钮的点击 */
 - (IBAction)allSelectedBtnClick:(UIButton *)sender {
     
     sender.selected = !sender.selected;
-    
-    
+   
+    if (sender.selected) {
+        for (ZBNShoppingCartModel *model in self.goodsArray) {
+               if (model.selected) {
+                   continue;
+               } else {
+                   model.selected = YES;
+               }
+            NSInteger totalPrice = self.totalPriceLabel.text.intValue + model.price.intValue * model.num.integerValue;
+            self.totalPriceLabel.text = [NSString stringWithFormat:@"%zd",totalPrice];
+           }
+        [self.tableView reloadData];
+    } else {
+        for (ZBNShoppingCartModel *model in self.goodsArray) {
+            if (model.selected == NO) {
+                continue;
+            } else {
+                model.selected = NO;
+            }
+            NSInteger totalPrice = self.totalPriceLabel.text.intValue - model.num.integerValue * model.num.integerValue;
+            self.totalPriceLabel.text = [NSString stringWithFormat:@"%zd",totalPrice];
+        }
+        [self.tableView reloadData];
+    }
     
 }
 
@@ -108,14 +145,11 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
 {
     if (shoppingCartCell.shoppingCartModel.selected == YES) {
     //计算总价
-    int totalPrice = self.totalPriceLabel.text.intValue - shoppingCartCell.shoppingCartModel.money.intValue;
+    int totalPrice = self.totalPriceLabel.text.intValue - shoppingCartCell.shoppingCartModel.num.intValue;
     //设置总价
     self.totalPriceLabel.text = [NSString stringWithFormat:@"%d",totalPrice];
     self.buyButton.enabled = totalPrice > 0;
-//    // 将商品从购物车中移除
-//    if (shoppingCartCell.shoppingCartModel.count == 0) {
-//        [self.goodsCar removeObject:shoppingCartCell.shoppingCartModel];
-//    }
+
     }
 }
 
@@ -125,15 +159,11 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
     
     if (shoppingCartCell.shoppingCartModel.selected == YES) {
     // 计算总价
-    int totalPrice = self.totalPriceLabel.text.intValue + shoppingCartCell.shoppingCartModel.money.intValue;
+    int totalPrice = self.totalPriceLabel.text.intValue + shoppingCartCell.shoppingCartModel.num.intValue;
     // 设置总价
     self.totalPriceLabel.text = [NSString stringWithFormat:@"%d",totalPrice];
     // 设置按钮可以点击
     self.buyButton.enabled = YES;
-    // 如果商品已经在购物车中添加过,
-//    if ([self.goodsCar containsObject:shoppingCartCell.shoppingCartModel]) return;
-//    // 添加到购物车
-//    [self.goodsCar addObject:shoppingCartCell.shoppingCartModel];
     }
 }
 /*! 当用户点击了选取按钮的时候 */
@@ -142,7 +172,7 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
     // 如果按钮是被选择状态
     if (shoppingCartCell.shoppingCartModel.selected == YES) {
         // 计算总价
-        int totalPrice = self.totalPriceLabel.text.intValue + shoppingCartCell.shoppingCartModel.money.intValue * shoppingCartCell.shoppingCartModel.count;
+        int totalPrice = self.totalPriceLabel.text.intValue + shoppingCartCell.shoppingCartModel.price.intValue * shoppingCartCell.shoppingCartModel.num.intValue;
         // 设置总价
         self.totalPriceLabel.text = [NSString stringWithFormat:@"%d",totalPrice];
         
@@ -152,7 +182,7 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
            
     } else { // 如果按钮是非选择的状态
         // 计算总价
-        int totalPrice = self.totalPriceLabel.text.intValue - shoppingCartCell.shoppingCartModel.money.intValue * shoppingCartCell.shoppingCartModel.count;
+        int totalPrice = self.totalPriceLabel.text.intValue - shoppingCartCell.shoppingCartModel.price.intValue * shoppingCartCell.shoppingCartModel.num.intValue;
         // 设置总价
         self.totalPriceLabel.text = [NSString stringWithFormat:@"%d",totalPrice];
         [self.goodsCar removeObject:shoppingCartCell.shoppingCartModel];
@@ -160,6 +190,22 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
     }
     
     
+}
+
+/*! 当用户点击了删除按钮的时候 */
+- (void)shoppingCartCellDidClickDeleteButton:(ZBNShoppingCartCell *)shoppingCartCell
+{
+    
+    [ZBNAlertTool zbn_alertTitle:@"确定要删除吗?" type:UIAlertControllerStyleAlert message:@"删了就没得老喔" didTask:^{
+        if ([self.goodsArray containsObject:shoppingCartCell.shoppingCartModel]) {
+            [self.goodsArray removeObject:shoppingCartCell.shoppingCartModel];
+        }
+        if (shoppingCartCell.shoppingCartModel.selected == YES) {
+            int totalPrice = self.totalPriceLabel.text.intValue - shoppingCartCell.shoppingCartModel.price.intValue * shoppingCartCell.shoppingCartModel.num.intValue;
+            self.totalPriceLabel.text = [NSString stringWithFormat:@"%d",totalPrice];
+        }
+        [self.tableView reloadData];
+    }];
 }
 
 @end

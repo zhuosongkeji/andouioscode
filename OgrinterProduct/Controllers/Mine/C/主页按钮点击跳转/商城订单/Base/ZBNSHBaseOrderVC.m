@@ -25,8 +25,6 @@
     return 0;
 }
 
-
-
 - (NSMutableArray *)dataArr
 {
     if (!_dataArr) {
@@ -43,10 +41,8 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
-//    params[@"uid"] = unmodel.uid;
-    params[@"uid"] = @"1";
-//    params[@"token"] = unmodel.token;
-    params[@"token"] = @"94e31eee8b8237c4d98e965dbcbc44b5";
+    params[@"uid"] = unmodel.uid;
+    params[@"token"] = unmodel.token;
     params[@"type"] = @(self.type);
     params[@"page"] = @"1";
     ADWeakSelf;
@@ -54,35 +50,8 @@
         weakSelf.dataArr = [ZBNSHCommonModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
         [weakSelf.tableView reloadData];
     }];
-    
-//    [self.manager POST:@"http://andou.zhuosongkj.com/api/order/index" parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
-//        
-//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        
-//        NSLog(@"%@",responseObject);
-//        NSLog(@"hahahah");
-//        weakSelf.dataArr = [ZBNSHCommonModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        
-//    }];
-    
 }
 
-- (void)initModel {
-    for (int i = 0; i < 10; i++) {
-        ZBNSHCommonModel *model = [[ZBNSHCommonModel alloc] init];
-        if (i == 0) {
-            model.status = @"20";
-        } else if (i == 3) {
-            model.status = @"10";
-        } else if (i == 2) {
-            model.status = @"40";
-        } else {
-            model.status = @"50";
-        }
-        [self.dataArr addObject:model];
-    }
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -90,7 +59,6 @@
     [self setupUI];
     // 加载数据
     [self loadData];
-//    [self initModel];
 }
 
 - (void)setupUI

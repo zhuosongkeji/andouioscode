@@ -64,7 +64,7 @@
 #pragma mark -- UI
 - (void)setupUI
 {
-    self.toTop.constant = kStatusBarAndNavigationBarH;
+    self.toTop.constant = getRectNavAndStatusHight;
     self.mTableView.tableFooterView = [UILabel new];
     self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
     self.vipView.layer.cornerRadius = 10;
@@ -90,6 +90,8 @@
 {
     [self pushViewControllerWithString:@"ZBNMyNewsVC"];
 }
+
+
 
 
 #pragma mark -- loadData
@@ -146,16 +148,10 @@
 }
 
 
-
-/*! 设置按钮的点击 */
-- (IBAction)settingBtnClick:(UIButton *)sender {
-    [self pushViewControllerWithString:@"ZBNMineSettingVC"];
-    
+- (IBAction)myWalletBtnClick:(UIButton *)btn
+{
+    [self pushViewControllerWithString:@"ZBNMyWalletVC"];
 }
-
-
-
-
 
 /*! 中间View按钮的点击事件 */
 - (IBAction)middleViewBtnClick:(UIButton *)sender {
@@ -168,6 +164,10 @@
         [self pushViewControllerWithString:@"ZBNShoppingHallOrderVC"];
     }
 }
+
+
+
+
 
 /*! 底部View按钮的点击事件 */
 - (IBAction)bottomViewBtnClick:(UIButton *)sender {

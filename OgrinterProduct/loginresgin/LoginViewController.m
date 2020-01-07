@@ -37,21 +37,18 @@
 
 
 -(void)loadloginNetWork{
+    
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,login_login] params:@{@"phone":self.phoneNumber.text,@"password":self.phonePsword.text} complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
             [HUDManager hidenHud];
-            
             NSDictionary *dict = [serverInfo.response objectForKey:@"data"];
-            
             userInfo *info = [[userInfo alloc]init];
             info.uid = [NSString stringWithFormat:@"%@",dict[@"id"]];
             info.uName = [NSString stringWithFormat:@"%@",dict[@"name"]];
             info.uPhone = [NSString stringWithFormat:@"%@",dict[@"mobile"]];
             info.uAcct = [NSString stringWithFormat:@"%@",dict[@"mobile"]];
             info.token = [NSString stringWithFormat:@"%@",dict[@"token"]];
-            
             NSData *infoData = [NSKeyedArchiver archivedDataWithRootObject:info];
-            
             [[NSUserDefaults standardUserDefaults] setObject:infoData forKey:@"infoData"];
             
             [[NSUserDefaults standardUserDefaults] synchronize];
@@ -74,20 +71,20 @@
 - (IBAction)login:(UIButton *)sender {
     KPreventRepeatClickTime(1)
     NSString *msg = nil;
-//    
-//    if (self.phoneNumber.text.length == 0) {
-//        msg = phoneLength;
-//    }else if (self.phoneNumber.text.length != 11 || ![NSObject  IsPhoneNumber:self.phoneNumber.text]){
-//        msg = NphoneNumber;
-//    }else if (self.phonePsword.text.length == 0){
-//        msg = phonePwdLength;
-//    }else{}
-//
-//    if (msg.length) {
-//        [HUDManager showTextHud:msg];
-//        return;
-//    }
-//    [HUDManager showTextHud:loading onView:self.view];
+    
+    if (self.phoneNumber.text.length == 0) {
+        msg = phoneLength;
+    }else if (self.phoneNumber.text.length != 11 || ![NSObject  IsPhoneNumber:self.phoneNumber.text]){
+        msg = NphoneNumber;
+    }else if (self.phonePsword.text.length == 0){
+        msg = phonePwdLength;
+    }else{}
+
+    if (msg.length) {
+        [HUDManager showTextHud:msg];
+        return;
+    }
+    [HUDManager showTextHud:loading onView:self.view];
     
     [self performSelector:@selector(loadloginNetWork) withObject:nil afterDelay:1];
     // -- > 执行block
