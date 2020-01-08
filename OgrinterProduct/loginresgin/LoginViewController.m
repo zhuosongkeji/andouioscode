@@ -37,21 +37,18 @@
 
 
 -(void)loadloginNetWork{
+    
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,login_login] params:@{@"phone":self.phoneNumber.text,@"password":self.phonePsword.text} complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
             [HUDManager hidenHud];
-            
             NSDictionary *dict = [serverInfo.response objectForKey:@"data"];
-            
             userInfo *info = [[userInfo alloc]init];
             info.uid = [NSString stringWithFormat:@"%@",dict[@"id"]];
             info.uName = [NSString stringWithFormat:@"%@",dict[@"name"]];
             info.uPhone = [NSString stringWithFormat:@"%@",dict[@"mobile"]];
             info.uAcct = [NSString stringWithFormat:@"%@",dict[@"mobile"]];
             info.token = [NSString stringWithFormat:@"%@",dict[@"token"]];
-            
             NSData *infoData = [NSKeyedArchiver archivedDataWithRootObject:info];
-            
             [[NSUserDefaults standardUserDefaults] setObject:infoData forKey:@"infoData"];
             
             [[NSUserDefaults standardUserDefaults] synchronize];

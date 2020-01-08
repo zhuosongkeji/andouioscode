@@ -12,6 +12,9 @@
 #import "ZBNCity.h"
 #import "ZBNArea.h"
 #import "ZBNMyAddressModel.h"
+#import "ZBNShoppingCartModel.h"
+#import "ZBNSHOrderDetailComM.h"
+
 
 @implementation ZBNExtensionConfig
 
@@ -33,6 +36,16 @@
            };
        }];
     [ZBNMyAddressModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+        return @{
+            @"ID" : @"id",
+        };
+    }];
+    [ZBNShoppingCartModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+        return @{
+            @"ID" : @"id",
+        };
+    }];
+    [ZBNSHOrderDetailComM mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
             @"ID" : @"id",
         };
