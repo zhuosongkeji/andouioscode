@@ -12,6 +12,7 @@
 #import "HXCollectionViewCell.h"
 #import "CaseCluessKeybordCollectionHeadView.h"
 #import "MdBannerListModel.h"
+#import "ShoperModel.h"
 
 
 @interface ShopHomeViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate>
@@ -40,6 +41,11 @@
     if (modellist) {
         [self.mCollectionView reloadData];
     }
+}
+
+-(void)setListModel:(ShoperModel *)listModel{
+    _listModel = listModel;
+    [self.mCollectionView reloadData];
 }
 
 -(void)setEnumtype:(MyEnum)enumtype{
@@ -93,7 +99,9 @@
         return [_modellist count];
     }else if (_enumtype == MyEnumValueB){
         return 9;
-    }else{
+    }else if(_enumtype == MyEnumValueC){
+        return [_listModel.goodsArr count];
+    }else {
         return 6;
     }
 }
@@ -116,6 +124,9 @@
     }else if (_enumtype == MyEnumValueC){
         ShopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ShopCollectionViewCell" forIndexPath:indexPath];
         
+        if ([_listModel.goodsArr count] > 0)
+            cell.listmodels = _listModel.goodsArr[indexPath.item];
+
         return cell;
         
     }else if (_enumtype == MyEnumValueD){

@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class OrderlModel,PaywayModel;
+@class OrderListModel,PaywayModel,OrderlModel;
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -26,8 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,weak)id<OnlineTableViewCellDelegate> xlDelegate;
 
-@property(nonatomic,strong)OrderlModel *modellist1;
+@property(nonatomic,strong)OrderListModel *modellist1;
 @property(nonatomic,strong)PaywayModel *modellist2;
+@property(nonatomic,strong)OrderlModel *modellist3;
 
 @property (assign, nonatomic) NSIndexPath *selectedIndexPath;
 

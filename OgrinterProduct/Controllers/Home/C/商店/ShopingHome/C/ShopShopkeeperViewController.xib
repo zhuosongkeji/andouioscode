@@ -11,7 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShopShopkeeperViewController">
             <connections>
+                <outlet property="login_imgView" destination="FEI-3e-jXs" id="Lka-Sy-JwZ"/>
                 <outlet property="mTableView" destination="bxh-8W-XX4" id="fGu-eV-a3a"/>
+                <outlet property="shoperNameLabel" destination="zqz-CE-ng8" id="kES-e5-6zS"/>
                 <outlet property="topimgView" destination="pNf-4u-0C9" id="vvY-mg-q39"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

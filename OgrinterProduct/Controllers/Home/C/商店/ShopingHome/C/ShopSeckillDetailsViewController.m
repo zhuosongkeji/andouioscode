@@ -12,6 +12,8 @@
 
 #define order_add_order @"order/add_order"//购买
 
+#define cart_addcar @"cart/addcar"//加入购物车
+
 #define bottomH 3*(KSCREEN_HEIGHT/5)
 
 
@@ -20,16 +22,22 @@
 #import "OnlineBookingViewController.h"
 #import "ShopShopkeeperViewController.h"
 #import "ZBNMyAddressVC.h"
-#import "SeckillTableViewCell.h"
-#import "HotelBottomTableViewCell.h"
+#import "ZBNShopingCartVC.h"
+
+
 #import "FSScrollContentView.h"
 #import "SDCycleScrollView.h"
-#import <UMShare/UMShare.h>
-#import <UMCommon/UMCommon.h>
 #import "BeserveView.h"
 #import "QCouponView.h"
+
+#import "HotelBottomTableViewCell.h"
+#import "SeckillTableViewCell.h"
+
 #import "ShopDetalisModel.h"
 #import "BeseModel.h"
+
+#import <UMShare/UMShare.h>
+#import <UMCommon/UMCommon.h>
 //#import "ShareView.h"
 
 
@@ -153,7 +161,6 @@
     else
         dict = @{@"id":self.cpid,@"type":type};
     
-
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
         
         if ([serverInfo.response[@"code"] integerValue] == 200) {
@@ -185,19 +192,21 @@
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([serverInfo.response[@"code"] integerValue] == 200) {
             NSDictionary *dict = serverInfo.response[@"data"];
-            
             [self.dataArr removeAllObjects];
             
             ShopDetalisModel *model = [[ShopDetalisModel alloc]initWithDict:dict];
             [self.dataArr addObject:model];
             [_cycleScrollView setImageURLStringsGroup:model.bStrArr];
             
-        }else {
+        }else
             [HUDManager showTextHud:loadError];
-        }
+        
         if ([type isEqualToString:@"1"]) {
-            [self.mTableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0], nil] withRowAnimation:UITableViewRowAnimationNone];
-
+            
+            [UIView setAnimationsEnabled:NO];
+            [self.mTableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0], nil] withRowAnimation:UITableViewRowAnimationFade];
+            [UIView setAnimationsEnabled:YES];
+            
         }else {
             [self.mTableView reloadData];
         }
@@ -225,15 +234,25 @@
 
 
 //MARK:- 结算
--(void)loadOrderNetWork:(NSDictionary *)dict{
+-(void)loadOrderNetWork:(NSDictionary *)dict type:(NSString *)types{
     
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,order_add_order] params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
+    NSString *urlStr = nil;
+    if ([types isEqualToString:@"0"])
+        urlStr = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,order_add_order];
+    else if ([types isEqualToString:@"1"])
+        urlStr = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,cart_addcar];
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:urlStr params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([serverInfo.response[@"code"] integerValue] == 200) {
-            OnlineBookingViewController *Online = [[OnlineBookingViewController alloc]init];
-            Online.payType = OnlineBookingViewProductPay;
-            Online.order_sn = [[serverInfo.response objectForKey:@"data"] objectForKey:@"order_sn"];
-            
-            [self.navigationController pushViewController:Online animated:YES];
+            if ([types isEqualToString:@"0"]) {
+                OnlineBookingViewController *Online = [[OnlineBookingViewController alloc]init];
+                Online.payType = OnlineBookingViewProductPay;
+                Online.order_sn = [[serverInfo.response objectForKey:@"data"] objectForKey:@"order_sn"];
+                
+                [self.navigationController pushViewController:Online animated:YES];
+            }else if ([types isEqualToString:@"1"]){
+                [HUDManager showTextHud:[serverInfo.response objectForKey:@"msg"]];
+            }else{}
             
         }else if ([serverInfo.response[@"code"] integerValue] == 201){
             [HUDManager showTextHud:serverInfo.response[@"msg"]];
@@ -282,14 +301,19 @@
     
     __weak typeof(&*self)WeakSelf = self;
     _bottomView.payBlock = ^(UIButton *btn, NSInteger number, NSString *cpId) {
-        
         ShopDetalisModel *model =  WeakSelf.dataArr[0];
+//            立即购买
         if (WeakSelf.unmodel)
             WeakSelf.ggDict = @{@"goods_id":WeakSelf.cpid,@"uid":WeakSelf.unmodel.uid,@"merchant_id":model.merchant_id,@"goods_sku_id":cpId,@"num":[@(number) stringValue]};
         else
             WeakSelf.ggDict = @{@"goods_id":WeakSelf.cpid,@"uid":@"",@"merchant_id":model.merchant_id,@"goods_sku_id":cpId,@"num":[@(number) stringValue]};
         
-        [WeakSelf dissView:@"0"];
+        if (btn.tag == 105)
+            [WeakSelf dissView:@"1"];
+        else
+            [WeakSelf dissView:@"0"];
+        
+    
     };
     
     [[UIApplication sharedApplication].keyWindow addSubview:_bottomView];
@@ -329,7 +353,6 @@
         return 4;
     }
     return 1;
-    
 }
 
 
@@ -381,15 +404,13 @@
 }
 
 
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (indexPath.section == 0) {
         if (indexPath.row == 2) {
             [self arterShow];
         }else if (indexPath.row == 3){
-            ShopShopkeeperViewController *shoper = [[ShopShopkeeperViewController alloc]init];
-            [self.navigationController pushViewController:shoper animated:YES];
+            [self pusHoperController];
         }
     }
 }
@@ -473,18 +494,6 @@
     self.mTableView.showsVerticalScrollIndicator = _canScroll?YES:NO;
 }
 
-
-//MARK:-couponView
--(void)arterShow{
-    KPreventRepeatClickTime(1)
-    [[QWAlertView sharedMask] show:self.couponView withType:QWAlertViewStyleActionSheetDown animationFinish:^{
-        
-    } dismissHandle:^{
-       
-    }];
-}
-
-
 //MARK:- shareClick
 - (void)shareClick:(UIButton *)sender {
     KPreventRepeatClickTime(1)
@@ -515,16 +524,31 @@
     }];
 }
 
-//分享
+//MARK:- 店铺 客服 购物车 加入购物车 立即购买
 - (IBAction)joinCartClick:(UIButton *)sender {
     KPreventRepeatClickTime(1)
-    if (sender.tag == 2004) {
+    if (sender.tag == 2000) {
+        [self pusHoperController];
+    }else if (sender.tag == 2001){
+        [HUDManager showTextHud:@"客服"];
+    }else if (sender.tag == 2002){
+        ZBNShopingCartVC *zbn = [[ZBNShopingCartVC alloc]init];
+        [self.navigationController pushViewController:zbn animated:YES];
+    }else if (sender.tag == 2003 || sender.tag == 2004){
         [self showView];
-    }else {
-        [HUDManager showTextHud:OtherMsg];
     }
 }
 
+
+//MARK:-couponView
+-(void)arterShow{
+    KPreventRepeatClickTime(1)
+    [[QWAlertView sharedMask] show:self.couponView withType:QWAlertViewStyleActionSheetDown animationFinish:^{
+        
+    } dismissHandle:^{
+        
+    }];
+}
 
 //MARK:- view消失
 -(void)dissView:(NSString *)type{
@@ -534,8 +558,10 @@
         [self.bjbtn setHidden:YES];
         
     } completion:^(BOOL finished) {
-        if ([type isEqualToString:@"0"])
-            [self loadOrderNetWork:self.ggDict];
+        if ([type isKindOfClass:[UIButton class]])
+            return;
+        else
+            [self loadOrderNetWork:self.ggDict type:type];
     }];
 }
 
@@ -560,6 +586,15 @@
         [btn setBackgroundColor:color];
     
     return btn;
+}
+
+
+-(void)pusHoperController {
+    ShopDetalisModel *model =  self.dataArr[0];
+    ShopShopkeeperViewController *shoper = [[ShopShopkeeperViewController alloc]init];
+    shoper.shoperId = model.merchant_id;
+    shoper.u_id = self.unmodel.uid;
+    [self.navigationController pushViewController:shoper animated:YES];
 }
 
 

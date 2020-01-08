@@ -14,6 +14,7 @@
 #import "CustomSectionView.h"
 #import "HomeTableViewCell.h"
 #import "CitylistViewController.h"
+#import "KXWebViewViewController.h"
 #import "iCarousel.h"
 
 #import "HQFlowView.h"
@@ -262,13 +263,12 @@
 
 
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
-    if (subIndex == 0) {
-        [self pushViewControllerwithString:ControllerVCArr[subIndex]];
-    }else if(subIndex == 1){
-        [self pushViewControllerWithString:ControllerVCArr[subIndex]];
-    }else {
-        [HUDManager showTextHud:OtherMsg];
-    }
+    HomeModel *model = _imgArr[subIndex];
+    
+    KXWebViewViewController *web = [[KXWebViewViewController alloc]init];
+    web.kxurl = model.url;
+    web.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:web animated:YES];
 }
 
 
@@ -459,6 +459,13 @@
 
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index{
     NSLog(@"点击了第%ld个",index);
+    if (index == 0) {
+        [self pushViewControllerwithString:ControllerVCArr[index]];
+    }else if(index == 1){
+        [self pushViewControllerWithString:ControllerVCArr[index]];
+    }else {
+        [HUDManager showTextHud:OtherMsg];
+    }
 }
 
 -(CATransform3D)carousel:(iCarousel *)carousel itemTransformForOffset:(CGFloat)offset baseTransform:(CATransform3D)transform{

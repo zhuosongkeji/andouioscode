@@ -73,7 +73,6 @@
     }else if ([_dmodelist.is_collection integerValue] == 1) {
         self.scBtn.selected = YES;
     }
-    
 }
 
 

@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString *detailsprice;
 @property(nonatomic,strong)NSString *detailsggStr;
 
+@property(nonatomic,strong)NSString *tatolMamey;
+
 @end
 
 NS_ASSUME_NONNULL_END
