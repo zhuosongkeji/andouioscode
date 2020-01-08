@@ -59,11 +59,25 @@
     // --->  退出按钮的点击监听 ----------------------------> >>>>>>>>> 在这里
     ADWeakSelf;
     footerV.middleBtnClickTask = ^{
-        LoginViewController *vc = [[LoginViewController alloc] init];
-        [weakSelf.navigationController presentViewController:vc animated:YES completion:nil];
+        [self exitRequest];
+        [self loadSettingVcData];
     };
     self.tableView.tableFooterView = footerV;
     self.footerV = footerV;
+}
+
+
+- (void)exitRequest
+{
+    // 拿到uid 和 token
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    params[@"uid"] = unmodel.uid;
+    params[@"token"] = unmodel.token;
+     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/goods/quit" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+          
+       }];
 }
 
 /*! 加载数据 */
