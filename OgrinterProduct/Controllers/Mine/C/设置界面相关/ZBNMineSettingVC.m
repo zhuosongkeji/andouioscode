@@ -16,7 +16,7 @@
 #import "ZBNMineSettingModel.h" // 模型类
 #import "ZBNChangePhoneNumberVC.h"  // 修改手机号
 #import "ZBNChangePwdVC.h"     // 修改密码
-
+#import "LoginViewController.h"
 
 @interface ZBNMineSettingVC ()
 /*! 底部视图 */
@@ -57,8 +57,10 @@
     footerV.setButtonText(@"退出登录");
     
     // --->  退出按钮的点击监听 ----------------------------> >>>>>>>>> 在这里
+    ADWeakSelf;
     footerV.middleBtnClickTask = ^{
-        
+        LoginViewController *vc = [[LoginViewController alloc] init];
+        [weakSelf.navigationController presentViewController:vc animated:YES completion:nil];
     };
     self.tableView.tableFooterView = footerV;
     self.footerV = footerV;
