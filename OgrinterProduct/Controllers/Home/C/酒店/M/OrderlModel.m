@@ -52,6 +52,8 @@
         
         models.detailsggStr = [NSString stringWithString:sKeyStr];
         
+        models.tatolMamey = [NSString stringWithFormat:@"%ld",[detailsdict[@"num"] integerValue] *[detailsdict[@"price"] integerValue]];
+        
         [detailsArr addObject:models];
     }
 

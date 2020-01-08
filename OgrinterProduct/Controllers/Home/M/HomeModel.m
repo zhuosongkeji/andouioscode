@@ -15,7 +15,7 @@
     
     model.tid = [NSString stringWithFormat:@"%@",dict[@"id"]];
     model.img = [NSString stringWithFormat:@"%@%@",imgServer,dict[@"img"]];
-    model.url = [NSString stringWithFormat:@"%@%@",imgServer,dict[@"url"]];
+    model.url = [NSString stringWithFormat:@"%@",dict[@"url"]];
     model.logo_img = [NSString stringWithFormat:@"%@%@",imgServer,dict[@"logo_img"]];
     model.name = [NSString stringWithFormat:@"%@",dict[@"name"]];
     model.content = [NSString stringWithFormat:@"%@",dict[@"content"]];

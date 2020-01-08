@@ -57,6 +57,9 @@
 		A10A9CE8239B38930049A0D2 /* LiveBroadcastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A10A9CE6239B38930049A0D2 /* LiveBroadcastViewController.xib */; };
 		A10A9CF6239B3C610049A0D2 /* ShopingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10A9CF4239B3C610049A0D2 /* ShopingViewController.m */; };
 		A10A9CFA239B6B5E0049A0D2 /* THDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A10A9CF9239B6B5E0049A0D2 /* THDatePickerView.m */; };
+		A14BDA9423C5A154006EC033 /* ShoperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A14BDA9323C5A154006EC033 /* ShoperModel.m */; };
+		A14BDA9723C5A2F5006EC033 /* ShoperListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A14BDA9623C5A2F5006EC033 /* ShoperListModel.m */; };
+		A14BDA9A23C5C0F9006EC033 /* ZBNMerchantEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A14BDA9823C5C0F9006EC033 /* ZBNMerchantEntryVC.m */; };
 		A14FB25C238E0E4C006A6511 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FB25B238E0E4C006A6511 /* AppDelegate.m */; };
 		A14FB262238E0E4C006A6511 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14FB260238E0E4C006A6511 /* Main.storyboard */; };
 		A14FB264238E0E50006A6511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14FB263238E0E50006A6511 /* Assets.xcassets */; };
@@ -134,6 +137,8 @@
 		A15DC106239E41D4008CF287 /* HotelDetailsBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15DC105239E41D4008CF287 /* HotelDetailsBottomView.xib */; };
 		A15DC10A239E60FD008CF287 /* OnlineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A15DC108239E60FD008CF287 /* OnlineTableViewCell.m */; };
 		A15DC10B239E60FD008CF287 /* OnlineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15DC109239E60FD008CF287 /* OnlineTableViewCell.xib */; };
+		A1667DED23C455560039C6F8 /* KXWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1667DEB23C455560039C6F8 /* KXWebViewViewController.m */; };
+		A1667DEE23C455560039C6F8 /* KXWebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1667DEC23C455560039C6F8 /* KXWebViewViewController.xib */; };
 		A1CE7CC923A77EB900C22C41 /* QCouponView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE7CC323A77EB800C22C41 /* QCouponView.m */; };
 		A1CE7CCA23A77EB900C22C41 /* QCouponView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CE7CC523A77EB800C22C41 /* QCouponView.xib */; };
 		A1CE7CCB23A77EB900C22C41 /* QCouponTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE7CC623A77EB900C22C41 /* QCouponTableViewCell.m */; };
@@ -479,6 +484,12 @@
 		A10A9CF4239B3C610049A0D2 /* ShopingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopingViewController.m; sourceTree = "<group>"; };
 		A10A9CF8239B6B5E0049A0D2 /* THDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDatePickerView.h; sourceTree = "<group>"; };
 		A10A9CF9239B6B5E0049A0D2 /* THDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDatePickerView.m; sourceTree = "<group>"; };
+		A14BDA9223C5A154006EC033 /* ShoperModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShoperModel.h; sourceTree = "<group>"; };
+		A14BDA9323C5A154006EC033 /* ShoperModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoperModel.m; sourceTree = "<group>"; };
+		A14BDA9523C5A2F5006EC033 /* ShoperListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShoperListModel.h; sourceTree = "<group>"; };
+		A14BDA9623C5A2F5006EC033 /* ShoperListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoperListModel.m; sourceTree = "<group>"; };
+		A14BDA9823C5C0F9006EC033 /* ZBNMerchantEntryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNMerchantEntryVC.m; sourceTree = "<group>"; };
+		A14BDA9923C5C0F9006EC033 /* ZBNMerchantEntryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNMerchantEntryVC.h; sourceTree = "<group>"; };
 		A14FB257238E0E4C006A6511 /* OgrinterProduct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OgrinterProduct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14FB25A238E0E4C006A6511 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A14FB25B238E0E4C006A6511 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -610,6 +621,9 @@
 		A15DC107239E60FD008CF287 /* OnlineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlineTableViewCell.h; sourceTree = "<group>"; };
 		A15DC108239E60FD008CF287 /* OnlineTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnlineTableViewCell.m; sourceTree = "<group>"; };
 		A15DC109239E60FD008CF287 /* OnlineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineTableViewCell.xib; sourceTree = "<group>"; };
+		A1667DEA23C455560039C6F8 /* KXWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KXWebViewViewController.h; sourceTree = "<group>"; };
+		A1667DEB23C455560039C6F8 /* KXWebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KXWebViewViewController.m; sourceTree = "<group>"; };
+		A1667DEC23C455560039C6F8 /* KXWebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KXWebViewViewController.xib; sourceTree = "<group>"; };
 		A1CE7CC323A77EB800C22C41 /* QCouponView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCouponView.m; sourceTree = "<group>"; };
 		A1CE7CC423A77EB800C22C41 /* QCouponTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCouponTableViewCell.h; sourceTree = "<group>"; };
 		A1CE7CC523A77EB800C22C41 /* QCouponView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QCouponView.xib; sourceTree = "<group>"; };
@@ -1096,6 +1110,10 @@
 				A1FC709223BD8AF7005BFDC9 /* BeseModel.m */,
 				A1FC709423BD94DD005BFDC9 /* BeseListListModel.h */,
 				A1FC709523BD94DD005BFDC9 /* BeseListListModel.m */,
+				A14BDA9223C5A154006EC033 /* ShoperModel.h */,
+				A14BDA9323C5A154006EC033 /* ShoperModel.m */,
+				A14BDA9523C5A2F5006EC033 /* ShoperListModel.h */,
+				A14BDA9623C5A2F5006EC033 /* ShoperListModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -1746,6 +1764,9 @@
 				A14FB2F2238F6A84006A6511 /* HomeViewController.h */,
 				A14FB2F3238F6A84006A6511 /* HomeViewController.m */,
 				A14FB2F4238F6A84006A6511 /* HomeViewController.xib */,
+				A1667DEA23C455560039C6F8 /* KXWebViewViewController.h */,
+				A1667DEB23C455560039C6F8 /* KXWebViewViewController.m */,
+				A1667DEC23C455560039C6F8 /* KXWebViewViewController.xib */,
 				A14FB3242390C6D0006A6511 /* CitylistViewController.h */,
 				A14FB3252390C6D1006A6511 /* CitylistViewController.m */,
 				A1F73D3723A9F439001D86EF /* OnlineOrderViewController.h */,
@@ -2411,22 +2432,43 @@
 		F476A41723A7682A00E3018A /* 商家入驻 */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 410a7c90e94e18f3b154d949022438dd2ad335cd
+				F476A41F23A7682A00E3018A /* ZBNHotelEntryVC.h */,
+				F476A42F23A7682A00E3018A /* ZBNHotelEntryVC.m */,
+				A14BDA9923C5C0F9006EC033 /* ZBNMerchantEntryVC.h */,
+				A14BDA9823C5C0F9006EC033 /* ZBNMerchantEntryVC.m */,
+				F476A42B23A7682A00E3018A /* ZBNShoppingMallEntryVC.m */,
+				F476A41923A7682A00E3018A /* ZBNShoppingMallEntryVC.h */,
+<<<<<<< HEAD
+=======
+=======
 				F4C196CF23C5771000F1C48C /* Masonry */,
 				F4C1969F23C576E400F1C48C /* TZImagePickerController */,
 				F4C1969823C5751200F1C48C /* 图片上传控件 */,
 				F4ECF0AB23C415980010B06A /* ZBNMerchantEntryVC.h */,
 				F4ECF0AC23C415980010B06A /* ZBNMerchantEntryVC.m */,
+>>>>>>> 24dafb006a79509b00e6783ac3c997aa7db6cea8
+>>>>>>> 410a7c90e94e18f3b154d949022438dd2ad335cd
 				F4917C7F23C3132C00C05CFA /* ZBNMerchantEntryTabCell.h */,
 				F4917C8023C3132C00C05CFA /* ZBNMerchantEntryTabCell.m */,
 				F4917C8123C3132C00C05CFA /* ZBNMerchantEntryTabCell.xib */,
 				F476A42123A7682A00E3018A /* ZBNEntryCell */,
 				F476A41A23A7682A00E3018A /* ZBNEntryView */,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
 				F476A41F23A7682A00E3018A /* ZBNHotelEntryVC.h */,
 				F476A42F23A7682A00E3018A /* ZBNHotelEntryVC.m */,
 				F476A42B23A7682A00E3018A /* ZBNShoppingMallEntryVC.m */,
 				F476A41923A7682A00E3018A /* ZBNShoppingMallEntryVC.h */,
 				F4E00E6F23C45C9F007EABC3 /* ZBNTakeOutEntryVC.h */,
 				F4E00E7023C45C9F007EABC3 /* ZBNTakeOutEntryVC.m */,
+>>>>>>> 24dafb006a79509b00e6783ac3c997aa7db6cea8
+>>>>>>> 410a7c90e94e18f3b154d949022438dd2ad335cd
 			);
 			path = "商家入驻";
 			sourceTree = "<group>";
@@ -2933,6 +2975,7 @@
 				F476A48123A7682C00E3018A /* ZBNShoppingCartCell.xib in Resources */,
 				A10A9CD5239B37DE0049A0D2 /* CrowdFundingViewController.xib in Resources */,
 				F4B6979623BF425D00CB0014 /* ZBNSHCommonHeadV.xib in Resources */,
+				A1667DEE23C455560039C6F8 /* KXWebViewViewController.xib in Resources */,
 				A14FB34B2391269B006A6511 /* ShopingHomeViewController.xib in Resources */,
 				F41B749823C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.xib in Resources */,
 				F476A45323A7682B00E3018A /* ZBNMyWalletComCell.xib in Resources */,
@@ -3129,7 +3172,13 @@
 				A14FB323239017BC006A6511 /* UIView+HHAddition.m in Sources */,
 				F4C196CD23C576E400F1C48C /* TZGifPhotoPreviewController.m in Sources */,
 				A14FB2A8238E4DF6006A6511 /* RegisterViewController.m in Sources */,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
 				F4ECF0AD23C415980010B06A /* ZBNMerchantEntryVC.m in Sources */,
+>>>>>>> 24dafb006a79509b00e6783ac3c997aa7db6cea8
+>>>>>>> 410a7c90e94e18f3b154d949022438dd2ad335cd
 				A1F5515C23B0FCB500416682 /* WRNavigationBar.m in Sources */,
 				A14FB322239017BC006A6511 /* MarqueeView.m in Sources */,
 				F476A44E23A7682B00E3018A /* ZBNCashWithDrawalVC.m in Sources */,
@@ -3198,7 +3247,15 @@
 				A15DC0CE239DDD2B008CF287 /* HotelBottomTableViewCell.m in Sources */,
 				A1FC708F23BD8224005BFDC9 /* BeseListViewCell.m in Sources */,
 				A10A9CF6239B3C610049A0D2 /* ShopingViewController.m in Sources */,
+<<<<<<< HEAD
+				A14BDA9A23C5C0F9006EC033 /* ZBNMerchantEntryVC.m in Sources */,
+=======
+<<<<<<< HEAD
+				A14BDA9A23C5C0F9006EC033 /* ZBNMerchantEntryVC.m in Sources */,
+=======
 				F4C196EA23C5771000F1C48C /* ViewController+MASAdditions.m in Sources */,
+>>>>>>> 24dafb006a79509b00e6783ac3c997aa7db6cea8
+>>>>>>> 410a7c90e94e18f3b154d949022438dd2ad335cd
 				F476A45B23A7682B00E3018A /* ZBNShoppingHallOrderVC.m in Sources */,
 				A1F5516323B344ED00416682 /* ShopDetalisModel.m in Sources */,
 				F476A4AB23A7683200E3018A /* ZBNSegmenBarConfig.m in Sources */,
@@ -3217,6 +3274,7 @@
 				A14FB2CB238F5C60006A6511 /* CustomBarViewController.m in Sources */,
 				F4C196C223C576E400F1C48C /* TZAssetModel.m in Sources */,
 				F4CD169A23C06F9E0039CE49 /* ZBNSHOrderUserInfoM.m in Sources */,
+				A14BDA9423C5A154006EC033 /* ShoperModel.m in Sources */,
 				A10A9CD4239B37DE0049A0D2 /* CrowdFundingViewController.m in Sources */,
 				A10A9C9F239A5B650049A0D2 /* Img+lable.m in Sources */,
 				F43E42E523BC748B00D33A7F /* ZBNProvince.m in Sources */,
@@ -3282,6 +3340,7 @@
 				F4E6A7B423B75417006721E9 /* ZBNMineSettingVC.m in Sources */,
 				F4FAC2CB23ACBE0700C235EA /* TggStarEvaluationView.m in Sources */,
 				A1CE7CC923A77EB900C22C41 /* QCouponView.m in Sources */,
+				A14BDA9723C5A2F5006EC033 /* ShoperListModel.m in Sources */,
 				F476A49B23A7682C00E3018A /* InviteCourtesyVC.m in Sources */,
 				F45231CE23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.m in Sources */,
 				A10A9C0A2397ED7A0049A0D2 /* PacketModel.m in Sources */,
@@ -3341,6 +3400,7 @@
 				F476A45723A7682B00E3018A /* ZBNMyAddressVC.m in Sources */,
 				F476A4A923A7683200E3018A /* ZBNSegmenBarVC.m in Sources */,
 				A14FB311238FD2AC006A6511 /* HomeTableViewCell.m in Sources */,
+				A1667DED23C455560039C6F8 /* KXWebViewViewController.m in Sources */,
 				A14FB2BE238F57AD006A6511 /* HUDManager.m in Sources */,
 				F476A45923A7682B00E3018A /* ZBNMyAddressCell.m in Sources */,
 				A1F73CF823A88196001D86EF /* ShareView.m in Sources */,

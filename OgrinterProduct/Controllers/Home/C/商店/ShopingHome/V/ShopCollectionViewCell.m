@@ -8,6 +8,7 @@
 
 #import "ShopCollectionViewCell.h"
 #import "MdBannerListModel.h"
+#import "ShoperListModel.h"
 
 
 @interface ShopCollectionViewCell()
@@ -35,6 +36,13 @@
     self.name.text = modellists.name;
     self.price.text = [NSString stringWithFormat:@"￥%@",modellists.price];
     
+}
+
+-(void)setListmodels:(ShoperListModel *)listmodels {
+    _listmodels = listmodels;
+    [self.icon sd_setImageWithURL:[NSURL URLWithString:listmodels.goods_Img] placeholderImage:[UIImage imageNamed:@""]];
+    self.name.text = listmodels.goods_Name;
+    self.price.text = [NSString stringWithFormat:@"￥%@",listmodels.goods_price];
 }
 
 @end

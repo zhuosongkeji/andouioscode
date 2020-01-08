@@ -58,26 +58,23 @@
 @implementation OnlineTableViewCell
 
 
--(void)setModellist1:(OrderlModel *)modellist1{
+-(void)setModellist1:(OrderListModel *)modellist1{
     _modellist1 = modellist1;
     
-    for (int i = 0; i < [modellist1.listArr count]; i ++) {
-        
-        OrderListModel *model = modellist1.listArr[i];
-        [self.shopIcon sd_setImageWithURL:[NSURL URLWithString:model.detailsimg] placeholderImage:nil];
-        
-        self.shoptitle.text = [NSString stringWithFormat:@"%@",model.detailsname];
-        self.shopcontnt.text = [NSString stringWithFormat:@"规格：%@",model.detailsggStr];
-        
-        self.shoprice.text = [NSString stringWithFormat:@"￥%@",model.detailsprice];
-        self.number.text = [NSString stringWithFormat:@"x%@",model.detailsnum];
-    }
+    [self.shopIcon sd_setImageWithURL:[NSURL URLWithString:modellist1.detailsimg] placeholderImage:nil];
     
+    self.shoptitle.text = [NSString stringWithFormat:@"%@",modellist1.detailsname];
+    self.shopcontnt.text = [NSString stringWithFormat:@"规格：%@",modellist1.detailsggStr];
     
-    self.OrderName.text = modellist1.name;
-    self.OrderPhone.text = modellist1.mobile;
-    self.OrderAddress.text = [NSString stringWithFormat:@"%@%@%@%@",modellist1.province,modellist1.city,modellist1.area,modellist1.address];
-    
+    self.shoprice.text = [NSString stringWithFormat:@"￥%@",modellist1.detailsprice];
+    self.number.text = [NSString stringWithFormat:@"x%@",modellist1.detailsnum];
+}
+
+
+-(void)setModellist3:(OrderlModel *)modellist3{
+    self.OrderName.text = modellist3.name;
+    self.OrderPhone.text = modellist3.mobile;
+    self.OrderAddress.text = [NSString stringWithFormat:@"%@%@%@%@",modellist3.province,modellist3.city,modellist3.area,modellist3.address];
 }
 
 
@@ -100,21 +97,20 @@
     NSInteger index = 0;
     
     if (indexPath.section == 0) {
+        identifier = @"OnlineTableViewCellOne";
+        index = 0;
+    }else if (indexPath.section == 1){
         if (indexPath.row == 0) {
-            identifier = @"OnlineTableViewCellOne";
-            index = indexPath.row;
-        }else if (indexPath.row == 1){
             if (type == 0) {
                 identifier = @"OnlineTableViewCellTwo";
-                index = indexPath.row;
+                index = 1;
             }else if (type == 1){
                 identifier = @"OnlineTableViewCellThrid";
                 index = 2;
             }else if (type == 2){
                 
             }
-            
-        }else if (indexPath.row == 2){
+        }else if (indexPath.row == 1){
             if (type == 0) {
                 identifier = @"OnlineTableViewCellFouth";
                 index = 3;
@@ -125,7 +121,7 @@
                 
             }
             
-        }else if (indexPath.row == 3){
+        }else if (indexPath.row == 2){
             if (type == 0) {
                 identifier = @"OnlineTableViewCellFive";
                 index = 4;
@@ -135,18 +131,19 @@
             }else if (type == 2){
                 
             }
-        }else if (indexPath.row == 4){
+            
+        }else if (indexPath.row == 3){
             identifier = @"OnlineTableViewCellSix";
             index = 5;
-        }else if (indexPath.row == 5){
+        }else if (indexPath.row == 4){
             identifier = @"OnlineTableViewCellSeven";
             index = 6;
-        }else if(indexPath.row == 6){
+        }else if (indexPath.row == 5){
             identifier = @"OnlineTableViewCellEight";
             index = 7;
         }else{}
         
-    }else {
+    }else{
         
         identifier = @"OnlineTableViewCellNine";
         index = 8;
