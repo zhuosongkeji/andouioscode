@@ -11,6 +11,7 @@
 #import "ZBNEntryFooterView.h"
 
 
+
 @interface ZBNShoppingMallEntryVC ()
 
 @property (nonatomic, weak) ZBNEntryFooterView *footerView;
@@ -22,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
+    
     self.navigationItem.title = @"商城商家入驻";
     self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
@@ -33,9 +35,45 @@
 {
     ZBNEntryFooterView *footerV = [ZBNEntryFooterView viewFromXib];
     footerV.height = ZBNFooterH;
+    ADWeakSelf;
+    footerV.middleBtnClickTask = ^{
+        [weakSelf loadRequset];
+    };
     self.tableView.tableFooterView = footerV;
     self.footerView = footerV;
 }
+
+
+
+
+
+- (void)loadRequset
+{
+    
+    
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"uid"] = unmodel.uid;
+    param[@"token"] = unmodel.token;
+    param[@"type_id"] = @"2";
+    param[@"name"] = self.model.shopName;
+    param[@"user_name"] = self.model.userName;
+    param[@"tel"] = self.model.phoneNum;
+    param[@"province_id"] = [NSString stringWithFormat:@"%@",self.model.IDPro];
+    param[@"city_id"] = [NSString stringWithFormat:@"%@",self.model.IDCity];
+    param[@"area_id"] = [NSString stringWithFormat:@"%@",self.model.IDArea];
+    param[@"address"] = self.model.detailAdd;
+    param[@"desc"] = self.model.shopIntrol;
+    param[@"banner_img"] = self.model.urlOne;
+    param[@"logo_img"] = self.model.urlTwo;
+    param[@"management_img"] = self.model.urlThree;
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/merchant/information" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
+           
+           
+       }];
+}
+
 
 
 
@@ -45,7 +83,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZBNShoppingMallEntryCell *cell = [ZBNShoppingMallEntryCell registerCellForTableView:tableView];
+    ZBNShoppingMallEntryCell *cell =
+    [ZBNShoppingMallEntryCell registerCellForTableView:tableView];
+    self.model = cell.model;
+    ADWeakSelf;
     return cell;
 }
 
@@ -57,7 +98,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 915;
+    return 876;
 }
 
 

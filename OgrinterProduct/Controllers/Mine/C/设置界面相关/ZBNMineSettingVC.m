@@ -16,7 +16,7 @@
 #import "ZBNMineSettingModel.h" // 模型类
 #import "ZBNChangePhoneNumberVC.h"  // 修改手机号
 #import "ZBNChangePwdVC.h"     // 修改密码
-
+#import "LoginViewController.h"
 
 @interface ZBNMineSettingVC ()
 /*! 底部视图 */
@@ -57,11 +57,27 @@
     footerV.setButtonText(@"退出登录");
     
     // --->  退出按钮的点击监听 ----------------------------> >>>>>>>>> 在这里
+    ADWeakSelf;
     footerV.middleBtnClickTask = ^{
+        [weakSelf exitRequest];
         
     };
     self.tableView.tableFooterView = footerV;
     self.footerV = footerV;
+}
+
+
+- (void)exitRequest
+{
+    // 拿到uid 和 token
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    params[@"uid"] = unmodel.uid;
+    params[@"token"] = unmodel.token;
+     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/goods/quit" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+          
+       }];
 }
 
 /*! 加载数据 */

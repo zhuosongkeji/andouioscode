@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNSHGoAndEvaluateCell : UITableViewCell
 + (instancetype)regiserCellForTable:(UITableView *)tableView;
+
+@property (nonatomic, copy) void(^dataHandel)(NSString *starCount ,NSString *commentText);
+
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -167,7 +167,7 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 // 获取导航栏和状态栏的高度
 #define getRectNavAndStatusHight self.navigationController.navigationBar.frame.size.height+[[UIApplication sharedApplication] statusBarFrame].size.height
 #define getStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
-
+#define getNavHeight self.navigationController.navigationBar.frame.size.height
 // 百度地图AK
 #define BaiduAPPKEY @"61tIfFSVH5UzHCuN2p7TBk9XxG9VNGff"
 

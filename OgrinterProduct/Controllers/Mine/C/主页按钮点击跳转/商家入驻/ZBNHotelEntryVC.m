@@ -24,7 +24,7 @@
     
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.navigationItem.title = @"酒店入驻";
-
+    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     
     [self setupFooter];
