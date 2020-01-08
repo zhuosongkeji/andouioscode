@@ -161,7 +161,7 @@
                 <outlet property="livedateLabel" destination="jBH-Zj-gDc" id="XTj-f1-VdU"/>
                 <outlet property="rzdateLabel" destination="MAl-MQ-f6u" id="fyO-Rm-e2C"/>
             </connections>
-            <point key="canvasLocation" x="138" y="134"/>
+            <point key="canvasLocation" x="145" y="75"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellThrid" rowHeight="88" id="Bt9-Mk-Nyh" customClass="OnlineTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
@@ -211,7 +211,7 @@
                 <outlet property="OrderName" destination="dtp-fa-hi4" id="Dmv-O9-kro"/>
                 <outlet property="OrderPhone" destination="5Uc-Rh-f3I" id="xEn-h6-tVW"/>
             </connections>
-            <point key="canvasLocation" x="138" y="212"/>
+            <point key="canvasLocation" x="145" y="156"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellFouth" rowHeight="41" id="seO-Tg-elM" customClass="OnlineTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
@@ -273,7 +273,7 @@
             <connections>
                 <outlet property="rzNumber" destination="Jci-es-vjs" id="e2y-Db-oYq"/>
             </connections>
-            <point key="canvasLocation" x="138" y="277"/>
+            <point key="canvasLocation" x="138" y="226"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellFive" rowHeight="41" id="qSA-dg-8sR" customClass="OnlineTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
@@ -311,7 +311,7 @@
             <connections>
                 <outlet property="lxrName" destination="ANa-74-Shm" id="wCt-UU-VMt"/>
             </connections>
-            <point key="canvasLocation" x="138" y="331"/>
+            <point key="canvasLocation" x="126" y="280"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellSix" rowHeight="41" id="P9F-im-7n7" customClass="OnlineTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
@@ -349,7 +349,7 @@
             <connections>
                 <outlet property="lxrPhone" destination="CVU-3e-Sn3" id="62h-sm-Vjk"/>
             </connections>
-            <point key="canvasLocation" x="138" y="390"/>
+            <point key="canvasLocation" x="125" y="335"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OnlineTableViewCellSeven" rowHeight="41" id="aIG-iO-hph" customClass="OnlineTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
@@ -383,7 +383,7 @@
             <connections>
                 <outlet property="yqjxzlabel" destination="vD7-o9-rN3" id="kwU-uS-Y6v"/>
             </connections>
-            <point key="canvasLocation" x="138" y="447"/>
+            <point key="canvasLocation" x="138" y="391"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OnlineTableViewCellEight" rowHeight="41" id="amU-2i-k5b" customClass="OnlineTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
@@ -417,7 +417,7 @@
             <connections>
                 <outlet property="jflabel" destination="TSb-cf-Yop" id="dc9-gj-Zxl"/>
             </connections>
-            <point key="canvasLocation" x="138" y="504"/>
+            <point key="canvasLocation" x="145" y="451"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OnlineTableViewCellNine" rowHeight="41" id="NFP-hm-Kcf" customClass="OnlineTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
@@ -469,7 +469,7 @@
                 <outlet property="sectionTwotitle" destination="54n-fv-bZ8" id="839-e8-Xjx"/>
                 <outlet property="selectBtn" destination="3UL-xm-A2Z" id="Lje-Bh-q4r"/>
             </connections>
-            <point key="canvasLocation" x="138" y="562"/>
+            <point key="canvasLocation" x="138" y="510"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -39,16 +39,24 @@
 -(WKWebView *)webView {
     if (!_webView) {
         
-        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
-        WKUserContentController *userContentController = [[WKUserContentController alloc]init];
-        configuration.userContentController = userContentController;
+        WKWebViewConfiguration *wkWebConfig = [[WKWebViewConfiguration alloc] init];
         
-        WKPreferences *preferences = [WKPreferences new];
-        preferences.javaScriptCanOpenWindowsAutomatically = YES;
-        preferences.minimumFontSize = 10.0;
-        configuration.preferences = preferences;
+        WKUserContentController *wkUController = [[WKUserContentController alloc] init];
         
-        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 12, self.view.bounds.size.width, KSCREEN_HEIGHT-kStatusBarAndNavigationBarH-96) configuration:configuration];
+        wkWebConfig.userContentController = wkUController;
+        
+        //自适应屏幕的宽度js
+        
+        NSString *jSString = @"var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);";
+        
+        WKUserScript *wkUserScript = [[WKUserScript alloc] initWithSource:jSString injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+        
+        //添加js调用
+        
+        [wkUController addUserScript:wkUserScript];
+        
+        
+        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-kStatusBarAndNavigationBarH-76) configuration:wkWebConfig];
         
         _webView.UIDelegate = self;
         _webView.scrollView.delegate = self;
@@ -56,6 +64,7 @@
     
     return _webView;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -72,7 +81,6 @@
     if ([self.title isEqualToString:SeckillDetailsListArr[0]]) {
         
         [self details];
-        
     }else{
         
         [self comment];
@@ -193,6 +201,7 @@
     
     if ([self.title isEqualToString:SeckillDetailsListArr[0]]){
         return nil;
+        
     }else {
         
         
@@ -249,11 +258,16 @@
 
 //MARK:-WKWebView
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-    NSLog(@"html加载完成");
-    [ webView evaluateJavaScript:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '300%'" completionHandler:nil];
-    
-    //修改字体颜色  #9098b8
-    [ webView evaluateJavaScript:@"document.getElementsByTagName('body')[0].style.webkitTextFillColor= '#0078f0'" completionHandler:nil];
+//    NSLog(@"html加载完成");
+//    [ webView evaluateJavaScript:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '300%'" completionHandler:nil];
+//
+//    //修改字体颜色  #9098b8
+//    [ webView evaluateJavaScript:@"document.getElementsByTagName('body')[0].style.webkitTextFillColor= '#0078f0'" completionHandler:nil];
+    //禁止用户选择
+    [webView evaluateJavaScript:@"document.documentElement.style.webkitUserSelect='none';" completionHandler:nil];
+    [webView evaluateJavaScript:@"document.activeElement.blur();" completionHandler:nil];
+    // 适当增大字体大小
+    [webView evaluateJavaScript:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '105%'" completionHandler:nil];
     
 }
 

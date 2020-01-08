@@ -6,11 +6,14 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+#define merchant_goods @"merchant/merchant_goods"
+
 
 #import "ShopShopkeeperViewController.h"
 #import "ShopHomeViewCell.h"
 #import "MenuScreeningView.h"
 #import "SearchResrultViewController.h"
+#import "ShoperModel.h"
 
 
 @interface ShopShopkeeperViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -20,6 +23,12 @@
 
 @property (nonatomic,strong) MenuScreeningView *menuScreeningView;
 @property (weak, nonatomic) IBOutlet UIImageView *topimgView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *login_imgView;
+
+@property (weak, nonatomic) IBOutlet UILabel *shoperNameLabel;
+
+@property (nonatomic,strong)NSMutableArray *dataArr;
 
 
 @property (nonatomic,strong)UIView *searchField;
@@ -32,6 +41,14 @@
 
 @implementation ShopShopkeeperViewController
 
+
+-(NSMutableArray *)dataArr{
+    
+    if (!_dataArr) {
+        _dataArr = [NSMutableArray array];
+    }
+    return _dataArr;
+}
 
 -(UIView *)searchField{
     
@@ -64,8 +81,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"店铺详情";
+    
     [self setup];
+    
+    [self loadNetWork];
     // Do any additional setup after loading the view from its nib.
+}
+
+
+//MARK:-
+-(void)loadNetWork {
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,merchant_goods];
+    NSDictionary *dict = @{@"id":self.shoperId,@"uid":self.u_id};
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            NSDictionary *dict1 = serverInfo.response[@"data"];
+            ShoperModel *model = [[ShoperModel alloc]initWithDict:dict1];
+            
+            [self.dataArr addObject:model];
+            
+            [self.topimgView sd_setImageWithURL:[NSURL URLWithString:model.bannerImg] completed:nil];
+            [self.login_imgView sd_setImageWithURL:[NSURL URLWithString:model.logoimg] completed:nil];
+            self.shoperNameLabel.text = model.name;
+            
+            [self.mTableView reloadData];
+            
+        }else {
+            [HUDManager showTextHud:loadError];
+        }
+        
+    }];
 }
 
 
@@ -105,7 +153,10 @@
     
     [cell setEnumtype:MyEnumValueC];
     
-    cell.itemBlock = ^(NSInteger idex, NSIndexPath * _Nullable indexpath) {
+    if ([self.dataArr count] > 0)
+        cell.listModel = self.dataArr[0];
+    
+    cell.itemBlock = ^(NSInteger idex, NSIndexPath * _Nullable indexpath){
         NSLog(@"%ld---==---%ld",idex,indexpath.row);
     };
     
@@ -119,16 +170,21 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return KSCREEN_HEIGHT - 36- kStatusBarAndNavigationBarH;
+    if ([self.dataArr count]) {
+        ShoperModel *model = self.dataArr[0];
+        if ([model.goodsArr count]%2 == 0) {
+            return ([model.goodsArr count]/2)*244;
+        }else
+            return (([model.goodsArr count]/2)+1)*244;
+    }
+    return 0;
 }
 
 
 //MARK:- search
 -(void)ssearchaction{
     SearchResrultViewController *search = [[SearchResrultViewController alloc]init];
-    
     [search setType:SearchCollectionViewtypeOne];
-    
     [self.navigationController pushViewController:search animated:YES];
 }
 

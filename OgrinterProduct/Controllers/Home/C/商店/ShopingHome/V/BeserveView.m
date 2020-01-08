@@ -29,6 +29,7 @@
 
 @property(nonatomic,strong)NSString *ggIdStr;
 
+@property(nonatomic,strong)NSString *ketStr;
 
 @end
 
@@ -53,7 +54,6 @@
 
 -(void)setup{
     
-    
     self.listView.tableFooterView = [UILabel new];
     self.listView.delegate = self;
     self.listView.dataSource = self;
@@ -65,10 +65,6 @@
     self.addbtn.layer.cornerRadius = 2;
     self.addbtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.addbtn.layer.borderWidth = 0.8;
-    
-    self.num = 1;
-    
-    self.numberlable.text = [NSString stringWithFormat:@"%ld",self.num];
     
     [self.listView registerNib:[UINib nibWithNibName:@"BeseListViewCell" bundle:nil] forCellReuseIdentifier:@"BeseListViewCell"];
     
@@ -83,18 +79,19 @@
 -(void)setListModel:(BeseModel *)listModel{
     
     _listModel = listModel;
+
+    self.num = 1;
     self.dataArr = listModel.resArr;
+    self.ketStr = nil;
     
     NSMutableString *sKeyStr = [[NSMutableString alloc]init];
     
     if ([self.keyArr count])
         [self.keyArr removeAllObjects];
-    
     for (int i = 0; i < [listModel.resArr count]; i ++) {
         BeseListListModel *mode = listModel.resArr[i];
         [self.keyArr addObject:mode.value[0]];
     }
-    
     for (int i = 0; i < [self.keyArr count]; i ++) {
         if (i == 0) {
             [sKeyStr appendString:[NSString stringWithFormat:@"%@",self.keyArr[i]]];
@@ -102,11 +99,13 @@
             [sKeyStr appendString:[NSString stringWithFormat:@"-%@",self.keyArr[i]]];
         }
     }
+    self.ketStr = [NSString stringWithString:sKeyStr];
+    NSDictionary *dic = [listModel.pDict objectForKey:[NSString stringWithFormat:@"%@",self.ketStr]];
     
-    NSDictionary *dic = [listModel.pDict objectForKey:[NSString stringWithFormat:@"%@",sKeyStr]];
-    
-    self.numBerLable.text = [NSString stringWithFormat:@"数量：%@   价格：%@   购买数量",dic[@"num"],dic[@"price"]];
+    self.numBerLable.text = [NSString stringWithFormat:@"数量：%@   价格：￥%.2f   购买数量",dic[@"num"],[dic[@"price"] floatValue]];
     self.ggIdStr = [NSString stringWithFormat:@"%@",dic[@"id"]];
+    
+    self.numberlable.text = [NSString stringWithFormat:@"%ld",self.num];
     
     [self.listView reloadData];
     
@@ -129,6 +128,11 @@
         self.num +=1;
     }else{}
     
+    NSDictionary *dic = [_listModel.pDict objectForKey:[NSString stringWithFormat:@"%@",self.ketStr]];
+    
+    self.numBerLable.text = [NSString stringWithFormat:@"数量：%@   价格：￥%.2f   购买数量",dic[@"num"],[[dic objectForKey:@"price"] floatValue]*self.num] ;
+    self.ggIdStr = [NSString stringWithFormat:@"%@",dic[@"id"]];
+    
     self.numberlable.text = [NSString stringWithFormat:@"%ld",self.num];
 }
 
@@ -137,7 +141,6 @@
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     if (self.dataArr)
         return [self.dataArr count];
-    
     return 0;
 }
 
@@ -188,35 +191,31 @@
 
 
 -(void)didSelect:(UIButton *)btn{
+    
     BeseListViewCell *mycell = (BeseListViewCell *)[btn superview].superview;
+    self.num = 1;
     
     NSIndexPath *path = [self.listView indexPathForCell:mycell];
+    BeseListListModel *mode = _listModel.resArr[path.section];
+    
+    [self.keyArr removeObjectAtIndex:path.section];
+    [self.keyArr insertObject:mode.value[btn.tag] atIndex:path.section];
     
     NSMutableString *sKeyStr = [[NSMutableString alloc]init];
     
-    NSMutableArray *arr = [NSMutableArray arrayWithArray:self.keyArr];
-    
-    BeseListListModel *mode = _listModel.resArr[path.section];
-    
-    [arr removeObjectAtIndex:path.section];
-    [arr insertObject:mode.value[btn.tag] atIndex:path.section];
-    
-    for (int i = 0; i < [arr count]; i ++) {
+    for (int i = 0; i < [self.keyArr count]; i ++) {
         if (i == 0) {
-            [sKeyStr appendString:[NSString stringWithFormat:@"%@",arr[i]]];
+            [sKeyStr appendString:[NSString stringWithFormat:@"%@",self.keyArr[i]]];
         }else{
-            [sKeyStr appendString:[NSString stringWithFormat:@"-%@",arr[i]]];
+            [sKeyStr appendString:[NSString stringWithFormat:@"-%@",self.keyArr[i]]];
         }
     }
     
-    
-    NSDictionary *dic = [_listModel.pDict objectForKey:[NSString stringWithFormat:@"%@",sKeyStr]];
-    
-    self.numBerLable.text = [NSString stringWithFormat:@"数量：%@   价格：%@   购买数量",dic[@"num"],dic[@"price"]];
-    
+    self.ketStr = [NSString stringWithString:sKeyStr];
+    NSDictionary *dic = [_listModel.pDict objectForKey:[NSString stringWithFormat:@"%@",self.ketStr]];
+    self.numBerLable.text = [NSString stringWithFormat:@"数量：%@   价格：￥%.2f   购买数量",dic[@"num"],[dic[@"price"] floatValue]];
     self.ggIdStr = [NSString stringWithFormat:@"%@",dic[@"id"]];
-    
-    NSLog(@"self.ggIdStr = %@",self.ggIdStr);
+    self.numberlable.text = [NSString stringWithFormat:@"%ld",self.num];
     
 }
 

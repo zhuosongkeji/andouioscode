@@ -30,7 +30,7 @@
     
     model.logoid = [NSString stringWithFormat:@"%@",dic[@"id"]];
     model.logoName = [NSString stringWithFormat:@"%@",dic[@"name"]];
-    model.logoimg = [NSString stringWithFormat:@"%@",dic[@"logo_img"]];
+    model.logoimg = [NSString stringWithFormat:@"%@%@",imgServer,dic[@"logo_img"]];
     
     NSArray *array = dict[@"album"];
     NSMutableArray *arr = [[NSMutableArray alloc]init];
