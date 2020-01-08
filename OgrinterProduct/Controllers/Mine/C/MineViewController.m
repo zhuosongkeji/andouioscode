@@ -14,6 +14,10 @@
 #import "ZBNMineSettingModel.h"
 #import "InviteCourtesyVC.h"
 #import "ZBNDowmLoadAppVC.h"
+
+#import "ZBNMerchantEntryVC.h"
+
+
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
@@ -30,6 +34,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 /*! 等级 */
 @property (weak, nonatomic) IBOutlet UILabel *integerL;
+/*! 关注 */
+
+
+
 /*! 模型 */
 @property (nonatomic, strong) ZBNMineModel *model;
 @property (nonatomic, strong) ZBNMineSettingModel *settingM;
@@ -186,7 +194,11 @@
 - (IBAction)bottomViewBtnClick:(UIButton *)sender {
     
     if (sender.tag == 500) { // 商家入驻
-            [self pushViewControllerWithString:@"ZBNMerchantEntryVC"];
+//            [self pushViewControllerWithString:@"ZBNMerchantEntryVC"];
+        
+        ZBNMerchantEntryVC *vc = [[ZBNMerchantEntryVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+        
         } else if (sender.tag == 501) {  // 邀请有礼
 //            [self pushViewControllerWithString:@"InviteCourtesyVC"];
             InviteCourtesyVC *vc = [[InviteCourtesyVC alloc] init];
