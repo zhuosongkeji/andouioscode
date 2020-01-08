@@ -8,7 +8,6 @@
 
 #import "ZBNDowmLoadAppVC.h"
 
-
 @interface ZBNDowmLoadAppVC ()
 
 @end
@@ -22,9 +21,5 @@
     self.navigationItem.title = @"下载有礼";
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 @end

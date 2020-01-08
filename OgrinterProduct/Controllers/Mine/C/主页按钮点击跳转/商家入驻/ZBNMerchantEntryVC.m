@@ -8,8 +8,6 @@
 #import "ZBNMerchantEntryVC.h"
 #import "ZBNMerchantEntryTabCell.h"
 #import "ZBNShoppingMallEntryVC.h"
-#import "ZBNHotelEntryVC.h"
-#import "ZBNTakeOutEntryVC.h"
 
 
 @interface ZBNMerchantEntryVC ()
@@ -47,14 +45,6 @@
     ADWeakSelf;
     cell.shoppingHallClickTask = ^{
         ZBNShoppingMallEntryVC *vc = [[ZBNShoppingMallEntryVC alloc] init];
-        [weakSelf.navigationController pushViewController:vc animated:YES];
-    };
-    cell.hotleViewClickTask = ^{
-        ZBNHotelEntryVC *vc = [[ZBNHotelEntryVC alloc] init];
-        [weakSelf.navigationController pushViewController:vc animated:YES];
-    };
-    cell.takeViewClickTask = ^{
-        ZBNTakeOutEntryVC *vc  = [[ZBNTakeOutEntryVC alloc] init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     return cell;

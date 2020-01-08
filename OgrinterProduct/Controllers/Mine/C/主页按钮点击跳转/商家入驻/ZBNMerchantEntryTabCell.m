@@ -36,15 +36,8 @@
 
 - (void)setupGes
 {
-    // 商城商家入驻
     UITapGestureRecognizer *shGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shoppingHallClick)];
     [self.shoppingHallV addGestureRecognizer:shGes];
-    // 酒店商家入驻
-    UITapGestureRecognizer *hotleGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hotleViewClick)];
-    [self.hotelV addGestureRecognizer:hotleGes];
-    // 饭店商家入驻
-    UITapGestureRecognizer *takeGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(takeViewClick)];
-    [self.take_outFoodV addGestureRecognizer:takeGes];
 }
 
 - (void)shoppingHallClick
@@ -54,19 +47,6 @@
     }
 }
 
-- (void)hotleViewClick
-{
-    if (self.hotleViewClickTask) {
-        self.hotleViewClickTask();
-    }
-}
-
-- (void)takeViewClick
-{
-    if (self.takeViewClickTask) {
-        self.takeViewClickTask();
-    }
-}
 
 
 

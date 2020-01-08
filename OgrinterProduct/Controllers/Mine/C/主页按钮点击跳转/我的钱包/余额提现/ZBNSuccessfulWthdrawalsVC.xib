@@ -73,7 +73,7 @@
                 <constraint firstItem="UNU-ki-o4K" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zav-1s-RMN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="98" y="116"/>
+            <point key="canvasLocation" x="-562" y="52"/>
         </view>
     </objects>
     <resources>

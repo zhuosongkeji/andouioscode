@@ -9,14 +9,12 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@class ZBNRechargeModel;
+
 @interface ZBNWalletRechargeVC : UITableViewController
 
 @property (nonatomic, copy) void(^moneyLabelText)(NSString *moneyText);
 
 @property (nonatomic, copy) NSString *moneyText;
-
-@property (nonatomic, strong) ZBNRechargeModel *model;
 
 @end
 

@@ -134,7 +134,6 @@
     // 清除缓存
     UITapGestureRecognizer *cacheGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cacheClear)];
     [self.cacheView addGestureRecognizer:cacheGes];
-    
 }
 
 

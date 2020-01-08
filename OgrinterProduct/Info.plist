@@ -118,12 +118,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>相机</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>App想获取您周边的信息</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>图片</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

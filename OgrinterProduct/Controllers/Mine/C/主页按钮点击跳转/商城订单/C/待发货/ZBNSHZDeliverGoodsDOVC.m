@@ -60,8 +60,10 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
         NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
         userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
-        params[@"uid"] = unmodel.uid;
-        params[@"token"] = unmodel.token;
+    //    params[@"uid"] = unmodel.uid;
+        params[@"uid"] = @"1";
+    //    params[@"token"] = unmodel.token;
+        params[@"token"] = @"94e31eee8b8237c4d98e965dbcbc44b5";
         params[@"order_sn"] = self.order_num;
         [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/order/details" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
             self.comM = [ZBNSHOrderDetailComM mj_objectWithKeyValues:serverInfo.response[@"data"]];

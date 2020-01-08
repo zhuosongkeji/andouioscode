@@ -17,8 +17,12 @@ use_frameworks!
 	pod 'MJExtension'
 	# pod 'BaiduMapKit' #百度地图SDK
 	# pod 'BMKLocationKit'
+<<<<<<< HEAD
 	pod 'WechatOpenSDK'
+=======
 	# pod 'WechatOpenSDK' #微信
+>>>>>>> 0f1e4cbaadc224660fe185f148c08ac7458cbd9e
+
 	pod 'UMCCommon'
 	pod 'UMCAnalytics'
 	pod 'UMCCommonLog'

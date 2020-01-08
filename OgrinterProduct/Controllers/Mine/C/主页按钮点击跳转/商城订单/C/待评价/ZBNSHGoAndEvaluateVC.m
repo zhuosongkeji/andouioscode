@@ -17,9 +17,6 @@
 
 @property (nonatomic, weak) ZBNEntryFooterView *footerV;
 
-@property (nonatomic, copy) NSString *comText;
-@property (nonatomic, copy) NSString *starNum;
-
 @end
 
 @implementation ZBNSHGoAndEvaluateVC
@@ -41,22 +38,12 @@
     footerV.setButtonText(@"发表评论");
     // -------------> 发表评论在这里设置点击
     footerV.middleBtnClickTask = ^{
-        
-        
-        
-        
         ZBNSHEvaluateSuccessVC *vc = [[ZBNSHEvaluateSuccessVC alloc] init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     self.tableView.tableFooterView = footerV;
     self.footerV = footerV;
 }
-
-- (void)commentRequest
-{
-    
-}
-
 
 - (void)setupTable
 {

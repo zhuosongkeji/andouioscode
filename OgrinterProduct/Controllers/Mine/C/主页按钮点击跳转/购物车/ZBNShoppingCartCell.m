@@ -22,8 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *selectedBtn;
 /*! 商品介绍/名  */
 @property (weak, nonatomic) IBOutlet UILabel *goodsIntrolLabel;
-@property (weak, nonatomic) IBOutlet UILabel *goodsAttr;
-
 /*! 商品的价格 */
 @property (weak, nonatomic) IBOutlet UILabel *goodsPrice;
 /*! 减号按钮 */
@@ -35,6 +33,8 @@
 @property (weak, nonatomic) IBOutlet UIView *plusBackView;
 @property (weak, nonatomic) IBOutlet UIView *reduceBackView;
 
+@property (nonatomic, strong) NSMutableArray *selectedArry;
+
 @end
 
 @implementation ZBNShoppingCartCell
@@ -45,23 +45,19 @@
 {
     _shoppingCartModel = shoppingCartModel;
     
-    self.selectedBtn.selected = shoppingCartModel.selected;
-    self.userName.text = shoppingCartModel.merchant_name;
-    [self.userIconV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,shoppingCartModel.logo_img]]];
-    [self.goodsImagev sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,shoppingCartModel.img]]];
-    self.goodsIntrolLabel.text = shoppingCartModel.goods_name;
-    self.goodsPrice.text = shoppingCartModel.price;
-    self.goosCountLabel.text = [NSString stringWithFormat:@"%d",shoppingCartModel.num.intValue];
-    self.reduceBtn.enabled = (shoppingCartModel.num.intValue > 1);
     
+    self.goodsImagev.image = [UIImage imageNamed:shoppingCartModel.image];
+    self.goodsIntrolLabel.text = shoppingCartModel.name;
+    self.goodsPrice.text = shoppingCartModel.money;
+    self.goosCountLabel.text = [NSString stringWithFormat:@"%d",shoppingCartModel.count];
+    self.reduceBtn.enabled = (shoppingCartModel.count > 0);
 }
 
 
 - (IBAction)reduceBtnClick:(UIButton *)sender {
-    
-    self.shoppingCartModel.num = [NSString stringWithFormat:@"%ld",(self.shoppingCartModel.num.integerValue - 1)];
-    self.goosCountLabel.text = [NSString stringWithFormat:@"%@",self.shoppingCartModel.num];
-    if (self.shoppingCartModel.num.integerValue <= 1) {
+    self.shoppingCartModel.count--;
+    self.goosCountLabel.text = [NSString stringWithFormat:@"%d",self.shoppingCartModel.count];
+    if (self.shoppingCartModel.count == 0) {
         self.reduceBtn.enabled = NO;
     }
     if ([self.delegate respondsToSelector:@selector(shoppingCartCellDidClickReduceButton:)]) {
@@ -71,9 +67,9 @@
 
 - (IBAction)plusBtnClick:(UIButton *)sender {
     // 修改模型
-    self.shoppingCartModel.num = [NSString stringWithFormat:@"%ld",(self.shoppingCartModel.num.integerValue + 1)];
+    self.shoppingCartModel.count++;
     // 修改Label的数量
-    self.goosCountLabel.text = [NSString stringWithFormat:@"%@",self.shoppingCartModel.num];
+    self.goosCountLabel.text = [NSString stringWithFormat:@"%d",self.shoppingCartModel.count];
     // 减号能点击
     self.reduceBtn.enabled = YES;
     // block 代理
@@ -84,12 +80,9 @@
 
 - (IBAction)deleteBtnClick:(UIButton *)sender {
     
+    self.shoppingCartModel.isDelete = YES;
     if (self.deleteBtnClick) {
         self.deleteBtnClick(self.shoppingCartModel);
-    }
-    
-    if ([self.delegate respondsToSelector:@selector(shoppingCartCellDidClickDeleteButton:)]) {
-        [self.delegate shoppingCartCellDidClickDeleteButton:self];
     }
     
 }

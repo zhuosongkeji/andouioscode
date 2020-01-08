@@ -40,19 +40,19 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43b-Qr-slZ">
-                            <rect key="frame" x="117" y="17" width="9" height="16"/>
+                            <rect key="frame" x="152" y="17" width="9" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合计:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKl-0J-Qui">
-                            <rect key="frame" x="79" y="17" width="33" height="16"/>
+                            <rect key="frame" x="94" y="17" width="33" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgW-He-5Ie">
-                            <rect key="frame" x="351" y="10.5" width="43" height="29"/>
+                            <rect key="frame" x="361" y="10.5" width="43" height="29"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="去结算">
                                 <color key="titleColor" red="0.1960784314" green="0.75686274509999996" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,18 +60,15 @@
                             <state key="disabled">
                                 <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
-                            <connections>
-                                <action selector="buyBtnClick:" destination="-1" eventType="touchUpInside" id="xxu-Ww-ILr"/>
-                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnw-xE-FAz">
-                            <rect key="frame" x="131" y="17" width="27.5" height="16"/>
+                            <rect key="frame" x="166" y="17" width="27.5" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zv-g3-CVG">
-                            <rect key="frame" x="24" y="16" width="16" height="18"/>
+                            <rect key="frame" x="19" y="16" width="16" height="18"/>
                             <state key="normal" backgroundImage="dati1"/>
                             <state key="selected" backgroundImage="勾"/>
                             <connections>
@@ -82,12 +79,12 @@
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="POz-NG-iDj" firstAttribute="leading" secondItem="CtM-Ls-tEG" secondAttribute="leading" constant="45" id="0YS-Nd-App"/>
-                        <constraint firstItem="POz-NG-iDj" firstAttribute="leading" secondItem="6zv-g3-CVG" secondAttribute="trailing" constant="5" id="0nV-Il-KN5"/>
-                        <constraint firstItem="43b-Qr-slZ" firstAttribute="leading" secondItem="zKl-0J-Qui" secondAttribute="trailing" constant="5" id="2ay-Vi-9Jc"/>
-                        <constraint firstItem="zKl-0J-Qui" firstAttribute="leading" secondItem="POz-NG-iDj" secondAttribute="trailing" constant="5" id="9h8-Pm-dXt"/>
+                        <constraint firstItem="POz-NG-iDj" firstAttribute="leading" secondItem="6zv-g3-CVG" secondAttribute="trailing" constant="10" id="0nV-Il-KN5"/>
+                        <constraint firstItem="43b-Qr-slZ" firstAttribute="leading" secondItem="zKl-0J-Qui" secondAttribute="trailing" constant="25" id="2ay-Vi-9Jc"/>
+                        <constraint firstItem="zKl-0J-Qui" firstAttribute="leading" secondItem="POz-NG-iDj" secondAttribute="trailing" constant="20" id="9h8-Pm-dXt"/>
                         <constraint firstItem="POz-NG-iDj" firstAttribute="baseline" secondItem="zKl-0J-Qui" secondAttribute="baseline" id="Arm-CA-qAk"/>
                         <constraint firstItem="POz-NG-iDj" firstAttribute="firstBaseline" secondItem="6zv-g3-CVG" secondAttribute="firstBaseline" id="DcN-0l-maz"/>
-                        <constraint firstItem="Ug0-5a-T5P" firstAttribute="trailing" secondItem="CgW-He-5Ie" secondAttribute="trailing" constant="20" id="EAM-SM-01a"/>
+                        <constraint firstItem="Ug0-5a-T5P" firstAttribute="trailing" secondItem="CgW-He-5Ie" secondAttribute="trailing" constant="10" id="EAM-SM-01a"/>
                         <constraint firstAttribute="height" constant="50" id="GcB-Mj-zaR"/>
                         <constraint firstItem="POz-NG-iDj" firstAttribute="centerY" secondItem="6zv-g3-CVG" secondAttribute="centerY" id="Gtu-d1-Vgq"/>
                         <constraint firstItem="CgW-He-5Ie" firstAttribute="centerY" secondItem="qnw-xE-FAz" secondAttribute="centerY" id="HgQ-ft-v5l"/>
@@ -115,7 +112,7 @@
                 <constraint firstItem="CtM-Ls-tEG" firstAttribute="leading" secondItem="eQ3-tB-HEf" secondAttribute="leading" id="tia-aS-EH6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="eQ3-tB-HEf"/>
-            <point key="canvasLocation" x="-4154" y="-270"/>
+            <point key="canvasLocation" x="-1557" y="108"/>
         </view>
     </objects>
     <resources>

@@ -16,6 +16,8 @@
 
 @property (nonatomic, weak) ZBNEntryFooterView *footerView;
 
+@property (nonatomic, strong) NSMutableArray *array;
+
 @end
 
 @implementation ZBNWalletRechargeVC
@@ -48,10 +50,8 @@
     ZBNEntryFooterView *footerV = [ZBNEntryFooterView viewFromXib];
     footerV.height = ZBNHeaderH;
     footerV.middleBtnClickTask = ^{
-        if (self.model.accountNumber && self.model.moneyNumber && self.model.payNumber && self.model.phoneNumber) {
-            [self dataRequest];
-        } else {
-            [HUDManager showTextHud:@"请将资料填写完整"];
+        for (ZBNRechargeModel *model in self.array) {
+            NSLog(@"支付方式:%@ 账号:%@ 电话号码:%@ 充值金额:%@",model.payNumber,model.accountNumber,model.phoneNumber,model.moneyNumber);
         }
     };
     self.footerView = footerV;
@@ -59,25 +59,6 @@
     
     self.tableView.tableFooterView = footerV;
 }
-
-
-- (void)dataRequest
-{
-    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
-     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
-     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    param[@"uid"] = unmodel.uid;
-    param[@"token"] = unmodel.token;
-    param[@"money"] = self.model.moneyNumber;
-    param[@"phone"] = self.model.phoneNumber;
-    param[@"method"] = self.model.payNumber;
-    param[@"num"] = self.model.accountNumber;
-        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/wallet/recharge" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
-                
-        }];
-}
-
-
 
 #pragma mark -- 数据源和代理方法
 
@@ -90,6 +71,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    // 创建模型
     ZBNRechargeModel *model = [[ZBNRechargeModel alloc] init];
     // 创建cell
     ZBNRechargeCell *cell = [ZBNRechargeCell registerCellForTableView:tableView];
@@ -98,30 +80,52 @@
     // 拿到充值方式
     cell.modeBlock = ^(NSString * _Nonnull mode) {
         [model setPayNumber:mode];
+        if ([self.array containsObject:model]) {
+            return ;
+        }
+        [self.array addObject:model];
     };
     // 拿到充值金额
     cell.rechargeNumberBlock = ^(NSString * _Nonnull rechargeNumber) {
         [model setMoneyNumber:rechargeNumber];
+        if ([self.array containsObject:model]) {
+            return ;
+        }
+        [self.array addObject:model];
     };
     // 拿到联系方式
     cell.contactNumberBlock = ^(NSString * _Nonnull contactNumber) {
         [model setPhoneNumber:contactNumber];
+        if ([self.array containsObject:model]) {
+            return ;
+        }
+        [self.array addObject:model];
     };
     // 拿到银行卡号
     cell.bankCardNumberBlock = ^(NSString * _Nonnull bankCardNumber) {
         [model setAccountNumber:bankCardNumber];
+        if ([self.array containsObject:model]) {
+            return ;
+        }
+        [self.array addObject:model];
     };
-        self.model = model;
-        return cell;
+    return cell;
 }
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 475;
+    return 492;
 }
-
 
 #pragma mark -- 懒加载
 
+- (NSMutableArray *)array
+{
+    if (!_array) {
+        _array = [NSMutableArray array];
+    }
+    return _array;
+}
 
 @end
