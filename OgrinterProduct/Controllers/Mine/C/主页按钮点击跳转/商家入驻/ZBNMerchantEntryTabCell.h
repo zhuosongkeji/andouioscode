@@ -11,10 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNMerchantEntryTabCell : UITableViewCell
+
 + (instancetype)registerCellForTableView:(UITableView *)tableView;
-
+/*! 商城 */
 @property (nonatomic, copy) void(^shoppingHallClickTask)(void);
-
+/*! 酒店 */
+@property (nonatomic, copy) void(^hotleViewClickTask)(void);
+/*! 外卖 */
+@property (nonatomic, copy) void(^takeViewClickTask)(void);
 @end
 
 NS_ASSUME_NONNULL_END

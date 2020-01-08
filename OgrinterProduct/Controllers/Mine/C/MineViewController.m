@@ -12,8 +12,8 @@
 #import "RegisterViewController.h"
 #import "ZBNMineModel.h"
 #import "ZBNMineSettingModel.h"
-
-
+#import "InviteCourtesyVC.h"
+#import "ZBNDowmLoadAppVC.h"
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
@@ -48,10 +48,11 @@
     [self setupNav];
     // 加载数据
     [self loadData];
+    // 设置手势
+    [self setupGes];
     
     // 接收登录成功过的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"loginOK" object:nil];
-    
 }
 
 // 控制器销毁时调用
@@ -64,7 +65,7 @@
 #pragma mark -- UI
 - (void)setupUI
 {
-    self.toTop.constant = kStatusBarAndNavigationBarH;
+    self.toTop.constant = getRectNavAndStatusHight;
     self.mTableView.tableFooterView = [UILabel new];
     self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
     self.vipView.layer.cornerRadius = 10;
@@ -90,6 +91,8 @@
 {
     [self pushViewControllerWithString:@"ZBNMyNewsVC"];
 }
+
+
 
 
 #pragma mark -- loadData
@@ -146,16 +149,26 @@
 }
 
 
+#pragma mark -- 点击事件
 
-/*! 设置按钮的点击 */
-- (IBAction)settingBtnClick:(UIButton *)sender {
-    [self pushViewControllerWithString:@"ZBNMineSettingVC"];
-    
+- (void)setupGes
+{
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(vipViewClick)];
+    [self.vipView addGestureRecognizer:tapGes];
+}
+
+- (void)vipViewClick
+{
+    [self pushViewControllerWithString:@"ZBNMyIntegralVC"];
 }
 
 
 
-
+/*! 我的钱包点击 */
+- (IBAction)myWalletBtnClick:(UIButton *)btn
+{
+    [self pushViewControllerWithString:@"ZBNMyWalletVC"];
+}
 
 /*! 中间View按钮的点击事件 */
 - (IBAction)middleViewBtnClick:(UIButton *)sender {
@@ -175,19 +188,25 @@
     if (sender.tag == 500) { // 商家入驻
             [self pushViewControllerWithString:@"ZBNMerchantEntryVC"];
         } else if (sender.tag == 501) {  // 邀请有礼
-            [self pushViewControllerWithString:@"InviteCourtesyVC"];
+//            [self pushViewControllerWithString:@"InviteCourtesyVC"];
+            InviteCourtesyVC *vc = [[InviteCourtesyVC alloc] init];
+            vc.modalPresentationStyle = 0;
+            [self presentViewController:vc animated:YES completion:nil];
         } else if (sender.tag == 502) {  // 下载APP
-            [HUDManager showTextHud:OtherMsg];
+            ZBNDowmLoadAppVC *vc  = [[ZBNDowmLoadAppVC alloc] init];
+            vc.modalPresentationStyle = 0;
+            [self presentViewController:vc animated:YES completion:nil];
         } else if (sender.tag == 503) {  // 我的收藏
-            [self pushViewControllerWithString:@"ZBNMyCollectionVC"];
+            [self pushViewControllerWithString:@"ZBNShopingCartVC"];
         } else if (sender.tag == 504) { // 操作视频
-            [HUDManager showTextHud:OtherMsg];
+            [self pushViewControllerWithString:@"ZBNOperationVideoVC"];
         } else if (sender.tag == 505) { // 我的地址
             [self pushViewControllerWithString:@"ZBNMyAddressVC"];
         } else if (sender.tag == 506) { // 我的二维码
             [HUDManager showTextHud:OtherMsg];
         } else if (sender.tag == 507) { // 我的发布
-            [self pushViewControllerWithString:@"ZBNMyPostVC"];
+            [HUDManager showTextHud:OtherMsg];
+//            [self pushViewControllerWithString:@"ZBNMyPostVC"];
         }
     
 }

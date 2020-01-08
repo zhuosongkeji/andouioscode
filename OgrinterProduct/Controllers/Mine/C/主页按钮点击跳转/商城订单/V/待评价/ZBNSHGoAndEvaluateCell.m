@@ -17,6 +17,9 @@
 /*! 评论内容 */
 @property (weak, nonatomic) IBOutlet UITextView *textV;
 
+@property (nonatomic, copy) NSString *comText;
+@property (nonatomic, copy) NSString *starCount;
+
 @end
 
 
@@ -32,9 +35,13 @@
     
     ADWeakSelf;
     self.starCommentV = [TggStarEvaluationView evaluationViewWithChooseStarBlock:^(NSUInteger count) {
-        NSLog(@"%zd",count);
+        weakSelf.starCount = [NSString stringWithFormat:@"%zd",count];
     }];
     [self.starView addSubview:self.starCommentV];
+    
+    if (self.dataHandel) {
+        self.dataHandel(self.starCount, self.comText);
+    }
     
 }
 
@@ -50,6 +57,11 @@
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
     self.textV.text = nil;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    self.comText = textView.text;
 }
 
 
