@@ -62,13 +62,13 @@
     // --->  退出按钮的点击监听 ----------------------------> >>>>>>>>> 在这里
     ADWeakSelf;
     footerV.middleBtnClickTask = ^{
-<<<<<<< HEAD
+
         [weakSelf exitRequest];
         [weakSelf loadSettingVcData];
-=======
+
         [self exitRequest];
         [self loadSettingVcData];
->>>>>>> e363727da2e89a5e7b23904390a39d0b022422d5
+
     };
     self.tableView.tableFooterView = footerV;
     self.footerV = footerV;
