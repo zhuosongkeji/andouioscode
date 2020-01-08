@@ -14,6 +14,7 @@
 #import "ZBNMyAddressModel.h"
 #import "ZBNShoppingCartModel.h"
 #import "ZBNSHOrderDetailComM.h"
+#import "ZBNMineModel.h"
 
 
 @implementation ZBNExtensionConfig
@@ -50,6 +51,11 @@
             @"ID" : @"id",
         };
     }];
+    [ZBNMineModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+          return @{
+              @"ID" : @"id",
+          };
+      }];
 }
 
 

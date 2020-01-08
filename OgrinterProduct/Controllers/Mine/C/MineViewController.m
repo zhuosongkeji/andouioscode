@@ -30,6 +30,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 /*! 等级 */
 @property (weak, nonatomic) IBOutlet UILabel *integerL;
+/*! 关注 */
+
+
+
 /*! 模型 */
 @property (nonatomic, strong) ZBNMineModel *model;
 @property (nonatomic, strong) ZBNMineSettingModel *settingM;

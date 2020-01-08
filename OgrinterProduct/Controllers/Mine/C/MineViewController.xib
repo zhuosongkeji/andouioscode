@@ -533,7 +533,7 @@
                 <constraint firstAttribute="trailing" secondItem="kGP-dV-NOj" secondAttribute="trailing" id="JYB-Ix-DuZ"/>
                 <constraint firstAttribute="bottom" secondItem="kGP-dV-NOj" secondAttribute="bottom" id="vmt-1l-new"/>
             </constraints>
-            <point key="canvasLocation" x="-25612" y="710"/>
+            <point key="canvasLocation" x="-25165" y="506"/>
         </view>
     </objects>
     <resources>

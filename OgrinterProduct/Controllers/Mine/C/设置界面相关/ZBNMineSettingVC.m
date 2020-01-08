@@ -37,6 +37,9 @@
     [self setupFooterView];
     // 加载数据
     [self loadSettingVcData];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginOK) name:@"loginOK" object:nil];
+    
 }
 
 /*! 设置tableView */
@@ -60,12 +63,17 @@
     ADWeakSelf;
     footerV.middleBtnClickTask = ^{
         [weakSelf exitRequest];
-        
+        [weakSelf loadSettingVcData];
     };
     self.tableView.tableFooterView = footerV;
     self.footerV = footerV;
 }
 
+
+- (void)loginOK
+{
+    [self loadSettingVcData];
+}
 
 - (void)exitRequest
 {
