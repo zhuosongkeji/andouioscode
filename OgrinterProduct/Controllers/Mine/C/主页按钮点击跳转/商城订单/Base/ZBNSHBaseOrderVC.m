@@ -91,12 +91,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.nextPage = @"2";
    // 设置UI
     [self setupUI];
     // 加载数据
     [self setupRefresh];
-    
-    self.nextPage = @"2";
 }
 
 - (void)setupUI

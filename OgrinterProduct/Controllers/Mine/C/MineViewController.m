@@ -14,8 +14,7 @@
 #import "ZBNMineSettingModel.h"
 #import "InviteCourtesyVC.h"
 #import "ZBNDowmLoadAppVC.h"
-
-#import "ZBNMerchantEntryVC.h"
+#import "ZBNMyWalletVC.h"
 
 
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -36,6 +35,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *integerL;
 /*! 关注 */
 
+/*! 收藏 */
+/*! 浏览记录 */
+/*! 余额 */
+@property (weak, nonatomic) IBOutlet UILabel *money;
 
 
 /*! 模型 */
@@ -97,7 +100,7 @@
 
 - (void)newsClick
 {
-    [self pushViewControllerWithString:@"ZBNMyNewsVC"];
+    [self pushViewControllerWithString:@"ZBNMyAllNewsVC"];
 }
 
 
@@ -117,7 +120,8 @@
            self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
            // 设置用户名
            self.userName.text = [NSString stringWithFormat:@"%@",self.model.name];
-           
+           // 余额
+           self.money.text = self.model.money;
        }];
 }
 
@@ -175,7 +179,9 @@
 /*! 我的钱包点击 */
 - (IBAction)myWalletBtnClick:(UIButton *)btn
 {
-    [self pushViewControllerWithString:@"ZBNMyWalletVC"];
+    ZBNMyWalletVC *vc = [[ZBNMyWalletVC alloc] init];
+    vc.money = self.model.money;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /*! 中间View按钮的点击事件 */
@@ -194,13 +200,8 @@
 - (IBAction)bottomViewBtnClick:(UIButton *)sender {
     
     if (sender.tag == 500) { // 商家入驻
-//            [self pushViewControllerWithString:@"ZBNMerchantEntryVC"];
-        
-        ZBNMerchantEntryVC *vc = [[ZBNMerchantEntryVC alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-        
+            [self pushViewControllerWithString:@"ZBNMerchantEntryVC"];
         } else if (sender.tag == 501) {  // 邀请有礼
-//            [self pushViewControllerWithString:@"InviteCourtesyVC"];
             InviteCourtesyVC *vc = [[InviteCourtesyVC alloc] init];
             vc.modalPresentationStyle = 0;
             [self presentViewController:vc animated:YES completion:nil];

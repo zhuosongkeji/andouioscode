@@ -12,6 +12,7 @@
 #import "ZBNSHZDeliverGoodsDOVC.h"
 #import "ZBNWaitDeliverDetailVC.h"
 #import "ZBNSHGoAndEvaluateVC.h"  // 发表评论控制器
+#import "ZBNSHCommonPayVC.h"  // 订单支付的控制器
 
 @interface ZBNSHCommonCell ()
 /*! 商家图标 */
@@ -42,6 +43,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *secButton;
 /*! 底部第三个按钮 */
 @property (weak, nonatomic) IBOutlet UIButton *thiButton;
+
+
 @end
 
 
@@ -105,7 +108,9 @@
     }
     ADWeakSelf;
     if ([self.commonM.status integerValue] == 10) {
-        NSLog(@"待付款的去付款");
+        ZBNSHCommonPayVC *vc = [[ZBNSHCommonPayVC alloc] init];
+        vc.order_id = self.commonM.order_id;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
     } else if ([self.commonM.status integerValue] == 20) {
         NSLog(@"待发货的订单订单详情");
         ZBNSHZDeliverGoodsDOVC *vc = [[ZBNSHZDeliverGoodsDOVC alloc] init];
@@ -115,6 +120,10 @@
         NSLog(@"待收货的确认收货");
     } else if ([self.commonM.status integerValue] == 50) { // 待评价的去评价点击
         ZBNSHGoAndEvaluateVC *VC = [[ZBNSHGoAndEvaluateVC alloc] init];
+        VC.imageName = self.commonM.img;
+        VC.goods_id = self.commonM.goods_id;
+        VC.order_id = self.commonM.order_id;
+        VC.merchant_id = self.commonM.merchant_id;
         [[self viewController].navigationController pushViewController:VC animated:YES];
     }
     

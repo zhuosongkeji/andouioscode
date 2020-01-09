@@ -11,7 +11,7 @@
 #import "ZBNSHGoAndEvaluateCell.h"
 #import "ZBNEntryFooterView.h"
 #import "ZBNSHEvaluateSuccessVC.h"
-
+#import "ZBNSHGoAndEvaluateModel.h"
 
 @interface ZBNSHGoAndEvaluateVC ()
 
@@ -19,7 +19,7 @@
 
 @property (nonatomic, copy) NSString *comText;
 @property (nonatomic, copy) NSString *starNum;
-
+@property (nonatomic, strong) ZBNSHGoAndEvaluateModel *model;
 @end
 
 @implementation ZBNSHGoAndEvaluateVC
@@ -27,9 +27,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    [self setupUIData];
     [self setupTable];
     [self setupFooter];
+}
+
+
+- (void)setupUIData
+{
+    ZBNSHGoAndEvaluateModel *model = [ZBNSHGoAndEvaluateModel sharedInstance];
+    [model setImageName:self.imageName];
+    self.model = model;
+    [self.tableView reloadData];
 }
 
 
@@ -41,12 +50,7 @@
     footerV.setButtonText(@"发表评论");
     // -------------> 发表评论在这里设置点击
     footerV.middleBtnClickTask = ^{
-        
-        
-        
-        
-        ZBNSHEvaluateSuccessVC *vc = [[ZBNSHEvaluateSuccessVC alloc] init];
-        [weakSelf.navigationController pushViewController:vc animated:YES];
+        [self commentRequest];
     };
     self.tableView.tableFooterView = footerV;
     self.footerV = footerV;
@@ -54,7 +58,29 @@
 
 - (void)commentRequest
 {
-    
+    [FKHRequestManager cancleRequestWork];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    ZBNSHGoAndEvaluateModel *model = [ZBNSHGoAndEvaluateModel sharedInstance];
+    params[@"uid"] = unmodel.uid;
+    params[@"token"] = unmodel.token;
+    params[@"goods_id"] = self.goods_id;
+    NSLog(@"%@",self.goods_id);
+    params[@"order_id"] = self.order_id;
+    params[@"merchants_id"] = self.merchant_id;
+    params[@"content"] = model.content;
+    params[@"stars"] = model.stars;
+    NSLog(@"%@",model.stars);
+       ADWeakSelf;
+       [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/addcomment" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+           if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
+               ZBNSHEvaluateSuccessVC *vc = [[ZBNSHEvaluateSuccessVC alloc] init];
+               [weakSelf.navigationController pushViewController:vc animated:YES];
+           } else {
+               [HUDManager showTextHud:@"评论失败"];
+           }
+       }];
 }
 
 
@@ -74,6 +100,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZBNSHGoAndEvaluateCell *cell = [ZBNSHGoAndEvaluateCell regiserCellForTable:tableView];
+    cell.model = self.model;
     return cell;
 }
 

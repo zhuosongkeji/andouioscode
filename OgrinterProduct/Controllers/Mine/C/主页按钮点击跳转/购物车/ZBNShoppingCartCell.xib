@@ -242,7 +242,7 @@
                 <outlet property="userIconV" destination="yIw-BF-RMe" id="Vg9-Rq-Ee7"/>
                 <outlet property="userName" destination="TLW-5Q-mrx" id="oA4-sL-bbA"/>
             </connections>
-            <point key="canvasLocation" x="-9498" y="-44"/>
+            <point key="canvasLocation" x="-9559" y="-70"/>
         </tableViewCell>
     </objects>
     <resources>

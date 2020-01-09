@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 /*! 点击余额充值的回调 */
 @property (nonatomic, copy) void (^reChargeBtnClickTask)(NSString *money);
 
+- (ZBNMyWalletHeadView *(^)(NSString *MoneyText))setMoneyText;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,6 +12,7 @@
                 <outlet property="headImageV" destination="as7-O6-384" id="UAz-Td-pps"/>
                 <outlet property="integerL" destination="MS7-1P-hH8" id="Kdk-ri-Vkh"/>
                 <outlet property="mTableView" destination="kGP-dV-NOj" id="XgD-j2-92t"/>
+                <outlet property="money" destination="to9-Dc-cTp" id="HVK-z8-Wi5"/>
                 <outlet property="toTop" destination="Ib9-kd-ocA" id="rj0-9H-h1c"/>
                 <outlet property="userName" destination="rja-cw-E1S" id="AnM-lt-cUv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -533,7 +534,7 @@
                 <constraint firstAttribute="trailing" secondItem="kGP-dV-NOj" secondAttribute="trailing" id="JYB-Ix-DuZ"/>
                 <constraint firstAttribute="bottom" secondItem="kGP-dV-NOj" secondAttribute="bottom" id="vmt-1l-new"/>
             </constraints>
-            <point key="canvasLocation" x="-25165" y="506"/>
+            <point key="canvasLocation" x="-28000" y="173"/>
         </view>
     </objects>
     <resources>

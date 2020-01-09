@@ -43,14 +43,8 @@
     self.footerView = footerV;
 }
 
-
-
-
-
 - (void)loadRequset
 {
-    
-    
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
@@ -69,7 +63,11 @@
     param[@"logo_img"] = self.model.urlTwo;
     param[@"management_img"] = self.model.urlThree;
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/merchant/information" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
-           
+        if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
+            [HUDManager showTextHud:@"申请入驻成功"];
+        } else {
+            [HUDManager showTextHud:@"资料填写错误"];
+        }
            
        }];
 }
@@ -86,7 +84,6 @@
     ZBNShoppingMallEntryCell *cell =
     [ZBNShoppingMallEntryCell registerCellForTableView:tableView];
     self.model = cell.model;
-    ADWeakSelf;
     return cell;
 }
 

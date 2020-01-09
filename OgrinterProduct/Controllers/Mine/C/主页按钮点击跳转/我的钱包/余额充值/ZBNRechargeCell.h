@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class ZBNWalletRechargeModel;
 @interface ZBNRechargeCell : UITableViewCell
 
 /*! 余额的金额 */
@@ -20,7 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void(^modeBlock)(NSString *mode);
 @property (nonatomic, copy) void(^rechargeNumberBlock)(NSString *rechargeNumber);
 @property (nonatomic, copy) void(^contactNumberBlock)(NSString *contactNumber);
-@property (nonatomic, copy) void(^bankCardNumberBlock)(NSString *bankCardNumber);
+
+
 
 @end
 

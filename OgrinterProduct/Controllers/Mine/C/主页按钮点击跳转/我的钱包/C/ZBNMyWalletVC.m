@@ -57,6 +57,7 @@
 {
     ZBNMyWalletHeadView *headV = [ZBNMyWalletHeadView viewFromXib];
     headV.frame =CGRectMake(0, getRectNavAndStatusHight, self.view.width, ZBNHeaderH);
+    headV.setMoneyText(self.money);
     [self.view addSubview:headV];
     self.headView = headV;
     ADWeakSelf;
@@ -66,7 +67,6 @@
     };
     
     self.headView.reChargeBtnClickTask = ^(NSString * _Nonnull money) {
-        NSLog(@"%@",money);
         ZBNWalletRechargeVC *reVC = [[ZBNWalletRechargeVC alloc] init];
         reVC.moneyText = money;
         [weakSelf.navigationController pushViewController:reVC animated:YES];
@@ -82,7 +82,7 @@
     self.segmentBarVC.view.frame = CGRectMake(0,  getRectNavAndStatusHight + 110, self.view.width, self.view.height - getRectNavAndStatusHight - 180);
     [self.view addSubview:self.segmentBarVC.view];
     //添加控制器
-    NSArray *items = @[@"消费明细", @"充值明细"];
+    NSArray *items = @[@"余额明细", @"提现明细"];
 
     ZBNCostVC *vc1 = [[ZBNCostVC alloc] init];
     

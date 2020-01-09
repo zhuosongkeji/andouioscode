@@ -8,6 +8,8 @@
 
 #import "ZBNMyWalletComCell.h"
 #import "ZBNMyIntegralModel.h"
+#import "ZBNCostModel.h"
+#import "ZBNReChargeDetailModel.h"
 
 @interface ZBNMyWalletComCell ()
 
@@ -32,6 +34,33 @@
     self.timeL.text = integerM.create_time;
     self.priceL.text = integerM.price;
     
+}
+
+/*! 设置余额明细模型" */
+- (void)setCostM:(ZBNCostModel *)costM
+{
+    _costM = costM;
+    
+    self.describeL.text = costM.describe;
+    self.timeL.text = costM.create_time;
+    if ([costM.state intValue] == 1) {
+        self.priceL.text = [NSString stringWithFormat:@"+%@",costM.price];
+    } else if ([costM.state intValue] == 2) {
+        self.priceL.text = [NSString stringWithFormat:@"-%@",costM.price];
+    }
+}
+
+/*! 设置提现明细的模型 */
+- (void)setDetailM:(ZBNReChargeDetailModel *)DetailM
+{
+    _DetailM = DetailM;
+    self.describeL.text = DetailM.describe;
+    self.timeL.text = DetailM.create_time;
+    if ([DetailM.state intValue] == 1) {
+        self.priceL.text = [NSString stringWithFormat:@"+%@",DetailM.price];
+    } else if ([DetailM.state intValue] == 2) {
+        self.priceL.text = [NSString stringWithFormat:@"-%@",DetailM.price];
+    }
 }
 
 /*! 注册cell */

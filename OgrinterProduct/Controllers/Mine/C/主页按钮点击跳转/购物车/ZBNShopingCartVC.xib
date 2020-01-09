@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZBNShopingCartVC">
             <connections>
-                <outlet property="allSelectedBtn" destination="6zv-g3-CVG" id="Khi-gO-oc4"/>
+                <outlet property="allSelectedBtn" destination="qu1-qm-77j" id="Wkd-2U-hdn"/>
                 <outlet property="buyButton" destination="CgW-He-5Ie" id="tAo-SS-WP6"/>
                 <outlet property="tableView" destination="WDz-HB-2wK" id="alg-Tq-erZ"/>
                 <outlet property="totalPriceLabel" destination="qnw-xE-FAz" id="Zta-p1-pyX"/>
@@ -70,35 +70,40 @@
                             <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zv-g3-CVG">
-                            <rect key="frame" x="24" y="16" width="16" height="18"/>
-                            <state key="normal" backgroundImage="dati1"/>
-                            <state key="selected" backgroundImage="勾"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qu1-qm-77j">
+                            <rect key="frame" x="10" y="17.5" width="25" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="15" id="6YX-45-ls3"/>
+                                <constraint firstAttribute="height" constant="15" id="XLh-lR-Mb2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" image="dati1"/>
+                            <state key="selected" image="椭圆 1"/>
                             <connections>
-                                <action selector="allSelectedBtnClick:" destination="-1" eventType="touchUpInside" id="kyP-Lh-nqd"/>
+                                <action selector="allSelectedBtnClick:" destination="-1" eventType="touchUpInside" id="fCG-Bp-jk2"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="POz-NG-iDj" firstAttribute="leading" secondItem="CtM-Ls-tEG" secondAttribute="leading" constant="45" id="0YS-Nd-App"/>
-                        <constraint firstItem="POz-NG-iDj" firstAttribute="leading" secondItem="6zv-g3-CVG" secondAttribute="trailing" constant="5" id="0nV-Il-KN5"/>
                         <constraint firstItem="43b-Qr-slZ" firstAttribute="leading" secondItem="zKl-0J-Qui" secondAttribute="trailing" constant="5" id="2ay-Vi-9Jc"/>
                         <constraint firstItem="zKl-0J-Qui" firstAttribute="leading" secondItem="POz-NG-iDj" secondAttribute="trailing" constant="5" id="9h8-Pm-dXt"/>
                         <constraint firstItem="POz-NG-iDj" firstAttribute="baseline" secondItem="zKl-0J-Qui" secondAttribute="baseline" id="Arm-CA-qAk"/>
-                        <constraint firstItem="POz-NG-iDj" firstAttribute="firstBaseline" secondItem="6zv-g3-CVG" secondAttribute="firstBaseline" id="DcN-0l-maz"/>
+                        <constraint firstItem="POz-NG-iDj" firstAttribute="leading" secondItem="qu1-qm-77j" secondAttribute="trailing" constant="10" id="DwZ-fb-lPE"/>
                         <constraint firstItem="Ug0-5a-T5P" firstAttribute="trailing" secondItem="CgW-He-5Ie" secondAttribute="trailing" constant="20" id="EAM-SM-01a"/>
                         <constraint firstAttribute="height" constant="50" id="GcB-Mj-zaR"/>
-                        <constraint firstItem="POz-NG-iDj" firstAttribute="centerY" secondItem="6zv-g3-CVG" secondAttribute="centerY" id="Gtu-d1-Vgq"/>
                         <constraint firstItem="CgW-He-5Ie" firstAttribute="centerY" secondItem="qnw-xE-FAz" secondAttribute="centerY" id="HgQ-ft-v5l"/>
                         <constraint firstItem="qnw-xE-FAz" firstAttribute="leading" secondItem="43b-Qr-slZ" secondAttribute="trailing" constant="5" id="KMU-13-lP7"/>
                         <constraint firstItem="43b-Qr-slZ" firstAttribute="baseline" secondItem="qnw-xE-FAz" secondAttribute="firstBaseline" id="TP2-WH-Sct"/>
-                        <constraint firstItem="6zv-g3-CVG" firstAttribute="centerY" secondItem="CtM-Ls-tEG" secondAttribute="centerY" id="WP6-6t-Qde"/>
                         <constraint firstItem="zKl-0J-Qui" firstAttribute="baseline" secondItem="43b-Qr-slZ" secondAttribute="baseline" id="X2P-nL-cRZ"/>
                         <constraint firstItem="43b-Qr-slZ" firstAttribute="baseline" secondItem="qnw-xE-FAz" secondAttribute="baseline" id="bz7-qc-dDG"/>
                         <constraint firstItem="zKl-0J-Qui" firstAttribute="centerY" secondItem="POz-NG-iDj" secondAttribute="centerY" id="c69-Gx-sSm"/>
+                        <constraint firstItem="qu1-qm-77j" firstAttribute="leading" secondItem="CtM-Ls-tEG" secondAttribute="leading" constant="10" id="fih-e8-M0i"/>
+                        <constraint firstItem="POz-NG-iDj" firstAttribute="centerY" secondItem="qu1-qm-77j" secondAttribute="centerY" id="fms-2b-hDy"/>
                         <constraint firstItem="qnw-xE-FAz" firstAttribute="centerY" secondItem="43b-Qr-slZ" secondAttribute="centerY" id="gRV-Bp-cbL"/>
                         <constraint firstItem="qnw-xE-FAz" firstAttribute="baseline" secondItem="CgW-He-5Ie" secondAttribute="firstBaseline" id="mNn-cw-gaO"/>
+                        <constraint firstItem="qu1-qm-77j" firstAttribute="centerY" secondItem="CtM-Ls-tEG" secondAttribute="centerY" id="v5p-9F-tTF"/>
                         <constraint firstItem="43b-Qr-slZ" firstAttribute="centerY" secondItem="zKl-0J-Qui" secondAttribute="centerY" id="wPh-Za-dbz"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="Ug0-5a-T5P"/>
@@ -115,11 +120,11 @@
                 <constraint firstItem="CtM-Ls-tEG" firstAttribute="leading" secondItem="eQ3-tB-HEf" secondAttribute="leading" id="tia-aS-EH6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="eQ3-tB-HEf"/>
-            <point key="canvasLocation" x="-4154" y="-270"/>
+            <point key="canvasLocation" x="-4004" y="-210"/>
         </view>
     </objects>
     <resources>
         <image name="dati1" width="16" height="16"/>
-        <image name="勾" width="7.5" height="7.5"/>
+        <image name="椭圆 1" width="10" height="10"/>
     </resources>
 </document>

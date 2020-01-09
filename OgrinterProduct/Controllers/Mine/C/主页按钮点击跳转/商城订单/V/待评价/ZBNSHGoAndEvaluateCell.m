@@ -8,24 +8,33 @@
 
 #import "ZBNSHGoAndEvaluateCell.h"
 #import "TggStarEvaluationView.h"
+#import "ZBNSHGoAndEvaluateModel.h"
+
 
 @interface ZBNSHGoAndEvaluateCell () <UITextViewDelegate>
 /*! 星星view */
 @property (weak, nonatomic) IBOutlet UIView *starView;
-
+/*!  */
 @property (nonatomic, weak) TggStarEvaluationView *starCommentV;
 /*! 评论内容 */
 @property (weak, nonatomic) IBOutlet UITextView *textV;
 
-@property (nonatomic, copy) NSString *comText;
-@property (nonatomic, copy) NSString *starCount;
+/*! 商品图片的View */
+@property (weak, nonatomic) IBOutlet UIImageView *imageV;
+/*! 上传图片的View */
+@property (weak, nonatomic) IBOutlet UIView *upImgView;
 
 @end
 
 
 @implementation ZBNSHGoAndEvaluateCell
 
-
+- (void)setModel:(ZBNSHGoAndEvaluateModel *)model
+{
+    _model = model;
+    [self.imageV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,model.imageName]]];
+    
+}
 
 - (void)awakeFromNib
 {
@@ -35,14 +44,11 @@
     
     ADWeakSelf;
     self.starCommentV = [TggStarEvaluationView evaluationViewWithChooseStarBlock:^(NSUInteger count) {
-        weakSelf.starCount = [NSString stringWithFormat:@"%zd",count];
+        ZBNSHGoAndEvaluateModel *model = [ZBNSHGoAndEvaluateModel sharedInstance];
+        [model setStars:[NSString stringWithFormat:@"%zd",count]];
     }];
-    [self.starView addSubview:self.starCommentV];
-    
-    if (self.dataHandel) {
-        self.dataHandel(self.starCount, self.comText);
-    }
-    
+    [weakSelf.starView addSubview:weakSelf.starCommentV];
+
 }
 
 - (void)layoutSubviews
@@ -61,7 +67,8 @@
 
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
-    self.comText = textView.text;
+    ZBNSHGoAndEvaluateModel *model = [ZBNSHGoAndEvaluateModel sharedInstance];
+    [model setContent:self.textV.text];
 }
 
 

@@ -33,9 +33,9 @@
     // 设置UI界面
     [self setupUI];
     // 加载数据
-//    [self loadData];
+    [self loadData];
     // 加载测试数据
-    [self initModel];
+//    [self initModel];
 }
 
 /*! 设置UI */
@@ -66,23 +66,23 @@
 }
 
 
-/*! 加载假数据 */
-- (void)initModel
-{
-    for (int i = 0;i<8;i++) {
-        ZBNMyIntegralModel *model = [[ZBNMyIntegralModel alloc] init];
-        if (i % 2 == 0) {
-            model.create_time = @"昨晚";
-            model.describe = @"购买大保健";
-            model.price = @"-998";
-        } else {
-            model.create_time = @"前天";
-            model.describe = @"充值获得";
-            model.price = @"+998";
-        }
-        [self.dataArr addObject:model];
-    }
-}
+///*! 加载假数据 */
+//- (void)initModel
+//{
+//    for (int i = 0;i<8;i++) {
+//        ZBNMyIntegralModel *model = [[ZBNMyIntegralModel alloc] init];
+//        if (i % 2 == 0) {
+//            model.create_time = @"昨晚";
+//            model.describe = @"购买大保健";
+//            model.price = @"-998";
+//        } else {
+//            model.create_time = @"前天";
+//            model.describe = @"充值获得";
+//            model.price = @"+998";
+//        }
+//        [self.dataArr addObject:model];
+//    }
+//}
 
 #pragma mark -- tableView的代理和数据源方法
 

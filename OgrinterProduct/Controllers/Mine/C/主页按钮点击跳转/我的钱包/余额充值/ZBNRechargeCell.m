@@ -8,6 +8,7 @@
 
 #import "ZBNRechargeCell.h"
 #import "ZBNRechargeModel.h"
+#import "ZBNWalletRechargeModel.h"
 
 @interface ZBNRechargeCell () <UITextFieldDelegate>
 
@@ -17,19 +18,46 @@
 @property (weak, nonatomic) IBOutlet UITextField *rechargeNumber;
 /*! 联系号码 */
 @property (weak, nonatomic) IBOutlet UITextField *contactNumber;
-/*! 银联 */
-@property (weak, nonatomic) IBOutlet UIButton *unionPayBtn;
 /*! 微信 */
 @property (weak, nonatomic) IBOutlet UIButton *weChartBtn;
-/*! 支付宝 */
-@property (weak, nonatomic) IBOutlet UIButton *zfbBtn;
-/*! 银行卡号 */
-@property (weak, nonatomic) IBOutlet UITextField *bankCardNumber;
 
+@property (nonatomic, strong) ZBNWalletRechargeModel *reModel;
 
 @end
 
 @implementation ZBNRechargeCell
+
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    [self loadData];
+    [self addDelegate];
+    
+    self.LabelView.layer.cornerRadius = self.LabelView.height * 0.5;
+}
+
+
+- (void)loadData
+{
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+         userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+         NSMutableDictionary *param = [NSMutableDictionary dictionary];
+        param[@"uid"] = unmodel.uid;
+        param[@"token"] = unmodel.token;
+        ADWeakSelf;
+            [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/wallet/rechar" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
+                if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
+                    weakSelf.reModel = [ZBNWalletRechargeModel mj_objectWithKeyValues:serverInfo.response[@"data"]];
+                    self.moneyLabel.text = weakSelf.reModel.money;
+                    self.contactNumber.text = weakSelf.reModel.mobile;
+                } else {
+                    [HUDManager showTextHud:@"数据加载失败"];
+                }
+            }];
+}
+
+
 
 + (instancetype)registerCellForTableView:(UITableView *)tableView
 {
@@ -46,7 +74,6 @@
 {
     self.rechargeNumber.delegate = self;
     self.contactNumber.delegate = self;
-    self.bankCardNumber.delegate = self;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -57,27 +84,10 @@
     if (self.contactNumberBlock) {
         self.contactNumberBlock(self.contactNumber.text);
     }
-    if (self.bankCardNumberBlock) {
-        self.bankCardNumberBlock(self.bankCardNumber.text);
-    }
-    
-    NSLog(@"%@",self.rechargeNumber.text);
-    
-    
-    
     
 }
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    
-    [self addDelegate];
-    
-    self.LabelView.layer.cornerRadius = self.LabelView.height * 0.5;
-    
-    
-}
+
 
 
 
@@ -86,33 +96,15 @@
 - (IBAction)payBtnClick:(UIButton *)sender {
     
     sender.selected = !sender.selected;
-    if (sender.tag == 10 && sender.selected) {
-        self.weChartBtn.selected = NO;
-        self.zfbBtn.selected = NO;
-        if (self.modeBlock) {
-            self.modeBlock(@"0");
-        }
-        NSLog(@"银联支付");
-    } else if (sender.tag == 11 && sender.selected) {
-        self.unionPayBtn.selected = NO;
-        self.zfbBtn.selected = NO;
+   if (sender.selected) {
+ 
         if (self.modeBlock) {
             self.modeBlock(@"1");
+             NSLog(@"微信支付");
         }
-               
-        NSLog(@"微信支付");
-    } else if (sender.tag == 12 && sender.selected) {
-        self.unionPayBtn.selected = NO;
-        self.weChartBtn.selected = NO;
-        if (self.modeBlock) {
-            self.modeBlock(@"2");
-        }
-        NSLog(@"支付宝支付");
+            
     
-    } else {
-        
-    }
-    
+}
 }
 
 

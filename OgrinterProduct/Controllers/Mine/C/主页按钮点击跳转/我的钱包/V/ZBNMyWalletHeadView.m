@@ -19,6 +19,13 @@
 
 @implementation ZBNMyWalletHeadView
 
+- (ZBNMyWalletHeadView * _Nonnull (^)(NSString * _Nonnull))setMoneyText
+{
+    return ^(NSString *moneyText) {
+        [self.moneyLabel setText:moneyText];
+        return self;
+    };
+}
 
 /*! 余额提现的点击 */
 - (IBAction)cashWithDrawalClick:(UIButton *)sender {
