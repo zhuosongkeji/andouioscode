@@ -6,40 +6,45 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+
 #define shopApi @"goods/index"
 
 
 #import "ShopingHomeViewController.h"
 #import "ShopSeckillDetailsViewController.h"
-#import "MDShockBannerView.h"
+
 #import "ShopHomeSectionView.h"
-#import "ShopHomeViewCell.h"
+#import "ShoperHeadView.h"
+
+#import "ShopCollectionReusableView.h"
+#import "WSLWaterFlowLayout.h"
+#import "ShopCollectionViewCell.h"
+
 #import "MDBannerModel.h"
 #import "MdBannerListModel.h"
 
 
-@interface ShopingHomeViewController ()<UITableViewDelegate,UITableViewDataSource>{
+@interface ShopingHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate>{
     NSArray *sectionArr;
 }
 
-@property (nonatomic,strong) MDShockBannerView *bannerView;
-@property (weak, nonatomic) IBOutlet UITableView *mTableView;
-@property (weak, nonatomic) IBOutlet UIView *topBannerView;
+@property(nonatomic,strong)ShoperHeadView *headView;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView;
 @property (nonatomic,strong)NSMutableArray *dataArr;
-@property (weak, nonatomic) IBOutlet UIView *categoryBjView;
-
 @property (nonatomic,strong)NSMutableArray *btns;
-@property (nonatomic,strong)NSMutableArray *SDarray;
-
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
-
 
 @end
 
-
 @implementation ShopingHomeViewController
 
+-(ShoperHeadView *)headView {
+    if (!_headView) {
+        _headView = [[NSBundle mainBundle]loadNibNamed:@"ShoperHeadView" owner:self options:nil].lastObject;
+        [_headView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 652)];
+    }
+    return _headView;
+}
 
 -(NSMutableArray *)dataArr{
     if (!_dataArr) {
@@ -48,40 +53,16 @@
     return _dataArr;
 }
 
-//MARK:- MDShockBannerView
--(MDShockBannerView *)bannerView {
-    if (!_bannerView) {
-        _bannerView = [[MDShockBannerView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, bannerH)];
-        _bannerView.pageSelectImage = [UIImage imageNamed:@"dati2"];
-        _bannerView.pageUnselectImage = [UIImage imageNamed:@"dati1"];
-        if ([self.dataArr count] > 0) {
-            MDBannerModel *model = [self.dataArr objectAtIndex:0];
-            NSArray *Barray = [model.dataDic objectForKey:@"banner"];
-            NSMutableArray *listArr = [NSMutableArray array];
-            for (int i = 0; i < [Barray count]; i ++) {
-                MdBannerListModel *list = Barray[i];
-                list.bgImg = @"http://md-juhe.oss-cn-hangzhou.aliyuncs.com/upload/ad/20180417/9bc42ce40490c854eab2e9969ac8e328caab0a17.png";
-                [listArr addObject:list];
-            }
-            _bannerView.banners = listArr;
-//            NSArray *Carray = [model.dataDic objectForKey:@"category"];
-//            for (int i = 0; i < [Carray count]; i ++ ) {
-//                MdBannerListModel *list = Carray[i];
-//                UIButton *btn = _btns[i];
-//                [btn sd_setImageWithURL:[NSURL URLWithString:list.img] forState:0];
-//                [btn setTitle:list.name forState:0];
-//            }
-        }
-    }
-    return _bannerView;
-}
-
-
 //MARK:- viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setup];
+    
+    self.mCollectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self loadNetWork];
+    }];
+    
     [self loadNetWork];
     // Do any additional setup after loading the view from its nib.
 }
@@ -93,128 +74,171 @@
         if ([serverInfo.response[@"code"] integerValue] == 200) {
             NSDictionary *dict = serverInfo.response[@"data"];
             MDBannerModel *model = [[MDBannerModel alloc] initWithDict:dict];
+            
             [self.dataArr addObject:model];
             
-            [self.topBannerView addSubview:self.bannerView];
+            NSArray *Barray = [model.dataDic objectForKey:@"banner"];
+            NSMutableArray *listArr = [NSMutableArray array];
+            for (int i = 0; i < [Barray count]; i ++) {
+                MdBannerListModel *list = Barray[i];
+                list.bgImg = @"http://md-juhe.oss-cn-hangzhou.aliyuncs.com/upload/ad/20180417/9bc42ce40490c854eab2e9969ac8e328caab0a17.png";
+                [listArr addObject:list];
+            }
+            [self.headView setBanArr:listArr];
+            
         }else {
             [HUDManager showTextHud:loadError];
         }
         
-        [self.mTableView reloadData];
-        [self.mTableView.mj_header endRefreshing];
+        [self.mCollectionView reloadData];
+        [self.mCollectionView.mj_header endRefreshing];
     }];
 }
 
 
 -(void)setup{
     
-    self.mTableView.tableFooterView = [UILabel new];
+    WSLWaterFlowLayout *layout = [[WSLWaterFlowLayout alloc]init];
     
-    [self.mTableView registerNib:[UINib nibWithNibName:@"ShopHomeViewCell" bundle:nil] forCellReuseIdentifier:@"ShopHomeViewCell"];
+    layout.delegate = self;
     
-    _btns = [NSMutableArray array];
-    for (UIButton *b in self.categoryBjView.subviews) {
-        if ([b isKindOfClass:[UIButton class]]) {
-            UIButton *btn = (UIButton *)b;
-            [_btns addObject:btn];
-        }
+    [self.mCollectionView setCollectionViewLayout:layout];
+    
+    [self.mCollectionView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT- kStatuTabBarH)];
+    
+    [self.mCollectionView registerNib:[UINib nibWithNibName:@"ShopCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"ShopCollectionViewCell"];
+    
+    //注册head
+    [self.mCollectionView registerNib:[UINib nibWithNibName:@"ShopCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"ShopCollectionReusableView"];
+}
+
+//MARK:-collection
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {return 3;}
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if ([self.dataArr count] > 0) {
+        MDBannerModel *mode = self.dataArr[0];
+        if (section == 1) {
+            return [[mode.dataDic objectForKey:@"recommend_goods"] count];
+        }else if (section == 2){
+            return [[mode.dataDic objectForKey:@"bargain_goods"] count];
+        }else{ return 0;}
     }
-    
-    self.mTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self loadNetWork];
-    }];
-    
-    [self.mTableView.mj_header beginRefreshing];
+    return 0;
 }
 
 
-//MARK: -TableViewDelegate or dataScroe
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
-}
-
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
-}
-
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    ShopHomeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShopHomeViewCell"];
-    if (!cell) {
-        NSLog(@"创建cell");
-    }
-    
-    [cell setEnumtype:MyEnumValueA];
+    ShopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ShopCollectionViewCell" forIndexPath:indexPath];
     
     if ([self.dataArr count] > 0) {
         MDBannerModel *mode = self.dataArr[0];
-        _SDarray = [NSMutableArray arrayWithObjects:[mode.dataDic objectForKey:@"recommend_goods"],[mode.dataDic objectForKey:@"bargain_goods"], nil];
-        cell.modellist = _SDarray[indexPath.section];
+        if (indexPath.section == 1) {
+            MdBannerListModel *list = [mode.dataDic objectForKey:@"recommend_goods"][indexPath.item];
+            cell.modellists = list;
+        }else if (indexPath.section == 2){
+            MdBannerListModel *list = [mode.dataDic objectForKey:@"bargain_goods"][indexPath.item];
+            cell.modellists = list;
+        }else{ }
+        
     }
-    
-    cell.itemBlock = ^(NSInteger idex, NSIndexPath *indexpath) {
-        
-        MdBannerListModel *model = [_SDarray[indexpath.section] objectAtIndex:idex];
-        
-        ShopSeckillDetailsViewController *seckill = [[ShopSeckillDetailsViewController alloc]init];
-        seckill.seckillType = ShopSeckillDetailsTypeOrder;
-        seckill.cpid = model.uid;
-        
-        [self.navigationController pushViewController:seckill animated:YES];
-    };
-    
+
     return cell;
 }
 
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    ShopHomeSectionView *v = [[NSBundle mainBundle]loadNibNamed:@"ShopHomeSectionView" owner:self options:nil].lastObject;
-    [v setTag:section];
-    v.backgroundColor = KSRGBA(255, 255, 255, 1);
-    v.btnclickBlcok = ^(UIButton *btn) {
-        UIView *view = (UIButton *)btn.superview;
-//        if (view.tag == 0) {
-//            NSLog(@"你点击了%ld",section);
-//        }else if (view.tag == 1){
-//            NSLog(@"你点击了%ld",section);
-//        }else{}
-    };
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    MDBannerModel *mode = self.dataArr[0];
     
-    return v;
+    ShopSeckillDetailsViewController *seckill = [[ShopSeckillDetailsViewController alloc]init];
+    seckill.seckillType = ShopSeckillDetailsTypeOrder;
+    
+    if (indexPath.section == 1) {
+        MdBannerListModel *m = [[mode.dataDic objectForKey:@"recommend_goods"] objectAtIndex:indexPath.item];
+        seckill.cpid = m.uid;
+    }else if (indexPath.section == 2){
+        MdBannerListModel *m = [[mode.dataDic objectForKey:@"bargain_goods"] objectAtIndex:indexPath.item];
+        seckill.cpid = m.uid;
+    }else{}
+    
+    [self.navigationController pushViewController:seckill animated:YES];
 }
 
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 64;
-}
-
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 234*2+30;
-}
-
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    // 取消Cell的选中状态
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-}
-
-
-//MARK:-
-- (IBAction)btnClick:(UIButton *)sender {
-    KPreventRepeatClickTime(1)
-    if (sender.tag == 10008) {
-        ShopSeckillDetailsViewController *seckill = [[ShopSeckillDetailsViewController alloc]init];
-        seckill.seckillType = ShopSeckillDetailsTypeKill;
-        [self.navigationController pushViewController:seckill animated:YES];
-    }else if (sender.tag == 10009){
+//MARK:- header 和 footer的获取逻辑
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    UICollectionReusableView *view = nil;
+    if([kind isEqualToString:UICollectionElementKindSectionHeader]){
         
+        ShopCollectionReusableView *temp = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"ShopCollectionReusableView" forIndexPath:indexPath];
+        if (indexPath.section == 0) {
+            [temp addSubview:self.headView];
+        }else{
+            ShopHomeSectionView *sectionView = [[NSBundle mainBundle]loadNibNamed:@"ShopHomeSectionView" owner:self options:nil].lastObject;
+            [sectionView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 44)];
+            [temp addSubview:sectionView];
+            sectionView.btnclickBlcok = ^(UIButton *btn) {
+                [HUDManager showTextHud:OtherMsg];
+            };
+        }
+
+        return view = temp;
+    }else
+        return nil;
+}
+
+
+//MARK:-WSLWaterFlowLayout
+- (CGSize)waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake((self.view.width-30)/2,234);
+}
+
+-(CGFloat)columnCountInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
+    return 2;
+}
+
+/** 行数*/
+-(CGFloat)rowCountInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
+    return 2;
+}
+
+/** 列间距*/
+-(CGFloat)columnMarginInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
+    return 10;
+}
+/** 行间距*/
+-(CGFloat)rowMarginInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
+    return 10;
+}
+/** 边缘之间的间距*/
+-(UIEdgeInsets)edgeInsetInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
+    return UIEdgeInsetsMake(10, 10, 10, 10);
+}
+
+//MARK:- Header and Footer
+- (CGSize)waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForHeaderViewInSection:(NSInteger)section {
+    if (section == 0) {
+        return CGSizeMake(self.view.width, 652);
     }else{
-        
+        return CGSizeMake(self.view.width, 64);
     }
 }
+
+
+////MARK:-
+//- (IBAction)btnClick:(UIButton *)sender {
+//    KPreventRepeatClickTime(1)
+//    if (sender.tag == 10008) {
+//        ShopSeckillDetailsViewController *seckill = [[ShopSeckillDetailsViewController alloc]init];
+//        seckill.seckillType = ShopSeckillDetailsTypeKill;
+//        [self.navigationController pushViewController:seckill animated:YES];
+//    }else if (sender.tag == 10009){
+//
+//    }else{
+//
+//    }
+//}
 
 
 /*

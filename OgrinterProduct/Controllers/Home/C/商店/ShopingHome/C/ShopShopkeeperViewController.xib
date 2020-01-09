@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShopShopkeeperViewController">
             <connections>
                 <outlet property="login_imgView" destination="FEI-3e-jXs" id="Lka-Sy-JwZ"/>
-                <outlet property="mTableView" destination="bxh-8W-XX4" id="fGu-eV-a3a"/>
+                <outlet property="mCollectionView" destination="s5o-Na-ykQ" id="ffY-oi-E6W"/>
                 <outlet property="shoperNameLabel" destination="zqz-CE-ng8" id="kES-e5-6zS"/>
                 <outlet property="topimgView" destination="pNf-4u-0C9" id="vvY-mg-q39"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -79,24 +79,30 @@
                         <constraint firstAttribute="bottom" secondItem="pNf-4u-0C9" secondAttribute="bottom" id="wz5-CO-Haz"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bxh-8W-XX4">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="s5o-Na-ykQ">
                     <rect key="frame" x="0.0" y="290" width="414" height="606"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PIJ-QU-uHl">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="301-5g-DIO"/>
-                        <outlet property="delegate" destination="-1" id="xm0-yG-Ww4"/>
+                        <outlet property="dataSource" destination="-1" id="o8g-6z-4Sy"/>
+                        <outlet property="delegate" destination="-1" id="btL-5Q-n2v"/>
                     </connections>
-                </tableView>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="GTE-xU-teq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9cR-tE-qZ4"/>
-                <constraint firstItem="bxh-8W-XX4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="290" id="MEQ-Rh-etz"/>
-                <constraint firstAttribute="bottom" secondItem="bxh-8W-XX4" secondAttribute="bottom" id="OjY-KA-lE9"/>
-                <constraint firstItem="bxh-8W-XX4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SKS-eu-sqM"/>
+                <constraint firstAttribute="trailing" secondItem="s5o-Na-ykQ" secondAttribute="trailing" id="Fsa-Y6-k9o"/>
+                <constraint firstItem="s5o-Na-ykQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ihp-Qc-vUy"/>
                 <constraint firstItem="GTE-xU-teq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Z6C-zy-2XO"/>
                 <constraint firstAttribute="trailing" secondItem="GTE-xU-teq" secondAttribute="trailing" id="n2G-3N-HSn"/>
-                <constraint firstAttribute="trailing" secondItem="bxh-8W-XX4" secondAttribute="trailing" id="xkd-ap-qyC"/>
+                <constraint firstAttribute="bottom" secondItem="s5o-Na-ykQ" secondAttribute="bottom" id="rGc-in-6Lc"/>
+                <constraint firstItem="s5o-Na-ykQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="290" id="yXY-7K-cWg"/>
             </constraints>
             <point key="canvasLocation" x="346" y="-138"/>
         </view>

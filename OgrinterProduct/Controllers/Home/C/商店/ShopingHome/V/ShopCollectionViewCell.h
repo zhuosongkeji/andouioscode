@@ -15,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ShopCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic,strong)MdBannerListModel *modellists;
-
 @property (nonatomic,strong)ShoperListModel *listmodels;
 
 @end

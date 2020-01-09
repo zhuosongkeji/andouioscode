@@ -14,6 +14,8 @@ typedef void(^selectBtnBlock)(NSString *str);
 
 @property (nonatomic,copy) selectBtnBlock selcctblock;
 
+- (instancetype)initWithFrame:(CGRect)frame title:(NSArray *)titls;
+
 -(void)menuScreeningViewDismiss;
 
 @end
