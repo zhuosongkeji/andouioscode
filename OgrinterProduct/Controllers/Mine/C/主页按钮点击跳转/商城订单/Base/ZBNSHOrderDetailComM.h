@@ -35,6 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! 商品总运费 */
 @property (nonatomic, copy) NSString *shipping_free;
 
+
 @property (nonatomic, strong) ZBNSHOrderDetailsM *details;
 @property (nonatomic, strong) ZBNSHOrderUserInfoM *userinfo;
 

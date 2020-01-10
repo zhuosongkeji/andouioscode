@@ -9,13 +9,11 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class ZBNSHGoAndEvaluateModel;
 @interface ZBNSHGoAndEvaluateCell : UITableViewCell
 + (instancetype)regiserCellForTable:(UITableView *)tableView;
 
-@property (nonatomic, copy) void(^dataHandel)(NSString *starCount ,NSString *commentText);
-
-
+@property (nonatomic, strong) ZBNSHGoAndEvaluateModel *model;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZBNSHCommonPayVC">
+            <connections>
+                <outlet property="buyButton" destination="YLU-e8-CX5" id="XiI-WW-9HZ"/>
+                <outlet property="myTableView" destination="ShU-PC-vnC" id="aRN-tp-dQg"/>
+                <outlet property="priceLabel" destination="II9-Nt-iBT" id="I9k-2G-EJh"/>
+                <outlet property="view" destination="iN0-l3-epB" id="L9e-3k-i8G"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ShU-PC-vnC">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m6U-3B-M2a">
+                    <rect key="frame" x="0.0" y="846" width="414" height="50"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z7Y-46-o6F">
+                            <rect key="frame" x="114" y="0.0" width="300" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLU-e8-CX5">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <state key="normal" title="立即购买" image="按钮3"/>
+                                    <connections>
+                                        <action selector="buyButtonClick:" destination="-1" eventType="touchUpInside" id="Q1J-Dw-Jbg"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="300" id="4w6-88-4iX"/>
+                                <constraint firstAttribute="trailing" secondItem="YLU-e8-CX5" secondAttribute="trailing" id="5f6-ba-kmY"/>
+                                <constraint firstAttribute="bottom" secondItem="YLU-e8-CX5" secondAttribute="bottom" id="6Nu-bL-bzX"/>
+                                <constraint firstItem="YLU-e8-CX5" firstAttribute="top" secondItem="z7Y-46-o6F" secondAttribute="top" id="GUi-WJ-wik"/>
+                                <constraint firstItem="YLU-e8-CX5" firstAttribute="leading" secondItem="z7Y-46-o6F" secondAttribute="leading" id="WIQ-Gk-Wz8"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I38-5a-iM9">
+                            <rect key="frame" x="0.0" y="0.0" width="114" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥4343" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="II9-Nt-iBT">
+                                    <rect key="frame" x="36.5" y="17" width="41.5" height="16"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="II9-Nt-iBT" firstAttribute="centerX" secondItem="I38-5a-iM9" secondAttribute="centerX" id="2DS-yV-xN6"/>
+                                <constraint firstItem="II9-Nt-iBT" firstAttribute="centerY" secondItem="I38-5a-iM9" secondAttribute="centerY" id="436-CW-0SE"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="I38-5a-iM9" firstAttribute="leading" secondItem="m6U-3B-M2a" secondAttribute="leading" id="1HW-gi-bQM"/>
+                        <constraint firstItem="z7Y-46-o6F" firstAttribute="leading" secondItem="I38-5a-iM9" secondAttribute="trailing" id="DxF-wg-VEh"/>
+                        <constraint firstAttribute="trailing" secondItem="z7Y-46-o6F" secondAttribute="trailing" id="O9g-Jj-XQW"/>
+                        <constraint firstAttribute="height" constant="50" id="ZfQ-CH-OFa"/>
+                        <constraint firstAttribute="bottom" secondItem="I38-5a-iM9" secondAttribute="bottom" id="cLP-ZR-EaH"/>
+                        <constraint firstItem="I38-5a-iM9" firstAttribute="top" secondItem="m6U-3B-M2a" secondAttribute="top" id="oHx-1v-HhS"/>
+                        <constraint firstItem="z7Y-46-o6F" firstAttribute="top" secondItem="m6U-3B-M2a" secondAttribute="top" id="qBJ-m7-O9N"/>
+                        <constraint firstAttribute="bottom" secondItem="z7Y-46-o6F" secondAttribute="bottom" id="ywx-aR-x0B"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="m6U-3B-M2a" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Bmv-cQ-y6f"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ShU-PC-vnC" secondAttribute="bottom" id="CsN-tF-8CB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="m6U-3B-M2a" secondAttribute="trailing" id="Rco-yO-dTs"/>
+                <constraint firstItem="ShU-PC-vnC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZvH-rB-7sC"/>
+                <constraint firstItem="m6U-3B-M2a" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="b24-Rk-nBc"/>
+                <constraint firstItem="ShU-PC-vnC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="lGF-L8-Xp8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ShU-PC-vnC" secondAttribute="trailing" id="q4D-mL-pko"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-233" y="670"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="按钮3" width="12.5" height="18"/>
+    </resources>
+</document>

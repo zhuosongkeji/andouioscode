@@ -103,21 +103,20 @@
                                     <constraint firstItem="tUF-VG-D6c" firstAttribute="centerY" secondItem="8vG-iv-4bB" secondAttribute="centerY" id="oyL-w2-qtp"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图片" translatesAutoresizingMaskIntoConstraints="NO" id="HAl-5S-aQQ">
-                                <rect key="frame" x="15" y="60" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="aMm-Bx-sCJ"/>
-                                    <constraint firstAttribute="height" constant="80" id="aYe-dH-fby"/>
-                                </constraints>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUL-fv-1z5">
+                                <rect key="frame" x="0.0" y="50" width="462" height="105"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="HAl-5S-aQQ" firstAttribute="top" secondItem="8vG-iv-4bB" secondAttribute="bottom" constant="10" id="BBL-AE-7Ji"/>
+                            <constraint firstItem="gUL-fv-1z5" firstAttribute="leading" secondItem="oXp-YS-Gvn" secondAttribute="leading" id="0fA-H3-1k6"/>
+                            <constraint firstAttribute="trailing" secondItem="gUL-fv-1z5" secondAttribute="trailing" id="8bw-KN-MBN"/>
                             <constraint firstItem="8vG-iv-4bB" firstAttribute="top" secondItem="oXp-YS-Gvn" secondAttribute="top" id="Fc4-EM-U9F"/>
                             <constraint firstAttribute="trailing" secondItem="8vG-iv-4bB" secondAttribute="trailing" id="Jbh-I4-FwH"/>
                             <constraint firstAttribute="height" constant="155" id="KDu-Lc-GNE"/>
-                            <constraint firstItem="HAl-5S-aQQ" firstAttribute="leading" secondItem="oXp-YS-Gvn" secondAttribute="leading" constant="15" id="QMB-7f-zHe"/>
+                            <constraint firstItem="gUL-fv-1z5" firstAttribute="top" secondItem="8vG-iv-4bB" secondAttribute="bottom" id="Mdd-LM-c11"/>
+                            <constraint firstAttribute="bottom" secondItem="gUL-fv-1z5" secondAttribute="bottom" id="jUe-8M-KYI"/>
                             <constraint firstItem="8vG-iv-4bB" firstAttribute="leading" secondItem="oXp-YS-Gvn" secondAttribute="leading" id="o5M-VE-Cb1"/>
                         </constraints>
                     </view>
@@ -137,13 +136,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="imageV" destination="SsT-kG-RYa" id="XUb-te-wnj"/>
                 <outlet property="starView" destination="klA-RK-SqL" id="BQd-3x-JkR"/>
                 <outlet property="textV" destination="zkL-cc-asZ" id="4jK-Eq-YiH"/>
+                <outlet property="upImgView" destination="gUL-fv-1z5" id="Lc7-XB-zqr"/>
             </connections>
-            <point key="canvasLocation" x="-409" y="55"/>
+            <point key="canvasLocation" x="-243" y="-4"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="图片" width="90" height="90"/>
-    </resources>
 </document>

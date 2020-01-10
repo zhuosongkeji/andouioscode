@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNSHGoAndEvaluateVC : UITableViewController
 
+@property (nonatomic, copy) NSString *imageName;
+@property (nonatomic, copy) NSString *merchant_id;
+@property (nonatomic, copy) NSString *goods_id;
+@property (nonatomic, copy) NSString *order_id;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
