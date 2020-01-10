@@ -59,6 +59,14 @@
 		A10A9CFA239B6B5E0049A0D2 /* THDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A10A9CF9239B6B5E0049A0D2 /* THDatePickerView.m */; };
 		A14BDA9423C5A154006EC033 /* ShoperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A14BDA9323C5A154006EC033 /* ShoperModel.m */; };
 		A14BDA9723C5A2F5006EC033 /* ShoperListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A14BDA9623C5A2F5006EC033 /* ShoperListModel.m */; };
+		A14BDAB823C6C985006EC033 /* CuomtentView.m in Sources */ = {isa = PBXBuildFile; fileRef = A14BDAB723C6C985006EC033 /* CuomtentView.m */; };
+		A14BDABA23C6C992006EC033 /* CuomtentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14BDAB923C6C992006EC033 /* CuomtentView.xib */; };
+		A14BDABE23C6CCD6006EC033 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A14BDABC23C6CCD6006EC033 /* CategoryCollectionViewCell.m */; };
+		A14BDABF23C6CCD6006EC033 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14BDABD23C6CCD6006EC033 /* CategoryCollectionViewCell.xib */; };
+		A14BDAC323C71C74006EC033 /* ShopCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A14BDAC123C71C74006EC033 /* ShopCollectionReusableView.m */; };
+		A14BDAC423C71C74006EC033 /* ShopCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14BDAC223C71C74006EC033 /* ShopCollectionReusableView.xib */; };
+		A14BDAC723C7262A006EC033 /* ShoperHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A14BDAC623C7262A006EC033 /* ShoperHeadView.m */; };
+		A14BDAC923C7263B006EC033 /* ShoperHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14BDAC823C7263B006EC033 /* ShoperHeadView.xib */; };
 		A14FB25C238E0E4C006A6511 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FB25B238E0E4C006A6511 /* AppDelegate.m */; };
 		A14FB262238E0E4C006A6511 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14FB260238E0E4C006A6511 /* Main.storyboard */; };
 		A14FB264238E0E50006A6511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14FB263238E0E50006A6511 /* Assets.xcassets */; };
@@ -498,6 +506,18 @@
 		A14BDA9323C5A154006EC033 /* ShoperModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoperModel.m; sourceTree = "<group>"; };
 		A14BDA9523C5A2F5006EC033 /* ShoperListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShoperListModel.h; sourceTree = "<group>"; };
 		A14BDA9623C5A2F5006EC033 /* ShoperListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoperListModel.m; sourceTree = "<group>"; };
+		A14BDAB623C6C985006EC033 /* CuomtentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CuomtentView.h; sourceTree = "<group>"; };
+		A14BDAB723C6C985006EC033 /* CuomtentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CuomtentView.m; sourceTree = "<group>"; };
+		A14BDAB923C6C992006EC033 /* CuomtentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CuomtentView.xib; sourceTree = "<group>"; };
+		A14BDABB23C6CCD6006EC033 /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewCell.h; sourceTree = "<group>"; };
+		A14BDABC23C6CCD6006EC033 /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
+		A14BDABD23C6CCD6006EC033 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		A14BDAC023C71C74006EC033 /* ShopCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopCollectionReusableView.h; sourceTree = "<group>"; };
+		A14BDAC123C71C74006EC033 /* ShopCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopCollectionReusableView.m; sourceTree = "<group>"; };
+		A14BDAC223C71C74006EC033 /* ShopCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCollectionReusableView.xib; sourceTree = "<group>"; };
+		A14BDAC523C7262A006EC033 /* ShoperHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShoperHeadView.h; sourceTree = "<group>"; };
+		A14BDAC623C7262A006EC033 /* ShoperHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoperHeadView.m; sourceTree = "<group>"; };
+		A14BDAC823C7263B006EC033 /* ShoperHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoperHeadView.xib; sourceTree = "<group>"; };
 		A14FB257238E0E4C006A6511 /* OgrinterProduct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OgrinterProduct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14FB25A238E0E4C006A6511 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A14FB25B238E0E4C006A6511 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1169,6 +1189,12 @@
 				A10A9C8C239A469A0049A0D2 /* CaseCluessKeybordCollectionHeadView.h */,
 				A10A9C8D239A469A0049A0D2 /* CaseCluessKeybordCollectionHeadView.m */,
 				A10A9C8E239A469A0049A0D2 /* CaseCluessKeybordCollectionHeadView.xib */,
+				A14BDAC023C71C74006EC033 /* ShopCollectionReusableView.h */,
+				A14BDAC123C71C74006EC033 /* ShopCollectionReusableView.m */,
+				A14BDAC223C71C74006EC033 /* ShopCollectionReusableView.xib */,
+				A14BDAC523C7262A006EC033 /* ShoperHeadView.h */,
+				A14BDAC623C7262A006EC033 /* ShoperHeadView.m */,
+				A14BDAC823C7263B006EC033 /* ShoperHeadView.xib */,
 				A1F4DFE223A1EB9B00B02880 /* SeckillTableViewCell.h */,
 				A1F4DFE323A1EB9B00B02880 /* SeckillTableViewCell.m */,
 				A1F4DFE423A1EB9B00B02880 /* SeckillTableViewCell.xib */,
@@ -1568,6 +1594,19 @@
 			path = C;
 			sourceTree = "<group>";
 		};
+		A14BDAB523C6C954006EC033 /* customMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A14BDAB623C6C985006EC033 /* CuomtentView.h */,
+				A14BDAB723C6C985006EC033 /* CuomtentView.m */,
+				A14BDAB923C6C992006EC033 /* CuomtentView.xib */,
+				A14BDABB23C6CCD6006EC033 /* CategoryCollectionViewCell.h */,
+				A14BDABC23C6CCD6006EC033 /* CategoryCollectionViewCell.m */,
+				A14BDABD23C6CCD6006EC033 /* CategoryCollectionViewCell.xib */,
+			);
+			path = customMenu;
+			sourceTree = "<group>";
+		};
 		A14FB24E238E0E4C006A6511 = {
 			isa = PBXGroup;
 			children = (
@@ -1680,6 +1719,7 @@
 		A14FB2AF238F5770006A6511 /* category */ = {
 			isa = PBXGroup;
 			children = (
+				A14BDAB523C6C954006EC033 /* customMenu */,
 				A1F6BDA223ADF5770063AEF8 /* MoveCollection */,
 				A14FB2BA238F57AC006A6511 /* YWHudManager */,
 				A14FB2B4238F5787006A6511 /* FKHOperationAdapter.h */,
@@ -3034,6 +3074,8 @@
 				F4FAC26B23ABC72D00C235EA /* ZBNSHReturnGoodsOrderCell.xib in Resources */,
 				A10A9C192398A1970049A0D2 /* sorts.plist in Resources */,
 				F4917C8323C3132C00C05CFA /* ZBNMerchantEntryTabCell.xib in Resources */,
+				A14BDAC423C71C74006EC033 /* ShopCollectionReusableView.xib in Resources */,
+				A14BDAC923C7263B006EC033 /* ShoperHeadView.xib in Resources */,
 				A15DC0F7239E320E008CF287 /* CresThirdTableViewCell.xib in Resources */,
 				F4FAC27023ABC74300C235EA /* ZBNSHReturnGoodsOrderCellTwo.xib in Resources */,
 				A14FB2A9238E4DF6006A6511 /* RegisterViewController.xib in Resources */,
@@ -3081,6 +3123,7 @@
 				F4E6A7B223B75417006721E9 /* ZBNMineSettingCell.xib in Resources */,
 				F411AE4723BDDF9D006016D2 /* ZBNChangePhoneNumberVC.xib in Resources */,
 				F476A45823A7682B00E3018A /* ZBNMyAddressCell.xib in Resources */,
+				A14BDABF23C6CCD6006EC033 /* CategoryCollectionViewCell.xib in Resources */,
 				A1F73D3B23A9F439001D86EF /* OnlineOrderViewController.xib in Resources */,
 				A14FB2E9238F683D006A6511 /* FindViewController.xib in Resources */,
 				A15DC106239E41D4008CF287 /* HotelDetailsBottomView.xib in Resources */,
@@ -3123,6 +3166,7 @@
 				F42C3C6E23C723E30057288A /* ZBNSHCommonPayCell.xib in Resources */,
 				A14FB2BF238F57AD006A6511 /* MBProgressHUD.bundle in Resources */,
 				A14FB2E4238F682A006A6511 /* MineViewController.xib in Resources */,
+				A14BDABA23C6C992006EC033 /* CuomtentView.xib in Resources */,
 				A14FB2F6238F6A84006A6511 /* HomeViewController.xib in Resources */,
 				A1CE7CCC23A77EB900C22C41 /* QCouponTableViewCell.xib in Resources */,
 				A14FB355239126E5006A6511 /* ShoingMineViewController.xib in Resources */,
@@ -3216,6 +3260,7 @@
 				A15DC0C5239DD78A008CF287 /* HotelDetilsBaseTableView.m in Sources */,
 				A1F73D3A23A9F439001D86EF /* OnlineOrderViewController.m in Sources */,
 				A1FC70C723C2CF6B005BFDC9 /* HomeModel.m in Sources */,
+				A14BDABE23C6CCD6006EC033 /* CategoryCollectionViewCell.m in Sources */,
 				F4ADBE3823B9A4BA00B62E46 /* ZBNMyIntegralModel.m in Sources */,
 				A15DC104239E41C8008CF287 /* HotelDetailsBottomView.m in Sources */,
 				A14FB323239017BC006A6511 /* UIView+HHAddition.m in Sources */,
@@ -3335,6 +3380,7 @@
 				F4C196ED23C5771000F1C48C /* MASLayoutConstraint.m in Sources */,
 				F476A48723A7682C00E3018A /* ZBNMyCollectionVC.m in Sources */,
 				F4E00E7123C45CA0007EABC3 /* ZBNTakeOutEntryVC.m in Sources */,
+				A14BDAC323C71C74006EC033 /* ShopCollectionReusableView.m in Sources */,
 				A15DC0DC239E2003008CF287 /* HotelDetlisSubViewOneController.m in Sources */,
 				F4C196BF23C576E400F1C48C /* TZImageCropManager.m in Sources */,
 				F476A47923A7682B00E3018A /* ZBNRestaurantBookOrderVC.m in Sources */,
@@ -3348,6 +3394,7 @@
 				A1F6BDAE23ADF7B50063AEF8 /* CGControl.m in Sources */,
 				F43E42EB23BC74AC00D33A7F /* ZBNArea.m in Sources */,
 				A14FB32E2390E74D006A6511 /* HotCollectionViewCell.m in Sources */,
+				A14BDAC723C7262A006EC033 /* ShoperHeadView.m in Sources */,
 				F4FAC2B623ACAA5900C235EA /* ZBNEvaluateGoodsVC.m in Sources */,
 				F476A44023A7682B00E3018A /* ZBNBrowseHistoryVC.m in Sources */,
 				A10A9CE7239B38930049A0D2 /* LiveBroadcastViewController.m in Sources */,
@@ -3450,6 +3497,7 @@
 				A10A9BEB239764D70049A0D2 /* MDBannerCollectionViewCell.m in Sources */,
 				F4FAC28F23AC63B600C235EA /* ZBNSHApplyForRefundCell.m in Sources */,
 				F4FAC26F23ABC74300C235EA /* ZBNSHReturnGoodsOrderCellTwo.m in Sources */,
+				A14BDAB823C6C985006EC033 /* CuomtentView.m in Sources */,
 				F4C196C723C576E400F1C48C /* TZProgressView.m in Sources */,
 				A1ECDEFD239B7A6E003D870D /* HotolListViewController.m in Sources */,
 				F476A47A23A7682B00E3018A /* ZBNCommenOrderCell.m in Sources */,

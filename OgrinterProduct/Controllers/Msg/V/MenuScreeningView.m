@@ -13,7 +13,6 @@
 
 #define kWidth [UIScreen mainScreen].bounds.size.width
 #define kHeight [UIScreen mainScreen].bounds.size.height
-#define titleArr @[@"商家分类",@"地区选择",@"排序方式"]
 
 @interface MenuScreeningView ()<DropMenuViewDelegate>
 
@@ -37,37 +36,63 @@
 @implementation MenuScreeningView
 
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame title:(NSArray *)titls
 {
     self = [super initWithFrame:frame];
+    
     if (self) {
         
-        self.oneLinkageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.oneLinkageButton.frame = CGRectMake(0, 0, kWidth/3, 36);
-        [self setUpButton:self.oneLinkageButton withText:titleArr[0]];
-        
-        self.oneLinkageDropMenu = [[DropMenuView alloc] init];
-        self.oneLinkageDropMenu.arrowView = self.oneLinkageButton.imageView;
-        self.oneLinkageDropMenu.delegate = self;
-        
-        
-        
-        self.twoLinkageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.twoLinkageButton.frame = CGRectMake(kWidth/3, 0, kWidth/3, 36);
-        [self setUpButton:self.twoLinkageButton withText:titleArr[1]];
-        
-        self.twoLinkageDropMenu = [[DropMenuView alloc] init];
-        self.twoLinkageDropMenu.arrowView = self.twoLinkageButton.imageView;
-        self.twoLinkageDropMenu.delegate = self;
-        
-    
-        self.threeLinkageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.threeLinkageButton.frame = CGRectMake(2 * kWidth/3, 0,  kWidth/3, 36);
-        [self setUpButton:self.threeLinkageButton withText:titleArr[2]];
-
-        self.threeLinkageDropMenu = [[DropMenuView alloc] init];
-        self.threeLinkageDropMenu.arrowView = self.threeLinkageButton.imageView;
-        self.threeLinkageDropMenu.delegate = self;
+        if ([titls count] == 1) {
+            
+            self.oneLinkageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            self.oneLinkageButton.frame = CGRectMake(0, 0, kWidth/3, 36);
+            [self setUpButton:self.oneLinkageButton withText:titls[0]];
+            
+            self.oneLinkageDropMenu = [[DropMenuView alloc] init];
+            self.oneLinkageDropMenu.arrowView = self.oneLinkageButton.imageView;
+            self.oneLinkageDropMenu.delegate = self;
+        }else if ([titls count] == 2){
+            self.oneLinkageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            self.oneLinkageButton.frame = CGRectMake(0, 0, kWidth/3, 36);
+            [self setUpButton:self.oneLinkageButton withText:titls[0]];
+            
+            self.oneLinkageDropMenu = [[DropMenuView alloc] init];
+            self.oneLinkageDropMenu.arrowView = self.oneLinkageButton.imageView;
+            self.oneLinkageDropMenu.delegate = self;
+            
+            self.twoLinkageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            self.twoLinkageButton.frame = CGRectMake(kWidth/3, 0, kWidth/3, 36);
+            [self setUpButton:self.twoLinkageButton withText:titls[1]];
+            
+            self.twoLinkageDropMenu = [[DropMenuView alloc] init];
+            self.twoLinkageDropMenu.arrowView = self.twoLinkageButton.imageView;
+            self.twoLinkageDropMenu.delegate = self;
+            
+        }else if ([titls count] == 3){
+            self.oneLinkageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            self.oneLinkageButton.frame = CGRectMake(0, 0, kWidth/3, 36);
+            [self setUpButton:self.oneLinkageButton withText:titls[0]];
+            
+            self.oneLinkageDropMenu = [[DropMenuView alloc] init];
+            self.oneLinkageDropMenu.arrowView = self.oneLinkageButton.imageView;
+            self.oneLinkageDropMenu.delegate = self;
+            
+            self.twoLinkageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            self.twoLinkageButton.frame = CGRectMake(kWidth/3, 0, kWidth/3, 36);
+            [self setUpButton:self.twoLinkageButton withText:titls[1]];
+            
+            self.twoLinkageDropMenu = [[DropMenuView alloc] init];
+            self.twoLinkageDropMenu.arrowView = self.twoLinkageButton.imageView;
+            self.twoLinkageDropMenu.delegate = self;
+            
+            self.threeLinkageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            self.threeLinkageButton.frame = CGRectMake(2 * kWidth/3, 0,  kWidth/3, 36);
+            [self setUpButton:self.threeLinkageButton withText:titls[2]];
+            
+            self.threeLinkageDropMenu = [[DropMenuView alloc] init];
+            self.threeLinkageDropMenu.arrowView = self.threeLinkageButton.imageView;
+            self.threeLinkageDropMenu.delegate = self;
+        }
         
         
         /** 最下面横线 */
@@ -87,22 +112,27 @@
 
     if (button == self.oneLinkageButton) {
         
-        [self.twoLinkageDropMenu dismiss];
-        [self.threeLinkageDropMenu dismiss];
+        if (self.twoLinkageDropMenu)
+            [self.twoLinkageDropMenu dismiss];
+        if (self.threeLinkageDropMenu)
+            [self.threeLinkageDropMenu dismiss];
         
         [self.oneLinkageDropMenu creatDropView:self withShowTableNum:1 withData:self.sortsArr];
         
     }else if (button == self.twoLinkageButton){
         
-        [self.oneLinkageDropMenu dismiss];
-        [self.threeLinkageDropMenu dismiss];
+        if (self.oneLinkageDropMenu)
+            [self.oneLinkageDropMenu dismiss];
+        if (self.threeLinkageDropMenu)
+            [self.threeLinkageDropMenu dismiss];
     
         [self.twoLinkageDropMenu creatDropView:self withShowTableNum:3 withData:self.addressArr];
     
     }else if (button == self.threeLinkageButton){
-        
-        [self.oneLinkageDropMenu dismiss];
-        [self.twoLinkageDropMenu dismiss];
+        if (self.oneLinkageDropMenu)
+            [self.oneLinkageDropMenu dismiss];
+        if (self.twoLinkageDropMenu)
+            [self.twoLinkageDropMenu dismiss];
         
         [self.threeLinkageDropMenu creatDropView:self withShowTableNum:1 withData:self.sortsArr];
         
@@ -115,9 +145,12 @@
 
 #pragma mark - 筛选菜单消失
 -(void)menuScreeningViewDismiss{
-    [self.oneLinkageDropMenu dismiss];
-    [self.twoLinkageDropMenu dismiss];
-    [self.threeLinkageDropMenu dismiss];
+    if (self.oneLinkageDropMenu)
+        [self.oneLinkageDropMenu dismiss];
+    if (self.twoLinkageDropMenu)
+        [self.twoLinkageDropMenu dismiss];
+    if (self.threeLinkageDropMenu)
+        [self.threeLinkageDropMenu dismiss];
 }
 
 

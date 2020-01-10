@@ -13,7 +13,6 @@
 
 @property(nonatomic,strong)NSDictionary *dataDic;
 
-
 -(instancetype)initWithDict:(NSDictionary *)dict;
 
 +(instancetype)initWithDict:(NSDictionary *)dict;

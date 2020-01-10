@@ -126,7 +126,7 @@
 
 -(void)createMenuScreeningView {
     
-    _menuScreeningView = [[MenuScreeningView alloc]initWithFrame:CGRectMake(0, kStatusBarAndNavigationBarH, KSCREEN_WIDTH, MenuHeight)];
+    _menuScreeningView = [[MenuScreeningView alloc]initWithFrame:CGRectMake(0, kStatusBarAndNavigationBarH, KSCREEN_WIDTH, MenuHeight) title:@[@"商家分类",@"地区选择",@"排序方式"]];
     _menuScreeningView.backgroundColor = KSRGBA(255, 255, 255, 1);
     
     __weak typeof(&*self)weakSelf = self;

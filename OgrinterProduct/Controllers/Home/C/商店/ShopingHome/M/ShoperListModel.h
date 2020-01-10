@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString *goods_Name;
 @property(nonatomic,strong)NSString *goods_price;
 
+@property(nonatomic)BOOL iselect;
 
 @end
 
