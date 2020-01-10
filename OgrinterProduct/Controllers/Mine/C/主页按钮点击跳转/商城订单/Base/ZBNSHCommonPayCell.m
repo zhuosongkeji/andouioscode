@@ -66,9 +66,9 @@
     // 商品规格
     self.goods_attr.text = comM.details.attr_value[1];
     // 价格
-    self.priceLabel.text = comM.order_money;
+    self.priceLabel.text = [NSString stringWithFormat:@"¥%@",comM.order_money];
     // 数量
-    self.count.text = comM.details.num;
+    self.count.text = [NSString stringWithFormat:@"x%@",comM.details.num];
     // 用户名
     self.userName.text = comM.userinfo.name;
     // 手机号
@@ -78,6 +78,8 @@
     // 运送方式
     // 积分
     self.integer.text = comM.integral;
+    // 结算价格
+    self.total_price.text = [NSString stringWithFormat:@"%@元",comM.order_money];
 }
 
 

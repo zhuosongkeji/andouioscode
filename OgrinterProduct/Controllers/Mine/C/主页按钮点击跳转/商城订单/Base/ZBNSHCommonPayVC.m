@@ -33,7 +33,9 @@
     
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
-    
+    self.myTableView.backgroundColor = KSRGBA(241, 241, 241, 1);
+    self.myTableView.scrollEnabled = NO;
+    self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self loadData];
 }
 
@@ -48,8 +50,9 @@
         params[@"order_sn"] = self.order_id;
         [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/order/details" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
             self.comM = [ZBNSHOrderDetailComM mj_objectWithKeyValues:serverInfo.response[@"data"]];
-            self.detailM = [ZBNSHOrderDetailsM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"details"][0]];
-            self.userInfoM = [ZBNSHOrderUserInfoM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"userinfo"]];
+            self.comM.details = [ZBNSHOrderDetailsM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"details"][0]];
+            self.comM.userinfo = [ZBNSHOrderUserInfoM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"userinfo"]];
+            self.priceLabel.text = [NSString stringWithFormat:@"¥%@",self.comM.pay_money];
             [weakSelf.myTableView reloadData];
         }];
 }
@@ -62,6 +65,7 @@
 
 /*! 立即购买按钮的点击 */
 - (IBAction)buyButtonClick:(UIButton *)sender {
+    
     
     
 }
