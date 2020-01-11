@@ -6,30 +6,32 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+#define details_list @"details/list"
+
 
 #import "HotelDetlisViewController.h"
 #import "HotelBottomTableViewCell.h"
 #import "HotelDetlisSubViewOneController.h"
+#import "SDCycleScrollView.h"
+
 #import "HotelDetilsTopViewCell.h"
 #import "FSScrollContentView.h"
+#import "HolelModel.h"
 
 
 
-@interface HotelDetlisViewController ()<UITableViewDelegate,UITableViewDataSource,FSPageContentViewDelegate,FSSegmentTitleViewDelegate>
+@interface HotelDetlisViewController ()<UITableViewDelegate,UITableViewDataSource,FSPageContentViewDelegate,FSSegmentTitleViewDelegate,SDCycleScrollViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 
-
 @property (nonatomic, assign) BOOL canScroll;
-
-
 @property (nonatomic, strong) FSSegmentTitleView *titleView;
-
 @property (nonatomic, strong) HotelBottomTableViewCell *contentCell;
-
+@property(nonatomic,strong)SDCycleScrollView *cycleScrollView;
 
 @property (nonatomic,strong)NSArray *VcStrArr;
+@property(nonatomic,strong)NSMutableArray *dataArr;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
 
@@ -37,6 +39,29 @@
 
 
 @implementation HotelDetlisViewController
+
+
+-(NSMutableArray *)dataArr{
+    if (!_dataArr) {
+        _dataArr = [NSMutableArray array];
+    }
+    return _dataArr;
+}
+
+
+//MARK:- cycleScrollView
+-(SDCycleScrollView *) cycleScrollView{
+    if (!_cycleScrollView){
+        
+        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 168) delegate:self placeholderImage:nil];
+        
+        _cycleScrollView.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        _cycleScrollView.autoScrollTimeInterval = 2.0;
+        
+    }
+    return _cycleScrollView;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,6 +82,8 @@
     
     self.mTableView.tableFooterView = [UILabel new];
     
+    self.mTableView.tableHeaderView = self.cycleScrollView;
+    
     [self.mTableView registerNib:[UINib nibWithNibName:@"HotelDetilsTopViewCell" bundle:nil] forCellReuseIdentifier:@"HotelDetilsTopViewCell"];
 
     
@@ -65,6 +92,29 @@
         [weakSelf insertRowAtTop];
     }];
 
+    [self loadNetWork];
+}
+
+
+-(void)loadNetWork{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,details_list];
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"id":self.jid} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            if ([_dataArr count] > 0)
+                [_dataArr removeAllObjects];
+            
+            HolelModel *model = [[HolelModel alloc]initWithDict:serverInfo.response[@"data"]];
+            [self.dataArr addObject:model];
+            self.cycleScrollView.imageURLStringsGroup = model.facilities;
+            
+            [self.mTableView reloadData];
+            
+        }else {
+            [HUDManager showTextHud:loadError];
+        }
+    }];
 }
 
 
@@ -90,22 +140,17 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 1) {
+    if (section == 1)
         return 1;
-    }
-    return 2;
+    return 1;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        if (indexPath.row == 0) {
-            return 168;
-        }
         return 196;
-    }else if (indexPath.section == 1){
+    }else if (indexPath.section == 1)
         return KSCREEN_HEIGHT-kStatusBarAndNavigationBarH;
-    }
     return 0;
 }
 
@@ -130,6 +175,10 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         HotelDetilsTopViewCell *cell = [HotelDetilsTopViewCell tempTableViewCellWith:self.mTableView indexPath:indexPath];
+        if ([self.dataArr count] > 0) {
+            HolelModel *model = self.dataArr[0];
+            cell.listModel = model;
+        }
         
         [cell configTempCellWith:indexPath];
         
@@ -137,28 +186,36 @@
     }
     
     if (indexPath.section == 1) {
+        
         _contentCell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
         
         if (!_contentCell) {
-            
             _contentCell = [[HotelBottomTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell" withtype:HotelBottomTableViewCellTypeOne];
-            _contentCell.contentView.backgroundColor = [UIColor redColor];
-            
-            NSMutableArray *contentVCs = [NSMutableArray array];
-            for (int i = 0 ; i < HotelDetailsListArr.count; i++) {
+            _contentCell.contentView.backgroundColor = [UIColor whiteColor];
+        }
+        
+        NSMutableArray *contentVCs = [NSMutableArray array];
+        
+        for (int i = 0 ; i < HotelDetailsListArr.count; i++) {
+            if ([_dataArr count]) {
+                HolelModel *model = _dataArr[0];
                 HotelDetlisSubViewOneController *vc = [[HotelDetlisSubViewOneController alloc]init];
                 vc.title = HotelDetailsListArr[i];
                 vc.str = vc.title;
+                vc.sid = model.jdid;
                 
+                if (i == HotelDetailsListArr.count-1)
+                    vc.imgArr = [NSArray arrayWithArray:model.facilities];
                 [contentVCs addObject:vc];
             }
-            _contentCell.viewControllers = contentVCs;
-            _contentCell.pageContentView = [[FSPageContentView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-kStatusBarAndNavigationBarH) childVCs:contentVCs parentVC:self delegate:self];
-            [_contentCell.contentView addSubview:_contentCell.pageContentView];
         }
+        _contentCell.viewControllers = contentVCs;
+        _contentCell.pageContentView = [[FSPageContentView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-kStatusBarAndNavigationBarH) childVCs:contentVCs parentVC:self delegate:self];
+        [_contentCell.contentView addSubview:_contentCell.pageContentView];
         
         return _contentCell;
     }
+    
     return nil;
 }
 

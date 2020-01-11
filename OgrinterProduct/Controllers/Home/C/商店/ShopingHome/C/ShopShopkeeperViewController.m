@@ -239,10 +239,14 @@
 }
 
 
--(void)didselectSure:(NSString *)uid{
-    self.sdict = @{@"id":self.shoperId,@"uid":self.u_id,@"type_id":uid};
+-(void)didselectSure:(NSString *)uid index:(NSInteger)index{
+    if (index == 2000) {
+        
+    }else{
+        self.sdict = @{@"id":self.shoperId,@"uid":self.u_id,@"type_id":uid};
+        [self dissView:@"load"];
+    }
     
-    [self dissView:@"load"];
 }
 
 

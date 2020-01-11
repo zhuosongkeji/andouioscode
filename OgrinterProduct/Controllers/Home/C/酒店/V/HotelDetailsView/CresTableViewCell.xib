@@ -70,6 +70,12 @@
                     <constraint firstAttribute="trailing" secondItem="PAp-Pd-xDx" secondAttribute="trailing" constant="16" id="scS-Fx-Qfv"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="desc" destination="PAp-Pd-xDx" id="Zvg-Bf-2At"/>
+                <outlet property="iocn" destination="Pu0-Hh-8Fk" id="Jhv-g5-Uya"/>
+                <outlet property="name" destination="6cX-W4-veQ" id="nOA-WK-axA"/>
+                <outlet property="price" destination="hng-jw-hfu" id="fmd-8M-3c8"/>
+            </connections>
             <point key="canvasLocation" x="65" y="95"/>
         </tableViewCell>
     </objects>

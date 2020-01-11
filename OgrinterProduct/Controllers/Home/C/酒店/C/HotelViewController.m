@@ -6,12 +6,18 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+#define hotel_cate @"hotel/cate"//酒店分类
+
+#define hotel_hotellist @"hotel/hotellist"//酒店商家
+
+
 #import "HotelViewController.h"
 #import "HotolListViewController.h"
 #import "HotelDetlisViewController.h"
 #import "THDatePickerView.h"
 #import "MsgViewCell.h"
 #import "MsgModel.h"
+#import "UIButton+Ex.h"
 
 
 @interface HotelViewController ()<UITableViewDelegate,UITableViewDataSource,THDatePickerViewDelegate>
@@ -32,11 +38,44 @@
 
 @property (weak, nonatomic) THDatePickerView *dateView;
 
+@property(nonatomic,strong)UIScrollView *mScroller;
+
 @property (nonatomic,weak) UIView *topView;
+
+@property (weak, nonatomic) IBOutlet UIView *categroybjView;
+
+
+@property (nonatomic,strong)NSMutableArray *categoryArr;
+
+@property (nonatomic,strong)NSMutableArray *listArr;
 
 @end
 
 @implementation HotelViewController
+
+
+-(NSMutableArray *)categoryArr{
+    if (!_categoryArr) {
+        _categoryArr = [NSMutableArray array];
+    }
+    return _categoryArr;
+}
+
+
+-(UIScrollView *)mScroller{
+    if (!_mScroller) {
+        _mScroller = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 88)];
+        _mScroller.showsHorizontalScrollIndicator = NO;
+    }
+    return _mScroller;
+}
+
+-(NSMutableArray *)listArr {
+    if (!_listArr) {
+        _listArr = [[NSMutableArray alloc]init];
+    }
+    return _listArr;
+}
 
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -58,7 +97,57 @@
     
     [self setloadsubViews];
     [self createDatePicker];
+    
+    [self loadNetWork];
+    [self loadlistNetWork];
     // Do any additional setup after loading the view from its nib.
+}
+
+
+-(void)loadNetWork {
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,hotel_cate];
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            if ([_categoryArr count])
+                [_categoryArr removeAllObjects];
+            
+            NSArray *array = serverInfo.response[@"data"];
+            for (int i = 0; i < [array  count]; i ++ ) {
+                MsgModel *model = [[MsgModel alloc]initWithDict:array[i]];
+                [self.categoryArr addObject:model];
+            }
+            [self creatbtns:self.categoryArr];
+            
+        }else {
+            [HUDManager showTextHud:loadError];
+        }
+    }];
+}
+
+
+-(void)loadlistNetWork{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,hotel_hotellist];
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            if ([_listArr count])
+                [_listArr removeAllObjects];
+            
+            NSArray *array = serverInfo.response[@"data"] ;
+            for (int i = 0; i < [array  count]; i ++ ) {
+                MsgModel *model = [[MsgModel alloc]initWithDict:array[i]];
+                [self.listArr addObject:model];
+            }
+            
+        }else {
+            [HUDManager showTextHud:loadError];
+        }
+        [self.mTableView reloadData];
+    }];
+    
 }
 
 //MARK:-loadsubViews
@@ -75,6 +164,8 @@
     
     self.mTableView.tableFooterView = [UILabel new]; self.mTableView.backgroundView.backgroundColor = [UIColor clearColor];
     [self.mTableView registerNib:[UINib nibWithNibName:@"MsgViewCell" bundle:nil] forCellReuseIdentifier:@"MsgViewCell"];
+    
+    [self.categroybjView addSubview:self.mScroller];
     
 }
 
@@ -103,7 +194,7 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return [self.listArr count];
 }
 
 
@@ -119,13 +210,21 @@
         
     };
     
+    if ([self.listArr count]) {
+        MsgModel *model = _listArr[indexPath.row];
+        cell.listmodel = model;
+    }
+    
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    MsgModel *model = _listArr[indexPath.row];
     // 取消Cell的选中状态
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     HotelDetlisViewController *holel = [[HotelDetlisViewController alloc]init];
+    holel.jid = model.uid;
+    
     [self.navigationController pushViewController:holel animated:YES];
 }
 
@@ -225,6 +324,48 @@
         self.dateView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 300);
         [self.topView setHidden:YES];
     }];
+}
+
+
+-(void)creatbtns:(NSArray *)array{
+    
+    for (int i = 0; i < [array count]; i ++) {
+        MsgModel *model = array[i];
+        UIView *imgView = [self createBtns:CGRectMake(i*88, 0, 88, 88) imgStr:model.img title:model.name];
+        
+        [imgView setTag:100+i];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(vatag:)];
+        [imgView addGestureRecognizer:tap];
+        
+        [self.mScroller addSubview:imgView];
+    }
+    self.mScroller.contentSize = CGSizeMake([array count]*88,0);
+}
+
+
+-(UIView *)createBtns:(CGRect)frame imgStr:(NSString *)imgStr title:(NSString *)title {
+    
+    UIView *v = [[UIView alloc]initWithFrame:frame];
+    UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(18, 14, v.height-46, v.height-46)];
+    UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(imgView.frame)+5, CGRectGetWidth(v.frame), 20)];
+    lable.textColor = UIColor.darkGrayColor;
+    lable.font = [UIFont systemFontOfSize:12];
+    lable.textAlignment = NSTextAlignmentCenter;
+    
+    lable.text = title;
+    
+    [imgView sd_setImageWithURL:[NSURL URLWithString:imgStr] placeholderImage:nil];
+    
+    [v addSubview:imgView];
+    [v addSubview:lable];
+    
+    return v;
+}
+
+
+-(void)vatag:(UITapGestureRecognizer *)tap {
+    UIView *v = tap.view;
+    NSLog(@"%ld",v.tag);
 }
 
 /*

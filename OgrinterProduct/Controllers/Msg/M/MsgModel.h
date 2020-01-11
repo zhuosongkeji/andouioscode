@@ -25,6 +25,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSString *tel;
 
 
+@property (nonatomic,strong)NSString *img;
+@property (nonatomic,strong)NSString *cid;
+
+
+@property (nonatomic,strong)NSString *desc;
+@property (nonatomic,strong)NSString *house_name;
+
+
 -(instancetype)initWithDict:(NSDictionary *)dict;
 
 +(instancetype)initWithDict:(NSDictionary *)dict;

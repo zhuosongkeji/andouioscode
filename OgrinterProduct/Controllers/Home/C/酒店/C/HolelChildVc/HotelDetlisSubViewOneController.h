@@ -18,7 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL isRefresh;
 
-@property (nonatomic, strong) NSString *str;
+@property (nonatomic, strong)NSString *str;
+
+@property (nonatomic,strong)NSArray *imgArr;
+@property (nonatomic,strong)NSString *sid;//商户id
 
 @end
 

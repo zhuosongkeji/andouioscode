@@ -11,27 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HotelDetilsTopViewCellOne" rowHeight="168" id="KGk-i7-Jjw" customClass="HotelDetilsTopViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="155.5"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层 8" translatesAutoresizingMaskIntoConstraints="NO" id="aKV-v9-H0J">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="155.5"/>
-                    </imageView>
-                </subviews>
-                <constraints>
-                    <constraint firstAttribute="trailing" secondItem="aKV-v9-H0J" secondAttribute="trailing" id="16l-6p-VFq"/>
-                    <constraint firstItem="aKV-v9-H0J" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="32U-wm-KvE"/>
-                    <constraint firstAttribute="bottom" secondItem="aKV-v9-H0J" secondAttribute="bottom" id="OXV-tj-nDp"/>
-                    <constraint firstItem="aKV-v9-H0J" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zDN-Mb-MzL"/>
-                </constraints>
-            </tableViewCellContentView>
-            <point key="canvasLocation" x="244.92753623188409" y="16.741071428571427"/>
-        </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HotelDetilsTopViewCellTwo" rowHeight="196" id="T2t-H6-Kyd" customClass="HotelDetilsTopViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HotelDetilsTopViewCellOne" rowHeight="196" id="T2t-H6-Kyd" customClass="HotelDetilsTopViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="195"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T2t-H6-Kyd" id="oUo-Er-reQ">
@@ -176,14 +156,21 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.94509803920000002" green="0.9531517625" blue="0.95976561309999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="244.92753623188409" y="157.36607142857142"/>
+            <connections>
+                <outlet property="address" destination="VCA-Yz-Zal" id="ME4-hB-uPT"/>
+                <outlet property="dznum" destination="NYh-Wa-YiM" id="auv-wJ-fbr"/>
+                <outlet property="phone" destination="m4n-MZ-n7I" id="hD6-cg-Rn7"/>
+                <outlet property="shoper" destination="gsm-OO-n3P" id="gPI-8g-1ub"/>
+                <outlet property="starbjView" destination="0YF-un-fzM" id="4e8-y0-Ov6"/>
+                <outlet property="title" destination="qYc-hD-Bde" id="MSr-fs-x5c"/>
+            </connections>
+            <point key="canvasLocation" x="136" y="40"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="图层 11" width="33.5" height="33.5"/>
         <image name="图层 3" width="9" height="9.5"/>
         <image name="图层 530" width="8" height="8"/>
-        <image name="图层 8" width="250" height="151"/>
         <image name="地址" width="4.5" height="5.5"/>
     </resources>
 </document>
