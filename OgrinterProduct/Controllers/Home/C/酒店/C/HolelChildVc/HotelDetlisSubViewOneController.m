@@ -6,6 +6,9 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+#define room_list @"details/room_list"//酒店房间
+#define hotel_condition @"hotel/condition"//房间配置
+
 
 #define bottomH 420
 
@@ -19,7 +22,7 @@
 #import "MsgModel.h"
 
 
-@interface HotelDetlisSubViewOneController ()
+@interface HotelDetlisSubViewOneController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, assign) BOOL fingerIsTouch;
 
@@ -29,9 +32,21 @@
 
 @property (nonatomic,weak)UIButton *bjbtn;
 
+
+@property(nonatomic,strong)NSMutableArray *listArr;
+
 @end
 
 @implementation HotelDetlisSubViewOneController
+
+
+-(NSMutableArray *)listArr{
+    if (!_listArr) {
+        _listArr = [NSMutableArray array];
+    }
+    return _listArr;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,9 +60,12 @@
 -(void)setup{
     
     self.SubViewOnemTableView.tableFooterView = [UILabel new];
-    if ([self.title isEqualToString:HotelDetailsListArr[0]]) {
+    self.SubViewOnemTableView.delegate = self;
+    self.SubViewOnemTableView.dataSource = self;
+    
+    if ([self.title isEqualToString:HotelDetailsListArr[0]]){
         [self reserve];
-        [self createBottomView];
+
     }else if ([self.title isEqualToString:HotelDetailsListArr[1]]){
         [self comment];
     }else if ([self.title isEqualToString:HotelDetailsListArr[2]]){
@@ -93,10 +111,14 @@
     
     [self.SubViewOnemTableView registerNib:[UINib nibWithNibName:@"CresTableViewCell" bundle:nil] forCellReuseIdentifier:@"CresTableViewCell"];
     
+    [self createBottomView];
+    
     __weak typeof(self) weakSelf = self;
     self.SubViewOnemTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf insertRowAtBottom];
+        [self loadshoperlist];
     }];
+    
+    [self loadshoperlist];
 }
 
 
@@ -107,7 +129,7 @@
     
     __weak typeof(self) weakSelf = self;
     self.SubViewOnemTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf insertRowAtBottom];
+//        [weakSelf insertRowAtBottom];
     }];
 }
 
@@ -126,17 +148,39 @@
 }
 
 
-
-- (void)insertRowAtBottom {
-    for (int i = 0; i<20; i++) {
-        [self.data addObject:@"1"];
-    }
-    __weak UITableView *tableView = self.SubViewOnemTableView;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [tableView reloadData];
-        [tableView.mj_footer endRefreshing];
-    });
+-(void)loadshoperlist{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,room_list];
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"merchant_id":@([self.sid intValue]),@"page":@"0"} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            
+            NSArray *array = [serverInfo.response[@"data"] objectForKey:@"hotel_room"];
+            for (int i = 0; i < [array  count]; i ++ ) {
+                MsgModel *model = [[MsgModel alloc]initWithDict:array[i]];
+                [self.listArr addObject:model];
+            }
+            
+            [self.SubViewOnemTableView reloadData];
+        }else {
+            [HUDManager showTextHud:loadError];
+        }
+        
+    }];
 }
+
+
+
+//- (void)insertRowAtBottom {
+//    for (int i = 0; i<20; i++) {
+//        [self.data addObject:@"1"];
+//    }
+//    __weak UITableView *tableView = self.SubViewOnemTableView;
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [tableView reloadData];
+//        [tableView.mj_footer endRefreshing];
+//    });
+//}
 
 //MARK:- Setter
 - (void)setIsRefresh:(BOOL)isRefresh{
@@ -153,12 +197,13 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    if ([self.title isEqualToString:HotelDetailsListArr[0]] || [self.title isEqualToString:HotelDetailsListArr[1]]) {
-        return [self.data count];
+    if ([self.title isEqualToString:HotelDetailsListArr[0]] ) {
+        return [self.listArr count];
+    }else if ([self.title isEqualToString:HotelDetailsListArr[1]] ){
+        return 5;
     }else if ([self.title isEqualToString:HotelDetailsListArr[2]] || [self.title isEqualToString:HotelDetailsListArr[3]]){
         return 1;
-    }else
-        return 0;
+    }else{return 0;}
 }
 
 
@@ -174,6 +219,10 @@
         cell.selectbtnBlock = ^(UIButton *btn) {
             [self showView];
         };
+        
+        if ([self.listArr count]) {
+            cell.listmodels = _listArr[indexPath.row];
+        }
         
         return cell;
     }else if ([self.title isEqualToString:HotelDetailsListArr[1]]){
@@ -206,6 +255,7 @@
         return nil;
     
 }
+
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -264,9 +314,12 @@
 
 
 -(void)showView{
+    
     [UIView animateWithDuration:0.3 animations:^{
         _bottomView.frame = CGRectMake(0, KSCREEN_HEIGHT-bottomH, self.view.frame.size.width, bottomH);
         [self.bjbtn setHidden:NO];
+    } completion:^(BOOL finished) {
+        
     }];
 }
 

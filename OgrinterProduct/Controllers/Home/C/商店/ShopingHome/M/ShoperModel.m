@@ -13,6 +13,7 @@
 
 
 -(instancetype)initWithDict:(NSDictionary *)dict{
+    
     ShoperModel *model = [[ShoperModel alloc]init];
     model.logoimg = [NSString stringWithFormat:@"%@%@",imgServer,dict[@"logo_img"]];
     model.status = [NSString stringWithFormat:@"%@",dict[@"status"]];

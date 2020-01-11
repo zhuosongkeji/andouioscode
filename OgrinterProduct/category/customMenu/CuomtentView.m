@@ -87,7 +87,9 @@
         model1.iselect = !model1.iselect;
         self.idStr = model1.type_Id;
     }
+    
     [self.mCollectionView reloadData];
+    
 }
 
 
@@ -131,10 +133,11 @@
 //MARK:-
 - (IBAction)selectBtn:(UIButton *)sender {
     KPreventRepeatClickTime(1)
-    if (_delegate && [_delegate respondsToSelector:@selector(didselectSure:)]) {
-        [_delegate didselectSure:self.idStr];
+    if (_delegate && [_delegate respondsToSelector:@selector(didselectSure:index:)]) {
+        [_delegate didselectSure:self.idStr index:sender.tag];
     }
 }
+
 
 - (IBAction)cancal:(UIButton *)sender {
     KPreventRepeatClickTime(1)
@@ -151,6 +154,7 @@
             model.iselect = NO;
         }
     }];
+    [self.mCollectionView reloadData];
 }
 
 /*

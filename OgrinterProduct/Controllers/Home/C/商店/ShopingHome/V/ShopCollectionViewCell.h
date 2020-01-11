@@ -10,12 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class MdBannerListModel,ShoperListModel;
+@class MdBannerListModel,ShoperListModel,MsgModel;
 
 @interface ShopCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic,strong)MdBannerListModel *modellists;
 @property (nonatomic,strong)ShoperListModel *listmodels;
+@property (nonatomic,strong)MsgModel *msglist;
 
 @end
 

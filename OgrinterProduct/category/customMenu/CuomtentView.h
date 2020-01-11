@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol CuomtentViewDelegate <NSObject>
 
--(void)didselectSure:(NSString *)uid;
+-(void)didselectSure:(NSString *)uid index:(NSInteger)index;
 
 @end
 

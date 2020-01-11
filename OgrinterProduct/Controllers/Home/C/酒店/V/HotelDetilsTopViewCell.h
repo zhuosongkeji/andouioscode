@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class HolelModel;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HotelDetilsTopViewCell : UITableViewCell
 
+
+@property(nonatomic,strong)HolelModel *listModel;
 
 + (instancetype)tempTableViewCellWith:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath;
 

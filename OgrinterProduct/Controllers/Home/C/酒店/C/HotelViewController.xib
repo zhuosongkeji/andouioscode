@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HotelViewController">
             <connections>
+                <outlet property="categroybjView" destination="u4r-NN-ekb" id="ndL-Va-Mmr"/>
                 <outlet property="checkDate" destination="4Qw-47-zQq" id="e3K-py-Wte"/>
                 <outlet property="leveDate" destination="Ub5-ZV-Hxs" id="DNQ-eL-GAo"/>
                 <outlet property="mTableView" destination="5Wz-nE-PN2" id="Zxo-R5-fkb"/>
@@ -220,80 +221,9 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4r-NN-ekb">
                                 <rect key="frame" x="0.0" y="439" width="414" height="88"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mhz-ut-UJX" customClass="Img_lable">
-                                        <rect key="frame" x="165.5" y="6" width="83" height="76"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="76" id="0lf-1K-yPx"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="精品酒店" image="酒店 (7)">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nck-wG-Gu3" customClass="Img_lable">
-                                        <rect key="frame" x="83" y="6" width="82.5" height="76"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="76" id="Vti-IS-nJU"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="经济连锁" image="酒店 (5)">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUV-HN-LY3" customClass="Img_lable">
-                                        <rect key="frame" x="248.5" y="6" width="82.5" height="76"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="76" id="MXR-mK-Scc"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="今夜特价" image="酒店住宿">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnw-4N-cMe" customClass="Img_lable">
-                                        <rect key="frame" x="331" y="6" width="83" height="76"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="76" id="IWx-vl-YCf"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="钟点房" image="时钟">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRP-np-VLF" customClass="Img_lable">
-                                        <rect key="frame" x="0.0" y="6" width="83" height="76"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="76" id="Lc5-pq-xIh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="高端酒店" image="酒店 (4)">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Mhz-ut-UJX" firstAttribute="centerY" secondItem="zRP-np-VLF" secondAttribute="centerY" id="3N2-7L-mtS"/>
-                                    <constraint firstItem="Gnw-4N-cMe" firstAttribute="width" secondItem="zRP-np-VLF" secondAttribute="width" id="7g6-qV-zXr"/>
-                                    <constraint firstItem="Mhz-ut-UJX" firstAttribute="centerX" secondItem="u4r-NN-ekb" secondAttribute="centerX" id="8tO-AL-F5x"/>
-                                    <constraint firstItem="Nck-wG-Gu3" firstAttribute="width" secondItem="zRP-np-VLF" secondAttribute="width" id="93D-ca-cwj"/>
-                                    <constraint firstAttribute="trailing" secondItem="Gnw-4N-cMe" secondAttribute="trailing" id="9tH-zo-LJn"/>
-                                    <constraint firstItem="Nck-wG-Gu3" firstAttribute="height" secondItem="zRP-np-VLF" secondAttribute="height" id="Cdo-HL-Ci2"/>
-                                    <constraint firstItem="gUV-HN-LY3" firstAttribute="centerY" secondItem="zRP-np-VLF" secondAttribute="centerY" id="Dvf-Pq-O4k"/>
-                                    <constraint firstItem="Mhz-ut-UJX" firstAttribute="leading" secondItem="Nck-wG-Gu3" secondAttribute="trailing" id="Gy3-4S-pRj"/>
-                                    <constraint firstItem="Mhz-ut-UJX" firstAttribute="centerY" secondItem="u4r-NN-ekb" secondAttribute="centerY" id="NbI-q2-dZo"/>
                                     <constraint firstAttribute="height" constant="88" id="Oon-e0-5fD"/>
-                                    <constraint firstItem="gUV-HN-LY3" firstAttribute="leading" secondItem="Mhz-ut-UJX" secondAttribute="trailing" id="PGE-cY-nkc"/>
-                                    <constraint firstItem="Nck-wG-Gu3" firstAttribute="leading" secondItem="zRP-np-VLF" secondAttribute="trailing" id="RfU-g4-wbj"/>
-                                    <constraint firstItem="Gnw-4N-cMe" firstAttribute="height" secondItem="zRP-np-VLF" secondAttribute="height" id="SmB-Zl-7m0"/>
-                                    <constraint firstItem="Gnw-4N-cMe" firstAttribute="centerY" secondItem="zRP-np-VLF" secondAttribute="centerY" id="TG8-fc-5p0"/>
-                                    <constraint firstItem="Nck-wG-Gu3" firstAttribute="centerY" secondItem="zRP-np-VLF" secondAttribute="centerY" id="bFo-TT-yen"/>
-                                    <constraint firstItem="Mhz-ut-UJX" firstAttribute="height" secondItem="zRP-np-VLF" secondAttribute="height" id="iyI-Pa-IJ9"/>
-                                    <constraint firstItem="Mhz-ut-UJX" firstAttribute="width" secondItem="u4r-NN-ekb" secondAttribute="width" multiplier="0.2" id="kSC-8j-bYG"/>
-                                    <constraint firstItem="gUV-HN-LY3" firstAttribute="height" secondItem="zRP-np-VLF" secondAttribute="height" id="rgg-fz-Kc2"/>
-                                    <constraint firstItem="gUV-HN-LY3" firstAttribute="width" secondItem="zRP-np-VLF" secondAttribute="width" id="rop-4o-GKi"/>
-                                    <constraint firstItem="Mhz-ut-UJX" firstAttribute="width" secondItem="zRP-np-VLF" secondAttribute="width" id="tjL-bZ-OYO"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -331,11 +261,6 @@
         <image name="图层 3" width="9" height="9.5"/>
         <image name="图层 4" width="9" height="9.5"/>
         <image name="图层 8" width="250" height="151"/>
-        <image name="时钟" width="18.5" height="18.5"/>
         <image name="返回 拷贝 3" width="4" height="7.5"/>
-        <image name="酒店 (4)" width="21.5" height="21.5"/>
-        <image name="酒店 (5)" width="16" height="18.5"/>
-        <image name="酒店 (7)" width="21" height="21.5"/>
-        <image name="酒店住宿" width="21.5" height="21"/>
     </resources>
 </document>

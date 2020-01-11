@@ -6,10 +6,15 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+#define order_add_order @"order/add_order_car"//购买
+
+
 #import "ZBNShopingCartVC.h"
 #import "ZBNShoppingCartCell.h"
 #import "ZBNShoppingCartModel.h"
 #import "FKHRequestManager.h"
+#import "OnlineBookingViewController.h"
+
 
 @interface ZBNShopingCartVC () <UITableViewDelegate, UITableViewDataSource, ZBNShoppingCartCellDelegate>
 
@@ -36,8 +41,34 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
 
 /*! 去结算按钮的点击 */
 - (IBAction)buyBtnClick:(UIButton *)sender {
+    if ([self.totalPriceLabel.text integerValue] == 0) {
+        [HUDManager showTextHud:@"至少要选择一个产品"];
+        return;
+    }
     
-    [HUDManager showTextHud:@"暂不能结算,哈哈哈"];
+    
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,order_add_order];
+    
+   NSDictionary *dicts = @{@"id":self.shopCartID,@"uid":unmodel.uid};
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:urlStr params:dicts complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            
+            OnlineBookingViewController *Online = [[OnlineBookingViewController alloc]init];
+            Online.payType = OnlineBookingViewProductPay;
+            Online.order_sn = [[serverInfo.response objectForKey:@"data"] objectForKey:@"order_sn"];
+            [self.navigationController pushViewController:Online animated:YES];
+            
+        }else if ([serverInfo.response[@"code"] integerValue] == 201){
+            [HUDManager showTextHud:serverInfo.response[@"msg"]];
+        }else{
+            [HUDManager showTextHud:loadError];
+        }
+    }];
+
 }
 
 
@@ -110,18 +141,30 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
 - (IBAction)allSelectedBtnClick:(UIButton *)sender {
     
     sender.selected = !sender.selected;
-   
+    NSMutableString *idStr = [[NSMutableString alloc]init];
     if (sender.selected) {
-        for (ZBNShoppingCartModel *model in self.goodsArray) {
-               if (model.selected) {
-                   continue;
-               } else {
-                   model.selected = YES;
-               }
+        
+        for (int i = 0; i < [self.goodsArray count]; i ++) {
+            ZBNShoppingCartModel *model = self.goodsArray[i];
+            
+            if (i == [self.goodsArray count] - 1) {
+                [idStr appendString:[NSString stringWithFormat:@"%@",model.ID]];
+            }else{
+                [idStr appendString:[NSString stringWithFormat:@"%@,",model.ID]];
+            }
+            
+            if (model.selected) {
+                continue;
+            } else {
+                model.selected = YES;
+            }
             NSInteger totalPrice = self.totalPriceLabel.text.intValue + model.price.intValue * model.num.integerValue;
             self.totalPriceLabel.text = [NSString stringWithFormat:@"%zd",totalPrice];
-           }
+            
+            self.shopCartID = [NSString stringWithString:idStr];
+        }
         [self.tableView reloadData];
+        
     } else {
         for (ZBNShoppingCartModel *model in self.goodsArray) {
             if (model.selected == NO) {
@@ -192,8 +235,6 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
         
     }];
     
-    
-   
 }
 
 

@@ -7,13 +7,56 @@
 //
 
 #import "HotelDetilsTopViewCell.h"
+#import "HolelModel.h"
 
+
+@interface HotelDetilsTopViewCell ()
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UIButton *dznum;
+@property (weak, nonatomic) IBOutlet UILabel *phone;
+@property (weak, nonatomic) IBOutlet UILabel *shoper;
+@property (weak, nonatomic) IBOutlet UIView *starbjView;
+
+@property (weak, nonatomic) IBOutlet UILabel *address;
+
+@end
 
 @implementation HotelDetilsTopViewCell
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+}
+
+
+-(void)setListModel:(HolelModel *)listModel{
+    _listModel = listModel;
+    
+    self.address.text = listModel.address;
+    self.title.text = listModel.name;
+    
+    self.phone.text = listModel.tel;
+    
+    [self setupStar:[listModel.praise_num integerValue]];
+    
+}
+
+
+-(void)setupStar:(NSInteger)num {
+    
+    for (UIImageView *img in self.starbjView.subviews ) {
+        if ([img isKindOfClass:[UIImageView class]]) {
+            [img removeFromSuperview];
+        }
+    }
+    
+    for (int i = 0; i < num; i ++) {
+        UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(KSCREEN_WIDTH-114+i*17,16,12,12)];
+        imgView.image = [UIImage imageNamed:@"start"];
+        
+        [self.starbjView addSubview:imgView];
+    }
 }
 
 

@@ -7,11 +7,17 @@
 //
 
 
+
 #import "CresTableViewCell.h"
 #import "MsgModel.h"
 
 
 @interface CresTableViewCell()
+
+@property (weak, nonatomic) IBOutlet UIImageView *iocn;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *desc;
+@property (weak, nonatomic) IBOutlet UILabel *price;
 
 @end
 
@@ -20,6 +26,17 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+}
+
+
+-(void)setListmodels:(MsgModel *)listmodels {
+    _listmodels = listmodels;
+    
+    self.name.text = listmodels.house_name;
+    self.desc.text = listmodels.name;
+    self.price.text = [NSString stringWithFormat:@"￥：%@",listmodels.price];
+    
+    [self.iocn sd_setImageWithURL:[NSURL URLWithString:listmodels.img] placeholderImage:nil];
 }
 
 + (instancetype)tempTableViewCellWith:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath{

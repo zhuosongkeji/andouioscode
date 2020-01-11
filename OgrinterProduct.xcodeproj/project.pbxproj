@@ -144,6 +144,7 @@
 		A15DC106239E41D4008CF287 /* HotelDetailsBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15DC105239E41D4008CF287 /* HotelDetailsBottomView.xib */; };
 		A15DC10A239E60FD008CF287 /* OnlineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A15DC108239E60FD008CF287 /* OnlineTableViewCell.m */; };
 		A15DC10B239E60FD008CF287 /* OnlineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15DC109239E60FD008CF287 /* OnlineTableViewCell.xib */; };
+		A160901523C8629700A89A78 /* HolelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A160901423C8629700A89A78 /* HolelModel.m */; };
 		A1667DED23C455560039C6F8 /* KXWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1667DEB23C455560039C6F8 /* KXWebViewViewController.m */; };
 		A1667DEE23C455560039C6F8 /* KXWebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1667DEC23C455560039C6F8 /* KXWebViewViewController.xib */; };
 		A1CE7CC923A77EB900C22C41 /* QCouponView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE7CC323A77EB800C22C41 /* QCouponView.m */; };
@@ -649,6 +650,8 @@
 		A15DC107239E60FD008CF287 /* OnlineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlineTableViewCell.h; sourceTree = "<group>"; };
 		A15DC108239E60FD008CF287 /* OnlineTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnlineTableViewCell.m; sourceTree = "<group>"; };
 		A15DC109239E60FD008CF287 /* OnlineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineTableViewCell.xib; sourceTree = "<group>"; };
+		A160901323C8629700A89A78 /* HolelModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HolelModel.h; sourceTree = "<group>"; };
+		A160901423C8629700A89A78 /* HolelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HolelModel.m; sourceTree = "<group>"; };
 		A1667DEA23C455560039C6F8 /* KXWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KXWebViewViewController.h; sourceTree = "<group>"; };
 		A1667DEB23C455560039C6F8 /* KXWebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KXWebViewViewController.m; sourceTree = "<group>"; };
 		A1667DEC23C455560039C6F8 /* KXWebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KXWebViewViewController.xib; sourceTree = "<group>"; };
@@ -2123,6 +2126,8 @@
 				A1FC70C023C032A0005BFDC9 /* OrderListModel.m */,
 				A1FC70C223C05AE5005BFDC9 /* PaywayModel.h */,
 				A1FC70C323C05AE5005BFDC9 /* PaywayModel.m */,
+				A160901323C8629700A89A78 /* HolelModel.h */,
+				A160901423C8629700A89A78 /* HolelModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -3293,6 +3298,7 @@
 				F41B749723C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.m in Sources */,
 				A1FC4A94239F70E600AF3F57 /* PaySuccessViewController.m in Sources */,
 				F4FAC2C223ACB49200C235EA /* ZBNSHGoAndPayDetailCell.m in Sources */,
+				A160901523C8629700A89A78 /* HolelModel.m in Sources */,
 				F4B6978823BF271300CB0014 /* ZBNSHCommonCell.m in Sources */,
 				F476A49723A7682C00E3018A /* ZBNMyIntegerHeadView.m in Sources */,
 				F41B748E23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.m in Sources */,

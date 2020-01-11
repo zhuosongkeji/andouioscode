@@ -6,6 +6,8 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
+#define goods_list @"goods/good_list"//商品搜索
+
 
 #import "SearchResrultViewController.h"
 #import "WSLWaterFlowLayout.h"
@@ -59,8 +61,6 @@
 //MARK:- viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.dataArr = [NSMutableArray arrayWithObjects:@"",@"",@"",@"", nil];
     
     [self setBarButtonItem];
     
@@ -162,7 +162,9 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (self.type == SearchCollectionViewtypeOne) {
         ShopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ShopCollectionViewCell" forIndexPath:indexPath];
-        //    cell.shop = self.shops[indexPath.item];
+        if ([self.dataArr count] > 0) {
+            cell.msglist = self.dataArr[indexPath.item];
+        }
         return cell;
     }else if (self.type == SearchCollectionViewtypeTwo){
         ShopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HXCollectionViewCell" forIndexPath:indexPath];
@@ -296,25 +298,25 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     
     [self.dataArr removeAllObjects];
-    //    NSDictionary *defaut = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
     
-    NSString *urlStr = @"12331";
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,goods_list];
     
     dispatch_queue_t globalQueue = dispatch_get_global_queue(0, 0);
     dispatch_async(globalQueue, ^{
         if (searchText!=nil && searchText.length>0) {
-            [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_GET pathUrl:urlStr params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
-                if ([[serverInfo.response objectForKey:@"code"] integerValue] == 0) {
-//                    NSArray *dataArr = [[serverInfo.response objectForKey:@"data"] objectForKey:@"list"];
-                    NSArray *dataArr = nil;
+            [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:urlStr params:@{@"keyword":searchText} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+                if ([[serverInfo.response objectForKey:@"code"] integerValue] == 200) {
+                    NSArray *dataArr = [serverInfo.response objectForKey:@"data"];
+                    
                     for (int i = 0;i < [dataArr count]; i ++ ) {
-//                        WorkModel *model = [[WorkModel alloc]initWithDict:dataArr[i]];
-//                        NSString *pinyin = [NSString  transformToPinyin:model.title];
-//                        if ([pinyin rangeOfString:searchText options:NSCaseInsensitiveSearch].length > 0 ) {
-////                            [self.dataArr addObject:model];
-//                        }//回到主线程
+                        
+                        MsgModel *model = [[MsgModel alloc]initWithDict:dataArr[i]];
+                        NSString *pinyin = [NSString  transformToPinyin:model.name];
+                        if ([pinyin rangeOfString:searchText options:NSCaseInsensitiveSearch].length > 0 ) {
+                            [self.dataArr addObject:model];
+                        }//回到主线程
                         dispatch_async(dispatch_get_main_queue(), ^{
-//                            [self.mTableView reloadData];
+                            [self.mCollectionView reloadData];
                         });
                     }
                     
