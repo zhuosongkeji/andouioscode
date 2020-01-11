@@ -29,12 +29,12 @@
                     <rect key="frame" x="0.0" y="846" width="414" height="50"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z7Y-46-o6F">
-                            <rect key="frame" x="114" y="0.0" width="300" height="50"/>
+                            <rect key="frame" x="144" y="0.0" width="270" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLU-e8-CX5">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="270" height="50"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                    <state key="normal" title="立即购买" image="按钮3"/>
+                                    <state key="normal" title="   立即购买" image="按钮3"/>
                                     <connections>
                                         <action selector="buyButtonClick:" destination="-1" eventType="touchUpInside" id="Q1J-Dw-Jbg"/>
                                     </connections>
@@ -42,7 +42,7 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="300" id="4w6-88-4iX"/>
+                                <constraint firstAttribute="width" constant="270" id="4w6-88-4iX"/>
                                 <constraint firstAttribute="trailing" secondItem="YLU-e8-CX5" secondAttribute="trailing" id="5f6-ba-kmY"/>
                                 <constraint firstAttribute="bottom" secondItem="YLU-e8-CX5" secondAttribute="bottom" id="6Nu-bL-bzX"/>
                                 <constraint firstItem="YLU-e8-CX5" firstAttribute="top" secondItem="z7Y-46-o6F" secondAttribute="top" id="GUi-WJ-wik"/>
@@ -50,10 +50,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I38-5a-iM9">
-                            <rect key="frame" x="0.0" y="0.0" width="114" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="144" height="50"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥4343" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="II9-Nt-iBT">
-                                    <rect key="frame" x="36.5" y="17" width="41.5" height="16"/>
+                                    <rect key="frame" x="51.5" y="17" width="41.5" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>

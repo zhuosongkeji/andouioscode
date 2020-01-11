@@ -11,7 +11,8 @@
 #import "ZBNSHOrderUserInfoM.h"
 #import "ZBNSHOrderDetailsM.h"
 
-@interface ZBNSHCommonPayCell ()
+
+@interface ZBNSHCommonPayCell () <UITextFieldDelegate>
 /*! 商品图 */
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 /*! 商品名 */
@@ -31,7 +32,7 @@
 /*! 运送方式 */
 @property (weak, nonatomic) IBOutlet UILabel *sendWay;
 /*! 积分 */
-@property (weak, nonatomic) IBOutlet UILabel *integer;
+@property (weak, nonatomic) IBOutlet UITextField *integerT;
 /*! 微信选择方式按钮 */
 @property (weak, nonatomic) IBOutlet UIButton *selctedBtn;
 /*! 结算价格 */
@@ -64,7 +65,7 @@
     // 商品名
     self.name.text = comM.details.name;
     // 商品规格
-    self.goods_attr.text = comM.details.attr_value[1];
+    self.goods_attr.text = [NSString stringWithFormat:@"%@%@%@%@",comM.details.attr_value[0],comM.details.attr_value[1],comM.details.attr_value[2],comM.details.attr_value[3]];
     // 价格
     self.priceLabel.text = [NSString stringWithFormat:@"¥%@",comM.order_money];
     // 数量
@@ -77,17 +78,51 @@
     self.addressL.text = comM.userinfo.address;
     // 运送方式
     // 积分
-    self.integer.text = comM.integral;
+    self.integerT.text = comM.integral;
+    if (comM.integral) {
+        if (self.integer) {
+            self.integer(comM.integral);
+        }
+    }
     // 结算价格
     self.total_price.text = [NSString stringWithFormat:@"%@元",comM.order_money];
 }
 
 
+
 /*! 选择微信按钮的点击 */
 - (IBAction)btnClick:(UIButton *)sender {
+//    ZBNSHCommonPayModel *model = [ZBNSHCommonPayModel sharedInstance];
+    sender.selected = !sender.selected;
+    if (self.selBtnClick) {
+        self.selBtnClick(@"1");
+    }
+//    if (sender.selected) {
+//        [model setPay_id:@"1"];
+//    } else {
+//        [model setPay_id:@""];
+//    }
+    
     
     
 }
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.integerT.delegate = self;
+    
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    
+    if (self.integer) {
+        self.integer(self.integerT.text);
+    }
+    
+}
+
 
 
 

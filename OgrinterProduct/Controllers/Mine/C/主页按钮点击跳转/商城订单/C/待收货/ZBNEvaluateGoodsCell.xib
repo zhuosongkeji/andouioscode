@@ -151,7 +151,7 @@
             <connections>
                 <outlet property="starView" destination="hQW-wg-sf2" id="wvQ-pH-p6Y"/>
             </connections>
-            <point key="canvasLocation" x="-57" y="1189"/>
+            <point key="canvasLocation" x="91" y="918"/>
         </tableViewCell>
     </objects>
     <resources>

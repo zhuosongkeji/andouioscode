@@ -117,5 +117,15 @@
     }
     return cell;
 }
+/*! 查看物流点击 */
+- (IBAction)viewLogisticsBtnClick:(UIButton *)sender {
+    if (self.viewLogisticsBtnClickTask) {
+        self.viewLogisticsBtnClickTask();
+    }
+}
+
+
+
+
 
 @end

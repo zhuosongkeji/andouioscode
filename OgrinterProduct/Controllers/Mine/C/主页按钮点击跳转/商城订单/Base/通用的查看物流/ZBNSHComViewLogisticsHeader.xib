@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZBNSHComViewLogisticsHeader">
+            <rect key="frame" x="0.0" y="0.0" width="338" height="147"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="物流Title" translatesAutoresizingMaskIntoConstraints="NO" id="C6D-RH-tfE">
+                    <rect key="frame" x="15" y="56" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="bxQ-Gf-Ggc"/>
+                        <constraint firstAttribute="width" constant="35" id="xYc-mu-lNd"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="承运公司:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwT-JQ-PG4">
+                    <rect key="frame" x="65" y="56" width="53" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="承运公司:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QK-6a-ISI">
+                    <rect key="frame" x="123" y="56.5" width="48.5" height="13.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快递单号:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ba-EG-vuQ">
+                    <rect key="frame" x="65" y="76.5" width="53" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="承运公司:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHI-cG-0k7">
+                    <rect key="frame" x="123" y="77" width="48.5" height="13.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cHI-cG-0k7" firstAttribute="leading" secondItem="7Ba-EG-vuQ" secondAttribute="trailing" constant="5" id="0HL-9t-EIT"/>
+                <constraint firstItem="cHI-cG-0k7" firstAttribute="centerY" secondItem="7Ba-EG-vuQ" secondAttribute="centerY" id="8qj-fM-nda"/>
+                <constraint firstItem="7Ba-EG-vuQ" firstAttribute="bottom" secondItem="C6D-RH-tfE" secondAttribute="bottom" id="CTq-EJ-aJa"/>
+                <constraint firstItem="C6D-RH-tfE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="Spe-Xx-vMQ"/>
+                <constraint firstItem="8QK-6a-ISI" firstAttribute="centerY" secondItem="CwT-JQ-PG4" secondAttribute="centerY" id="VFS-ow-4MJ"/>
+                <constraint firstItem="CwT-JQ-PG4" firstAttribute="top" secondItem="C6D-RH-tfE" secondAttribute="top" id="VfH-1q-CKK"/>
+                <constraint firstItem="CwT-JQ-PG4" firstAttribute="leading" secondItem="C6D-RH-tfE" secondAttribute="trailing" constant="15" id="YRj-bV-WPa"/>
+                <constraint firstItem="C6D-RH-tfE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bCS-0P-PrM"/>
+                <constraint firstItem="7Ba-EG-vuQ" firstAttribute="leading" secondItem="C6D-RH-tfE" secondAttribute="trailing" constant="15" id="kpE-Il-DCm"/>
+                <constraint firstItem="8QK-6a-ISI" firstAttribute="leading" secondItem="CwT-JQ-PG4" secondAttribute="trailing" constant="5" id="r1j-Rn-brK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="companyL" destination="8QK-6a-ISI" id="zes-fS-8vY"/>
+                <outlet property="order_id" destination="cHI-cG-0k7" id="Zao-sj-vlK"/>
+            </connections>
+            <point key="canvasLocation" x="-16" y="-6"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="物流Title" width="42" height="42"/>
+    </resources>
+</document>

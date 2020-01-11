@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNSHOrderDetailsM : NSObject
+
+@property (nonatomic, copy) NSString *ID;
 /*! 商品图片 */
 @property (nonatomic, copy) NSString *img;
 /*! 名字 */

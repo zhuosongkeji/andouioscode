@@ -13,6 +13,8 @@
 #import "ZBNWaitDeliverDetailVC.h"
 #import "ZBNSHGoAndEvaluateVC.h"  // 发表评论控制器
 #import "ZBNSHCommonPayVC.h"  // 订单支付的控制器
+#import "ZBNSHComViewLogisticsVC.h" // 查看物流
+#import "ZBNSHWaitEvaluateDetailVC.h" //
 
 @interface ZBNSHCommonCell ()
 /*! 商家图标 */
@@ -72,12 +74,18 @@
 /*! 第一个按钮的点击 */
 - (IBAction)firBtnClick:(UIButton *)sender {
     
-    if ([self.commonM.status integerValue] == 40) {
+    if ([self.commonM.status integerValue] == 40) { // 待收货的订单详情
         ZBNWaitDeliverDetailVC *vc = [[ZBNWaitDeliverDetailVC alloc] init];
+        vc.courier_num = self.commonM.courier_num;
+        vc.express_id = self.commonM.express_id;
         vc.getOrderNum = self.commonM.order_id;
+        vc.order_goods_id = self.commonM.ID;
         [[self viewController].navigationController pushViewController:vc animated:YES];
-    } else if ([self.commonM.status integerValue] == 50) {
-        NSLog(@"待评价的查看物流");
+    } else if ([self.commonM.status integerValue] == 50) {  // 待评价的查看物流
+        ZBNSHComViewLogisticsVC *vc  = [[ZBNSHComViewLogisticsVC alloc] init];
+        vc.courier_num = self.commonM.courier_num;
+        vc.express_id = self.commonM.express_id;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
     }
     
     if (self.firBtnClickTask) {
@@ -90,14 +98,21 @@
         self.secBtnClickTask();
     }
     ADWeakSelf;
-    if ([self.commonM.status integerValue] == 10) { // 如果是待付款的订单详情
+    if ([self.commonM.status integerValue] == 10) { // 如果是待付款订单详情
         ZBNSHGoAndPayDetailVC *vc = [[ZBNSHGoAndPayDetailVC alloc] init];
         vc.getOrderNum = self.commonM.order_id;
         [[weakSelf viewController].navigationController pushViewController:vc animated:YES];
     } else if ([self.commonM.status integerValue] == 40) {  //待收货的查看物流
-        NSLog(@"查看物流");
-    } else if ([self.commonM.status integerValue] == 50) {
-        NSLog(@"待评价的订单详情");
+        ZBNSHComViewLogisticsVC *vc = [[ZBNSHComViewLogisticsVC alloc] init];
+        // 传值
+        vc.express_id = self.commonM.express_id;
+        vc.courier_num = self.commonM.courier_num;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
+    } else if ([self.commonM.status integerValue] == 50) { // 待评价的订单详情
+        ZBNSHWaitEvaluateDetailVC *vc = [[ZBNSHWaitEvaluateDetailVC alloc] init];
+        vc.dID = self.commonM.ID;
+        vc.getOrderNum = self.commonM.order_id;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
     }
     
 }
@@ -107,17 +122,18 @@
         self.thiBtnClickTask();
     }
     ADWeakSelf;
-    if ([self.commonM.status integerValue] == 10) {
+    if ([self.commonM.status integerValue] == 10) { // 去支付
         ZBNSHCommonPayVC *vc = [[ZBNSHCommonPayVC alloc] init];
         vc.order_id = self.commonM.order_id;
         [[self viewController].navigationController pushViewController:vc animated:YES];
-    } else if ([self.commonM.status integerValue] == 20) {
-        NSLog(@"待发货的订单订单详情");
+    } else if ([self.commonM.status integerValue] == 20) { // 待发货的订单详情
         ZBNSHZDeliverGoodsDOVC *vc = [[ZBNSHZDeliverGoodsDOVC alloc] init];
         vc.order_num = self.commonM.order_id;
+        vc.dID = self.commonM.ID;
         [[weakSelf viewController].navigationController pushViewController:vc animated:YES];
-    } else if ([self.commonM.status integerValue] == 40) {
-        NSLog(@"待收货的确认收货");
+    } else if ([self.commonM.status integerValue] == 40) {  // 待收货的确认收货
+        // 发起确认收货的请求
+        [self reciveGoodsRequest];
     } else if ([self.commonM.status integerValue] == 50) { // 待评价的去评价点击
         ZBNSHGoAndEvaluateVC *VC = [[ZBNSHGoAndEvaluateVC alloc] init];
         VC.imageName = self.commonM.img;
@@ -249,5 +265,25 @@
      self.thiButton.layer.borderWidth = 1;
     
 }
+
+/*!  确认收货的请求 */
+- (void)reciveGoodsRequest
+{
+    [FKHRequestManager cancleRequestWork];
+       NSMutableDictionary *params = [NSMutableDictionary dictionary];
+       NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+       userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+       params[@"uid"] = unmodel.uid;
+       params[@"token"] = unmodel.token;
+       params[@"id"] = self.commonM.ID;
+       [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/confirm"params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+           if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
+               [HUDManager showStateHud:@"确认收货成功" state:HUDStateTypeSuccess];
+           } else {
+               [HUDManager showStateHud:@"确认收货失败" state:HUDStateTypeFail];
+           }
+       }];
+}
+
 
 @end

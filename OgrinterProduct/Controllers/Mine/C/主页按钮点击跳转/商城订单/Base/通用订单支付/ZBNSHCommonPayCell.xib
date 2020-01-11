@@ -154,21 +154,23 @@
                                     <constraint firstAttribute="height" constant="10" id="V1e-Ap-cOm"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1RQ-Yn-MtG">
-                                <rect key="frame" x="288" y="16" width="33" height="16"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="积分" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1fr-oX-iNP">
+                                <rect key="frame" x="216" y="15" width="100" height="18.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="y7M-lb-kmV"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ABU-2x-8lg" firstAttribute="leading" secondItem="DAQ-At-pob" secondAttribute="leading" constant="15" id="AC8-0z-RTV"/>
-                            <constraint firstItem="lZx-XU-pxX" firstAttribute="leading" secondItem="1RQ-Yn-MtG" secondAttribute="trailing" constant="10" id="MvS-h3-SoV"/>
+                            <constraint firstItem="lZx-XU-pxX" firstAttribute="leading" secondItem="1fr-oX-iNP" secondAttribute="trailing" constant="15" id="RkQ-es-NLT"/>
                             <constraint firstItem="lZx-XU-pxX" firstAttribute="centerY" secondItem="DAQ-At-pob" secondAttribute="centerY" id="WqZ-If-PCA"/>
                             <constraint firstAttribute="height" constant="48" id="ZvA-kj-FBq"/>
+                            <constraint firstItem="1fr-oX-iNP" firstAttribute="centerY" secondItem="DAQ-At-pob" secondAttribute="centerY" id="gJ1-73-mNF"/>
                             <constraint firstAttribute="trailing" secondItem="lZx-XU-pxX" secondAttribute="trailing" constant="15" id="kT4-qi-Sag"/>
-                            <constraint firstItem="1RQ-Yn-MtG" firstAttribute="centerY" secondItem="DAQ-At-pob" secondAttribute="centerY" id="tf8-e6-IzL"/>
                             <constraint firstItem="ABU-2x-8lg" firstAttribute="centerY" secondItem="DAQ-At-pob" secondAttribute="centerY" id="w74-zP-cxh"/>
                         </constraints>
                     </view>
@@ -286,7 +288,7 @@
                 <outlet property="count" destination="AGb-g8-AEu" id="HIf-Sd-cOL"/>
                 <outlet property="goods_attr" destination="SAx-pd-SWB" id="oWH-wF-soP"/>
                 <outlet property="img" destination="ekM-Rg-5sG" id="16l-g0-34v"/>
-                <outlet property="integer" destination="1RQ-Yn-MtG" id="Mau-In-98z"/>
+                <outlet property="integerT" destination="1fr-oX-iNP" id="5tW-zr-Avh"/>
                 <outlet property="name" destination="GbY-yw-GIX" id="WgL-eA-nE3"/>
                 <outlet property="phoneNumber" destination="FBA-N0-9Yo" id="XnF-MY-rOo"/>
                 <outlet property="priceLabel" destination="kaE-Iy-wzB" id="BG6-I5-Ozy"/>
@@ -295,7 +297,7 @@
                 <outlet property="total_price" destination="0sl-Qb-dkQ" id="Qae-1v-jWh"/>
                 <outlet property="userName" destination="EfP-Vd-dd0" id="Om4-hY-h0Z"/>
             </connections>
-            <point key="canvasLocation" x="-862" y="4"/>
+            <point key="canvasLocation" x="-158" y="0.0"/>
         </tableViewCell>
     </objects>
     <resources>
