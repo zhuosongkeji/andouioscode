@@ -72,20 +72,16 @@
     // 电话号码
     self.phone_num.text = comM.userinfo.mobile;
 
+    // 商品图片
+    [self.img sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,comM.details.img]]];
+    
+    self.price.text = [NSString stringWithFormat:@"¥%@",comM.details.price];
+    self.goodsName.text = comM.details.name;
+    self.num.text = comM.details.num;
+    self.attr_value.text = comM.details.attr_value[1];
 }
 
-- (void)setDetailM:(ZBNSHOrderDetailsM *)detailM
-{
-    _detailM = detailM;
-    // 商品图片
-    [self.img sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,detailM.img]]];
-    
-    self.price.text = [NSString stringWithFormat:@"¥%@",detailM.price];
-    self.goodsName.text = detailM.name;
-    self.num.text = detailM.num;
-    self.attr_value.text = detailM.attr_value[1];
-    
-}
+
 
 
 /*! 退货退款按钮的点击 */

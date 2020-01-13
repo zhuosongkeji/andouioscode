@@ -13,9 +13,7 @@
 
 #import <SDImageCache.h>
 
-#define ZBNSDWebImageCachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"default"]
 
-#define ZBNCustomCachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"MyCache"]
 
 
 @interface ZBNMineSettingCell ()

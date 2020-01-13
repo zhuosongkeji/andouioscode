@@ -6,14 +6,17 @@
 //  Copyright © 2020 RXF. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "ZBNProvince.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@interface ZBNCity : NSObject
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, assign) NSNumber *ID;
-@property (nonatomic, assign) NSNumber *pid;
-@property (nonatomic, strong) NSArray  *areas;
+
+
+@interface ZBNCity : ZBNProvince
+
+
+@property (nonatomic, strong) NSArray < ZBNArea *> *areas;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

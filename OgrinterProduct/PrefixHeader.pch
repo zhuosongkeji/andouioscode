@@ -170,6 +170,11 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #define getNavHeight self.navigationController.navigationBar.frame.size.height
 // 百度地图AK
 #define BaiduAPPKEY @"61tIfFSVH5UzHCuN2p7TBk9XxG9VNGff"
+// 缓存路径
+#define ZBNSDWebImageCachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"default"]
+#define ZBNCustomCachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"MyCache"]
+#define ZBNAddressPath [ZBNCustomCachePath stringByAppendingPathComponent:@"myAddress.plist"]
+
 
 #import "HUDManager.h"
 #import "FKHRequestManager.h"

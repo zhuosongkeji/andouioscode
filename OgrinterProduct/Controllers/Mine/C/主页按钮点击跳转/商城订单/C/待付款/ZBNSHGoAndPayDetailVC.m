@@ -73,8 +73,7 @@
         params[@"order_sn"] = self.getOrderNum;
         [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/details" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
             self.comM = [ZBNSHOrderDetailComM mj_objectWithKeyValues:serverInfo.response[@"data"]];
-            self.detailsM = [ZBNSHOrderDetailsM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"details"][0]];
-            NSLog(@"%@1111111",self.detailsM.attr_value);
+            self.comM.details = [ZBNSHOrderDetailsM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"details"][0]];
             [weakSelf.tableView reloadData];
         }];
 }
@@ -94,11 +93,11 @@
     ADWeakSelf;
     cell.goAndPayBtnClickTask = ^{
         ZBNSHCommonPayVC *vc = [[ZBNSHCommonPayVC alloc] init];
-        vc.order_id = self.comM.ID;
+        vc.order_id = self.getOrderNum;
+        
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     cell.comM = self.comM;
-    cell.detailM = self.detailsM;
     return cell;
 }
 

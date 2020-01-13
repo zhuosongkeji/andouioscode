@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "ZBNSHOrderDetailsM.h"
 #import "ZBNSHOrderUserInfoM.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNSHOrderDetailComM : NSObject
@@ -34,7 +34,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *allnum;
 /*! 商品总运费 */
 @property (nonatomic, copy) NSString *shipping_free;
-
 
 @property (nonatomic, strong) ZBNSHOrderDetailsM *details;
 @property (nonatomic, strong) ZBNSHOrderUserInfoM *userinfo;

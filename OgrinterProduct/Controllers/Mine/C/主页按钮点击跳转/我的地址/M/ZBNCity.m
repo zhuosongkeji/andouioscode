@@ -7,7 +7,15 @@
 //
 
 #import "ZBNCity.h"
+#import "ZBNArea.h"
 
 @implementation ZBNCity
+
++ (NSDictionary *)mj_objectClassInArray
+{
+    return @{
+        @"areas":@"ZBNArea",
+    };
+}
 
 @end

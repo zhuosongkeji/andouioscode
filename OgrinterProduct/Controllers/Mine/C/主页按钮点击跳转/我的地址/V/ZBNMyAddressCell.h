@@ -10,6 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+@class ZBNMyAddressCell;
+@protocol ZBNMyAddressCellDelegate <NSObject>
+
+- (void) ZBNMyAddressCellDidClickChangeButton:(ZBNMyAddressCell *)cell;
+
+@end
+
 @class ZBNMyAddressModel;
 /*! 传入地址cell模型 */
 typedef void(^DefaultBtnClickTask)(ZBNMyAddressModel *model);
@@ -23,6 +31,8 @@ typedef void(^DefaultBtnClickTask)(ZBNMyAddressModel *model);
 @property (nonatomic, copy) void(^deleteAddClickTask)(ZBNMyAddressModel *model);
 /*! 注册cell */
 + (instancetype)registerCellForTable:(UITableView *)tableView;
+
+@property (nonatomic, weak) id<ZBNMyAddressCellDelegate> delegate;
 
 @end
 

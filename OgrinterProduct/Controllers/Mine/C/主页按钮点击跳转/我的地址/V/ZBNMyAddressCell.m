@@ -19,6 +19,8 @@
 /*! 设置默认地址的按钮 */
 @property (weak, nonatomic) IBOutlet UIButton *defaultAddButton;
 
+
+
 @end
 
 @implementation ZBNMyAddressCell
@@ -76,13 +78,15 @@
 /*! 编辑按钮的点击 */
 - (IBAction)editBtnClick:(UIButton *)sender {
     
-    
+    if ([self.delegate respondsToSelector:@selector(ZBNMyAddressCellDidClickChangeButton:)]) {
+        [self.delegate ZBNMyAddressCellDidClickChangeButton:self];
+        
+    }
     
 }
 
 - (void)setFrame:(CGRect)frame
 {
-    
     frame.size.height -= 1;
     [super setFrame:frame];
 }

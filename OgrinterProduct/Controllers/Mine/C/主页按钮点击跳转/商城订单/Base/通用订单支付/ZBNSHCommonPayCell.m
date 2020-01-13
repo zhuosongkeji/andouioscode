@@ -67,9 +67,9 @@
     // 商品规格
     self.goods_attr.text = [NSString stringWithFormat:@"%@%@%@%@",comM.details.attr_value[0],comM.details.attr_value[1],comM.details.attr_value[2],comM.details.attr_value[3]];
     // 价格
-    self.priceLabel.text = [NSString stringWithFormat:@"¥%@",comM.order_money];
+    self.priceLabel.text = comM.details.price;
     // 数量
-    self.count.text = [NSString stringWithFormat:@"x%@",comM.details.num];
+    self.count.text = comM.details.num;
     // 用户名
     self.userName.text = comM.userinfo.name;
     // 手机号
@@ -97,14 +97,6 @@
     if (self.selBtnClick) {
         self.selBtnClick(@"1");
     }
-//    if (sender.selected) {
-//        [model setPay_id:@"1"];
-//    } else {
-//        [model setPay_id:@""];
-//    }
-    
-    
-    
 }
 
 - (void)awakeFromNib

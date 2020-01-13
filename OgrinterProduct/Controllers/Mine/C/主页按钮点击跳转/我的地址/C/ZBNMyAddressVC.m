@@ -12,9 +12,9 @@
 #import "ZBNEntryFooterView.h"
 #import "ZBNNewAddressVC.h"
 
+#import "ZBNAddressChangeVC.h"
 
-
-@interface ZBNMyAddressVC ()
+@interface ZBNMyAddressVC () <ZBNMyAddressCellDelegate>
 /*! 保存地址模型的数组 */
 @property (nonatomic, strong) NSMutableArray *addressArray;
 
@@ -28,12 +28,6 @@
 static NSString * const ZBNMyAddressCellID = @"address";
 
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -59,7 +53,11 @@ static NSString * const ZBNMyAddressCellID = @"address";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"changeOK" object:nil];
 }
+
+
 
 - (void)setupFooterView
 {
@@ -104,6 +102,7 @@ static NSString * const ZBNMyAddressCellID = @"address";
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     
     ZBNMyAddressCell *cell = [ZBNMyAddressCell registerCellForTable:tableView];
+    cell.delegate = self;
     cell.addModel = self.addressArray[indexPath.row];
     // 设置默认
     cell.DefaultClickTask = ^(ZBNMyAddressModel * _Nonnull model) {
@@ -153,17 +152,25 @@ static NSString * const ZBNMyAddressCellID = @"address";
     return cell;
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 150;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+/*!  cell的代理方法 */
+- (void)ZBNMyAddressCellDidClickChangeButton:(ZBNMyAddressCell *)cell
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    for (ZBNMyAddressModel *model in self.addressArray) {
+        if (model == cell.addModel) {
+            ZBNAddressChangeVC *vc  = [[ZBNAddressChangeVC alloc] init];
+            NSLog(@"%@",cell.addModel.area);
+            [self.navigationController pushViewController:vc animated:YES];
+            vc.addM = cell.addModel;
+        }
+    }
+    
 }
-
 
 
 

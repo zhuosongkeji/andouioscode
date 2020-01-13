@@ -35,15 +35,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = @"酒店订单";
+    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
+    self.navigationItem.title = @"酒店预约";
     [self setupSegmen];
 }
 
 - (void)setupSegmen
 {
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.segmentBarVC.segmentBar.frame = CGRectMake(0,0 , self.view.width, 50);
+    self.segmentBarVC.segmentBar.frame = CGRectMake(0,getRectNavAndStatusHight, self.view.width, 50);
     self.segmentBarVC.view.frame = CGRectMake(0, 0, self.view.width, self.view.height);
     [self.view addSubview:self.segmentBarVC.view];
     //添加控制器

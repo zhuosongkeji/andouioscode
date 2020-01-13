@@ -57,11 +57,7 @@
               @"ID" : @"id",
           };
     }];
-    [ZBNSHOrderDetailsM mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
-        return @{
-            @"ID" : @"id",
-        };
-    }];
+
     [ZBNSHCommonModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
            return @{
                @"ID" : @"id",

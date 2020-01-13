@@ -10,6 +10,7 @@
 
 #import "ZBNSHOrderDetailComM.h"
 #import "ZBNSHOrderDetailsM.h"
+#import "ZBNSHOrderUserInfoM.h"
 
 
 @interface ZBNSHWaitEvaluateDetailCell ()
@@ -63,12 +64,6 @@
     self.name.text = comM.userinfo.name;
     self.address.text = comM.userinfo.address;
     self.phone_num.text = comM.userinfo.mobile;
-    
-    self.goodsName.text = comM.details.name;
-    [self.img sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,comM.details.img]]];
-    self.price.text = comM.details.price;
-    self.num.text = comM.details.num;
-    self.attr_value.text = [NSString stringWithFormat:@"%@%@%@%@",comM.details.attr_value[0],comM.details.attr_value[1],comM.details.attr_value[2],comM.details.attr_value[3]];
     
 }
 

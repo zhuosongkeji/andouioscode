@@ -21,6 +21,7 @@ static NSString * const ZBNHotelAllOrderCellID = @"OrderCommenCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     [self setupTable];
 }
 
@@ -28,7 +29,6 @@ static NSString * const ZBNHotelAllOrderCellID = @"OrderCommenCell";
 
 - (void)setupTable {
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.contentInset = UIEdgeInsetsMake(getNavHeight, 0, 0, 0);
 }
 
 #pragma mark - Table view data source
