@@ -3990,7 +3990,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QXHAAL9LSY;
+				DEVELOPMENT_TEAM = 2C8KC8WYWK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OgrinterProduct/Controllers/frameworks",
@@ -4111,7 +4111,7 @@
 					"-framework",
 					"\"ZFPlayer\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RXF.OgrinterProduct;
+				PRODUCT_BUNDLE_IDENTIFIER = com.OgrinterProduct;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4127,7 +4127,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QXHAAL9LSY;
+				DEVELOPMENT_TEAM = 2C8KC8WYWK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OgrinterProduct/Controllers/frameworks",
@@ -4248,7 +4248,7 @@
 					"-framework",
 					"\"ZFPlayer\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RXF.OgrinterProduct;
+				PRODUCT_BUNDLE_IDENTIFIER = com.OgrinterProduct;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

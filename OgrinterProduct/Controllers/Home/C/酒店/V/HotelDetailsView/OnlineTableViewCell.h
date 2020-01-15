@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+typedef void(^SelectDataBlock)(UIButton *btn);
+
 @interface OnlineTableViewCell : UITableViewCell
 
 
@@ -34,6 +36,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) NSIndexPath *selectedIndexPath;
 
 @property (weak, nonatomic) IBOutlet UIButton *selectBtn;
+
+@property (weak, nonatomic) IBOutlet UILabel *rzdateLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *livedateLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+
+@property(nonatomic,copy)SelectDataBlock selectblock;
 
 
 + (instancetype)tempTableViewCellWith:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath withTpye:(NSInteger)type;

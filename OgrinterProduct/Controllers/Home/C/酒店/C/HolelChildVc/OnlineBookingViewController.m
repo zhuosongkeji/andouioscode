@@ -36,6 +36,7 @@
     
     BOOL HHR;
     NSInteger selectIndexPaths;
+    
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *totalMomey;
@@ -61,6 +62,10 @@
 @property (nonatomic,weak) UIView *topView;
 
 @property (weak, nonatomic) THDatePickerView *dateView;
+
+@property(nonatomic,strong)NSString *datatype;
+
+@property(nonatomic,strong)NSIndexPath *selectIndexPath;
 
 @end
 
@@ -196,6 +201,7 @@
         }
         
     }];
+    
 }
 
 
@@ -239,8 +245,9 @@
     UITextField *name = [self.farray objectAtIndex:0];
     UITextField *phone = [self.farray objectAtIndex:1];
     
+    OnlineTableViewCell *cell = [self.mTableView cellForRowAtIndexPath:self.selectIndexPath];
     
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"uid":unmodel.uid,@"id":self.fjid,@"merchant_id":list.merchant_id,@"start_time":@"2020-01-15",@"end_time":@"2020-01-16",@"real_name":name.text,@"mobile":phone.text,@"day_num":@"1",@"num":@"1",@"pay_way":@"1",@"is_integral":@"0"} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"uid":unmodel.uid,@"id":self.fjid,@"merchant_id":list.merchant_id,@"start_time":cell.rzdateLabel.text,@"end_time":cell.livedateLabel.text,@"real_name":name.text,@"mobile":phone.text,@"day_num":cell.contentLabel.text,@"num":@"1",@"pay_way":@"1",@"is_integral":@"0"} complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([serverInfo.response[@"code"] integerValue] == 200) {
             [self uploadWx:serverInfo.response[@"data"]];
         }else if ([serverInfo.response[@"code"] integerValue] == 201){
@@ -394,6 +401,21 @@
                 HotelOrderModel *model = self.dataArr[0];
                 cell.listmodel1 = model;
                 
+                cell.selectblock = ^(UIButton * _Nonnull btn) {
+                    
+                    OnlineTableViewCell *mcell = (OnlineTableViewCell *)btn.superview.superview;
+                    self.selectIndexPath = [self.mTableView indexPathForCell:mcell];
+                    
+                    if (btn.tag == 3000) {
+//                        开始时间
+                        self.datatype = @"1";
+                    }else{
+//                     结束时间
+                        self.datatype = @"2";
+                    }
+                    [self dataPickerShow];
+                };
+                
             }else if (self.payType == 1){
                 OrderlModel *model = self.dataArr[0];
                 cell.modellist3 = model;
@@ -493,11 +515,13 @@
         UITextField *phonefield = [self.farray objectAtIndex:1];
         NSString *msgStr = nil;
         
-        if (namefield.text.length == 0) {
+        if (!self.datatype) {
+            msgStr = @"请选择入住时间和离开时间";
+        }else if (namefield.text.length == 0){
             msgStr = @"请输入联系人姓名";
-        }else if (phonefield.text.length == 0){
+        }else if(phonefield.text.length == 0){
             msgStr = @"请输入联系人手机号码";
-        }else{}
+        }
         
         if (msgStr) {
             [HUDManager showTextHud:msgStr];
@@ -599,11 +623,22 @@
     
     NSArray *array = [timer componentsSeparatedByString:@" "];
     
-//    if ([self.datatype isEqualToString:@"1"])
-//        [self.checkDate setTitle:[NSString stringWithFormat:@"%@",array[0]] forState:0];
-//    else if ([self.datatype isEqualToString:@"2"])
-//        [self.leveDate setTitle:[NSString stringWithFormat:@"%@",array[0]] forState:0];
-//    else{}
+    OnlineTableViewCell *cell = [self.mTableView cellForRowAtIndexPath:self.selectIndexPath];
+    
+    if ([self.datatype isEqualToString:@"1"])
+        
+        cell.rzdateLabel.text = [NSString stringWithFormat:@"%@",array[0]];
+    
+    else if ([self.datatype isEqualToString:@"2"])
+        cell.livedateLabel.text = [NSString stringWithFormat:@"%@",array[0]];
+    else{}
+    
+    
+    NSString *timeStr = [NSObject pleaseInsertStarTimeo:cell.rzdateLabel.text andInsertEndTime:cell.livedateLabel.text];
+    
+    if ([timeStr integerValue] > 0) {
+        cell.contentLabel.text = [NSString stringWithFormat:@"%@晚",[NSObject pleaseInsertStarTimeo:cell.rzdateLabel.text andInsertEndTime:cell.livedateLabel.text]];
+    }
     
 }
 
@@ -616,6 +651,18 @@
         [self.topView setHidden:YES];
     }];
 }
+
+
+-(void)dataPickerShow{
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.dateView.frame = CGRectMake(0, self.view.height - 300, self.view.width, 300);
+        [self.dateView show];
+        [self.topView setHidden:NO];
+    }];
+}
+
+
 
 /*
 #pragma mark - Navigation

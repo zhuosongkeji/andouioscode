@@ -43,6 +43,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(NSString *)getnextDate;
 
+//计算两个时间差
++ (NSString *)pleaseInsertStarTimeo:(NSString *)time1 andInsertEndTime:(NSString *)time2;
+
 @end
 
 NS_ASSUME_NONNULL_END
