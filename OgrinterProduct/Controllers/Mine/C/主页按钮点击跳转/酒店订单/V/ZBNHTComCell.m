@@ -11,6 +11,7 @@
 #import "ZBNHTCancelVC.h"  // 取消
 #import "ZBNHTHadInVC.h"   // 待评价
 #import "ZBNHTWaitInDetailVC.h"  // 待入住
+#import "ZBNHTGoCommentVC.h"  // 评论控制器
 
 @interface ZBNHTComCell ()
 /*! 状态label */
@@ -126,7 +127,8 @@
 - (IBAction)secBtnClick:(id)sender {
     
     if (self.comM.status.intValue == 40) {  // 待评价的去评价
-        
+        ZBNHTGoCommentVC *vc = [[ZBNHTGoCommentVC alloc] init];
+        [[self viewController].navigationController pushViewController:vc animated:YES];
     }
     
 }
@@ -135,10 +137,11 @@
     
     if (self.comM.status.intValue == 0) {  // 已取消的订单详情 ZBNHTCancelVC
         ZBNHTCancelVC *vc = [[ZBNHTCancelVC alloc] init];
+        vc.book_sn = self.comM.book_sn;
         [[self viewController].navigationController pushViewController:vc animated:YES];
     } else if (self.comM.status.intValue == 20) { // 待入住的订单详情
         ZBNHTWaitInDetailVC *vc = [[ZBNHTWaitInDetailVC alloc] init];
-        
+        vc.book_sn = self.comM.book_sn;
         [[self viewController].navigationController pushViewController:vc animated:YES];    
     } else if (self.comM.status.intValue == 40) { // 待评价的订单详情
         ZBNHTHadInVC *vc = [[ZBNHTHadInVC alloc] init];

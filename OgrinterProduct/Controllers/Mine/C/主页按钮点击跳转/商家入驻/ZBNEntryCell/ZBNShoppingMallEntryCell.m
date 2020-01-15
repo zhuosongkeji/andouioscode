@@ -10,27 +10,8 @@
 #import "YNImageUploadView.h"
 #import "Masonry.h"
 #import "ZBNMallEntryModel.h"
-#import "ZBNProvince.h"
-#import "ZBNCity.h"
-#import "ZBNArea.h"
-
-#import "AddressView.h"
-#import "SPModalView.h"
 
 @interface ZBNShoppingMallEntryCell () <UITextFieldDelegate, UITextViewDelegate>
-
-
-
-/*! 储存数据的数组 */
-@property (nonatomic, strong) NSMutableArray *dataArr;
-@property (nonatomic, strong) NSMutableArray *addArrays;
-@property (nonatomic, strong) NSMutableArray *addArrCitys;
-@property (nonatomic, strong) NSMutableArray *addArrAreas;
-
-/*! ID **/
-@property (nonatomic, assign) NSNumber *IDPro;
-@property (nonatomic, assign) NSNumber *IDCity;
-@property (nonatomic, assign) NSNumber *IDArea;
 
 /*! 点击选择的label */
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
@@ -117,7 +98,7 @@
 
     [self setDelegate];
     
-    [self loadData];
+//    [self loadData];
     
     self.model = [ZBNMallEntryModel sharedInstance];
     
@@ -243,14 +224,6 @@
 }
 
 
-/*! 加载数据 */
-- (void)loadData
-{
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/common/district" params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
-        [self.dataArr addObjectsFromArray: serverInfo.response[@"data"]];
-        
-    }];
-}
 
 
 

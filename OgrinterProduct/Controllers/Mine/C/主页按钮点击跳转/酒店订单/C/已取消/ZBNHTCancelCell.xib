@@ -72,7 +72,7 @@
                                     <constraint firstAttribute="height" constant="1" id="g2F-ib-vy0"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZnM-oP-G1C">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZnM-oP-G1C">
                                 <rect key="frame" x="15" y="63" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="DdN-Ez-HUF"/>
@@ -85,8 +85,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJ7-Y4-0Os">
-                                <rect key="frame" x="90" y="107" width="33" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJ7-Y4-0Os">
+                                <rect key="frame" x="90" y="107" width="13" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -466,7 +466,22 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="Hwq-TD-JDo"/>
-            <point key="canvasLocation" x="198" y="357"/>
+            <connections>
+                <outlet property="book_sn" destination="CxR-ew-3YG" id="kpj-FB-qsa"/>
+                <outlet property="created_at" destination="Njc-0w-2d2" id="pR8-OS-lqg"/>
+                <outlet property="house_name" destination="b3u-Ge-dq2" id="tll-ue-ZNS"/>
+                <outlet property="img" destination="ZnM-oP-G1C" id="bNA-5b-lis"/>
+                <outlet property="integral" destination="owI-cG-yjE" id="HM8-gt-riy"/>
+                <outlet property="merchants_name" destination="ZPq-CT-oLH" id="Oux-l2-pTi"/>
+                <outlet property="mobile" destination="fX1-bt-8nI" id="ilC-Bb-FIl"/>
+                <outlet property="money" destination="Uz3-yX-rpY" id="RLL-oN-WFV"/>
+                <outlet property="pay_money" destination="C2c-wz-F2N" id="hSr-BL-Tho"/>
+                <outlet property="pay_way" destination="eId-Gn-zf8" id="U9a-DG-Ix6"/>
+                <outlet property="price" destination="JGo-ZK-Vpz" id="h0T-ok-U8X"/>
+                <outlet property="real_name" destination="GD7-94-dq8" id="MdG-HC-shP"/>
+                <outlet property="start_time" destination="VUN-m0-fen" id="Fd8-ia-qvR"/>
+            </connections>
+            <point key="canvasLocation" x="-169" y="50"/>
         </tableViewCell>
     </objects>
     <resources>

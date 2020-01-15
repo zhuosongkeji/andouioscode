@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNHTGoCommentCell : UITableViewCell
-
+@property (nonatomic, copy) void(^comBtnClickTask)(void);
 @end
 
 NS_ASSUME_NONNULL_END

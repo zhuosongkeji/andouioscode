@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNHTWaitInDetailVC : UITableViewController
 
+
+/*! 订单编号 */
+@property (nonatomic, copy) NSString *book_sn;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -44,4 +44,31 @@
 @implementation ZBNHTWaitInDetailCell
 
 
+- (void)setDetailM:(ZBNHTComDetailModel *)detailM
+{
+    _detailM = detailM;
+    
+    self.merchants_name.text = detailM.merchants_name;
+    [self.img sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,detailM.img]]];
+    self.house_name.text = detailM.house_name;
+    self.price.text = detailM.price;
+    self.money.text = detailM.money;
+    self.integral.text = detailM.integral;
+    self.pay_money.text = detailM.pay_money;
+    self.start_time.text = detailM.start_time;
+    self.real_name.text = detailM.real_name;
+    self.mobile.text = detailM.mobile;
+    self.book_sn.text = detailM.book_sn;
+    self.created_at.text = detailM.created_at;
+    self.pay_way.text = detailM.pay_way;
+}
+
+
+
+
+
+
+
+
+
 @end

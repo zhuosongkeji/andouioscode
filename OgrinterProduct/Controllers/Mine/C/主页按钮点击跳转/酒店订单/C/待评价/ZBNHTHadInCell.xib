@@ -81,7 +81,7 @@
                                     <constraint firstAttribute="height" constant="1" id="XV1-24-SfN"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S9Q-wp-gRa">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S9Q-wp-gRa">
                                 <rect key="frame" x="15" y="63" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="9eG-Am-Vc6"/>
@@ -412,7 +412,7 @@
                 <outlet property="real_name" destination="cVQ-Iq-99k" id="bbc-hx-TMb"/>
                 <outlet property="start_time" destination="RHa-6o-mTI" id="A3t-Kz-KND"/>
             </connections>
-            <point key="canvasLocation" x="16159" y="634"/>
+            <point key="canvasLocation" x="15664" y="636"/>
         </tableViewCell>
     </objects>
     <resources>
