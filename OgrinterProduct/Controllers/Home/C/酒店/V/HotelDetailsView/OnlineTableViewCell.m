@@ -26,12 +26,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *number;
 
 
-
-@property (weak, nonatomic) IBOutlet UILabel *rzdateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *livedateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
-
-
 @property (weak, nonatomic) IBOutlet UILabel *OrderAddress;
 @property (weak, nonatomic) IBOutlet UILabel *OrderName;
 @property (weak, nonatomic) IBOutlet UILabel *OrderPhone;
@@ -234,6 +228,13 @@
     
     self.rzNumber.text = [NSString stringWithFormat:@"%ld 人",num];
 }
+
+
+- (IBAction)selectDataClick:(UIButton *)sender {
+    KPreventRepeatClickTime(1);
+    _selectblock(sender);
+}
+
 
 
 

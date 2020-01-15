@@ -385,5 +385,33 @@
 }
 
 
++ (NSString *)pleaseInsertStarTimeo:(NSString *)time1 andInsertEndTime:(NSString *)time2{
+    // 1.将时间转换为date
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd";
+    NSDate *date1 = [formatter dateFromString:time1];
+    NSDate *date2 = [formatter dateFromString:time2];
+    
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents * comp = [calendar components:NSCalendarUnitDay
+                    fromDate:date1      toDate:date2 options:NSCalendarWrapComponents];
+    
+//    // 2.创建日历
+//    NSCalendar *calendar = [NSCalendar currentCalendar];
+//    NSCalendarUnit type = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+//    // 3.利用日历对象比较两个时间的差值
+//    NSDateComponents *cmps = [calendar components:type fromDate:date1 toDate:date2 options:0];
+//    // 4.输出结果
+//    NSLog(@"两个时间相差%ld年%ld月%ld日", cmps.year, cmps.month, cmps.day);
+    
+    NSLog(@"comp.day == %ld",comp.day);
+    
+    NSString *timeStr = [NSString stringWithFormat:@"%ld",comp.day];
+    
+    return timeStr;
+}
+
+
 
 @end
