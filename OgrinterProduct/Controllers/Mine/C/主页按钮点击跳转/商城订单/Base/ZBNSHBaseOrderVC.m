@@ -49,8 +49,19 @@
     params[@"type"] = @(self.type);
     params[@"page"] = @"1";
     ADWeakSelf;
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/index" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
-        weakSelf.dataArr = [ZBNSHCommonModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/index" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) { // 10 20 40 50
+        NSArray *allDataArr = [ZBNSHCommonModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+        for (ZBNSHCommonModel *model in allDataArr) {
+            if (model.status.intValue == 10) {
+                [self.dataArr addObject:model];
+            } else if (model.status.intValue == 20) {
+                [self.dataArr addObject:model];
+            } else if (model.status.intValue == 40) {
+                [self.dataArr addObject:model];
+            } else if (model.status.intValue == 50) {
+                [self.dataArr addObject:model];
+            }
+        }
         [weakSelf.tableView reloadData];
         [weakSelf.tableView.mj_header endRefreshing];
     }];
@@ -68,8 +79,18 @@
     params[@"page"] = self.nextPage;
     ADWeakSelf;
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/order/index" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
-        NSArray *moreArr = [ZBNSHCommonModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
-        [weakSelf.dataArr addObjectsFromArray:moreArr];
+        NSArray *allDataArr = [ZBNSHCommonModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+        for (ZBNSHCommonModel *model in allDataArr) {
+            if (model.status.intValue == 10) {
+                [self.dataArr addObject:model];
+            } else if (model.status.intValue == 20) {
+                [self.dataArr addObject:model];
+            } else if (model.status.intValue == 40) {
+                [self.dataArr addObject:model];
+            } else if (model.status.intValue == 50) {
+                [self.dataArr addObject:model];
+            }
+        }
         [weakSelf.tableView reloadData];
         self.nextPage = [NSString stringWithFormat:@"%d",(self.nextPage.intValue + 1)];
         [weakSelf.tableView.mj_footer endRefreshing];
@@ -115,15 +136,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZBNSHCommonModel *comM = self.dataArr[indexPath.row];
+    
     ZBNSHCommonCell *cell = [ZBNSHCommonCell regiserCellForTable:tableView];
+    
     cell.commonM = self.dataArr[indexPath.row];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 310;
+    return 300;
 }
 
 @end

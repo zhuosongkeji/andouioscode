@@ -16,9 +16,9 @@ typedef enum : NSUInteger {
     /*! 未支付 */
     ZBNHTComTypeNotPay = 10,
     /*! 待入住 */
-    ZBNHTComTypeWaitIn = 20,
+    ZBNHTComTypeWaitIn = 20, //
     /*! 已入住 */
-    ZBNHTComTypeHadIn = 30,
+    ZBNHTComTypeHadIn = 30, //
     /*! 待评价 */
     ZBNHTComTypeWaitEvaluate = 40,
     /*! 已评价 */

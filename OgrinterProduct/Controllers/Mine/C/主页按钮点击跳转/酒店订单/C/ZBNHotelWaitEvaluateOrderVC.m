@@ -18,4 +18,8 @@
     [super viewDidLoad];
 }
 
+- (ZBNHTComType)type {
+    return 40;
+}
+
 @end

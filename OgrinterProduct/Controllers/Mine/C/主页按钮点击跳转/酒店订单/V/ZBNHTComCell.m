@@ -8,7 +8,9 @@
 
 #import "ZBNHTComCell.h"
 #import "ZBNHTComModel.h"  // cell模型类
-
+#import "ZBNHTCancelVC.h"  // 取消
+#import "ZBNHTHadInVC.h"   // 待评价
+#import "ZBNHTWaitInDetailVC.h"  // 待入住
 
 @interface ZBNHTComCell ()
 /*! 状态label */
@@ -30,14 +32,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *goodsImage;
 /*! 商品名 */
 @property (weak, nonatomic) IBOutlet UILabel *goodsName;
-/*! 商品规格 */
+/*! 商品数 */
 @property (weak, nonatomic) IBOutlet UILabel *goods_attr;
 /*! 商品单价 */
 @property (weak, nonatomic) IBOutlet UILabel *goods_price;
-/*! 商品数量 */
-@property (weak, nonatomic) IBOutlet UILabel *goods_num;
-/*! 总价格 */
-@property (weak, nonatomic) IBOutlet UILabel *total_price;
+/*! 总价 */
+@property (weak, nonatomic) IBOutlet UILabel *totalPrice;
 
 @end
 
@@ -47,24 +47,71 @@
 
 - (void)setComM:(ZBNHTComModel *)comM
 {
-    _comM = comM;
     
+    
+    
+    _comM = comM;
+    // 商家LOGO
+    [self.shopIcon sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,comM.logo_img]]];
+    // 商家名
+    self.shopName.text = comM.merchants_name;
+    // 订单号
+    self.order_num.text = comM.book_sn;
+    // 商品图
+    [self.goodsImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,comM.img]]];
+    // 商品名
+    self.goodsName.text = comM.house_name;
+    // 商品数
+    // 商品价格
+    self.goods_price.text = comM.price;
+    // 总价格
+    self.totalPrice.text = comM.price;
+    
+    if ([comM.status intValue] == 20) { //待入住
+        self.firsetBtn.hidden = YES;
+        self.secBtn.hidden = YES;
+        self.thiBtn.hidden = NO;
+        [self.thiBtn setTitle:@"订单详情" forState:UIControlStateNormal];
+        [self.stateLabel setText:@"待入住"];
+    } else if ([comM.status intValue] == 40) { // 已入住
+        self.firsetBtn.hidden = YES;
+        self.secBtn.hidden = NO;
+        self.thiBtn.hidden = NO;
+        [self.secBtn setTitle:@"去评价" forState:UIControlStateNormal];
+        [self.thiBtn setTitle:@"订单详情" forState:UIControlStateNormal];
+        [self.stateLabel setText:@"待评价"];
+    } else if ([comM.status intValue] == 0) { // 已取消
+        self.firsetBtn.hidden = YES;
+        self.secBtn.hidden = YES;
+        self.thiBtn.hidden = NO;
+        [self.thiBtn setTitle:@"订单详情" forState:UIControlStateNormal];
+        [self.stateLabel setText:@"已取消"];
+    }
     
 }
+
+
+
+//获取控制器
+
+- (UIViewController *)viewController
+{
+        for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder *nextResponder = [next nextResponder];
+
+         if ([nextResponder isKindOfClass:[UIViewController class]]) {
+         return (UIViewController *)nextResponder;
+     }
+        
+     }
+      return nil;
+}
+
 
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    
-    if ([self.comM.status intValue] == 20) { //待入住
-        self.firsetBtn.hidden = YES;
-        self.secBtn.hidden = YES;
-        self.thiBtn.hidden = NO;
-        [self.thiBtn setTitle:@"订单详情" forState:UIControlStateNormal];
-        [self.thiBtn setTitleColor:KSRGBA(97, 194, 156, 1) forState:UIControlStateNormal];
-        self.thiBtn.layer.borderColor = KSRGBA(97, 194, 156, 1).CGColor;
-    }
     
 }
 
@@ -77,9 +124,28 @@
 }
 /*! 第二个按钮点击 */
 - (IBAction)secBtnClick:(id)sender {
+    
+    if (self.comM.status.intValue == 40) {  // 待评价的去评价
+        
+    }
+    
 }
 /*! 第三个按钮点击 */
 - (IBAction)thiBtnClick:(id)sender {
+    
+    if (self.comM.status.intValue == 0) {  // 已取消的订单详情 ZBNHTCancelVC
+        ZBNHTCancelVC *vc = [[ZBNHTCancelVC alloc] init];
+        [[self viewController].navigationController pushViewController:vc animated:YES];
+    } else if (self.comM.status.intValue == 20) { // 待入住的订单详情
+        ZBNHTWaitInDetailVC *vc = [[ZBNHTWaitInDetailVC alloc] init];
+        
+        [[self viewController].navigationController pushViewController:vc animated:YES];    
+    } else if (self.comM.status.intValue == 40) { // 待评价的订单详情
+        ZBNHTHadInVC *vc = [[ZBNHTHadInVC alloc] init];
+        vc.book_sn = self.comM.book_sn;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
+    }
+    
 }
 
 

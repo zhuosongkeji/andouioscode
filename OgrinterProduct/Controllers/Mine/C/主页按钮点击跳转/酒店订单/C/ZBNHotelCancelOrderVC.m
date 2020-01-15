@@ -18,4 +18,9 @@
     [super viewDidLoad];
 }
 
+- (ZBNHTComType)type
+{
+    return 0;
+}
+
 @end

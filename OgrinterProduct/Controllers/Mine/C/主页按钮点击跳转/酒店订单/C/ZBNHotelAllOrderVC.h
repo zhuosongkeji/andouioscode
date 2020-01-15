@@ -2,15 +2,15 @@
 //  ZBNHotelAllOrderVC.h
 //  OgrinterProduct
 //
-//  Created by 周芳圆 on 2019/12/12.
-//  Copyright © 2019 RXF. All rights reserved.
+//  Created by 周芳圆 on 2020/1/14.
+//  Copyright © 2020 RXF. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ZBNHTBaseOrderVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZBNHotelAllOrderVC : UITableViewController
+@interface ZBNHotelAllOrderVC : ZBNHTBaseOrderVC
 
 @end
 
