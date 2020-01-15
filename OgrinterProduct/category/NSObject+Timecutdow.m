@@ -352,6 +352,38 @@
     
 }
 
++(NSString *)getNowtime {
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    NSDate *nowDate = [NSDate date];
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    NSInteger interval = [zone secondsFromGMT];
+    nowDate = [nowDate dateByAddingTimeInterval:interval];
+    NSString *nowDateString = [dateFormatter stringFromDate:nowDate];
+    
+    return nowDateString;
+}
+
+
++(NSString *)getnextDate{
+    
+    NSDate *nowDate = [NSDate date];
+    
+    NSDate *nextDay = [NSDate dateWithTimeInterval:24*60*60 sinceDate:nowDate];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    NSInteger interval = [zone secondsFromGMT];
+    nextDay = [nextDay dateByAddingTimeInterval:interval];
+    NSString *nextStr = [dateFormatter stringFromDate:nextDay];
+    
+    return nextStr;
+}
+
 
 
 @end

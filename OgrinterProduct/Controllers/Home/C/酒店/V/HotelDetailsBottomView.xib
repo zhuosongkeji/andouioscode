@@ -32,9 +32,18 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6R-yi-Wwn">
                     <rect key="frame" x="16" y="49" width="288" height="148"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eth-QI-KSj">
+                            <rect key="frame" x="0.0" y="0.0" width="288" height="148"/>
+                        </imageView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="eth-QI-KSj" secondAttribute="trailing" id="8Ri-zd-AMD"/>
+                        <constraint firstItem="eth-QI-KSj" firstAttribute="top" secondItem="M6R-yi-Wwn" secondAttribute="top" id="gKU-Uv-fcR"/>
                         <constraint firstAttribute="height" constant="148" id="ltV-ax-zQQ"/>
+                        <constraint firstAttribute="bottom" secondItem="eth-QI-KSj" secondAttribute="bottom" id="qR2-b9-ktM"/>
+                        <constraint firstItem="eth-QI-KSj" firstAttribute="leading" secondItem="M6R-yi-Wwn" secondAttribute="leading" id="s04-bm-awc"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="参数规格" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v75-uG-W2T">
@@ -194,6 +203,7 @@
                 <outlet property="breakfast" destination="14S-J5-eq0" id="TFR-F4-sOs"/>
                 <outlet property="capacity" destination="kU0-IQ-sfA" id="4y8-OL-IYB"/>
                 <outlet property="content" destination="TYC-Ls-hbR" id="gJ7-e0-kSX"/>
+                <outlet property="icon" destination="eth-QI-KSj" id="KKA-3B-3c7"/>
                 <outlet property="measure" destination="IsZ-g0-VII" id="D6l-Qq-EFp"/>
                 <outlet property="otherPrice" destination="aEz-4W-BLU" id="l2D-GX-LnJ"/>
                 <outlet property="tatolPrice" destination="waH-sL-fUw" id="ZiP-3f-fcv"/>

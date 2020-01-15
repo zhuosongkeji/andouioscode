@@ -8,14 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum : NSInteger {
+    
+    MenuScreeningViewTypeOne = 0,
+    
+    MenuScreeningViewTypeTwo,
+    
+    MenuScreeningViewTypeThird,
+    
+} MenuScreeningViewType;
+
+
 typedef void(^selectBtnBlock)(NSString *str);
 
 @interface MenuScreeningView : UIView
 
 @property (nonatomic,copy) selectBtnBlock selcctblock;
 
-- (instancetype)initWithFrame:(CGRect)frame title:(NSArray *)titls;
+
+
+- (instancetype)initWithFrame:(CGRect)frame title:(NSArray *)titls withtype:(NSInteger)type;
 
 -(void)menuScreeningViewDismiss;
+
 
 @end

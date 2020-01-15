@@ -7,8 +7,9 @@
 //
 
 #define room_list @"details/room_list"//酒店房间
-#define hotel_condition @"hotel/condition"//房间配置
+#define details_hotelSel @"details/hotelSel"//房间配置
 
+#define htorder_settlement @"htorder/settlement"//酒店结算
 
 #define bottomH 420
 
@@ -20,20 +21,20 @@
 #import "CresThirdTableViewCell.h"
 #import "CresFouthTableViewCell.h"
 #import "MsgModel.h"
+#import "HoleggModel.h"
 
 
-@interface HotelDetlisSubViewOneController ()<UITableViewDelegate,UITableViewDataSource>
+@interface HotelDetlisSubViewOneController ()<UITableViewDelegate,UITableViewDataSource>{
+    NSInteger page;
+}
 
 @property (nonatomic, assign) BOOL fingerIsTouch;
-
 @property (strong, nonatomic) NSMutableArray *data;
-
 @property (nonatomic,strong)HotelDetailsBottomView *bottomView;
-
 @property (nonatomic,weak)UIButton *bjbtn;
-
-
 @property(nonatomic,strong)NSMutableArray *listArr;
+@property(nonatomic,strong)NSString *roomId;
+
 
 @end
 
@@ -64,6 +65,8 @@
     self.SubViewOnemTableView.dataSource = self;
     
     if ([self.title isEqualToString:HotelDetailsListArr[0]]){
+        
+        page = 0;
         [self reserve];
 
     }else if ([self.title isEqualToString:HotelDetailsListArr[1]]){
@@ -84,7 +87,7 @@
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-bottomH+20)];
-    [btn addTarget:self action:@selector(dissView) forControlEvents:UIControlEventTouchUpInside];
+    [btn addTarget:self action:@selector(dissView:) forControlEvents:UIControlEventTouchUpInside];
     [btn setBackgroundColor:[UIColor colorWithWhite:0.4 alpha:0.4]];
     [btn setHidden:YES];
     
@@ -97,9 +100,7 @@
     __weak typeof(&*self)WeakSelf = self;
     
     _bottomView.reserveBlock = ^(UIButton *btn) {
-        
-        [WeakSelf dissView];
-        [WeakSelf performSelector:@selector(pushToController) withObject:nil afterDelay:0.5];
+        [WeakSelf dissView:@"10"];
     };
     
      [[UIApplication sharedApplication].keyWindow addSubview:_bottomView];
@@ -113,10 +114,13 @@
     
     [self createBottomView];
     
-    __weak typeof(self) weakSelf = self;
+//    __weak typeof(self) weakSelf = self;
     self.SubViewOnemTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        page +=1;
         [self loadshoperlist];
     }];
+    
+    [self.SubViewOnemTableView.mj_footer setHidden:YES];
     
     [self loadshoperlist];
 }
@@ -127,7 +131,7 @@
 
     [self.SubViewOnemTableView registerNib:[UINib nibWithNibName:@"CresTwoTableViewCell" bundle:nil] forCellReuseIdentifier:@"CresTwoTableViewCell"];
     
-    __weak typeof(self) weakSelf = self;
+//    __weak typeof(self) weakSelf = self;
     self.SubViewOnemTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
 //        [weakSelf insertRowAtBottom];
     }];
@@ -152,7 +156,7 @@
     
     NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,room_list];
     
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"merchant_id":@([self.sid intValue]),@"page":@"0"} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"merchant_id":@([self.sid intValue]),@"page":@(page)} complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([serverInfo.response[@"code"] integerValue] == 200) {
             
             NSArray *array = [serverInfo.response[@"data"] objectForKey:@"hotel_room"];
@@ -170,6 +174,51 @@
 }
 
 
+-(void)loadhotel_condition:(NSString *)fid{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,details_hotelSel];
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"id":@([fid intValue])} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            HoleggModel *model = [[HoleggModel alloc]initWithDict:serverInfo.response[@"data"]];
+            [_bottomView setGglist:model];
+            
+        }else {
+            [HUDManager showTextHud:loadError];
+        }
+        
+    }];
+}
+
+
+-(void)loadhtordersettlement{
+    
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    NSString *uidStr = nil;
+    
+    if (!unmodel)
+        uidStr = @"";
+    else
+        uidStr = unmodel.uid;
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,htorder_settlement];
+    
+    NSString *nowStr = [NSObject getNowtime];
+    NSString *nextStr = [NSObject getnextDate];
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"uid":uidStr,@"start":nowStr,@"end":nextStr,@"id":self.roomId} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            [self pushToController];
+        }else if ([serverInfo.response[@"code"] integerValue] == 201){
+            
+        }else{
+            [HUDManager showTextHud:loadError];
+        }
+        
+    }];
+}
 
 //- (void)insertRowAtBottom {
 //    for (int i = 0; i<20; i++) {
@@ -198,6 +247,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     if ([self.title isEqualToString:HotelDetailsListArr[0]] ) {
+        self.SubViewOnemTableView.mj_footer.hidden = [self.listArr count]<10;
         return [self.listArr count];
     }else if ([self.title isEqualToString:HotelDetailsListArr[1]] ){
         return 5;
@@ -212,12 +262,15 @@
     if ([self.title isEqualToString:HotelDetailsListArr[0]]) {
         CresTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CresTableViewCell"];
         if (!cell) {
-            
             NSLog(@"chuangjian");
         }
         
         cell.selectbtnBlock = ^(UIButton *btn) {
-            [self showView];
+            CresTableViewCell *mcell = (CresTableViewCell *)[btn superview].superview;
+            NSIndexPath *path = [self.SubViewOnemTableView indexPathForCell:mcell];
+            MsgModel *mol = _listArr[path.row];
+            self.roomId = mol.uid;
+            [self showView:mol.uid];
         };
         
         if ([self.listArr count]) {
@@ -303,23 +356,33 @@
 
 
 //MARK:- view消失
--(void)dissView{
+-(void)dissView:(NSString *)type {
     
     [UIView animateWithDuration:0.3 animations:^{
         _bottomView.frame = CGRectMake(0, KSCREEN_HEIGHT, KSCREEN_WIDTH, bottomH);
         [self.bjbtn setHidden:YES];
     }];
     
+    [UIView animateWithDuration:0.3 animations:^{
+        _bottomView.frame = CGRectMake(0, KSCREEN_HEIGHT, KSCREEN_WIDTH, bottomH);
+        [self.bjbtn setHidden:YES];
+    } completion:^(BOOL finished) {
+        if ([type isKindOfClass:[UIButton class]])
+            return ;
+        if ([type isEqualToString:@"10"]) {
+            [self loadhtordersettlement];
+        }
+    }];
+    
 }
 
 
--(void)showView{
-    
+-(void)showView:(NSString *)fid{
     [UIView animateWithDuration:0.3 animations:^{
         _bottomView.frame = CGRectMake(0, KSCREEN_HEIGHT-bottomH, self.view.frame.size.width, bottomH);
         [self.bjbtn setHidden:NO];
     } completion:^(BOOL finished) {
-        
+        [self loadhotel_condition:fid];
     }];
 }
 
@@ -328,6 +391,7 @@
     
     OnlineBookingViewController *online = [[OnlineBookingViewController alloc]init];
     online.payType = OnlineBookingViewHotelPay;
+    online.fjid = self.roomId;
     [self.navigationController pushViewController:online animated:YES];
 }
 

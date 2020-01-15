@@ -10,7 +10,13 @@
 
 #define common_payways @"common/pay_ways"//获取支付方式
 
+#define htorder_settlement @"htorder/settlement"//酒店结算
+
 #define order_pay @"order/pay"
+
+#define hotel_need @"hotel/need"//酒店入住须知
+
+#define add_order @"htorder/add_order"//预定
 
 
 #import "OnlineBookingViewController.h"
@@ -21,9 +27,12 @@
 #import "PaywayModel.h"
 #import <WechatOpenSDK/WXApi.h>
 #import "OrderListModel.h"
+#import "HotelOrderModel.h"
+#import "HotelOrderModelList.h"
+#import "THDatePickerView.h"
 
 
-@interface OnlineBookingViewController ()<UITableViewDelegate,UITableViewDataSource,OnlineTableViewCellDelegate>{
+@interface OnlineBookingViewController ()<UITableViewDelegate,UITableViewDataSource,OnlineTableViewCellDelegate,THDatePickerViewDelegate>{
     
     BOOL HHR;
     NSInteger selectIndexPaths;
@@ -39,12 +48,19 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
 
 @property (assign, nonatomic) NSIndexPath *selectedIndexPath;//单选，当前选中的行
+@property(nonatomic,strong)NSString *jdid;
 
 @property (nonatomic,strong)NSMutableArray *dataArr;
 
 @property(nonatomic,strong)NSMutableArray *VauleArr;
 
 @property(nonatomic,strong)NSMutableArray *payArr;
+
+@property(nonatomic,strong)NSMutableArray *farray;//放field的数组
+
+@property (nonatomic,weak) UIView *topView;
+
+@property (weak, nonatomic) THDatePickerView *dateView;
 
 @end
 
@@ -57,6 +73,15 @@
         _dataArr = [NSMutableArray array];
     }
     return _dataArr;
+}
+
+
+-(NSMutableArray *)farray{
+    
+    if (!_farray) {
+        _farray = [NSMutableArray array];
+    }
+    return _farray;
 }
 
 
@@ -78,12 +103,14 @@
 
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     [self setup];
     
     if (self.payType == OnlineBookingViewHotelPay) {
         self.navigationItem.title = OnlinTitleArr[0];
+         [self createDatePicker];
          [self createAlter];
     }else if (self.payType == OnlineBookingViewProductPay){
         self.navigationItem.title = OnlinTitleArr[1];
@@ -104,16 +131,44 @@
     [self.mTableView registerNib:[UINib nibWithNibName:@"OnlineTableViewCell" bundle:nil] forCellReuseIdentifier:@"OnlineTableViewCell"];
     
     selectIndexPaths = 100000;
+     HHR = NO;
 }
 
 
 
 -(void)createAlter{
+    
     _alterView = [[[NSBundle mainBundle]loadNibNamed:@"CustomAlterView" owner:self options:nil]lastObject];
     [_alterView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH-64, KSCREEN_HEIGHT-280)];
-    _alterView.btnBlcok = ^{
-        HHR = YES;
+    _alterView.btnBlcok = ^(UIButton *btn) {
+        if (btn.tag == 400) {
+            HHR = NO;
+        }else{
+            HHR = YES;
+            [[QWAlertView sharedMask] dismiss];
+        }
     };
+    
+    [self loadhtordersettlement];
+}
+
+
+//MARK:- 酒店入住须知
+-(void)holehotel_need{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,hotel_need];
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            [self dismisView:serverInfo.response[@"data"]];
+            
+        }else if ([serverInfo.response[@"code"] integerValue] == 201){
+            
+        }else{
+            [HUDManager showTextHud:loadError];
+        }
+        
+    }];
 }
 
 
@@ -167,6 +222,68 @@
 }
 
 
+//MARK:- 预定
+-(void)loadorder {
+    
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    
+    NSLog(@"token = %@",unmodel.token);
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,add_order];
+    
+    
+    HotelOrderModel *model = self.dataArr[0];
+    HotelOrderModelList *list = model.listmodel;
+    
+    UITextField *name = [self.farray objectAtIndex:0];
+    UITextField *phone = [self.farray objectAtIndex:1];
+    
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"uid":unmodel.uid,@"id":self.fjid,@"merchant_id":list.merchant_id,@"start_time":@"2020-01-15",@"end_time":@"2020-01-16",@"real_name":name.text,@"mobile":phone.text,@"day_num":@"1",@"num":@"1",@"pay_way":@"1",@"is_integral":@"0"} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            [self uploadWx:serverInfo.response[@"data"]];
+        }else if ([serverInfo.response[@"code"] integerValue] == 201){
+            
+        }else{
+            [HUDManager showTextHud:loadError];
+        }
+        
+    }];
+}
+
+
+//MARK:-
+-(void)loadhtordersettlement{
+    
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,htorder_settlement];
+    
+    NSString *nowStr = [NSObject getNowtime];
+    NSString *nextStr = [NSObject getnextDate];
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"uid":unmodel.uid,@"start":nowStr,@"end":nextStr,@"id":self.fjid} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            NSDictionary *dict1 = serverInfo.response[@"data"];
+            HotelOrderModel *model = [[HotelOrderModel alloc]initWithDict:dict1];
+            [self.dataArr addObject:model];
+            self.totalMomey.text = [NSString stringWithFormat:@"￥：%@",model.allprice];
+            
+        }else if ([serverInfo.response[@"code"] integerValue] == 201){
+            
+        }else{
+            [HUDManager showTextHud:loadError];
+        }
+        
+        [self.mTableView reloadData];
+        
+    }];
+}
+
+
 -(void)loadpayToServer {
     
     NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,order_pay];
@@ -204,7 +321,7 @@
     
     if (section == 0) {
         
-        if (self.payType == 0){return 1;}
+        if (self.payType == 0){return [self.dataArr count];}
             
         else if (self.payType == 1){
             
@@ -236,6 +353,7 @@
     OnlineTableViewCell *cell = [OnlineTableViewCell tempTableViewCellWith:self.mTableView indexPath:indexPath withTpye:self.payType];
     
     [cell configTempCellWith:indexPath];
+    
     cell.xlDelegate = self;
     
     
@@ -243,26 +361,45 @@
         
         if ([self.dataArr count]) {
             
-            OrderlModel *model = self.dataArr[0];
-            OrderListModel *list = model.listArr[indexPath.row];
-            NSMutableArray *array = [NSMutableArray array];
-            for (int i = 0; i < [model.listArr count]; i ++) {
-                NSNumber *numb = @([list.tatolMamey integerValue]);
-                [array addObject:numb];
+            if (self.payType == 0) {
+                
+                HotelOrderModel *model = self.dataArr[0];
+                cell.listmodel1 = model;
+                
+            }else if (self.payType == 1){
+                OrderlModel *model = self.dataArr[0];
+                OrderListModel *list = model.listArr[indexPath.row];
+                NSMutableArray *array = [NSMutableArray array];
+                for (int i = 0; i < [model.listArr count]; i ++) {
+                    NSNumber *numb = @([list.tatolMamey integerValue]);
+                    [array addObject:numb];
+                }
+                [self.VauleArr addObjectsFromArray:array];
+                
+                NSNumber *sum = [array valueForKeyPath:@"@sum.self"];
+                self.totalMomey.text = [NSString stringWithFormat:@"￥%@.00",sum];
+                
+                cell.modellist1 = list;
+            }else{
+                
             }
-            [self.VauleArr addObjectsFromArray:array];
-            
-            NSNumber *sum = [array valueForKeyPath:@"@sum.self"];
-            self.totalMomey.text = [NSString stringWithFormat:@"￥%@.00",sum];
-            
-            cell.modellist1 = list;
             
         }
         
     }else if (indexPath.section == 1){
         if ([self.dataArr count] > 0) {
-            OrderlModel *model = self.dataArr[0];
-            cell.modellist3 = model;
+            
+            if (self.payType == 0) {
+                
+                HotelOrderModel *model = self.dataArr[0];
+                cell.listmodel1 = model;
+                
+            }else if (self.payType == 1){
+                OrderlModel *model = self.dataArr[0];
+                cell.modellist3 = model;
+            }else{
+                
+            }
         }
         
     }else{
@@ -335,18 +472,42 @@
     
     if (self.payType == OnlineBookingViewHotelPay) {
         self.navigationItem.title = OnlinTitleArr[0];
-        [[QWAlertView sharedMask] show:_alterView withType:QWAlertViewStyleAlert animationFinish:^{
-            
-            
-        } dismissHandle:^{
-            if (HHR) {
-                HHR = NO;
-                PaySuccessViewController *pay = [[PaySuccessViewController alloc]init];
-                [self.navigationController pushViewController:pay animated:YES];
+    
+        NSArray *cellArr = self.mTableView.visibleCells;
+        
+        if ([_farray count] > 0) {
+            [_farray removeAllObjects];
+        }
+        
+        [cellArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            OnlineTableViewCell *cell = cellArr[idx];
+            for (UITextField *f in cell.contentView.subviews) {
+                if ([f isKindOfClass:[UITextField class]]) {
+                    UITextField *field = (UITextField *)f;
+                    [self.farray addObject:field];
+                }
             }
         }];
         
+        UITextField *namefield = [self.farray objectAtIndex:0];
+        UITextField *phonefield = [self.farray objectAtIndex:1];
+        NSString *msgStr = nil;
+        
+        if (namefield.text.length == 0) {
+            msgStr = @"请输入联系人姓名";
+        }else if (phonefield.text.length == 0){
+            msgStr = @"请输入联系人手机号码";
+        }else{}
+        
+        if (msgStr) {
+            [HUDManager showTextHud:msgStr];
+            return;
+        }
+        
+        [self holehotel_need];
+        
     }else if (self.payType == OnlineBookingViewProductPay){
+        
         self.navigationItem.title = OnlinTitleArr[1];
         if (selectIndexPaths == 100000) {
             [HUDManager showTextHud:@"请选择支付方式"];
@@ -383,9 +544,21 @@
 }
 
 
+-(void)dismisView:(NSDictionary *)dict {
+    
+    [[QWAlertView sharedMask] show:_alterView withType:QWAlertViewStyleAlert animationFinish:^{
+        [_alterView setHtlStr:dict[@"need_content"]];
+    } dismissHandle:^{
+        if ( HHR == YES) {
+            [self loadorder];
+        }
+    }];
+}
+
+
 //MARK:-
 - (void)handleSelectedButtonActionWithSelectedIndexPath:(NSIndexPath *)selectedIndexPath{
-    if (selectedIndexPath.section == 1) {
+    if (selectedIndexPath.section == 2) {
         OnlineTableViewCell *celled = [self.mTableView cellForRowAtIndexPath:_selectedIndexPath];
         celled.selectBtn.selected = NO;
         //记录当前选中的位置索引
@@ -395,6 +568,53 @@
         cell.selectBtn.selected = YES;
         selectIndexPaths = selectedIndexPath.row;
     }
+}
+
+
+//MARK: createDatePicker
+-(void)createDatePicker {
+    
+    THDatePickerView *dateView = [[THDatePickerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, KSCREEN_WIDTH, 300)];
+    dateView.delegate = self;
+    dateView.title = @"请选择时间";
+    UIView *v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-100)];
+    [v setBackgroundColor:[UIColor grayColor]];
+    [v setHidden:YES];
+    [v setAlpha:0.4];
+    self.topView = v;
+    [self.view addSubview:v];
+    self.dateView = dateView;
+    [self.view addSubview:dateView];
+    
+}
+
+
+//MARK:- datePicker
+- (void)datePickerViewSaveBtnClickDelegate:(NSString *)timer {
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.dateView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 300);
+        [self.topView setHidden:YES];
+    }];
+    
+    NSArray *array = [timer componentsSeparatedByString:@" "];
+    
+//    if ([self.datatype isEqualToString:@"1"])
+//        [self.checkDate setTitle:[NSString stringWithFormat:@"%@",array[0]] forState:0];
+//    else if ([self.datatype isEqualToString:@"2"])
+//        [self.leveDate setTitle:[NSString stringWithFormat:@"%@",array[0]] forState:0];
+//    else{}
+    
+}
+
+
+// MARK:- 取消按钮代理方法
+- (void)datePickerViewCancelBtnClickDelegate {
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.dateView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 300);
+        [self.topView setHidden:YES];
+    }];
 }
 
 /*

@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class OrderListModel,PaywayModel,OrderlModel;
+@class OrderListModel,PaywayModel,OrderlModel,HotelOrderModel;
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -29,10 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)OrderListModel *modellist1;
 @property(nonatomic,strong)PaywayModel *modellist2;
 @property(nonatomic,strong)OrderlModel *modellist3;
+@property(nonatomic,strong)HotelOrderModel *listmodel1;
 
 @property (assign, nonatomic) NSIndexPath *selectedIndexPath;
 
 @property (weak, nonatomic) IBOutlet UIButton *selectBtn;
+
 
 + (instancetype)tempTableViewCellWith:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath withTpye:(NSInteger)type;
 

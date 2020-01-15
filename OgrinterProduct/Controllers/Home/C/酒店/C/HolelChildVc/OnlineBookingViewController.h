@@ -21,7 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) OnlineBookingViewPayType payType;
 
-@property (nonatomic) NSString *order_sn;
+@property (nonatomic,strong) NSString *order_sn;
+
+
+@property(nonatomic,strong)NSString *fjid;
 
 @end
 

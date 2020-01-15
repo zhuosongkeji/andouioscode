@@ -7,7 +7,6 @@
 //
 
 
-
 #import "MenuScreeningView.h"
 #import "DropMenuView.h"
 
@@ -28,6 +27,7 @@
 @property (nonatomic, strong) NSArray *addressArr;
 @property (nonatomic, strong) NSArray *categoriesArr;
 @property (nonatomic, strong) NSArray *sortsArr;
+@property(nonatomic)MenuScreeningViewType types;
 
 
 @end
@@ -36,11 +36,13 @@
 @implementation MenuScreeningView
 
 
-- (instancetype)initWithFrame:(CGRect)frame title:(NSArray *)titls
+- (instancetype)initWithFrame:(CGRect)frame title:(NSArray *)titls withtype:(NSInteger)type
 {
     self = [super initWithFrame:frame];
     
     if (self) {
+        
+        self.types = type;
         
         if ([titls count] == 1) {
             
@@ -111,30 +113,72 @@
 -(void)clickButton:(UIButton *)button{
 
     if (button == self.oneLinkageButton) {
-        
+        NSArray *array = nil;
         if (self.twoLinkageDropMenu)
             [self.twoLinkageDropMenu dismiss];
         if (self.threeLinkageDropMenu)
             [self.threeLinkageDropMenu dismiss];
         
-        [self.oneLinkageDropMenu creatDropView:self withShowTableNum:1 withData:self.sortsArr];
+        if (self.types == MenuScreeningViewTypeOne) {
+            array = [NSArray arrayWithArray:self.sortsArr];
+            [self.oneLinkageDropMenu creatDropView:self withShowTableNum:1 withData:array];
+        }else if (self.types == MenuScreeningViewTypeTwo){
+            array = [NSArray arrayWithArray:self.addressArr];
+            [self.oneLinkageDropMenu creatDropView:self withShowTableNum:3 withData:array];
+        }else if (self.types == MenuScreeningViewTypeThird){
+            
+            
+            [self.oneLinkageDropMenu creatDropView:self withShowTableNum:1 withData:array];
+        }
+
         
     }else if (button == self.twoLinkageButton){
-        
+        NSArray *array = nil;
         if (self.oneLinkageDropMenu)
             [self.oneLinkageDropMenu dismiss];
         if (self.threeLinkageDropMenu)
             [self.threeLinkageDropMenu dismiss];
     
-        [self.twoLinkageDropMenu creatDropView:self withShowTableNum:3 withData:self.addressArr];
+        
+        if (self.types == MenuScreeningViewTypeOne) {
+            array = [NSArray arrayWithArray:self.addressArr];
+            
+            [self.twoLinkageDropMenu creatDropView:self withShowTableNum:3 withData:array];
+            
+        }else if (self.types == MenuScreeningViewTypeTwo){
+            array = [NSArray arrayWithArray:self.categoriesArr];
+            
+            [self.twoLinkageDropMenu creatDropView:self withShowTableNum:2 withData:array];
+            
+        }else if (self.types == MenuScreeningViewTypeThird){
+            
+            [self.twoLinkageDropMenu creatDropView:self withShowTableNum:1 withData:self.sortsArr];
+        }
+        
     
     }else if (button == self.threeLinkageButton){
+        NSArray *array = nil;
+        
         if (self.oneLinkageDropMenu)
             [self.oneLinkageDropMenu dismiss];
         if (self.twoLinkageDropMenu)
             [self.twoLinkageDropMenu dismiss];
         
-        [self.threeLinkageDropMenu creatDropView:self withShowTableNum:1 withData:self.sortsArr];
+        
+        if (self.types == MenuScreeningViewTypeOne) {
+            array = [NSArray arrayWithArray:self.sortsArr];
+            
+            [self.threeLinkageDropMenu creatDropView:self withShowTableNum:1 withData:self.sortsArr];
+            
+        }else if (self.types == MenuScreeningViewTypeTwo){
+            array = [NSArray arrayWithArray:self.sortsArr];
+            
+            [self.threeLinkageDropMenu creatDropView:self withShowTableNum:1 withData:self.sortsArr];
+        }else if (self.types == MenuScreeningViewTypeThird){
+            
+            [self.threeLinkageDropMenu creatDropView:self withShowTableNum:1 withData:self.sortsArr];
+        }
+        
         
 //        [self.threeLinkageDropMenu creatDropView:self withShowTableNum:3 withData:self.addressArr];
         
@@ -221,7 +265,11 @@
 
 -(NSArray *)categoriesArr{
     if (_categoriesArr == nil) {
-//        _categoriesArr = [NSArray arrayWithContentsOfFile:filePath];
+        NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        //要创建的plist文件名 -> 路径
+        NSString *filePath = [docPath stringByAppendingPathComponent:@"StarAndPrice.plist"];
+        
+        _categoriesArr =  [NSArray arrayWithContentsOfFile:filePath];
     }
     return _categoriesArr;
 }
