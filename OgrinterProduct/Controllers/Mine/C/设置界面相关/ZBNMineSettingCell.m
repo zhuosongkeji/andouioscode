@@ -79,7 +79,7 @@
 {
     // 设置数据
     _settingM = settingM;
-//    [self.userIconV sd_setImageWithURL:[NSURL URLWithString:settingM.avator]];
+//    [self.userIconV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,settingM.avator]]];
     self.userName.text = settingM.name;
     self.phoneNumber.text = [NSString returnImportentNum:settingM.mobile];
 //    self.pwdLabel.text = [NSString stringWithFormat:@"%@",settingM.password];
