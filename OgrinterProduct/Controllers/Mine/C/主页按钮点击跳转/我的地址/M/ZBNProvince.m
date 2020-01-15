@@ -10,4 +10,13 @@
 
 @implementation ZBNProvince
 
+
++ (NSDictionary *)mj_objectClassInArray
+{
+    return @{
+        @"cities":@"ZBNCity",
+    };
+}
+
+
 @end

@@ -190,7 +190,7 @@
     if (sender.tag == 300) {
         [self pushViewControllerWithString:@"ZBNRestaurantOrderVC"];
     } else if (sender.tag == 301) { // 酒店订单
-        [self pushViewControllerWithString:@"ZBNHotelOrderVC"];
+        [self pushViewControllerWithString:@"ZBNHTOrderVC"];
     } else if (sender.tag == 302) { // 饭店订单
         [self pushViewControllerWithString:@"ZBNShoppingHallOrderVC"];
     }

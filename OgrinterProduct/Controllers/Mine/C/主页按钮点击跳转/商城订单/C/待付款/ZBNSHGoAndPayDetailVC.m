@@ -15,6 +15,8 @@
 #import "ZBNSHOrderUserInfoM.h"
 #import "ZBNSHOrderDetailsM.h"
 
+#import "ZBNSHCommonPayVC.h"
+
 @interface ZBNSHGoAndPayDetailVC ()
 
 @property (nonatomic, weak) ZBNSHCommonHeadV *headV;
@@ -69,10 +71,9 @@
         params[@"uid"] = unmodel.uid;
         params[@"token"] = unmodel.token;
         params[@"order_sn"] = self.getOrderNum;
-        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/order/details" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/details" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
             self.comM = [ZBNSHOrderDetailComM mj_objectWithKeyValues:serverInfo.response[@"data"]];
-            self.detailsM = [ZBNSHOrderDetailsM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"details"][0]];
-            NSLog(@"%@1111111",self.detailsM.attr_value);
+            self.comM.details = [ZBNSHOrderDetailsM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"details"][0]];
             [weakSelf.tableView reloadData];
         }];
 }
@@ -89,8 +90,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZBNSHGoAndPayDetailCell *cell = [ZBNSHGoAndPayDetailCell regiserCellForTable:tableView];
+    ADWeakSelf;
+    cell.goAndPayBtnClickTask = ^{
+        ZBNSHCommonPayVC *vc = [[ZBNSHCommonPayVC alloc] init];
+        vc.order_id = self.getOrderNum;
+        
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
     cell.comM = self.comM;
-    cell.detailM = self.detailsM;
     return cell;
 }
 

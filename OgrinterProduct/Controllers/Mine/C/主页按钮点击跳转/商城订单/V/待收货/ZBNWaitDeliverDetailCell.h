@@ -15,12 +15,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)regiserCellForTable:(UITableView *)tableView;
 
+/*! 收货 */
 @property (nonatomic, copy) void(^beSureReciveGoodsBtnClickTask)(void);
+/*! 退货 */
 @property (nonatomic, copy) void(^returnGoodsBtnClickTask)(void);
+/*! 查看物流 */
+@property (nonatomic, copy) void(^viewLogisticsBtnClickTask)(void);
 
 @property (nonatomic, strong) ZBNSHOrderDetailComM *comM;
 @property (nonatomic, strong) ZBNSHOrderDetailsM *detailM;
 @property (nonatomic, strong) ZBNSHOrderUserInfoM *userInfoM;
+
+
 
 
 @end

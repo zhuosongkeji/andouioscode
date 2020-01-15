@@ -174,6 +174,7 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
             }
             NSInteger totalPrice = self.totalPriceLabel.text.intValue - model.price.intValue * model.num.intValue;
             self.totalPriceLabel.text = [NSString stringWithFormat:@"%zd",totalPrice];
+            self.shopCartID = nil;
         }
         [self.tableView reloadData];
     }
@@ -274,6 +275,7 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
         int totalPrice = self.totalPriceLabel.text.intValue + shoppingCartCell.shoppingCartModel.price.intValue * shoppingCartCell.shoppingCartModel.num.intValue;
         // 设置总价
         self.totalPriceLabel.text = [NSString stringWithFormat:@"%d",totalPrice];
+
         
         if ([self.goodsCar containsObject:shoppingCartCell.shoppingCartModel]) return;
            // 添加到购物车
@@ -287,7 +289,32 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
         [self.goodsCar removeObject:shoppingCartCell.shoppingCartModel];
         
     }
-    
+    NSMutableArray *arr = [NSMutableArray array];
+    NSMutableString *idStr = [NSMutableString string];
+    for (ZBNShoppingCartModel *model in self.goodsArray) {
+        if (model.isSelected) {
+            [arr addObject:model];
+        }
+    }
+    if (arr.count <= 0) {
+        for (ZBNShoppingCartModel *model in arr) {
+            self.shopCartID = model.ID;
+        }
+    } else {
+        for (ZBNShoppingCartModel *model in arr) {
+            if (model == arr.firstObject) {
+                [idStr appendString:[NSString stringWithFormat:@"%@",model.ID]];
+            } else {
+                [idStr appendString:[NSString stringWithFormat:@",%@",model.ID]];
+            }
+        }
+        self.shopCartID = idStr;
+    }
+    if (self.goodsArray.count == arr.count) {
+        self.allSelectedBtn.selected = YES;
+    } else {
+        self.allSelectedBtn.selected = NO;
+    }
     
 }
 
@@ -312,6 +339,15 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
                 if (shoppingCartCell.shoppingCartModel.selected == YES) {
                     int totalPrice = self.totalPriceLabel.text.intValue - shoppingCartCell.shoppingCartModel.price.intValue * shoppingCartCell.shoppingCartModel.num.intValue;
                     self.totalPriceLabel.text = [NSString stringWithFormat:@"%d",totalPrice];
+                    
+                    if (self.goodsArray.count == 0) {
+                        self.allSelectedBtn.selected = NO;
+                    }
+                    
+                    if (self.goodsCar.count == 0) {
+                        self.allSelectedBtn.selected = NO;
+                    }
+                    
                 }
                 [self.tableView reloadData];
             }

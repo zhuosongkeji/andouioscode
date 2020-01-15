@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) ZBNSHOrderDetailsM *detailM;
 @property (nonatomic, strong) ZBNSHOrderUserInfoM *userInfoM;
 
+@property (nonatomic, copy) void(^goAndPayBtnClickTask)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -15,6 +15,7 @@
 #import "ZBNShoppingCartModel.h"
 #import "ZBNSHOrderDetailComM.h"
 #import "ZBNMineModel.h"
+#import "ZBNSHCommonModel.h"
 
 
 @implementation ZBNExtensionConfig
@@ -55,7 +56,13 @@
           return @{
               @"ID" : @"id",
           };
-      }];
+    }];
+
+    [ZBNSHCommonModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+           return @{
+               @"ID" : @"id",
+           };
+       }];
 }
 
 

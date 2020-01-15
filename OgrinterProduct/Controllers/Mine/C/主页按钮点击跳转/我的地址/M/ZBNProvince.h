@@ -7,15 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ZBNCity.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class ZBNCity,ZBNArea;
 @interface ZBNProvince : NSObject
+
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) NSNumber *ID;
 @property (nonatomic, assign) NSNumber *pid;
-@property (nonatomic, strong) NSArray <ZBNCity *> *cities;
+@property (nonatomic, strong) NSArray < ZBNCity *>*cities;
+
+@property (nonatomic, strong) ZBNArea *area;
 @property (nonatomic, strong) ZBNCity *city;
 
 @end

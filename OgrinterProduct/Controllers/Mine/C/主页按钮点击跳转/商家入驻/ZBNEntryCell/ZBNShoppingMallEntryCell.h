@@ -20,6 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 /*! 返回第一个URL */
 @property (nonatomic, copy) NSString *getURLThree;
 
+@property (nonatomic, copy) void(^addressLabelClickTask)(void);
+
+/*! 设置label的文字 */
+- (ZBNShoppingMallEntryCell *(^)(NSString *labelText))setLabelText;
 
 @end
 
