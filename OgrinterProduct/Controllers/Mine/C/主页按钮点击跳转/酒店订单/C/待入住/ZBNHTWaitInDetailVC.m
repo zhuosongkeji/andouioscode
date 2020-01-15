@@ -20,13 +20,17 @@
     [super viewDidLoad];
     
     [self setupTable];
+    
+    [self loadData];
 }
 
 - (void)setupTable
 {
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.navigationItem.title = @"订单详情";
     self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
+    self.tableView.bounces = NO;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -37,6 +41,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZBNHTWaitInDetailCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNHTWaitInDetailCell" owner:nil options:nil].lastObject;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.detailM = self.detailM;
     return cell;
 }
 
@@ -44,5 +50,26 @@
 {
     return 982;
 }
+
+
+- (void)loadData
+{
+    ADWeakSelf;
+    [FKHRequestManager cancleRequestWork];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+        userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+        params[@"uid"] = unmodel.uid;
+        params[@"token"] = unmodel.token;
+        params[@"book_sn"] = @[self.book_sn];
+    
+        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/htorder/orderdatails" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+
+            self.detailM = [ZBNHTComDetailModel mj_objectWithKeyValues:serverInfo.response[@"data"]];
+            [weakSelf.tableView reloadData];
+        }];
+}
+
+
 
 @end

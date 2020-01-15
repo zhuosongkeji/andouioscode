@@ -47,6 +47,8 @@
 {
     self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
+    self.navigationItem.title = @"设置";
+    self.tableView.bounces = NO;
 }
 /*! 设置底部视图 */
 - (void)setupFooterView
@@ -105,8 +107,11 @@
     ADWeakSelf;
     // 发送网络请求
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNPersonSettingURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        
+        
+        NSLog(@"%@loadData",serverInfo.response[@"data"]);
         // 将字典转换成模型
-        weakSelf.settingM = [ZBNMineSettingModel mj_objectWithKeyValues: serverInfo.response[@"data"][@"information"]];
+        weakSelf.settingM = [ZBNMineSettingModel mj_objectWithKeyValues: serverInfo.response[@"data"]];
         // 刷新table
         [weakSelf.tableView reloadData];
     }];
@@ -143,10 +148,6 @@
     cell.changePwdClickTask = ^{
         ZBNChangePwdVC *vc = [[ZBNChangePwdVC alloc] init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
-    };
-    // 清除缓存
-    cell.cacheClearClickTask = ^{
-        
     };
     return cell;
 }

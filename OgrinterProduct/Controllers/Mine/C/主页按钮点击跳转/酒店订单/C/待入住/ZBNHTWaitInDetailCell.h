@@ -12,8 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class ZBNHTComDetailModel;
 @interface ZBNHTWaitInDetailCell : UITableViewCell
+
 /*! 模型数据 */
 @property (nonatomic, strong) ZBNHTComDetailModel *detailM;
+
 @end
 
 NS_ASSUME_NONNULL_END

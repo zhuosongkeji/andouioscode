@@ -33,9 +33,9 @@
     
 //    初始化友盟
 //    [UMConfigure initWithAppkey:UMKEY channel:nil];
-//    [UMConfigure setLogEnabled:NO];
+////    [UMConfigure setLogEnabled:NO];
 //    [self initUMSDK];
-    
+//    
     [IQKeyboardManager sharedManager].enable = YES;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
@@ -104,9 +104,11 @@
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     
     BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    
     if (!result) {
         // 其他如支付等SDK的回调
         if ([url.host isEqualToString:@"pay"]) {
+            NSLog(@"%@",url.host);
             return [WXApi handleOpenURL:url delegate:(id<WXApiDelegate>)self];
         }
     }

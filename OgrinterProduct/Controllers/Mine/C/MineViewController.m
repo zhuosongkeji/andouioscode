@@ -62,8 +62,17 @@
     // 设置手势
     [self setupGes];
     
+    // 设置table
+    [self setupTable];
+    
     // 接收登录成功过的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"loginOK" object:nil];
+}
+
+
+- (void)setupTable
+{
+    self.mTableView.bounces = NO;
 }
 
 // 控制器销毁时调用
@@ -115,6 +124,7 @@
         param[@"uid"] = unmodel.uid;
         param[@"token"] = unmodel.token;
        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNPersonURL params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
+           
            self.model = [ZBNMineModel mj_objectWithKeyValues:serverInfo.response[@"data"]];
            // 设置头像
            self.headImageV.image = [UIImage circleImageNamed:@"yxj"];

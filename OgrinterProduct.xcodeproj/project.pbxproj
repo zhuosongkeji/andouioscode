@@ -70,7 +70,6 @@
 		A14FB25C238E0E4C006A6511 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FB25B238E0E4C006A6511 /* AppDelegate.m */; };
 		A14FB262238E0E4C006A6511 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14FB260238E0E4C006A6511 /* Main.storyboard */; };
 		A14FB264238E0E50006A6511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14FB263238E0E50006A6511 /* Assets.xcassets */; };
-		A14FB267238E0E50006A6511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14FB265238E0E50006A6511 /* LaunchScreen.storyboard */; };
 		A14FB26A238E0E50006A6511 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FB269238E0E50006A6511 /* main.m */; };
 		A14FB274238E0E50006A6511 /* OgrinterProductTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FB273238E0E50006A6511 /* OgrinterProductTests.m */; };
 		A14FB27F238E0E50006A6511 /* OgrinterProductUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FB27E238E0E50006A6511 /* OgrinterProductUITests.m */; };
@@ -252,6 +251,7 @@
 		F45231CA23AB7B5E005CBE6A /* ZBNRestaurantOrderDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F45231C923AB7B5E005CBE6A /* ZBNRestaurantOrderDetailVC.m */; };
 		F45231CE23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F45231CC23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.m */; };
 		F45231CF23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45231CD23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.xib */; };
+		F457188823CEE99D0040164D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F457188723CEE99D0040164D /* LaunchScreen.storyboard */; };
 		F458C33823C8253900338220 /* ZBNSHComViewLogisticsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F458C33723C8253900338220 /* ZBNSHComViewLogisticsVC.m */; };
 		F458C33C23C8255700338220 /* ZBNSHComViewLogisticsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F458C33A23C8255700338220 /* ZBNSHComViewLogisticsCell.m */; };
 		F458C33D23C8255700338220 /* ZBNSHComViewLogisticsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F458C33B23C8255700338220 /* ZBNSHComViewLogisticsCell.xib */; };
@@ -560,7 +560,6 @@
 		A14FB25B238E0E4C006A6511 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A14FB261238E0E4C006A6511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A14FB263238E0E50006A6511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A14FB266238E0E50006A6511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A14FB268238E0E50006A6511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14FB269238E0E50006A6511 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A14FB26F238E0E50006A6511 /* OgrinterProductTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OgrinterProductTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -870,6 +869,7 @@
 		F45231CB23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNRestaurantOrderDetailCell.h; sourceTree = "<group>"; };
 		F45231CC23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNRestaurantOrderDetailCell.m; sourceTree = "<group>"; };
 		F45231CD23AB7B78005CBE6A /* ZBNRestaurantOrderDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNRestaurantOrderDetailCell.xib; sourceTree = "<group>"; };
+		F457188723CEE99D0040164D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F458C33623C8253900338220 /* ZBNSHComViewLogisticsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHComViewLogisticsVC.h; sourceTree = "<group>"; };
 		F458C33723C8253900338220 /* ZBNSHComViewLogisticsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHComViewLogisticsVC.m; sourceTree = "<group>"; };
 		F458C33923C8255700338220 /* ZBNSHComViewLogisticsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHComViewLogisticsCell.h; sourceTree = "<group>"; };
@@ -1746,8 +1746,8 @@
 				A1FD1B8423AC6E7800AE0835 /* iCarousel */,
 				A14FB2AF238F5770006A6511 /* category */,
 				A14FB260238E0E4C006A6511 /* Main.storyboard */,
+				F457188723CEE99D0040164D /* LaunchScreen.storyboard */,
 				A14FB263238E0E50006A6511 /* Assets.xcassets */,
-				A14FB265238E0E50006A6511 /* LaunchScreen.storyboard */,
 				A14FB28D238E19DE006A6511 /* PrefixHeader.pch */,
 				F4ADBE3323B9A28000B62E46 /* ADConst.h */,
 				F4ADBE3423B9A28000B62E46 /* ADConst.m */,
@@ -3329,6 +3329,7 @@
 				A1FC709023BD8224005BFDC9 /* BeseListViewCell.xib in Resources */,
 				A10A9CE8239B38930049A0D2 /* LiveBroadcastViewController.xib in Resources */,
 				F4FAC26B23ABC72D00C235EA /* ZBNSHReturnGoodsOrderCell.xib in Resources */,
+				F457188823CEE99D0040164D /* LaunchScreen.storyboard in Resources */,
 				A10A9C192398A1970049A0D2 /* sorts.plist in Resources */,
 				F4917C8323C3132C00C05CFA /* ZBNMerchantEntryTabCell.xib in Resources */,
 				A14BDAC423C71C74006EC033 /* ShopCollectionReusableView.xib in Resources */,
@@ -3361,7 +3362,6 @@
 				A14FB2AE238E7858006A6511 /* RetrievepsdViewController.xib in Resources */,
 				A1ECDEFE239B7A6E003D870D /* HotolListViewController.xib in Resources */,
 				F45D811423C96D0700AE2A28 /* ZBNSHWaitEvaluateDetailCell.xib in Resources */,
-				A14FB267238E0E50006A6511 /* LaunchScreen.storyboard in Resources */,
 				A15DC0E8239E22BE008CF287 /* CresTwoTableViewCell.xib in Resources */,
 				F4B7F8CD23CC5553008BCEDF /* ZBNAddressChangeVC.xib in Resources */,
 				F476A48923A7682C00E3018A /* ZBNEntryFooterView.xib in Resources */,
@@ -3859,14 +3859,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A14FB265238E0E50006A6511 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A14FB266238E0E50006A6511 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -4009,6 +4001,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Base.framework",
 				);
+				NEW_SETTING = "";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -4146,6 +4139,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Base.framework",
 				);
+				NEW_SETTING = "";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

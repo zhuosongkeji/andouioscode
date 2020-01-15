@@ -44,6 +44,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZBNHTHadInCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNHTHadInCell" owner:nil options:nil].lastObject;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.detailM = self.detailM;
     return cell;
 }

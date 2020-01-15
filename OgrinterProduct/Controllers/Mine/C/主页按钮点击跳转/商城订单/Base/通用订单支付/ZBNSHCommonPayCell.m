@@ -94,9 +94,16 @@
 - (IBAction)btnClick:(UIButton *)sender {
 //    ZBNSHCommonPayModel *model = [ZBNSHCommonPayModel sharedInstance];
     sender.selected = !sender.selected;
-    if (self.selBtnClick) {
-        self.selBtnClick(@"1");
+    
+    if (sender.selected) {
+        if (self.selBtnClick) {
+            self.selBtnClick(@"1");
+        }
+    } else {
+        NSLog(@"heeheh");
     }
+    
+    
 }
 
 - (void)awakeFromNib

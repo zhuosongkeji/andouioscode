@@ -113,47 +113,52 @@
 
 //MARK:- 三方登录
 - (IBAction)loginwithThrid:(UIButton *)sender {
-    //提示该功能暂未开放
-    KPreventRepeatClickTime(1)
-    
-    if (![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_WechatSession]) {
-        [HUDManager showTextHud:@"请安装微信客户端后在尝试!"];
-        return;
-    }
-    
-    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController:self completion:^(id result, NSError *error) {
-        
-        if (error) {
-            NSLog(@"%@",error);
-        } else {
-            UMSocialUserInfoResponse *resp = result;
-            // 授权信息
-            NSLog(@"Wechat uid: %@", resp.uid);
-            NSLog(@"Wechat openid: %@", resp.openid);
-            NSLog(@"Wechat unionid: %@", resp.unionId);
-            NSLog(@"Wechat accessToken: %@", resp.accessToken);
-            NSLog(@"Wechat refreshToken: %@", resp.refreshToken);
-            NSLog(@"Wechat expiration: %@", resp.expiration);
-            // 用户信息
-            NSLog(@"Wechat name: %@", resp.name);
-            NSLog(@"Wechat iconurl: %@", resp.iconurl);
-            NSLog(@"Wechat gender: %@", resp.unionGender);
-            // 第三方平台SDK源数据
-            NSLog(@"Wechat originalResponse: %@", resp.originalResponse);
-        }
-        
-    }];
+//    //提示该功能暂未开放
+    [HUDManager showTextHud:@"该功能暂未开放"];
+//    KPreventRepeatClickTime(1)
+////    [self loginRequestWX];
+//    if (![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_WechatSession]) {
+//        NSLog(@"");
+//        [HUDManager showTextHud:@"请安装微信客户端后在尝试!"];
+//        return;
+//    }
+//////
+//    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController:self completion:^(id result, NSError *error) {
+//
+//        NSLog(@"%@result",result);
+//
+//        if (error) {
+//            NSLog(@"%@",error);
+//        } else {
+//            UMSocialUserInfoResponse *resp = result;
+//            // 授权信息
+//            NSLog(@"Wechat uid: %@", resp.uid);
+//            NSLog(@"Wechat openid: %@", resp.openid);
+//            NSLog(@"Wechat unionid: %@", resp.unionId);
+//            NSLog(@"Wechat accessToken: %@", resp.accessToken);
+//            NSLog(@"Wechat refreshToken: %@", resp.refreshToken);
+//            NSLog(@"Wechat expiration: %@", resp.expiration);
+//            // 用户信息
+//            NSLog(@"Wechat name: %@", resp.name);
+//            NSLog(@"Wechat iconurl: %@", resp.iconurl);
+//            NSLog(@"Wechat gender: %@", resp.unionGender);
+//            // 第三方平台SDK源数据
+//            NSLog(@"Wechat originalResponse: %@", resp.originalResponse);
+//        }
+//
+//    }];
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)loginRequestWX
+{
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+        param[@"code"] = @"1";
+       [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/login/wxlogin" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
+           
+           NSLog(@"%@",serverInfo.response[@"data"]);
+       }];
 }
-*/
-
 @end
