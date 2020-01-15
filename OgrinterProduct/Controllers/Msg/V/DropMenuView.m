@@ -211,7 +211,7 @@
         
             if (self.tableCount == 2) {
                 
-                return [self.dataArr[firstSelectRow][@"subcategories"] count];
+                return [self.dataArr[firstSelectRow][@"star"] count];
                 
             }else{
                 return [self.dataArr[firstSelectRow][@"cities"] count];
@@ -246,7 +246,7 @@
         if (tableView == self.tableViewArr[0]) {
             cell.textLabel.text = self.dataArr[indexPath.row][@"name"];
         }else if (tableView == self.tableViewArr[1]){
-            cell.textLabel.text = self.dataArr[firstSelectRow][@"subcategories"][indexPath.row];
+            cell.textLabel.text = self.dataArr[firstSelectRow][@"star"][indexPath.row][@"name"];
         }
         
     }else if (self.tableCount == 3){
@@ -293,7 +293,7 @@
 
              NSInteger firstSelectRow = ((UITableView *)self.tableViewArr[0]).indexPathForSelectedRow.row;
             
-             [_delegate dropMenuView:self didSelectName:self.dataArr[firstSelectRow][@"subcategories"][indexPath.row] uidStr:nil];
+             [_delegate dropMenuView:self didSelectName:self.dataArr[firstSelectRow][@"star"][indexPath.row][@"name"] uidStr:nil];
         }
         
     }else if (self.tableCount == 3){

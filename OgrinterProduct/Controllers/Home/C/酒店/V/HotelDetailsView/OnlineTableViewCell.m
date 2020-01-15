@@ -10,9 +10,13 @@
 #import "OrderlModel.h"
 #import "OrderListModel.h"
 #import "PaywayModel.h"
+#import "HotelOrderModel.h"
+#import "HotelOrderModelList.h"
 
 
-@interface OnlineTableViewCell ()
+@interface OnlineTableViewCell (){
+    NSInteger num;
+}
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *shopIcon;
@@ -28,28 +32,24 @@
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
 
-
 @property (weak, nonatomic) IBOutlet UILabel *OrderAddress;
 @property (weak, nonatomic) IBOutlet UILabel *OrderName;
 @property (weak, nonatomic) IBOutlet UILabel *OrderPhone;
 
-
 @property (weak, nonatomic) IBOutlet UILabel *rzNumber;
-
 
 @property (weak, nonatomic) IBOutlet UITextField *lxrName;
 
 @property (weak, nonatomic) IBOutlet UITextField *lxrPhone;
 
-
 @property (weak, nonatomic) IBOutlet UILabel *yqjxzlabel;
-
 
 @property (weak, nonatomic) IBOutlet UILabel *jflabel;
 
-
 @property (weak, nonatomic) IBOutlet UILabel *sectionTwotitle;
 @property (weak, nonatomic) IBOutlet UIImageView *ImgView;
+
+
 
 
 @end
@@ -85,8 +85,33 @@
     [self.ImgView sd_setImageWithURL:[NSURL URLWithString:modellist2.logo] placeholderImage:nil];
 }
 
+
+-(void)setListmodel1:(HotelOrderModel *)listmodel1{
+    _listmodel1 = listmodel1;
+    
+    HotelOrderModelList *model = listmodel1.listmodel;
+    
+    [self.shopIcon sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:nil];
+    
+    self.shoptitle.text = [NSString stringWithFormat:@"%@",model.name];
+    self.shopcontnt.text = [NSString stringWithFormat:@"%@",model.house_name];
+    
+    self.shoprice.text = [NSString stringWithFormat:@"￥%@",model.price];
+    [self.number setHidden:YES];
+    
+    self.rzdateLabel.text = [NSString stringWithFormat:@"%@",listmodel1.start];
+    
+    self.livedateLabel.text = [NSString stringWithFormat:@"%@",listmodel1.end];
+    
+    self.jflabel.text = [NSString stringWithFormat:@"%@",listmodel1.integral];
+    
+}
+
+
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    num = 1;
     // Initialization code
 }
 
@@ -155,9 +180,9 @@
         NSLog(@"创建");
     }
     
-    if (indexPath.section == 1) {
-        cell.sectionTwotitle.text = OnlineTitle[indexPath.row];
-        cell.ImgView.image = [UIImage imageNamed:OnlineImg[indexPath.row]];
+    if (indexPath.section == 2) {
+//        cell.sectionTwotitle.text = OnlineTitle[indexPath.row];
+//        cell.ImgView.image = [UIImage imageNamed:OnlineImg[indexPath.row]];
     }
     
     return cell;
@@ -192,6 +217,22 @@
 - (IBAction)btnClick:(UIButton *)sender {
     KPreventRepeatClickTime(1);
     [self.xlDelegate handleSelectedButtonActionWithSelectedIndexPath:self.selectedIndexPath];
+}
+
+
+- (IBAction)plash:(UIButton *)sender {
+    if (sender.tag == 201) {
+        num +=1;
+    }else if (sender.tag == 200){
+        num -=1;
+        if (num < 1) {
+            num = 1;
+        }
+    }else{
+        
+    }
+    
+    self.rzNumber.text = [NSString stringWithFormat:@"%ld 人",num];
 }
 
 

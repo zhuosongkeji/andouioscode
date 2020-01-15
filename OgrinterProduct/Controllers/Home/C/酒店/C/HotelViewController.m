@@ -44,6 +44,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *categroybjView;
 
+@property(nonatomic,strong)NSString *datatype;
 
 @property (nonatomic,strong)NSMutableArray *categoryArr;
 
@@ -54,12 +55,14 @@
 @implementation HotelViewController
 
 
+
 -(NSMutableArray *)categoryArr{
     if (!_categoryArr) {
         _categoryArr = [NSMutableArray array];
     }
     return _categoryArr;
 }
+
 
 
 -(UIScrollView *)mScroller{
@@ -150,6 +153,7 @@
     
 }
 
+
 //MARK:-loadsubViews
 -(void)setloadsubViews {
     
@@ -185,7 +189,6 @@
     [self.view addSubview:dateView];
     
 }
-
 
 //MARK:-tableView
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -223,6 +226,7 @@
     // 取消Cell的选中状态
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     HotelDetlisViewController *holel = [[HotelDetlisViewController alloc]init];
+    holel.navigationItem.title = model.name;
     holel.jid = model.uid;
     
     [self.navigationController pushViewController:holel animated:YES];
@@ -257,9 +261,30 @@
 - (IBAction)selectdata:(UIButton *)sender {
     KPreventRepeatClickTime(1)
     if (sender.tag == 2002) {
+        
+        NSString *msgStr = nil;
+        if ([self.checkDate.titleLabel.text isEqualToString:@"入住日期"])
+            msgStr = @"请选择入住时间";
+        else if ([self.checkDate.titleLabel.text isEqualToString:@"离开日期"])
+            msgStr = @"请选择离开时间";
+        else if ([self.setSetbtn.titleLabel.text isEqualToString:@"设置我喜欢的星级/价格"]){
+            //msgStr = @"请设置能星级/价格";
+        }else{}
+        
+        
+        if (msgStr.length) {
+            [HUDManager showTextHud:msgStr];
+            return;
+        }
+        
         HotolListViewController *listView = [[HotolListViewController alloc]init];
         [self.navigationController pushViewController:listView animated:YES];
     }else {
+        
+        if (sender.tag == 2000)
+            self.datatype = @"1";
+        else if (sender.tag == 2001)
+            self.datatype = @"2";
         
         [UIView animateWithDuration:0.3 animations:^{
             self.dateView.frame = CGRectMake(0, self.view.height - 300, self.view.width, 300);
@@ -290,22 +315,6 @@
 }
 
 
--(NSString *)getNowtime {
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy/MM/dd"];
-    
-    NSDate *nowDate = [NSDate date];
-    NSTimeZone *zone = [NSTimeZone systemTimeZone];
-    NSInteger interval = [zone secondsFromGMT];
-    nowDate = [nowDate dateByAddingTimeInterval:interval];
-    NSString *nowDateString = [dateFormatter stringFromDate:nowDate];
-    
-    return nowDateString;
-}
-
-
-
 //MARK:- datePicker
 - (void)datePickerViewSaveBtnClickDelegate:(NSString *)timer {
     
@@ -314,6 +323,14 @@
         [self.topView setHidden:YES];
     }];
     
+    NSArray *array = [timer componentsSeparatedByString:@" "];
+    
+    if ([self.datatype isEqualToString:@"1"])
+        [self.checkDate setTitle:[NSString stringWithFormat:@"%@",array[0]] forState:0];
+    else if ([self.datatype isEqualToString:@"2"])
+        [self.leveDate setTitle:[NSString stringWithFormat:@"%@",array[0]] forState:0];
+    else{}
+
 }
 
 

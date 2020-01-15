@@ -39,6 +39,10 @@ NS_ASSUME_NONNULL_BEGIN
 //获取当前视图所在的Controller
 + (UIViewController *)findCurrentShowingViewController;
 
++(NSString *)getNowtime;
+
++(NSString *)getnextDate;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -7,10 +7,13 @@
 //
 
 #import "CustomAlterView.h"
+#import <WebKit/WebKit.h>
 
-@interface CustomAlterView ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface CustomAlterView ()<WKUIDelegate,WKNavigationDelegate>
+
+@property (weak, nonatomic) IBOutlet UIView *webViewbjView;
+@property (nonatomic,strong)WKWebView *webView;
 
 @property (weak, nonatomic) IBOutlet UIButton *cancelBtn;
 
@@ -25,6 +28,43 @@
 @implementation CustomAlterView
 
 
+-(WKWebView *)webView {
+    if (!_webView) {
+        
+        WKWebViewConfiguration *wkWebConfig = [[WKWebViewConfiguration alloc] init];
+        
+        WKUserContentController *wkUController = [[WKUserContentController alloc] init];
+        
+        wkWebConfig.userContentController = wkUController;
+        
+        //自适应屏幕的宽度js
+        NSString *jSString = @"var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);";
+        
+        WKUserScript *wkUserScript = [[WKUserScript alloc] initWithSource:jSString injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+        
+        //添加js调用
+        
+        [wkUController addUserScript:wkUserScript];
+        
+        
+        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.webViewbjView.frame), CGRectGetHeight(self.webViewbjView.frame)) configuration:wkWebConfig];
+        
+        _webView.UIDelegate = self;
+        
+    }
+    
+    return _webView;
+}
+
+
+-(void)setHtlStr:(NSString *)htlStr{
+    _htlStr = htlStr;
+    
+    [self.webViewbjView addSubview:self.webView];
+    [self.webView loadHTMLString:htlStr baseURL:nil];
+}
+
+
 -(void)awakeFromNib{
     [super awakeFromNib];
     [self setup];
@@ -34,51 +74,24 @@
 -(void)setup{
     self.cancelBtn.layer.cornerRadius = 4;
     self.agreeBtn.layer.cornerRadius = 4;
-    self.tableView.tableFooterView = [UILabel new];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    
 }
 
 
-#pragma mark -
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//MARK:-WKWebView
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     
-    static NSString *identifier = @"identifier";
+    //禁止用户选择
+    [webView evaluateJavaScript:@"document.documentElement.style.webkitUserSelect='none';" completionHandler:nil];
+    [webView evaluateJavaScript:@"document.activeElement.blur();" completionHandler:nil];
+    // 适当增大字体大小
+    [webView evaluateJavaScript:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '105%'" completionHandler:nil];
     
-    UITableViewCell *cell= [tableView dequeueReusableCellWithIdentifier:identifier];
-    
-    if (cell==nil) {
-        
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        
-        cell.textLabel.textColor = [UIColor lightGrayColor];
-        cell.textLabel.numberOfLines = 2;
-        cell.textLabel.font = [UIFont systemFontOfSize:13];
-        cell.textLabel.text = @"入住前一天12:00之前，入申请退款订单金额全退,入申请退款订单";
-        
-    }
-    
-    return cell;
-}
-
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
 }
 
 
 - (IBAction)click:(UIButton *)sender {
     KPreventRepeatClickTime(1)
-    _btnBlcok();
+    _btnBlcok(sender);
 }
 
 /*

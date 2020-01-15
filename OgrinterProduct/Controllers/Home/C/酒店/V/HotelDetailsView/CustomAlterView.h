@@ -6,7 +6,7 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
-typedef void(^ClickWithAgreeBtnBlock)(void);
+typedef void(^ClickWithAgreeBtnBlock)(UIButton *btn);
 
 #import <UIKit/UIKit.h>
 
@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CustomAlterView : UIView
 
 @property (nonatomic,copy) ClickWithAgreeBtnBlock btnBlcok;
+
+@property(nonatomic,strong)NSString *htlStr;
 
 @end
 

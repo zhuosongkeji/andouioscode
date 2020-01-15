@@ -6,13 +6,18 @@
 //  Copyright © 2019 RXF. All rights reserved.
 //
 
-typedef void(^reserveClickBlock)(UIButton *btn);
 
 #import <UIKit/UIKit.h>
+
+typedef void(^reserveClickBlock)(UIButton *btn);
+
+@class HoleggModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HotelDetailsBottomView : UIView
+
+@property(nonatomic,strong)HoleggModel *gglist;
 
 @property (nonatomic,copy) reserveClickBlock reserveBlock;
 

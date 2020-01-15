@@ -34,7 +34,7 @@
 -(void)setListmodel:(MsgModel *)listmodel {
     _listmodel = listmodel;
     
-    [self.lockbtn setHidden:NO];
+    [self.lockbtn setHidden:YES];
     [self.shopImgView sd_setImageWithURL:[NSURL URLWithString:listmodel.logo_img] placeholderImage:nil];
     self.shoptitleLabel.text = listmodel.name;
     self.shopAddressLabel.text = listmodel.address;

@@ -143,7 +143,7 @@
     [_cmenuView setFrame:CGRectMake(KSCREEN_WIDTH, kStatusBarAndNavigationBarH, KSCREEN_WIDTH*0.8, KSCREEN_HEIGHT-kStatusBarAndNavigationBarH)];
     _cmenuView.delegate = self;
     
-    _menuScreeningView = [[MenuScreeningView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.topimgView.frame)+44, KSCREEN_WIDTH, MenuHeight) title:@[@"销量",@"价格"]];
+    _menuScreeningView = [[MenuScreeningView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.topimgView.frame)+44, KSCREEN_WIDTH, MenuHeight) title:@[@"销量",@"价格"] withtype:MenuScreeningViewTypeOne];
     
     _menuScreeningView.backgroundColor = KSRGBA(255, 255, 255, 1);
     

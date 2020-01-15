@@ -28,7 +28,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8R-vd-Db7">
                     <rect key="frame" x="0.0" y="336" width="320" height="64"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6W-mk-HAw">
+                        <button opaque="NO" tag="400" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6W-mk-HAw">
                             <rect key="frame" x="30" y="18.5" width="122.5" height="27"/>
                             <color key="backgroundColor" red="0.94509803920000002" green="0.9531517625" blue="0.95976561309999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -36,7 +36,7 @@
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eol-Rm-Ea8">
+                        <button opaque="NO" tag="401" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eol-Rm-Ea8">
                             <rect key="frame" x="167.5" y="18.5" width="122.5" height="27"/>
                             <color key="backgroundColor" red="0.33725490200000002" green="0.76204603910000002" blue="0.62735551599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -58,21 +58,21 @@
                         <constraint firstItem="Eol-Rm-Ea8" firstAttribute="leading" secondItem="z6W-mk-HAw" secondAttribute="trailing" constant="15" id="liB-tT-jmE"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u5P-lB-P7D">
-                    <rect key="frame" x="0.0" y="44" width="320" height="292"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71q-fV-H9Z">
+                    <rect key="frame" x="12" y="56" width="296" height="268"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="u5P-lB-P7D" secondAttribute="trailing" id="4no-4z-VG7"/>
                 <constraint firstAttribute="bottom" secondItem="Y8R-vd-Db7" secondAttribute="bottom" id="A31-aZ-Z4A"/>
                 <constraint firstItem="Y8R-vd-Db7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HHp-H4-r4O"/>
+                <constraint firstAttribute="trailing" secondItem="71q-fV-H9Z" secondAttribute="trailing" constant="12" id="JPK-7E-45X"/>
                 <constraint firstItem="nnO-cc-48K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Jyk-b2-a6O"/>
-                <constraint firstItem="u5P-lB-P7D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MLi-mp-gBP"/>
-                <constraint firstItem="u5P-lB-P7D" firstAttribute="top" secondItem="nnO-cc-48K" secondAttribute="bottom" id="Zec-YH-HKf"/>
+                <constraint firstItem="71q-fV-H9Z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="SZK-3B-dC9"/>
+                <constraint firstItem="Y8R-vd-Db7" firstAttribute="top" secondItem="71q-fV-H9Z" secondAttribute="bottom" constant="12" id="TPH-S9-Ys5"/>
                 <constraint firstAttribute="trailing" secondItem="Y8R-vd-Db7" secondAttribute="trailing" id="hqi-na-eP2"/>
-                <constraint firstItem="Y8R-vd-Db7" firstAttribute="top" secondItem="u5P-lB-P7D" secondAttribute="bottom" id="p0b-Yj-t16"/>
+                <constraint firstItem="71q-fV-H9Z" firstAttribute="top" secondItem="nnO-cc-48K" secondAttribute="bottom" constant="12" id="kow-Xd-WM6"/>
                 <constraint firstItem="nnO-cc-48K" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rmR-QE-gWY"/>
                 <constraint firstAttribute="trailing" secondItem="nnO-cc-48K" secondAttribute="trailing" id="ylL-jS-y50"/>
             </constraints>
@@ -80,7 +80,7 @@
             <connections>
                 <outlet property="agreeBtn" destination="Eol-Rm-Ea8" id="2Fy-Wx-F7w"/>
                 <outlet property="cancelBtn" destination="z6W-mk-HAw" id="q6H-s9-P79"/>
-                <outlet property="tableView" destination="u5P-lB-P7D" id="z6d-0o-B8a"/>
+                <outlet property="webViewbjView" destination="71q-fV-H9Z" id="qRz-xv-5nt"/>
             </connections>
         </view>
     </objects>
