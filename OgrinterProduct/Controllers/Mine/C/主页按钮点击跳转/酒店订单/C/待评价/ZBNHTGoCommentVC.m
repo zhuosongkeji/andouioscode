@@ -38,6 +38,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZBNHTGoCommentCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNHTGoCommentCell" owner:nil options:nil].lastObject;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     ADWeakSelf;
     cell.comBtnClickTask = ^{
         [weakSelf.navigationController popViewControllerAnimated:YES];

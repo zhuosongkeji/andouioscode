@@ -92,15 +92,19 @@
     } else {
         param[@"is_integral"] = @"0";
     }
-    //    param[@"num"] = self.model.accountNumber;
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/pay" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
-        if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
-                        NSDictionary *dict = serverInfo.response[@"data"];
-                        [self uploadWx:dict];
-        } else if ([[serverInfo.response objectForKey:@"code"] intValue] == 201) {
-            [HUDManager showTextHud:@"积分不足"];
-        }
-    }];
+    if ([self.pay_id isEqualToString:@"1"]) {
+        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/pay" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
+            if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
+                            NSDictionary *dict = serverInfo.response[@"data"];
+                            [self uploadWx:dict];
+            } else if ([[serverInfo.response objectForKey:@"code"] intValue] == 201) {
+                [HUDManager showTextHud:@"积分不足"];
+            }
+        }];
+    } else {
+        [HUDManager showTextHud:@"请选择支付方式"];
+    }
+    
 }
 
 -(void)uploadWx:(NSDictionary *)dict{

@@ -16,6 +16,7 @@
     ZBNRestaurantOrderDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:ZBNRestaurantOrderDetailCellID];
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNRestaurantOrderDetailCell" owner:nil options:nil].lastObject;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
 }

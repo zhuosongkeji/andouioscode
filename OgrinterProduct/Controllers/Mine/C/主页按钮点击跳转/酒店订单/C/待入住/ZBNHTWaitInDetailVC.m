@@ -41,6 +41,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZBNHTWaitInDetailCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNHTWaitInDetailCell" owner:nil options:nil].lastObject;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.detailM = self.detailM;
     return cell;
 }

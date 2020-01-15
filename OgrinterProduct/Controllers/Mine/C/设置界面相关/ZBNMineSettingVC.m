@@ -149,10 +149,6 @@
         ZBNChangePwdVC *vc = [[ZBNChangePwdVC alloc] init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
-    // 清除缓存
-    cell.cacheClearClickTask = ^{
-        
-    };
     return cell;
 }
 
