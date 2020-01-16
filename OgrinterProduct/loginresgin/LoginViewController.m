@@ -13,8 +13,10 @@
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 #import "RetrievepsdViewController.h"
-#import "UMShareManege.h"
+//#import "UMShareManege.h"
 #import "userInfo.h"
+#import <WechatOpenSDK/WXApi.h>
+//#import "RetrievepsdViewController.h"
 
 
 @interface LoginViewController ()
@@ -32,6 +34,7 @@
     [super viewDidLoad];
     
     self.navigationController.title = @"用户登录";
+    KAdd_Observer(@"getwxCode", self, loginRequestWX:, nil);
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -106,6 +109,7 @@
 - (IBAction)retrievepsd:(UIButton *)sender {
     KPreventRepeatClickTime(1)
     RetrievepsdViewController *retrieve = [[RetrievepsdViewController alloc]init];
+    retrieve.type = RetrievepsdViewControllerOne;
     [self.navigationController pushViewController:retrieve animated:YES];
 }
 
@@ -114,7 +118,7 @@
 //MARK:- 三方登录
 - (IBAction)loginwithThrid:(UIButton *)sender {
 //    //提示该功能暂未开放
-    [HUDManager showTextHud:@"该功能暂未开放"];
+//    [HUDManager showTextHud:@"该功能暂未开放"];
 //    KPreventRepeatClickTime(1)
 ////    [self loginRequestWX];
 //    if (![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_WechatSession]) {
@@ -147,18 +151,55 @@
 //        }
 //
 //    }];
+    
+    if([WXApi isWXAppInstalled]){//判断用户是否已安装微信App
+        
+        SendAuthReq *req = [[SendAuthReq alloc] init];
+        req.state = @"wx_oauth_authorization_state";//用于保持请求和回调的状态，授权请求或原样带回
+        req.scope = @"snsapi_userinfo";//授权作用域：获取用户个人信息
+        //唤起微信
+        [WXApi sendReq:req completion:nil];
+    }else{
+        [HUDManager showTextHud:@"未安装微信应用或版本过低"];
+    }
 }
 
 
-- (void)loginRequestWX
+- (void)loginRequestWX:(NSNotification *)not
 {
+    NSDictionary *dict = not.userInfo;
+    
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-        param[@"code"] = @"1";
+        param[@"code"] = dict[@"code"];
        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/login/wxlogin" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
-           
+           if ([serverInfo.response[@"code"] integerValue] == 200) {
+               
+               [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOK" object:nil];
+               [self dismissViewControllerAnimated:YES completion:nil];
+               
+           }else if ([serverInfo.response[@"code"] integerValue] == 203){
+               
+               NSDictionary *dict1 = serverInfo.response[@"data"];
+               RetrievepsdViewController *retr = [[RetrievepsdViewController alloc]init];
+               retr.wxdict = @{@"avator":dict1[@"avator"],@"openid":dict1[@"openid"],@"name":dict1[@"name"]};
+               retr.type = RetrievepsdViewControllerTwo;
+               retr.successBlock = ^(BOOL idx) {
+                   if (idx == YES) {
+                       [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOK" object:nil];
+                       [self dismissViewControllerAnimated:YES completion:nil];
+                   }
+               };
+               
+               [self.navigationController pushViewController:retr animated:YES];
+           }
            NSLog(@"%@",serverInfo.response[@"data"]);
        }];
 }
+
+
+
+
+
 @end

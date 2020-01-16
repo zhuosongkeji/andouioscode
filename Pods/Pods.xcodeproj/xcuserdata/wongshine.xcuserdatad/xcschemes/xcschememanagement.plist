@@ -69,7 +69,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UMCErrorCatch.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UMCPush.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UMCSecurityPlugins.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
