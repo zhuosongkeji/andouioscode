@@ -10,10 +10,17 @@
 #define login_forget @"login/forget"
 #define send_msg @"login/send"
 
+#define login_bindmobile @"login/bindmobile"//绑定手机号码
 
 #import "RetrievepsdViewController.h"
 
 @interface RetrievepsdViewController ()
+
+{
+    BOOL isbindmobile;//是否绑定
+    
+}
+
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 
 @property (weak, nonatomic) IBOutlet UITextField *msgCode;
@@ -21,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *NphonePsd;
 @property (weak, nonatomic) IBOutlet UIButton *codeBrn;
 
+@property (weak, nonatomic) IBOutlet UIButton *submintBtns;
 
 @end
 
@@ -29,6 +37,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.title = @"找回密码";
+    
+    if (self.type == RetrievepsdViewControllerOne) {
+        
+    }else if (self.type == RetrievepsdViewControllerTwo){
+        self.NphonePsd.placeholder = @"请输入密码";
+        [self.submintBtns setTitle:@"确认绑定" forState:0];
+    }
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -45,14 +60,30 @@
 }
 
 
+//MARK:- 找回密码
 -(void)loadforgetNetWork{
     
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,login_forget] params:@{@"phone":self.phoneNumber.text,@"verify":self.msgCode.text,@"new_password":self.NphonePsd.text} complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
             [HUDManager hidenHud];
             
-            [HUDManager showTextHud:sendCode];
+            [HUDManager showTextHud:@"密码修改成功"];
             
+            [self performSelector:@selector(popVc) withObject:nil afterDelay:1];
+            
+        }
+    }];
+}
+
+
+//MARK:- 绑定手机号码
+-(void)loginbindmobile{
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,login_bindmobile] params:@{@"phone":self.phoneNumber.text,@"verify":self.msgCode.text,@"password":self.NphonePsd.text,@"name":self.wxdict[@"name"],@"openid":self.wxdict[@"openid"],@"avator":self.wxdict[@"avator"]} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
+            [HUDManager hidenHud];
+            [HUDManager showTextHud:@"账号绑定成功"];
+            isbindmobile = YES;
             [self performSelector:@selector(popVc) withObject:nil afterDelay:1];
             
         }
@@ -100,13 +131,20 @@
         return;
     }
     
-    [HUDManager showTextHud:loading onView:self.view];
+    [HUDManager showLoadingHud:loading onView:self.view];
     
-    [self performSelector:@selector(loadforgetNetWork) withObject:nil afterDelay:1];
+    if (self.type == RetrievepsdViewControllerOne) {
+        [self performSelector:@selector(loadforgetNetWork) withObject:nil afterDelay:1];
+    }else if (self.type == RetrievepsdViewControllerTwo){
+        [self performSelector:@selector(loginbindmobile) withObject:nil afterDelay:1];
+    }else{
+        
+    }
 }
 
 
 -(void)popVc{
+    _successBlock(isbindmobile);
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

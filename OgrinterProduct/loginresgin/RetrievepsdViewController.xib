@@ -15,6 +15,7 @@
                 <outlet property="codeBrn" destination="925-11-uVW" id="xHv-aE-UXZ"/>
                 <outlet property="msgCode" destination="wSI-kA-DE4" id="fQV-Ou-ojr"/>
                 <outlet property="phoneNumber" destination="LCU-EE-O8V" id="kxK-Fs-7nY"/>
+                <outlet property="submintBtns" destination="rKI-QM-Gpd" id="UJY-IT-iKc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -197,6 +198,7 @@
                 <constraint firstAttribute="trailing" secondItem="f6N-lO-RV8" secondAttribute="trailing" id="bgk-fD-BDX"/>
                 <constraint firstItem="f6N-lO-RV8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="hWP-kB-ngV"/>
             </constraints>
+            <point key="canvasLocation" x="-146" y="-4"/>
         </view>
     </objects>
     <resources>

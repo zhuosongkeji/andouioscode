@@ -25,12 +25,15 @@ PODS:
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
-  - UMCAnalytics (5.5.0):
+  - UMCAnalytics (6.0.5):
     - UMCCommon
-  - UMCCommon (1.5.2)
+  - UMCCommon (2.1.1)
   - UMCCommonLog (1.0.0)
-  - UMCPush (3.2.2):
+  - UMCErrorCatch (1.0.0):
     - UMCCommon
+  - UMCPush (3.2.4):
+    - UMCCommon
+  - UMCSecurityPlugins (1.0.6)
   - UMCShare/Core (6.9.4):
     - UMCCommon
   - UMCShare/Social/AlipayShare (6.9.4):
@@ -98,7 +101,9 @@ DEPENDENCIES:
   - UMCAnalytics
   - UMCCommon
   - UMCCommonLog
+  - UMCErrorCatch
   - UMCPush
+  - UMCSecurityPlugins
   - UMCShare/Social/AlipayShare
   - UMCShare/Social/DingDing
   - UMCShare/Social/Email
@@ -129,7 +134,9 @@ SPEC REPOS:
     - UMCAnalytics
     - UMCCommon
     - UMCCommonLog
+    - UMCErrorCatch
     - UMCPush
+    - UMCSecurityPlugins
     - UMCShare
     - WechatOpenSDK
     - YYModel
@@ -145,15 +152,17 @@ SPEC CHECKSUMS:
   QWAlertView: 1f6b5d2dfdbb4af841051675f6e38277eda941a9
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
-  UMCAnalytics: 4667788559a72f2fa5077117d1b8802a3b6eb6bb
-  UMCCommon: 4392868ac47ff1b101663106bb114ba616fabbad
+  UMCAnalytics: 045be2cd1ec05aa95ad62405a850757f932e2d59
+  UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
   UMCCommonLog: 05a2d5de21858e3d870551562cff405c1366d244
-  UMCPush: 5ab89bdbcc1fe90b1c669ff79213b44dc4821ec5
+  UMCErrorCatch: 51f1b68f920233e90a3fa6d51f0456174507ec78
+  UMCPush: 1edd856027dcf905333effb4040ace5d236a7316
+  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
   UMCShare: aa233aecad67979930fe43f3a2f676023b669439
   WechatOpenSDK: 368ae03b72ee3ea1328c4f11326fbb5d2721d118
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZFPlayer: b56371acefedad94678503a28a6d34820cfd0da3
 
-PODFILE CHECKSUM: a080b1dbcb309e8c5ff1da19765650ee27634f05
+PODFILE CHECKSUM: 94de50619da239ccd072aa3e2b97434128ede757
 
 COCOAPODS: 1.8.4

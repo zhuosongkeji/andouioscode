@@ -17,7 +17,6 @@
 
 
 
-
 @interface AppDelegate ()<WXApiDelegate>
 
 
@@ -29,13 +28,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
 //    KAdd_Observer(@"PushViewController", self, PushViewController, nil);
     
 //    初始化友盟
-//    [UMConfigure initWithAppkey:UMKEY channel:nil];
-////    [UMConfigure setLogEnabled:NO];
-//    [self initUMSDK];
-//    
+    [UMConfigure initWithAppkey:UMKEY channel:nil];
+//    [UMConfigure setLogEnabled:NO];
+    [self initUMSDK];
+//
+    
     [IQKeyboardManager sharedManager].enable = YES;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
@@ -56,7 +57,7 @@
 //    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:login];
 //    self.window.rootViewController = nav;
     
-    [WXApi registerApp:WeChatAPPKEY universalLink:@"https://"];
+    [WXApi registerApp:WeChatAPPKEY universalLink:@"https://www.baidu.com/"];
     
     [self.window makeKeyAndVisible];
 
@@ -66,11 +67,11 @@
 
 //MARK:- 加载
 -(void)initUMSDK{
-    
+
     [UMShareManege setPlaform:UMSocialPlatformType_WechatSession appKey:WeChatAPPKEY appSecret:WeChatSecret redirectURL:@"https://"];
     [UMShareManege setPlaform:UMSocialPlatformType_QQ appKey:QQAPPKEY appSecret:QQSecret redirectURL:nil];
     [UMShareManege setPlaform:UMSocialPlatformType_Sina appKey:SinaAPPKEY appSecret:SinaSecret redirectURL:SinaRedirectURL];
-    
+
 }
 
 
@@ -88,6 +89,19 @@
                 break;
         }
     }
+    if ([resp isMemberOfClass:[SendAuthResp class]])  {
+        SendAuthResp *aresp = (SendAuthResp *)resp;
+        if (aresp.errCode != 0 ) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSLog(@"授权失败");
+            });
+            return;
+        }
+        //授权成功获取 OpenId
+        NSString *code = aresp.code;
+        KPost_Notify(@"getwxCode", nil, @{@"code":aresp.code});
+
+    }
 }
 
 
@@ -102,18 +116,16 @@
 
 //MARK:-支持所有iOS系统
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
-    
-    if (!result) {
         // 其他如支付等SDK的回调
-        if ([url.host isEqualToString:@"pay"]) {
-            NSLog(@"%@",url.host);
-            return [WXApi handleOpenURL:url delegate:(id<WXApiDelegate>)self];
-        }
+    if ([url.host isEqualToString:@"pay"]) {
+        NSLog(@"%@",url.host);
+        return [WXApi handleOpenURL:url delegate:(id<WXApiDelegate>)self];
     }
     
-    return result;
+    if ([url.host isEqualToString:@"oauth"]){//微信登录
+        return [WXApi handleOpenURL:url delegate:self];
+    }
+    return YES;
 }
 
 
