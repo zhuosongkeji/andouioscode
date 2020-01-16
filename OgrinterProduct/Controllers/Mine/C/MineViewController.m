@@ -17,6 +17,7 @@
 #import "ZBNMyWalletVC.h"
 
 
+
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
@@ -89,6 +90,7 @@
     self.mTableView.tableFooterView = [UILabel new];
     self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
     self.vipView.layer.cornerRadius = 10;
+    self.headImageV.userInteractionEnabled = YES;
 }
 
 - (void)setupNav
@@ -177,7 +179,18 @@
 {
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(vipViewClick)];
     [self.vipView addGestureRecognizer:tapGes];
+    
+    UITapGestureRecognizer *headerGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headerClick)];
+    [self.headImageV addGestureRecognizer:headerGes];
 }
+
+- (void)headerClick
+{
+    // 进入vip充值界面
+    
+    [self pushViewControllerWithString:@"ZBNVIPRechargeVC"];
+}
+
 
 - (void)vipViewClick
 {
