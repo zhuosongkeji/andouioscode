@@ -83,7 +83,7 @@
         if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
             [HUDManager hidenHud];
             [HUDManager showTextHud:@"账号绑定成功"];
-            isbindmobile = YES;
+//            isbindmobile = YES;
             [self performSelector:@selector(popVc) withObject:nil afterDelay:1];
             
         }
@@ -144,7 +144,7 @@
 
 
 -(void)popVc{
-    _successBlock(isbindmobile);
+//    _successBlock(isbindmobile);
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

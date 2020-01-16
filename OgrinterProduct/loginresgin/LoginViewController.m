@@ -176,6 +176,18 @@
        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/login/wxlogin" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
            if ([serverInfo.response[@"code"] integerValue] == 200) {
                
+               NSDictionary *dict = [serverInfo.response objectForKey:@"data"];
+               userInfo *info = [[userInfo alloc]init];
+               info.uid = [NSString stringWithFormat:@"%@",dict[@"id"]];
+               info.uName = [NSString stringWithFormat:@"%@",dict[@"name"]];
+               info.uPhone = [NSString stringWithFormat:@"%@",dict[@"mobile"]];
+               info.uAcct = [NSString stringWithFormat:@"%@",dict[@"mobile"]];
+               info.token = [NSString stringWithFormat:@"%@",dict[@"token"]];
+               NSData *infoData = [NSKeyedArchiver archivedDataWithRootObject:info];
+               [[NSUserDefaults standardUserDefaults] setObject:infoData forKey:@"infoData"];
+               
+               [[NSUserDefaults standardUserDefaults] synchronize];
+               
                [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOK" object:nil];
                [self dismissViewControllerAnimated:YES completion:nil];
                
@@ -186,10 +198,10 @@
                retr.wxdict = @{@"avator":dict1[@"avator"],@"openid":dict1[@"openid"],@"name":dict1[@"name"]};
                retr.type = RetrievepsdViewControllerTwo;
                retr.successBlock = ^(BOOL idx) {
-                   if (idx == YES) {
-                       [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOK" object:nil];
-                       [self dismissViewControllerAnimated:YES completion:nil];
-                   }
+//                   if (idx == YES) {
+//                       [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOK" object:nil];
+//                       [self dismissViewControllerAnimated:YES completion:nil];
+//                   }
                };
                
                [self.navigationController pushViewController:retr animated:YES];
