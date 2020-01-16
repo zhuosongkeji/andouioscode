@@ -23,3 +23,5 @@ UIKIT_EXTERN NSString * const ZBNPersonSettingURL;
 UIKIT_EXTERN NSString * const ZBNSendVCodeURL;
 /*! 积分明细URL */
 UIKIT_EXTERN NSString * const ZBNIntegerURL;
+/*! 会员购买URL */
+UIKIT_EXTERN NSString * const ZBNVipRechargeURL;
