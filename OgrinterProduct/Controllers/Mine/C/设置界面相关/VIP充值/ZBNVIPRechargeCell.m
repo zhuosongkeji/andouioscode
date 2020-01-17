@@ -33,6 +33,9 @@
         NSLog(@"选择了微信");
     } else if (sender.tag == 20 && sender.selected) {
         self.wxPayBtn.selected = NO;
+        if (self.payBtnClickTask) {
+            self.payBtnClickTask(@"99");
+        }
         NSLog(@"选择了余额");
     }
 }

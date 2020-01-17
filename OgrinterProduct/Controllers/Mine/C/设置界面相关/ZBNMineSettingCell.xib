@@ -423,6 +423,7 @@
                 <outlet property="downLoadSwitch" destination="gnR-Tz-fCF" id="v1c-Dd-0a9"/>
                 <outlet property="editionLabel" destination="WQK-9r-vN5" id="0Gq-d3-dWb"/>
                 <outlet property="feedbackView" destination="rf0-5o-Hdm" id="tyZ-0U-NEd"/>
+                <outlet property="nameView" destination="Jlh-za-vL7" id="iZb-yW-NGm"/>
                 <outlet property="newsSwitch" destination="mP4-fG-WHK" id="8TH-vK-cDq"/>
                 <outlet property="phoneNumber" destination="Meb-B3-ALu" id="SHi-WG-n2N"/>
                 <outlet property="phoneView" destination="xOI-Y4-yKF" id="8Wa-qj-V6a"/>
@@ -430,7 +431,7 @@
                 <outlet property="userIconV" destination="J4H-hJ-Hm6" id="YmK-He-8Kf"/>
                 <outlet property="userName" destination="6LU-3r-yEo" id="rpE-Cf-7wG"/>
             </connections>
-            <point key="canvasLocation" x="-646" y="-29"/>
+            <point key="canvasLocation" x="-814" y="146"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -26,6 +26,9 @@
 // ------------------------用户的昵称begin------------------------------->
 /*! 用户昵称 */
 @property (weak, nonatomic) IBOutlet UILabel *userName;
+/*! 用户昵称view */
+@property (weak, nonatomic) IBOutlet UIView *nameView;
+
 // ------------------------用户的昵称end--------------------------------->
 
 // ------------------------用户的密码begin------------------------------->
@@ -132,11 +135,22 @@
     // 清除缓存
     UITapGestureRecognizer *cacheGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cacheClear)];
     [self.cacheView addGestureRecognizer:cacheGes];
+    // 用户昵称
+    UITapGestureRecognizer *nameGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(nameChange)];
+    [self.nameView addGestureRecognizer:nameGes];
     
 }
 
 
 ///MARK: 事件监听
+
+- (void)nameChange
+{
+    if (self.nameChangeTask) {
+        self.nameChangeTask();
+    }
+}
+
 - (void)aboutUsClick
 {
     if (self.aboutUsCellClickTask) {

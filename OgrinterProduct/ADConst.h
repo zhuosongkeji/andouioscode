@@ -24,4 +24,10 @@ UIKIT_EXTERN NSString * const ZBNSendVCodeURL;
 /*! 积分明细URL */
 UIKIT_EXTERN NSString * const ZBNIntegerURL;
 /*! 会员购买URL */
-UIKIT_EXTERN NSString * const ZBNVipRechargeURL;
+UIKIT_EXTERN NSString * const ZBNVipRechargeURL; 
+/*! 修改昵称URL */
+UIKIT_EXTERN NSString * const ZBNChangeNameURL; 
+/*! 饭店订单URL */
+UIKIT_EXTERN NSString * const ZBNGourmetURL;  
+/*! 饭店订单详情URL */
+UIKIT_EXTERN NSString * const ZBNGourmetDetailURL;

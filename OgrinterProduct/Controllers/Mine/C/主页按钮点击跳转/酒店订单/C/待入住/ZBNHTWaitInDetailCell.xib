@@ -467,7 +467,7 @@
                 <outlet property="real_name" destination="DSG-oT-Dg8" id="QSI-C5-H9V"/>
                 <outlet property="start_time" destination="nrl-wH-C6P" id="K07-Eg-dmr"/>
             </connections>
-            <point key="canvasLocation" x="309" y="1212"/>
+            <point key="canvasLocation" x="-50" y="1094"/>
         </tableViewCell>
     </objects>
     <resources>
