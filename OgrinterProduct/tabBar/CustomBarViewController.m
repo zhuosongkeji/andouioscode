@@ -134,6 +134,7 @@
     CustomNavigationController* nav = [[navVc alloc] initWithRootViewController:childController];
     UIColor* color = [UIColor whiteColor];
     
+    
     // 设置导航栏默认的背景颜色
     [WRNavigationBar wr_setDefaultNavBarBarTintColor:KSDUAULTCOLORE];
     // 设置导航栏所有按钮的默认颜色

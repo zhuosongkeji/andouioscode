@@ -14,22 +14,43 @@
 @implementation WRNavigationBar
 
 + (BOOL)isIphoneX {
-    struct utsname systemInfo;
-    uname(&systemInfo);
-    NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSASCIIStringEncoding];
-    if ([platform isEqualToString:@"i386"] || [platform isEqualToString:@"x86_64"]) {
-        // judgment by height when in simulators
-        return (CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(375, 812)) ||
-                CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(812, 375)));
+//    struct utsname systemInfo;
+//    uname(&systemInfo);
+//    NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSASCIIStringEncoding];
+//    if ([platform isEqualToString:@"i386"] || [platform isEqualToString:@"x86_64"]) {
+//        // judgment by height when in simulators
+//        return (CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(375, 812)) ||
+//                CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(812, 375)));
+//    }
+//    BOOL isIPhoneX = [platform isEqualToString:@"iPhone10,3"] || [platform isEqualToString:@"iPhone10,6"];
+//    return isIPhoneX;
+    
+    if ([UIApplication sharedApplication].statusBarFrame.size.height == 44) {
+        return YES;
     }
-    BOOL isIPhoneX = [platform isEqualToString:@"iPhone10,3"] || [platform isEqualToString:@"iPhone10,6"];
-    return isIPhoneX;
+    else {
+        return NO;
+    }
+    
 }
 + (CGFloat)navBarBottom {
-    return [self isIphoneX] ? 88 : 64;
+//    return [self isIphoneX] ? 88 : 64;
+    if ([self isIphoneX]) {
+           return 88;
+       }
+       else {
+           return 64;
+       }
+    
 }
 + (CGFloat)tabBarHeight {
-    return [self isIphoneX] ? 83 : 49;
+//    return [self isIphoneX] ? 83 : 49;
+    if ([self isIphoneX]) {
+        return 83;
+    }
+    else {
+        return 49;
+    }
 }
 + (CGFloat)screenWidth {
     return [UIScreen mainScreen].bounds.size.width;

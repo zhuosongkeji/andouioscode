@@ -46,7 +46,11 @@ static NSString * const ZBNMyAddressCellID = @"address";
 /*! 设置table */
 - (void)setupTable
 {
-    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
+    if (@available(iOS 11, *)) {
+        self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
+    } else if (@available(iOS 10, *)){
+        
+    }
     
     self.navigationItem.title = @"我的地址";
     

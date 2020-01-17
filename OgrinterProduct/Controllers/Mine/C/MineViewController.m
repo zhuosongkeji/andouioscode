@@ -18,6 +18,7 @@
 
 
 
+
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
@@ -68,6 +69,13 @@
     
     // 接收登录成功过的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"loginOK" object:nil];
+    
+    if (@available(iOS 11, *)) {
+        
+    } else if (@available(iOS 10, *)){
+        self.mTableView.contentInset = UIEdgeInsetsMake(- 64, 0, 0, 0);
+    }
+    
 }
 
 
@@ -211,11 +219,11 @@
 - (IBAction)middleViewBtnClick:(UIButton *)sender {
     // 商家订单
     if (sender.tag == 300) {
-        [self pushViewControllerWithString:@"ZBNRestaurantOrderVC"];
+        [self pushViewControllerWithString:@"ZBNShoppingHallOrderVC"];
     } else if (sender.tag == 301) { // 酒店订单
         [self pushViewControllerWithString:@"ZBNHTOrderVC"];
     } else if (sender.tag == 302) { // 饭店订单
-        [self pushViewControllerWithString:@"ZBNShoppingHallOrderVC"];
+        [self pushViewControllerWithString:@"ZBNRTMainVC"];
     }
 }
 
@@ -235,14 +243,14 @@
         } else if (sender.tag == 503) {  // 我的收藏
             [self pushViewControllerWithString:@"ZBNShopingCartVC"];
         } else if (sender.tag == 504) { // 操作视频
-            [self pushViewControllerWithString:@"ZBNOperationVideoVC"];
+//            [self pushViewControllerWithString:@"ZBNOperationVideoVC"];
         } else if (sender.tag == 505) { // 我的地址
             [self pushViewControllerWithString:@"ZBNMyAddressVC"];
         } else if (sender.tag == 506) { // 我的二维码
             [HUDManager showTextHud:OtherMsg];
         } else if (sender.tag == 507) { // 我的发布
             [HUDManager showTextHud:OtherMsg];
-//            [self pushViewControllerWithString:@"ZBNMyPostVC"];
+            [self pushViewControllerWithString:@"ZBNMyPostVC"];
         }
     
 }

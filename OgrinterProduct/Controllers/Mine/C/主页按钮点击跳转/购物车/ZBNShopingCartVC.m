@@ -14,7 +14,7 @@
 #import "ZBNShoppingCartModel.h"
 #import "FKHRequestManager.h"
 #import "OnlineBookingViewController.h"
-
+#import "ZBNNewAddressVC.h"
 
 @interface ZBNShopingCartVC () <UITableViewDelegate, UITableViewDataSource, ZBNShoppingCartCellDelegate>
 
@@ -64,6 +64,8 @@ static NSString * const ZBNShopingCartCellID = @"shoppingCart";
             
         }else if ([serverInfo.response[@"code"] integerValue] == 201){
             [HUDManager showTextHud:serverInfo.response[@"msg"]];
+            ZBNNewAddressVC *vc = [[ZBNNewAddressVC alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
         }else{
             [HUDManager showTextHud:loadError];
         }

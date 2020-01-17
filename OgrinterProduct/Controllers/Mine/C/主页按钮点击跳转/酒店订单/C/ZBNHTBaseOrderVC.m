@@ -10,6 +10,7 @@
 
 #import "ZBNHTComModel.h"  // 酒店通用模型
 #import "ZBNHTComCell.h"
+#import "ZBNComDataNilCell.h"
 
 
 @interface ZBNHTBaseOrderVC ()
@@ -41,6 +42,7 @@
 - (void)setupTable
 {
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = KSRGBA(241, 241, 241, 1);
 }
 
 
@@ -61,20 +63,33 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return self.dataArr.count;
+    if (self.dataArr.count >= 1) {
+        return self.dataArr.count;
+    } else {
+        return 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZBNHTComCell *cell = [ZBNHTComCell regiserCellForTable:tableView];
-    cell.comM = self.dataArr[indexPath.row];
-    return cell;
+    if (self.dataArr.count >= 1) {
+        ZBNHTComCell *cell = [ZBNHTComCell regiserCellForTable:tableView];
+        cell.comM = self.dataArr[indexPath.row];
+        return cell;
+    } else {
+        ZBNComDataNilCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNComDataNilCell" owner:nil options:nil].lastObject;
+        return cell;
+    }
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 300;
+    if (self.dataArr.count >= 1) {
+        return 300;
+    } else {
+        return self.view.height;
+    }
 }
 
 

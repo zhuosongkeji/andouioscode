@@ -114,6 +114,16 @@
 {
     [super awakeFromNib];
     
+    self.secBtn.layer.cornerRadius = 10;
+    self.secBtn.layer.borderWidth = 1;
+    self.secBtn.layer.borderColor = KSRGBA(97, 194, 156, 1).CGColor;
+    [self.secBtn setTitleColor:KSRGBA(97, 194, 156, 1) forState:UIControlStateNormal];
+    
+    self.thiBtn.layer.cornerRadius = 10;
+    self.thiBtn.layer.borderWidth = 1;
+    self.thiBtn.layer.borderColor = KSRGBA(97, 194, 156, 1).CGColor;
+    [self.thiBtn setTitleColor:KSRGBA(97, 194, 156, 1) forState:UIControlStateNormal];
+    
 }
 
 

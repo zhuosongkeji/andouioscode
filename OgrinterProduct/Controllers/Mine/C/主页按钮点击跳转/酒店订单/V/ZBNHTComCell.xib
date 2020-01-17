@@ -231,7 +231,7 @@
                 <outlet property="thiBtn" destination="d7Q-Wo-DuO" id="Hx6-qh-OYP"/>
                 <outlet property="totalPrice" destination="tYM-ta-r8Z" id="JVm-aI-scI"/>
             </connections>
-            <point key="canvasLocation" x="132" y="-5"/>
+            <point key="canvasLocation" x="183" y="97"/>
         </tableViewCell>
     </objects>
     <resources>

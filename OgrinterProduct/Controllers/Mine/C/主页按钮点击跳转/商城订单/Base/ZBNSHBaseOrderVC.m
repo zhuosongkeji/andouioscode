@@ -9,6 +9,7 @@
 #import "ZBNSHBaseOrderVC.h"
 #import "ZBNSHCommonCell.h"
 #import "ZBNSHCommonModel.h"
+#import "ZBNComDataNilCell.h"
 
 
 @interface ZBNSHBaseOrderVC ()
@@ -131,21 +132,33 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataArr.count;
+    if (self.dataArr.count >= 1) {
+        return self.dataArr.count;
+    } else {
+        return 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (self.dataArr.count >= 1) {
+        ZBNSHCommonCell *cell = [ZBNSHCommonCell regiserCellForTable:tableView];
+        cell.commonM = self.dataArr[indexPath.row];
+        return cell;
+    } else {
+        ZBNComDataNilCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNComDataNilCell" owner:nil options:nil].lastObject;
+        return cell;
+    }
     
-    ZBNSHCommonCell *cell = [ZBNSHCommonCell regiserCellForTable:tableView];
-    
-    cell.commonM = self.dataArr[indexPath.row];
-    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 300;
+    if (self.dataArr.count >= 1) {
+        return 300;
+    } else {
+        return self.view.height;
+    }
 }
 
 @end

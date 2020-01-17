@@ -57,7 +57,7 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
         @strongify(self)
         [self setNeedsStatusBarAppearanceUpdate];
     };
-    
+
     /// 播放完成
     self.player.playerDidToEnd = ^(id  _Nonnull asset) {
         @strongify(self)
@@ -70,7 +70,7 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
             [self.player stop];
         }
     };
-    
+
     self.player.assetURLs = self.assetURLs;
 }
 
@@ -86,25 +86,25 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-    
+
     CGFloat x = 0;
     CGFloat y = getRectNavAndStatusHight;
     CGFloat w = CGRectGetWidth(self.view.frame);
     CGFloat h = w*9/16;
     self.containerView.frame = CGRectMake(x, y, w, h);
-    
+
     w = 44;
     h = w;
     x = (CGRectGetWidth(self.containerView.frame)-w)/2;
     y = (CGRectGetHeight(self.containerView.frame)-h)/2;
     self.playBtn.frame = CGRectMake(x, y, w, h);
-    
+
     w = 100;
     h = 30;
     x = (CGRectGetWidth(self.view.frame)-w)/2;
     y = CGRectGetMaxY(self.containerView.frame)+50;
     self.changeBtn.frame = CGRectMake(x, y, w, h);
-    
+
     w = 100;
     h = 30;
     x = (CGRectGetWidth(self.view.frame)-w)/2;

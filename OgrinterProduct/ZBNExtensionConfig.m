@@ -16,7 +16,9 @@
 #import "ZBNSHOrderDetailComM.h"
 #import "ZBNMineModel.h"
 #import "ZBNSHCommonModel.h"
-
+#import "ZBNRTComModel.h"
+#import "ZBNRTFoodsModel.h"
+#import "ZBNRTComDetailModel.h"
 
 @implementation ZBNExtensionConfig
 
@@ -57,12 +59,26 @@
               @"ID" : @"id",
           };
     }];
-
     [ZBNSHCommonModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
            return @{
                @"ID" : @"id",
            };
        }];
+    [ZBNRTComModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+              return @{
+                  @"ID" : @"id",
+              };
+          }];
+    [ZBNRTFoodsModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+                 return @{
+                     @"ID" : @"id",
+                 };
+             }]; 
+    [ZBNRTComDetailModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+        return @{
+            @"ID" : @"id",
+        };
+    }];
 }
 
 

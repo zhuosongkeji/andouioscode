@@ -10,12 +10,15 @@
 
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class ZBNRTComModel;
 @interface ZBNCommenOrderCell : UITableViewCell
 
 + (instancetype)regiserCellForTable:(UITableView *)tableView;
 
-@property (nonatomic, copy) void(^orderDetailClickTask)(void);
+/*! 模型数据 */
+@property (nonatomic, strong) ZBNRTComModel *comM;
+/*! 订单详情点击 */
+@property (nonatomic, copy) void(^detailBtnClickTask)(void);
 
 @end
 

@@ -17,6 +17,7 @@
 #import "ZBNChangePhoneNumberVC.h"  // 修改手机号
 #import "ZBNChangePwdVC.h"     // 修改密码
 #import "LoginViewController.h"
+#import "ZBNChangeNameVC.h"  // 修改昵称
 
 @interface ZBNMineSettingVC ()
 /*! 底部视图 */
@@ -39,6 +40,7 @@
     [self loadSettingVcData];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginOK) name:@"loginOK" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeNameOK) name:@"changeNameOK" object:nil];
     
 }
 
@@ -70,7 +72,7 @@
 
         [self exitRequest];
         [self loadSettingVcData];
-
+        
     };
     self.tableView.tableFooterView = footerV;
     self.footerV = footerV;
@@ -78,6 +80,11 @@
 
 
 - (void)loginOK
+{
+    [self loadSettingVcData];
+}
+
+- (void)changeNameOK
 {
     [self loadSettingVcData];
 }
@@ -147,6 +154,11 @@
     // 修改密码
     cell.changePwdClickTask = ^{
         ZBNChangePwdVC *vc = [[ZBNChangePwdVC alloc] init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    // 修改昵称
+    cell.nameChangeTask = ^{
+        ZBNChangeNameVC *vc = [[ZBNChangeNameVC alloc] init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     return cell;

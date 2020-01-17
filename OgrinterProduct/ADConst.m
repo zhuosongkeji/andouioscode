@@ -27,3 +27,9 @@ NSString * const ZBNSendVCodeURL = @"http://andou.zhuosongkj.com/api/login/send"
 NSString * const ZBNIntegerURL = @"http://andou.zhuosongkj.com/api/wallet/integral";
 
 NSString * const ZBNVipRechargeURL = @"http://andou.zhuosongkj.com/index.php/api/users/vip_recharge";
+
+NSString * const ZBNChangeNameURL = @"http://andou.zhuosongkj.com/index.php/api/modification/user_head";
+
+NSString * const ZBNGourmetURL = @"http://andou.zhuosongkj.com/index.php/api/gourmet/order";
+
+NSString * const ZBNGourmetDetailURL = @"http://andou.zhuosongkj.com/index.php/api/gourmet/order_details";
