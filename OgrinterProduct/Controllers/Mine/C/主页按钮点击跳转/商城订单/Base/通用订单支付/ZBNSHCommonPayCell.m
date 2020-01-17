@@ -65,7 +65,7 @@
     // 商品名
     self.name.text = comM.details.name;
     // 商品规格
-    self.goods_attr.text = [NSString stringWithFormat:@"%@%@%@%@",comM.details.attr_value[0],comM.details.attr_value[1],comM.details.attr_value[2],comM.details.attr_value[3]];
+//    self.goods_attr.text = [NSString stringWithFormat:@"%@%@%@%@",comM.details.attr_value[0],comM.details.attr_value[1],comM.details.attr_value[2],comM.details.attr_value[3]];
     // 价格
     self.priceLabel.text = comM.details.price;
     // 数量

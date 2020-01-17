@@ -71,6 +71,7 @@
         params[@"uid"] = unmodel.uid;
         params[@"token"] = unmodel.token;
         params[@"order_sn"] = self.getOrderNum;
+        params[@"did"] = self.comM.ID;
         [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/details" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
             self.comM = [ZBNSHOrderDetailComM mj_objectWithKeyValues:serverInfo.response[@"data"]];
             self.comM.details = [ZBNSHOrderDetailsM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"details"][0]];
