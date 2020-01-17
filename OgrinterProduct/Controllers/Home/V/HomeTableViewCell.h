@@ -16,24 +16,29 @@ typedef enum : NSUInteger {
 }CustomCellStyle;
 
 #import <UIKit/UIKit.h>
-@class HomeCellModel;
+@class HomeCellModel,OnlineOrderModel;
 
 NS_ASSUME_NONNULL_BEGIN
+
+typedef void(^HomeTableViewCellBlock)(NSInteger idx);
 
 @interface HomeTableViewCell : UITableViewCell
 
 @property (nonatomic,strong)HomeCellModel *listmodel;
 
+@property(nonatomic,strong)OnlineOrderModel *modelist;
+
 @property(nonatomic,strong)NSArray *listArr;
 
 @property(nonatomic)CustomCellStyle style;
+
+@property(nonatomic,copy)HomeTableViewCellBlock mblock;
 
 
 + (instancetype)tempTableViewCellWith:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath;
 
 
 - (void)configTempCellWith:(NSIndexPath *)indexPath;
-
 
 
 @end

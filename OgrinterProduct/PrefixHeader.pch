@@ -17,7 +17,7 @@
 #else
 
 //Release状态下的线上API
-#define API_BASE_URL_STRING     @"http://www.companydomain.com/api/"
+#define API_BASE_URL_STRING     @"http://andou.zhuosongkj.com/index.php/api/"
 
 
 #endif
@@ -60,6 +60,8 @@
 #define HomeSectionArr @[@"入驻商家",@"336",@"337",@"338"]
 
 #define HotelDetailsListArr @[@"预定",@"评论",@"商家",@"环境设施"]
+
+#define HotelDetalsListArr @[@"预定",@"评论",@"商家"]
 
 #define SeckillDetailsListArr @[@"产品详情",@"产品评价"]
 

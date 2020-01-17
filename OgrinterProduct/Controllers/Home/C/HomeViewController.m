@@ -9,6 +9,8 @@
 
 #define BannerApi @"index/index"
 
+#define gourmet_list @"gourmet/list"//获取 饭店数据
+
 #import "HomeViewController.h"
 #import "HQImagePageControl.h"
 #import "CustomSectionView.h"
@@ -22,6 +24,7 @@
 #import "RedPacketView.h"
 #import "PacketModel.h"
 #import "HomeModel.h"
+#import "OnlineOrderModel.h"
 
 
 @interface HomeViewController ()<HQFlowViewDelegate,HQFlowViewDataSource,UITableViewDataSource,UITableViewDelegate,iCarouselDelegate,iCarouselDataSource>{
@@ -46,6 +49,8 @@
 @property (nonatomic,strong) NSMutableArray *notisArr;
 @property (nonatomic,strong) NSMutableArray *merchantArr;
 
+@property(nonatomic,strong)NSMutableArray *mData;
+
 
 @property (nonatomic, strong) UIView *selectView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
@@ -65,6 +70,14 @@
         _imgArr = [NSMutableArray array];
     }
     return _imgArr;
+}
+
+//MARK:-imgArr
+-(NSMutableArray *)mData {
+    if (!_mData) {
+        _mData = [NSMutableArray array];
+    }
+    return _mData;
 }
 
 //MARK:-imgArr
@@ -208,6 +221,7 @@
 
 
 -(void)loadNetWork {
+    
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,BannerApi] params:@{} complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([serverInfo.response[@"code"] integerValue] == 200) {
             NSDictionary *dict = serverInfo.response[@"data"];
@@ -243,14 +257,37 @@
                 HomeModel *model = [[HomeModel alloc]initWithDict:dict[@"merchants"][i]];
                 [self.merchantArr addObject:model];
             }
+            [self floadNetWork];
             
             [self.noticebjView addSubview:self.queeView];
             [self.pageFlowView reloadData];//刷新轮播
             [self.icarousel reloadData];
-
+            
             [self.mTableView reloadData];
+            
         }else {
             
+        }
+    }];
+    
+    [self floadNetWork];
+}
+
+//MARK:- 获取饭店数据
+-(void)floadNetWork{
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,gourmet_list] params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            
+            NSArray *arr = serverInfo.response[@"data"];
+            for (int i = 0; i < [arr count]; i ++) {
+                NSDictionary *dic = arr[i];
+                OnlineOrderModel *model = [[OnlineOrderModel alloc]initWithDict:dic];
+                [self.mData addObject:model];
+            }
+    
+        }else {
+            [HUDManager showTextHud:loadError];
         }
     }];
 }
@@ -305,7 +342,7 @@
 
 //MARK:- tableView
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 3;
 }
 
 
@@ -313,7 +350,7 @@
     if (section == 0 || section == 1)
         return 1;
     else
-        return 3;
+        return [_mData count];
 }
 
 
@@ -321,13 +358,24 @@
     HomeTableViewCell *cell = [HomeTableViewCell tempTableViewCellWith:tableView indexPath:indexPath];
     [cell configTempCellWith:indexPath];
     
+    cell.tag = indexPath.row;
     if (indexPath.section == 0) {
         if ([self.merchantArr count])
             cell.listArr = self.merchantArr;
         
-    }else{
+    }else if (indexPath.section == 1){
         
-    }
+    }else if (indexPath.section == 2){
+        
+        if ([self.mData count]) {
+            cell.modelist = self.mData[indexPath.row];
+        }
+        
+    }else{}
+    
+    cell.mblock = ^(NSInteger idx) {
+        
+    };
     
     return cell;
 }
@@ -358,7 +406,7 @@
     
     __weak typeof(&*self)WeakSelf = self;
     v.btnclickBlock = ^(UIButton * _Nonnull btn) {
-        if (section == 3) {
+        if (section == 2) {
             [WeakSelf pushViewControllerWithString:@"OnlineOrderViewController"];
         }else if (section == 0){
             KPost_Notify(@"tabBarController", nil, nil);
@@ -375,7 +423,7 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [[@[@"138",@"138",@"178",@"222"] objectAtIndex:indexPath.section] floatValue];
+    return [[@[@"138",@"138",@"222"] objectAtIndex:indexPath.section] floatValue];
 }
 
 
@@ -463,6 +511,8 @@
         [self pushViewControllerwithString:ControllerVCArr[index]];
     }else if(index == 1){
         [self pushViewControllerWithString:ControllerVCArr[index]];
+    }else if (index == 2){
+        [self pushViewControllerWithString:@"OnlineOrderViewController"];
     }else {
         [HUDManager showTextHud:OtherMsg];
     }

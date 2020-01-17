@@ -66,9 +66,7 @@
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,login_forget] params:@{@"phone":self.phoneNumber.text,@"verify":self.msgCode.text,@"new_password":self.NphonePsd.text} complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
             [HUDManager hidenHud];
-            
             [HUDManager showTextHud:@"密码修改成功"];
-            
             [self performSelector:@selector(popVc) withObject:nil afterDelay:1];
             
         }
@@ -81,9 +79,22 @@
     
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,login_bindmobile] params:@{@"phone":self.phoneNumber.text,@"verify":self.msgCode.text,@"password":self.NphonePsd.text,@"name":self.wxdict[@"name"],@"openid":self.wxdict[@"openid"],@"avator":self.wxdict[@"avator"]} complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
+            
+            NSDictionary *dict = [serverInfo.response objectForKey:@"data"];
+            userInfo *info = [[userInfo alloc]init];
+            info.uid = [NSString stringWithFormat:@"%@",dict[@"id"]];
+            info.uName = [NSString stringWithFormat:@"%@",dict[@"name"]];
+            info.uPhone = [NSString stringWithFormat:@"%@",dict[@"mobile"]];
+            info.uAcct = [NSString stringWithFormat:@"%@",dict[@"mobile"]];
+            info.token = [NSString stringWithFormat:@"%@",dict[@"token"]];
+            NSData *infoData = [NSKeyedArchiver archivedDataWithRootObject:info];
+            [[NSUserDefaults standardUserDefaults] setObject:infoData forKey:@"infoData"];
+            
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
             [HUDManager hidenHud];
             [HUDManager showTextHud:@"账号绑定成功"];
-//            isbindmobile = YES;
+            isbindmobile = YES;
             [self performSelector:@selector(popVc) withObject:nil afterDelay:1];
             
         }
@@ -144,7 +155,7 @@
 
 
 -(void)popVc{
-//    _successBlock(isbindmobile);
+    _successBlock(isbindmobile);
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

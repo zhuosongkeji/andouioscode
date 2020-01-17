@@ -13,6 +13,7 @@
 
 
 #import "MsgViewController.h"
+#import "HotelDetlisViewController.h"
 #import "MenuScreeningView.h"
 #import "MsgViewCell.h"
 #import "MsgModel.h"
@@ -274,8 +275,15 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    MsgModel *model = self.shoArr[indexPath.row];
     // 取消Cell的选中状态
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    HotelDetlisViewController *holel = [[HotelDetlisViewController alloc]init];
+    holel.navigationItem.title = model.name;
+    holel.jid = model.uid;
+    holel.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:holel animated:YES];
 }
 
 
