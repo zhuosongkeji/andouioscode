@@ -11,6 +11,8 @@
 #import "HomeCellModel.h"
 #import "HXCollectionViewCell.h"
 #import "WSLWaterFlowLayout.h"
+#import "OnlineOrderModel.h"
+#import "OnlineOrderListModel.h"
 
 
 @interface HomeTableViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate>
@@ -19,6 +21,10 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView2;
 
 @property (weak, nonatomic) IBOutlet UIView *startbjView;
+
+@property (weak, nonatomic) IBOutlet UILabel *title;
+
+@property (weak, nonatomic) IBOutlet UIButton *dzbtn;
 
 
 
@@ -58,8 +64,6 @@
     WSLWaterFlowLayout *mylayout = [[WSLWaterFlowLayout alloc]init];
     mylayout.delegate = self;
     
-    [self setupStar];
-    
     [collectionView setCollectionViewLayout:mylayout];
     collectionView.delegate = self;
     collectionView.dataSource = self;
@@ -71,7 +75,17 @@
 
 -(void)setListmodel:(HomeCellModel *)listmodel {
     _listmodel = listmodel;
+}
+
+
+-(void)setModelist:(OnlineOrderModel *)modelist{
+    _modelist = modelist;
     
+    self.title.text = modelist.name;
+    
+    [self.dzbtn setTitle:[NSString stringWithFormat:@"  %@",modelist.praise_num] forState:0];
+    [self setupStar:modelist.stars_all];
+    [self.mCollectionView2 reloadData];
 }
 
 
@@ -155,7 +169,6 @@
 
 //MARK: - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    
     return 1;
 }
 
@@ -166,7 +179,7 @@
     }else if (_style == CustomCellStyleTwo){
         return 6;
     }else {
-        return 3;
+        return [_modelist.cai count];
     }
 }
 
@@ -178,12 +191,12 @@
         cell.modelist0 = _listArr[indexPath.item];
     }else if (_style == CustomCellStyleTwo){
         cell.modelist1 = _listArr[indexPath.item];
+        
     }else if (_style == CustomCellStyleThird || _style == CustomCellStyleFouth){
-//        [cell.imgView1 setHidden:NO];
-//        [cell.lable1 setHidden:YES];
-//        [cell.imgView setHidden:YES];
-//        [cell.name setHidden:YES];
-//        cell.imgView1.image = [UIImage imageNamed:@"图层 520"];
+        if ([_modelist.cai count]) {
+            cell.lmodelist1 = _modelist.cai[indexPath.item];
+        }
+        
     }else{}
     
     return cell;
@@ -191,13 +204,18 @@
 
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    HomeTableViewCell *cell = nil;
+    if (_style == CustomCellStyleThird || _style == CustomCellStyleFouth) {
+        cell = (HomeTableViewCell *)self.mCollectionView2.superview.superview;
+    }
+    if (cell) {
+        _mblock(cell.tag);
+    }
 }
 
 //MARK:-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
     
     // Configure the view for the selected state
 }
@@ -206,23 +224,36 @@
 - (CGSize)waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (_style == CustomCellStyleOne || _style == CustomCellStyleTwo) {
         return CGSizeMake(88, 138);
-    }else if (_style == CustomCellStyleThird){
-        return CGSizeMake((KSCREEN_WIDTH-40)/3, 108);
-    }else if (_style == CustomCellStyleFouth){
-        if (indexPath.item == 0) {
-            return CGSizeMake(2*(KSCREEN_WIDTH-30)/3, 148);
-        }else{
-            return CGSizeMake((KSCREEN_WIDTH-30)/3, 69);
-        }
+        
+    }else if (_style == CustomCellStyleThird || _style == CustomCellStyleFouth){
+        
+        if (_modelist) {
+            if ([_modelist.cai count]%3 == 0)
+                if (indexPath.item == 0)
+                    return CGSizeMake(0, 148);
+                else
+                    return CGSizeMake(0, 69);
+            else if([_modelist.cai count]%3 != 0)
+                return CGSizeMake(KSCREEN_WIDTH-20, 148);
+            else
+                return CGSizeMake(0, 0);
+        }else{return CGSizeMake(0, 0);}
     }
     return CGSizeMake(0, 0);
 }
 
 -(CGFloat)columnCountInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
-    if (_style == CustomCellStyleOne || _style == CustomCellStyleTwo || _style == CustomCellStyleThird){
+    if (_style == CustomCellStyleOne || _style == CustomCellStyleTwo){
         return 3;
-    }else if (_style == CustomCellStyleFouth){
-        return 2;
+        
+    }else if (_style == CustomCellStyleThird || _style == CustomCellStyleFouth){
+        if (_modelist)
+            if ([_modelist.cai count]%3 == 0)
+                return 2;
+            else
+                return 1;
+        else
+            return 0;
     }else {
         return 0;
     }
@@ -230,10 +261,10 @@
 
 /** 行数*/
 -(CGFloat)rowCountInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
-    if (_style == CustomCellStyleOne || _style == CustomCellStyleTwo || _style == CustomCellStyleThird){
+    if (_style == CustomCellStyleOne || _style == CustomCellStyleTwo){
         return 1;
-    }else if (_style == CustomCellStyleFouth){
-        return 2;
+    }else if (_style == CustomCellStyleThird || _style == CustomCellStyleFouth){
+        return [_modelist.cai count];
     }else {
         return 0;
     
@@ -253,8 +284,8 @@
     return UIEdgeInsetsMake(10, 10, 10, 10);
 }
 
--(void)setupStar {
-    for (int i = 0; i < 5; i ++) {
+-(void)setupStar:(NSString *)num {
+    for (int i = 0; i < [num integerValue]; i ++) {
         UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(8+i*17,3,12,12)];
         imgView.image = [UIImage imageNamed:@"start"];
         [self.startbjView addSubview:imgView];

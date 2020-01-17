@@ -118,8 +118,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="dzbtn" destination="y3Q-Y1-eNb" id="BA1-Fn-PfS"/>
                 <outlet property="mCollectionView2" destination="bpi-41-stj" id="mVi-m6-WHt"/>
                 <outlet property="startbjView" destination="VhW-RZ-tJI" id="4VJ-0g-vQg"/>
+                <outlet property="title" destination="mYt-JS-o12" id="Phv-kq-MqI"/>
             </connections>
             <point key="canvasLocation" x="128.98550724637681" y="136.60714285714286"/>
         </tableViewCell>

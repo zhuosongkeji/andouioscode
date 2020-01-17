@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class HomeModel;
+@class HomeModel,OnlineOrderListModel;
 
 @interface HXCollectionViewCell : UICollectionViewCell
 
@@ -16,5 +16,8 @@
 @property(nonatomic,strong)HomeModel *modelist0;
 
 @property(nonatomic,strong)HomeModel *modelist1;
+
+@property(nonatomic,strong)OnlineOrderListModel *lmodelist1;
+
 
 @end

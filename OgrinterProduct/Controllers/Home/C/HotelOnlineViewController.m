@@ -1,44 +1,46 @@
 //
-//  HotelDetlisViewController.m
+//  HotelOnlineViewController.m
 //  OgrinterProduct
 //
-//  Created by wongshine on 2019/12/9.
-//  Copyright © 2019 RXF. All rights reserved.
+//  Created by wongshine on 2020/1/16.
+//  Copyright © 2020 RXF. All rights reserved.
 //
 
-#define details_list @"details/list"
+#define gourmet_dishtype @"gourmet/details"//饭店商家；
 
 
-#import "HotelDetlisViewController.h"
-#import "HotelBottomTableViewCell.h"
-#import "HotelDetlisSubViewOneController.h"
+#import "HotelOnlineViewController.h"
 #import "SDCycleScrollView.h"
+#import "HotelBottomTableViewCell.h"
+#import "HotelOnlineTableViewCell.h"
+#import "HotelOnlineSubViewController.h"
+#import "OnlineOrderModel.h"
 
-#import "HotelDetilsTopViewCell.h"
-#import "FSScrollContentView.h"
-#import "HolelModel.h"
 
 
+@interface HotelOnlineViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate,FSPageContentViewDelegate,FSSegmentTitleViewDelegate>
 
-@interface HotelDetlisViewController ()<UITableViewDelegate,UITableViewDataSource,FSPageContentViewDelegate,FSSegmentTitleViewDelegate,SDCycleScrollViewDelegate>
-
+@property (weak, nonatomic) IBOutlet UIView *bannerbjView;
 
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 
-@property (nonatomic, assign) BOOL canScroll;
-@property (nonatomic, strong) FSSegmentTitleView *titleView;
 @property (nonatomic, strong) HotelBottomTableViewCell *contentCell;
-@property(nonatomic,strong)SDCycleScrollView *cycleScrollView;
 
-@property (nonatomic,strong)NSArray *VcStrArr;
+@property (nonatomic, assign) BOOL canScroll;
+
+@property(nonatomic,strong)SDCycleScrollView *cycleScrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *topimgView;
+
 @property(nonatomic,strong)NSMutableArray *dataArr;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
+@property (nonatomic, strong) FSSegmentTitleView *titleView;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *Totop;
 
 @end
 
 
-@implementation HotelDetlisViewController
+@implementation HotelOnlineViewController
 
 
 -(NSMutableArray *)dataArr{
@@ -66,86 +68,60 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    KAdd_Observer(@"leaveTop", self, changeScrollStatus, nil);
-    self.toTop.constant = kStatusBarAndNavigationBarH;
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    
     [self setup];
+    [self loadNetWork];
     // Do any additional setup after loading the view from its nib.
 }
 
 
 -(void)setup{
+    self.navigationItem.title = self.sname;
     
     self.canScroll = YES;
     
+   KAdd_Observer(@"HotelTop", self, changeStatus, nil);
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.Totop.constant = kStatusBarAndNavigationBarH;
+    
     self.mTableView.tableFooterView = [UILabel new];
     
-    self.mTableView.tableHeaderView = self.cycleScrollView;
-    
     [self.mTableView registerNib:[UINib nibWithNibName:@"HotelDetilsTopViewCell" bundle:nil] forCellReuseIdentifier:@"HotelDetilsTopViewCell"];
-
     
-    __weak typeof(self) weakSelf = self;
-    self.mTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf insertRowAtTop];
-    }];
-
-    [self loadNetWork];
 }
 
-
+//MARK:- loadNetWork
 -(void)loadNetWork{
-    
-    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,details_list];
-    
-    NSString *uidStr = nil;
     
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     
-    if (unmodel.token)
-        uidStr = unmodel.uid;
-    else
-        uidStr = @"";
-    
-    
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"id":self.jid,@"uid":uidStr} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,gourmet_dishtype] params:@{@"id":self.sid,@"uid":unmodel.uid} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        
         if ([serverInfo.response[@"code"] integerValue] == 200) {
             if ([_dataArr count] > 0)
-                [_dataArr removeAllObjects];
+                [self.dataArr removeAllObjects];
             
-            HolelModel *model = [[HolelModel alloc]initWithDict:serverInfo.response[@"data"]];
+            NSDictionary *dict = serverInfo.response[@"data"];
+            OnlineOrderModel *model = [[OnlineOrderModel alloc]initWithDict:dict];
             [self.dataArr addObject:model];
-            self.cycleScrollView.imageURLStringsGroup = model.facilities;
-            
-            [self.mTableView reloadData];
+            [self.topimgView sd_setImageWithURL:[NSURL URLWithString:model.door_img] placeholderImage:nil];
             
         }else {
             [HUDManager showTextHud:loadError];
         }
+        [self.mTableView reloadData];
+//        [self.mTableView.mj_header endRefreshing];
     }];
 }
 
 
-/*!insertRowAtTop */
-- (void)insertRowAtTop {
-    self.contentCell.currentTagStr = HotelDetailsListArr[self.titleView.selectIndex];
-    self.contentCell.isRefresh = YES;
-    [self.mTableView.mj_header endRefreshing];
-}
-
-
--(void)changeScrollStatus {
+-(void)changeStatus{
     self.canScroll = YES;
     self.contentCell.cellCanScroll = NO;
 }
 
-
-//MARK:- UITableView
-#pragma mark UITableView
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//MARK:- table
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
 }
 
@@ -153,18 +129,16 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 1)
         return 1;
-    return 1;
+    return 3;
 }
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return 196;
+        return 64;
     }else if (indexPath.section == 1)
         return KSCREEN_HEIGHT-kStatusBarAndNavigationBarH;
     return 0;
 }
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 0) {
@@ -175,7 +149,7 @@
 
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    self.titleView = [[FSSegmentTitleView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 50) titles:HotelDetailsListArr delegate:self indicatorType:FSIndicatorTypeEqualTitle];
+    self.titleView = [[FSSegmentTitleView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 50) titles:HotelDetalsListArr delegate:self indicatorType:FSIndicatorTypeEqualTitle];
     
     self.titleView.backgroundColor = KSRGBA(255, 255, 255, 255);
     
@@ -185,13 +159,14 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        HotelDetilsTopViewCell *cell = [HotelDetilsTopViewCell tempTableViewCellWith:self.mTableView indexPath:indexPath];
-        if ([self.dataArr count] > 0) {
-            HolelModel *model = self.dataArr[0];
-            cell.listModel = model;
-        }
+        HotelOnlineTableViewCell *cell = [HotelOnlineTableViewCell tempTableViewCellWith:self.mTableView indexPath:indexPath];
         
         [cell configTempCellWith:indexPath];
+        
+        if ([_dataArr count] > 0) {
+            OnlineOrderModel *model = self.dataArr[0];
+            cell.listmodel = model;
+        }
         
         return cell;
     }
@@ -201,22 +176,19 @@
         _contentCell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
         
         if (!_contentCell) {
-            _contentCell = [[HotelBottomTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell" withtype:HotelBottomTableViewCellTypeOne];
+            _contentCell = [[HotelBottomTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell" withtype:HotelBottomTableViewCellTypeThrid];
             _contentCell.contentView.backgroundColor = [UIColor whiteColor];
         }
         
         NSMutableArray *contentVCs = [NSMutableArray array];
         
-        for (int i = 0 ; i < HotelDetailsListArr.count; i++) {
+        for (int i = 0 ; i < HotelDetalsListArr.count; i++) {
             if ([_dataArr count]) {
-                HolelModel *model = _dataArr[0];
-                HotelDetlisSubViewOneController *vc = [[HotelDetlisSubViewOneController alloc]init];
-                vc.title = HotelDetailsListArr[i];
+                OnlineOrderModel *model = _dataArr[0];
+                HotelOnlineSubViewController *vc = [[HotelOnlineSubViewController alloc]init];
+                vc.title = HotelDetalsListArr[i];
                 vc.str = vc.title;
-                vc.sid = model.jdid;
-                
-                if (i == HotelDetailsListArr.count-1)
-                    vc.imgArr = [NSArray arrayWithArray:model.facilities];
+                vc.merchants_id = model.oid;
                 [contentVCs addObject:vc];
             }
         }
@@ -266,21 +238,9 @@
 }
 
 
-
-//MARK:- dealloc
--(void)dealloc {
+-(void)dealloc{
     KRemove_Observer(self);
 }
-
-
-
-//#pragma mark - vc push
-//-(UIViewController *)pushViewControllerWithString:(NSString *)nameStr{
-//    Class class = NSClassFromString(nameStr);
-//    UIViewController *vc = [[class alloc]initWithNibName:nameStr bundle:nil];
-//
-//    return vc;
-//}
 
 /*
 #pragma mark - Navigation

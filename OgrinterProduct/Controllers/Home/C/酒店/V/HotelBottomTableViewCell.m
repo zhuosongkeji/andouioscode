@@ -9,6 +9,7 @@
 #import "HotelBottomTableViewCell.h"
 #import "HotelDetlisSubViewOneController.h"
 #import "ShopSeckillDetailsSubViewController.h"
+#import "HotelOnlineSubViewController.h"
 
 
 @implementation HotelBottomTableViewCell
@@ -48,8 +49,13 @@
             }
         }
         
-    }else{
-        
+    }else if(_cellType == HotelBottomTableViewCellTypeThrid){
+        for (HotelOnlineSubViewController *VC in _viewControllers) {
+            VC.vcCanScroll = cellCanScroll;
+            if (!cellCanScroll) {
+                VC.righttableView.contentOffset = CGPointZero;
+            }
+        }
     }
     
 }
@@ -66,6 +72,12 @@
         }
     }else if (_cellType == HotelBottomTableViewCellTypeTwo){
         for (HotelDetlisSubViewOneController *ctrl in self.viewControllers) {
+            if ([ctrl.title isEqualToString:self.currentTagStr]) {
+                ctrl.isRefresh = isRefresh;
+            }
+        }
+    }else if (_cellType == HotelBottomTableViewCellTypeThrid){
+        for (HotelOnlineSubViewController *ctrl in self.viewControllers) {
             if ([ctrl.title isEqualToString:self.currentTagStr]) {
                 ctrl.isRefresh = isRefresh;
             }

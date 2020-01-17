@@ -139,6 +139,7 @@ static AFHttpClientManager *client = nil;
     
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
      userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    NSLog(@"token = %@",unmodel.token);
     if (unmodel.token)
         [client.requestSerializer setValue:unmodel.token forHTTPHeaderField:@"token"];
     

@@ -187,6 +187,18 @@
 		A1F73D3B23A9F439001D86EF /* OnlineOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F73D3923A9F439001D86EF /* OnlineOrderViewController.xib */; };
 		A1F86DF823CD63F500CC0F54 /* HotelOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86DF723CD63F500CC0F54 /* HotelOrderModel.m */; };
 		A1F86DFB23CD666A00CC0F54 /* HotelOrderModelList.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86DFA23CD666A00CC0F54 /* HotelOrderModelList.m */; };
+		A1F86E1423D03BF400CC0F54 /* OnlineOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86E1323D03BF400CC0F54 /* OnlineOrderModel.m */; };
+		A1F86E1723D03D9100CC0F54 /* OnlineOrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86E1623D03D9100CC0F54 /* OnlineOrderListModel.m */; };
+		A1F86E1B23D065F800CC0F54 /* HotelOnlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86E1923D065F800CC0F54 /* HotelOnlineViewController.m */; };
+		A1F86E1C23D065F800CC0F54 /* HotelOnlineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F86E1A23D065F800CC0F54 /* HotelOnlineViewController.xib */; };
+		A1F86E2123D150F300CC0F54 /* HotelOnlineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86E1F23D150F300CC0F54 /* HotelOnlineTableViewCell.m */; };
+		A1F86E2223D150F300CC0F54 /* HotelOnlineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F86E2023D150F300CC0F54 /* HotelOnlineTableViewCell.xib */; };
+		A1F86E2623D159EB00CC0F54 /* HotelOnlineSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86E2423D159EB00CC0F54 /* HotelOnlineSubViewController.m */; };
+		A1F86E2723D159EB00CC0F54 /* HotelOnlineSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F86E2523D159EB00CC0F54 /* HotelOnlineSubViewController.xib */; };
+		A1F86E2B23D1602F00CC0F54 /* HolteOnlineSubViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86E2923D1602E00CC0F54 /* HolteOnlineSubViewTableViewCell.m */; };
+		A1F86E2C23D1602F00CC0F54 /* HolteOnlineSubViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F86E2A23D1602E00CC0F54 /* HolteOnlineSubViewTableViewCell.xib */; };
+		A1F86E2F23D1A0B900CC0F54 /* HotelOnlinesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86E2E23D1A0B900CC0F54 /* HotelOnlinesModel.m */; };
+		A1F86E3223D1A19600CC0F54 /* HotelOnlinesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86E3123D1A19600CC0F54 /* HotelOnlinesListModel.m */; };
 		A1FC4A8B239F27BB00AF3F57 /* CustomAlterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC4A8A239F27BB00AF3F57 /* CustomAlterView.m */; };
 		A1FC4A8D239F288E00AF3F57 /* CustomAlterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FC4A8C239F288E00AF3F57 /* CustomAlterView.xib */; };
 		A1FC4A94239F70E600AF3F57 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC4A92239F70E600AF3F57 /* PaySuccessViewController.m */; };
@@ -779,6 +791,26 @@
 		A1F86DF723CD63F500CC0F54 /* HotelOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelOrderModel.m; sourceTree = "<group>"; };
 		A1F86DF923CD666A00CC0F54 /* HotelOrderModelList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelOrderModelList.h; sourceTree = "<group>"; };
 		A1F86DFA23CD666A00CC0F54 /* HotelOrderModelList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelOrderModelList.m; sourceTree = "<group>"; };
+		A1F86E1223D03BF400CC0F54 /* OnlineOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlineOrderModel.h; sourceTree = "<group>"; };
+		A1F86E1323D03BF400CC0F54 /* OnlineOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnlineOrderModel.m; sourceTree = "<group>"; };
+		A1F86E1523D03D9100CC0F54 /* OnlineOrderListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlineOrderListModel.h; sourceTree = "<group>"; };
+		A1F86E1623D03D9100CC0F54 /* OnlineOrderListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnlineOrderListModel.m; sourceTree = "<group>"; };
+		A1F86E1823D065F800CC0F54 /* HotelOnlineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelOnlineViewController.h; sourceTree = "<group>"; };
+		A1F86E1923D065F800CC0F54 /* HotelOnlineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelOnlineViewController.m; sourceTree = "<group>"; };
+		A1F86E1A23D065F800CC0F54 /* HotelOnlineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelOnlineViewController.xib; sourceTree = "<group>"; };
+		A1F86E1E23D150F300CC0F54 /* HotelOnlineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelOnlineTableViewCell.h; sourceTree = "<group>"; };
+		A1F86E1F23D150F300CC0F54 /* HotelOnlineTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelOnlineTableViewCell.m; sourceTree = "<group>"; };
+		A1F86E2023D150F300CC0F54 /* HotelOnlineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelOnlineTableViewCell.xib; sourceTree = "<group>"; };
+		A1F86E2323D159EB00CC0F54 /* HotelOnlineSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelOnlineSubViewController.h; sourceTree = "<group>"; };
+		A1F86E2423D159EB00CC0F54 /* HotelOnlineSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelOnlineSubViewController.m; sourceTree = "<group>"; };
+		A1F86E2523D159EB00CC0F54 /* HotelOnlineSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelOnlineSubViewController.xib; sourceTree = "<group>"; };
+		A1F86E2823D1602E00CC0F54 /* HolteOnlineSubViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HolteOnlineSubViewTableViewCell.h; sourceTree = "<group>"; };
+		A1F86E2923D1602E00CC0F54 /* HolteOnlineSubViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HolteOnlineSubViewTableViewCell.m; sourceTree = "<group>"; };
+		A1F86E2A23D1602E00CC0F54 /* HolteOnlineSubViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HolteOnlineSubViewTableViewCell.xib; sourceTree = "<group>"; };
+		A1F86E2D23D1A0B900CC0F54 /* HotelOnlinesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelOnlinesModel.h; sourceTree = "<group>"; };
+		A1F86E2E23D1A0B900CC0F54 /* HotelOnlinesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelOnlinesModel.m; sourceTree = "<group>"; };
+		A1F86E3023D1A19600CC0F54 /* HotelOnlinesListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelOnlinesListModel.h; sourceTree = "<group>"; };
+		A1F86E3123D1A19600CC0F54 /* HotelOnlinesListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelOnlinesListModel.m; sourceTree = "<group>"; };
 		A1FC4A89239F27BB00AF3F57 /* CustomAlterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAlterView.h; sourceTree = "<group>"; };
 		A1FC4A8A239F27BB00AF3F57 /* CustomAlterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAlterView.m; sourceTree = "<group>"; };
 		A1FC4A8C239F288E00AF3F57 /* CustomAlterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlterView.xib; sourceTree = "<group>"; };
@@ -1447,6 +1479,7 @@
 		A10A9C93239A56ED0049A0D2 /* V */ = {
 			isa = PBXGroup;
 			children = (
+				A1F86E1D23D150A600CC0F54 /* HoletOnline */,
 				A15DC0E3239E2282008CF287 /* HotelDetailsView */,
 				A10A9CF8239B6B5E0049A0D2 /* THDatePickerView.h */,
 				A10A9CF9239B6B5E0049A0D2 /* THDatePickerView.m */,
@@ -1948,6 +1981,14 @@
 				A14FB314238FE03A006A6511 /* HomeCellModel.m */,
 				A1FC70C523C2CF6B005BFDC9 /* HomeModel.h */,
 				A1FC70C623C2CF6B005BFDC9 /* HomeModel.m */,
+				A1F86E1223D03BF400CC0F54 /* OnlineOrderModel.h */,
+				A1F86E1323D03BF400CC0F54 /* OnlineOrderModel.m */,
+				A1F86E1523D03D9100CC0F54 /* OnlineOrderListModel.h */,
+				A1F86E1623D03D9100CC0F54 /* OnlineOrderListModel.m */,
+				A1F86E2D23D1A0B900CC0F54 /* HotelOnlinesModel.h */,
+				A1F86E2E23D1A0B900CC0F54 /* HotelOnlinesModel.m */,
+				A1F86E3023D1A19600CC0F54 /* HotelOnlinesListModel.h */,
+				A1F86E3123D1A19600CC0F54 /* HotelOnlinesListModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -1999,6 +2040,12 @@
 				A1F73D3723A9F439001D86EF /* OnlineOrderViewController.h */,
 				A1F73D3823A9F439001D86EF /* OnlineOrderViewController.m */,
 				A1F73D3923A9F439001D86EF /* OnlineOrderViewController.xib */,
+				A1F86E1823D065F800CC0F54 /* HotelOnlineViewController.h */,
+				A1F86E1923D065F800CC0F54 /* HotelOnlineViewController.m */,
+				A1F86E1A23D065F800CC0F54 /* HotelOnlineViewController.xib */,
+				A1F86E2323D159EB00CC0F54 /* HotelOnlineSubViewController.h */,
+				A1F86E2423D159EB00CC0F54 /* HotelOnlineSubViewController.m */,
+				A1F86E2523D159EB00CC0F54 /* HotelOnlineSubViewController.xib */,
 				A10A9CE0239B38600049A0D2 /* 直播中心 */,
 				A10A9CD6239B38060049A0D2 /* 爱心帮助 */,
 				A10A9CCD239B37A50049A0D2 /* 众筹信息 */,
@@ -2273,6 +2320,19 @@
 				A1F6BDAA23ADF7B50063AEF8 /* UIView+Extension.m */,
 			);
 			path = MoveCollection;
+			sourceTree = "<group>";
+		};
+		A1F86E1D23D150A600CC0F54 /* HoletOnline */ = {
+			isa = PBXGroup;
+			children = (
+				A1F86E1E23D150F300CC0F54 /* HotelOnlineTableViewCell.h */,
+				A1F86E1F23D150F300CC0F54 /* HotelOnlineTableViewCell.m */,
+				A1F86E2023D150F300CC0F54 /* HotelOnlineTableViewCell.xib */,
+				A1F86E2823D1602E00CC0F54 /* HolteOnlineSubViewTableViewCell.h */,
+				A1F86E2923D1602E00CC0F54 /* HolteOnlineSubViewTableViewCell.m */,
+				A1F86E2A23D1602E00CC0F54 /* HolteOnlineSubViewTableViewCell.xib */,
+			);
+			path = HoletOnline;
 			sourceTree = "<group>";
 		};
 		A1FC70BB23BF146A005BFDC9 /* M */ = {
@@ -3517,18 +3577,21 @@
 				F40D746223D06648006DF3CB /* ZBNRTComDetailCellOne.xib in Resources */,
 				A10A9BFD239788820049A0D2 /* ShopHomeSectionView.xib in Resources */,
 				A14FB2AE238E7858006A6511 /* RetrievepsdViewController.xib in Resources */,
+				A1F86E1C23D065F800CC0F54 /* HotelOnlineViewController.xib in Resources */,
 				A1ECDEFE239B7A6E003D870D /* HotolListViewController.xib in Resources */,
 				F468E56F23D166D40050F8BE /* SGQRCode.bundle in Resources */,
 				F45D811423C96D0700AE2A28 /* ZBNSHWaitEvaluateDetailCell.xib in Resources */,
 				A15DC0E8239E22BE008CF287 /* CresTwoTableViewCell.xib in Resources */,
 				F4B7F8CD23CC5553008BCEDF /* ZBNAddressChangeVC.xib in Resources */,
 				F476A48923A7682C00E3018A /* ZBNEntryFooterView.xib in Resources */,
+				A1F86E2723D159EB00CC0F54 /* HotelOnlineSubViewController.xib in Resources */,
 				F41B749323C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.xib in Resources */,
 				F4FAC27823ABC85E00C235EA /* ZBNSHReturnGoodsDetailCell.xib in Resources */,
 				A10A9CCC239B37800049A0D2 /* AutomobileViewController.xib in Resources */,
 				A10A9C02239791180049A0D2 /* ShopCollectionViewCell.xib in Resources */,
 				F476A44323A7682B00E3018A /* ZBNMyNewsCell.xib in Resources */,
 				A10A9C90239A469A0049A0D2 /* CaseCluessKeybordCollectionHeadView.xib in Resources */,
+				A1F86E2223D150F300CC0F54 /* HotelOnlineTableViewCell.xib in Resources */,
 				A10A9C99239A57230049A0D2 /* HotelViewController.xib in Resources */,
 				F4CD16A223C093590039CE49 /* ZBNSHZDeliverGoodsDOCell.xib in Resources */,
 				F4C196C623C576E400F1C48C /* TZImagePickerController.bundle in Resources */,
@@ -3545,6 +3608,7 @@
 				A14BDABF23C6CCD6006EC033 /* CategoryCollectionViewCell.xib in Resources */,
 				A1F73D3B23A9F439001D86EF /* OnlineOrderViewController.xib in Resources */,
 				A14FB2E9238F683D006A6511 /* FindViewController.xib in Resources */,
+				A1F86E2C23D1602F00CC0F54 /* HolteOnlineSubViewTableViewCell.xib in Resources */,
 				A15DC106239E41D4008CF287 /* HotelDetailsBottomView.xib in Resources */,
 				A10A9C1B2398A1970049A0D2 /* address.plist in Resources */,
 				F476A44123A7682B00E3018A /* ZBNDowmLoadAppVC.xib in Resources */,
@@ -3728,6 +3792,7 @@
 				F4CD16A123C093590039CE49 /* ZBNSHZDeliverGoodsDOCell.m in Sources */,
 				F476A44523A7682B00E3018A /* ZBNMyNewsVC.m in Sources */,
 				A15DC0F6239E320E008CF287 /* CresThirdTableViewCell.m in Sources */,
+				A1F86E1B23D065F800CC0F54 /* HotelOnlineViewController.m in Sources */,
 				F41B749723C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.m in Sources */,
 				A1FC4A94239F70E600AF3F57 /* PaySuccessViewController.m in Sources */,
 				F40D745823D065F7006DF3CB /* ZBNRTComDetailVC.m in Sources */,
@@ -3738,6 +3803,7 @@
 				F4B6978823BF271300CB0014 /* ZBNSHCommonCell.m in Sources */,
 				F476A49723A7682C00E3018A /* ZBNMyIntegerHeadView.m in Sources */,
 				F41B748E23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.m in Sources */,
+				A1F86E2B23D1602F00CC0F54 /* HolteOnlineSubViewTableViewCell.m in Sources */,
 				A10A9CCB239B37800049A0D2 /* AutomobileViewController.m in Sources */,
 				F4055EB123CD5A7300637E7A /* ZBNHTWaitInDetailCell.m in Sources */,
 				A10A9BFB239788680049A0D2 /* ShopHomeSectionView.m in Sources */,
@@ -3747,8 +3813,10 @@
 				A14FB34F239126CB006A6511 /* ShoingMsgViewController.m in Sources */,
 				F443E92223C6FFAE0059E48F /* ZBNMyAllNewsCell.m in Sources */,
 				F476A44723A7682B00E3018A /* ZBNMyPostCommenCell.m in Sources */,
+				A1F86E1423D03BF400CC0F54 /* OnlineOrderModel.m in Sources */,
 				F4055ECD23CD6C8700637E7A /* ZBNHTGoCommentCell.m in Sources */,
 				A1F73CF523A880CB001D86EF /* ShopingShopViewController.m in Sources */,
+				A1F86E2623D159EB00CC0F54 /* HotelOnlineSubViewController.m in Sources */,
 				F411AE5023BED041006016D2 /* ZBNMyNewsModel.m in Sources */,
 				F4C196CB23C576E400F1C48C /* TZImagePickerController.m in Sources */,
 				F4055ED923CD907500637E7A /* ZBNHotelAllOrderVC.m in Sources */,
@@ -3765,6 +3833,7 @@
 				A10A9BE7239764D70049A0D2 /* MDMaskView.m in Sources */,
 				F4B6978C23BF315700CB0014 /* ZBNSHCommonModel.m in Sources */,
 				A14FB26A238E0E50006A6511 /* main.m in Sources */,
+				A1F86E2F23D1A0B900CC0F54 /* HotelOnlinesModel.m in Sources */,
 				F45D811723C9A01800AE2A28 /* ZBNGoodsCarModel.m in Sources */,
 				F4C196E923C5771000F1C48C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				F4C196C023C576E400F1C48C /* TZAssetCell.m in Sources */,
@@ -3911,6 +3980,7 @@
 				A10A9CA7239B35680049A0D2 /* NongJialeViewController.m in Sources */,
 				A1F6BDAF23ADF7B50063AEF8 /* UIColor+Extensions.m in Sources */,
 				F4C196F023C5771000F1C48C /* MASConstraint.m in Sources */,
+				A1F86E2123D150F300CC0F54 /* HotelOnlineTableViewCell.m in Sources */,
 				A10A9BE8239764D70049A0D2 /* MDShockBannerView.m in Sources */,
 				A10A9BF4239784400049A0D2 /* ShopHomeViewCell.m in Sources */,
 				A1F6BDAD23ADF7B50063AEF8 /* CustomMoveView.m in Sources */,
@@ -3938,7 +4008,7 @@
 				F476A49A23A7682C00E3018A /* ZBNMyPostBarVC.m in Sources */,
 				A1F86DFB23CD666A00CC0F54 /* HotelOrderModelList.m in Sources */,
 				A1FC4A8B239F27BB00AF3F57 /* CustomAlterView.m in Sources */,
-				F468E55723D14BDD0050F8BE /* ZBNComDataNilCell.m in Sources */,
+
 				A14FB3262390C6D1006A6511 /* CitylistViewController.m in Sources */,
 				F45D811323C96D0700AE2A28 /* ZBNSHWaitEvaluateDetailCell.m in Sources */,
 				F41B749223C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.m in Sources */,
@@ -3972,6 +4042,7 @@
 				A1ECDEFD239B7A6E003D870D /* HotolListViewController.m in Sources */,
 				F476A47A23A7682B00E3018A /* ZBNCommenOrderCell.m in Sources */,
 				F476A46023A7682B00E3018A /* ZBNSHWaitEvaluateOrderVC.m in Sources */,
+				A1F86E1723D03D9100CC0F54 /* OnlineOrderListModel.m in Sources */,
 				F476A45123A7682B00E3018A /* ZBNSuccessfulWthdrawalsVC.m in Sources */,
 				A1FC70C123C032A0005BFDC9 /* OrderListModel.m in Sources */,
 				A1F4DFE023A1D54F00B02880 /* ShopSeckillDetailsViewController.m in Sources */,

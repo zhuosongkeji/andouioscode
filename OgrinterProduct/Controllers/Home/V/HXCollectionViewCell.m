@@ -8,6 +8,7 @@
 
 #import "HXCollectionViewCell.h"
 #import "HomeModel.h"
+#import "OnlineOrderListModel.h"
 
 @interface HXCollectionViewCell()
 
@@ -43,6 +44,19 @@
     [self.name setHidden:YES];
     [self.imgView1 setHidden:NO];
     [self.lable1 setHidden:NO];
+}
+
+
+-(void)setLmodelist1:(OnlineOrderListModel *)lmodelist1{
+    
+    self.layer.cornerRadius = 4;
+    [self.imgView1 sd_setImageWithURL:[NSURL URLWithString:lmodelist1.image] completed:nil];
+    
+    [self.imgView1 setHidden:NO];
+    [self.name setHidden:YES];
+    [self.imgView setHidden:YES];
+    [self.lable1 setHidden:YES];
+    
 }
 
 
