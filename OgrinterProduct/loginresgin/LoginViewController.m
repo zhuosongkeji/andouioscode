@@ -35,7 +35,7 @@
     
     self.navigationController.title = @"用户登录";
     KAdd_Observer(@"getwxCode", self, loginRequestWX:, nil);
-    // Do any additional setup after loading the view from its nib.
+    self.phonePsword.secureTextEntry = YES;
 }
 
 
@@ -65,6 +65,9 @@
             // 退出登录界面
             [self dismissViewControllerAnimated:YES completion:nil];
             
+        } else if ([serverInfo.response[@"code"] integerValue] == 201) {
+            [HUDManager showTextHud:[NSString stringWithFormat:@"%@",serverInfo.response[@
+                                                                                         "msg"]]];
         }
         NSLog(@"%@",serverInfo);
     }];

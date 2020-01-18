@@ -10,6 +10,12 @@
 
 @implementation ZBNSHOrderDetailComM
 
-
++ (NSDictionary *)mj_objectClassInArray
+{
+    return @{
+        @"details":@"ZBNSHOrderDetailsM",
+        @"userinfo":@"ZBNSHOrderUserInfoM"
+    };
+}
 
 @end

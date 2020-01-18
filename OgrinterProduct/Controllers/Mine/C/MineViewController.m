@@ -63,19 +63,13 @@
     [self loadData];
     // 设置手势
     [self setupGes];
-    
     // 设置table
     [self setupTable];
     
     // 接收登录成功过的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"loginOK" object:nil];
     
-    if (@available(iOS 11, *)) {
-        
-    } else if (@available(iOS 10, *)){
-        self.mTableView.contentInset = UIEdgeInsetsMake(- 64, 0, 0, 0);
-    }
-    
+
 }
 
 
@@ -96,7 +90,6 @@
 {
     self.toTop.constant = getRectNavAndStatusHight;
     self.mTableView.tableFooterView = [UILabel new];
-    self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
     self.vipView.layer.cornerRadius = 10;
     self.headImageV.userInteractionEnabled = YES;
 }
@@ -137,11 +130,13 @@
            
            self.model = [ZBNMineModel mj_objectWithKeyValues:serverInfo.response[@"data"]];
            // 设置头像
-           self.headImageV.image = [UIImage circleImageNamed:@"yxj"];
+           [self.headImageV setHeader:self.model.avator];
            // 设置用户名
-           self.userName.text = [NSString stringWithFormat:@"%@",self.model.name];
+            self.userName.text = [NSString stringWithFormat:@"%@",self.model.name];
            // 余额
            self.money.text = self.model.money;
+//           [self.mTableView reloadData];
+
        }];
 }
 
@@ -257,7 +252,14 @@
 
 
 
+- (void)setupRefresh
+{
+    // 下拉刷新
+    self.mTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    // 自动改变透明度
+    self.mTableView.mj_header.automaticallyChangeAlpha = YES;
 
+}
 
 
 @end

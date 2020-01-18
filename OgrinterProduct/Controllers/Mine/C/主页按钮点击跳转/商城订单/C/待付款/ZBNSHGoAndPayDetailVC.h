@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZBNSHGoAndPayDetailVC : UITableViewController
 
 @property (nonatomic, copy) NSString *getOrderNum;
+@property (nonatomic, copy) NSString *getChildid;
 
 @end
 
