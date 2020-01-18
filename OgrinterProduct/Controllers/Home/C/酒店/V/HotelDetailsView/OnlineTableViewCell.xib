@@ -466,14 +466,14 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UL-xm-A2Z">
-                        <rect key="frame" x="276" y="10" width="28" height="28"/>
+                        <rect key="frame" x="283" y="13.5" width="21" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="28" id="eOo-I1-TfT"/>
-                            <constraint firstAttribute="width" constant="28" id="iXA-eC-ToY"/>
+                            <constraint firstAttribute="height" constant="21" id="eOo-I1-TfT"/>
+                            <constraint firstAttribute="width" constant="21" id="iXA-eC-ToY"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                        <state key="normal" image="椭圆 1 拷贝"/>
-                        <state key="selected" image="椭圆 1"/>
+                        <state key="normal" backgroundImage="椭圆 1 拷贝"/>
+                        <state key="selected" backgroundImage="椭圆 1"/>
                         <connections>
                             <action selector="btnClick:" destination="NFP-hm-Kcf" eventType="touchUpInside" id="fGD-PH-4Id"/>
                         </connections>

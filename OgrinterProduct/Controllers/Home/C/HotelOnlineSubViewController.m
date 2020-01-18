@@ -9,6 +9,8 @@
 
 #define gourmet_dishtype @"gourmet/dishtype"//菜品类别
 
+#define gourmet_upd_foods @"gourmet/upd_foods"//加入购物车
+
 
 #import "HotelOnlineSubViewController.h"
 #import "HolteOnlineSubViewTableViewCell.h"
@@ -100,6 +102,26 @@
 }
 
 
+//MARK:- 加入购物车
+-(void)sgourmetupdfoods:(NSString *)type withID:(NSString *)cid{
+    
+    UIWindow *win = [self getWindow];
+    
+    [HUDManager showLoadingHud:loading onView:win];
+    
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,gourmet_upd_foods] params:@{@"uid":unmodel.uid,@"id":cid,@"type":type,@"merchant_id":self.merchants_id} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            [HUDManager hidenHudFromView:win];
+        }else {
+            [HUDManager showTextHud:loadError];
+        }
+    }];
+}
+
+
 #pragma mark - tableView 数据源代理方法 -
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (tableView == self.lefttableView)
@@ -161,6 +183,8 @@
         }
         
         cell.clickBlock = ^(NSInteger idx, UIButton * _Nonnull btn) {
+            NSString *type = nil;
+            
             HolteOnlineSubViewTableViewCell *mCell = (HolteOnlineSubViewTableViewCell *)btn.superview.superview;
             NSIndexPath *path = [self.righttableView indexPathForCell:mCell];
             HotelOnlinesModel *model = _leftArr[path.section];
@@ -171,11 +195,13 @@
                 if (numb <= 0) {
                     numb = 0;
                 }
-            }else{
-                numb+=1;
-            }
+                type = @"0";
+            }else{numb+=1;type = @"1";}
+            
             mode.munbert = [NSString stringWithFormat:@"%ld",numb];
             mCell.numberlabel.text = mode.munbert;
+            KPost_Notify(@"addCarNoft", nil,[self gettatolnomey]);
+            [self sgourmetupdfoods:type withID:mode.hid];
             
         };
         
@@ -258,6 +284,52 @@
     _isRefresh = isRefresh;
     //    [self insertRowAtTop];
 }
+
+
+
+//MARK:-
+-(NSDictionary *)gettatolnomey{
+    
+    NSDictionary *dic = nil;
+    
+    NSMutableArray *count = [NSMutableArray array];
+    NSMutableArray *money = [NSMutableArray array];
+    
+    
+    for (int i = 0; i<[self.leftArr count]; i++) {
+        HotelOnlinesModel *m = self.leftArr[i];
+        for (HotelOnlinesListModel *mm in m.information) {
+            if ([mm.munbert integerValue] != 0) {
+                NSNumber *numb = @([mm.price floatValue]*[mm.munbert integerValue]);
+                NSNumber *totalNum = @([mm.munbert integerValue]);
+                [count addObject:totalNum];
+                [money addObject:numb];
+            }
+        }
+    }
+    
+    NSNumber *sum = [money valueForKeyPath:@"@sum.self"];
+    NSNumber *tatol = [count valueForKeyPath:@"@sum.self"];
+    
+    return dic = @{@"nomey":[NSString stringWithFormat:@"%@",sum],@"num":[NSString stringWithFormat:@"%@",tatol]};
+    
+}
+
+
+-(UIWindow *)getWindow {
+    UIWindow* win = nil;
+    for (id item in [UIApplication sharedApplication].windows) {
+        if([item class] == [UIWindow class]) {
+            if(!((UIWindow*)item).hidden) {
+                win = item;
+                break;
+            }
+        }
+    }
+    return win;
+}
+
+
 
 /*
 #pragma mark - Navigation
