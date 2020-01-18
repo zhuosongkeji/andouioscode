@@ -33,3 +33,7 @@ NSString * const ZBNChangeNameURL = @"http://andou.zhuosongkj.com/index.php/api/
 NSString * const ZBNGourmetURL = @"http://andou.zhuosongkj.com/index.php/api/gourmet/order";
 
 NSString * const ZBNGourmetDetailURL = @"http://andou.zhuosongkj.com/index.php/api/gourmet/order_details";
+
+NSString * const ZBNNotificationCenterlURL = @"http://andou.zhuosongkj.com/index.php/api/index/notification_center";
+
+NSString * const ZBNInformationURL = @"http://andou.zhuosongkj.com/index.php/api/index/information";

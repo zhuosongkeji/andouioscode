@@ -19,6 +19,8 @@
 #import "ZBNRTComModel.h"
 #import "ZBNRTFoodsModel.h"
 #import "ZBNRTComDetailModel.h"
+#import "ZBNMyNewsModel.h"
+#import "ZBNMyNewsDetailModel.h"
 
 @implementation ZBNExtensionConfig
 
@@ -75,6 +77,16 @@
                  };
              }]; 
     [ZBNRTComDetailModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+        return @{
+            @"ID" : @"id",
+        };
+    }];
+    [ZBNMyNewsModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+        return @{
+            @"ID" : @"id",
+        };
+    }]; 
+    [ZBNMyNewsDetailModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
             @"ID" : @"id",
         };

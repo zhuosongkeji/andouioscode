@@ -37,10 +37,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b51-Cl-oq5">
-                    <rect key="frame" x="0.0" y="92.5" width="414" height="400"/>
+                    <rect key="frame" x="0.0" y="92.5" width="414" height="300"/>
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="给我意见" translatesAutoresizingMaskIntoConstraints="NO" id="HgY-E4-gBb">
-                            <rect key="frame" x="15" y="15" width="384" height="370"/>
+                            <rect key="frame" x="15" y="15" width="384" height="270"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -51,23 +51,40 @@
                     <constraints>
                         <constraint firstItem="HgY-E4-gBb" firstAttribute="leading" secondItem="b51-Cl-oq5" secondAttribute="leading" constant="15" id="3Vf-aF-lsD"/>
                         <constraint firstAttribute="bottom" secondItem="HgY-E4-gBb" secondAttribute="bottom" constant="15" id="OEZ-9M-Lxf"/>
-                        <constraint firstAttribute="height" constant="400" id="TWe-R5-eDD"/>
+                        <constraint firstAttribute="height" constant="300" id="TWe-R5-eDD"/>
                         <constraint firstAttribute="trailing" secondItem="HgY-E4-gBb" secondAttribute="trailing" constant="15" id="koR-83-4Tz"/>
                         <constraint firstItem="HgY-E4-gBb" firstAttribute="top" secondItem="b51-Cl-oq5" secondAttribute="top" constant="15" id="zs2-kx-sow"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9B-XR-W9K">
+                    <rect key="frame" x="15" y="422.5" width="384" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ZIU-CL-Nn1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="确认修改" backgroundImage="底部按钮背景"/>
+                    <connections>
+                        <action selector="btnClick:" destination="-1" eventType="touchUpInside" id="AHa-g1-ZoZ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="YJl-EL-dXz" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="2x5-pQ-xTV"/>
                 <constraint firstItem="b51-Cl-oq5" firstAttribute="top" secondItem="YJl-EL-dXz" secondAttribute="bottom" constant="0.5" id="9YH-CF-U4v"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="YJl-EL-dXz" secondAttribute="trailing" id="FS8-uE-e8c"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="v9B-XR-W9K" secondAttribute="trailing" constant="15" id="Ie6-gj-kB7"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="b51-Cl-oq5" secondAttribute="trailing" id="U6C-YQ-gfe"/>
+                <constraint firstItem="v9B-XR-W9K" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="ca3-Ef-ASj"/>
+                <constraint firstItem="v9B-XR-W9K" firstAttribute="top" secondItem="b51-Cl-oq5" secondAttribute="bottom" constant="30" id="dNj-DJ-NMe"/>
                 <constraint firstItem="YJl-EL-dXz" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="lWz-Me-wMX"/>
                 <constraint firstItem="b51-Cl-oq5" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="vts-NP-eOY"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="-154" y="247"/>
+            <point key="canvasLocation" x="-216" y="607"/>
         </view>
     </objects>
+    <resources>
+        <image name="底部按钮背景" width="345" height="45"/>
+    </resources>
 </document>

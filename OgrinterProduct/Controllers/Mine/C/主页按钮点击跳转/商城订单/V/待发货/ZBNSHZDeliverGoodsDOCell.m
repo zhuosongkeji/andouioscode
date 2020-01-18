@@ -85,7 +85,11 @@
     // 商品名
     self.goodsName.text = detailM.name;
     // 规格
-    self.goods_attr.text = detailM.attr_value[1];
+    NSMutableString *muStr = [NSMutableString string];
+    for (NSString *str in detailM.attr_value) {
+        [muStr appendString:[NSString stringWithFormat:@"%@",str]];
+    }
+    self.goods_attr.text = [NSString stringWithFormat:@"%@",muStr];
     // 单价
     self.goods_price.text = detailM.price;
     // 数量

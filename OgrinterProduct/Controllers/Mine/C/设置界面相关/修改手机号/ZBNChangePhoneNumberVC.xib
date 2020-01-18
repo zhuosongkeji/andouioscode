@@ -137,7 +137,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改手机号" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OU-bF-1Kv">
-                            <rect key="frame" x="163.5" y="10" width="87" height="21"/>
+                            <rect key="frame" x="163.5" y="15" width="87" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -147,7 +147,7 @@
                     <constraints>
                         <constraint firstItem="lnm-E7-Khk" firstAttribute="leading" secondItem="jhY-In-zIW" secondAttribute="leading" constant="10" id="6JC-Xq-WZf"/>
                         <constraint firstItem="3OU-bF-1Kv" firstAttribute="centerX" secondItem="jhY-In-zIW" secondAttribute="centerX" id="Bgm-Jt-elK"/>
-                        <constraint firstItem="3OU-bF-1Kv" firstAttribute="top" secondItem="jhY-In-zIW" secondAttribute="top" constant="10" id="Eys-5S-T2W"/>
+                        <constraint firstItem="3OU-bF-1Kv" firstAttribute="top" secondItem="jhY-In-zIW" secondAttribute="top" constant="15" id="Eys-5S-T2W"/>
                         <constraint firstItem="muS-cn-5J8" firstAttribute="leading" secondItem="WR8-yf-QzR" secondAttribute="trailing" constant="16" id="Fvd-Kv-q8I"/>
                         <constraint firstAttribute="trailing" secondItem="d0K-RD-AU0" secondAttribute="trailing" constant="10" id="GDf-QO-TUb"/>
                         <constraint firstItem="d0K-RD-AU0" firstAttribute="leading" secondItem="jhY-In-zIW" secondAttribute="leading" constant="10" id="Iuy-VC-o5C"/>
@@ -172,7 +172,7 @@
                 <constraint firstItem="jhY-In-zIW" firstAttribute="leading" secondItem="PQu-WS-2RR" secondAttribute="leading" id="fWk-nt-dqY"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="qe2-zw-5yk"/>
-            <point key="canvasLocation" x="388" y="115"/>
+            <point key="canvasLocation" x="529" y="102"/>
         </view>
     </objects>
     <resources>

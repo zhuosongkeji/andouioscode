@@ -127,15 +127,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无情化妆品" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDB-eI-zfN">
-                                <rect key="frame" x="110" y="15" width="314" height="14.5"/>
+                                <rect key="frame" x="110" y="15" width="299" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥9999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5s1-ut-v2G">
-                                <rect key="frame" x="454" y="15" width="45" height="14.5"/>
+                                <rect key="frame" x="439" y="15" width="60" height="14.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="QTK-Q9-nKU"/>
+                                    <constraint firstAttribute="width" constant="60" id="QTK-Q9-nKU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -326,7 +326,7 @@
                 <outlet property="phone_num" destination="zHD-pm-63E" id="gwx-x9-H4M"/>
                 <outlet property="price" destination="5s1-ut-v2G" id="Z5e-lY-l3q"/>
             </connections>
-            <point key="canvasLocation" x="-3472" y="-86"/>
+            <point key="canvasLocation" x="-3061" y="122"/>
         </tableViewCell>
     </objects>
     <resources>

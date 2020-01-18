@@ -8,14 +8,12 @@
 
 #import "ZBNMyNewsVC.h"
 #import "ZBNMyNewsCell.h"
-
+#import "ZBNMyNewsDetailVC.h"
 #import "ZBNMyNewsModel.h"
 
 @interface ZBNMyNewsVC ()
 /*! 储存数据的数组 */
 @property (nonatomic, strong) NSMutableArray *dataArr;
-/*! 信息模型 */
-@property (nonatomic, strong) ZBNMyNewsModel *news;
 
 @end
 
@@ -26,8 +24,8 @@
     
     // 设置table
     [self setupTable];
-    // 创建数据
-    [self initModel];
+    // 发起请求
+    [self loadData];
 }
 
 
@@ -47,24 +45,6 @@
     return _dataArr;
 }
 
-- (void)initModel
-{
-    for (int i = 0; i < 10; i++) {
-        ZBNMyNewsModel *model = [[ZBNMyNewsModel alloc] init];
-        if (i%2==0) {
-            model.title = @"大满足";
-            model.messageStatus = @"1";
-            model.created_at = @"昨天深夜";
-        } else {
-            model.messageStatus = @"0";
-            model.title = @"大劲爆";
-            model.created_at = @"刚刚";
-        }
-        [self.dataArr addObject:model];
-    }
-}
-
-
 #pragma mark - Table view data source
 
 
@@ -83,6 +63,36 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 80;
+}
+
+/*! 点击cell */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ZBNMyNewsDetailVC *vc = [[ZBNMyNewsDetailVC alloc] init];
+    ZBNMyNewsModel *model = self.dataArr[indexPath.row];
+    vc.get_id = model.ID;
+    NSLog(@"%@model",model.ID);
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+#pragma mark -- request
+
+- (void)loadData {
+    [FKHRequestManager cancleRequestWork];
+       NSMutableDictionary *params = [NSMutableDictionary dictionary];
+       NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+       userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+       params[@"uid"] = unmodel.uid;
+       ADWeakSelf;
+       [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNNotificationCenterlURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+           if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
+               weakSelf.dataArr = [ZBNMyNewsModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+               [weakSelf.tableView reloadData];
+           } else {
+               [HUDManager showStateHud:[serverInfo.response objectForKey:@"msg"] state:HUDStateTypeFail];
+           }
+       }];
 }
 
 @end

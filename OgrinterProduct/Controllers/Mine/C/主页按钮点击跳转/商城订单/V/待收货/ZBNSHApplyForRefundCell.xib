@@ -237,7 +237,7 @@
             <connections>
                 <outlet property="twoCellView" destination="Ow4-c3-vqD" id="D3X-lg-c7m"/>
             </connections>
-            <point key="canvasLocation" x="-6562" y="76"/>
+            <point key="canvasLocation" x="-6091" y="112"/>
         </tableViewCell>
     </objects>
     <resources>

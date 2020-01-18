@@ -30,6 +30,7 @@
     [super viewDidLoad];
     self.getVCodeBtn.layer.cornerRadius = 5;
     self.leftTime = 60;
+    self.inputNewPwdT.secureTextEntry = YES;
 }
 
 
