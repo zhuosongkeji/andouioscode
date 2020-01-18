@@ -8,6 +8,7 @@
 
 #import "ZBNWaitDeliverDetailCell.h"
 
+#import "ZBNSHCommonModel.h"
 #import "ZBNSHOrderDetailComM.h"
 #import "ZBNSHOrderDetailsM.h"
 
@@ -100,7 +101,11 @@
     self.price.text = [NSString stringWithFormat:@"¥%@",detailM.price];
     self.goodsName.text = detailM.name;
     self.num.text = detailM.num;
-    self.attr_value.text = detailM.attr_value[1];
+    NSMutableString *muStr = [NSMutableString string];
+    for (NSString *str in detailM.attr_value) {
+        [muStr appendString:[NSString stringWithFormat:@"%@",str]];
+    }
+    self.attr_value.text = [NSString stringWithFormat:@"%@",muStr];
     
 }
 

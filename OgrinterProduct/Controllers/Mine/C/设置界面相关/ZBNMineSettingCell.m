@@ -82,10 +82,10 @@
 {
     // 设置数据
     _settingM = settingM;
-//    [self.userIconV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,settingM.avator]]];
+
+    [self.userIconV setHeader:settingM.avator];
     self.userName.text = settingM.name;
     self.phoneNumber.text = [NSString returnImportentNum:settingM.mobile];
-//    self.pwdLabel.text = [NSString stringWithFormat:@"%@",settingM.password];
 }
 
 
@@ -94,8 +94,6 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    // 设置默认头像
-    self.userIconV.image = [UIImage circleImageNamed:@"yxj"];
     // 设置手势
     [self setupGes];
     // 计算缓存大小

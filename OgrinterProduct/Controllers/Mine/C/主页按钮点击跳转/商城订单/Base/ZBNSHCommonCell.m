@@ -101,6 +101,7 @@
     if ([self.commonM.status integerValue] == 10) { // 如果是待付款订单详情
         ZBNSHGoAndPayDetailVC *vc = [[ZBNSHGoAndPayDetailVC alloc] init];
         vc.getOrderNum = self.commonM.order_id;
+        vc.getChildid = self.commonM.ID;
         [[weakSelf viewController].navigationController pushViewController:vc animated:YES];
     } else if ([self.commonM.status integerValue] == 40) {  //待收货的查看物流
         ZBNSHComViewLogisticsVC *vc = [[ZBNSHComViewLogisticsVC alloc] init];
@@ -223,7 +224,11 @@
     // 商品数量
     self.goodsCountL.text = commonM.num;
     // 商品介绍
-    self.goodsSubL.text = commonM.attr_value[1];
+    NSMutableString *muStr = [NSMutableString string];
+    for (NSString *str in commonM.attr_value) {
+        [muStr appendString:[NSString stringWithFormat:@"%@",str]];
+    }
+    self.goodsSubL.text = [NSString stringWithFormat:@"%@",muStr];
     // 商品价格
     self.goodsPriceL.text = commonM.price;
     // 合计

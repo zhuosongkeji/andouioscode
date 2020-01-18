@@ -158,12 +158,6 @@
                                     <constraint firstItem="jL9-yl-jBL" firstAttribute="leading" secondItem="VIR-6j-y6R" secondAttribute="leading" id="z3Y-Yb-v8I"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqw-Od-TZT">
-                                <rect key="frame" x="130" y="83.5" width="28.5" height="13.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -173,7 +167,6 @@
                             <constraint firstItem="OHa-IZ-SlD" firstAttribute="leading" secondItem="mo5-YW-5wO" secondAttribute="leading" constant="15" id="DNQ-kI-LYg"/>
                             <constraint firstItem="oxz-Sj-m1w" firstAttribute="centerY" secondItem="OHa-IZ-SlD" secondAttribute="centerY" id="FBu-pp-GCs"/>
                             <constraint firstItem="CrY-2X-xdM" firstAttribute="leading" secondItem="mo5-YW-5wO" secondAttribute="leading" id="IMn-1F-L4X"/>
-                            <constraint firstItem="vXF-YM-kZG" firstAttribute="top" secondItem="oqw-Od-TZT" secondAttribute="bottom" constant="10" id="J6F-Zm-sbf"/>
                             <constraint firstItem="hSu-3e-l4c" firstAttribute="top" secondItem="oxz-Sj-m1w" secondAttribute="top" id="KBv-R9-Syc"/>
                             <constraint firstItem="vXF-YM-kZG" firstAttribute="bottom" secondItem="oxz-Sj-m1w" secondAttribute="bottom" id="NIe-hy-5Cm"/>
                             <constraint firstItem="oxz-Sj-m1w" firstAttribute="leading" secondItem="OHa-IZ-SlD" secondAttribute="trailing" constant="10" id="Pk5-Fd-9ef"/>
@@ -181,7 +174,6 @@
                             <constraint firstItem="vXF-YM-kZG" firstAttribute="leading" secondItem="hSu-3e-l4c" secondAttribute="leading" id="RSz-pL-un2"/>
                             <constraint firstAttribute="trailing" secondItem="cca-fS-o9Z" secondAttribute="trailing" constant="15" id="RTo-AD-FVV"/>
                             <constraint firstItem="OHa-IZ-SlD" firstAttribute="centerY" secondItem="mo5-YW-5wO" secondAttribute="centerY" id="WbV-pB-2wo"/>
-                            <constraint firstItem="oqw-Od-TZT" firstAttribute="leading" secondItem="hSu-3e-l4c" secondAttribute="leading" id="WiC-Ce-xgK"/>
                             <constraint firstAttribute="trailing" secondItem="VIR-6j-y6R" secondAttribute="trailing" constant="15" id="Wxd-6T-0CO"/>
                             <constraint firstAttribute="bottom" secondItem="CrY-2X-xdM" secondAttribute="bottom" id="d03-Ub-AhR"/>
                             <constraint firstItem="hSu-3e-l4c" firstAttribute="leading" secondItem="oxz-Sj-m1w" secondAttribute="trailing" constant="10" id="fAV-AB-7CE"/>
@@ -229,7 +221,6 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="0dq-rP-FsW"/>
             <connections>
-                <outlet property="goodsAttr" destination="oqw-Od-TZT" id="tpH-hR-my2"/>
                 <outlet property="goodsImagev" destination="oxz-Sj-m1w" id="X9a-Px-iN4"/>
                 <outlet property="goodsIntrolLabel" destination="hSu-3e-l4c" id="CJ1-Ro-k3r"/>
                 <outlet property="goodsPrice" destination="vXF-YM-kZG" id="ZWb-1s-6UJ"/>
@@ -242,7 +233,7 @@
                 <outlet property="userIconV" destination="yIw-BF-RMe" id="Vg9-Rq-Ee7"/>
                 <outlet property="userName" destination="TLW-5Q-mrx" id="oA4-sL-bbA"/>
             </connections>
-            <point key="canvasLocation" x="-9559" y="-70"/>
+            <point key="canvasLocation" x="-8608" y="97"/>
         </tableViewCell>
     </objects>
     <resources>

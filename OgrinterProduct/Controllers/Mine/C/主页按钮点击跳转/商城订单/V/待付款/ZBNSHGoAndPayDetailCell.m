@@ -78,7 +78,11 @@
     self.price.text = [NSString stringWithFormat:@"¥%@",comM.details.price];
     self.goodsName.text = comM.details.name;
     self.num.text = comM.details.num;
-    self.attr_value.text = comM.details.attr_value[1];
+    NSMutableString *muStr = [NSMutableString string];
+    for (NSString *str in comM.details.attr_value) {
+        [muStr appendString:[NSString stringWithFormat:@"%@",str]];
+    }
+    self.attr_value.text = [NSString stringWithFormat:@"%@",muStr];
 }
 
 

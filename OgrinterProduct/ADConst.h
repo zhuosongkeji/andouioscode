@@ -31,3 +31,7 @@ UIKIT_EXTERN NSString * const ZBNChangeNameURL;
 UIKIT_EXTERN NSString * const ZBNGourmetURL;  
 /*! 饭店订单详情URL */
 UIKIT_EXTERN NSString * const ZBNGourmetDetailURL;
+/*! 通知中心URL */
+UIKIT_EXTERN NSString * const ZBNNotificationCenterlURL; 
+/*! 通知信息URL */
+UIKIT_EXTERN NSString * const ZBNInformationURL;
