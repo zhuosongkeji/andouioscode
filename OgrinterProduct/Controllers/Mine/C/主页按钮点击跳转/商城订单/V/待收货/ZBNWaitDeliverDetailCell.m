@@ -90,24 +90,18 @@
     // 电话号码
     self.phone_num.text = comM.userinfo.mobile;
 
+     [self.img sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,comM.details.img]]];
+       
+       self.price.text = [NSString stringWithFormat:@"¥%@",comM.details.price];
+       self.goodsName.text = comM.details.name;
+       self.num.text = comM.details.num;
+       NSMutableString *muStr = [NSMutableString string];
+       for (NSString *str in comM.details.attr_value) {
+           [muStr appendString:[NSString stringWithFormat:@"%@",str]];
+       }
+       self.attr_value.text = [NSString stringWithFormat:@"%@",muStr];
 }
 
-- (void)setDetailM:(ZBNSHOrderDetailsM *)detailM
-{
-    _detailM = detailM;
-    // 商品图片
-    [self.img sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,detailM.img]]];
-    
-    self.price.text = [NSString stringWithFormat:@"¥%@",detailM.price];
-    self.goodsName.text = detailM.name;
-    self.num.text = detailM.num;
-    NSMutableString *muStr = [NSMutableString string];
-    for (NSString *str in detailM.attr_value) {
-        [muStr appendString:[NSString stringWithFormat:@"%@",str]];
-    }
-    self.attr_value.text = [NSString stringWithFormat:@"%@",muStr];
-    
-}
 
 
 

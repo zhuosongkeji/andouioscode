@@ -12,6 +12,7 @@
 #import "ZBNSHOrderDetailsM.h"
 #import "ZBNSHOrderDetailComM.h"
 #import "ZBNSHCommonHeadV.h"
+#import "ZBNSHReturnGoodsVC.h"
 
 @interface ZBNSHZDeliverGoodsDOVC ()
 /*! 模型数据 */
@@ -81,6 +82,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZBNSHZDeliverGoodsDOCell *cell= [ZBNSHZDeliverGoodsDOCell regiserCellForTable:tableView];
+    ADWeakSelf;
+    cell.returnGoodsBtnClickTask = ^{
+        ZBNSHReturnGoodsVC *vc = [[ZBNSHReturnGoodsVC alloc] init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
     cell.comM = self.comM;
     cell.detailM = self.detailsM;
     return cell;

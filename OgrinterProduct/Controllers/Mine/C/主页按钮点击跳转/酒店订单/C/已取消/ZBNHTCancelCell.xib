@@ -32,6 +32,9 @@
                                 <state key="normal" title=" 联系商家" image="联系电话65" backgroundImage="联系商家边框3">
                                     <color key="titleColor" red="0.36862745099999999" green="0.82745098039999998" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="contactShopBtnClick:" destination="zpA-bV-wHp" eventType="touchUpInside" id="gk7-xr-V8v"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -481,7 +484,7 @@
                 <outlet property="real_name" destination="GD7-94-dq8" id="MdG-HC-shP"/>
                 <outlet property="start_time" destination="VUN-m0-fen" id="Fd8-ia-qvR"/>
             </connections>
-            <point key="canvasLocation" x="-169" y="50"/>
+            <point key="canvasLocation" x="-602" y="52"/>
         </tableViewCell>
     </objects>
     <resources>

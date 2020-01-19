@@ -11,7 +11,6 @@
 #import "ZBNShoppingHallWaitPaymentOrderVC.h"
 #import "ZBNSHWaitReceivingGoodsOrderVC.h"
 #import "ZBNSHWaitEvaluateOrderVC.h"
-#import "ZBNSHReturnGoodsOrderVC.h"
 #import "ZBNSegmenBarVC.h"
 #import "ZBNSHDeliverGoodsOrderVC.h"
 
@@ -58,8 +57,6 @@
     ZBNSHWaitReceivingGoodsOrderVC *vc3 = [[ZBNSHWaitReceivingGoodsOrderVC alloc] init];
     
     ZBNSHWaitEvaluateOrderVC *vc5 = [[ZBNSHWaitEvaluateOrderVC alloc] init];
-    
-//    ZBNSHReturnGoodsOrderVC *vc6 = [[ZBNSHReturnGoodsOrderVC alloc] init];
     
         [self.segmentBarVC setUpWithItems:items childVCs:@[vc1, vc2, vc4, vc3, vc5]];
         //设置样式
