@@ -147,7 +147,6 @@
 		A1667DED23C455560039C6F8 /* KXWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1667DEB23C455560039C6F8 /* KXWebViewViewController.m */; };
 		A1667DEE23C455560039C6F8 /* KXWebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1667DEC23C455560039C6F8 /* KXWebViewViewController.xib */; };
 		A19CD6B823C998B1001835E1 /* HoleggModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A19CD6B723C998B1001835E1 /* HoleggModel.m */; };
-		A19E9FA023D1C72200CC7E26 /* HotelOnlinesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A19E9F9E23D1C72200CC7E26 /* HotelOnlinesListModel.m */; };
 		A1CE7CC923A77EB900C22C41 /* QCouponView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE7CC323A77EB800C22C41 /* QCouponView.m */; };
 		A1CE7CCA23A77EB900C22C41 /* QCouponView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CE7CC523A77EB800C22C41 /* QCouponView.xib */; };
 		A1CE7CCB23A77EB900C22C41 /* QCouponTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE7CC623A77EB900C22C41 /* QCouponTableViewCell.m */; };
@@ -199,7 +198,6 @@
 		A1F86E2B23D1602F00CC0F54 /* HolteOnlineSubViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86E2923D1602E00CC0F54 /* HolteOnlineSubViewTableViewCell.m */; };
 		A1F86E2C23D1602F00CC0F54 /* HolteOnlineSubViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F86E2A23D1602E00CC0F54 /* HolteOnlineSubViewTableViewCell.xib */; };
 		A1F86E2F23D1A0B900CC0F54 /* HotelOnlinesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86E2E23D1A0B900CC0F54 /* HotelOnlinesModel.m */; };
-
 		A1FBA8B423D2D4ED008C67E2 /* HotelOnlineGotOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FBA8B223D2D4ED008C67E2 /* HotelOnlineGotOrderViewController.m */; };
 		A1FBA8B523D2D4ED008C67E2 /* HotelOnlineGotOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FBA8B323D2D4ED008C67E2 /* HotelOnlineGotOrderViewController.xib */; };
 		A1FBA8B923D2D870008C67E2 /* HotelOnlineOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FBA8B723D2D870008C67E2 /* HotelOnlineOrderTableViewCell.m */; };
@@ -208,7 +206,6 @@
 		A1FBA8BF23D2FE67008C67E2 /* RCarlistView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FBA8BE23D2FE67008C67E2 /* RCarlistView.xib */; };
 		A1FBA8C323D30106008C67E2 /* RCarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FBA8C123D30106008C67E2 /* RCarTableViewCell.m */; };
 		A1FBA8C423D30106008C67E2 /* RCarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FBA8C223D30106008C67E2 /* RCarTableViewCell.xib */; };
-
 		A1FC4A8B239F27BB00AF3F57 /* CustomAlterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC4A8A239F27BB00AF3F57 /* CustomAlterView.m */; };
 		A1FC4A8D239F288E00AF3F57 /* CustomAlterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FC4A8C239F288E00AF3F57 /* CustomAlterView.xib */; };
 		A1FC4A94239F70E600AF3F57 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FC4A92239F70E600AF3F57 /* PaySuccessViewController.m */; };
@@ -312,7 +309,6 @@
 		F468E57023D166D40050F8BE /* SGQRCodeObtainConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = F468E56923D166D40050F8BE /* SGQRCodeObtainConfigure.m */; };
 		F468E57123D166D40050F8BE /* SGQRCodeObtain.m in Sources */ = {isa = PBXBuildFile; fileRef = F468E56D23D166D40050F8BE /* SGQRCodeObtain.m */; };
 		F468E57223D166D40050F8BE /* SGQRCodeScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = F468E56E23D166D40050F8BE /* SGQRCodeScanView.m */; };
-		F468E57523D1C3390050F8BE /* HotelOnlinesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F468E57423D1C3390050F8BE /* HotelOnlinesListModel.m */; };
 		F46E0F1123BADBEA006FE05D /* ZBNMineSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F46E0F1023BADBEA006FE05D /* ZBNMineSettingModel.m */; };
 		F476A44023A7682B00E3018A /* ZBNBrowseHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F476A38623A7682400E3018A /* ZBNBrowseHistoryVC.m */; };
 		F476A44123A7682B00E3018A /* ZBNDowmLoadAppVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F476A38923A7682400E3018A /* ZBNDowmLoadAppVC.xib */; };
@@ -739,8 +735,6 @@
 		A1667DEC23C455560039C6F8 /* KXWebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KXWebViewViewController.xib; sourceTree = "<group>"; };
 		A19CD6B623C998B1001835E1 /* HoleggModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoleggModel.h; sourceTree = "<group>"; };
 		A19CD6B723C998B1001835E1 /* HoleggModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoleggModel.m; sourceTree = "<group>"; };
-		A19E9F9E23D1C72200CC7E26 /* HotelOnlinesListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelOnlinesListModel.m; sourceTree = "<group>"; };
-		A19E9F9F23D1C72200CC7E26 /* HotelOnlinesListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelOnlinesListModel.h; sourceTree = "<group>"; };
 		A1CE7CC323A77EB800C22C41 /* QCouponView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCouponView.m; sourceTree = "<group>"; };
 		A1CE7CC423A77EB800C22C41 /* QCouponTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCouponTableViewCell.h; sourceTree = "<group>"; };
 		A1CE7CC523A77EB800C22C41 /* QCouponView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QCouponView.xib; sourceTree = "<group>"; };
@@ -825,7 +819,6 @@
 		A1F86E2A23D1602E00CC0F54 /* HolteOnlineSubViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HolteOnlineSubViewTableViewCell.xib; sourceTree = "<group>"; };
 		A1F86E2D23D1A0B900CC0F54 /* HotelOnlinesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelOnlinesModel.h; sourceTree = "<group>"; };
 		A1F86E2E23D1A0B900CC0F54 /* HotelOnlinesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelOnlinesModel.m; sourceTree = "<group>"; };
-
 		A1FBA8B123D2D4ED008C67E2 /* HotelOnlineGotOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelOnlineGotOrderViewController.h; sourceTree = "<group>"; };
 		A1FBA8B223D2D4ED008C67E2 /* HotelOnlineGotOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelOnlineGotOrderViewController.m; sourceTree = "<group>"; };
 		A1FBA8B323D2D4ED008C67E2 /* HotelOnlineGotOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelOnlineGotOrderViewController.xib; sourceTree = "<group>"; };
@@ -838,7 +831,6 @@
 		A1FBA8C023D30106008C67E2 /* RCarTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCarTableViewCell.h; sourceTree = "<group>"; };
 		A1FBA8C123D30106008C67E2 /* RCarTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCarTableViewCell.m; sourceTree = "<group>"; };
 		A1FBA8C223D30106008C67E2 /* RCarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RCarTableViewCell.xib; sourceTree = "<group>"; };
-
 		A1FC4A89239F27BB00AF3F57 /* CustomAlterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAlterView.h; sourceTree = "<group>"; };
 		A1FC4A8A239F27BB00AF3F57 /* CustomAlterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAlterView.m; sourceTree = "<group>"; };
 		A1FC4A8C239F288E00AF3F57 /* CustomAlterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlterView.xib; sourceTree = "<group>"; };
@@ -1019,8 +1011,6 @@
 		F468E56C23D166D40050F8BE /* SGQRCodeObtainConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeObtainConfigure.h; sourceTree = "<group>"; };
 		F468E56D23D166D40050F8BE /* SGQRCodeObtain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeObtain.m; sourceTree = "<group>"; };
 		F468E56E23D166D40050F8BE /* SGQRCodeScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeScanView.m; sourceTree = "<group>"; };
-		F468E57323D1C3390050F8BE /* HotelOnlinesListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelOnlinesListModel.h; sourceTree = "<group>"; };
-		F468E57423D1C3390050F8BE /* HotelOnlinesListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelOnlinesListModel.m; sourceTree = "<group>"; };
 		F46E0F0F23BADBEA006FE05D /* ZBNMineSettingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNMineSettingModel.h; sourceTree = "<group>"; };
 		F46E0F1023BADBEA006FE05D /* ZBNMineSettingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNMineSettingModel.m; sourceTree = "<group>"; };
 		F476A38623A7682400E3018A /* ZBNBrowseHistoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNBrowseHistoryVC.m; sourceTree = "<group>"; };
@@ -2024,7 +2014,6 @@
 				A1F86E1623D03D9100CC0F54 /* OnlineOrderListModel.m */,
 				A1F86E2D23D1A0B900CC0F54 /* HotelOnlinesModel.h */,
 				A1F86E2E23D1A0B900CC0F54 /* HotelOnlinesModel.m */,
-
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -3857,7 +3846,6 @@
 				A1FC4A94239F70E600AF3F57 /* PaySuccessViewController.m in Sources */,
 				F40D745823D065F7006DF3CB /* ZBNRTComDetailVC.m in Sources */,
 				F458C33823C8253900338220 /* ZBNSHComViewLogisticsVC.m in Sources */,
-
 				F4FAC2C223ACB49200C235EA /* ZBNSHGoAndPayDetailCell.m in Sources */,
 				F433C0D023D052CA0065BB91 /* ZBNRTOrderCellInCell.m in Sources */,
 				A160901523C8629700A89A78 /* HolelModel.m in Sources */,
@@ -4296,7 +4284,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 238D2PR592;
+				DEVELOPMENT_TEAM = 2C8KC8WYWK;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4435,7 +4423,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 238D2PR592;
+				DEVELOPMENT_TEAM = 2C8KC8WYWK;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
