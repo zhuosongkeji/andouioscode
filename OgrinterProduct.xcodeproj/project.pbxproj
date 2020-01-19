@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -188,7 +188,6 @@
 		A1F86DF823CD63F500CC0F54 /* HotelOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86DF723CD63F500CC0F54 /* HotelOrderModel.m */; };
 		A1F86DFB23CD666A00CC0F54 /* HotelOrderModelList.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86DFA23CD666A00CC0F54 /* HotelOrderModelList.m */; };
 		A1F86E1423D03BF400CC0F54 /* OnlineOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86E1323D03BF400CC0F54 /* OnlineOrderModel.m */; };
-		A1F86E1723D03D9100CC0F54 /* OnlineOrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86E1623D03D9100CC0F54 /* OnlineOrderListModel.m */; };
 		A1F86E1B23D065F800CC0F54 /* HotelOnlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86E1923D065F800CC0F54 /* HotelOnlineViewController.m */; };
 		A1F86E1C23D065F800CC0F54 /* HotelOnlineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F86E1A23D065F800CC0F54 /* HotelOnlineViewController.xib */; };
 		A1F86E2123D150F300CC0F54 /* HotelOnlineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F86E1F23D150F300CC0F54 /* HotelOnlineTableViewCell.m */; };
@@ -384,6 +383,8 @@
 		F48128F123D4595600285A5C /* ZBNSHReturnGoodsComM.m in Sources */ = {isa = PBXBuildFile; fileRef = F48128EF23D4595500285A5C /* ZBNSHReturnGoodsComM.m */; };
 		F48128F623D460DD00285A5C /* ZBNHTCancelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F48128F423D460DD00285A5C /* ZBNHTCancelVC.m */; };
 		F48128F723D460DD00285A5C /* ZBNHTCancelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F48128F523D460DD00285A5C /* ZBNHTCancelVC.xib */; };
+		F48128FA23D4627900285A5C /* OnlineOrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F48128F923D4627900285A5C /* OnlineOrderListModel.m */; };
+		F481290623D4663200285A5C /* HotelOnlinesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F481290423D4663100285A5C /* HotelOnlinesListModel.m */; };
 		F4835BC023C9C94000418D78 /* ZBNHTBaseOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4835BBF23C9C94000418D78 /* ZBNHTBaseOrderVC.m */; };
 		F4835BC323C9C97A00418D78 /* ZBNHTComModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4835BC223C9C97A00418D78 /* ZBNHTComModel.m */; };
 		F4835BC723C9CA6100418D78 /* ZBNHTComCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4835BC523C9CA6100418D78 /* ZBNHTComCell.m */; };
@@ -804,8 +805,6 @@
 		A1F86DFA23CD666A00CC0F54 /* HotelOrderModelList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelOrderModelList.m; sourceTree = "<group>"; };
 		A1F86E1223D03BF400CC0F54 /* OnlineOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlineOrderModel.h; sourceTree = "<group>"; };
 		A1F86E1323D03BF400CC0F54 /* OnlineOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnlineOrderModel.m; sourceTree = "<group>"; };
-		A1F86E1523D03D9100CC0F54 /* OnlineOrderListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlineOrderListModel.h; sourceTree = "<group>"; };
-		A1F86E1623D03D9100CC0F54 /* OnlineOrderListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnlineOrderListModel.m; sourceTree = "<group>"; };
 		A1F86E1823D065F800CC0F54 /* HotelOnlineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelOnlineViewController.h; sourceTree = "<group>"; };
 		A1F86E1923D065F800CC0F54 /* HotelOnlineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelOnlineViewController.m; sourceTree = "<group>"; };
 		A1F86E1A23D065F800CC0F54 /* HotelOnlineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelOnlineViewController.xib; sourceTree = "<group>"; };
@@ -1143,6 +1142,10 @@
 		F48128F323D460DD00285A5C /* ZBNHTCancelVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTCancelVC.h; sourceTree = "<group>"; };
 		F48128F423D460DD00285A5C /* ZBNHTCancelVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTCancelVC.m; sourceTree = "<group>"; };
 		F48128F523D460DD00285A5C /* ZBNHTCancelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNHTCancelVC.xib; sourceTree = "<group>"; };
+		F48128F823D4627900285A5C /* OnlineOrderListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineOrderListModel.h; sourceTree = "<group>"; };
+		F48128F923D4627900285A5C /* OnlineOrderListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineOrderListModel.m; sourceTree = "<group>"; };
+		F481290423D4663100285A5C /* HotelOnlinesListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelOnlinesListModel.m; sourceTree = "<group>"; };
+		F481290523D4663100285A5C /* HotelOnlinesListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelOnlinesListModel.h; sourceTree = "<group>"; };
 		F4835BBE23C9C94000418D78 /* ZBNHTBaseOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTBaseOrderVC.h; sourceTree = "<group>"; };
 		F4835BBF23C9C94000418D78 /* ZBNHTBaseOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTBaseOrderVC.m; sourceTree = "<group>"; };
 		F4835BC123C9C97A00418D78 /* ZBNHTComModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTComModel.h; sourceTree = "<group>"; };
@@ -2013,10 +2016,12 @@
 				A1FC70C623C2CF6B005BFDC9 /* HomeModel.m */,
 				A1F86E1223D03BF400CC0F54 /* OnlineOrderModel.h */,
 				A1F86E1323D03BF400CC0F54 /* OnlineOrderModel.m */,
-				A1F86E1523D03D9100CC0F54 /* OnlineOrderListModel.h */,
-				A1F86E1623D03D9100CC0F54 /* OnlineOrderListModel.m */,
+				F48128F823D4627900285A5C /* OnlineOrderListModel.h */,
+				F48128F923D4627900285A5C /* OnlineOrderListModel.m */,
 				A1F86E2D23D1A0B900CC0F54 /* HotelOnlinesModel.h */,
 				A1F86E2E23D1A0B900CC0F54 /* HotelOnlinesModel.m */,
+				F481290523D4663100285A5C /* HotelOnlinesListModel.h */,
+				F481290423D4663100285A5C /* HotelOnlinesListModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -3866,6 +3871,7 @@
 				F41B749723C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.m in Sources */,
 				A1FC4A94239F70E600AF3F57 /* PaySuccessViewController.m in Sources */,
 				F40D745823D065F7006DF3CB /* ZBNRTComDetailVC.m in Sources */,
+				F481290623D4663200285A5C /* HotelOnlinesListModel.m in Sources */,
 				F458C33823C8253900338220 /* ZBNSHComViewLogisticsVC.m in Sources */,
 				F4FAC2C223ACB49200C235EA /* ZBNSHGoAndPayDetailCell.m in Sources */,
 				F433C0D023D052CA0065BB91 /* ZBNRTOrderCellInCell.m in Sources */,
@@ -4011,6 +4017,7 @@
 				F4C1969E23C5751300F1C48C /* YNImageUploadViewCollCell.m in Sources */,
 				A14FB25C238E0E4C006A6511 /* AppDelegate.m in Sources */,
 				F4C196C123C576E400F1C48C /* TZVideoPlayerController.m in Sources */,
+				F48128FA23D4627900285A5C /* OnlineOrderListModel.m in Sources */,
 				A14FB2CE238F5F36006A6511 /* CustomBar.m in Sources */,
 				A1F86DF823CD63F500CC0F54 /* HotelOrderModel.m in Sources */,
 				F41B74A423C2DA040056DC78 /* ZBNSHReadEvaluateCell.m in Sources */,
@@ -4118,7 +4125,6 @@
 				A1FBA8B423D2D4ED008C67E2 /* HotelOnlineGotOrderViewController.m in Sources */,
 				F476A47A23A7682B00E3018A /* ZBNCommenOrderCell.m in Sources */,
 				F476A46023A7682B00E3018A /* ZBNSHWaitEvaluateOrderVC.m in Sources */,
-				A1F86E1723D03D9100CC0F54 /* OnlineOrderListModel.m in Sources */,
 				F476A45123A7682B00E3018A /* ZBNSuccessfulWthdrawalsVC.m in Sources */,
 				A1FC70C123C032A0005BFDC9 /* OrderListModel.m in Sources */,
 				A1F4DFE023A1D54F00B02880 /* ShopSeckillDetailsViewController.m in Sources */,
