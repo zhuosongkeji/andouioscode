@@ -9,9 +9,10 @@
 #import "BaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
+//反向block
+typedef NSInteger(^CaReverseBlock)(void);
 
 @interface HotelOnlineSubViewController : BaseViewController
-
 
 @property (nonatomic, assign) BOOL vcCanScroll;
 
@@ -23,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)NSString *str;
 
 @property (nonatomic, strong)NSString *merchants_id;
+
+@property(nonatomic,copy)CaReverseBlock resBlocik;
 
 @end
 
