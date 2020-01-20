@@ -48,11 +48,6 @@
 - (void)setupTable
 {
     
-    if (@available(iOS 11, *)) {
-        self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
-    } else if (@available(iOS 10, *)){
-        
-    }
     self.navigationItem.title = @"订单详情";
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

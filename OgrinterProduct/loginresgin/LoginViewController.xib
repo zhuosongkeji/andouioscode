@@ -46,7 +46,7 @@
                     <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kb1-FD-oq2">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kb1-FD-oq2">
                     <rect key="frame" x="117.5" y="385" width="49" height="49"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" image="图层 12">
@@ -70,7 +70,7 @@
                         <action selector="loginwithThrid:" destination="-1" eventType="touchUpInside" id="5Se-Fo-96R"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huy-Ut-RbJ">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huy-Ut-RbJ">
                     <rect key="frame" x="247.5" y="385" width="49" height="49"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" image="图层 11">
@@ -100,7 +100,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZx-zS-tdI">
                             <rect key="frame" x="10" y="22" width="394" height="35"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层 8" translatesAutoresizingMaskIntoConstraints="NO" id="K68-8P-TTw">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层 14" translatesAutoresizingMaskIntoConstraints="NO" id="K68-8P-TTw">
                                     <rect key="frame" x="10" y="13" width="8" height="9"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="9" id="HCD-EB-Gf6"/>
@@ -166,7 +166,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnh-GY-zut">
-                            <rect key="frame" x="327" y="198" width="77" height="17"/>
+                            <rect key="frame" x="275" y="191.5" width="129" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="  忘记密码" image="圆角矩形 2">
                                 <color key="titleColor" red="0.33725490200000002" green="0.76204603910000002" blue="0.62735551599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -220,15 +220,15 @@
                 <constraint firstItem="x65-O0-raz" firstAttribute="height" secondItem="kb1-FD-oq2" secondAttribute="height" id="wur-pS-Agp"/>
                 <constraint firstItem="rkG-nh-fJK" firstAttribute="centerY" secondItem="wD3-gL-N8a" secondAttribute="centerY" id="yGI-ft-0I1"/>
             </constraints>
-            <point key="canvasLocation" x="-30" y="209"/>
+            <point key="canvasLocation" x="268" y="104"/>
         </view>
     </objects>
     <resources>
         <image name="图层 10" width="33.5" height="33.5"/>
         <image name="图层 11" width="33.5" height="33.5"/>
         <image name="图层 12" width="33.5" height="33.5"/>
-        <image name="图层 8" width="250" height="151"/>
+        <image name="图层 14" width="10" height="14.5"/>
         <image name="图层 9" width="8" height="9"/>
-        <image name="圆角矩形 2" width="12" height="12"/>
+        <image name="圆角矩形 2" width="64" height="30"/>
     </resources>
 </document>

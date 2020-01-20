@@ -132,8 +132,8 @@
            
            self.model = [ZBNMineModel mj_objectWithKeyValues:serverInfo.response[@"data"]];
            // 设置头像
-           [self.headImageV setHeader:self.model.avator];
-           // 设置用户名
+           [self.headImageV setHeader:[NSString stringWithFormat:@"%@%@",imgServer,self.model.avator]];
+           // 设置用户名 
             self.userName.text = [NSString stringWithFormat:@"%@",self.model.name];
            // 余额
            self.money.text = self.model.money;

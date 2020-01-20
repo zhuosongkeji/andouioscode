@@ -68,6 +68,8 @@
     // 设置代理
     [self setupDelegate];
     
+    self.myTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
     // 设置边框
     self.order_detailBtn.layer.cornerRadius = 10;
     self.order_detailBtn.layer.borderWidth = 1;

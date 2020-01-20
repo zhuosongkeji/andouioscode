@@ -2014,22 +2014,14 @@
 				A1FC70C623C2CF6B005BFDC9 /* HomeModel.m */,
 				A1F86E1223D03BF400CC0F54 /* OnlineOrderModel.h */,
 				A1F86E1323D03BF400CC0F54 /* OnlineOrderModel.m */,
-
 				A1FBA8C723D3E4CF008C67E2 /* HotelOnlinesListModel.h */,
 				A1FBA8C823D3E4CF008C67E2 /* HotelOnlinesListModel.m */,
 				A1FBA8C523D3E4CE008C67E2 /* HotelOnlinesModel.h */,
 				A1FBA8C623D3E4CE008C67E2 /* HotelOnlinesModel.m */,
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 1f2e19ad911d21ffd32bcac10e77f34f905a96f3
 				F48128F823D4627900285A5C /* OnlineOrderListModel.h */,
 				F48128F923D4627900285A5C /* OnlineOrderListModel.m */,
 				F481290523D4663100285A5C /* HotelOnlinesListModel.h */,
 				F481290423D4663100285A5C /* HotelOnlinesListModel.m */,
-
 			);
 			path = M;
 			sourceTree = "<group>";

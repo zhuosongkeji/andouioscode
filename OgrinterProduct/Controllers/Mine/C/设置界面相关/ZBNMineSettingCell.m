@@ -83,7 +83,7 @@
     // 设置数据
     _settingM = settingM;
 
-    [self.userIconV setHeader:settingM.avator];
+    [self.userIconV setHeader:[NSString stringWithFormat:@"%@%@",imgServer,settingM.avator]];
     self.userName.text = settingM.name;
     self.phoneNumber.text = [NSString returnImportentNum:settingM.mobile];
 }
