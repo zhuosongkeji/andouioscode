@@ -12,6 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HotelOnlineGotOrderViewController">
             <connections>
                 <outlet property="mTableView" destination="2zv-lL-8Ml" id="KUR-0p-yB8"/>
+                <outlet property="toTop" destination="LI6-5I-acm" id="Ljy-5f-bsH"/>
+                <outlet property="totalmaney" destination="FGS-7a-zfd" id="dws-u0-SBs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -51,6 +53,9 @@
                             <color key="backgroundColor" red="0.33725490200000002" green="0.76204603910000002" blue="0.62735551599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="立即预定"/>
+                            <connections>
+                                <action selector="gotoOrder:" destination="-1" eventType="touchUpInside" id="fIu-E7-XEu"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
