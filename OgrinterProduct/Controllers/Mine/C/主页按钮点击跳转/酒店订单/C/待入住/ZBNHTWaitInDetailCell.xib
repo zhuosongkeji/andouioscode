@@ -32,6 +32,9 @@
                                 <state key="normal" title="取消订单" backgroundImage="取消订单边框">
                                     <color key="titleColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cKX-Zy-CpV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhL-sZ-6ih">
                                 <rect key="frame" x="100" y="48.5" width="80" height="27.5"/>
@@ -39,6 +42,9 @@
                                 <state key="normal" title=" 联系商家" image="联系电话65" backgroundImage="联系商家边框3">
                                     <color key="titleColor" red="0.36862745099999999" green="0.82745098039999998" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="contactShop:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BrO-Ha-nhp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -236,7 +242,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="二维码号:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9g4-aZ-enq">
-                                <rect key="frame" x="161.5" y="178" width="57" height="16"/>
+                                <rect key="frame" x="193" y="178" width="57" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -255,27 +261,19 @@
                                     <constraint firstAttribute="height" constant="100" id="vOz-zT-67d"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9j-lO-xSi">
-                                <rect key="frame" x="228.5" y="178" width="33" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="l3U-bW-g0D" firstAttribute="leading" secondItem="iNt-kh-GLR" secondAttribute="leading" constant="15" id="7SE-YO-VGN"/>
                             <constraint firstItem="0VY-6G-e9V" firstAttribute="top" secondItem="iNt-kh-GLR" secondAttribute="top" constant="15" id="8C5-1d-wTp"/>
-                            <constraint firstItem="V9j-lO-xSi" firstAttribute="centerY" secondItem="9g4-aZ-enq" secondAttribute="centerY" id="RuH-tP-1Er"/>
-                            <constraint firstItem="V9j-lO-xSi" firstAttribute="leading" secondItem="9g4-aZ-enq" secondAttribute="trailing" constant="10" id="Tdi-d2-fpH"/>
                             <constraint firstItem="9g4-aZ-enq" firstAttribute="top" secondItem="Kic-YW-A3l" secondAttribute="bottom" constant="15" id="Tun-Mc-Vy1"/>
                             <constraint firstItem="l3U-bW-g0D" firstAttribute="top" secondItem="0VY-6G-e9V" secondAttribute="bottom" constant="15" id="VjY-je-PR2"/>
                             <constraint firstAttribute="trailing" secondItem="l3U-bW-g0D" secondAttribute="trailing" constant="15" id="ZYx-Bq-6PV"/>
                             <constraint firstAttribute="height" constant="200" id="ccy-tY-lv6"/>
-                            <constraint firstItem="9g4-aZ-enq" firstAttribute="leading" secondItem="Kic-YW-A3l" secondAttribute="leading" constant="-10" id="dRu-ba-plN"/>
                             <constraint firstItem="Kic-YW-A3l" firstAttribute="top" secondItem="l3U-bW-g0D" secondAttribute="bottom" constant="15" id="hP4-c7-Ran"/>
                             <constraint firstItem="Kic-YW-A3l" firstAttribute="centerX" secondItem="iNt-kh-GLR" secondAttribute="centerX" id="mSq-E8-eKL"/>
                             <constraint firstItem="0VY-6G-e9V" firstAttribute="leading" secondItem="iNt-kh-GLR" secondAttribute="leading" constant="15" id="t8H-wq-sSv"/>
+                            <constraint firstItem="9g4-aZ-enq" firstAttribute="centerX" secondItem="iNt-kh-GLR" secondAttribute="centerX" id="vwq-14-RRy"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ia-XS-daZ">
@@ -455,6 +453,8 @@
             <connections>
                 <outlet property="book_sn" destination="S3I-qR-cWG" id="PlN-W7-Zgm"/>
                 <outlet property="created_at" destination="DGA-ng-1kz" id="8Lt-PM-IFh"/>
+                <outlet property="erweimaImg" destination="Kic-YW-A3l" id="lUi-wE-x0j"/>
+                <outlet property="erweima_num" destination="9g4-aZ-enq" id="tAy-Af-Mwa"/>
                 <outlet property="house_name" destination="yEI-KI-a1P" id="bu9-HS-148"/>
                 <outlet property="img" destination="QVo-tn-zWv" id="eMg-pC-12R"/>
                 <outlet property="integral" destination="9hi-1o-OBc" id="Vma-79-ALd"/>
@@ -467,7 +467,7 @@
                 <outlet property="real_name" destination="DSG-oT-Dg8" id="QSI-C5-H9V"/>
                 <outlet property="start_time" destination="nrl-wH-C6P" id="K07-Eg-dmr"/>
             </connections>
-            <point key="canvasLocation" x="-50" y="1094"/>
+            <point key="canvasLocation" x="93" y="1329"/>
         </tableViewCell>
     </objects>
     <resources>

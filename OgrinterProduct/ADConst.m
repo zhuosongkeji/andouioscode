@@ -37,3 +37,7 @@ NSString * const ZBNGourmetDetailURL = @"http://andou.zhuosongkj.com/index.php/a
 NSString * const ZBNNotificationCenterlURL = @"http://andou.zhuosongkj.com/index.php/api/index/notification_center";
 
 NSString * const ZBNInformationURL = @"http://andou.zhuosongkj.com/index.php/api/index/information";
+
+NSString * const ZBNReasonURL = @"http://andou.zhuosongkj.com/api/refund/reason";
+
+NSString * const ZBNApplyURL = @"http://andou.zhuosongkj.com/api/refund/apply";

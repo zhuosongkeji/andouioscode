@@ -73,5 +73,101 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B3E8521-B599-4353-B2BC-5FE0C0D829EB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OgrinterProduct/Controllers/Mine/C/&#x4e3b;&#x9875;&#x6309;&#x94ae;&#x70b9;&#x51fb;&#x8df3;&#x8f6c;/&#x5546;&#x57ce;&#x8ba2;&#x5355;/C/&#x5f85;&#x8bc4;&#x4ef7;/ZBNSHWaitEvaluateDetailVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6B3E8521-B599-4353-B2BC-5FE0C0D829EB - 47778d3e676ccf53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ZBNSHWaitEvaluateDetailVC tableView:cellForRowAtIndexPath:]"
+                  moduleName = "OgrinterProduct"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhoufangyuan/Desktop/%E6%9C%80%E6%96%B0%E9%A1%B9%E7%9B%AE/andouioscode/OgrinterProduct/Controllers/Mine/C/%E4%B8%BB%E9%A1%B5%E6%8C%89%E9%92%AE%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%AC/%E5%95%86%E5%9F%8E%E8%AE%A2%E5%8D%95/C/%E5%BE%85%E8%AF%84%E4%BB%B7/ZBNSHWaitEvaluateDetailVC.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  uuid = "6B3E8521-B599-4353-B2BC-5FE0C0D829EB - 9452fa7c5d3636c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__61-[ZBNSHWaitEvaluateDetailVC tableView:cellForRowAtIndexPath:]_block_invoke"
+                  moduleName = "OgrinterProduct"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhoufangyuan/Desktop/%E6%9C%80%E6%96%B0%E9%A1%B9%E7%9B%AE/andouioscode/OgrinterProduct/Controllers/Mine/C/%E4%B8%BB%E9%A1%B5%E6%8C%89%E9%92%AE%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%AC/%E5%95%86%E5%9F%8E%E8%AE%A2%E5%8D%95/C/%E5%BE%85%E8%AF%84%E4%BB%B7/ZBNSHWaitEvaluateDetailVC.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D123B60E-6DFC-4860-8F2C-02D1E5D4B366"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OgrinterProduct/Controllers/Mine/C/&#x4e3b;&#x9875;&#x6309;&#x94ae;&#x70b9;&#x51fb;&#x8df3;&#x8f6c;/&#x5546;&#x57ce;&#x8ba2;&#x5355;/C/&#x5f85;&#x8bc4;&#x4ef7;/ZBNSHWaitEvaluateDetailCell.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "-returnGoodsBtnClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2DB42192-5CF6-42C8-86C3-D7933AF61B4D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OgrinterProduct/Controllers/Mine/C/&#x4e3b;&#x9875;&#x6309;&#x94ae;&#x70b9;&#x51fb;&#x8df3;&#x8f6c;/&#x5546;&#x57ce;&#x8ba2;&#x5355;/C/&#x5f85;&#x8bc4;&#x4ef7;/ZBNSHWaitEvaluateDetailCell.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-setComM:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C2D1A40C-4516-40DE-AC30-1300E4C2319D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OgrinterProduct/Controllers/Mine/C/&#x4e3b;&#x9875;&#x6309;&#x94ae;&#x70b9;&#x51fb;&#x8df3;&#x8f6c;/&#x5546;&#x57ce;&#x8ba2;&#x5355;/C/&#x5f85;&#x8bc4;&#x4ef7;/ZBNSHWaitEvaluateDetailVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

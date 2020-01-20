@@ -17,6 +17,7 @@
 #import "ZBNSHOrderDetailsM.h"
 
 #import "ZBNSHComViewLogisticsVC.h" // 查看物流
+#import "ZBNSHReturnGoodsVC.h"
 
 @interface ZBNWaitDeliverDetailVC ()
 
@@ -74,6 +75,7 @@
         params[@"order_sn"] = self.getOrderNum;
         [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/details" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
             self.comM = [ZBNSHOrderDetailComM mj_objectWithKeyValues:serverInfo.response[@"data"]];
+            self.comM.details = [ZBNSHOrderDetailsM mj_objectWithKeyValues:serverInfo.response[@"data"][@"details"][0]];
             [weakSelf.tableView reloadData];
         }];
 }
@@ -90,23 +92,31 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZBNWaitDeliverDetailCell *cell = [ZBNWaitDeliverDetailCell regiserCellForTable:tableView];
+    ADWeakSelf;
     // 确认收货
     cell.beSureReciveGoodsBtnClickTask = ^{
         [ZBNAlertTool zbn_alertTitle:@"确认收货?" type:UIAlertControllerStyleAlert message:@"确认收货" didTask:^{
             // 发起确认收货的请求
-            [self beSureReciveRequest];
+            [weakSelf beSureReciveRequest];
         }];
     };
     // 退货退款
     cell.returnGoodsBtnClickTask = ^{
-        
+        ZBNSHReturnGoodsVC *vc = [[ZBNSHReturnGoodsVC alloc] init];
+        vc.goodsID = self.comM.details.ID;
+        vc.goodsImg = self.comM.details.img;
+        vc.goodsPrice = self.comM.details.price;
+        vc.goodsIntro = self.comM.details.attr_value;
+        vc.goodsName = self.comM.details.name;
+        vc.goodsNum = self.comM.details.num;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     // 查看物流
     cell.viewLogisticsBtnClickTask = ^{
         ZBNSHComViewLogisticsVC *vc = [[ZBNSHComViewLogisticsVC alloc] init];
-        vc.courier_num = self.courier_num;
-        vc.express_id = self.express_id;
-        [self.navigationController pushViewController:vc animated:YES];
+        vc.courier_num = weakSelf.courier_num;
+        vc.express_id = weakSelf.express_id;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     
     cell.comM = self.comM;
