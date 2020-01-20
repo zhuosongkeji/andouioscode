@@ -2018,12 +2018,7 @@
 				A1FBA8C823D3E4CF008C67E2 /* HotelOnlinesListModel.m */,
 				A1FBA8C523D3E4CE008C67E2 /* HotelOnlinesModel.h */,
 				A1FBA8C623D3E4CE008C67E2 /* HotelOnlinesModel.m */,
-<<<<<<< HEAD
-=======
 
-
-
->>>>>>> 541d8b5b9a69a1f152cbb2f1da0dbb75fc7237d8
 				F48128F823D4627900285A5C /* OnlineOrderListModel.h */,
 				F48128F923D4627900285A5C /* OnlineOrderListModel.m */,
 				F481290523D4663100285A5C /* HotelOnlinesListModel.h */,
