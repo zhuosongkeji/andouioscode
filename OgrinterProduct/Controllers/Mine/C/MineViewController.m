@@ -38,7 +38,9 @@
 /*! 关注 */
 
 /*! 收藏 */
+
 /*! 浏览记录 */
+@property (weak, nonatomic) IBOutlet UILabel *historyL;
 /*! 余额 */
 @property (weak, nonatomic) IBOutlet UILabel *money;
 

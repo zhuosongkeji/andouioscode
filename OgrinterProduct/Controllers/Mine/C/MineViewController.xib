@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineViewController">
             <connections>
                 <outlet property="headImageV" destination="as7-O6-384" id="UAz-Td-pps"/>
+                <outlet property="historyL" destination="fCa-EY-Z1c" id="5tb-mk-nqf"/>
                 <outlet property="integerL" destination="MS7-1P-hH8" id="Kdk-ri-Vkh"/>
                 <outlet property="mTableView" destination="kGP-dV-NOj" id="XgD-j2-92t"/>
                 <outlet property="money" destination="to9-Dc-cTp" id="HVK-z8-Wi5"/>
@@ -572,7 +573,7 @@
                 <constraint firstAttribute="trailing" secondItem="kGP-dV-NOj" secondAttribute="trailing" id="JYB-Ix-DuZ"/>
                 <constraint firstAttribute="bottom" secondItem="kGP-dV-NOj" secondAttribute="bottom" id="vmt-1l-new"/>
             </constraints>
-            <point key="canvasLocation" x="-28341" y="257"/>
+            <point key="canvasLocation" x="-26858" y="209"/>
         </view>
     </objects>
     <resources>

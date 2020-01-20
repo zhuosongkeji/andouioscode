@@ -32,6 +32,9 @@
                                 <state key="normal" title="取消订单" backgroundImage="取消订单边框">
                                     <color key="titleColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelBtnClick:" destination="lTz-vW-0Gn" eventType="touchUpInside" id="rLX-A5-hOr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNH-rM-6iP">
                                 <rect key="frame" x="100" y="48.5" width="80" height="27.5"/>
@@ -39,6 +42,9 @@
                                 <state key="normal" title=" 联系商家" image="联系电话65" backgroundImage="联系商家边框3">
                                     <color key="titleColor" red="0.36862745099999999" green="0.82745098039999998" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="contactShop:" destination="lTz-vW-0Gn" eventType="touchUpInside" id="BK0-Zj-r6I"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -412,7 +418,7 @@
                 <outlet property="real_name" destination="cVQ-Iq-99k" id="bbc-hx-TMb"/>
                 <outlet property="start_time" destination="RHa-6o-mTI" id="A3t-Kz-KND"/>
             </connections>
-            <point key="canvasLocation" x="15664" y="636"/>
+            <point key="canvasLocation" x="14357" y="300"/>
         </tableViewCell>
     </objects>
     <resources>
