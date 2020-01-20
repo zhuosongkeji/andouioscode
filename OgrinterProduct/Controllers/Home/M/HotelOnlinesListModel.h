@@ -21,6 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString *munbert;
 
 
+@property(nonatomic,strong)NSString *all;
+@property(nonatomic,strong)NSString *Tname;
+@property(nonatomic,strong)NSString *integral;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

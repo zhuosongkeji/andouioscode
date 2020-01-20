@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HotelOnlineGotOrderViewController : BaseViewController
 
+@property(nonatomic,strong)NSString *merchants_id;
+
 @end
 
 NS_ASSUME_NONNULL_END

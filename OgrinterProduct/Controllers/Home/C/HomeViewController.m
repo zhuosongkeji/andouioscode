@@ -179,6 +179,7 @@
     [self openRedPacket];
     
     [self loadNetWork];
+    [self floadNetWork];
 
     // Do any additional setup after loading the view from its nib.
 }
@@ -257,7 +258,6 @@
                 HomeModel *model = [[HomeModel alloc]initWithDict:dict[@"merchants"][i]];
                 [self.merchantArr addObject:model];
             }
-            [self floadNetWork];
             
             [self.noticebjView addSubview:self.queeView];
             [self.pageFlowView reloadData];//刷新轮播
@@ -269,8 +269,6 @@
             
         }
     }];
-    
-    [self floadNetWork];
 }
 
 //MARK:- 获取饭店数据
@@ -290,6 +288,7 @@
             [HUDManager showTextHud:loadError];
         }
     }];
+    [self.mTableView reloadData];
 }
 
 

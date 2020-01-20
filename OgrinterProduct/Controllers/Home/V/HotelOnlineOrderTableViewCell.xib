@@ -56,6 +56,12 @@
                     <constraint firstItem="COA-rx-ct6" firstAttribute="leading" secondItem="8LN-ax-7gr" secondAttribute="trailing" constant="12" id="hH9-w7-rdb"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="cprice" destination="iTR-nM-Ynr" id="kCi-4r-daq"/>
+                <outlet property="desc" destination="oqN-xs-oft" id="fer-fD-l4w"/>
+                <outlet property="icon" destination="8LN-ax-7gr" id="iZP-nt-9FQ"/>
+                <outlet property="titleName" destination="COA-rx-ct6" id="FVh-lY-w6P"/>
+            </connections>
             <point key="canvasLocation" x="154" y="25"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotelOnlineOrderTableViewCell1" rowHeight="174" id="Qbe-cR-acw" customClass="HotelOnlineOrderTableViewCell">
@@ -65,70 +71,105 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="180.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gog-K3-y37">
+                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gog-K3-y37">
                         <rect key="frame" x="10" y="12" width="67.5" height="44"/>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.9531517625" blue="0.95976561309999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="KWr-dJ-4mB"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="周日">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="周日" backgroundImage="头部白色背景">
+                            <color key="titleColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <state key="selected" title="周日" backgroundImage="头部视图背景">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="btnclictc:" destination="Qbe-cR-acw" eventType="touchUpInside" id="vva-6h-A6Z"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BF2-as-ESP">
+                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BF2-as-ESP">
                         <rect key="frame" x="87.5" y="12" width="67.5" height="44"/>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.9531517625" blue="0.95976561309999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="周一">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="周一" backgroundImage="头部白色背景">
+                            <color key="titleColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <state key="selected" title="周一" backgroundImage="头部视图背景">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="btnclictc:" destination="Qbe-cR-acw" eventType="touchUpInside" id="WcO-Yn-iyg"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CF-Y3-eY0">
+                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CF-Y3-eY0">
                         <rect key="frame" x="165" y="12" width="67.5" height="44"/>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.9531517625" blue="0.95976561309999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="周二">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="周二" backgroundImage="头部白色背景">
+                            <color key="titleColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <state key="selected" title="周二" backgroundImage="头部视图背景">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="btnclictc:" destination="Qbe-cR-acw" eventType="touchUpInside" id="huT-u3-DE7"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMW-2Q-1xj">
+                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMW-2Q-1xj">
                         <rect key="frame" x="242.5" y="12" width="67.5" height="44"/>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.9531517625" blue="0.95976561309999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="周三">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="周三" backgroundImage="头部白色背景">
+                            <color key="titleColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <state key="selected" title="周三" backgroundImage="头部视图背景">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="btnclictc:" destination="Qbe-cR-acw" eventType="touchUpInside" id="tok-jf-gce"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cF4-7v-oEZ">
-                        <rect key="frame" x="10" y="80" width="67.5" height="44"/>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.9531517625" blue="0.95976561309999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cF4-7v-oEZ">
+                        <rect key="frame" x="10" y="72" width="67.5" height="44"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="周四">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="周四" backgroundImage="头部白色背景">
+                            <color key="titleColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <state key="selected" title="周四" backgroundImage="头部视图背景">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="btnclictc:" destination="Qbe-cR-acw" eventType="touchUpInside" id="V1w-DK-iKa"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9C-jE-doJ">
-                        <rect key="frame" x="87.5" y="80" width="67.5" height="44"/>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.9531517625" blue="0.95976561309999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9C-jE-doJ">
+                        <rect key="frame" x="87.5" y="72" width="67.5" height="44"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="周五">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="周五" backgroundImage="头部白色背景">
+                            <color key="titleColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <state key="selected" title="周五" backgroundImage="头部视图背景">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="btnclictc:" destination="Qbe-cR-acw" eventType="touchUpInside" id="kTU-28-EsS"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUR-2j-cJh">
-                        <rect key="frame" x="165" y="80" width="67.5" height="44"/>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.9531517625" blue="0.95976561309999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUR-2j-cJh">
+                        <rect key="frame" x="165" y="72" width="67.5" height="44"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="周六">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="周六" backgroundImage="头部白色背景">
+                            <color key="titleColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <state key="selected" title="周六" backgroundImage="头部视图背景">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="btnclictc:" destination="Qbe-cR-acw" eventType="touchUpInside" id="BNz-Lh-ksB"/>
+                        </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHr-o1-2uY">
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHr-o1-2uY">
                         <rect key="frame" x="12" y="136" width="308" height="0.5"/>
                         <color key="backgroundColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="0.59999999999999998" id="T2e-UC-ma5"/>
+                            <constraint firstAttribute="height" constant="0.5" id="T2e-UC-ma5"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -141,13 +182,16 @@
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPz-MB-fuB">
+                    <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPz-MB-fuB">
                         <rect key="frame" x="192" y="136.5" width="128" height="44"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="12" maxY="0.0"/>
                         <state key="normal" title="请选择时间 &gt;">
                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="selecttime:" destination="Qbe-cR-acw" eventType="touchUpInside" id="0pb-mo-PQb"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -160,7 +204,7 @@
                     <constraint firstItem="fUR-2j-cJh" firstAttribute="height" secondItem="cF4-7v-oEZ" secondAttribute="height" id="HJt-rO-Si5"/>
                     <constraint firstItem="cF4-7v-oEZ" firstAttribute="width" secondItem="gog-K3-y37" secondAttribute="width" id="Hei-2z-SJg"/>
                     <constraint firstItem="IMW-2Q-1xj" firstAttribute="leading" secondItem="7CF-Y3-eY0" secondAttribute="trailing" constant="10" id="Jrl-Ao-arM"/>
-                    <constraint firstItem="AHr-o1-2uY" firstAttribute="top" secondItem="cF4-7v-oEZ" secondAttribute="bottom" constant="12" id="LuX-ai-The"/>
+                    <constraint firstItem="AHr-o1-2uY" firstAttribute="top" secondItem="cF4-7v-oEZ" secondAttribute="bottom" constant="20" id="LuX-ai-The"/>
                     <constraint firstItem="fUR-2j-cJh" firstAttribute="width" secondItem="cF4-7v-oEZ" secondAttribute="width" id="Muc-99-kJz"/>
                     <constraint firstItem="BF2-as-ESP" firstAttribute="width" secondItem="gog-K3-y37" secondAttribute="width" id="N8J-kf-KEg"/>
                     <constraint firstItem="gWy-WK-Hsy" firstAttribute="leading" secondItem="PaJ-yX-H3r" secondAttribute="leading" id="Nt3-8C-35q"/>
@@ -184,7 +228,7 @@
                     <constraint firstItem="BF2-as-ESP" firstAttribute="top" secondItem="PaJ-yX-H3r" secondAttribute="top" constant="12" id="owJ-pR-Kzp"/>
                     <constraint firstAttribute="trailing" secondItem="IMW-2Q-1xj" secondAttribute="trailing" constant="10" id="ptT-j1-pTU"/>
                     <constraint firstItem="fUR-2j-cJh" firstAttribute="centerY" secondItem="cF4-7v-oEZ" secondAttribute="centerY" id="tQU-sB-54Y"/>
-                    <constraint firstItem="cF4-7v-oEZ" firstAttribute="top" secondItem="gog-K3-y37" secondAttribute="bottom" constant="24" id="thM-Al-gSm"/>
+                    <constraint firstItem="cF4-7v-oEZ" firstAttribute="top" secondItem="gog-K3-y37" secondAttribute="bottom" constant="16" id="thM-Al-gSm"/>
                     <constraint firstItem="GPz-MB-fuB" firstAttribute="leading" secondItem="gWy-WK-Hsy" secondAttribute="trailing" id="vs0-lF-FsU"/>
                     <constraint firstItem="cF4-7v-oEZ" firstAttribute="height" secondItem="gog-K3-y37" secondAttribute="height" id="wH3-CX-Iom"/>
                     <constraint firstItem="g9C-jE-doJ" firstAttribute="leading" secondItem="cF4-7v-oEZ" secondAttribute="trailing" constant="10" id="zCu-91-Zq2"/>
@@ -208,8 +252,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40m-bT-xiN">
-                        <rect key="frame" x="220.5" y="8" width="28" height="28"/>
+                    <button opaque="NO" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40m-bT-xiN">
+                        <rect key="frame" x="228.5" y="8" width="28" height="28"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="28" id="EnB-Ye-Uf8"/>
                             <constraint firstAttribute="width" constant="28" id="sCJ-FF-vlT"/>
@@ -218,8 +262,11 @@
                         <state key="normal" title="-">
                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="addclcik:" destination="6EW-7h-wlS" eventType="touchUpInside" id="PTw-Ot-9N4"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aY5-QC-bXg">
+                    <button opaque="NO" tag="301" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aY5-QC-bXg">
                         <rect key="frame" x="276" y="8" width="28" height="28"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="28" id="mWX-AL-SMC"/>
@@ -229,9 +276,12 @@
                         <state key="normal" title="+">
                             <color key="titleColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="addclcik:" destination="6EW-7h-wlS" eventType="touchUpInside" id="8E0-Jt-5pf"/>
+                        </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN2-dh-NBk">
-                        <rect key="frame" x="248.5" y="14" width="27.5" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN2-dh-NBk">
+                        <rect key="frame" x="256.5" y="14" width="19.5" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -250,6 +300,9 @@
             <constraints>
                 <constraint firstItem="K91-pS-w7P" firstAttribute="centerY" secondItem="6EW-7h-wlS" secondAttribute="centerY" id="RgQ-nR-kf9"/>
             </constraints>
+            <connections>
+                <outlet property="numberplable" destination="fN2-dh-NBk" id="kiw-hk-Dvk"/>
+            </connections>
             <point key="canvasLocation" x="153.62318840579712" y="249.10714285714283"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotelOnlineOrderTableViewCell3" rowHeight="27" id="seA-gA-CDu" customClass="HotelOnlineOrderTableViewCell">
@@ -368,6 +421,9 @@
             <constraints>
                 <constraint firstItem="hlG-ov-Cmr" firstAttribute="centerY" secondItem="akf-qd-viO" secondAttribute="centerY" id="NWY-FH-NoJ"/>
             </constraints>
+            <connections>
+                <outlet property="gnlable" destination="ZfI-UT-uxA" id="bb7-ek-Ane"/>
+            </connections>
             <point key="canvasLocation" x="153.62318840579712" y="420.87053571428572"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotelOnlineOrderTableViewCell6" rowHeight="96" id="vMW-Ik-n9m" customClass="HotelOnlineOrderTableViewCell">
@@ -437,6 +493,11 @@
                     <constraint firstItem="bvJ-5x-CSN" firstAttribute="top" secondItem="eIo-rK-TBa" secondAttribute="bottom" constant="12" id="tuU-1a-Je5"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="taotltitlLable" destination="YKB-Sa-ibS" id="6ia-ls-0aq"/>
+                <outlet property="tatolPrice" destination="QBw-FI-n91" id="aWk-QY-HHV"/>
+                <outlet property="tatolPriceo" destination="bEK-hO-cRu" id="Xsg-mW-sC3"/>
+            </connections>
             <point key="canvasLocation" x="154" y="500"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotelOnlineOrderTableViewCell7" rowHeight="49" id="v0I-0A-cFN" customClass="HotelOnlineOrderTableViewCell">
@@ -460,6 +521,9 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" backgroundImage="椭圆 1 拷贝"/>
                         <state key="selected" backgroundImage="椭圆 1"/>
+                        <connections>
+                            <action selector="btnclick:" destination="v0I-0A-cFN" eventType="touchUpInside" id="NLW-yp-eX1"/>
+                        </connections>
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aP4-Y9-uVI">
                         <rect key="frame" x="12" y="21.5" width="32" height="26"/>
@@ -480,10 +544,17 @@
             <constraints>
                 <constraint firstItem="M2Y-Vj-NeV" firstAttribute="centerY" secondItem="v0I-0A-cFN" secondAttribute="centerY" id="k7y-hb-Lzd"/>
             </constraints>
+            <connections>
+                <outlet property="pBtn" destination="ikf-vy-GOS" id="GmX-wg-Asi"/>
+                <outlet property="pIcon" destination="aP4-Y9-uVI" id="shF-eA-IWc"/>
+                <outlet property="pName" destination="M2Y-Vj-NeV" id="Wtq-Qm-rHm"/>
+            </connections>
             <point key="canvasLocation" x="153.62318840579712" y="586.27232142857144"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="头部白色背景" width="344" height="128"/>
+        <image name="头部视图背景" width="375" height="199"/>
         <image name="椭圆 1" width="10" height="10"/>
         <image name="椭圆 1 拷贝" width="10" height="10"/>
     </resources>
