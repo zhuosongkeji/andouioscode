@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -382,8 +382,6 @@
 		F48128E423D4349800285A5C /* ZBNReturnGoodsReasonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F48128E223D4349800285A5C /* ZBNReturnGoodsReasonCell.xib */; };
 		F48128EB23D436AD00285A5C /* ZBNSHReCellM.m in Sources */ = {isa = PBXBuildFile; fileRef = F48128EA23D436AD00285A5C /* ZBNSHReCellM.m */; };
 		F48128F123D4595600285A5C /* ZBNSHReturnGoodsComM.m in Sources */ = {isa = PBXBuildFile; fileRef = F48128EF23D4595500285A5C /* ZBNSHReturnGoodsComM.m */; };
-		F48128F623D460DD00285A5C /* ZBNHTCancelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F48128F423D460DD00285A5C /* ZBNHTCancelVC.m */; };
-		F48128F723D460DD00285A5C /* ZBNHTCancelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F48128F523D460DD00285A5C /* ZBNHTCancelVC.xib */; };
 		F48128FA23D4627900285A5C /* OnlineOrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F48128F923D4627900285A5C /* OnlineOrderListModel.m */; };
 		F481290623D4663200285A5C /* HotelOnlinesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F481290423D4663100285A5C /* HotelOnlinesListModel.m */; };
 		F4835BC023C9C94000418D78 /* ZBNHTBaseOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4835BBF23C9C94000418D78 /* ZBNHTBaseOrderVC.m */; };
@@ -1142,9 +1140,6 @@
 		F48128EA23D436AD00285A5C /* ZBNSHReCellM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHReCellM.m; sourceTree = "<group>"; };
 		F48128EF23D4595500285A5C /* ZBNSHReturnGoodsComM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNSHReturnGoodsComM.m; sourceTree = "<group>"; };
 		F48128F023D4595500285A5C /* ZBNSHReturnGoodsComM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNSHReturnGoodsComM.h; sourceTree = "<group>"; };
-		F48128F323D460DD00285A5C /* ZBNHTCancelVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTCancelVC.h; sourceTree = "<group>"; };
-		F48128F423D460DD00285A5C /* ZBNHTCancelVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTCancelVC.m; sourceTree = "<group>"; };
-		F48128F523D460DD00285A5C /* ZBNHTCancelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNHTCancelVC.xib; sourceTree = "<group>"; };
 		F48128F823D4627900285A5C /* OnlineOrderListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineOrderListModel.h; sourceTree = "<group>"; };
 		F48128F923D4627900285A5C /* OnlineOrderListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineOrderListModel.m; sourceTree = "<group>"; };
 		F481290423D4663100285A5C /* HotelOnlinesListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelOnlinesListModel.m; sourceTree = "<group>"; };
@@ -2019,22 +2014,14 @@
 				A1FC70C623C2CF6B005BFDC9 /* HomeModel.m */,
 				A1F86E1223D03BF400CC0F54 /* OnlineOrderModel.h */,
 				A1F86E1323D03BF400CC0F54 /* OnlineOrderModel.m */,
-
-				A1F86E1523D03D9100CC0F54 /* OnlineOrderListModel.h */,
-				A1F86E1623D03D9100CC0F54 /* OnlineOrderListModel.m */,
 				A1FBA8C723D3E4CF008C67E2 /* HotelOnlinesListModel.h */,
 				A1FBA8C823D3E4CF008C67E2 /* HotelOnlinesListModel.m */,
 				A1FBA8C523D3E4CE008C67E2 /* HotelOnlinesModel.h */,
 				A1FBA8C623D3E4CE008C67E2 /* HotelOnlinesModel.m */,
-
-
 				F48128F823D4627900285A5C /* OnlineOrderListModel.h */,
 				F48128F923D4627900285A5C /* OnlineOrderListModel.m */,
-				A1F86E2D23D1A0B900CC0F54 /* HotelOnlinesModel.h */,
-				A1F86E2E23D1A0B900CC0F54 /* HotelOnlinesModel.m */,
 				F481290523D4663100285A5C /* HotelOnlinesListModel.h */,
 				F481290423D4663100285A5C /* HotelOnlinesListModel.m */,
-
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -3128,16 +3115,6 @@
 			path = M;
 			sourceTree = "<group>";
 		};
-		F48128F223D4608800285A5C /* 退款界面 */ = {
-			isa = PBXGroup;
-			children = (
-				F48128F323D460DD00285A5C /* ZBNHTCancelVC.h */,
-				F48128F423D460DD00285A5C /* ZBNHTCancelVC.m */,
-				F48128F523D460DD00285A5C /* ZBNHTCancelVC.xib */,
-			);
-			path = "退款界面";
-			sourceTree = "<group>";
-		};
 		F4835BBB23C9C59900418D78 /* M */ = {
 			isa = PBXGroup;
 			children = (
@@ -3162,7 +3139,6 @@
 		F4835BBD23C9C5A100418D78 /* C */ = {
 			isa = PBXGroup;
 			children = (
-				F48128F223D4608800285A5C /* 退款界面 */,
 				F4055EBC23CD664E00637E7A /* 已取消 */,
 				F4055EB323CD65CF00637E7A /* 待评价 */,
 				F4055EA923CD59D000637E7A /* 待入住 */,
@@ -3623,7 +3599,6 @@
 				F476A45323A7682B00E3018A /* ZBNMyWalletComCell.xib in Resources */,
 				A14FB2A4238E4CDE006A6511 /* LoginViewController.xib in Resources */,
 				A1F73D0A23A8C886001D86EF /* BeserveView.xib in Resources */,
-				F48128F723D460DD00285A5C /* ZBNHTCancelVC.xib in Resources */,
 				F4E00E7B23C45D05007EABC3 /* ZBNTakeOutEntryCell.xib in Resources */,
 				A14FB30D238FCD13006A6511 /* CustomSectionView.xib in Resources */,
 				F4FAC28823AC56A000C235EA /* ZBNWaitDeliverDetailCell.xib in Resources */,
@@ -4052,7 +4027,6 @@
 				F476A49B23A7682C00E3018A /* InviteCourtesyVC.m in Sources */,
 				A10A9C0A2397ED7A0049A0D2 /* PacketModel.m in Sources */,
 				F4C196C923C576E400F1C48C /* TZPhotoPickerController.m in Sources */,
-				F48128F623D460DD00285A5C /* ZBNHTCancelVC.m in Sources */,
 				A10A9C98239A57230049A0D2 /* HotelViewController.m in Sources */,
 				F476A4AC23A7683200E3018A /* UIView+ZBNExtension.m in Sources */,
 				F4ADBE3B23B9C47000B62E46 /* ZBNRechargeModel.m in Sources */,
