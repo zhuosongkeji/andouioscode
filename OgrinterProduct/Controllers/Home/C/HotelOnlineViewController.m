@@ -21,10 +21,15 @@
 #import "OnlineOrderListModel.h"
 #import "HotelOnlinesListModel.h"
 
+#import "HotelOnlineGotOrderViewController.h"
 
 
 
-@interface HotelOnlineViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate,FSPageContentViewDelegate,FSSegmentTitleViewDelegate>
+
+@interface HotelOnlineViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate,FSPageContentViewDelegate,FSSegmentTitleViewDelegate>{
+    NSInteger lastNumber;
+    NSString *lastPrice;
+}
 
 @property (weak, nonatomic) IBOutlet UIView *bannerbjView;
 
@@ -96,6 +101,7 @@
     
     [self setup];
     [self loadNetWork];
+    [self gourmetbooking];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -137,8 +143,6 @@
     
     [self.view bringSubviewToFront:self.bottomView];
 }
-
-
 
 
 
@@ -188,12 +192,29 @@
                 mod.munbert = [NSString stringWithFormat:@"%@",d[@"num"]];
                 mod.hname = [NSString stringWithFormat:@"%@",d[@"name"]];
                 mod.price = [NSString stringWithFormat:@"%@",d[@"price"]];
-                
                 [mArr addObject:mod];
             }
-            
+        
             self.caArr = [NSArray arrayWithArray:mArr];
             [_listView setDArr:self.caArr];
+            
+            NSMutableArray *mArr1 = [NSMutableArray array];
+            NSMutableArray *mArr2 = [NSMutableArray array];
+            
+            for (int i = 0; i < [self.caArr count]; i ++) {
+                HotelOnlinesListModel *mod = self.caArr[i];
+                NSNumber *numb = @([mod.munbert integerValue]);
+                NSNumber *pnumb = @([mod.price floatValue]*[mod.munbert integerValue]);
+                [mArr1 addObject:numb];
+                [mArr2 addObject:pnumb];
+            }
+            
+            NSNumber *sum = [mArr1 valueForKeyPath:@"@sum.self"];
+            NSNumber *sum1 = [mArr2 valueForKeyPath:@"@sum.self"];
+            self.numberLable.text = [NSString stringWithFormat:@"%@",sum];
+            lastNumber = [self.numberLable.text integerValue];
+            self.tatolnoney.text = [NSString stringWithFormat:@"￥：%@",sum1];
+            lastPrice =  [NSString stringWithFormat:@"%@",sum1];
             
         }else {
             [HUDManager showTextHud:loadError];
@@ -331,11 +352,27 @@
 //MARK:- 去下单
 - (IBAction)togoPay:(UIButton *)sender {
     
+    KPreventRepeatClickTime(1)
+    
+    if ([self.numberLable.text integerValue] == 0) {
+        [HUDManager showTextHud:@"请先添加一些菜品吧！"];
+        return;
+    }
+    
+    HotelOnlineGotOrderViewController *gotopay = [[HotelOnlineGotOrderViewController alloc]init];
+    gotopay.merchants_id = self.sid;
+    [self.navigationController pushViewController:gotopay animated:YES];
+    
 }
 
 //MARK:- 购物车列表View
 - (IBAction)carlistclick:(UIButton *)sender {
     KPreventRepeatClickTime(1)
+    
+    if ([self.numberLable.text integerValue] == 0) {
+        [HUDManager showTextHud:@"空空如也~"];
+        return;
+    }
     [self showView];
 }
 
@@ -343,8 +380,21 @@
 
 -(void)Refnomey:(NSNotification *)not{
     
-    self.numberLable.text = [NSString stringWithFormat:@"%@",not.userInfo[@"num"]];
-    self.tatolnoney.text = [NSString stringWithFormat:@"￥：%@",not.userInfo[@"nomey"]];
+    if ([self.numberLable.text integerValue] == 0) {
+        self.numberLable.text = [NSString stringWithFormat:@"%@",not.userInfo[@"num"]];
+        self.tatolnoney.text = [NSString stringWithFormat:@"￥：%@",not.userInfo[@"nomey"]];
+    }else{
+        
+        NSInteger newnumber = [not.userInfo[@"num"] integerValue];
+        NSUInteger tatol = lastNumber+newnumber;
+        
+        self.numberLable.text =[NSString stringWithFormat:@"%ld",tatol];
+        CGFloat newprice = [not.userInfo[@"nomey"] floatValue];
+        
+        CGFloat ptatol = [lastPrice floatValue]+newprice;
+        
+        self.tatolnoney.text = [NSString stringWithFormat:@"￥：%.2f",ptatol];
+    }
 }
 
 

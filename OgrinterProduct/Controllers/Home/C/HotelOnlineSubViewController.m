@@ -107,17 +107,18 @@
     
     UIWindow *win = [self getWindow];
     
-    [HUDManager showLoadingHud:loading onView:win];
+//    [HUDManager showLoadingHud:loading onView:win];
     
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,gourmet_upd_foods] params:@{@"uid":unmodel.uid,@"id":cid,@"type":type,@"merchant_id":self.merchants_id} complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([serverInfo.response[@"code"] integerValue] == 200) {
-            [HUDManager hidenHudFromView:win];
+            
         }else {
             [HUDManager showTextHud:loadError];
         }
+//        [HUDManager hidenHudFromView:win];
     }];
 }
 
