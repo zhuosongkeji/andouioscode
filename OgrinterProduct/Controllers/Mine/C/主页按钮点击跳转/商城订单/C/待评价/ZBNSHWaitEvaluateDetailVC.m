@@ -11,7 +11,7 @@
 #import "ZBNSHOrderDetailComM.h"
 #import "ZBNSHOrderUserInfoM.h"
 #import "ZBNSHOrderDetailsM.h"
-
+#import "ZBNSHReturnGoodsVC.h"
 
 @interface ZBNSHWaitEvaluateDetailVC ()
 /*! 存储数据的数组 */
@@ -43,7 +43,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZBNSHWaitEvaluateDetailCell *cell = [ZBNSHWaitEvaluateDetailCell regiserCellForTable:tableView];
+    ADWeakSelf;
     cell.comM = self.comM;
+    cell.returnGoodsBtnClickTask = ^{
+        ZBNSHReturnGoodsVC *vc = [[ZBNSHReturnGoodsVC alloc] init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
     return cell;
 }
 

@@ -8,7 +8,7 @@
 
 #import "ZBNHTWaitInDetailCell.h"
 #import "ZBNHTComDetailModel.h"
-
+#import "SGQRCode.h"
 @interface ZBNHTWaitInDetailCell ()
 
 /*! 商家名字 */
@@ -37,8 +37,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *created_at;
 /*! 支付方式 */
 @property (weak, nonatomic) IBOutlet UILabel *pay_way;
+/*! 二维码图片 */
+@property (weak, nonatomic) IBOutlet UIImageView *erweimaImg;
+/*! 二维码号 */
+@property (weak, nonatomic) IBOutlet UILabel *erweima_num;
+
+@property (nonatomic, copy) NSString *tel;
 
 @end
+
+
 
 
 @implementation ZBNHTWaitInDetailCell
@@ -61,12 +69,29 @@
     self.book_sn.text = detailM.book_sn;
     self.created_at.text = detailM.created_at;
     self.pay_way.text = detailM.pay_way;
+    self.erweimaImg.image =  [SGQRCodeObtain generateQRCodeWithData:[NSString stringWithFormat:@"%@",detailM.book_sn] size:self.erweimaImg.height];
+    self.erweima_num.text = [NSString stringWithFormat:@"二维码号:%@",detailM.book_sn];
+    self.tel = detailM.tel;
+    
+    
 }
 
+/*! 取消点击 */
+- (IBAction)cancelBtnClick:(id)sender {
+}
 
-
-
-
+/*! 联系商家 */
+- (IBAction)contactShop:(id)sender {
+    if (self.tel) {
+           NSString *telephoneNumber = self.tel;
+           NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"tel:%@",telephoneNumber];
+           [[UIApplication   sharedApplication] openURL:[NSURL URLWithString:str]];
+       } else {
+           NSString *telephoneNumber = @"10086";
+           NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"tel:%@",telephoneNumber];
+           [[UIApplication   sharedApplication] openURL:[NSURL URLWithString:str]];
+       }
+}
 
 
 

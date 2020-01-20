@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNReturnGoodsReasonView : UIView
 
-@property (nonatomic, copy) void(^selectedBtnClickTask)(void);
+@property (nonatomic, copy) NSString *reasonID;
 
 @end
 

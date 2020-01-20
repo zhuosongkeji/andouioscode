@@ -48,6 +48,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *mobile;
 /*! 支付金额 */
 @property (nonatomic, copy) NSString *pay_money;
+/*! 商家电话 */
+@property (nonatomic, copy) NSString *tel;
 
 @end
 

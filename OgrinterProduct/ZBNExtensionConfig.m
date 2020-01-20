@@ -21,6 +21,8 @@
 #import "ZBNRTComDetailModel.h"
 #import "ZBNMyNewsModel.h"
 #import "ZBNMyNewsDetailModel.h"
+#import "ZBNSHReCellM.h"
+#import "ZBNSHOrderDetailsM.h"
 
 @implementation ZBNExtensionConfig
 
@@ -56,6 +58,11 @@
             @"ID" : @"id",
         };
     }];
+    [ZBNSHOrderDetailsM mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+           return @{
+               @"ID" : @"id",
+           };
+       }];
     [ZBNMineModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
           return @{
               @"ID" : @"id",
@@ -91,6 +98,11 @@
             @"ID" : @"id",
         };
     }];
+    [ZBNSHReCellM mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+           return @{
+               @"ID" : @"id",
+           };
+       }];
 }
 
 
