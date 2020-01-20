@@ -37,6 +37,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *created_at;
 /*! 支付方式 */
 @property (weak, nonatomic) IBOutlet UILabel *pay_way;
+@property (nonatomic, copy) NSString *tel;
 
 @end
 
@@ -59,8 +60,26 @@
     self.book_sn.text = detailM.book_sn;
     self.created_at.text = detailM.created_at;
     self.pay_way.text = detailM.pay_way;
+    self.tel = detailM.tel;
 }
 
+/*! 取消订单 */
+- (IBAction)cancelBtnClick:(UIButton *)sender {
+    
+    
+}
+/*! 联系商家 */
+- (IBAction)contactShop:(id)sender {
+    if (self.tel) {
+           NSString *telephoneNumber = self.tel;
+           NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"tel:%@",telephoneNumber];
+           [[UIApplication   sharedApplication] openURL:[NSURL URLWithString:str]];
+       } else {
+           NSString *telephoneNumber = @"10086";
+           NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"tel:%@",telephoneNumber];
+           [[UIApplication   sharedApplication] openURL:[NSURL URLWithString:str]];
+       }
+}
 
 
 @end

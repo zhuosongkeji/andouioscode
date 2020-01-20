@@ -34,4 +34,8 @@ UIKIT_EXTERN NSString * const ZBNGourmetDetailURL;
 /*! 通知中心URL */
 UIKIT_EXTERN NSString * const ZBNNotificationCenterlURL; 
 /*! 通知信息URL */
-UIKIT_EXTERN NSString * const ZBNInformationURL;
+UIKIT_EXTERN NSString * const ZBNInformationURL; 
+/*! 退款原因URL */
+UIKIT_EXTERN NSString * const ZBNReasonURL; 
+/*! 申请退款URL */
+UIKIT_EXTERN NSString * const ZBNApplyURL;
