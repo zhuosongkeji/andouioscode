@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.translucent = NO;
     self.getVCodeBtn.layer.cornerRadius = 5;
     self.leftTime = 60;
     self.inputNewPwdT.secureTextEntry = YES;

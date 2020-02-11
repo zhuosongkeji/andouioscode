@@ -28,7 +28,7 @@
 {
     self.navigationItem.title = @"商家入驻";
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
-    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
+    self.navigationController.navigationBar.translucent = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 

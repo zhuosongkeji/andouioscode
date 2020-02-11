@@ -49,7 +49,8 @@
 {
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
+    self.navigationController.navigationBar.translucent = NO;
+    self.tableView.bounces = NO;
 }
 
 - (void)setupHeaderView
@@ -103,12 +104,6 @@
     // 退货退款
     cell.returnGoodsBtnClickTask = ^{
         ZBNSHReturnGoodsVC *vc = [[ZBNSHReturnGoodsVC alloc] init];
-        vc.goodsID = self.comM.details.ID;
-        vc.goodsImg = self.comM.details.img;
-        vc.goodsPrice = self.comM.details.price;
-        vc.goodsIntro = self.comM.details.attr_value;
-        vc.goodsName = self.comM.details.name;
-        vc.goodsNum = self.comM.details.num;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     // 查看物流

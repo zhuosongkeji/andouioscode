@@ -90,7 +90,8 @@
 #pragma mark -- UI
 - (void)setupUI
 {
-    self.toTop.constant = getRectNavAndStatusHight;
+//    self.toTop.constant = getRectNavAndStatusHight;
+    self.navigationController.navigationBar.translucent = NO;
     self.mTableView.tableFooterView = [UILabel new];
     self.vipView.layer.cornerRadius = 10;
     self.headImageV.userInteractionEnabled = YES;

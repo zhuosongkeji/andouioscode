@@ -43,6 +43,7 @@
 {
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = KSRGBA(241, 241, 241, 1);
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 

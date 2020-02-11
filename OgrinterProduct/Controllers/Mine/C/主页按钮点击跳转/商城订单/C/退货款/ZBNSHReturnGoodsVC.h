@@ -11,12 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNSHReturnGoodsVC : UITableViewController
-@property (nonatomic, copy) NSString *goodsName;
-@property (nonatomic, copy) NSString *goodsImg;
-@property (nonatomic, copy) NSArray *goodsIntro;
-@property (nonatomic, copy) NSString *goodsPrice;
-@property (nonatomic, copy) NSString *goodsNum;
-@property (nonatomic, copy) NSString *goodsID;
+/*! 订单编号 */
+@property (nonatomic, copy) NSString *order_goods_id;
+@property (nonatomic, copy) NSString *did;
 @end
 
 NS_ASSUME_NONNULL_END

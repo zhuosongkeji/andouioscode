@@ -7,9 +7,9 @@
 //
 
 #import "ZBNSHAppReturnGoodsCell.h"
-#import "ZBNReturnGoodsM.h"
 #import "ZBNReturnGoodsReasonView.h"
 #import "ZBNSHReturnGoodsComM.h"
+
 
 @interface ZBNSHAppReturnGoodsCell ()
 
@@ -40,17 +40,6 @@
 
 @implementation ZBNSHAppReturnGoodsCell
 
-- (void)setGoodsM:(ZBNReturnGoodsM *)goodsM
-{
-    _goodsM = goodsM;
-    
-    [self.goods_img sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,goodsM.goodsImg]]];
-    self.goods_name.text = goodsM.goodsName;
-    self.goods_num.text = [NSString stringWithFormat:@"x%@",goodsM.goodsNum];
-    self.goods_price.text = [NSString stringWithFormat:@"¥%@",goodsM.goodsPrice];
-    self.goods_id = goodsM.goodsID;
-    self.return_money.text = [NSString stringWithFormat:@"¥%@",goodsM.goodsPrice];
-}
 
 
 - (void)awakeFromNib {
@@ -59,6 +48,21 @@
     // 设置手势
     [self setupGes];
     
+}
+
+- (void)setDetailsM:(ZBNSHOrderDetailsM *)detailsM
+{
+    _detailsM = detailsM;
+    [self.goods_img sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,detailsM.img]]];
+    self.goods_name.text = detailsM.name;
+    self.goods_num.text = [NSString stringWithFormat:@"x%@",detailsM.num];
+    self.goods_price.text = [NSString stringWithFormat:@"¥%@",detailsM.price];
+    self.return_money.text = [NSString stringWithFormat:@"¥%@",detailsM.price];
+    NSMutableString *muStr = [NSMutableString string];
+       for (NSString *str in detailsM.attr_value) {
+           [muStr appendString:[NSString stringWithFormat:@"%@",str]];
+       }
+       self.goods_intro.text = [NSString stringWithFormat:@"%@",muStr];
 }
 
 
@@ -78,6 +82,9 @@
     ADWeakSelf;
     [alertV show:reView withType:0 animationFinish:nil dismissHandle:^{
         [weakSelf.return_reason setText:model.content];
+        if (model.content == nil) {
+            [weakSelf.return_reason setText:[NSString stringWithFormat:@"请选择理由"]];
+        }
     }];
 }
 

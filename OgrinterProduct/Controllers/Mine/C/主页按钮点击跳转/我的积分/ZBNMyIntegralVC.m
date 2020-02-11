@@ -43,7 +43,7 @@
 {
     self.navigationItem.title = @"我的积分";
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
-    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
+    self.navigationController.navigationBar.translucent = NO;
     ZBNMyIntegerHeadView *headView = [ZBNMyIntegerHeadView viewFromXib];
     headView.height = ZBNHeaderH;
     self.tableView.tableHeaderView = headView;

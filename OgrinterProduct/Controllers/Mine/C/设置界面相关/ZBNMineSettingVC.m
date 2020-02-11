@@ -47,7 +47,7 @@
 /*! 设置tableView */
 - (void)setupTable
 {
-    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
+    self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.navigationItem.title = @"设置";
     self.tableView.bounces = NO;

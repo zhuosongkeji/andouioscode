@@ -124,6 +124,7 @@
 - (void)setupUI
 {
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
+    self.navigationController.navigationBar.translucent = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 

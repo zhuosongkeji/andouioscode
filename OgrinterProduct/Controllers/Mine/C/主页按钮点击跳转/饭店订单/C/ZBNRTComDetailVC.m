@@ -51,6 +51,7 @@
     self.navigationItem.title = @"订单详情";
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.navigationController.navigationBar.translucent = NO;
     self.tableView.bounces = NO;
 }
 

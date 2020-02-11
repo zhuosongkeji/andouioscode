@@ -67,6 +67,20 @@
     
 }
 
+- (void)setDetailM:(ZBNSHOrderDetailsM *)detailM
+{
+    _detailM = detailM;
+    [self.img sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,detailM.img]]];
+    self.goodsName.text = detailM.name;
+    self.price.text = [NSString stringWithFormat:@"¥%@",detailM.price];
+    self.num.text = [NSString stringWithFormat:@"x%@",detailM.num];
+    NSMutableString *muStr = [NSMutableString string];
+    for (NSString *str in detailM.attr_value) {
+        [muStr appendString:[NSString stringWithFormat:@"%@",str]];
+    }
+    self.attr_value.text = [NSString stringWithFormat:@"%@",muStr];
+}
+
 + (instancetype)regiserCellForTable:(UITableView *)tableView
 {
     static NSString * const ZBNSHWaitEvaluateDetailCellID = @"ZBNSHWaitEvaluateDetailCellID";

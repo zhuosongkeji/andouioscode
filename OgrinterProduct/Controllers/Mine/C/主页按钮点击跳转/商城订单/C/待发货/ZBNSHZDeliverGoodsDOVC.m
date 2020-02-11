@@ -52,7 +52,8 @@
     self.navigationItem.title = @"订单详情";
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
+    self.tableView.bounces = NO;
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)loadData
@@ -85,6 +86,8 @@
     ADWeakSelf;
     cell.returnGoodsBtnClickTask = ^{
         ZBNSHReturnGoodsVC *vc = [[ZBNSHReturnGoodsVC alloc] init];
+        vc.did = self.dID;
+        vc.order_goods_id = self.order_num;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     cell.comM = self.comM;

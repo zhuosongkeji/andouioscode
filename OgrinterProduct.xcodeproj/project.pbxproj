@@ -377,7 +377,6 @@
 		F48128D723D3E90700285A5C /* ZBNSHReturnGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F48128D623D3E90700285A5C /* ZBNSHReturnGoodsVC.m */; };
 		F48128DB23D3E96B00285A5C /* ZBNSHAppReturnGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F48128D923D3E96A00285A5C /* ZBNSHAppReturnGoodsCell.m */; };
 		F48128DC23D3E96B00285A5C /* ZBNSHAppReturnGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F48128DA23D3E96A00285A5C /* ZBNSHAppReturnGoodsCell.xib */; };
-		F48128DF23D4018600285A5C /* ZBNReturnGoodsM.m in Sources */ = {isa = PBXBuildFile; fileRef = F48128DE23D4018600285A5C /* ZBNReturnGoodsM.m */; };
 		F48128E323D4349800285A5C /* ZBNReturnGoodsReasonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F48128E123D4349800285A5C /* ZBNReturnGoodsReasonCell.m */; };
 		F48128E423D4349800285A5C /* ZBNReturnGoodsReasonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F48128E223D4349800285A5C /* ZBNReturnGoodsReasonCell.xib */; };
 		F48128EB23D436AD00285A5C /* ZBNSHReCellM.m in Sources */ = {isa = PBXBuildFile; fileRef = F48128EA23D436AD00285A5C /* ZBNSHReCellM.m */; };
@@ -1131,8 +1130,6 @@
 		F48128D823D3E96A00285A5C /* ZBNSHAppReturnGoodsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHAppReturnGoodsCell.h; sourceTree = "<group>"; };
 		F48128D923D3E96A00285A5C /* ZBNSHAppReturnGoodsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHAppReturnGoodsCell.m; sourceTree = "<group>"; };
 		F48128DA23D3E96A00285A5C /* ZBNSHAppReturnGoodsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNSHAppReturnGoodsCell.xib; sourceTree = "<group>"; };
-		F48128DD23D4018600285A5C /* ZBNReturnGoodsM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNReturnGoodsM.h; sourceTree = "<group>"; };
-		F48128DE23D4018600285A5C /* ZBNReturnGoodsM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNReturnGoodsM.m; sourceTree = "<group>"; };
 		F48128E023D4349800285A5C /* ZBNReturnGoodsReasonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNReturnGoodsReasonCell.h; sourceTree = "<group>"; };
 		F48128E123D4349800285A5C /* ZBNReturnGoodsReasonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNReturnGoodsReasonCell.m; sourceTree = "<group>"; };
 		F48128E223D4349800285A5C /* ZBNReturnGoodsReasonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNReturnGoodsReasonCell.xib; sourceTree = "<group>"; };
@@ -3406,8 +3403,6 @@
 				F48128D823D3E96A00285A5C /* ZBNSHAppReturnGoodsCell.h */,
 				F48128D923D3E96A00285A5C /* ZBNSHAppReturnGoodsCell.m */,
 				F48128DA23D3E96A00285A5C /* ZBNSHAppReturnGoodsCell.xib */,
-				F48128DD23D4018600285A5C /* ZBNReturnGoodsM.h */,
-				F48128DE23D4018600285A5C /* ZBNReturnGoodsM.m */,
 			);
 			path = "退货款";
 			sourceTree = "<group>";
@@ -4120,7 +4115,6 @@
 				F4C196EB23C5771000F1C48C /* MASCompositeConstraint.m in Sources */,
 				F4C196C523C576E400F1C48C /* TZPhotoPreviewController.m in Sources */,
 				F476A44923A7682B00E3018A /* ZBNMyWalletHeadView.m in Sources */,
-				F48128DF23D4018600285A5C /* ZBNReturnGoodsM.m in Sources */,
 				F4CD169723C06F800039CE49 /* ZBNSHOrderDetailsM.m in Sources */,
 				F4C196FC23C5E68100F1C48C /* ZBNMerchantEntryVC.m in Sources */,
 				F476A44B23A7682B00E3018A /* ZBNMyWalletVC.m in Sources */,

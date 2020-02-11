@@ -7,15 +7,12 @@
 //
 
 #import "ZBNSHReturnGoodsVC.h"
+#import "ZBNSHOrderDetailsM.h"
 #import "ZBNSHAppReturnGoodsCell.h"
-#import "ZBNEntryFooterView.h"
-#import "ZBNReturnGoodsM.h"
-#import "ZBNReturnGoodsReasonView.h"
-#import "ZBNSHReturnGoodsComM.h"
 
 @interface ZBNSHReturnGoodsVC ()
-@property (nonatomic, weak) ZBNEntryFooterView *footerV;
-@property (nonatomic, strong) ZBNReturnGoodsM *goodsM;
+
+@property (nonatomic, strong) ZBNSHOrderDetailsM *detailsM;
 
 @end
 
@@ -24,90 +21,46 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    // 设置UI
-    [self setupUI];
+    // 加载数据
+    [self loadData];
     
-    // 设置table
-    [self setupTable];
-    
-    // 初始化模型数据
-    [self initModel];
-    
-   
-    
+    // 关于内容视图偏移的解决
+    self.navigationController.navigationBar.translucent = NO;
+    self.tableView.bounces = NO;
 }
 
-- (void)initModel
+
+- (void)loadData
 {
-    ZBNReturnGoodsM *goodsM = [[ZBNReturnGoodsM alloc] init];
-    [goodsM setGoodsID:self.goodsID];
-    [goodsM setGoodsImg:self.goodsImg];
-    [goodsM setGoodsNum:self.goodsNum];
-    [goodsM setGoodsName:self.goodsName];
-    [goodsM setGoodsIntro:self.goodsIntro];
-    [goodsM setGoodsPrice:self.goodsPrice];
-    self.goodsM = goodsM;
-    [self.tableView reloadData];
+    ADWeakSelf;
+       NSMutableDictionary *params = [NSMutableDictionary dictionary];
+           NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+           userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+           params[@"uid"] = unmodel.uid;
+           params[@"token"] = unmodel.token;
+           params[@"order_sn"] = self.order_goods_id;
+           params[@"did"] = self.did;
+           [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/details" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+               self.detailsM = [ZBNSHOrderDetailsM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"details"][0]];
+               [weakSelf.tableView reloadData];
+           }];
 }
 
-- (void)setupTable
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
-}
-
-- (void)setupUI
-{
-    ZBNEntryFooterView *footerV = [ZBNEntryFooterView viewFromXib];
-    footerV.height = ZBNFooterH;
-    footerV.setButtonText(@"确认退款");
-    footerV.middleBtnClickTask = ^{
-        [self loadData];
-    };
-    self.tableView.tableFooterView = footerV;
-    self.footerV = footerV;
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    ZBNSHAppReturnGoodsCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNSHAppReturnGoodsCell" owner:nil options:nil].lastObject;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.goodsM = self.goodsM;
+    ZBNSHAppReturnGoodsCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNSHAppReturnGoodsCell" owner:nil options:nil].firstObject;
+    cell.detailsM = self.detailsM;
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 475;
-}
-
-- (void)loadData
-{
-    ZBNSHReturnGoodsComM *comM = [ZBNSHReturnGoodsComM sharedInstance];
-    [FKHRequestManager cancleRequestWork];
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
-    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
-    params[@"uid"] = unmodel.uid;
-    params[@"token"] = unmodel.token;
-    params[@"order_goods_id"] = self.goodsID;
-    params[@"reason_id"] = comM.reason_id;
-    params[@"content"] = @"";
-    params[@"image"] = @"";
-    ADWeakSelf;
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl: @"http://andou.zhuosongkj.com/api/refund/apply" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
-        if ([serverInfo.response[@"code"] intValue] == 200) {
-            [HUDManager showTextHud:@"提交申请成功"];
-        }
-    }];
 }
 
 @end

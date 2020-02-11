@@ -28,9 +28,10 @@
     [super viewDidLoad];
     
     [self loadData];
-    
+    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
+    self.navigationController.navigationBar.translucent = NO;
+    self.tableView.bounces = NO;
 }
 
 #pragma mark - Table view data source
@@ -45,8 +46,11 @@
     ZBNSHWaitEvaluateDetailCell *cell = [ZBNSHWaitEvaluateDetailCell regiserCellForTable:tableView];
     ADWeakSelf;
     cell.comM = self.comM;
+    cell.detailM = self.comM.details;
     cell.returnGoodsBtnClickTask = ^{
         ZBNSHReturnGoodsVC *vc = [[ZBNSHReturnGoodsVC alloc] init];
+        vc.did = self.dID;
+        vc.order_goods_id = self.getOrderNum;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     return cell;

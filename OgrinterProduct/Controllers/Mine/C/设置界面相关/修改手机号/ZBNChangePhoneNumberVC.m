@@ -29,7 +29,7 @@
     [super viewDidLoad];
     
     self.getVerificationCodeBtn.layer.cornerRadius = 5;
-    
+    self.navigationController.navigationBar.translucent = NO;
     self.leftTime = 60;
 }
 

@@ -56,7 +56,7 @@
 - (void)setupHeadView
 {
     ZBNMyWalletHeadView *headV = [ZBNMyWalletHeadView viewFromXib];
-    headV.frame =CGRectMake(0, getRectNavAndStatusHight, self.view.width, ZBNHeaderH);
+    headV.frame =CGRectMake(0, 0, self.view.width, ZBNHeaderH);
     headV.setMoneyText(self.money);
     [self.view addSubview:headV];
     self.headView = headV;
@@ -79,7 +79,7 @@
 {
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.segmentBarVC.segmentBar.frame = CGRectMake(0,0 , self.view.width, 50);
-    self.segmentBarVC.view.frame = CGRectMake(0,  getRectNavAndStatusHight + 110, self.view.width, self.view.height - getRectNavAndStatusHight - 180);
+    self.segmentBarVC.view.frame = CGRectMake(0,   140, self.view.width, self.view.height - 180);
     [self.view addSubview:self.segmentBarVC.view];
     //添加控制器
     NSArray *items = @[@"余额明细", @"提现明细"];
