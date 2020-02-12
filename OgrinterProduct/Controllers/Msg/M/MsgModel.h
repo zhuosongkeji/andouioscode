@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSString *house_name;
 
 
+
 -(instancetype)initWithDict:(NSDictionary *)dict;
 
 +(instancetype)initWithDict:(NSDictionary *)dict;

@@ -32,15 +32,15 @@
     [self loadData];
     [self setHeader];
     self.navigationItem.title = @"物流详情";
-    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
+    self.navigationController.navigationBar.translucent = NO;
     self.tableView.bounces = NO;
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)setHeader
 {
     ZBNSHComViewLogisticsHeader *header = [ZBNSHComViewLogisticsHeader viewFromXib];
-    header.height = 40;
+    header.height = 100;
     self.headV = header;
     self.tableView.tableHeaderView = self.headV;
 }

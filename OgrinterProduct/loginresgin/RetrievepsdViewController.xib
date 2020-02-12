@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -44,7 +42,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="koy-ce-jrG">
                             <rect key="frame" x="10" y="22" width="394" height="35"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层 8" translatesAutoresizingMaskIntoConstraints="NO" id="Hg3-hX-p5a">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层 14" translatesAutoresizingMaskIntoConstraints="NO" id="Hg3-hX-p5a">
                                     <rect key="frame" x="10" y="13" width="8" height="9"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="8" id="P89-uK-zhK"/>
@@ -56,7 +54,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="jC3-c8-Kec"/>
                                     </constraints>
-                                    <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -86,7 +83,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="Lrt-WI-R6X"/>
                                     </constraints>
-                                    <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -116,7 +112,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="Vtu-UJ-y1g"/>
                                     </constraints>
-                                    <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -154,7 +149,7 @@
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKu-dG-Ieg">
                             <rect key="frame" x="110.5" y="254" width="99" height="27"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="《安抖注册协议》">
+                            <state key="normal" title="《用户隐私协议》">
                                 <color key="titleColor" red="0.33725490200000002" green="0.76204603910000002" blue="0.62735551599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>
@@ -198,13 +193,13 @@
                 <constraint firstAttribute="trailing" secondItem="f6N-lO-RV8" secondAttribute="trailing" id="bgk-fD-BDX"/>
                 <constraint firstItem="f6N-lO-RV8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="hWP-kB-ngV"/>
             </constraints>
-            <point key="canvasLocation" x="-146" y="-4"/>
+            <point key="canvasLocation" x="39" y="104"/>
         </view>
     </objects>
     <resources>
         <image name="勾" width="7.5" height="7.5"/>
         <image name="图层 13" width="8.5" height="9"/>
-        <image name="图层 8" width="8.5" height="9.5"/>
+        <image name="图层 14" width="10" height="14.5"/>
         <image name="图层 9" width="8" height="9"/>
     </resources>
 </document>

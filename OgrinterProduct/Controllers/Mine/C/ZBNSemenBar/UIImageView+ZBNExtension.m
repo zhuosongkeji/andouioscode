@@ -18,13 +18,13 @@
 
 - (void)setRectHeader:(NSString *)url
 {
-    [self sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"yxj"]];
+    [self sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"80"]];
 }
 
 - (void)setCircleHeader:(NSString *)url
 {
     ADWeakSelf;
-    UIImage *placehoderImg = [[UIImage imageNamed:@"yxj"] circleImage];
+    UIImage *placehoderImg = [[UIImage imageNamed:@"80"] circleImage];
     [self sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:placehoderImg completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
         // 如果图片下载失败，就不做任何处理，按照默认的做法：会显示占位图片
         if (image == nil) return;

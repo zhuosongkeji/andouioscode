@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZBNReturnGoodsM.h"
+#import "ZBNSHOrderDetailsM.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNSHAppReturnGoodsCell : UITableViewCell
-@property (nonatomic, strong) ZBNReturnGoodsM *goodsM;
 
+@property (nonatomic, strong) ZBNSHOrderDetailsM *detailsM;
 @end
 
 NS_ASSUME_NONNULL_END

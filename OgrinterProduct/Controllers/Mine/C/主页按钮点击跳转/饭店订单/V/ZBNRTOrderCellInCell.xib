@@ -52,7 +52,7 @@
                 <outlet property="num" destination="MCm-4V-OXe" id="SIG-WC-bYe"/>
                 <outlet property="price" destination="E9n-F2-D4v" id="Ren-HE-TJK"/>
             </connections>
-            <point key="canvasLocation" x="-329" y="67"/>
+            <point key="canvasLocation" x="-49" y="88"/>
         </tableViewCell>
     </objects>
 </document>

@@ -23,11 +23,19 @@
 #import "ZBNMyNewsDetailModel.h"
 #import "ZBNSHReCellM.h"
 #import "ZBNSHOrderDetailsM.h"
+#import "ZBNMyCollectionM.h"
+#import "ZBNBrowseModel.h"
+#import "ZBNShopFollowModel.h"
 
 @implementation ZBNExtensionConfig
 
 + (void)load
 {
+    [ZBNShopFollowModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+           return @{
+               @"ID" : @"id",
+           };
+       }];
     [ZBNProvince mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
             @"ID" : @"id",
@@ -102,7 +110,20 @@
            return @{
                @"ID" : @"id",
            };
-       }];
+       }]; 
+    [ZBNMyCollectionM mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+              return @{
+                  @"ID" : @"id",
+              };
+          }]; 
+    [ZBNBrowseModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+        return @{
+            @"ID" : @"id",
+        };
+    }];
+    
+    
+    
 }
 
 

@@ -33,7 +33,7 @@
 {
     self.navigationItem.title = @"通知信息";
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
-    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
+    self.navigationController.navigationBar.translucent = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 

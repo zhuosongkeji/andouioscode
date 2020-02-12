@@ -88,7 +88,7 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     [super viewWillLayoutSubviews];
 
     CGFloat x = 0;
-    CGFloat y = getRectNavAndStatusHight;
+    CGFloat y = 0;
     CGFloat w = CGRectGetWidth(self.view.frame);
     CGFloat h = w*9/16;
     self.containerView.frame = CGRectMake(x, y, w, h);

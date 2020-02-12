@@ -9,15 +9,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineViewController">
             <connections>
+                <outlet property="goodsCollection" destination="rpf-RN-lGc" id="aaO-ui-wvB"/>
                 <outlet property="headImageV" destination="as7-O6-384" id="UAz-Td-pps"/>
                 <outlet property="historyL" destination="fCa-EY-Z1c" id="5tb-mk-nqf"/>
                 <outlet property="integerL" destination="MS7-1P-hH8" id="Kdk-ri-Vkh"/>
+                <outlet property="integerView" destination="aPi-2H-Gx3" id="X1y-If-dPq"/>
                 <outlet property="mTableView" destination="kGP-dV-NOj" id="XgD-j2-92t"/>
                 <outlet property="money" destination="to9-Dc-cTp" id="HVK-z8-Wi5"/>
+                <outlet property="shopFocus" destination="tax-Lu-bSR" id="o6I-FM-NqS"/>
                 <outlet property="toTop" destination="Ib9-kd-ocA" id="rj0-9H-h1c"/>
                 <outlet property="userName" destination="rja-cw-E1S" id="AnM-lt-cUv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="vipView" destination="aPi-2H-Gx3" id="34B-ZU-Cmv"/>
+                <outlet property="vipPlusView" destination="sdq-86-jMJ" id="VKX-l9-mDi"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -51,8 +54,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品关注" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7VI-rB-MkX">
-                                        <rect key="frame" x="29.5" y="104.5" width="45" height="13.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜欢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7VI-rB-MkX">
+                                        <rect key="frame" x="40.5" y="104.5" width="22.5" height="13.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -113,8 +116,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜欢的内容" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgs-S2-nVC">
-                                        <rect key="frame" x="230.5" y="104.5" width="56.5" height="13.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品关注" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgs-S2-nVC">
+                                        <rect key="frame" x="236.5" y="104.5" width="45" height="13.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -573,7 +576,7 @@
                 <constraint firstAttribute="trailing" secondItem="kGP-dV-NOj" secondAttribute="trailing" id="JYB-Ix-DuZ"/>
                 <constraint firstAttribute="bottom" secondItem="kGP-dV-NOj" secondAttribute="bottom" id="vmt-1l-new"/>
             </constraints>
-            <point key="canvasLocation" x="-26858" y="209"/>
+            <point key="canvasLocation" x="-27122" y="72"/>
         </view>
     </objects>
     <resources>

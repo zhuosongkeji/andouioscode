@@ -29,6 +29,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *codeBrn;
 
 @property (weak, nonatomic) IBOutlet UIButton *submintBtns;
+@property (weak, nonatomic) IBOutlet UIButton *protocolBtn;
+@property (weak, nonatomic) IBOutlet UIButton *agreeBtn;
 
 @end
 

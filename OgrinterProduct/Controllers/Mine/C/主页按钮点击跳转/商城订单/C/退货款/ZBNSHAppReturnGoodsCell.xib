@@ -233,7 +233,7 @@
                 <outlet property="return_reason" destination="5Nt-5t-fRC" id="4eO-hn-TCy"/>
                 <outlet property="upImgV" destination="ajw-H4-dRY" id="RtN-V1-5Bm"/>
             </connections>
-            <point key="canvasLocation" x="867" y="112"/>
+            <point key="canvasLocation" x="-199" y="13"/>
         </tableViewCell>
     </objects>
     <resources>

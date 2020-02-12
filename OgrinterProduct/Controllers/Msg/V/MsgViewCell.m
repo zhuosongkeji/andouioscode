@@ -8,6 +8,8 @@
 
 #import "MsgViewCell.h"
 #import "MsgModel.h"
+#import "ZBNBrowseModel.h"
+#import "ZBNShopFollowModel.h"
 
 @interface MsgViewCell()
 
@@ -45,6 +47,32 @@
     
 }
 
+- (void)setBrowseM:(ZBNBrowseModel *)browseM
+{
+    _browseM = browseM;
+    
+    [self.lockbtn setHidden:YES];
+    [self.shopImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,browseM.logo_img]]];
+       self.shoptitleLabel.text = browseM.name;
+       self.shopAddressLabel.text = browseM.address;
+       self.shopPhoneLabel.text = browseM.tel;
+       [self.thumbsBrn setTitle:[NSString stringWithFormat:@"   %@",browseM.praise_num] forState:0];
+       
+       [self setupStar:browseM.stars_all];
+}
+
+- (void)setShopM:(ZBNShopFollowModel *)shopM
+{
+    _shopM = shopM;
+    [self.lockbtn setHidden:YES];
+       [self.shopImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,shopM.logo_img]]];
+          self.shoptitleLabel.text = shopM.name;
+          self.shopAddressLabel.text = shopM.address;
+          self.shopPhoneLabel.text = shopM.tel;
+          [self.thumbsBrn setTitle:[NSString stringWithFormat:@"   %@",shopM.praise_num] forState:0];
+          
+          [self setupStar:shopM.stars_all];
+}
 
 //MARK:-点击查看商家
 - (IBAction)clicktoLoock:(UIButton *)sender {

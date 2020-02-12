@@ -87,7 +87,8 @@
 - (void)setupTable
 {
     self.navigationItem.title = @"发表评论";
-    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
+    self.navigationController.navigationBar.translucent = NO;
+    self.tableView.bounces = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 

@@ -332,7 +332,7 @@
                 <outlet property="shipping_free" destination="Uyl-no-XPg" id="rxv-mX-IgP"/>
                 <outlet property="total_money" destination="3Cz-Rd-y84" id="fEk-b7-N40"/>
             </connections>
-            <point key="canvasLocation" x="2074" y="111"/>
+            <point key="canvasLocation" x="2067" y="125"/>
         </tableViewCell>
     </objects>
     <resources>

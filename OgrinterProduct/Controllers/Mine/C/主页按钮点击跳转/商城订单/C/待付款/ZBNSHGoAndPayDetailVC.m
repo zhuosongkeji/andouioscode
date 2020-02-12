@@ -48,8 +48,9 @@
 - (void)setupUI
 {
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
+    self.tableView.bounces = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)setupHeaderView
@@ -104,7 +105,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 500;
+    return 440;
 }
 
 

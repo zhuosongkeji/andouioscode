@@ -45,7 +45,7 @@
 - (void)setupTabel
 {
     self.navigationItem.title = @"饭店商家入驻";
-    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
+    self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
@@ -80,7 +80,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 765;
+    return 710;
 }
 
 - (void)loadAddressData

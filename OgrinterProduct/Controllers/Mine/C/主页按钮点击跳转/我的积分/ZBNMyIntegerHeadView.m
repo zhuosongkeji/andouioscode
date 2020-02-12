@@ -31,15 +31,15 @@
 /*! 加载数据 */
 - (void)loadData
 {
+    [FKHRequestManager cancleRequestWork];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     params[@"uid"] = unmodel.uid;
     params[@"token"] = unmodel.token;
-    params[@"page"] = @0;
     ADWeakSelf;
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/opinion/set" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
-        weakSelf.integerM = [ZBNMyIntegralModel mj_objectWithKeyValues:serverInfo.response[@"data"][@"integral"]];
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNIntegerURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        weakSelf.integerM = [ZBNMyIntegralModel mj_objectWithKeyValues:serverInfo.response[@"data"]];
         if (weakSelf.integerM.integral) {
             weakSelf.myIntegerLabel.text = weakSelf.integerM.integral;
         } else {

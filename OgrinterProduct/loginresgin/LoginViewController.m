@@ -180,8 +180,23 @@
        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/login/wxlogin" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
            if ([serverInfo.response[@"code"] integerValue] == 200) {
                
-               [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOK" object:nil];
+               
                [self dismissViewControllerAnimated:YES completion:nil];
+               NSLog(@"%@",serverInfo.response[@"code"]);
+               
+               NSDictionary *dict = [serverInfo.response objectForKey:@"data"];
+               userInfo *info = [[userInfo alloc]init];
+               info.uid = [NSString stringWithFormat:@"%@",dict[@"id"]];
+               info.uName = [NSString stringWithFormat:@"%@",dict[@"name"]];
+               info.uPhone = [NSString stringWithFormat:@"%@",dict[@"mobile"]];
+               info.uAcct = [NSString stringWithFormat:@"%@",dict[@"mobile"]];
+               info.token = [NSString stringWithFormat:@"%@",dict[@"token"]];
+               NSData *infoData = [NSKeyedArchiver archivedDataWithRootObject:info];
+               [[NSUserDefaults standardUserDefaults] setObject:infoData forKey:@"infoData"];
+               
+               [[NSUserDefaults standardUserDefaults] synchronize];
+               
+               [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOK" object:nil];
                
            }else if ([serverInfo.response[@"code"] integerValue] == 203){
                

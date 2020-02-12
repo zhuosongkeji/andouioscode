@@ -23,8 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // 设置下一页
-    self.nextPage = @"2";
     // 加载数据
     [self setupRefresh];
 }
@@ -41,8 +39,11 @@
     params[@"token"] = unmodel.token;
     params[@"page"] = @"1";
     ADWeakSelf;
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/wallet/index" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNWallet_indexURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         weakSelf.dataArr = [ZBNCostModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"][@"log"]];
+        if (weakSelf.dataArr.count < 10) {
+            [weakSelf.tableView.mj_footer setHidden:YES];
+        }
         [weakSelf.tableView reloadData];
         [weakSelf.tableView.mj_header endRefreshing];
             }];
@@ -50,7 +51,7 @@
 
 - (void)loadMoreData
 {
-    
+    self.nextPage = @"2";
     [FKHRequestManager cancleRequestWork];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
@@ -59,7 +60,7 @@
     params[@"token"] = unmodel.token;
     params[@"page"] = self.nextPage;
     ADWeakSelf;
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/wallet/index" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNWallet_indexURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         NSArray *moreArr = [ZBNCostModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"][@"log"]];
         if (moreArr == nil) {
             [weakSelf.tableView.mj_footer setHidden:YES];

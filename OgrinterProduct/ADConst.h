@@ -38,4 +38,16 @@ UIKIT_EXTERN NSString * const ZBNInformationURL;
 /*! 退款原因URL */
 UIKIT_EXTERN NSString * const ZBNReasonURL; 
 /*! 申请退款URL */
-UIKIT_EXTERN NSString * const ZBNApplyURL;
+UIKIT_EXTERN NSString * const ZBNApplyURL;  
+/*! 商品收藏 */
+UIKIT_EXTERN NSString * const ZBNCollectionURL; 
+/*! 商家关注 */
+UIKIT_EXTERN NSString * const ZBNFollowURL;
+/*! 浏览记录 */
+UIKIT_EXTERN NSString * const ZBNMerchant_recordURL;
+/*! 余额明细 */
+UIKIT_EXTERN NSString * const ZBNWallet_indexURL;
+/*! 提现明细 */ 
+UIKIT_EXTERN NSString * const ZBNCashURL; 
+/*! 协议 */
+UIKIT_EXTERN NSString * const ZBNTreatyURL;

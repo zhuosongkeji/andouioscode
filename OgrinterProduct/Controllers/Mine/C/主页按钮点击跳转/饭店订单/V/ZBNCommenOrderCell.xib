@@ -158,7 +158,7 @@
                 <outlet property="totalLabel" destination="xN4-Id-ltN" id="lU1-Wu-Nfe"/>
                 <outlet property="total_price" destination="HN7-zM-tAI" id="bwQ-A7-kGF"/>
             </connections>
-            <point key="canvasLocation" x="-245" y="62"/>
+            <point key="canvasLocation" x="84" y="100"/>
         </tableViewCell>
     </objects>
     <resources>

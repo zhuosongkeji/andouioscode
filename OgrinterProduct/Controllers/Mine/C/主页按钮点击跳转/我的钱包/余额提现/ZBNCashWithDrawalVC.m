@@ -24,8 +24,9 @@
     
     self.navigationItem.title = @"余额提现";
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
-    self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
+    self.navigationController.navigationBar.translucent = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.bounces = NO;
     [self setupFooter];
 }
 
@@ -36,7 +37,7 @@
 - (void)setupFooter
 {
     ZBNEntryFooterView *footerView = [ZBNEntryFooterView viewFromXib];
-    footerView.height = 150;
+    footerView.height = ZBNHeaderH + 50;
     self.footerView = footerView;
     self.footerView.setButtonText(@"确认提现");
     ADWeakSelf;
