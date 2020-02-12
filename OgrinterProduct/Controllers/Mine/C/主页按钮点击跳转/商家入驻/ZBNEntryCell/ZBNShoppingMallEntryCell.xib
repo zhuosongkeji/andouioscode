@@ -482,7 +482,7 @@
                 <outlet property="shopNameInput" destination="3nY-JZ-G8W" id="HaT-kL-UNY"/>
                 <outlet property="yingYeView" destination="H9q-AK-kZ5" id="gQ1-JL-nMI"/>
             </connections>
-            <point key="canvasLocation" x="-1460" y="1400"/>
+            <point key="canvasLocation" x="-1327" y="953"/>
         </tableViewCell>
     </objects>
     <resources>

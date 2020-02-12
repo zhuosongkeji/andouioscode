@@ -41,3 +41,15 @@ NSString * const ZBNInformationURL = @"http://andou.zhuosongkj.com/index.php/api
 NSString * const ZBNReasonURL = @"http://andou.zhuosongkj.com/api/refund/reason";
 
 NSString * const ZBNApplyURL = @"http://andou.zhuosongkj.com/api/refund/apply";
+
+NSString * const ZBNCollectionURL = @"http://andou.zhuosongkj.com/api/users/collection";
+
+NSString * const ZBNFollowURL = @"http://andou.zhuosongkj.com/api/users/follow";
+
+NSString * const ZBNMerchant_recordURL = @"http://andou.zhuosongkj.com/api/users/merchant_record";
+
+NSString * const ZBNWallet_indexURL = @"http://andou.zhuosongkj.com/index.php/api/wallet/index";
+
+NSString * const ZBNCashURL = @"http://andou.zhuosongkj.com/index.php/api/wallet/cash";
+
+NSString * const ZBNTreatyURL = @"http://andou.zhuosongkj.com/api/common/treaty";

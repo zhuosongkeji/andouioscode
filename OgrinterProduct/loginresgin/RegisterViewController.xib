@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,6 +12,8 @@
                 <outlet property="msgCode" destination="ftF-d8-Nbw" id="jfE-pZ-05E"/>
                 <outlet property="phoneNumber" destination="GB3-nz-4Fu" id="ELw-aw-ufM"/>
                 <outlet property="phonepwd" destination="ak5-8c-OLt" id="t5r-zC-Ewm"/>
+                <outlet property="protocolBtn" destination="R04-2Q-Rqo" id="tea-6q-s4B"/>
+                <outlet property="registerBtn" destination="BGd-Jy-66F" id="I9A-PL-4D2"/>
                 <outlet property="selectbtn" destination="u4j-bz-Xfl" id="TKM-yl-t9a"/>
                 <outlet property="setmsgBtn" destination="7C7-nz-jd2" id="25u-vt-tLS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -44,7 +44,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSS-Sk-jy2">
                             <rect key="frame" x="10" y="22" width="394" height="35"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层 8" translatesAutoresizingMaskIntoConstraints="NO" id="tZ8-W4-0Ff">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层 14" translatesAutoresizingMaskIntoConstraints="NO" id="tZ8-W4-0Ff">
                                     <rect key="frame" x="10" y="13" width="8" height="9"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="8" id="4Ba-Uf-Y40"/>
@@ -56,7 +56,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="db9-Be-EOj"/>
                                     </constraints>
-                                    <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -86,7 +85,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="Dh4-MQ-Pt1"/>
                                     </constraints>
-                                    <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -116,7 +114,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="1im-UL-Ryo"/>
                                     </constraints>
-                                    <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -158,9 +155,12 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R04-2Q-Rqo">
                             <rect key="frame" x="111.5" y="254" width="99" height="27"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="《安抖注册协议》">
+                            <state key="normal" title="《用户隐私协议》">
                                 <color key="titleColor" red="0.33725490200000002" green="0.76204603910000002" blue="0.62735551599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="protocolBtnClick:" destination="-1" eventType="touchUpInside" id="qP2-eX-wrB"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="web-VI-I3o">
                             <rect key="frame" x="336" y="254" width="68" height="27"/>
@@ -205,13 +205,13 @@
                 <constraint firstItem="b3Z-CO-nhw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Kzd-sr-YKL"/>
                 <constraint firstAttribute="trailing" secondItem="b3Z-CO-nhw" secondAttribute="trailing" id="fLV-JU-Zb5"/>
             </constraints>
-            <point key="canvasLocation" x="-2064" y="127"/>
+            <point key="canvasLocation" x="-2342" y="48"/>
         </view>
     </objects>
     <resources>
         <image name="勾" width="7.5" height="7.5"/>
         <image name="图层 13" width="8.5" height="9"/>
-        <image name="图层 8" width="8.5" height="9.5"/>
+        <image name="图层 14" width="10" height="14.5"/>
         <image name="图层 9" width="8" height="9"/>
     </resources>
 </document>

@@ -29,22 +29,22 @@
 /********************************begin-- 数据相关*************************************/
 /*! 头像 */
 @property (weak, nonatomic) IBOutlet UIImageView *headImageV;
-/*! vipView */
-@property (weak, nonatomic) IBOutlet UIView *vipView;
+/*! integerView */
+@property (weak, nonatomic) IBOutlet UIView *integerView;
 /*! 用户名 */
 @property (weak, nonatomic) IBOutlet UILabel *userName;
-/*! 等级 */
+/*! 积分label */
 @property (weak, nonatomic) IBOutlet UILabel *integerL;
-/*! 关注 */
-
-/*! 收藏 */
-
+/*! 店铺关注 */
+@property (weak, nonatomic) IBOutlet UILabel *shopFocus;
+/*! 商品收藏 */
+@property (weak, nonatomic) IBOutlet UILabel *goodsCollection;
 /*! 浏览记录 */
 @property (weak, nonatomic) IBOutlet UILabel *historyL;
 /*! 余额 */
 @property (weak, nonatomic) IBOutlet UILabel *money;
-
-
+/*! 会员plus */
+@property (weak, nonatomic) IBOutlet UIImageView *vipPlusView;
 /*! 模型 */
 @property (nonatomic, strong) ZBNMineModel *model;
 @property (nonatomic, strong) ZBNMineSettingModel *settingM;
@@ -93,7 +93,7 @@
 //    self.toTop.constant = getRectNavAndStatusHight;
     self.navigationController.navigationBar.translucent = NO;
     self.mTableView.tableFooterView = [UILabel new];
-    self.vipView.layer.cornerRadius = 10;
+    self.integerView.layer.cornerRadius = 10;
     self.headImageV.userInteractionEnabled = YES;
 }
 
@@ -124,21 +124,36 @@
 #pragma mark -- loadData
 - (void)loadData
 {
+    [FKHRequestManager cancleRequestWork];
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
         param[@"uid"] = unmodel.uid;
         param[@"token"] = unmodel.token;
+    ADWeakSelf;
        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNPersonURL params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
            
-           self.model = [ZBNMineModel mj_objectWithKeyValues:serverInfo.response[@"data"]];
+           weakSelf.model = [ZBNMineModel mj_objectWithKeyValues:serverInfo.response[@"data"]];
            // 设置头像
-           [self.headImageV setHeader:[NSString stringWithFormat:@"%@%@",imgServer,self.model.avator]];
+           [weakSelf.headImageV setHeader:[NSString stringWithFormat:@"%@%@",imgServer,weakSelf.model.avator]];
            // 设置用户名 
-            self.userName.text = [NSString stringWithFormat:@"%@",self.model.name];
+            weakSelf.userName.text = [NSString stringWithFormat:@"%@",weakSelf.model.name];
            // 余额
-           self.money.text = self.model.money;
-//           [self.mTableView reloadData];
+           weakSelf.money.text = weakSelf.model.money;
+           // 店铺关注
+           weakSelf.shopFocus.text = weakSelf.model.focus;
+           // 商品收藏
+           weakSelf.goodsCollection.text = weakSelf.model.collect;
+           // 浏览记录
+           weakSelf.historyL.text = weakSelf.model.record;
+           // 我的积分
+           weakSelf.integerL.text = [NSString stringWithFormat:@"我的积分:%@",weakSelf.model.integral];
+           // 是否为会员plus
+           if (self.model.status.intValue == 1) {
+               self.vipPlusView.hidden = NO;
+           } else {
+               self.vipPlusView.hidden = YES;
+           }
 
        }];
 }
@@ -183,24 +198,51 @@
 
 - (void)setupGes
 {
-    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(vipViewClick)];
-    [self.vipView addGestureRecognizer:tapGes];
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(integerViewClick)];
+    [self.integerView addGestureRecognizer:tapGes];
     
     UITapGestureRecognizer *headerGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headerClick)];
     [self.headImageV addGestureRecognizer:headerGes];
+    
+    // 商品收藏
+    UITapGestureRecognizer *collectionGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(collectionClick)];
+    self.goodsCollection.userInteractionEnabled = YES;
+    [self.goodsCollection addGestureRecognizer:collectionGes];
+    // 浏览痕迹
+    UITapGestureRecognizer *browseGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(browseClick)];
+    self.historyL.userInteractionEnabled = YES;
+    [self.historyL addGestureRecognizer:browseGes];
+    // 店铺关注
+    UITapGestureRecognizer *shopFocusGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shopFocusClick)];
+    self.shopFocus.userInteractionEnabled = YES;
+    [self.shopFocus addGestureRecognizer:shopFocusGes];
+}
+
+- (void)shopFocusClick
+{
+    [self pushViewControllerWithString:@"ZBNShopFollowVC"];
 }
 
 - (void)headerClick
 {
     // 进入vip充值界面
-    
     [self pushViewControllerWithString:@"ZBNVIPRechargeVC"];
 }
 
 
-- (void)vipViewClick
+- (void)integerViewClick
 {
     [self pushViewControllerWithString:@"ZBNMyIntegralVC"];
+}
+
+- (void)collectionClick
+{
+    [self pushViewControllerWithString:@"ZBNMyCollectionVC"];
+}
+
+- (void)browseClick
+{
+    [self pushViewControllerWithString:@"ZBNBrowseHistoryVC"];
 }
 
 
@@ -241,7 +283,7 @@
         } else if (sender.tag == 503) {  // 我的收藏
             [self pushViewControllerWithString:@"ZBNShopingCartVC"];
         } else if (sender.tag == 504) { // 操作视频
-//            [self pushViewControllerWithString:@"ZBNOperationVideoVC"];
+            [self pushViewControllerWithString:@"ZBNOperationVideoVC"];
         } else if (sender.tag == 505) { // 我的地址
             [self pushViewControllerWithString:@"ZBNMyAddressVC"];
         } else if (sender.tag == 506) { // 我的二维码

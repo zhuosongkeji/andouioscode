@@ -10,6 +10,7 @@
 #define login_reg @"login/reg_p"
 
 #import "RegisterViewController.h"
+#import "ZBNProtocolVC.h"
 
 @interface RegisterViewController ()
 
@@ -21,7 +22,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *selectbtn;
 @property (weak, nonatomic) IBOutlet UIButton *setmsgBtn;
+@property (weak, nonatomic) IBOutlet UIButton *protocolBtn;
 
+@property (weak, nonatomic) IBOutlet UIButton *registerBtn;
 @end
 
 @implementation RegisterViewController
@@ -30,7 +33,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.title = @"用户注册";
-    // Do any additional setup after loading the view from its nib.
 }
 
 
@@ -64,6 +66,19 @@
 - (IBAction)selectcilck:(UIButton *)sender {
     self.selectbtn.selected = !self.selectbtn.selected;
 }
+
+- (IBAction)protocolBtnClick:(UIButton *)sender {
+    
+    ZBNProtocolVC *vc = [[ZBNProtocolVC alloc] init];
+    vc.modalPresentationStyle = 0;
+    ADWeakSelf;
+    vc.agreeBtnClickTask = ^{
+        weakSelf.selectbtn.selected = YES;
+    };
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
+    
+}
+
 
 
 //MARK:- 获取验证码
@@ -112,7 +127,9 @@
     
     [HUDManager showTextHud:loading onView:self.view];
     
+
     [self performSelector:@selector(loadregisNetWork) withObject:nil afterDelay:1];
+
 }
 
 

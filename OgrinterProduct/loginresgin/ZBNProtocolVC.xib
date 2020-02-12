@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZBNProtocolVC">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webBackView" destination="MHM-OL-SzB" id="NtX-kw-7oY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHM-OL-SzB">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hs3-Mo-8BA">
+                    <rect key="frame" x="0.0" y="846" width="414" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvo-rP-fdu">
+                            <rect key="frame" x="0.0" y="0.0" width="207" height="50"/>
+                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="取消"/>
+                            <connections>
+                                <action selector="cancelBtnClick:" destination="-1" eventType="touchUpInside" id="j8A-WS-26O"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiQ-LM-Zlp">
+                            <rect key="frame" x="207" y="0.0" width="207" height="50"/>
+                            <color key="backgroundColor" red="0.3803921569" green="0.76078431369999999" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="同意"/>
+                            <connections>
+                                <action selector="agreeBtnClick:" destination="-1" eventType="touchUpInside" id="tFJ-57-usv"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="KiQ-LM-Zlp" secondAttribute="trailing" id="0S6-UK-kLk"/>
+                        <constraint firstAttribute="height" constant="50" id="9jg-dh-399"/>
+                        <constraint firstItem="lvo-rP-fdu" firstAttribute="leading" secondItem="Hs3-Mo-8BA" secondAttribute="leading" id="Abz-1V-rzr"/>
+                        <constraint firstItem="KiQ-LM-Zlp" firstAttribute="top" secondItem="Hs3-Mo-8BA" secondAttribute="top" id="BZm-sz-WwG"/>
+                        <constraint firstItem="KiQ-LM-Zlp" firstAttribute="width" secondItem="lvo-rP-fdu" secondAttribute="width" id="CER-TO-2n7"/>
+                        <constraint firstItem="lvo-rP-fdu" firstAttribute="top" secondItem="Hs3-Mo-8BA" secondAttribute="top" id="DIo-Cv-QIy"/>
+                        <constraint firstItem="KiQ-LM-Zlp" firstAttribute="leading" secondItem="lvo-rP-fdu" secondAttribute="trailing" id="K0B-PE-QTJ"/>
+                        <constraint firstAttribute="bottom" secondItem="lvo-rP-fdu" secondAttribute="bottom" id="Omw-1z-iVp"/>
+                        <constraint firstAttribute="bottom" secondItem="KiQ-LM-Zlp" secondAttribute="bottom" id="l3l-rB-nIp"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="wZ9-68-klP"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="wPA-As-8Pv"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="MHM-OL-SzB" secondAttribute="trailing" id="1A3-Vt-P3r"/>
+                <constraint firstAttribute="bottom" secondItem="MHM-OL-SzB" secondAttribute="bottom" id="2v3-y2-hwe"/>
+                <constraint firstItem="Hs3-Mo-8BA" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="7wi-rg-XNW"/>
+                <constraint firstItem="MHM-OL-SzB" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="EDa-Il-dqk"/>
+                <constraint firstAttribute="bottom" secondItem="Hs3-Mo-8BA" secondAttribute="bottom" id="ITn-gp-cdg"/>
+                <constraint firstItem="Hs3-Mo-8BA" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="SW3-xx-Y12"/>
+                <constraint firstItem="MHM-OL-SzB" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="oy4-0p-m4L"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="36" y="5"/>
+        </view>
+    </objects>
+</document>

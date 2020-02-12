@@ -85,7 +85,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 800;
+    return 715;
 }
 
 - (void)loadAddressData

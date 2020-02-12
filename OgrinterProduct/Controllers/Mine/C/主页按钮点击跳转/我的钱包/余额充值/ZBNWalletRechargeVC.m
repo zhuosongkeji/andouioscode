@@ -44,6 +44,7 @@
     self.navigationItem.title = @"余额充值";
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.navigationController.navigationBar.translucent = NO;
+    self.tableView.bounces = NO;
 }
 
 /*! 设置底部的按钮view */
@@ -52,7 +53,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     ADWeakSelf;
     ZBNEntryFooterView *footerV = [ZBNEntryFooterView viewFromXib];
-    footerV.height = ZBNHeaderH;
+    footerV.height = ZBNHeaderH + 50;
     footerV.middleBtnClickTask = ^{
         if (weakSelf.model.moneyNumber && weakSelf.model.payNumber && weakSelf.model.phoneNumber) {
             [weakSelf dataRequest];

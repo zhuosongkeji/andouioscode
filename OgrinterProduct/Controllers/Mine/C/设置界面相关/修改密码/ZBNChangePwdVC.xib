@@ -23,16 +23,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bmz-iX-G1s">
-                    <rect key="frame" x="0.0" y="88" width="414" height="275"/>
+                    <rect key="frame" x="0.0" y="30" width="414" height="275"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="219-Yi-xcE">
                             <rect key="frame" x="10" y="220" width="394" height="44"/>
-                            <color key="backgroundColor" red="0.33725490200000002" green="0.76204603910000002" blue="0.62735551599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="f2U-XA-WVn"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="确认修改">
+                            <state key="normal" title="确认修改" backgroundImage="底部按钮背景">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -171,7 +171,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Bmz-iX-G1s" firstAttribute="leading" secondItem="ccL-kF-ZL3" secondAttribute="leading" id="8XS-XF-TXj"/>
-                <constraint firstItem="Bmz-iX-G1s" firstAttribute="top" secondItem="ccL-kF-ZL3" secondAttribute="top" constant="88" id="ged-to-8dX"/>
+                <constraint firstItem="Bmz-iX-G1s" firstAttribute="top" secondItem="ccL-kF-ZL3" secondAttribute="top" constant="30" id="ged-to-8dX"/>
                 <constraint firstAttribute="trailing" secondItem="Bmz-iX-G1s" secondAttribute="trailing" id="zAu-k1-23p"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="eqM-xH-sWa"/>
@@ -182,5 +182,6 @@
         <image name="图层 13" width="8.5" height="9"/>
         <image name="图层 14" width="10" height="14.5"/>
         <image name="图层 9" width="8" height="9"/>
+        <image name="底部按钮背景" width="345" height="45"/>
     </resources>
 </document>

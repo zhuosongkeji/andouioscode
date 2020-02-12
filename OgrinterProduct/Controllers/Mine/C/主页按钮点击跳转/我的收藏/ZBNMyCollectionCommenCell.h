@@ -10,7 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class ZBNMyCollectionM;
 @interface ZBNMyCollectionCommenCell : UITableViewCell
+
+/*! 注册cell */
++ (instancetype)regiserCellForTable:(UITableView *)tableView;
+/*! 模型数据 */
+@property (nonatomic, strong) ZBNMyCollectionM *collectionM;
 
 @end
 
