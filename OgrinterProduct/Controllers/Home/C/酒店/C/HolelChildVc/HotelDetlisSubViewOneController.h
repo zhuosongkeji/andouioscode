@@ -7,10 +7,18 @@
 //
 
 #import "BaseViewController.h"
+#import "HDragItemListView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HotelDetlisSubViewOneController : BaseViewController
+
+
+@property (nonatomic, strong) UIScrollView *baseScrollView;
+@property (nonatomic, strong) UITextView *describeContent;
+@property (nonatomic, strong) HDragItemListView *itemList;
+@property (nonatomic, assign) NSInteger tapIndex;
+
 
 @property (nonatomic, assign) BOOL vcCanScroll;
 
@@ -21,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)NSString *str;
 
 @property (nonatomic,strong)NSArray *imgArr;
+@property (nonatomic, strong)NSString *desc;
 @property (nonatomic,strong)NSString *sid;//商户id
 
 @end

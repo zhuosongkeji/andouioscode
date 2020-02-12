@@ -32,9 +32,9 @@
 //    KAdd_Observer(@"PushViewController", self, PushViewController, nil);
     
 //    初始化友盟
-    [UMConfigure initWithAppkey:UMKEY channel:nil];
-//    [UMConfigure setLogEnabled:NO];
-    [self initUMSDK];
+//    [UMConfigure initWithAppkey:UMKEY channel:nil];
+////    [UMConfigure setLogEnabled:NO];
+//    [self initUMSDK];
 //
     
     [IQKeyboardManager sharedManager].enable = YES;
@@ -47,7 +47,6 @@
     if (@available(iOS 11.0, *)){
         [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
     }
-    
     
     self.customBar = [[CustomBarViewController alloc]initFrame:CustomBarTypeOne];
     self.window.rootViewController = self.customBar;
@@ -75,7 +74,6 @@
 }
 
 
-
 //MARK:-WX支付成功 回调
 -(void)onResp:(BaseResp*)resp{
     if ([resp isKindOfClass:[PayResp class]]){
@@ -83,6 +81,7 @@
         switch(response.errCode){
             case WXSuccess:
                 NSLog(@"支付成功");
+                KPost_Notify(@"paySuccess", nil, nil);
                 break;
             default:
                 NSLog(@"支付失败，retcode=%d",resp.errCode);
@@ -99,7 +98,7 @@
         }
         //授权成功获取 OpenId
         NSString *code = aresp.code;
-        KPost_Notify(@"getwxCode", nil, @{@"code":aresp.code});
+        KPost_Notify(@"getwxCode", nil, @{@"code":code});
 
     }
 }
@@ -152,6 +151,12 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+//MARK: 地区加载数据
+-(void)loadAreaDatawithPlist{
+    
 }
 
 

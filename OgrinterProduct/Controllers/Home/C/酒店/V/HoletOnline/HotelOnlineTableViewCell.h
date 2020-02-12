@@ -10,11 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^BtnSelectBlock)(NSInteger idx);
+
 @class OnlineOrderModel;
 
 @interface HotelOnlineTableViewCell : UITableViewCell
 
 @property(nonatomic,strong)OnlineOrderModel *listmodel;
+
+@property(nonatomic,copy)BtnSelectBlock btnclickBlock;
 
 + (instancetype)tempTableViewCellWith:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath;
 

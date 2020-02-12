@@ -177,6 +177,10 @@
 		A1F6BDB023ADF7B50063AEF8 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BDAA23ADF7B50063AEF8 /* UIView+Extension.m */; };
 		A1F6BDB123ADF7B50063AEF8 /* CustomTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BDAC23ADF7B50063AEF8 /* CustomTopCell.m */; };
 		A1F6BDB323ADFA740063AEF8 /* custom.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1F6BDB223ADFA730063AEF8 /* custom.plist */; };
+		A1F6FCEC23F39D1B0002704C /* HDragItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FCE723F39D1B0002704C /* HDragItem.m */; };
+		A1F6FCED23F39D1B0002704C /* HDragItemListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FCE923F39D1B0002704C /* HDragItemListView.m */; };
+		A1F6FCEE23F39D1B0002704C /* LXFPhotoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FCEB23F39D1B0002704C /* LXFPhotoHelper.m */; };
+		A1F6FCF123F3AD5B0002704C /* ScanSelectedImgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FCEF23F3AD5B0002704C /* ScanSelectedImgViewController.m */; };
 		A1F73CF423A880CB001D86EF /* ShopingShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F73CF123A880CB001D86EF /* ShopingShopViewController.xib */; };
 		A1F73CF523A880CB001D86EF /* ShopingShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F73CF323A880CB001D86EF /* ShopingShopViewController.m */; };
 		A1F73CF823A88196001D86EF /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F73CF723A88196001D86EF /* ShareView.m */; };
@@ -786,6 +790,14 @@
 		A1F6BDAB23ADF7B50063AEF8 /* CustomTopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTopCell.h; sourceTree = "<group>"; };
 		A1F6BDAC23ADF7B50063AEF8 /* CustomTopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTopCell.m; sourceTree = "<group>"; };
 		A1F6BDB223ADFA730063AEF8 /* custom.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = custom.plist; sourceTree = "<group>"; };
+		A1F6FCE623F39D1A0002704C /* HDragItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDragItem.h; sourceTree = "<group>"; };
+		A1F6FCE723F39D1B0002704C /* HDragItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDragItem.m; sourceTree = "<group>"; };
+		A1F6FCE823F39D1B0002704C /* HDragItemListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDragItemListView.h; sourceTree = "<group>"; };
+		A1F6FCE923F39D1B0002704C /* HDragItemListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDragItemListView.m; sourceTree = "<group>"; };
+		A1F6FCEA23F39D1B0002704C /* LXFPhotoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXFPhotoHelper.h; sourceTree = "<group>"; };
+		A1F6FCEB23F39D1B0002704C /* LXFPhotoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXFPhotoHelper.m; sourceTree = "<group>"; };
+		A1F6FCEF23F3AD5B0002704C /* ScanSelectedImgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanSelectedImgViewController.m; sourceTree = "<group>"; };
+		A1F6FCF023F3AD5B0002704C /* ScanSelectedImgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanSelectedImgViewController.h; sourceTree = "<group>"; };
 		A1F73CF123A880CB001D86EF /* ShopingShopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShopingShopViewController.xib; path = "OgrinterProduct/Controllers/Home/C/商店/ShopingHome/C/ShopingShopViewController.xib"; sourceTree = SOURCE_ROOT; };
 		A1F73CF223A880CB001D86EF /* ShopingShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopingShopViewController.h; path = "OgrinterProduct/Controllers/Home/C/商店/ShopingHome/C/ShopingShopViewController.h"; sourceTree = SOURCE_ROOT; };
 		A1F73CF323A880CB001D86EF /* ShopingShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopingShopViewController.m; path = "OgrinterProduct/Controllers/Home/C/商店/ShopingHome/C/ShopingShopViewController.m"; sourceTree = SOURCE_ROOT; };
@@ -1941,6 +1953,7 @@
 		A14FB2AF238F5770006A6511 /* category */ = {
 			isa = PBXGroup;
 			children = (
+				A1F6FCE523F39CF00002704C /* 图片选择器 */,
 				A14BDAB523C6C954006EC033 /* customMenu */,
 				A1F6BDA223ADF5770063AEF8 /* MoveCollection */,
 				A14FB2BA238F57AC006A6511 /* YWHudManager */,
@@ -2014,19 +2027,14 @@
 				A1FC70C623C2CF6B005BFDC9 /* HomeModel.m */,
 				A1F86E1223D03BF400CC0F54 /* OnlineOrderModel.h */,
 				A1F86E1323D03BF400CC0F54 /* OnlineOrderModel.m */,
-
 				A1FBA8C723D3E4CF008C67E2 /* HotelOnlinesListModel.h */,
 				A1FBA8C823D3E4CF008C67E2 /* HotelOnlinesListModel.m */,
 				A1FBA8C523D3E4CE008C67E2 /* HotelOnlinesModel.h */,
 				A1FBA8C623D3E4CE008C67E2 /* HotelOnlinesModel.m */,
-
-
-
 				F48128F823D4627900285A5C /* OnlineOrderListModel.h */,
 				F48128F923D4627900285A5C /* OnlineOrderListModel.m */,
 				F481290523D4663100285A5C /* HotelOnlinesListModel.h */,
 				F481290423D4663100285A5C /* HotelOnlinesListModel.m */,
-
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -2331,6 +2339,8 @@
 				A1FC4A91239F70E600AF3F57 /* PaySuccessViewController.h */,
 				A1FC4A92239F70E600AF3F57 /* PaySuccessViewController.m */,
 				A1FC4A93239F70E600AF3F57 /* PaySuccessViewController.xib */,
+				A1F6FCF023F3AD5B0002704C /* ScanSelectedImgViewController.h */,
+				A1F6FCEF23F3AD5B0002704C /* ScanSelectedImgViewController.m */,
 			);
 			path = HolelChildVc;
 			sourceTree = "<group>";
@@ -2370,6 +2380,19 @@
 				A1F6BDAA23ADF7B50063AEF8 /* UIView+Extension.m */,
 			);
 			path = MoveCollection;
+			sourceTree = "<group>";
+		};
+		A1F6FCE523F39CF00002704C /* 图片选择器 */ = {
+			isa = PBXGroup;
+			children = (
+				A1F6FCE623F39D1A0002704C /* HDragItem.h */,
+				A1F6FCE723F39D1B0002704C /* HDragItem.m */,
+				A1F6FCE823F39D1B0002704C /* HDragItemListView.h */,
+				A1F6FCE923F39D1B0002704C /* HDragItemListView.m */,
+				A1F6FCEA23F39D1B0002704C /* LXFPhotoHelper.h */,
+				A1F6FCEB23F39D1B0002704C /* LXFPhotoHelper.m */,
+			);
+			path = "图片选择器";
 			sourceTree = "<group>";
 		};
 		A1F86E1D23D150A600CC0F54 /* HoletOnline */ = {
@@ -3936,6 +3959,7 @@
 				F4055ED223CD6E7D00637E7A /* ZBNHTApplyRefundVC.m in Sources */,
 				F44DF88423AA067900A7D902 /* ZBNStayInOrderVC.m in Sources */,
 				F476A44423A7682B00E3018A /* ZBNMyNewsCell.m in Sources */,
+				A1F6FCF123F3AD5B0002704C /* ScanSelectedImgViewController.m in Sources */,
 				F476A48423A7682C00E3018A /* ZBNShoppingCartCell.m in Sources */,
 				A15DC10A239E60FD008CF287 /* OnlineTableViewCell.m in Sources */,
 				F476A45D23A7682B00E3018A /* ZBNShoppingHallWaitPaymentOrderVC.m in Sources */,
@@ -4089,6 +4113,7 @@
 				A14FB3262390C6D1006A6511 /* CitylistViewController.m in Sources */,
 				F45D811323C96D0700AE2A28 /* ZBNSHWaitEvaluateDetailCell.m in Sources */,
 				F41B749223C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.m in Sources */,
+				A1F6FCEC23F39D1B0002704C /* HDragItem.m in Sources */,
 				F4FAC28B23AC639100C235EA /* ZBNSHApplyForRefundVC.m in Sources */,
 				F45718B223D03DB30040164D /* ZBNRTComModel.m in Sources */,
 				F4C196EF23C5771000F1C48C /* View+MASAdditions.m in Sources */,
@@ -4104,6 +4129,7 @@
 				A1667DED23C455560039C6F8 /* KXWebViewViewController.m in Sources */,
 				A14FB2BE238F57AD006A6511 /* HUDManager.m in Sources */,
 				F48D545123CB4C4E004DACFE /* SPPageMenu.m in Sources */,
+				A1F6FCEE23F39D1B0002704C /* LXFPhotoHelper.m in Sources */,
 				F476A45923A7682B00E3018A /* ZBNMyAddressCell.m in Sources */,
 				A1F73CF823A88196001D86EF /* ShareView.m in Sources */,
 				A10A9CC2239B36FC0049A0D2 /* HousePropertyViewController.m in Sources */,
@@ -4139,6 +4165,7 @@
 				A14FB318238FF6D4006A6511 /* WSLWaterFlowLayout.m in Sources */,
 				F411AE4C23BDF5E1006016D2 /* ZBNChangePwdVC.m in Sources */,
 				A1FBA8C323D30106008C67E2 /* RCarTableViewCell.m in Sources */,
+				A1F6FCED23F39D1B0002704C /* HDragItemListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4428,10 +4455,10 @@
 					"-framework",
 					"\"ZFPlayer\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.OgrinterProduct;
+				PRODUCT_BUNDLE_IDENTIFIER = com.OgrinterProducts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "${SRCROOT}";
 			};
 			name = Debug;
@@ -4567,10 +4594,10 @@
 					"-framework",
 					"\"ZFPlayer\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.OgrinterProduct;
+				PRODUCT_BUNDLE_IDENTIFIER = com.OgrinterProducts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "${SRCROOT";
 			};
 			name = Release;

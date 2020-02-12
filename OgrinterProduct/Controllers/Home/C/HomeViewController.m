@@ -176,11 +176,8 @@
     [super viewDidLoad];
     
     [self setup];
-    [self openRedPacket];
-    
     [self loadNetWork];
-    [self floadNetWork];
-
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -223,73 +220,91 @@
 
 -(void)loadNetWork {
     
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,BannerApi] params:@{} complement:^(ServerResponseInfo * _Nullable serverInfo) {
-        if ([serverInfo.response[@"code"] integerValue] == 200) {
-            NSDictionary *dict = serverInfo.response[@"data"];
-            
-            if ([_imgArr count])
-                [_imgArr removeAllObjects];
-            
-            for (int i = 0; i < [dict[@"banner"] count]; i ++) {
-                HomeModel *model = [[HomeModel alloc]initWithDict:dict[@"banner"][i]];
-                [self.imgArr addObject:model];
+    dispatch_group_t group = dispatch_group_create();
+    
+    dispatch_group_enter(group);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,BannerApi] params:@{} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+            if ([serverInfo.response[@"code"] integerValue] == 200) {
+                NSDictionary *dict = serverInfo.response[@"data"];
+                
+                if ([_imgArr count])
+                    [_imgArr removeAllObjects];
+                
+                for (int i = 0; i < [dict[@"banner"] count]; i ++) {
+                    HomeModel *model = [[HomeModel alloc]initWithDict:dict[@"banner"][i]];
+                    [self.imgArr addObject:model];
+                }
+                
+                if ([_imgOArr count])
+                    [_imgOArr removeAllObjects];
+                
+                for (int i = 0; i < [dict[@"merchant_type"] count];  i ++) {
+                    HomeModel *model = [[HomeModel alloc]initWithDict:dict[@"merchant_type"][i]];
+                    [self.imgOArr addObject:model];
+                }
+                
+                if ([_notisArr count])
+                    [_notisArr removeAllObjects];
+                
+                for (int i = 0; i < [dict[@"notice"] count]; i ++) {
+                    HomeModel *model = [[HomeModel alloc]initWithDict:dict[@"notice"][i]];
+                    [self.notisArr addObject:model];
+                }
+                
+                if ([_merchantArr count])
+                    [_merchantArr removeAllObjects];
+                
+                for (int i = 0; i < [dict[@"merchants"] count]; i ++) {
+                    HomeModel *model = [[HomeModel alloc]initWithDict:dict[@"merchants"][i]];
+                    [self.merchantArr addObject:model];
+                }
+                
+                dispatch_group_leave(group);
+                
+            }else {
+                [HUDManager showTextHud:loadError];
+                dispatch_group_leave(group);
             }
-            
-            if ([_imgOArr count])
-                [_imgOArr removeAllObjects];
-            
-            for (int i = 0; i < [dict[@"merchant_type"] count];  i ++) {
-                HomeModel *model = [[HomeModel alloc]initWithDict:dict[@"merchant_type"][i]];
-                [self.imgOArr addObject:model];
+        }];
+        
+    });
+    
+    
+    dispatch_group_enter(group);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,gourmet_list] params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
+            if ([serverInfo.response[@"code"] integerValue] == 200) {
+                
+                NSArray *arr = serverInfo.response[@"data"];
+                for (int i = 0; i < [arr count]; i ++) {
+                    NSDictionary *dic = arr[i];
+                    OnlineOrderModel *model = [[OnlineOrderModel alloc]initWithDict:dic];
+                    [self.mData addObject:model];
+                }
+                
+                dispatch_group_leave(group);
+                
+            }else {
+                [HUDManager showTextHud:loadError];
+                dispatch_group_leave(group);
             }
-            
-            if ([_notisArr count])
-                [_notisArr removeAllObjects];
-            
-            for (int i = 0; i < [dict[@"notice"] count]; i ++) {
-                HomeModel *model = [[HomeModel alloc]initWithDict:dict[@"notice"][i]];
-                [self.notisArr addObject:model];
-            }
-            
-            if ([_merchantArr count])
-                [_merchantArr removeAllObjects];
-            
-            for (int i = 0; i < [dict[@"merchants"] count]; i ++) {
-                HomeModel *model = [[HomeModel alloc]initWithDict:dict[@"merchants"][i]];
-                [self.merchantArr addObject:model];
-            }
-            
-            [self.noticebjView addSubview:self.queeView];
-            [self.pageFlowView reloadData];//刷新轮播
-            [self.icarousel reloadData];
-            
-            [self.mTableView reloadData];
-            
-        }else {
-            
-        }
-    }];
+        }];
+        
+    });
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        
+        [self.noticebjView addSubview:self.queeView];
+        [self.pageFlowView reloadData];//刷新轮播
+        [self.icarousel reloadData];
+        
+        [self.mTableView reloadData];
+        
+        [self openRedPacket];
+    });
 }
 
-//MARK:- 获取饭店数据
--(void)floadNetWork{
-    
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,gourmet_list] params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
-        if ([serverInfo.response[@"code"] integerValue] == 200) {
-            
-            NSArray *arr = serverInfo.response[@"data"];
-            for (int i = 0; i < [arr count]; i ++) {
-                NSDictionary *dic = arr[i];
-                OnlineOrderModel *model = [[OnlineOrderModel alloc]initWithDict:dic];
-                [self.mData addObject:model];
-            }
-    
-        }else {
-            [HUDManager showTextHud:loadError];
-        }
-    }];
-    [self.mTableView reloadData];
-}
 
 
 //MARK:- FlowViewDelegate
@@ -443,6 +458,12 @@
     if (!loctionStr)
         [HUDManager showTextHud:loctionError];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:[self createbtn]];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(0, 6, 32, 32)];
+    [btn setImage:[UIImage imageNamed:@"saoma"] forState:0];
+    [btn addTarget:self action:@selector(saosao) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
 }
 
 
@@ -559,6 +580,10 @@
     [btn addTarget:self action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];
     
     return btn;
+}
+
+-(void)saosao{
+    [HUDManager showTextHud:@"该功能暂未开放"];
 }
 
 /*

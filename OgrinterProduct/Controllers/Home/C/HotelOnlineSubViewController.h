@@ -20,6 +20,7 @@ typedef NSInteger(^CaReverseBlock)(void);
 @property (weak, nonatomic) IBOutlet UITableView *righttableView;
 
 @property (nonatomic, assign) BOOL isRefresh;
+@property(nonatomic,strong)NSString *hdesc;
 
 @property (nonatomic, strong)NSString *str;
 

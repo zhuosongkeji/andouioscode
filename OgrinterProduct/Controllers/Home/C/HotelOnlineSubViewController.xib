@@ -44,12 +44,13 @@
             <constraints>
                 <constraint firstItem="Kzq-cW-uUQ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.3" id="7b4-KA-hpO"/>
                 <constraint firstItem="w7t-US-uSp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BXn-zn-dUB"/>
-                <constraint firstItem="w7t-US-uSp" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.7" id="U2F-fq-oQ4"/>
+                <constraint firstItem="w7t-US-uSp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UMo-HS-iAc"/>
                 <constraint firstAttribute="bottom" secondItem="w7t-US-uSp" secondAttribute="bottom" id="gas-CV-ddE"/>
                 <constraint firstItem="Kzq-cW-uUQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="izb-cn-nSZ"/>
                 <constraint firstAttribute="trailing" secondItem="w7t-US-uSp" secondAttribute="trailing" id="uog-Va-2mQ"/>
                 <constraint firstAttribute="bottom" secondItem="Kzq-cW-uUQ" secondAttribute="bottom" id="v3g-og-gXY"/>
                 <constraint firstItem="Kzq-cW-uUQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xe0-TX-IwH"/>
+                <constraint firstItem="w7t-US-uSp" firstAttribute="leading" secondItem="Kzq-cW-uUQ" secondAttribute="trailing" id="ybO-8e-kLu"/>
             </constraints>
         </view>
     </objects>

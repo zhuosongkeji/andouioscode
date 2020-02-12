@@ -113,4 +113,17 @@
     }
 }
 
+
+- (IBAction)guanzClick:(UIButton *)sender {
+    _btnclickBlock(sender.tag);
+}
+
+
+- (IBAction)secondcellbtn:(UIButton *)sender {
+    
+    _btnclickBlock(sender.tag);
+}
+
+
+
 @end

@@ -18,6 +18,8 @@
 #import "HotelOnlineOrderTableViewCell.h"
 #import "HotelOnlinesListModel.h"
 #import "PaywayModel.h"
+#import <WechatOpenSDK/WXApi.h>
+#import "PaySuccessViewController.h"
 //#import "THDatePickerView.h"
 
 
@@ -124,6 +126,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     [self setup];
     [self loadNetWork];
     [self commonpayways];
@@ -136,6 +139,7 @@
     
     self.toTop.constant = kStatusBarAndNavigationBarH;
     
+    KAdd_Observer(@"paySuccess", self, paySuccessGotPush, nil);
     isShowMore = NO;pnumber = 1;
     self.mTableView.tableFooterView = [UILabel new];
     
@@ -213,7 +217,13 @@
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,gourmet_timely] params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([serverInfo.response[@"code"] integerValue] == 200) {
             
-            NSArray *array = serverInfo.response[@"data"];
+            if ([serverInfo.response[@"msg"] isEqualToString:@"预定成功"]) {
+                [self paySuccessGotPush];
+            }else{
+                
+                NSDictionary *wdic = serverInfo.response[@"data"];
+                [self uploadWx:wdic];
+            }
             
         }else if ([serverInfo.response[@"code"] integerValue] == 201){
             
@@ -378,6 +388,7 @@
     }
               
     [v addSubview:lable];
+    
     return v;
 }
 
@@ -385,26 +396,30 @@
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     if (section == 0) {
         
-        UIView *v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 30)];
-        
-        v.backgroundColor = UIColor.whiteColor;
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        
-        if (isShowMore)
-            [btn setTitle:@"收起" forState:0];
-        else
-            [btn setTitle:@"显示全部" forState:0];
-        
-        btn.titleLabel.font = [UIFont systemFontOfSize:12];
-        [btn setTitleColor:[UIColor lightGrayColor] forState:0];
-        [btn setFrame:CGRectMake(0, 0, 106, 30)];
-        btn.center = v.center;
-        
-        [btn addTarget:self action:@selector(Action:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [v addSubview:self.moreBtn = btn];
-        
-        return v;
+        if ([self.dataArr count] <= 3) {
+            
+        }else{
+            UIView *v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 30)];
+            
+            v.backgroundColor = UIColor.whiteColor;
+            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+            
+            if (isShowMore)
+                [btn setTitle:@"收起" forState:0];
+            else
+                [btn setTitle:@"显示全部" forState:0];
+            
+            btn.titleLabel.font = [UIFont systemFontOfSize:12];
+            [btn setTitleColor:[UIColor lightGrayColor] forState:0];
+            [btn setFrame:CGRectMake(0, 0, 106, 30)];
+            btn.center = v.center;
+            
+            [btn addTarget:self action:@selector(Action:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [v addSubview:self.moreBtn = btn];
+            
+            return v;
+        }
     }
     return nil;
 }
@@ -423,6 +438,7 @@
         return 0;
     }
 }
+
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 0 || section == 1|| section == 4) {
@@ -448,6 +464,7 @@
     }
 }
 
+
 - (IBAction)gotoOrder:(UIButton *)sender {
     
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
@@ -466,6 +483,8 @@
     [self gotoOrderHotel:dict];
     
 }
+
+
 
 -(void)selectDataker:(UIButton *)btn{
     if (btn.tag == 300) {
@@ -545,6 +564,33 @@
         [btn setBackgroundColor:color];
     
     return btn;
+}
+
+
+-(void)uploadWx:(NSDictionary *)dict{
+    
+    PayReq *req = [[PayReq alloc] init];
+    
+    req.openID = [NSString stringWithFormat:@"%@",dict[@"appid"]];
+    //APPID
+    req.partnerId = [NSString stringWithFormat:@"%@",dict[@"mch_id"]]; //商户号
+    req.prepayId = [NSString stringWithFormat:@"%@",dict[@"prepay_id"]];
+    
+    req.nonceStr = [NSString stringWithFormat:@"%@",dict[@"nonce_str"]];
+    
+    req.timeStamp = [dict[@"timestamp"] intValue];
+    
+    req.package = @"Sign=WXPay";
+    
+    req.sign = [NSString stringWithFormat:@"%@",dict[@"sign"]];
+    
+    [WXApi sendReq:req completion:nil];
+}
+
+
+-(void)paySuccessGotPush{
+    PaySuccessViewController *pay = [[PaySuccessViewController alloc]init];
+    [self.navigationController pushViewController:pay animated:YES];
 }
 
 
