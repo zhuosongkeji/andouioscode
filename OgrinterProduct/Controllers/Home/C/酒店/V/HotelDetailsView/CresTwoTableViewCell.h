@@ -10,7 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class CommentModel;
+
 @interface CresTwoTableViewCell : UITableViewCell
+
+@property(nonatomic,strong)CommentModel *listmodel;
+
+@property(nonatomic,strong)CommentModel *clistmodel;
+
 
 @end
 

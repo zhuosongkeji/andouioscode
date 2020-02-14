@@ -593,7 +593,9 @@
     ShopDetalisModel *model =  self.dataArr[0];
     ShopShopkeeperViewController *shoper = [[ShopShopkeeperViewController alloc]init];
     shoper.shoperId = model.merchant_id;
-    shoper.u_id = self.unmodel.uid;
+    if (self.unmodel) {
+        shoper.u_id = self.unmodel.uid;
+    }else {shoper.u_id = @"";}
     [self.navigationController pushViewController:shoper animated:YES];
 }
 

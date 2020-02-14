@@ -214,6 +214,7 @@
                 vc.title = HotelDetailsListArr[i];
                 vc.str = vc.title;
                 vc.sid = model.jdid;
+                vc.desc = model.desc;
                 
                 if (i == HotelDetailsListArr.count-1)
                     vc.imgArr = [NSArray arrayWithArray:model.facilities];

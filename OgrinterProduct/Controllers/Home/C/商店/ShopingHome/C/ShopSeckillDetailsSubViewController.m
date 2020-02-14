@@ -7,6 +7,7 @@
 //
 
 #define shopDeatils @"goods/details"
+
 #define shopComment @"goods/comment"
 
 #import "ShopSeckillDetailsSubViewController.h"
@@ -75,16 +76,12 @@
 
 
 -(void)setup{
-    
     self.view.backgroundColor = KSRGBA(255, 255, 255, 1);
-    
-    if ([self.title isEqualToString:SeckillDetailsListArr[0]]) {
-        
+    if ([self.title isEqualToString:SeckillDetailsListArr[0]])
         [self details];
-    }else{
-        
+    else
         [self comment];
-    }
+    
 }
 
 
@@ -149,9 +146,10 @@
         if ([serverInfo.response[@"code"] integerValue] == 200) {
             NSArray *array = [serverInfo.response objectForKey:@"data"];
             for (int i = 0; i < [array count]; i ++) {
-                CommentModel *model = [[CommentModel alloc]init];
+                CommentModel *model = [[CommentModel alloc]initWithDict:array[i]];
                 [self.data addObject:model];
             }
+            [self.smTableView reloadData];
         }else {
             [HUDManager showTextHud:loadError];
         }
@@ -204,7 +202,6 @@
         
     }else {
         
-        
         CresTwoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CresTwoTableViewCell"];
         if (!cell) {
             
@@ -212,6 +209,11 @@
         }
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        if ([self.data count]){
+            cell.listmodel = self.data[indexPath.row];
+        }
+        
         return cell;
         
     }
@@ -220,11 +222,10 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     if ([self.title isEqualToString:SeckillDetailsListArr[0]]) {
         return 0;
     }else {
-        return 206;
+        return 142;
     }
 }
 
