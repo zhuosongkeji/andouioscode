@@ -10,12 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class ZBNRTFoodsModel;
+@class ZBNRTFoodsModel,ZBNRTComModel;
 @interface ZBNRTOrderCellInCell : UITableViewCell
 + (instancetype)regiserCellForTable:(UITableView *)tableView;
 
 @property (nonatomic, strong) ZBNRTFoodsModel *foodsM;
-
+@property (nonatomic, strong) ZBNRTComModel *comM;
 @end
 
 NS_ASSUME_NONNULL_END

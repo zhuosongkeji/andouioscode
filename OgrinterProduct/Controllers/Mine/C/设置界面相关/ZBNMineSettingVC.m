@@ -18,6 +18,7 @@
 #import "ZBNChangePwdVC.h"     // 修改密码
 #import "LoginViewController.h"
 #import "ZBNChangeNameVC.h"  // 修改昵称
+#import "ZBNUserIconVC.h"
 
 @interface ZBNMineSettingVC ()
 /*! 底部视图 */
@@ -159,6 +160,11 @@
     // 修改昵称
     cell.nameChangeTask = ^{
         ZBNChangeNameVC *vc = [[ZBNChangeNameVC alloc] init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    // 修改头像
+    cell.iconChangeTask = ^{
+        ZBNUserIconVC *vc = [[ZBNUserIconVC alloc] init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     return cell;

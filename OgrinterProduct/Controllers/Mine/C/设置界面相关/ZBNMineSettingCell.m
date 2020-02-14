@@ -136,11 +136,21 @@
     // 用户昵称
     UITapGestureRecognizer *nameGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(nameChange)];
     [self.nameView addGestureRecognizer:nameGes];
-    
+    // 头像
+    UITapGestureRecognizer *userIconGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(iconUpload)];
+    self.userIconV.userInteractionEnabled = YES;
+    [self.userIconV addGestureRecognizer:userIconGes];
 }
 
 
 ///MARK: 事件监听
+
+- (void)iconUpload
+{
+    if (self.iconChangeTask) {
+        self.iconChangeTask();
+    }
+}
 
 - (void)nameChange
 {

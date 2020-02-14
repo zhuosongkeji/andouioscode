@@ -396,6 +396,8 @@
 		F48D545123CB4C4E004DACFE /* SPPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F48D544B23CB4C4C004DACFE /* SPPageMenu.m */; };
 		F4917C8223C3132C00C05CFA /* ZBNMerchantEntryTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4917C8023C3132C00C05CFA /* ZBNMerchantEntryTabCell.m */; };
 		F4917C8323C3132C00C05CFA /* ZBNMerchantEntryTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4917C8123C3132C00C05CFA /* ZBNMerchantEntryTabCell.xib */; };
+		F49656D723F67D2A00481F62 /* ZBNUserIconVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F49656D523F67D2A00481F62 /* ZBNUserIconVC.m */; };
+		F49656D823F67D2A00481F62 /* ZBNUserIconVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F49656D623F67D2A00481F62 /* ZBNUserIconVC.xib */; };
 		F49B6D3D23B9EF2100F1BEBB /* ZBNMineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F49B6D3C23B9EF2100F1BEBB /* ZBNMineModel.m */; };
 		F4ADBE3523B9A28100B62E46 /* ADConst.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ADBE3423B9A28000B62E46 /* ADConst.m */; };
 		F4ADBE3823B9A4BA00B62E46 /* ZBNMyIntegralModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ADBE3723B9A4BA00B62E46 /* ZBNMyIntegralModel.m */; };
@@ -466,6 +468,8 @@
 		F4E6A7B223B75417006721E9 /* ZBNMineSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E6A7AD23B75417006721E9 /* ZBNMineSettingCell.xib */; };
 		F4E6A7B323B75417006721E9 /* ZBNMineSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6A7AF23B75417006721E9 /* ZBNMineSettingCell.m */; };
 		F4E6A7B423B75417006721E9 /* ZBNMineSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6A7B123B75417006721E9 /* ZBNMineSettingVC.m */; };
+		F4EE90E823F55461003870A3 /* ZBNHTReasonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EE90E723F55461003870A3 /* ZBNHTReasonView.m */; };
+		F4EE90EA23F55488003870A3 /* ZBNHTReasonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4EE90E923F55488003870A3 /* ZBNHTReasonView.xib */; };
 		F4FAC27F23ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FAC27D23ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.m */; };
 		F4FAC28023ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FAC27E23ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.xib */; };
 		F4FAC28323AC568900C235EA /* ZBNWaitDeliverDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FAC28223AC568900C235EA /* ZBNWaitDeliverDetailVC.m */; };
@@ -1171,6 +1175,9 @@
 		F4917C7F23C3132C00C05CFA /* ZBNMerchantEntryTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNMerchantEntryTabCell.h; sourceTree = "<group>"; };
 		F4917C8023C3132C00C05CFA /* ZBNMerchantEntryTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNMerchantEntryTabCell.m; sourceTree = "<group>"; };
 		F4917C8123C3132C00C05CFA /* ZBNMerchantEntryTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNMerchantEntryTabCell.xib; sourceTree = "<group>"; };
+		F49656D423F67D2A00481F62 /* ZBNUserIconVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNUserIconVC.h; sourceTree = "<group>"; };
+		F49656D523F67D2A00481F62 /* ZBNUserIconVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNUserIconVC.m; sourceTree = "<group>"; };
+		F49656D623F67D2A00481F62 /* ZBNUserIconVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNUserIconVC.xib; sourceTree = "<group>"; };
 		F49B6D3B23B9EF2100F1BEBB /* ZBNMineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNMineModel.h; sourceTree = "<group>"; };
 		F49B6D3C23B9EF2100F1BEBB /* ZBNMineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNMineModel.m; sourceTree = "<group>"; };
 		F4ADBE3323B9A28000B62E46 /* ADConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADConst.h; sourceTree = "<group>"; };
@@ -1306,6 +1313,9 @@
 		F4E6A7AF23B75417006721E9 /* ZBNMineSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNMineSettingCell.m; sourceTree = "<group>"; };
 		F4E6A7B023B75417006721E9 /* ZBNMineSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNMineSettingVC.h; sourceTree = "<group>"; };
 		F4E6A7B123B75417006721E9 /* ZBNMineSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNMineSettingVC.m; sourceTree = "<group>"; };
+		F4EE90E623F55461003870A3 /* ZBNHTReasonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTReasonView.h; sourceTree = "<group>"; };
+		F4EE90E723F55461003870A3 /* ZBNHTReasonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTReasonView.m; sourceTree = "<group>"; };
+		F4EE90E923F55488003870A3 /* ZBNHTReasonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNHTReasonView.xib; sourceTree = "<group>"; };
 		F4FAC27C23ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHWriteLogisticsListCell.h; sourceTree = "<group>"; };
 		F4FAC27D23ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHWriteLogisticsListCell.m; sourceTree = "<group>"; };
 		F4FAC27E23ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNSHWriteLogisticsListCell.xib; sourceTree = "<group>"; };
@@ -2449,6 +2459,9 @@
 				F4055ECF23CD6E7D00637E7A /* ZBNHTApplyRefundVC.h */,
 				F4055ED023CD6E7D00637E7A /* ZBNHTApplyRefundVC.m */,
 				F4055ED123CD6E7D00637E7A /* ZBNHTApplyRefundVC.xib */,
+				F4EE90E623F55461003870A3 /* ZBNHTReasonView.h */,
+				F4EE90E723F55461003870A3 /* ZBNHTReasonView.m */,
+				F4EE90E923F55488003870A3 /* ZBNHTReasonView.xib */,
 			);
 			path = "待入住";
 			sourceTree = "<group>";
@@ -2563,6 +2576,7 @@
 				F443E91523C6FF830059E48F /* 全部消息 */,
 				F457189423D0113B0040164D /* 修改昵称 */,
 				F457188B23CFEEBC0040164D /* VIP充值 */,
+				F49656D323F67C7700481F62 /* 上传头像 */,
 			);
 			path = "设置界面相关";
 			sourceTree = "<group>";
@@ -3180,6 +3194,16 @@
 			path = C;
 			sourceTree = "<group>";
 		};
+		F49656D323F67C7700481F62 /* 上传头像 */ = {
+			isa = PBXGroup;
+			children = (
+				F49656D423F67D2A00481F62 /* ZBNUserIconVC.h */,
+				F49656D523F67D2A00481F62 /* ZBNUserIconVC.m */,
+				F49656D623F67D2A00481F62 /* ZBNUserIconVC.xib */,
+			);
+			path = "上传头像";
+			sourceTree = "<group>";
+		};
 		F4B7F8C123CC06A7008BCEDF /* 通用的地址选择 */ = {
 			isa = PBXGroup;
 			children = (
@@ -3618,6 +3642,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A15DC10B239E60FD008CF287 /* OnlineTableViewCell.xib in Resources */,
+				F4EE90EA23F55488003870A3 /* ZBNHTReasonView.xib in Resources */,
 				A1FBA8C423D30106008C67E2 /* RCarTableViewCell.xib in Resources */,
 				F4FAC2BB23ACAA7300C235EA /* ZBNEvaluateGoodsCell.xib in Resources */,
 				F476A48123A7682C00E3018A /* ZBNShoppingCartCell.xib in Resources */,
@@ -3645,6 +3670,7 @@
 				A1F73CF423A880CB001D86EF /* ShopingShopViewController.xib in Resources */,
 				F4E6A7AA23B753F2006721E9 /* ZBNMineFeedbackVC.xib in Resources */,
 				F4C1F41E23F3E69200E28D9D /* ZBNProtocolVC.xib in Resources */,
+				F49656D823F67D2A00481F62 /* ZBNUserIconVC.xib in Resources */,
 				A14FB350239126CB006A6511 /* ShoingMsgViewController.xib in Resources */,
 				F4FAC2A023AC731100C235EA /* ZBNHotelEntryCell.xib in Resources */,
 				A15DC101239E3F04008CF287 /* OnlineBookingViewController.xib in Resources */,
@@ -4052,6 +4078,7 @@
 				A1FBA8BD23D2FE58008C67E2 /* RCarlistView.m in Sources */,
 				F476A4AA23A7683200E3018A /* ZBNSegmenBar.m in Sources */,
 				F46E0F1123BADBEA006FE05D /* ZBNMineSettingModel.m in Sources */,
+				F49656D723F67D2A00481F62 /* ZBNUserIconVC.m in Sources */,
 				A1CE7CCB23A77EB900C22C41 /* QCouponTableViewCell.m in Sources */,
 				A1F4E03023A48E4F00B02880 /* ShopSeckillDetailsSubViewController.m in Sources */,
 				F476A48323A7682C00E3018A /* ZBNShopingCartVC.m in Sources */,
@@ -4128,6 +4155,7 @@
 				F4C196F223C5771000F1C48C /* MASViewAttribute.m in Sources */,
 				F476A45723A7682B00E3018A /* ZBNMyAddressVC.m in Sources */,
 				F476A4A923A7683200E3018A /* ZBNSegmenBarVC.m in Sources */,
+				F4EE90E823F55461003870A3 /* ZBNHTReasonView.m in Sources */,
 				F457188E23CFF08D0040164D /* ZBNVIPRechargeVC.m in Sources */,
 				A14FB311238FD2AC006A6511 /* HomeTableViewCell.m in Sources */,
 				F458C34523C82E0900338220 /* ZBNSHComViewLogisticsModel.m in Sources */,

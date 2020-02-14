@@ -68,6 +68,7 @@ typedef NS_ENUM(NSInteger, YNImageUploadImageType) {
 /*! 返回的URL */
 @property (nonatomic, copy) NSString *get_url;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

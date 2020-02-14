@@ -70,7 +70,7 @@
     
     // 接收登录成功过的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"loginOK" object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"iconChangeOK" object:nil];
 
 }
 
@@ -85,6 +85,7 @@
 {
     // 移除通知
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"loginOK" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"iconChangeOK" object:nil];
 }
 
 #pragma mark -- UI

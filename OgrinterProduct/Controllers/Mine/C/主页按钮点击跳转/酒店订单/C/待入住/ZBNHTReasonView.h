@@ -1,8 +1,8 @@
 //
-//  ZBNHTApplyRefundVC.h
+//  ZBNHTReasonView.h
 //  OgrinterProduct
 //
-//  Created by 周芳圆 on 2020/1/14.
+//  Created by 周芳圆 on 2020/2/13.
 //  Copyright © 2020 RXF. All rights reserved.
 //
 
@@ -10,10 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZBNHTApplyRefundVC : UIViewController
-@property (nonatomic, copy) NSString *money;
+@interface ZBNHTReasonView : UIView
 @property (nonatomic, copy) NSString *merchants_id;
-@property (nonatomic, copy) NSString *order_sn;
+@property (nonatomic, strong) NSMutableArray *dataArr;
 @end
 
 NS_ASSUME_NONNULL_END

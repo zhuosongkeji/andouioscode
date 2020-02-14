@@ -146,9 +146,7 @@
 - (IBAction)thiBtnClick:(id)sender {
     
     if (self.comM.status.intValue == 0) {  // 已取消的订单详情 ZBNHTCancelVC
-//        ZBNHTCancelVC *vc = [[ZBNHTCancelVC alloc] init];
-//        vc.book_sn = self.comM.book_sn;
-//        [[self viewController].navigationController pushViewController:vc animated:YES];
+        
     } else if (self.comM.status.intValue == 20) { // 待入住的订单详情
         ZBNHTWaitInDetailVC *vc = [[ZBNHTWaitInDetailVC alloc] init];
         vc.book_sn = self.comM.book_sn;

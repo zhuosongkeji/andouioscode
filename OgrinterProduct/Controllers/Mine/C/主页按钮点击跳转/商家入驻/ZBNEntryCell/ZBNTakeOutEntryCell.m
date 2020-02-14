@@ -69,6 +69,7 @@
            param[@"token"] = unmodel.token;
           YNImageUploadView *imageView = [[YNImageUploadView alloc] initWithConfig:^(YNImageUploadViewConfig * _Nonnull config) {
               config.insets = UIEdgeInsetsMake(5, 10, 5, 10);
+              config.photoCount = 1;
               config.autoHeight = YES;
               config.isNeedUpload = YES;
               config.uploadUrl = @"http://andou.zhuosongkj.com/index.php/api/goods/uploads";
@@ -90,9 +91,11 @@
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    
         param[@"uid"] = unmodel.uid;
         param[@"token"] = unmodel.token;
        YNImageUploadView *imageView = [[YNImageUploadView alloc] initWithConfig:^(YNImageUploadViewConfig * _Nonnull config) {
+           config.photoCount = 1;
            config.insets = UIEdgeInsetsMake(5, 10, 5, 10);
            config.autoHeight = YES;
            config.isNeedUpload = YES;

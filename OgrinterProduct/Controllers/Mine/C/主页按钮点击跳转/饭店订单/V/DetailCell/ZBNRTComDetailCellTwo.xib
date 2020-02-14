@@ -283,7 +283,7 @@
                 <outlet property="person_num" destination="kWf-Vx-Wax" id="aC8-lA-2ZB"/>
                 <outlet property="total_price" destination="x7U-PL-GcQ" id="cjT-Pp-QMz"/>
             </connections>
-            <point key="canvasLocation" x="-48" y="608"/>
+            <point key="canvasLocation" x="-72" y="548"/>
         </tableViewCell>
     </objects>
 </document>

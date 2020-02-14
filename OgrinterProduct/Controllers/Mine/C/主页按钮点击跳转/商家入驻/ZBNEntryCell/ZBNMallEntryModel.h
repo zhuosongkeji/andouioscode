@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSNumber *IDCity;
 @property (nonatomic, assign) NSNumber *IDArea;
 
+@property (nonatomic, copy) NSString *upURLOne;
+
 + (ZBNMallEntryModel *)sharedInstance;
 
 @end

@@ -409,20 +409,15 @@
     return marray;
 }
 
-- (NSString *)get_url
-{
-    NSString *string = @"";
-    if (self.dataList.count > 1) {
-        NSMutableArray *marray = [NSMutableArray arrayWithArray:self.dataList];
-        [marray removeLastObject];
-        for (YNImageModel *model in marray) {
-            string = [string stringByAppendingString:model.get_url];
-            string = [string stringByAppendingString:@","];
-        }
-        string = [string substringWithRange:NSMakeRange(0, string.length-1)];
-    }
-    return string;
-}
+//- (NSString *)get_url
+//{
+//    if (self.dataList.count > 0) {
+//        for (YNImageModel *model in self.dataList) {
+//            
+//        }
+//    }
+//    
+//}
 
 
 - (NSArray<NSString *> *)imageNames {

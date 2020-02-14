@@ -8,6 +8,7 @@
 
 #import "ZBNRTOrderCellInCell.h"
 #import "ZBNRTFoodsModel.h"
+#import "ZBNRTComModel.h"
 
 @interface ZBNRTOrderCellInCell ()
 /*! 菜名 */
@@ -26,18 +27,11 @@
     self.name.text = foodsM.name;
     self.num.text = [NSString stringWithFormat:@"x%@",foodsM.num];
     self.price.text = [NSString stringWithFormat:@"¥%@",foodsM.price];
+    
 }
 
 
 
-+ (instancetype)regiserCellForTable:(UITableView *)tableView
-{
-    static NSString * const ZBNRTOrderCellInCellID = @"ZBNRTOrderCellInCellID";
-    ZBNRTOrderCellInCell *cell = [tableView dequeueReusableCellWithIdentifier:ZBNRTOrderCellInCellID];
-    if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNRTOrderCellInCell" owner:nil options:nil].lastObject;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
-    return cell;
-}
+
+
 @end
