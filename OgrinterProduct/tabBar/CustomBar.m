@@ -15,8 +15,8 @@
     
     if (self) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setImage:imgStr(@"plus_Last") forState:UIControlStateNormal];
-        [btn setImage:imgStr(@"plus_Last") forState:UIControlStateHighlighted];
+        [btn setImage:imgStr(@"center_btn") forState:UIControlStateNormal];
+        [btn setImage:imgStr(@"center_btn") forState:UIControlStateHighlighted];
         btn.bounds = CGRectMake(0, 0, 64, 64);
         self.midbtn = btn;
         [self addSubview:self.midbtn];
@@ -31,29 +31,29 @@
     if (IPHONE_X)
         self.midbtn.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.1);
     else
-        self.midbtn.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.3);
+        self.midbtn.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.2);
     
-    int index = 0;
+//    int index = 0;
     
-    CGFloat wigth = self.bounds.size.width / 5;
-    
-    for (UIView* sub in self.subviews) {
+//    CGFloat wigth = self.bounds.size.width / 5;
+//
+//    for (UIView* sub in self.subviews) {
+//
+//        if ([sub isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+//
+//            if (IPHONE_X)
+//                sub.frame = CGRectMake(index * wigth, self.bounds.origin.y, wigth, self.bounds.size.height/1.8);
+//            else
+//                sub.frame = CGRectMake(index * wigth, self.bounds.origin.y, wigth, self.bounds.size.height - 2);
+//
+//            index++;
+//
+//            if (index == 2) {
+//                index++;
+//            }
+//        }
         
-        if ([sub isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
-            
-            if (IPHONE_X)
-                sub.frame = CGRectMake(index * wigth, self.bounds.origin.y, wigth, self.bounds.size.height/1.8);
-            else
-                sub.frame = CGRectMake(index * wigth, self.bounds.origin.y, wigth, self.bounds.size.height - 2);
-            
-            index++;
-            
-            if (index == 2) {
-                index++;
-            }
-        }
-        
-    }
+//    }
 
 }
 

@@ -9,14 +9,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineViewController">
             <connections>
+                <outlet property="foodOrderBtn" destination="SR1-lj-PvI" id="ebH-g9-og9"/>
                 <outlet property="goodsCollection" destination="rpf-RN-lGc" id="aaO-ui-wvB"/>
                 <outlet property="headImageV" destination="as7-O6-384" id="UAz-Td-pps"/>
                 <outlet property="historyL" destination="fCa-EY-Z1c" id="5tb-mk-nqf"/>
+                <outlet property="hotelOrderBtn" destination="rjw-vu-phX" id="0pk-0m-EA7"/>
                 <outlet property="integerL" destination="MS7-1P-hH8" id="Kdk-ri-Vkh"/>
                 <outlet property="integerView" destination="aPi-2H-Gx3" id="X1y-If-dPq"/>
                 <outlet property="mTableView" destination="kGP-dV-NOj" id="XgD-j2-92t"/>
                 <outlet property="money" destination="to9-Dc-cTp" id="HVK-z8-Wi5"/>
                 <outlet property="shopFocus" destination="tax-Lu-bSR" id="o6I-FM-NqS"/>
+                <outlet property="shopOrderBtn" destination="xqZ-KC-SZs" id="acy-lv-42H"/>
                 <outlet property="toTop" destination="Ib9-kd-ocA" id="rj0-9H-h1c"/>
                 <outlet property="userName" destination="rja-cw-E1S" id="AnM-lt-cUv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -576,7 +579,7 @@
                 <constraint firstAttribute="trailing" secondItem="kGP-dV-NOj" secondAttribute="trailing" id="JYB-Ix-DuZ"/>
                 <constraint firstAttribute="bottom" secondItem="kGP-dV-NOj" secondAttribute="bottom" id="vmt-1l-new"/>
             </constraints>
-            <point key="canvasLocation" x="-26704" y="106"/>
+            <point key="canvasLocation" x="-26625" y="79"/>
         </view>
     </objects>
     <resources>

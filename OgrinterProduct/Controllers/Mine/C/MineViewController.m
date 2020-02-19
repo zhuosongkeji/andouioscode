@@ -15,6 +15,8 @@
 #import "InviteCourtesyVC.h"
 #import "ZBNDowmLoadAppVC.h"
 #import "ZBNMyWalletVC.h"
+#import "Img+lable.h"
+#import "PPBadgeView.h"
 
 
 
@@ -48,6 +50,13 @@
 /*! 模型 */
 @property (nonatomic, strong) ZBNMineModel *model;
 @property (nonatomic, strong) ZBNMineSettingModel *settingM;
+
+/*! 美食 */
+@property (weak, nonatomic) IBOutlet Img_lable *foodOrderBtn;
+/*! 酒店 */
+@property (weak, nonatomic) IBOutlet Img_lable *hotelOrderBtn;
+/*! 商城 */
+@property (weak, nonatomic) IBOutlet Img_lable *shopOrderBtn;
 /********************************end-- 数据相关**************************************/
 @end
 
@@ -68,6 +77,10 @@
     // 设置table
     [self setupTable];
     
+    
+//    [self.shopOrderBtn pp_addBadgeWithText:@"4"];
+//    [self.shopOrderBtn pp_moveBadgeWithX:-30 Y:0];
+//    [self.shopOrderBtn pp_setBadgeFlexMode:PPBadgeViewFlexModeTail];
     // 接收登录成功过的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"loginOK" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"iconChangeOK" object:nil];
@@ -149,6 +162,33 @@
            weakSelf.historyL.text = weakSelf.model.record;
            // 我的积分
            weakSelf.integerL.text = [NSString stringWithFormat:@"我的积分:%@",weakSelf.model.integral];
+           // 美食
+           if ([weakSelf.model.foodsordernum isEqualToString:@"0"]) {
+               [weakSelf.foodOrderBtn pp_hiddenBadge];
+           } else {
+               [weakSelf.foodOrderBtn pp_addBadgeWithText:weakSelf.model.foodsordernum];
+               [weakSelf.foodOrderBtn pp_moveBadgeWithX:-30 Y:0];
+               [weakSelf.foodOrderBtn pp_setBadgeHeight:20];
+           }
+           
+           // 酒店
+           if ([weakSelf.model.booksordernum isEqualToString:@"0"]) {
+               [weakSelf.hotelOrderBtn pp_hiddenBadge];
+           } else {
+               [weakSelf.hotelOrderBtn pp_addBadgeWithText:weakSelf.model.booksordernum];
+               [weakSelf.hotelOrderBtn pp_moveBadgeWithX:-30 Y:0];
+               [weakSelf.hotelOrderBtn pp_setBadgeHeight:20];
+           }
+           
+           // 商城
+           if ([weakSelf.model.goodordernum isEqualToString:@"0"]) {
+               [weakSelf.shopOrderBtn pp_hiddenBadge];
+           } else {
+               [weakSelf.shopOrderBtn pp_addBadgeWithText:weakSelf.model.goodordernum];
+               [weakSelf.shopOrderBtn pp_moveBadgeWithX:-30 Y:0];
+               [weakSelf.shopOrderBtn pp_setBadgeHeight:20];
+           }
+           
            // 是否为会员plus
            if (self.model.status.intValue == 1) {
                self.vipPlusView.hidden = NO;

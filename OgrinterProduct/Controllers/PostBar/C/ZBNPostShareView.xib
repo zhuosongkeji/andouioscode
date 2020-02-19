@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZBNPostShareView">
+            <rect key="frame" x="0.0" y="0.0" width="401" height="146"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享到" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wO8-2L-8UC">
+                    <rect key="frame" x="15" y="15" width="43" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="08" translatesAutoresizingMaskIntoConstraints="NO" id="Lsu-Y2-JBU">
+                    <rect key="frame" x="366" y="13.5" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Gvu-hW-u2q"/>
+                        <constraint firstAttribute="width" constant="20" id="XwL-7Q-gI4"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVG-PN-a2A" customClass="Img_lable">
+                    <rect key="frame" x="0.0" y="82" width="80" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="2Jh-U7-g1a"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="微信" image="weiin">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRu-aG-Zjv" customClass="Img_lable">
+                    <rect key="frame" x="160.5" y="82" width="80" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="hGD-3d-kNR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="QQ" image="qqimg">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqQ-Jy-pB1" customClass="Img_lable">
+                    <rect key="frame" x="240.5" y="82" width="80.5" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="mZR-Pe-f2c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="QQ空间" image="qqkongjian">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpK-fV-Mod" customClass="Img_lable">
+                    <rect key="frame" x="321" y="82" width="80" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="aa1-z2-6vg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="微博" image="weiboshare">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVd-wR-o2s" customClass="Img_lable">
+                    <rect key="frame" x="80" y="82" width="80.5" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="wAc-vB-JHR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="朋友圈" image="wexinPen">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="HpK-fV-Mod" firstAttribute="centerY" secondItem="jVG-PN-a2A" secondAttribute="centerY" id="2W6-FC-REb"/>
+                <constraint firstItem="HpK-fV-Mod" firstAttribute="width" secondItem="jVG-PN-a2A" secondAttribute="width" id="3Dw-bA-VTY"/>
+                <constraint firstItem="lVd-wR-o2s" firstAttribute="leading" secondItem="jVG-PN-a2A" secondAttribute="trailing" id="BwJ-aZ-YIc"/>
+                <constraint firstItem="bqQ-Jy-pB1" firstAttribute="height" secondItem="jVG-PN-a2A" secondAttribute="height" id="FYD-J9-wc8"/>
+                <constraint firstItem="GRu-aG-Zjv" firstAttribute="leading" secondItem="lVd-wR-o2s" secondAttribute="trailing" id="GGJ-to-asQ"/>
+                <constraint firstItem="wO8-2L-8UC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="IRh-Om-PqD"/>
+                <constraint firstAttribute="trailing" secondItem="Lsu-Y2-JBU" secondAttribute="trailing" constant="15" id="Ins-yT-OEZ"/>
+                <constraint firstItem="lVd-wR-o2s" firstAttribute="width" secondItem="jVG-PN-a2A" secondAttribute="width" id="J02-3a-sh2"/>
+                <constraint firstItem="bqQ-Jy-pB1" firstAttribute="width" secondItem="jVG-PN-a2A" secondAttribute="width" id="MR9-hI-owY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HpK-fV-Mod" secondAttribute="trailing" id="Ret-gb-nJB"/>
+                <constraint firstItem="GRu-aG-Zjv" firstAttribute="width" secondItem="jVG-PN-a2A" secondAttribute="width" id="VMA-Ec-phg"/>
+                <constraint firstItem="HpK-fV-Mod" firstAttribute="leading" secondItem="bqQ-Jy-pB1" secondAttribute="trailing" id="WXU-0g-0aH"/>
+                <constraint firstItem="HpK-fV-Mod" firstAttribute="height" secondItem="jVG-PN-a2A" secondAttribute="height" id="Xkf-3T-9sP"/>
+                <constraint firstItem="bqQ-Jy-pB1" firstAttribute="centerY" secondItem="jVG-PN-a2A" secondAttribute="centerY" id="gjg-eC-YDE"/>
+                <constraint firstItem="bqQ-Jy-pB1" firstAttribute="leading" secondItem="GRu-aG-Zjv" secondAttribute="trailing" id="h8X-30-HfQ"/>
+                <constraint firstItem="lVd-wR-o2s" firstAttribute="height" secondItem="jVG-PN-a2A" secondAttribute="height" id="lWG-Ta-DuH"/>
+                <constraint firstItem="Lsu-Y2-JBU" firstAttribute="centerY" secondItem="wO8-2L-8UC" secondAttribute="centerY" id="mXn-p0-JaW"/>
+                <constraint firstItem="GRu-aG-Zjv" firstAttribute="centerY" secondItem="jVG-PN-a2A" secondAttribute="centerY" id="n39-lq-8yS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="jVG-PN-a2A" secondAttribute="bottom" id="nJG-6F-Vwp"/>
+                <constraint firstItem="wO8-2L-8UC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="oQE-fg-i6g"/>
+                <constraint firstItem="lVd-wR-o2s" firstAttribute="centerY" secondItem="jVG-PN-a2A" secondAttribute="centerY" id="tao-rt-V1j"/>
+                <constraint firstItem="jVG-PN-a2A" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wfq-dh-2yk"/>
+                <constraint firstItem="GRu-aG-Zjv" firstAttribute="height" secondItem="jVG-PN-a2A" secondAttribute="height" id="xlN-F9-GC9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-183" y="-1"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="08" width="19.5" height="20"/>
+        <image name="qqimg" width="41" height="41"/>
+        <image name="qqkongjian" width="41" height="41"/>
+        <image name="weiboshare" width="41" height="41"/>
+        <image name="weiin" width="41" height="41"/>
+        <image name="wexinPen" width="41" height="41"/>
+    </resources>
+</document>

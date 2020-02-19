@@ -141,7 +141,7 @@
                 <outlet property="textV" destination="zkL-cc-asZ" id="4jK-Eq-YiH"/>
                 <outlet property="upImgView" destination="gUL-fv-1z5" id="Lc7-XB-zqr"/>
             </connections>
-            <point key="canvasLocation" x="-243" y="-4"/>
+            <point key="canvasLocation" x="99" y="80"/>
         </tableViewCell>
     </objects>
 </document>

@@ -14,6 +14,7 @@
 #import "MineViewController.h"
 #import "CustomNavigationController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "ZBNPostBarVC.h"
 
 #import "CustomBar.h"
 
@@ -69,8 +70,11 @@
     MsgViewController *fvc = [[MsgViewController alloc] init];
     [self addChildController:fvc title:@"商家" imageName:@"Bar chart" selectedImageName:@"Bar chart 拷贝" navVc:[UINavigationController class]];
     
+    ZBNPostBarVC *vc = [[ZBNPostBarVC alloc] init];
+    [self addChildController:vc title:@"贴吧" imageName:@"" selectedImageName:@"" navVc:[UINavigationController class]];
+    
     FindViewController *MoreVc = [[FindViewController alloc] init];
-    [self addChildController:MoreVc title:@"贴吧" imageName:@"图层 507" selectedImageName:@"图层 507 拷贝" navVc:[UINavigationController class]];
+    [self addChildController:MoreVc title:@"消息" imageName:@"图层 507" selectedImageName:@"图层 507 拷贝" navVc:[UINavigationController class]];
     
     MineViewController *svc = [[MineViewController alloc] init];
     [self addChildController:svc title:@"我的" imageName:@"图层 510" selectedImageName:@"图层 510 拷贝" navVc:[UINavigationController class]];
@@ -115,8 +119,13 @@
 
 //MARK:- 中间按钮点击事件
 - (void)centerBtnClick:(UIButton *)btn{
-    KPreventRepeatClickTime(1)
-    [HUDManager showTextHud:OtherMsg];
+    
+    self.selectedIndex = 2;
+//    ZBNPostBarVC *vc = [[ZBNPostBarVC alloc] init];
+//    vc.view.backgroundColor = [UIColor yellowColor];
+//    [self addChildController:vc title:@"" imageName:@"" selectedImageName:@"" navVc:[UINavigationController class]];
+//    KPreventRepeatClickTime(1)
+//    [HUDManager showTextHud:OtherMsg];
 }
 
 
