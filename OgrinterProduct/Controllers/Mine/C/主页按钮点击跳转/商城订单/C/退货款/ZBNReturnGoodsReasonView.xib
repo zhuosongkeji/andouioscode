@@ -61,7 +61,7 @@
             <connections>
                 <outlet property="myTable" destination="MtP-YE-lGE" id="aML-bD-PYp"/>
             </connections>
-            <point key="canvasLocation" x="1712" y="0.0"/>
+            <point key="canvasLocation" x="828" y="56"/>
         </view>
     </objects>
 </document>

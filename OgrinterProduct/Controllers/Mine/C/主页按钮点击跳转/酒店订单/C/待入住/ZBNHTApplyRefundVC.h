@@ -11,7 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNHTApplyRefundVC : UIViewController
-
+@property (nonatomic, copy) NSString *money;
+@property (nonatomic, copy) NSString *merchants_id;
+@property (nonatomic, copy) NSString *order_sn;
 @end
 
 NS_ASSUME_NONNULL_END

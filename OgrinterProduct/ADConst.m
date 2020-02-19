@@ -53,3 +53,9 @@ NSString * const ZBNWallet_indexURL = @"http://andou.zhuosongkj.com/index.php/ap
 NSString * const ZBNCashURL = @"http://andou.zhuosongkj.com/index.php/api/wallet/cash";
 
 NSString * const ZBNTreatyURL = @"http://andou.zhuosongkj.com/api/common/treaty";
+
+NSString * const ZBNHTOrderdatailsURL = @"http://andou.zhuosongkj.com/index.php/api/htorder/orderdatails";
+
+NSString * const ZBNHTOrderURL = @"http://andou.zhuosongkj.com/index.php/api/hotel/order";
+
+NSString * const ZBNHTReasonURL = @"http://andou.zhuosongkj.com/api/htorder/refund_reason";

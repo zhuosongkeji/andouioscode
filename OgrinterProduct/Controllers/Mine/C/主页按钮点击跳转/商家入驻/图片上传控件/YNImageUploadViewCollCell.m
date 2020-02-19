@@ -9,6 +9,7 @@
 #import "YNImageUploadViewCollCell.h"
 #import <AFNetworking.h>
 #import <UIImageView+WebCache.h>
+#import "ZBNMallEntryModel.h"
 
 @interface YNImageTool ()
 /** 数据源 */
@@ -195,8 +196,9 @@
                             model.state = YNImageUploadStateFinish;
                             [weakSelf hiddenToSuccess:YES];
                             [weakSelf.tool saveUploadFinishImageAsset:model];
-                            model.get_url = [responseObject objectForKey:@"data"];
-                            
+                            ZBNMallEntryModel *en_model = [ZBNMallEntryModel sharedInstance];
+                            [en_model setUpURLOne:[responseObject objectForKey:@"data"]];
+//                            model.get_url = [responseObject objectForKey:@"data"];
                             [[NSNotificationCenter defaultCenter] postNotificationName:@"getURLOne" object:nil];
                             [[NSNotificationCenter defaultCenter] postNotificationName:@"getURLTwo" object:nil];
                             [[NSNotificationCenter defaultCenter] postNotificationName:@"getURLThree" object:nil];

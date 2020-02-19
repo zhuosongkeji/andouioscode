@@ -79,6 +79,7 @@
         return cell;
     } else {
         ZBNComDataNilCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNComDataNilCell" owner:nil options:nil].lastObject;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     
@@ -105,16 +106,19 @@
        params[@"type"] = @(self.type);
        params[@"page"] = @"1";
     ADWeakSelf;
-       [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/hotel/order" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+       [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNHTOrderURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
            NSArray *allDataArr = [ZBNHTComModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
            for (ZBNHTComModel *model in allDataArr) {
                if (model.status.intValue == 0) {
-                   [self.dataArr addObject:model];
+                   [weakSelf.dataArr addObject:model];
                } else if (model.status.intValue == 20) {
-                   [self.dataArr addObject:model];
+                   [weakSelf.dataArr addObject:model];
                } else if (model.status.intValue == 40) {
-                   [self.dataArr addObject:model];
+                   [weakSelf.dataArr addObject:model];
                }
+           }
+           if (weakSelf.dataArr.count < 10) {
+               [weakSelf.tableView.mj_footer setHidden:YES];
            }
            [weakSelf.tableView reloadData];
            [weakSelf.tableView.mj_header endRefreshing];
@@ -134,7 +138,7 @@
     params[@"type"] = @(self.type);
     params[@"page"] = self.page;
     ADWeakSelf;
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/hotel/order" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNHTOrderURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         NSArray *moreArr = [ZBNHTComModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
         for (ZBNHTComModel *model in moreArr) {
             if (model.status.intValue == 0) {

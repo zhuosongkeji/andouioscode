@@ -23,6 +23,7 @@
                     <state key="normal" title="申请入驻" backgroundImage="底部按钮背景">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <state key="highlighted" backgroundImage="底部按钮背景"/>
                     <connections>
                         <action selector="middleBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="pfE-C6-yUj"/>
                     </connections>
@@ -39,7 +40,7 @@
             <connections>
                 <outlet property="middleBtn" destination="lnd-io-iKY" id="KSb-ae-aHI"/>
             </connections>
-            <point key="canvasLocation" x="134" y="67"/>
+            <point key="canvasLocation" x="-133" y="108"/>
         </view>
     </objects>
     <resources>

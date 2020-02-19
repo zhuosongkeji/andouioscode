@@ -9,6 +9,8 @@
 #import "ZBNHTWaitInDetailCell.h"
 #import "ZBNHTComDetailModel.h"
 #import "SGQRCode.h"
+#import "ZBNHTApplyRefundVC.h"
+
 @interface ZBNHTWaitInDetailCell ()
 
 /*! 商家名字 */
@@ -76,8 +78,29 @@
     
 }
 
+//获取控制器
+
+- (UIViewController *)viewController
+{
+        for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder *nextResponder = [next nextResponder];
+
+         if ([nextResponder isKindOfClass:[UIViewController class]]) {
+         return (UIViewController *)nextResponder;
+     }
+        
+     }
+      return nil;
+}
+
 /*! 取消点击 */
 - (IBAction)cancelBtnClick:(id)sender {
+    ZBNHTApplyRefundVC *vc = [[ZBNHTApplyRefundVC alloc] init];
+    vc.money = self.detailM.money;
+    vc.merchants_id = self.detailM.merchant_id;
+    vc.order_sn = self.detailM.book_sn;
+    NSLog(@"%@===============",self.detailM.merchant_id);
+    [[self viewController].navigationController pushViewController:vc animated:YES];
 }
 
 /*! 联系商家 */

@@ -50,4 +50,10 @@ UIKIT_EXTERN NSString * const ZBNWallet_indexURL;
 /*! 提现明细 */ 
 UIKIT_EXTERN NSString * const ZBNCashURL; 
 /*! 协议 */
-UIKIT_EXTERN NSString * const ZBNTreatyURL;
+UIKIT_EXTERN NSString * const ZBNTreatyURL; 
+/*! 酒店订单详情 */
+UIKIT_EXTERN NSString * const ZBNHTOrderdatailsURL; 
+/*! 酒店订单 */
+UIKIT_EXTERN NSString * const ZBNHTOrderURL;  
+/*! 酒店退款原因 */
+UIKIT_EXTERN NSString * const ZBNHTReasonURL;

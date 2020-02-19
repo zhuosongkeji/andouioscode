@@ -12,6 +12,7 @@
 #import "ZBNCommenOrderCell.h"
 #import "ZBNRTComDetailVC.h"
 #import "ZBNComDataNilCell.h"
+#import "ZBNRTFoodsModel.h"
 
 @interface ZBNRTBaseOrderVC ()
 
@@ -19,8 +20,6 @@
 @property (nonatomic, strong) NSMutableArray *dataArr;
 /*! 用来存储页码 */
 @property (nonatomic, copy) NSString *page;
-/*! 用来记录模型 */
-@property (nonatomic, strong) ZBNRTComModel *comM;
 
 @end
 
@@ -42,7 +41,6 @@
 #pragma mark -- UI
 - (void)setupTable
 {
-    self.page = @"2";
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
@@ -60,15 +58,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.dataArr.count >= 1) {
-        ZBNCommenOrderCell *cell = [ZBNCommenOrderCell regiserCellForTable:tableView];
+//        ZBNCommenOrderCell *cell = [ZBNCommenOrderCell regiserCellForTable:tableView];
+//        if (cell == nil) {
+//
+//        }
+//        
+        ZBNCommenOrderCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNCommenOrderCell" owner:nil options:nil].lastObject;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.comM = self.dataArr[indexPath.row];
-        self.comM = cell.comM;
-        ADWeakSelf;
-        cell.detailBtnClickTask = ^{
-            ZBNRTComDetailVC *vc = [[ZBNRTComDetailVC alloc] init];
-            vc.order_id = weakSelf.comM.ID;
-            [weakSelf.navigationController pushViewController:vc animated:YES];
-        };
         return cell;
     } else {
         
@@ -94,6 +91,8 @@
 
 - (void)loadNewData
 {
+    self.page = @"2";
+    [self.dataArr removeAllObjects];
     [FKHRequestManager cancleRequestWork];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];

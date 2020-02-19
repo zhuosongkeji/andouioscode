@@ -134,17 +134,17 @@
 
 - (void)upLoadOne
 {
-    [self.model setUrlOne:self.upLoadViewOne.get_url];
+    [self.model setUrlOne:self.model.upURLOne];
 }
 
 - (void)upLoadTwo
 {
-    [self.model setUrlTwo:self.upLoadViewTWo.get_url];
+    [self.model setUrlTwo:self.model.upURLOne];
 }
 
 - (void)upLoadThree
 {
-    [self.model setUrlThree:self.upLoadViewThree.get_url];
+    [self.model setUrlThree:self.model.upURLOne];
 }
 
 - (void)setUpLoadViewOne
@@ -157,6 +157,7 @@
            param[@"token"] = unmodel.token;
           YNImageUploadView *imageView = [[YNImageUploadView alloc] initWithConfig:^(YNImageUploadViewConfig * _Nonnull config) {
               config.insets = UIEdgeInsetsMake(5, 10, 5, 10);
+              config.photoCount = 1;
               config.autoHeight = YES;
               config.isNeedUpload = YES;
               config.uploadUrl = @"http://andou.zhuosongkj.com/index.php/api/goods/uploads";
@@ -183,6 +184,7 @@
         param[@"token"] = unmodel.token;
        YNImageUploadView *imageView = [[YNImageUploadView alloc] initWithConfig:^(YNImageUploadViewConfig * _Nonnull config) {
            config.insets = UIEdgeInsetsMake(5, 10, 5, 10);
+           config.photoCount = 1;
            config.autoHeight = YES;
            config.isNeedUpload = YES;
            config.uploadUrl = @"http://andou.zhuosongkj.com/index.php/api/goods/uploads";
@@ -208,6 +210,7 @@
            param[@"token"] = unmodel.token;
           YNImageUploadView *imageView = [[YNImageUploadView alloc] initWithConfig:^(YNImageUploadViewConfig * _Nonnull config) {
               config.insets = UIEdgeInsetsMake(5, 10, 5, 10);
+              config.photoCount = 1;
               config.autoHeight = YES;
               config.isNeedUpload = YES;
               config.uploadUrl = @"http://andou.zhuosongkj.com/index.php/api/goods/uploads";

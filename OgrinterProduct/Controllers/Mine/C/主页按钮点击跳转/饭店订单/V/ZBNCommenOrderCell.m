@@ -10,6 +10,7 @@
 #import "ZBNRTOrderCellInCell.h"
 #import "ZBNRTComModel.h"
 #import "ZBNRTFoodsModel.h"
+#import "ZBNRTComDetailVC.h"
 
 @interface ZBNCommenOrderCell () <UITableViewDelegate, UITableViewDataSource>
 
@@ -39,11 +40,26 @@
 @implementation ZBNCommenOrderCell
 
 
+//获取控制器
+
+- (UIViewController *)viewController
+{
+        for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder *nextResponder = [next nextResponder];
+
+         if ([nextResponder isKindOfClass:[UIViewController class]]) {
+         return (UIViewController *)nextResponder;
+     }
+        
+     }
+      return nil;
+}
+
 - (void)setComM:(ZBNRTComModel *)comM
 {
     _comM = comM;
     
-    self.dataArr = comM.foods;
+    [self.dataArr addObjectsFromArray:comM.foods];
     [self.shop_logo sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,comM.logo_img]]];
     self.shop_name.text = comM.name;
     self.order_sn.text = comM.order_sn;
@@ -85,6 +101,11 @@
     if (self.detailBtnClickTask) {
         self.detailBtnClickTask();
     }
+    
+    ZBNRTComDetailVC *vc = [[ZBNRTComDetailVC alloc] init];
+    vc.order_id = self.comM.ID;
+    [[self viewController].navigationController pushViewController:vc animated:YES];
+    
 }
 
 #pragma mark -- 代理&数据源
@@ -93,11 +114,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.dataArr.count;
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZBNRTOrderCellInCell *cell = [ZBNRTOrderCellInCell regiserCellForTable:tableView];
+    ZBNRTOrderCellInCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNRTOrderCellInCell" owner:nil options:nil].lastObject;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.foodsM = self.dataArr[indexPath.row];
     return cell;
 }

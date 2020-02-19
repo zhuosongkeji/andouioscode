@@ -33,10 +33,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *record;
 /*! 判断会员 */
 @property (nonatomic, copy) NSString *status;
-
-
-
-
+/*! 商城订单数 */
+@property (nonatomic, copy) NSString *goodordernum;
+/*! 饭店订单数 */
+@property (nonatomic, copy) NSString *foodsordernum;
+/*! 酒店订单数 */
+@property (nonatomic, copy) NSString *booksordernum;
 
 
 @end

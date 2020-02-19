@@ -24,7 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void(^cacheClearClickTask)(void);
 /*! 修改昵称 */
 @property (nonatomic, copy) void(^nameChangeTask)(void);
-
+/*! 修改头像 */
+@property (nonatomic, copy) void(^iconChangeTask)(void);
 /*! 注册Cell */
 + (instancetype)regiserCellForTable:(UITableView *)tableView;
 
