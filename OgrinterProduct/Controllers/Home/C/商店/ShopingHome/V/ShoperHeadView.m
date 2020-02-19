@@ -48,7 +48,8 @@
 }
 
 - (IBAction)btnclick:(UIButton *)sender {
-    [HUDManager showTextHud:OtherMsg];
+    _ptmsBlock(sender.tag);
+//    [HUDManager showTextHud:OtherMsg];
 }
 
 

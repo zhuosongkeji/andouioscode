@@ -11,6 +11,7 @@ typedef enum : NSUInteger {
     HotelBottomTableViewCellTypeOne,
     HotelBottomTableViewCellTypeTwo,
     HotelBottomTableViewCellTypeThrid,
+    HotelBottomTableViewCellTypeFouth,
     
 } HotelBottomTableViewCellType;
 

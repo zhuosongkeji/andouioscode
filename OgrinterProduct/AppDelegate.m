@@ -12,9 +12,8 @@
 #import <UMCommon/UMCommon.h>
 #import "UMShareManege.h"
 #import "IQKeyboardManager.h"
-#import "LoginViewController.h"
+//#import "LoginViewController.h"
 #import <WechatOpenSDK/WXApi.h>
-
 
 
 @interface AppDelegate ()<WXApiDelegate>
@@ -32,10 +31,10 @@
 //    KAdd_Observer(@"PushViewController", self, PushViewController, nil);
     
 //    初始化友盟
-//    [UMConfigure initWithAppkey:UMKEY channel:nil];
-////    [UMConfigure setLogEnabled:NO];
-//    [self initUMSDK];
-//
+    [UMConfigure initWithAppkey:UMKEY channel:nil];
+//    [UMConfigure setLogEnabled:NO];
+    [self initUMSDK];
+
     
     [IQKeyboardManager sharedManager].enable = YES;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
@@ -105,11 +104,20 @@
 
 
 //- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options {
-//    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:options annotation:nil];
-//    if (!result) {
-//        // 其他如支付等SDK的回调
-//    }
-//    return result;
+//
+//    //    NSLog(@"options: %@", options);
+//    NSLog(@"URL scheme:%@", [url scheme]);
+//    NSLog(@"URL query: %@", [url query]);
+//
+//    // 提示并展示query
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"打开URL Scheme成功"
+//                                                        message:[url query]
+//                                                       delegate:nil
+//                                              cancelButtonTitle:@"确定"
+//                                              otherButtonTitles:nil];
+//    [alertView show];
+//
+//    return YES;
 //}
 
 
@@ -124,6 +132,7 @@
     if ([url.host isEqualToString:@"oauth"]){//微信登录
         return [WXApi handleOpenURL:url delegate:self];
     }
+    
     return YES;
 }
 

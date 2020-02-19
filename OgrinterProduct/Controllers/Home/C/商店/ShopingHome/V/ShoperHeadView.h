@@ -10,9 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^PtmsBtnBlock)(NSInteger idx);
+
 @interface ShoperHeadView : UIView
 
 @property (nonatomic,strong)NSArray *banArr;
+
+@property(nonatomic,copy)PtmsBtnBlock ptmsBlock;
 
 @end
 

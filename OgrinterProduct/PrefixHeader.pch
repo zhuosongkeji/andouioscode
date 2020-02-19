@@ -65,6 +65,8 @@
 
 #define SeckillDetailsListArr @[@"产品详情",@"产品评价"]
 
+#define ASeckilAlDetailsListArr @[@"精选",@"男装",@"女装",@"家电",@"鞋靴",@"百货",@"食品"]
+
 #define selectpayStyle @"选择支付方式"
 //#define OnlineTitle @[@"银联支付",@"微信支付",@"支付宝支付",@"余额支付"]
 //#define OnlineImg @[@"图层 5",@"微信支付",@"zhifub",@"矩形 60"]
