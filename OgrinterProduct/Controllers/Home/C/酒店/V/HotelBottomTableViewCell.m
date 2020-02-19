@@ -10,6 +10,7 @@
 #import "HotelDetlisSubViewOneController.h"
 #import "ShopSeckillDetailsSubViewController.h"
 #import "HotelOnlineSubViewController.h"
+#import "AssembleKillSubViewController.h"
 
 
 @implementation HotelBottomTableViewCell
@@ -56,6 +57,16 @@
                 VC.righttableView.contentOffset = CGPointZero;
             }
         }
+    }else if (_cellType == HotelBottomTableViewCellTypeFouth){
+        for (AssembleKillSubViewController *VC in _viewControllers) {
+            VC.vcCanScroll = cellCanScroll;
+            if (!cellCanScroll) {
+                VC.subTableView.contentOffset = CGPointZero;
+            }
+        }
+        
+    }else{
+        
     }
     
 }

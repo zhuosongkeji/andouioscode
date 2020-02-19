@@ -181,6 +181,10 @@
 		A1F6FCED23F39D1B0002704C /* HDragItemListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FCE923F39D1B0002704C /* HDragItemListView.m */; };
 		A1F6FCEE23F39D1B0002704C /* LXFPhotoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FCEB23F39D1B0002704C /* LXFPhotoHelper.m */; };
 		A1F6FCF123F3AD5B0002704C /* ScanSelectedImgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FCEF23F3AD5B0002704C /* ScanSelectedImgViewController.m */; };
+		A1F6FCF923FA6F8D0002704C /* AssembleKillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FCF723FA6F8D0002704C /* AssembleKillViewController.m */; };
+		A1F6FCFA23FA6F8D0002704C /* AssembleKillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F6FCF823FA6F8D0002704C /* AssembleKillViewController.xib */; };
+		A1F6FCFE23FA95320002704C /* AssembleKillSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FCFC23FA95320002704C /* AssembleKillSubViewController.m */; };
+		A1F6FCFF23FA95320002704C /* AssembleKillSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F6FCFD23FA95320002704C /* AssembleKillSubViewController.xib */; };
 		A1F73CF423A880CB001D86EF /* ShopingShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F73CF123A880CB001D86EF /* ShopingShopViewController.xib */; };
 		A1F73CF523A880CB001D86EF /* ShopingShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F73CF323A880CB001D86EF /* ShopingShopViewController.m */; };
 		A1F73CF823A88196001D86EF /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F73CF723A88196001D86EF /* ShareView.m */; };
@@ -803,6 +807,12 @@
 		A1F6FCEB23F39D1B0002704C /* LXFPhotoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXFPhotoHelper.m; sourceTree = "<group>"; };
 		A1F6FCEF23F3AD5B0002704C /* ScanSelectedImgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanSelectedImgViewController.m; sourceTree = "<group>"; };
 		A1F6FCF023F3AD5B0002704C /* ScanSelectedImgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanSelectedImgViewController.h; sourceTree = "<group>"; };
+		A1F6FCF623FA6F8D0002704C /* AssembleKillViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssembleKillViewController.h; sourceTree = "<group>"; };
+		A1F6FCF723FA6F8D0002704C /* AssembleKillViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssembleKillViewController.m; sourceTree = "<group>"; };
+		A1F6FCF823FA6F8D0002704C /* AssembleKillViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssembleKillViewController.xib; sourceTree = "<group>"; };
+		A1F6FCFB23FA95320002704C /* AssembleKillSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssembleKillSubViewController.h; sourceTree = "<group>"; };
+		A1F6FCFC23FA95320002704C /* AssembleKillSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssembleKillSubViewController.m; sourceTree = "<group>"; };
+		A1F6FCFD23FA95320002704C /* AssembleKillSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssembleKillSubViewController.xib; sourceTree = "<group>"; };
 		A1F73CF123A880CB001D86EF /* ShopingShopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShopingShopViewController.xib; path = "OgrinterProduct/Controllers/Home/C/商店/ShopingHome/C/ShopingShopViewController.xib"; sourceTree = SOURCE_ROOT; };
 		A1F73CF223A880CB001D86EF /* ShopingShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopingShopViewController.h; path = "OgrinterProduct/Controllers/Home/C/商店/ShopingHome/C/ShopingShopViewController.h"; sourceTree = SOURCE_ROOT; };
 		A1F73CF323A880CB001D86EF /* ShopingShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopingShopViewController.m; path = "OgrinterProduct/Controllers/Home/C/商店/ShopingHome/C/ShopingShopViewController.m"; sourceTree = SOURCE_ROOT; };
@@ -1471,6 +1481,7 @@
 				A14FB3472391269B006A6511 /* ShopingHomeViewController.h */,
 				A14FB3482391269B006A6511 /* ShopingHomeViewController.m */,
 				A14FB3492391269B006A6511 /* ShopingHomeViewController.xib */,
+				A1F6FCF223FA6EFD0002704C /* 拼团秒杀 */,
 				A1F4DFDD23A1D54F00B02880 /* ShopSeckillDetailsViewController.h */,
 				A1F4DFDE23A1D54F00B02880 /* ShopSeckillDetailsViewController.m */,
 				A1F4DFDF23A1D54F00B02880 /* ShopSeckillDetailsViewController.xib */,
@@ -2410,6 +2421,43 @@
 				A1F6FCEB23F39D1B0002704C /* LXFPhotoHelper.m */,
 			);
 			path = "图片选择器";
+			sourceTree = "<group>";
+		};
+		A1F6FCF223FA6EFD0002704C /* 拼团秒杀 */ = {
+			isa = PBXGroup;
+			children = (
+				A1F6FCF523FA6F230002704C /* V */,
+				A1F6FCF423FA6F200002704C /* M */,
+				A1F6FCF323FA6F170002704C /* C */,
+			);
+			path = "拼团秒杀";
+			sourceTree = "<group>";
+		};
+		A1F6FCF323FA6F170002704C /* C */ = {
+			isa = PBXGroup;
+			children = (
+				A1F6FCF623FA6F8D0002704C /* AssembleKillViewController.h */,
+				A1F6FCF723FA6F8D0002704C /* AssembleKillViewController.m */,
+				A1F6FCF823FA6F8D0002704C /* AssembleKillViewController.xib */,
+				A1F6FCFB23FA95320002704C /* AssembleKillSubViewController.h */,
+				A1F6FCFC23FA95320002704C /* AssembleKillSubViewController.m */,
+				A1F6FCFD23FA95320002704C /* AssembleKillSubViewController.xib */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		A1F6FCF423FA6F200002704C /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		A1F6FCF523FA6F230002704C /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
 			sourceTree = "<group>";
 		};
 		A1F86E1D23D150A600CC0F54 /* HoletOnline */ = {
@@ -3670,6 +3718,7 @@
 				A14BDAC923C7263B006EC033 /* ShoperHeadView.xib in Resources */,
 				A15DC0F7239E320E008CF287 /* CresThirdTableViewCell.xib in Resources */,
 				A14FB2A9238E4DF6006A6511 /* RegisterViewController.xib in Resources */,
+				A1F6FCFF23FA95320002704C /* AssembleKillSubViewController.xib in Resources */,
 				A1F73CF423A880CB001D86EF /* ShopingShopViewController.xib in Resources */,
 				F4E6A7AA23B753F2006721E9 /* ZBNMineFeedbackVC.xib in Resources */,
 				F4C1F41E23F3E69200E28D9D /* ZBNProtocolVC.xib in Resources */,
@@ -3747,6 +3796,7 @@
 				F476A48623A7682C00E3018A /* ZBNMyCollectionCommenCell.xib in Resources */,
 				F41B74A523C2DA040056DC78 /* ZBNSHReadEvaluateCell.xib in Resources */,
 				A14FB262238E0E4C006A6511 /* Main.storyboard in Resources */,
+				A1F6FCFA23FA6F8D0002704C /* AssembleKillViewController.xib in Resources */,
 				A14FB31C238FFA76006A6511 /* HXCollectionViewCell.xib in Resources */,
 				F476A47B23A7682C00E3018A /* ZBNCommenOrderCell.xib in Resources */,
 				F457189323CFF0AC0040164D /* ZBNVIPRechargeCell.xib in Resources */,
@@ -3885,6 +3935,7 @@
 				F4C196CD23C576E400F1C48C /* TZGifPhotoPreviewController.m in Sources */,
 				A14FB2A8238E4DF6006A6511 /* RegisterViewController.m in Sources */,
 				A1F5515C23B0FCB500416682 /* WRNavigationBar.m in Sources */,
+				A1F6FCFE23FA95320002704C /* AssembleKillSubViewController.m in Sources */,
 				F4055EDC23CDC19000637E7A /* ZBNHTComDetailModel.m in Sources */,
 				A14FB322239017BC006A6511 /* MarqueeView.m in Sources */,
 				F476A44E23A7682B00E3018A /* ZBNCashWithDrawalVC.m in Sources */,
@@ -3947,6 +3998,7 @@
 				F45718B823D0428E0040164D /* ZBNRTMainVC.m in Sources */,
 				F4C196C323C576E400F1C48C /* NSBundle+TZImagePicker.m in Sources */,
 				F48D544E23CB4C4E004DACFE /* SPPickerView.m in Sources */,
+				A1F6FCF923FA6F8D0002704C /* AssembleKillViewController.m in Sources */,
 				A14FB2B7238F5788006A6511 /* FKHRequestOperation.m in Sources */,
 				F443E8FF23C6D7D90059E48F /* ZBNReChargeDetailModel.m in Sources */,
 				F40D746623D0665A006DF3CB /* ZBNRTComDetailCellTwo.m in Sources */,

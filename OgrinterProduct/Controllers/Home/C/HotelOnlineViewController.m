@@ -296,7 +296,7 @@
             if (idx == 2000) {
                 
             }else if (idx == 2001){
-                
+                [self thirdAppNavigation:@"29.718171" lng:@"106.631051"];
             }else{
                 
                 NSMutableString * str = [[NSMutableString alloc] initWithFormat:@"tel:%@",@"15223080381"];
@@ -476,126 +476,108 @@
 }
 
 
-//#pragma mark - 路线规划方法
-//- (NSArray *)getInstalledMapAppWithAddr:(NSString *)addrString withEndLocation:(CLLocationCoordinate2D)endLocation{
-//
-//    NSMutableArray *maps = [NSMutableArray array];
-//
-//    //苹果地图
-//
-//    NSMutableDictionary *iosMapDic = [NSMutableDictionary dictionary];
-//    iosMapDic[@"title"] = @"苹果地图";
-//    [maps addObject:iosMapDic];
-//    NSString *appStr = NSLocalizedString(@"app_name", nil);
-//
-//    //高德地图
-//    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"iosamap://"]]) {
-//
-//        NSMutableDictionary *gaodeMapDic = [NSMutableDictionary dictionary];
-//
-//        gaodeMapDic[@"title"] = @"高德地图";
-//
-//        NSString *urlString = [[NSString stringWithFormat:@"iosamap://path?sourceApplication=%@&sid=BGVIS1&did=BGVIS2&dname=%@&dev=0&t=2",appStr ,addrString] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-//
-//        gaodeMapDic[@"url"] = urlString;
-//
-//        [maps addObject:gaodeMapDic];
-//
-//    }
-//
-//    //百度地图
-//
-//    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"baidumap://"]]) {
-//
-//        NSMutableDictionary *baiduMapDic = [NSMutableDictionary dictionary];
-//
-//        baiduMapDic[@"title"] = @"百度地图";
-//
-//        NSString *urlString = [[NSString stringWithFormat:@"baidumap://map/direction?origin=我的位置&destination=%@&mode=walking&src=%@",addrString ,appStr] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-//
-//        baiduMapDic[@"url"] = urlString;
-//
-//        [maps addObject:baiduMapDic];
-//
-//    }
-//
-//    //腾讯地图
-//    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"qqmap://"]]) {
-//        NSMutableDictionary *qqMapDic = [NSMutableDictionary dictionary];
-//
-//        qqMapDic[@"title"] = @"腾讯地图";
-//
-//        NSString *urlString = [[NSString stringWithFormat:@"qqmap://map/routeplan?from=我的位置&type=walk&tocoord=%f,%f&to=%@&coord_type=1&policy=0",endLocation.latitude , endLocation.longitude ,addrString] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-//
-//        qqMapDic[@"url"] = urlString;
-//
-//        [maps addObject:qqMapDic];
-//
-//    }
-//
-//    //谷歌地图
-//    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]]) {
-//        NSMutableDictionary *googleMapDic = [NSMutableDictionary dictionary];
-//        googleMapDic[@"title"] = @"谷歌地图";
-//        NSString *urlString = [[NSString stringWithFormat:@"comgooglemaps://?saddr=&daddr=%@&directionsmode=walking",addrString] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-//        googleMapDic[@"url"] = urlString;
-//        [maps addObject:googleMapDic];
-//
-//    }
-//
-//    return maps;
-//
-//}
-//
-//
-//- (void)otherMap:(NSInteger)index {
-//    NSDictionary *dic = self.maps[index];
-//    NSString *urlString = dic[@"url"];
-//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
-//}
-//
-//
-//- (void)navAppleMap:(CLLocationCoordinate2D)gps{
-//
-//    MKMapItem *currentLoc = [MKMapItem mapItemForCurrentLocation];
-//
-//    MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:gps addressDictionary:nil]];
-//
-//    NSArray *items = @[currentLoc,toLocation];
-//
-//    NSDictionary *dic = @{
-//
-//                          MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking,
-//                          MKLaunchOptionsMapTypeKey: @(MKMapTypeStandard),
-//
-//                          MKLaunchOptionsShowsTrafficKey: @(YES)
-//
-//                          };
-//    [MKMapItem openMapsWithItems:items launchOptions:dic];
-//
-//}
-//
-//- (void)alertAmaps:(CLLocationCoordinate2D)gps{
-//    if (self.maps.count == 0)
-//        return;
-//
-//    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-//
-//    for (int i = 0; i < self.maps.count; i++) {
-//        if (i == 0) {
-//            [alertVC addAction:[UIAlertAction actionWithTitle:self.maps[i][@"title"] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//                [self navAppleMap:gps];
-//            }]];
-//        }else{
-//            [alertVC addAction:[UIAlertAction actionWithTitle:self.maps[i][@"title"] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//                [self otherMap:i];
-//            }]];
-//        }
-//    }
-//    [alertVC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-//    [self presentViewController:alertVC animated:YES completion:nil];
-//
-//}
+- (void)thirdAppNavigation:(NSString *)lat lng:(NSString *)lng {
+    NSMutableArray *maps = [NSMutableArray array];
+    
+    //苹果原生地图-苹果原生地图方法和其他不一样
+    NSMutableDictionary *iosMapDic = [NSMutableDictionary dictionary];
+    iosMapDic[@"title"] = @"苹果地图";
+    [maps addObject:iosMapDic];
+    
+    //百度地图
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"baidumap://"]]) {
+        NSMutableDictionary *baiduMapDic = [NSMutableDictionary dictionary];
+        baiduMapDic[@"title"] = @"百度地图";
+        NSString *urlString = [[NSString stringWithFormat:@"baidumap://map/direction?origin={{我的位置}}&destination=latlng:%@,%@|name=北京&mode=driving&coord_type=gcj02",lat,lng] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        baiduMapDic[@"url"] = urlString;
+        [maps addObject:baiduMapDic];
+    }
+    
+    //高德地图
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"iosamap://"]]) {
+        NSMutableDictionary *gaodeMapDic = [NSMutableDictionary dictionary];
+        gaodeMapDic[@"title"] = @"高德地图";
+        NSString *urlString = [[NSString stringWithFormat:@"iosamap://navi?sourceApplication=%@&backScheme=%@&lat=%@&lon=%@&dev=0&style=2",@"导航功能",@"nav123456",lat,lng] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        gaodeMapDic[@"url"] = urlString;
+        [maps addObject:gaodeMapDic];
+    }
+    
+    //谷歌地图
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]]) {
+        NSMutableDictionary *googleMapDic = [NSMutableDictionary dictionary];
+        googleMapDic[@"title"] = @"谷歌地图";
+        NSString *urlString = [[NSString stringWithFormat:@"comgooglemaps://?x-source=%@&x-success=%@&saddr=&daddr=%@,%@&directionsmode=driving",@"导航测试",@"nav123456",lat,lng] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        googleMapDic[@"url"] = urlString;
+        [maps addObject:googleMapDic];
+    }
+    
+    //腾讯地图
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"qqmap://"]]) {
+        NSMutableDictionary *qqMapDic = [NSMutableDictionary dictionary];
+        qqMapDic[@"title"] = @"腾讯地图";
+        NSString *urlString = [[NSString stringWithFormat:@"qqmap://map/routeplan?from=我的位置&type=drive&tocoord=%@,%@&to=终点&coord_type=1&policy=0",lat,lng] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        qqMapDic[@"url"] = urlString;
+        [maps addObject:qqMapDic];
+    }
+    
+    
+    //选择
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"选择地图" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    NSInteger index = maps.count;
+    
+    for (int i = 0; i < index; i++) {
+        
+        NSString * title = maps[i][@"title"];
+        
+        //苹果原生地图方法
+        if (i == 0) {
+            UIAlertAction * action = [UIAlertAction actionWithTitle:title style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+                [self navAppleMap:lat lng:lng];
+            }];
+            [alert addAction:action];
+            
+            continue;
+        }
+        
+        UIAlertAction * action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            NSString *urlString = maps[i][@"url"];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString] options:@{} completionHandler:^(BOOL success) {
+                
+            }];
+        }];
+        
+        [alert addAction:action];
+    }
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"点击了取消");
+    }];
+    [alert addAction:cancelAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
+//苹果地图
+- (void)navAppleMap:(NSString *)lat lng:(NSString *)lng {
+    //终点坐标
+    CLLocationCoordinate2D loc = CLLocationCoordinate2DMake(lat.doubleValue, lng.doubleValue);
+    //用户位置
+    MKMapItem *currentLoc = [MKMapItem mapItemForCurrentLocation];
+    //终点位置
+    MKMapItem *toLocation = [[MKMapItem alloc]initWithPlacemark:[[MKPlacemark alloc]initWithCoordinate:loc addressDictionary:nil] ];
+    
+    NSArray *items = @[currentLoc,toLocation];
+    NSDictionary *dic = @{
+                          MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving,
+                          MKLaunchOptionsMapTypeKey : @(MKMapTypeStandard),
+                          MKLaunchOptionsShowsTrafficKey : @(YES)
+                          };
+    
+    [MKMapItem openMapsWithItems:items launchOptions:dic];
+}
 
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

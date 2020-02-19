@@ -20,6 +20,8 @@
 #import "WSLWaterFlowLayout.h"
 #import "ShopCollectionViewCell.h"
 
+#import "AssembleKillViewController.h"
+
 #import "MDBannerModel.h"
 #import "MdBannerListModel.h"
 
@@ -42,6 +44,19 @@
     if (!_headView) {
         _headView = [[NSBundle mainBundle]loadNibNamed:@"ShoperHeadView" owner:self options:nil].lastObject;
         [_headView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 652)];
+        __weak typeof(&*self)weakSelf = self;
+        _headView.ptmsBlock = ^(NSInteger idx) {
+            [HUDManager showTextHud:OtherMsg];
+            return;
+//            if (idx == 10008) {
+//
+////                AssembleKillViewController *ass = [[AssembleKillViewController alloc]init];
+////                [weakSelf.navigationController pushViewController:ass animated:YES];
+//
+//            }else if (idx == 10009){
+//
+//            }else{}
+        };
     }
     return _headView;
 }
