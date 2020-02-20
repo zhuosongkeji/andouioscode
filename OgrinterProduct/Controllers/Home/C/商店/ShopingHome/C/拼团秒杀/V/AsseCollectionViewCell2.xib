@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AsseCollectionViewCell2">
+            <rect key="frame" x="0.0" y="0.0" width="118" height="165"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="118" height="165"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shouji" translatesAutoresizingMaskIntoConstraints="NO" id="yOv-VU-gnS">
+                        <rect key="frame" x="0.0" y="0.0" width="118" height="121"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="华为meat30手机双摄像头" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Df-Vn-vZ5">
+                        <rect key="frame" x="4" y="125" width="110" height="26.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥2345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTx-PI-U5o">
+                        <rect key="frame" x="4" y="147.5" width="39" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.88868540529999995" green="0.20830759409999999" blue="0.18837797640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2345已拼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q39-PL-B0c">
+                        <rect key="frame" x="63.5" y="147.5" width="50.5" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="q39-PL-B0c" firstAttribute="centerY" secondItem="aTx-PI-U5o" secondAttribute="centerY" id="DKJ-iH-zVA"/>
+                <constraint firstAttribute="trailing" secondItem="yOv-VU-gnS" secondAttribute="trailing" id="MFH-09-0vW"/>
+                <constraint firstItem="9Df-Vn-vZ5" firstAttribute="top" secondItem="yOv-VU-gnS" secondAttribute="bottom" constant="4" id="QX0-X3-SFt"/>
+                <constraint firstAttribute="bottom" secondItem="aTx-PI-U5o" secondAttribute="bottom" constant="4" id="Z8s-0p-jMr"/>
+                <constraint firstItem="aTx-PI-U5o" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="ZQk-ii-lGB"/>
+                <constraint firstItem="9Df-Vn-vZ5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="ifL-r2-KBE"/>
+                <constraint firstItem="yOv-VU-gnS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lUP-sx-NtF"/>
+                <constraint firstItem="yOv-VU-gnS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="umJ-hw-en6"/>
+                <constraint firstAttribute="bottom" secondItem="yOv-VU-gnS" secondAttribute="bottom" constant="44" id="xSd-ON-EL5"/>
+                <constraint firstAttribute="trailing" secondItem="9Df-Vn-vZ5" secondAttribute="trailing" constant="4" id="xq7-g1-M68"/>
+                <constraint firstAttribute="trailing" secondItem="q39-PL-B0c" secondAttribute="trailing" constant="4" id="zIP-GZ-qzr"/>
+            </constraints>
+            <size key="customSize" width="118" height="165"/>
+            <point key="canvasLocation" x="181.15942028985509" y="69.308035714285708"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="shouji" width="94" height="109"/>
+    </resources>
+</document>

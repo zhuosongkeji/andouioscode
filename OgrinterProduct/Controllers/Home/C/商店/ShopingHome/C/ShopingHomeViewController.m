@@ -12,6 +12,7 @@
 
 #import "ShopingHomeViewController.h"
 #import "ShopSeckillDetailsViewController.h"
+#import "KillerAsselbViewController.h"
 
 #import "ShopHomeSectionView.h"
 #import "ShoperHeadView.h"
@@ -20,7 +21,7 @@
 #import "WSLWaterFlowLayout.h"
 #import "ShopCollectionViewCell.h"
 
-#import "AssembleKillViewController.h"
+#import "AsseKillerViewController.h"
 
 #import "MDBannerModel.h"
 #import "MdBannerListModel.h"
@@ -46,16 +47,18 @@
         [_headView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 652)];
         __weak typeof(&*self)weakSelf = self;
         _headView.ptmsBlock = ^(NSInteger idx) {
-            [HUDManager showTextHud:OtherMsg];
-            return;
-//            if (idx == 10008) {
-//
-////                AssembleKillViewController *ass = [[AssembleKillViewController alloc]init];
-////                [weakSelf.navigationController pushViewController:ass animated:YES];
-//
-//            }else if (idx == 10009){
-//
-//            }else{}
+//            [HUDManager showTextHud:OtherMsg];
+//            return;
+            if (idx == 10009) {
+
+                AsseKillerViewController *ass = [[AsseKillerViewController alloc]init];
+                [weakSelf.navigationController pushViewController:ass animated:YES];
+
+            }else if (idx == 10008){
+
+                KillerAsselbViewController *ass = [[KillerAsselbViewController alloc]init];
+                [weakSelf.navigationController pushViewController:ass animated:YES];
+            }else{}
         };
     }
     return _headView;
