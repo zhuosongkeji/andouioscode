@@ -181,9 +181,21 @@
 		A1F6FCED23F39D1B0002704C /* HDragItemListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FCE923F39D1B0002704C /* HDragItemListView.m */; };
 		A1F6FCEE23F39D1B0002704C /* LXFPhotoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FCEB23F39D1B0002704C /* LXFPhotoHelper.m */; };
 		A1F6FCF123F3AD5B0002704C /* ScanSelectedImgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FCEF23F3AD5B0002704C /* ScanSelectedImgViewController.m */; };
-		A1F6FCF923FA6F8D0002704C /* AssembleKillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FCF723FA6F8D0002704C /* AssembleKillViewController.m */; };
+
+
+
 		A1F6FCFE23FA95320002704C /* AssembleKillSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FCFC23FA95320002704C /* AssembleKillSubViewController.m */; };
 		A1F6FCFF23FA95320002704C /* AssembleKillSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F6FCFD23FA95320002704C /* AssembleKillSubViewController.xib */; };
+		A1F6FD0323FE21B20002704C /* AssemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FD0123FE21B20002704C /* AssemTableViewCell.m */; };
+		A1F6FD0423FE21B20002704C /* AssemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F6FD0223FE21B20002704C /* AssemTableViewCell.xib */; };
+		A1F6FD0823FE31650002704C /* AsseKillerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FD0623FE31650002704C /* AsseKillerViewController.m */; };
+		A1F6FD0923FE31650002704C /* AsseKillerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F6FD0723FE31650002704C /* AsseKillerViewController.xib */; };
+		A1F6FD0D23FE626D0002704C /* AsseCollectionViewCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FD0B23FE626D0002704C /* AsseCollectionViewCell1.m */; };
+		A1F6FD0E23FE626D0002704C /* AsseCollectionViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F6FD0C23FE626D0002704C /* AsseCollectionViewCell1.xib */; };
+		A1F6FD1223FE627E0002704C /* AsseCollectionViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FD1023FE627E0002704C /* AsseCollectionViewCell2.m */; };
+		A1F6FD1323FE627E0002704C /* AsseCollectionViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F6FD1123FE627E0002704C /* AsseCollectionViewCell2.xib */; };
+		A1F6FD1723FE7B290002704C /* KillerAsselbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FD1523FE7B290002704C /* KillerAsselbViewController.m */; };
+		A1F6FD1823FE7B290002704C /* KillerAsselbViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F6FD1623FE7B290002704C /* KillerAsselbViewController.xib */; };
 		A1F73CF423A880CB001D86EF /* ShopingShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F73CF123A880CB001D86EF /* ShopingShopViewController.xib */; };
 		A1F73CF523A880CB001D86EF /* ShopingShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F73CF323A880CB001D86EF /* ShopingShopViewController.m */; };
 		A1F73CF823A88196001D86EF /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F73CF723A88196001D86EF /* ShareView.m */; };
@@ -421,6 +433,7 @@
 		F491322423FA7BE4007EC747 /* ZBNPostCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F491322223FA7BE4007EC747 /* ZBNPostCommentCell.xib */; };
 		F491322723FA8279007EC747 /* ZBNSquareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F491322623FA8279007EC747 /* ZBNSquareModel.m */; };
 		F491322A23FA828C007EC747 /* ZBNPostComModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F491322923FA828C007EC747 /* ZBNPostComModel.m */; };
+
 		F491334223FBE71D007EC747 /* ZBNPostShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = F491334123FBE71D007EC747 /* ZBNPostShareView.m */; };
 		F491334423FBE728007EC747 /* ZBNPostShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F491334323FBE728007EC747 /* ZBNPostShareView.xib */; };
 		F4917C8223C3132C00C05CFA /* ZBNMerchantEntryTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4917C8023C3132C00C05CFA /* ZBNMerchantEntryTabCell.m */; };
@@ -881,12 +894,24 @@
 		A1F6FCEB23F39D1B0002704C /* LXFPhotoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXFPhotoHelper.m; sourceTree = "<group>"; };
 		A1F6FCEF23F3AD5B0002704C /* ScanSelectedImgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanSelectedImgViewController.m; sourceTree = "<group>"; };
 		A1F6FCF023F3AD5B0002704C /* ScanSelectedImgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanSelectedImgViewController.h; sourceTree = "<group>"; };
-		A1F6FCF623FA6F8D0002704C /* AssembleKillViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssembleKillViewController.h; sourceTree = "<group>"; };
-		A1F6FCF723FA6F8D0002704C /* AssembleKillViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssembleKillViewController.m; sourceTree = "<group>"; };
-		A1F6FCF823FA6F8D0002704C /* AssembleKillViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssembleKillViewController.xib; sourceTree = "<group>"; };
 		A1F6FCFB23FA95320002704C /* AssembleKillSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssembleKillSubViewController.h; sourceTree = "<group>"; };
 		A1F6FCFC23FA95320002704C /* AssembleKillSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssembleKillSubViewController.m; sourceTree = "<group>"; };
 		A1F6FCFD23FA95320002704C /* AssembleKillSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssembleKillSubViewController.xib; sourceTree = "<group>"; };
+		A1F6FD0023FE21B20002704C /* AssemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssemTableViewCell.h; sourceTree = "<group>"; };
+		A1F6FD0123FE21B20002704C /* AssemTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssemTableViewCell.m; sourceTree = "<group>"; };
+		A1F6FD0223FE21B20002704C /* AssemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssemTableViewCell.xib; sourceTree = "<group>"; };
+		A1F6FD0523FE31650002704C /* AsseKillerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsseKillerViewController.h; sourceTree = "<group>"; };
+		A1F6FD0623FE31650002704C /* AsseKillerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsseKillerViewController.m; sourceTree = "<group>"; };
+		A1F6FD0723FE31650002704C /* AsseKillerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AsseKillerViewController.xib; sourceTree = "<group>"; };
+		A1F6FD0A23FE626D0002704C /* AsseCollectionViewCell1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsseCollectionViewCell1.h; sourceTree = "<group>"; };
+		A1F6FD0B23FE626D0002704C /* AsseCollectionViewCell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsseCollectionViewCell1.m; sourceTree = "<group>"; };
+		A1F6FD0C23FE626D0002704C /* AsseCollectionViewCell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AsseCollectionViewCell1.xib; sourceTree = "<group>"; };
+		A1F6FD0F23FE627E0002704C /* AsseCollectionViewCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsseCollectionViewCell2.h; sourceTree = "<group>"; };
+		A1F6FD1023FE627E0002704C /* AsseCollectionViewCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsseCollectionViewCell2.m; sourceTree = "<group>"; };
+		A1F6FD1123FE627E0002704C /* AsseCollectionViewCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AsseCollectionViewCell2.xib; sourceTree = "<group>"; };
+		A1F6FD1423FE7B290002704C /* KillerAsselbViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KillerAsselbViewController.h; sourceTree = "<group>"; };
+		A1F6FD1523FE7B290002704C /* KillerAsselbViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KillerAsselbViewController.m; sourceTree = "<group>"; };
+		A1F6FD1623FE7B290002704C /* KillerAsselbViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KillerAsselbViewController.xib; sourceTree = "<group>"; };
 		A1F73CF123A880CB001D86EF /* ShopingShopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShopingShopViewController.xib; path = "OgrinterProduct/Controllers/Home/C/商店/ShopingHome/C/ShopingShopViewController.xib"; sourceTree = SOURCE_ROOT; };
 		A1F73CF223A880CB001D86EF /* ShopingShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopingShopViewController.h; path = "OgrinterProduct/Controllers/Home/C/商店/ShopingHome/C/ShopingShopViewController.h"; sourceTree = SOURCE_ROOT; };
 		A1F73CF323A880CB001D86EF /* ShopingShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopingShopViewController.m; path = "OgrinterProduct/Controllers/Home/C/商店/ShopingHome/C/ShopingShopViewController.m"; sourceTree = SOURCE_ROOT; };
@@ -2651,12 +2676,15 @@
 		A1F6FCF323FA6F170002704C /* C */ = {
 			isa = PBXGroup;
 			children = (
-				A1F6FCF623FA6F8D0002704C /* AssembleKillViewController.h */,
-				A1F6FCF723FA6F8D0002704C /* AssembleKillViewController.m */,
-				A1F6FCF823FA6F8D0002704C /* AssembleKillViewController.xib */,
 				A1F6FCFB23FA95320002704C /* AssembleKillSubViewController.h */,
 				A1F6FCFC23FA95320002704C /* AssembleKillSubViewController.m */,
 				A1F6FCFD23FA95320002704C /* AssembleKillSubViewController.xib */,
+				A1F6FD0523FE31650002704C /* AsseKillerViewController.h */,
+				A1F6FD0623FE31650002704C /* AsseKillerViewController.m */,
+				A1F6FD0723FE31650002704C /* AsseKillerViewController.xib */,
+				A1F6FD1423FE7B290002704C /* KillerAsselbViewController.h */,
+				A1F6FD1523FE7B290002704C /* KillerAsselbViewController.m */,
+				A1F6FD1623FE7B290002704C /* KillerAsselbViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -2671,6 +2699,15 @@
 		A1F6FCF523FA6F230002704C /* V */ = {
 			isa = PBXGroup;
 			children = (
+				A1F6FD0023FE21B20002704C /* AssemTableViewCell.h */,
+				A1F6FD0123FE21B20002704C /* AssemTableViewCell.m */,
+				A1F6FD0223FE21B20002704C /* AssemTableViewCell.xib */,
+				A1F6FD0A23FE626D0002704C /* AsseCollectionViewCell1.h */,
+				A1F6FD0B23FE626D0002704C /* AsseCollectionViewCell1.m */,
+				A1F6FD0C23FE626D0002704C /* AsseCollectionViewCell1.xib */,
+				A1F6FD0F23FE627E0002704C /* AsseCollectionViewCell2.h */,
+				A1F6FD1023FE627E0002704C /* AsseCollectionViewCell2.m */,
+				A1F6FD1123FE627E0002704C /* AsseCollectionViewCell2.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -4232,6 +4269,7 @@
 				F457188823CEE99D0040164D /* LaunchScreen.storyboard in Resources */,
 				A10A9C192398A1970049A0D2 /* sorts.plist in Resources */,
 				F4917C8323C3132C00C05CFA /* ZBNMerchantEntryTabCell.xib in Resources */,
+				A1F6FD1323FE627E0002704C /* AsseCollectionViewCell2.xib in Resources */,
 				A14BDAC423C71C74006EC033 /* ShopCollectionReusableView.xib in Resources */,
 				A14BDAC923C7263B006EC033 /* ShoperHeadView.xib in Resources */,
 				A15DC0F7239E320E008CF287 /* CresThirdTableViewCell.xib in Resources */,
@@ -4260,6 +4298,7 @@
 				F4FAC2B323AC9ACB00C235EA /* ZBNReturnGoodsReasonView.xib in Resources */,
 				F458C33D23C8255700338220 /* ZBNSHComViewLogisticsCell.xib in Resources */,
 				F476A49C23A7682C00E3018A /* InviteCourtesyVC.xib in Resources */,
+				A1F6FD0E23FE626D0002704C /* AsseCollectionViewCell1.xib in Resources */,
 				A10A9CDF239B38380049A0D2 /* loveLoadViewController.xib in Resources */,
 				A10A9C1A2398A1970049A0D2 /* categories.plist in Resources */,
 				A1FBA8BF23D2FE67008C67E2 /* RCarlistView.xib in Resources */,
@@ -4280,6 +4319,7 @@
 				F41B749323C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.xib in Resources */,
 				A10A9CCC239B37800049A0D2 /* AutomobileViewController.xib in Resources */,
 				A10A9C02239791180049A0D2 /* ShopCollectionViewCell.xib in Resources */,
+				A1F6FD0923FE31650002704C /* AsseKillerViewController.xib in Resources */,
 				F476A44323A7682B00E3018A /* ZBNMyNewsCell.xib in Resources */,
 				A10A9C90239A469A0049A0D2 /* CaseCluessKeybordCollectionHeadView.xib in Resources */,
 				A1F86E2223D150F300CC0F54 /* HotelOnlineTableViewCell.xib in Resources */,
@@ -4296,6 +4336,7 @@
 				F476A45023A7682B00E3018A /* ZBNCashWithDrawalCell.xib in Resources */,
 				F4E6A7B223B75417006721E9 /* ZBNMineSettingCell.xib in Resources */,
 				F411AE4723BDDF9D006016D2 /* ZBNChangePhoneNumberVC.xib in Resources */,
+				A1F6FD0423FE21B20002704C /* AssemTableViewCell.xib in Resources */,
 				F476A45823A7682B00E3018A /* ZBNMyAddressCell.xib in Resources */,
 				F457189923D011770040164D /* ZBNChangeNameVC.xib in Resources */,
 				F4055EBB23CD663400637E7A /* ZBNHTHadInCell.xib in Resources */,
@@ -4355,6 +4396,7 @@
 				A15DC0CA239DD875008CF287 /* HotelDetilsTopViewCell.xib in Resources */,
 				F42C3C6E23C723E30057288A /* ZBNSHCommonPayCell.xib in Resources */,
 				A14FB2BF238F57AD006A6511 /* MBProgressHUD.bundle in Resources */,
+				A1F6FD1823FE7B290002704C /* KillerAsselbViewController.xib in Resources */,
 				F40D745D23D06613006DF3CB /* ZBNRTComDetailCell.xib in Resources */,
 				A14FB2E4238F682A006A6511 /* MineViewController.xib in Resources */,
 				F40D746D23D06883006DF3CB /* ZBNRTComDetailHeader.xib in Resources */,
@@ -4443,6 +4485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A14FB34A2391269B006A6511 /* ShopingHomeViewController.m in Sources */,
+				A1F6FD0323FE21B20002704C /* AssemTableViewCell.m in Sources */,
 				A10A9BEA239764D70049A0D2 /* MDBannerModel.m in Sources */,
 				A14FB31D238FFA76006A6511 /* HXCollectionViewCell.m in Sources */,
 				F4E6A7AC23B753F2006721E9 /* ZBNMineSettingAboutUsVC.m in Sources */,
@@ -4539,7 +4582,6 @@
 				F4CB2E7523FE4D67003A673C /* YYTextParser.m in Sources */,
 				F4C196C323C576E400F1C48C /* NSBundle+TZImagePicker.m in Sources */,
 				F48D544E23CB4C4E004DACFE /* SPPickerView.m in Sources */,
-				A1F6FCF923FA6F8D0002704C /* AssembleKillViewController.m in Sources */,
 				A14FB2B7238F5788006A6511 /* FKHRequestOperation.m in Sources */,
 				F4CB2E7723FE4D67003A673C /* YYTextArchiver.m in Sources */,
 				F443E8FF23C6D7D90059E48F /* ZBNReChargeDetailModel.m in Sources */,
@@ -4627,6 +4669,7 @@
 				A15DC0D7239DE0CE008CF287 /* FSSegmentTitleView.m in Sources */,
 				F4D7375523D2B3C3000329D1 /* ZBNMyNewsDetailModel.m in Sources */,
 				F458C33C23C8255700338220 /* ZBNSHComViewLogisticsCell.m in Sources */,
+				A1F6FD0823FE31650002704C /* AsseKillerViewController.m in Sources */,
 				F4C1F41D23F3E69200E28D9D /* ZBNProtocolVC.m in Sources */,
 				F476A48023A7682C00E3018A /* ZBNShoppingCartModel.m in Sources */,
 				F476A49623A7682C00E3018A /* ZBNMyIntegralVC.m in Sources */,
@@ -4658,6 +4701,7 @@
 				F4055EBF23CD666B00637E7A /* ZBNHTCancelVC.m in Sources */,
 				A14FB2B9238F5788006A6511 /* NSObject+Timecutdow.m in Sources */,
 				F4835BC723C9CA6100418D78 /* ZBNHTComCell.m in Sources */,
+				A1F6FD1223FE627E0002704C /* AsseCollectionViewCell2.m in Sources */,
 				F48128EB23D436AD00285A5C /* ZBNSHReCellM.m in Sources */,
 				A10A9C272398E1490049A0D2 /* SearchResrultViewController.m in Sources */,
 				F4C196CA23C576E400F1C48C /* TZPhotoPreviewCell.m in Sources */,
@@ -4758,6 +4802,7 @@
 				F411AE4623BDDF9D006016D2 /* ZBNChangePhoneNumberVC.m in Sources */,
 				A10A9C232398B16D0049A0D2 /* MsgModel.m in Sources */,
 				F476A44D23A7682B00E3018A /* ZBNReChargeDetailVC.m in Sources */,
+
 				F41B749B23C2D9BE0056DC78 /* ZBNSHReadEvaluateVC.m in Sources */,
 				F476A44223A7682B00E3018A /* ZBNDowmLoadAppVC.m in Sources */,
 				A10A9C072397EC9C0049A0D2 /* RedPacketView.m in Sources */,
@@ -4797,6 +4842,7 @@
 				A1667DED23C455560039C6F8 /* KXWebViewViewController.m in Sources */,
 				A14FB2BE238F57AD006A6511 /* HUDManager.m in Sources */,
 				F48D545123CB4C4E004DACFE /* SPPageMenu.m in Sources */,
+				A1F6FD1723FE7B290002704C /* KillerAsselbViewController.m in Sources */,
 				A1F6FCEE23F39D1B0002704C /* LXFPhotoHelper.m in Sources */,
 				F476A45923A7682B00E3018A /* ZBNMyAddressCell.m in Sources */,
 				A1F73CF823A88196001D86EF /* ShareView.m in Sources */,
