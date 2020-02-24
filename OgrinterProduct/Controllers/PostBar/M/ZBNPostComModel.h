@@ -7,17 +7,31 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "ZBNPostUserModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNPostComModel : NSObject
 
-@property (nonatomic, copy) NSString *userName;
-@property (nonatomic, copy) NSString *userIcon;
-@property (nonatomic, copy) NSString *comment;
-@property (nonatomic, copy) NSString *count;
-@property (nonatomic, assign) CGFloat cellHeight;
+/** 视频的id */
+@property (nonatomic , copy) NSString *mediabase_id;
 
+/** 评论、回复id */
+@property (nonatomic , copy) NSString * commentId;
+
+/** 创建时间 */
+@property (nonatomic , copy) NSString *creatTime;
+
+/** 回复用户模型 */
+@property (nonatomic , strong) ZBNPostUserModel *toUser;
+
+/** 来源用户模型 */
+@property (nonatomic , strong) ZBNPostUserModel *fromUser;
+
+/** 话题内容 */
+@property (nonatomic, copy) NSString *text;
+
+/** 获取富文本 */
+- (NSAttributedString *)attributedText;
 
 @end
 

@@ -31,7 +31,14 @@
     return [self.items mutableCopy];
 }
 
-- (NSMutableArray *)items
+//- (NSMutableArray *)items
+//{
+//    if (!_items) {
+//        _items = [[NSMutableArray alloc] init];
+//    }
+//    return _items;
+//}
+- (NSMutableArray<HDragItem *> *)items
 {
     if (!_items) {
         _items = [[NSMutableArray alloc] init];

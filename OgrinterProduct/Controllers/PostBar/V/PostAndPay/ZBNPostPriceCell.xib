@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ding" rowHeight="68" id="KGk-i7-Jjw" customClass="ZBNPostPriceCell">
+            <rect key="frame" x="0.0" y="0.0" width="395" height="68"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="395" height="68"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SL5-C9-WCV">
+                        <rect key="frame" x="15" y="25" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4u-3z-oPB">
+                        <rect key="frame" x="82.5" y="25" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YO8-k0-C0n">
+                        <rect key="frame" x="360" y="24" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="BPw-La-tCs"/>
+                            <constraint firstAttribute="width" constant="20" id="FRb-7Q-oxn"/>
+                        </constraints>
+                        <state key="normal" image="secnormal"/>
+                        <state key="selected" image="selected"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="YO8-k0-C0n" secondAttribute="trailing" constant="15" id="BLf-TO-neh"/>
+                    <constraint firstItem="YO8-k0-C0n" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="CWh-iR-9KI"/>
+                    <constraint firstItem="SL5-C9-WCV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="F08-0S-cUV"/>
+                    <constraint firstItem="f4u-3z-oPB" firstAttribute="leading" secondItem="SL5-C9-WCV" secondAttribute="trailing" constant="30" id="XUP-kN-PWb"/>
+                    <constraint firstItem="f4u-3z-oPB" firstAttribute="centerY" secondItem="SL5-C9-WCV" secondAttribute="centerY" id="uUp-60-VB1"/>
+                    <constraint firstItem="SL5-C9-WCV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="wEg-cp-QsQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="name" destination="SL5-C9-WCV" id="2ML-Z7-lXA"/>
+                <outlet property="price" destination="f4u-3z-oPB" id="1WJ-Fe-cEs"/>
+                <outlet property="selctedBTn" destination="YO8-k0-C0n" id="KHG-hZ-MRI"/>
+            </connections>
+            <point key="canvasLocation" x="-560" y="133"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="secnormal" width="13" height="13"/>
+        <image name="selected" width="13" height="13"/>
+    </resources>
+</document>

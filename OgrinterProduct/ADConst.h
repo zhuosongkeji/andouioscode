@@ -15,6 +15,13 @@ UIKIT_EXTERN CGFloat const ZBNCommonMargin;
 UIKIT_EXTERN CGFloat const ZBNHeaderH;
 /*! 通用头部视图的高度 */
 UIKIT_EXTERN CGFloat const ZBNFooterH;
+/*! 评论用户的key */
+UIKIT_EXTERN NSString * const ZBNCommentUserKey;
+
+
+
+
+
 /*! 个人中心URL */
 UIKIT_EXTERN NSString * const ZBNPersonURL;
 /*! 个人中心设置界面URL*/

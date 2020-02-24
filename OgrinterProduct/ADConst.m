@@ -18,6 +18,9 @@ CGFloat const ZBNHeaderH = 150;
 
 CGFloat const ZBNFooterH = 120;
 
+NSString * const ZBNCommentUserKey = @"ZBNCommentUserKey";
+
+
 NSString * const ZBNPersonURL = @"http://andou.zhuosongkj.com/api/wallet/personal";
 
 NSString * const ZBNPersonSettingURL = @"http://andou.zhuosongkj.com/api/opinion/set";
