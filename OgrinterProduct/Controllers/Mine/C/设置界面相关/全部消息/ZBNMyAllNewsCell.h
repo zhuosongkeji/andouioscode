@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) ZBNMyAllNewsModel *allM;
 
+@property (nonatomic, strong, readonly) UILabel *contentLabel;
+
 @end
 
 NS_ASSUME_NONNULL_END

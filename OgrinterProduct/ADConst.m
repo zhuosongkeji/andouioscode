@@ -62,3 +62,5 @@ NSString * const ZBNHTOrderdatailsURL = @"http://andou.zhuosongkj.com/index.php/
 NSString * const ZBNHTOrderURL = @"http://andou.zhuosongkj.com/index.php/api/hotel/order";
 
 NSString * const ZBNHTReasonURL = @"http://andou.zhuosongkj.com/api/htorder/refund_reason";
+// 图片上传
+NSString * const ZBNImgUpLoadURL = @"http://andou.zhuosongkj.com/index.php/api/goods/uploads";

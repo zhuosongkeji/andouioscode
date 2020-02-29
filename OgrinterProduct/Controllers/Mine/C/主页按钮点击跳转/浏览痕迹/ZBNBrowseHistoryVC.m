@@ -9,7 +9,8 @@
 #import "ZBNBrowseHistoryVC.h"
 #import "MsgViewCell.h"
 #import "ZBNBrowseModel.h"
-
+#import "ZBNComDataNilCell.h"
+#import "ZBNRefreshHeader.h"
 
 @interface ZBNBrowseHistoryVC ()
 /*! 存储数据的数组 */
@@ -40,20 +41,32 @@ static NSString * const ZBNBrowseHistoryCellID = @"collectionCommen";
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return self.dataArr.count;
+    if (self.dataArr.count <= 0) {
+        return 1;
+    } else {
+        return self.dataArr.count;;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MsgViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ZBNBrowseHistoryCellID];
-    cell.browseM = self.dataArr[indexPath.row];
-    return cell;
+    if (self.dataArr.count <= 0) {
+        ZBNComDataNilCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNComDataNilCell" owner:nil options:nil].lastObject;
+        return cell;
+    } else {
+        MsgViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ZBNBrowseHistoryCellID];
+        cell.browseM = self.dataArr[indexPath.row];
+        return cell;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 98;
+    if (self.dataArr.count > 0) {
+        return 98;
+    } else {
+        return self.view.height;
+    }
 }
 
 
@@ -65,6 +78,7 @@ static NSString * const ZBNBrowseHistoryCellID = @"collectionCommen";
     
     self.nextPage = @"2";
     [FKHRequestManager cancleRequestWork];
+    self.tableView.mj_footer.state = MJRefreshStateIdle;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
@@ -75,6 +89,9 @@ static NSString * const ZBNBrowseHistoryCellID = @"collectionCommen";
     ADWeakSelf;
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNMerchant_recordURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         weakSelf.dataArr = [ZBNBrowseModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+        if (weakSelf.dataArr.count < 10) {
+            weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
+        }
         [weakSelf.tableView reloadData];
         [weakSelf.tableView.mj_header endRefreshing];
     }];
@@ -92,10 +109,15 @@ static NSString * const ZBNBrowseHistoryCellID = @"collectionCommen";
     ADWeakSelf;
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNMerchant_recordURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         NSArray *newData = [ZBNBrowseModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
-        [self.dataArr addObjectsFromArray:newData];
+        if (newData.count < 10) {
+            weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
+            [weakSelf.dataArr addObjectsFromArray:newData];
+        } else {
+            [weakSelf.dataArr addObjectsFromArray:newData];
+            [weakSelf.tableView.mj_footer endRefreshing];
+        }
         [weakSelf.tableView reloadData];
-        self.nextPage = [NSString stringWithFormat:@"%d",(self.nextPage.intValue + 1)];
-        [weakSelf.tableView.mj_footer endRefreshing];
+        weakSelf.nextPage = [NSString stringWithFormat:@"%d",(weakSelf.nextPage.intValue + 1)];
     }];
 }
 
@@ -103,7 +125,7 @@ static NSString * const ZBNBrowseHistoryCellID = @"collectionCommen";
 - (void)setupRefresh
 {
     // 下拉刷新
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.mj_header = [ZBNRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     // 自动改变透明度
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
     // 马上进入刷新状态

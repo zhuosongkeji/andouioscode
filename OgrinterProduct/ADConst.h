@@ -64,3 +64,5 @@ UIKIT_EXTERN NSString * const ZBNHTOrderdatailsURL;
 UIKIT_EXTERN NSString * const ZBNHTOrderURL;  
 /*! 酒店退款原因 */
 UIKIT_EXTERN NSString * const ZBNHTReasonURL;
+/*! 图片上传 */
+UIKIT_EXTERN NSString * const ZBNImgUpLoadURL;

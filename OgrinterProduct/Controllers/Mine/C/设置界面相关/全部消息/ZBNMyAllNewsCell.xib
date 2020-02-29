@@ -37,44 +37,22 @@
                             <constraint firstAttribute="height" constant="10" id="xKO-v2-E4T"/>
                         </constraints>
                     </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Om1-rx-JNc">
-                        <rect key="frame" x="408" y="88.5" width="15" height="15"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zA4-57-QD2">
-                                <rect key="frame" x="5.5" y="2.5" width="4" height="10"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="15" id="CH1-7E-dKN"/>
-                            <constraint firstAttribute="height" constant="15" id="OrV-Mu-K1Y"/>
-                            <constraint firstItem="zA4-57-QD2" firstAttribute="centerY" secondItem="Om1-rx-JNc" secondAttribute="centerY" id="inY-HI-bys"/>
-                            <constraint firstItem="zA4-57-QD2" firstAttribute="centerX" secondItem="Om1-rx-JNc" secondAttribute="centerX" id="v6Y-JN-hsa"/>
-                        </constraints>
-                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Om1-rx-JNc" firstAttribute="centerY" secondItem="r5V-qn-YFW" secondAttribute="centerY" id="1Dj-ho-b3C"/>
                     <constraint firstItem="Chj-ak-3YP" firstAttribute="centerY" secondItem="r5V-qn-YFW" secondAttribute="centerY" id="Cis-Vl-oA8"/>
                     <constraint firstItem="r5V-qn-YFW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="D6I-VU-6OG"/>
                     <constraint firstItem="aCx-Hj-3VP" firstAttribute="centerY" secondItem="r5V-qn-YFW" secondAttribute="centerY" id="Pfx-Me-wZI"/>
                     <constraint firstAttribute="trailing" secondItem="aCx-Hj-3VP" secondAttribute="trailing" constant="15" id="d8t-xH-hlR"/>
                     <constraint firstItem="Chj-ak-3YP" firstAttribute="leading" secondItem="r5V-qn-YFW" secondAttribute="trailing" constant="15" id="i61-jd-2pf"/>
                     <constraint firstItem="r5V-qn-YFW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="w75-zn-ZvC"/>
-                    <constraint firstItem="aCx-Hj-3VP" firstAttribute="leading" secondItem="Om1-rx-JNc" secondAttribute="trailing" constant="15" id="zmm-n6-TwT"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="countL" destination="zA4-57-QD2" id="ymz-aq-006"/>
                 <outlet property="iconV" destination="r5V-qn-YFW" id="ahZ-fX-VlH"/>
                 <outlet property="nameL" destination="Chj-ak-3YP" id="ndT-NN-7s0"/>
-                <outlet property="redBackV" destination="Om1-rx-JNc" id="vOU-so-kqP"/>
             </connections>
-            <point key="canvasLocation" x="-137" y="11"/>
+            <point key="canvasLocation" x="105" y="66"/>
         </tableViewCell>
     </objects>
     <resources>

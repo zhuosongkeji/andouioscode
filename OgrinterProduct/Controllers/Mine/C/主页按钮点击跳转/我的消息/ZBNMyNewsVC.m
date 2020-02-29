@@ -31,6 +31,7 @@
 
 - (void)setupTable
 {
+    self.tableView.bounces = NO;
     self.navigationItem.title = @"通知信息";
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.navigationController.navigationBar.translucent = NO;

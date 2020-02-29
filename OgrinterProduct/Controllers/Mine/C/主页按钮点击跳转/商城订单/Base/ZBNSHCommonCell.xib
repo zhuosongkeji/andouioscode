@@ -249,7 +249,7 @@
                 <outlet property="thiButton" destination="gHf-bB-GSV" id="XH2-9w-Mff"/>
                 <outlet property="totalPriceL" destination="GQN-72-gtL" id="44r-k3-exe"/>
             </connections>
-            <point key="canvasLocation" x="-294" y="79"/>
+            <point key="canvasLocation" x="809" y="54"/>
         </tableViewCell>
     </objects>
     <resources>

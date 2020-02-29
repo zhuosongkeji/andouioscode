@@ -214,9 +214,6 @@ static NSString * const ZBNPostMineCellId = @"com";
     return [super initWithStyle:UITableViewStyleGrouped];
 }
 
-
-#pragma mark - Table view data source
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

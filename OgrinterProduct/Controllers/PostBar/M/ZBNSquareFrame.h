@@ -12,6 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNSquareFrame : NSObject
+
 /*! 头像 */
 @property (nonatomic , assign , readonly) CGRect avatarFrame;
 /*! 标题 */

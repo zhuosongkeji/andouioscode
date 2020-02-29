@@ -62,17 +62,17 @@
     // 收货人
     self.name.text = comM.userinfo.name;
     // 收货地址
-    self.address.text = comM.userinfo.address;
+    self.address.text = [NSString stringWithFormat:@"%@%@%@%@",comM.userinfo.province,comM.userinfo.city,comM.userinfo.area,comM.userinfo.address];
     // 电话
     self.phone_num.text = comM.userinfo.mobile;
     // 合计
-    self.total_money.text = comM.order_money;
+    self.total_money.text = [NSString stringWithFormat:@"¥%@",comM.order_money];
     // 积分
     self.integer.text = comM.integral;
     // 运费
-    self.shipping_free.text = comM.shipping_free;
+    self.shipping_free.text = [NSString stringWithFormat:@"¥%@",comM.shipping_free];
     // 实际付款
-    self.pay_money.text = comM.pay_money;
+    self.pay_money.text = [NSString stringWithFormat:@"¥%@",comM.pay_money];
     // 付款方式
 
 }
@@ -91,9 +91,9 @@
     }
     self.goods_attr.text = [NSString stringWithFormat:@"%@",muStr];
     // 单价
-    self.goods_price.text = detailM.price;
+    self.goods_price.text = [NSString stringWithFormat:@"¥%@",detailM.price];
     // 数量
-    self.order_num.text = detailM.num;
+    self.order_num.text = [NSString stringWithFormat:@"x%@",detailM.num];
 }
 
 

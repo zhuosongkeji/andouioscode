@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InviteCourtesyVC">
             <connections>
+                <outlet property="erweima" destination="Y14-d7-2QC" id="jGD-xn-46a"/>
+                <outlet property="name" destination="KjJ-FH-B1K" id="oFM-25-G5I"/>
                 <outlet property="userIconView" destination="dC8-d2-GZV" id="eXa-Fp-n09"/>
                 <outlet property="view" destination="iN0-l3-epB" id="C5N-VU-AJb"/>
             </connections>
@@ -65,13 +67,13 @@
                                                         <constraint firstAttribute="width" constant="90" id="yoG-Gw-6cn"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是你啊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjJ-FH-B1K">
-                                                    <rect key="frame" x="154" y="337" width="46" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="安抖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjJ-FH-B1K">
+                                                    <rect key="frame" x="161.5" y="337" width="31" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dC8-d2-GZV">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dC8-d2-GZV">
                                                     <rect key="frame" x="147" y="262" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="Bsn-Rv-F7N"/>
@@ -140,7 +142,7 @@
                 <constraint firstAttribute="bottom" secondItem="2Ir-NZ-3Ii" secondAttribute="bottom" id="h1t-WZ-mAy"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-957" y="202"/>
+            <point key="canvasLocation" x="-968" y="138"/>
         </view>
     </objects>
     <resources>

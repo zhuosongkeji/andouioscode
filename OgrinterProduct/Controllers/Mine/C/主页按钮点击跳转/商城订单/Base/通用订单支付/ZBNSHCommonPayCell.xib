@@ -122,7 +122,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="眼神运输" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jg3-Rk-XwQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快递运输" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jg3-Rk-XwQ">
                                 <rect key="frame" x="287.5" y="16" width="53.5" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -147,30 +147,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="返回 拷贝 3" translatesAutoresizingMaskIntoConstraints="NO" id="lZx-XU-pxX">
-                                <rect key="frame" x="331" y="19" width="10" height="10"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="10" id="PBb-Qd-klY"/>
-                                    <constraint firstAttribute="height" constant="10" id="V1e-Ap-cOm"/>
-                                </constraints>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="积分" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1fr-oX-iNP">
-                                <rect key="frame" x="216" y="15" width="100" height="18.5"/>
+                                <rect key="frame" x="111" y="15" width="200" height="18.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="y7M-lb-kmV"/>
+                                    <constraint firstAttribute="width" constant="200" id="y7M-lb-kmV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMN-xY-2sl">
+                                <rect key="frame" x="321" y="14" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="cJI-r0-7Tk"/>
+                                    <constraint firstAttribute="width" constant="20" id="ibT-ZS-sYK"/>
+                                </constraints>
+                                <state key="normal" image="secnormal"/>
+                                <state key="selected" image="selected"/>
+                                <connections>
+                                    <action selector="integralBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bDM-Oa-eoE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ABU-2x-8lg" firstAttribute="leading" secondItem="DAQ-At-pob" secondAttribute="leading" constant="15" id="AC8-0z-RTV"/>
-                            <constraint firstItem="lZx-XU-pxX" firstAttribute="leading" secondItem="1fr-oX-iNP" secondAttribute="trailing" constant="15" id="RkQ-es-NLT"/>
-                            <constraint firstItem="lZx-XU-pxX" firstAttribute="centerY" secondItem="DAQ-At-pob" secondAttribute="centerY" id="WqZ-If-PCA"/>
+                            <constraint firstItem="LMN-xY-2sl" firstAttribute="centerY" secondItem="DAQ-At-pob" secondAttribute="centerY" id="Cme-Po-Ikz"/>
+                            <constraint firstItem="LMN-xY-2sl" firstAttribute="leading" secondItem="1fr-oX-iNP" secondAttribute="trailing" constant="10" id="Nog-Bw-3Lb"/>
                             <constraint firstAttribute="height" constant="48" id="ZvA-kj-FBq"/>
                             <constraint firstItem="1fr-oX-iNP" firstAttribute="centerY" secondItem="DAQ-At-pob" secondAttribute="centerY" id="gJ1-73-mNF"/>
-                            <constraint firstAttribute="trailing" secondItem="lZx-XU-pxX" secondAttribute="trailing" constant="15" id="kT4-qi-Sag"/>
+                            <constraint firstAttribute="trailing" secondItem="LMN-xY-2sl" secondAttribute="trailing" constant="15" id="ptg-eP-Bs8"/>
                             <constraint firstItem="ABU-2x-8lg" firstAttribute="centerY" secondItem="DAQ-At-pob" secondAttribute="centerY" id="w74-zP-cxh"/>
                         </constraints>
                     </view>
@@ -202,13 +207,13 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IG-Q3-XtX">
-                                <rect key="frame" x="326" y="16.5" width="15" height="15"/>
+                                <rect key="frame" x="321" y="14" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="15" id="jfJ-0S-AmK"/>
-                                    <constraint firstAttribute="height" constant="15" id="t5i-Bq-u97"/>
+                                    <constraint firstAttribute="width" constant="20" id="jfJ-0S-AmK"/>
+                                    <constraint firstAttribute="height" constant="20" id="t5i-Bq-u97"/>
                                 </constraints>
-                                <state key="normal" image="dati1"/>
-                                <state key="selected" image="椭圆 1"/>
+                                <state key="normal" image="secnormal"/>
+                                <state key="selected" image="selected"/>
                                 <connections>
                                     <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8IT-VQ-JoK"/>
                                 </connections>
@@ -289,6 +294,7 @@
                 <outlet property="goods_attr" destination="SAx-pd-SWB" id="oWH-wF-soP"/>
                 <outlet property="img" destination="ekM-Rg-5sG" id="16l-g0-34v"/>
                 <outlet property="integerT" destination="1fr-oX-iNP" id="5tW-zr-Avh"/>
+                <outlet property="integraBtn" destination="LMN-xY-2sl" id="qgo-jh-1An"/>
                 <outlet property="name" destination="GbY-yw-GIX" id="WgL-eA-nE3"/>
                 <outlet property="phoneNumber" destination="FBA-N0-9Yo" id="XnF-MY-rOo"/>
                 <outlet property="priceLabel" destination="kaE-Iy-wzB" id="BG6-I5-Ozy"/>
@@ -297,13 +303,13 @@
                 <outlet property="total_price" destination="0sl-Qb-dkQ" id="Qae-1v-jWh"/>
                 <outlet property="userName" destination="EfP-Vd-dd0" id="Om4-hY-h0Z"/>
             </connections>
-            <point key="canvasLocation" x="-158" y="0.0"/>
+            <point key="canvasLocation" x="-236" y="40"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="dati1" width="16" height="16"/>
+        <image name="secnormal" width="13" height="13"/>
+        <image name="selected" width="13" height="13"/>
         <image name="whcat" width="27.5" height="27.5"/>
-        <image name="椭圆 1" width="10" height="10"/>
         <image name="返回 拷贝 3" width="4" height="7.5"/>
     </resources>
 </document>

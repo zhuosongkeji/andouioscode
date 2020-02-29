@@ -18,9 +18,9 @@
 
 
 /*! ID **/
-@property (nonatomic, assign) NSNumber *IDPro;
-@property (nonatomic, assign) NSNumber *IDCity;
-@property (nonatomic, assign) NSNumber *IDArea;
+@property (nonatomic, assign) NSString *IDPro;
+@property (nonatomic, assign) NSString *IDCity;
+@property (nonatomic, assign) NSString *IDArea;
 
 /*! 地址label */
 @property (weak, nonatomic) IBOutlet UILabel *addLabel;
@@ -105,13 +105,14 @@
     }
     
     
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/Usersaddress/address_add" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/Usersaddress/address_add" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
         
             
         if ([[serverInfo.response objectForKey:@"code"] integerValue] == 200) {
             
             [HUDManager showTextHud:@"添加成功"];
             [self.navigationController popViewControllerAnimated:YES];
+             [[NSNotificationCenter defaultCenter] postNotificationName:@"popView" object:nil];
         }
         if ([[serverInfo.response objectForKey:@"code"] integerValue] == 201) {
                    
@@ -121,7 +122,7 @@
         
     }];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"popView" object:nil];
+   
     
 }
 
@@ -148,7 +149,7 @@
 
             [weakSelf.modalView hide];
 
-            weakSelf.addLabel.text = [NSString stringWithFormat:@"%@%@%@",selectedProvince.name,selectedCity.name,selectedArea.name];
+            weakSelf.addLabel.text = [NSString stringWithFormat:@"%@%@%@",selectedProvince.name,selectedCity.name,selectedArea.fullname];
             weakSelf.IDPro = selectedProvince.ID;
             weakSelf.IDCity = selectedCity.ID;
             weakSelf.IDArea = selectedArea.ID;
@@ -160,10 +161,13 @@
 /*! 加载数据 */
 - (void)loadData
 {
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/common/district" params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
-        self.dataArr = [ZBNProvince mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
-        self.addressView.datas = self.dataArr;
-    }];
+//    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/common/district" params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
+//        self.dataArr = [ZBNProvince mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+//        self.addressView.datas = self.dataArr;
+//    }];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"pcd" ofType:@"plist"];
+    self.dataArr = [ZBNProvince mj_objectArrayWithFile:filePath];
+    self.addressView.datas = self.dataArr;
 }
 
 

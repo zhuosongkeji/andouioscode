@@ -11,8 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNSHCommonPayVC : UIViewController
-
+/*! 订单号 */
 @property (nonatomic, copy) NSString *order_id;
+/*! 子订单ID */
+@property (nonatomic, copy) NSString *did;
 
 @end
 

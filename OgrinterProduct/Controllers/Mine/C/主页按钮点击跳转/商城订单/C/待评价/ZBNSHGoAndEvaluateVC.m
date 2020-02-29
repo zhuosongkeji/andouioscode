@@ -9,16 +9,11 @@
 #import "ZBNSHGoAndEvaluateVC.h"
 
 #import "ZBNSHGoAndEvaluateCell.h"
-#import "ZBNEntryFooterView.h"
 #import "ZBNSHEvaluateSuccessVC.h"
 #import "ZBNSHGoAndEvaluateModel.h"
 
 @interface ZBNSHGoAndEvaluateVC ()
 
-@property (nonatomic, weak) ZBNEntryFooterView *footerV;
-
-@property (nonatomic, copy) NSString *comText;
-@property (nonatomic, copy) NSString *starNum;
 @property (nonatomic, strong) ZBNSHGoAndEvaluateModel *model;
 @end
 
@@ -26,67 +21,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    // 给模型赋值
     [self setupUIData];
+    // 设置界面
     [self setupTable];
-    [self setupFooter];
 }
 
-
+/*! 给模型赋值 */
 - (void)setupUIData
 {
     ZBNSHGoAndEvaluateModel *model = [ZBNSHGoAndEvaluateModel sharedInstance];
     [model setImageName:self.imageName];
+    [model setGoods_id:self.goods_id];
+    [model setOrder_id:self.order_id];
+    [model setMerchants_id:self.merchant_id];
     self.model = model;
-    [self.tableView reloadData];
 }
 
-
-- (void)setupFooter
-{
-    ADWeakSelf;
-    ZBNEntryFooterView *footerV = [ZBNEntryFooterView viewFromXib];
-    footerV.height = ZBNFooterH;
-    footerV.setButtonText(@"发表评论");
-    // -------------> 发表评论在这里设置点击
-    footerV.middleBtnClickTask = ^{
-        [self commentRequest];
-    };
-    self.tableView.tableFooterView = footerV;
-    self.footerV = footerV;
-}
-
-- (void)commentRequest
-{
-    [FKHRequestManager cancleRequestWork];
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
-    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
-    ZBNSHGoAndEvaluateModel *model = [ZBNSHGoAndEvaluateModel sharedInstance];
-    params[@"uid"] = unmodel.uid;
-    params[@"token"] = unmodel.token;
-    params[@"goods_id"] = self.goods_id;
-    NSLog(@"%@",self.goods_id);
-    params[@"order_id"] = self.order_id;
-    params[@"merchants_id"] = self.merchant_id;
-    params[@"content"] = model.content;
-    params[@"stars"] = model.stars;
-    NSLog(@"%@",model.stars);
-       ADWeakSelf;
-       [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/addcomment" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
-           if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
-               ZBNSHEvaluateSuccessVC *vc = [[ZBNSHEvaluateSuccessVC alloc] init];
-               [weakSelf.navigationController pushViewController:vc animated:YES];
-           } else {
-               [HUDManager showTextHud:@"评论失败"];
-           }
-       }];
-}
-
-
+/*! 设置table相关 */
 - (void)setupTable
 {
     self.navigationItem.title = @"发表评论";
+    self.tableView.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.navigationController.navigationBar.translucent = NO;
     self.tableView.bounces = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -100,14 +56,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    ADWeakSelf;
     ZBNSHGoAndEvaluateCell *cell = [ZBNSHGoAndEvaluateCell regiserCellForTable:tableView];
-    cell.model = self.model;
+    // 点击评论按钮
+    cell.commentBtnClickTask = ^{
+        ZBNSHEvaluateSuccessVC *vc = [[ZBNSHEvaluateSuccessVC alloc] init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 450;
+    return 535;
 }
 
 @end

@@ -66,7 +66,7 @@ typedef NS_ENUM(NSInteger, YNImageUploadImageType) {
 /** 视图的高度 */
 @property (nonatomic, assign) CGFloat viewH;
 /*! 返回的URL */
-@property (nonatomic, copy) NSString *get_url;
+@property (nonatomic, copy) NSString *returnURL;
 
 
 @end

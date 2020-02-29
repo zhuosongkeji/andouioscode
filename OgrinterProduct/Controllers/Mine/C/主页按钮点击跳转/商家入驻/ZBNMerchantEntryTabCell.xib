@@ -201,7 +201,7 @@
                 <outlet property="shoppingHallV" destination="ohC-Aq-svK" id="l9X-yK-VBi"/>
                 <outlet property="take_outFoodV" destination="Tfs-tk-oPq" id="gfp-b8-GF1"/>
             </connections>
-            <point key="canvasLocation" x="-91" y="-3"/>
+            <point key="canvasLocation" x="138" y="102"/>
         </tableViewCell>
     </objects>
     <resources>

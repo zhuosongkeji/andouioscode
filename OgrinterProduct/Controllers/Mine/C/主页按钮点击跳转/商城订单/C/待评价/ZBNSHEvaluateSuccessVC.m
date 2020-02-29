@@ -8,6 +8,7 @@
 
 #import "ZBNSHEvaluateSuccessVC.h"
 #import "ZBNSHReadEvaluateVC.h"
+#import "ZBNSHBaseOrderVC.h"
 
 @interface ZBNSHEvaluateSuccessVC ()
 
@@ -34,8 +35,8 @@
 /*! 查看评论按钮的点击 */
 - (IBAction)btnClick:(UIButton *)sender {
     
-    ZBNSHReadEvaluateVC *vc = [[ZBNSHReadEvaluateVC alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 @end

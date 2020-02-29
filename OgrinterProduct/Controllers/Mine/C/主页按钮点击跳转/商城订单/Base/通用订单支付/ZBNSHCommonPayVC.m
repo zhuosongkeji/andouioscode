@@ -28,6 +28,7 @@
 @property (nonatomic, copy) NSString *pay_id;
 /*! 是否使用积分 */
 @property (nonatomic, copy) NSString *is_integer;
+/*! 是否使用积分按钮 */
 
 @property (nonatomic, strong) ZBNSHOrderUserInfoM *userInfoM;
 @property (nonatomic, strong) ZBNSHOrderDetailsM *detailM;
@@ -55,11 +56,11 @@
         params[@"uid"] = unmodel.uid;
         params[@"token"] = unmodel.token;
         params[@"order_sn"] = self.order_id;
-        params[@"did"]  = self.comM.ID;
-        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/order/details" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        params[@"did"]  = self.did;
+        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/details" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
             self.comM = [ZBNSHOrderDetailComM mj_objectWithKeyValues:serverInfo.response[@"data"]];
-            self.comM.details = [ZBNSHOrderDetailsM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"details"][0]];
-            self.comM.userinfo = [ZBNSHOrderUserInfoM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"userinfo"]];
+            self.detailM = [ZBNSHOrderDetailsM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"details"][0]];
+            self.userInfoM = [ZBNSHOrderUserInfoM mj_objectWithKeyValues:[serverInfo.response[@"data"] valueForKeyPath:@"userinfo"]];
             self.priceLabel.text = [NSString stringWithFormat:@"¥%@",self.comM.pay_money];
             [weakSelf.myTableView reloadData];
         }];
@@ -88,11 +89,7 @@
     param[@"token"] = unmodel.token;
     param[@"sNo"] = self.order_id;
     param[@"pay_id"] = self.pay_id;
-    if (self.is_integer.length > 0) {
-        param[@"is_integral"] = @"1";
-    } else {
-        param[@"is_integral"] = @"0";
-    }
+    param[@"is_integral"] = self.is_integer;
     if ([self.pay_id isEqualToString:@"1"]) {
         [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/pay" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
             if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
@@ -139,12 +136,18 @@
 {
     ZBNSHCommonPayCell *cell = [ZBNSHCommonPayCell regiserCellForTable:tableView];
     cell.comM = self.comM;
+    cell.userInfoM = self.userInfoM;
+    cell.detailM = self.detailM;
     ADWeakSelf;
     cell.selBtnClick = ^(NSString * _Nonnull pay_id) {
         weakSelf.pay_id = pay_id;
     };
-    cell.integer = ^(NSString * _Nonnull integer_num) {
-        weakSelf.is_integer = integer_num;
+    cell.integerBtnClickTask = ^(UIButton * _Nonnull integralBtn) {
+        if (integralBtn.selected) {
+            weakSelf.is_integer = @"1";
+        } else {
+            weakSelf.is_integer = @"0";
+        }
     };
     return cell;
 }

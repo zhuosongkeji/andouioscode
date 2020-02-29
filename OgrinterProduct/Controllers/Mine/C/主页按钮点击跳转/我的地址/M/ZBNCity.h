@@ -14,9 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZBNCity : ZBNProvince
 
 
-@property (nonatomic, strong) NSArray < ZBNArea *> *areas;
-
-
 @end
 
 NS_ASSUME_NONNULL_END

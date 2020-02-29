@@ -10,6 +10,8 @@
 #import "ZBNMyWalletComCell.h"
 #import "ZBNMyIntegerHeadView.h"
 #import "ZBNMyIntegralModel.h"
+#import "ZBNComDataNilCell.h"
+#import "ZBNRefreshHeader.h"
 
 
 @interface ZBNMyIntegralVC ()
@@ -43,7 +45,7 @@
 /*! 设置UI */
 - (void)setupUI
 {
-    self.navigationItem.title = @"我的积分";
+    self.navigationItem.title = @"我的感恩币";
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.navigationController.navigationBar.translucent = NO;
     ZBNMyIntegerHeadView *headView = [ZBNMyIntegerHeadView viewFromXib];
@@ -59,6 +61,7 @@
     
     self.nextPage = @"2";
     [FKHRequestManager cancleRequestWork];
+    self.tableView.mj_footer.state = MJRefreshStateIdle;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
@@ -68,16 +71,17 @@
     ADWeakSelf;
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNIntegerURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         weakSelf.dataArr = [ZBNMyIntegralModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"][@"log"]];
+        if (weakSelf.dataArr.count < 10) {
+            weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
+        }
         [weakSelf.tableView reloadData];
         [weakSelf.tableView.mj_header endRefreshing];
-        if (weakSelf.dataArr.count < 10) {
-            [weakSelf.tableView.mj_footer setHidden:YES];
-        }
     }];
 }
 
 - (void)loadMoreData
 {
+    
     [FKHRequestManager cancleRequestWork];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
@@ -89,9 +93,13 @@
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNIntegerURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         NSArray *newData = [ZBNMyIntegralModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"][@"log"]];
         [self.dataArr addObjectsFromArray:newData];
+        if (newData.count < 10) {
+            weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
+        } else {
+            [weakSelf.tableView.mj_footer endRefreshing];
+        }
         [weakSelf.tableView reloadData];
         self.nextPage = [NSString stringWithFormat:@"%d",(self.nextPage.intValue + 1)];
-        [weakSelf.tableView.mj_footer endRefreshing];
     }];
 }
 
@@ -99,7 +107,7 @@
 - (void)setupRefresh
 {
     // 下拉刷新
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.mj_header = [ZBNRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     // 自动改变透明度
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
     // 马上进入刷新状态
@@ -112,19 +120,32 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.dataArr.count;
+    if (self.dataArr.count > 0) {
+        return self.dataArr.count;
+    } else {
+        return 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZBNMyWalletComCell *cell = [ZBNMyWalletComCell registerCellForTableView:tableView];
-    cell.integerM = self.dataArr[indexPath.row];
-    return cell;
+    if (self.dataArr.count > 0) {
+        ZBNMyWalletComCell *cell = [ZBNMyWalletComCell registerCellForTableView:tableView];
+        cell.integerM = self.dataArr[indexPath.row];
+        return cell;
+    } else {
+        ZBNComDataNilCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNComDataNilCell" owner:nil options:nil].lastObject;
+        return cell;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    if (self.dataArr.count > 0) {
+        return 60;
+    } else {
+        return self.view.height - ZBNHeaderH;
+    }
 }
 
 #pragma mark -- lazy

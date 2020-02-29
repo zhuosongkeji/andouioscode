@@ -350,6 +350,7 @@
 
 #pragma  - mark 懒加载
 - (NSMutableArray *)dataList {
+    
     if (!_dataList) {
         _dataList = @[].mutableCopy;
         if (self.config.type == YNImageUploadImageTypeUpload) {
@@ -409,15 +410,6 @@
     return marray;
 }
 
-//- (NSString *)get_url
-//{
-//    if (self.dataList.count > 0) {
-//        for (YNImageModel *model in self.dataList) {
-//            
-//        }
-//    }
-//    
-//}
 
 
 - (NSArray<NSString *> *)imageNames {
@@ -444,6 +436,27 @@
     }
     return string;
 }
-
+    
+/*! 服务器返回的地址 */
+- (NSString *)returnURL
+{
+    NSString *returnURL = @"";
+    if (self.dataList.count > 1) {
+        NSMutableArray *marray = [NSMutableArray arrayWithArray:self.dataList];
+        [marray removeLastObject];
+        for (YNImageModel *model in marray) {
+            returnURL = [returnURL stringByAppendingString:model.returnURL];
+            returnURL = [returnURL stringByAppendingString:@","];
+        }
+        returnURL = [returnURL substringWithRange:NSMakeRange(0, returnURL.length - 1)];
+        return returnURL;
+    }  else {
+        NSString *returnStr = [[NSString alloc] init];
+        for (YNImageModel *model in self.dataList) {
+            returnStr = model.returnURL;
+        }
+        return returnStr;
+    }
+}
 
 @end

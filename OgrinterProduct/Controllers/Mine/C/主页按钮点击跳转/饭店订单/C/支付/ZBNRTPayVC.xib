@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZBNRTPayVC">
+            <connections>
+                <outlet property="myTable" destination="DeO-tl-YpF" id="bMz-fC-Qr1"/>
+                <outlet property="price" destination="ggK-Az-b4a" id="ieb-LB-ily"/>
+                <outlet property="view" destination="qZK-vg-TOr" id="oyj-cj-o11"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="qZK-vg-TOr">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DeO-tl-YpF">
+                    <rect key="frame" x="0.0" y="44" width="414" height="802"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v6F-0v-sHX">
+                    <rect key="frame" x="0.0" y="846" width="414" height="50"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1U-oJ-q2n">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥:0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggK-Az-b4a">
+                                    <rect key="frame" x="38" y="16" width="44.5" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="ggK-Az-b4a" firstAttribute="centerY" secondItem="l1U-oJ-q2n" secondAttribute="centerY" id="KIR-dT-if3"/>
+                                <constraint firstAttribute="width" constant="120" id="MIf-Ld-eq0"/>
+                                <constraint firstItem="ggK-Az-b4a" firstAttribute="centerX" secondItem="l1U-oJ-q2n" secondAttribute="centerX" id="ewh-ES-69f"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJn-VA-0P8">
+                            <rect key="frame" x="120" y="0.0" width="294" height="50"/>
+                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="  立即支付" image="zhifu2131"/>
+                            <connections>
+                                <action selector="payBtnClick:" destination="-1" eventType="touchUpInside" id="GQY-CO-nK0"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="l1U-oJ-q2n" secondAttribute="bottom" id="Ab6-ug-vdJ"/>
+                        <constraint firstItem="yJn-VA-0P8" firstAttribute="top" secondItem="v6F-0v-sHX" secondAttribute="top" id="BkA-zv-BFg"/>
+                        <constraint firstItem="l1U-oJ-q2n" firstAttribute="leading" secondItem="v6F-0v-sHX" secondAttribute="leading" id="C5a-RO-xaZ"/>
+                        <constraint firstAttribute="bottom" secondItem="yJn-VA-0P8" secondAttribute="bottom" id="Eab-7g-egq"/>
+                        <constraint firstAttribute="height" constant="50" id="azX-W7-ejr"/>
+                        <constraint firstItem="yJn-VA-0P8" firstAttribute="leading" secondItem="l1U-oJ-q2n" secondAttribute="trailing" id="gjM-Vg-szE"/>
+                        <constraint firstItem="l1U-oJ-q2n" firstAttribute="top" secondItem="v6F-0v-sHX" secondAttribute="top" id="sD7-UT-1hf"/>
+                        <constraint firstAttribute="trailing" secondItem="yJn-VA-0P8" secondAttribute="trailing" id="zBy-IS-BI0"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="v6F-0v-sHX" secondAttribute="bottom" id="Goc-HV-qUC"/>
+                <constraint firstItem="X6w-Rj-qLL" firstAttribute="trailing" secondItem="v6F-0v-sHX" secondAttribute="trailing" id="RRq-vJ-RSc"/>
+                <constraint firstItem="DeO-tl-YpF" firstAttribute="top" secondItem="X6w-Rj-qLL" secondAttribute="top" id="VgY-02-XG5"/>
+                <constraint firstItem="X6w-Rj-qLL" firstAttribute="trailing" secondItem="DeO-tl-YpF" secondAttribute="trailing" id="bJh-KS-cdt"/>
+                <constraint firstItem="v6F-0v-sHX" firstAttribute="leading" secondItem="X6w-Rj-qLL" secondAttribute="leading" id="iww-fs-OMZ"/>
+                <constraint firstItem="DeO-tl-YpF" firstAttribute="leading" secondItem="X6w-Rj-qLL" secondAttribute="leading" id="ogX-9O-fex"/>
+                <constraint firstItem="v6F-0v-sHX" firstAttribute="top" secondItem="DeO-tl-YpF" secondAttribute="bottom" id="sMQ-NL-ER1"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="X6w-Rj-qLL"/>
+            <point key="canvasLocation" x="-391" y="-81"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="zhifu2131" width="12.5" height="18"/>
+    </resources>
+</document>

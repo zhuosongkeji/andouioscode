@@ -29,8 +29,7 @@
 - (void)saveUploadFinishImageAsset:(YNImageModel *)imageModel {
     if (![self.models containsObject:imageModel]) {
         [self.models addObject:imageModel];
-        NSLog(@"%@",imageModel.image);
-        NSLog(@"%ld",(long)imageModel.imageType);
+        NSLog(@"%@model.return",imageModel.returnURL);
     }
 }
 
@@ -195,10 +194,11 @@
                         dispatch_async(dispatch_get_main_queue(), ^{
                             model.state = YNImageUploadStateFinish;
                             [weakSelf hiddenToSuccess:YES];
+                            model.returnURL = [responseObject objectForKey:@"data"];
                             [weakSelf.tool saveUploadFinishImageAsset:model];
                             ZBNMallEntryModel *en_model = [ZBNMallEntryModel sharedInstance];
                             [en_model setUpURLOne:[responseObject objectForKey:@"data"]];
-//                            model.get_url = [responseObject objectForKey:@"data"];
+                            [model setReturnURL:[responseObject objectForKey:@"data"]];
                             [[NSNotificationCenter defaultCenter] postNotificationName:@"getURLOne" object:nil];
                             [[NSNotificationCenter defaultCenter] postNotificationName:@"getURLTwo" object:nil];
                             [[NSNotificationCenter defaultCenter] postNotificationName:@"getURLThree" object:nil];

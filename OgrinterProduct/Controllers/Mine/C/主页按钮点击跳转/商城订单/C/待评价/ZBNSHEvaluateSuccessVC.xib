@@ -37,7 +37,7 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4X3-JB-RhX">
                             <rect key="frame" x="0.0" y="0.0" width="185" height="37"/>
-                            <state key="normal" title="查看评论"/>
+                            <state key="normal" title="我的订单"/>
                             <connections>
                                 <action selector="btnClick:" destination="-1" eventType="touchUpInside" id="eQU-9j-HCq"/>
                             </connections>
@@ -64,7 +64,7 @@
                 <constraint firstItem="kVf-DR-i8a" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sec-2Z-V8h"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="-616" y="241"/>
+            <point key="canvasLocation" x="48" y="105"/>
         </view>
     </objects>
     <resources>

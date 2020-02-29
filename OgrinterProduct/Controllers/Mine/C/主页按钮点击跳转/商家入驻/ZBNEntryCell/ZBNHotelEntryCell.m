@@ -50,6 +50,7 @@
 
 - (void)labelClick
 {
+    
     if (self.chooseAddressLTask) {
         self.chooseAddressLTask();
     }

@@ -13,6 +13,7 @@
 #import "ZBNRTComDetailVC.h"
 #import "ZBNComDataNilCell.h"
 #import "ZBNRTFoodsModel.h"
+#import "ZBNRefreshHeader.h"
 
 @interface ZBNRTBaseOrderVC ()
 
@@ -34,9 +35,15 @@
     [self setupTable];
     // 加载数据
     [self setupRefresh];
-
+    
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(beginRefresh) name:@"loginOK" object:nil];
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(beginRefresh) name:@"paySuccess" object:nil];
 }
 
+- (void)beginRefresh
+{
+    [self loadNewData];
+}
 
 #pragma mark -- UI
 - (void)setupTable
@@ -58,11 +65,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.dataArr.count >= 1) {
-//        ZBNCommenOrderCell *cell = [ZBNCommenOrderCell regiserCellForTable:tableView];
-//        if (cell == nil) {
-//
-//        }
-//        
         ZBNCommenOrderCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNCommenOrderCell" owner:nil options:nil].lastObject;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.comM = self.dataArr[indexPath.row];
@@ -103,17 +105,26 @@
     params[@"status"] = @(self.type);
     ADWeakSelf;
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl: ZBNGourmetURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([[serverInfo.response objectForKey:@"code"] intValue] == 202) {
+            [weakSelf.tableView.mj_header endRefreshing];
+        }
         NSArray *allData = [ZBNRTComModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
         for (ZBNRTComModel *model in allData) {
             if (model.status.intValue == 10) {
                 [weakSelf.dataArr addObject:model];
-            } else if (model.status.intValue == 30) {
+            } else if (model.status.intValue == 20) {
                 [weakSelf.dataArr addObject:model];
             } else if (model.status.intValue == 40) {
                 [weakSelf.dataArr addObject:model];
             }
         }
-        [weakSelf.tableView reloadData];
+        if (allData.count < 8) {
+            weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
+            [weakSelf.tableView reloadData];
+        } else {
+            [weakSelf.tableView reloadData];
+            weakSelf.tableView.mj_footer.state = MJRefreshStateIdle;
+        }
         [weakSelf.tableView.mj_header endRefreshing];
     }];
 }
@@ -131,18 +142,25 @@
        ADWeakSelf;
        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl: ZBNGourmetURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
            NSArray *allData = [ZBNRTComModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+           NSMutableArray *addData = [NSMutableArray array];
            for (ZBNRTComModel *model in allData) {
                if (model.status.intValue == 10) {
-                   [weakSelf.dataArr addObject:model];
-               } else if (model.status.intValue == 30) {
-                   [weakSelf.dataArr addObject:model];
+                   [addData addObject:model];
+               } else if (model.status.intValue == 20) {
+                   [addData addObject:model];
                } else if (model.status.intValue == 40) {
-                   [weakSelf.dataArr addObject:model];
+                   [addData addObject:model];
                }
+           }
+           if (addData.count < 8) {
+               [weakSelf.dataArr addObjectsFromArray:addData];
+               weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
+           } else {
+               [weakSelf.dataArr addObjectsFromArray:addData];
+               [weakSelf.tableView.mj_footer endRefreshing];
            }
            [weakSelf.tableView reloadData];
            self.page = [NSString stringWithFormat:@"%d",self.page.intValue + 1];
-           [weakSelf.tableView.mj_footer endRefreshing];
        }];
 }
 
@@ -167,7 +185,7 @@
 - (void)setupRefresh
 {
     // 下拉刷新
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.mj_header = [ZBNRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     // 自动改变透明度
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
     // 马上进入刷新状态

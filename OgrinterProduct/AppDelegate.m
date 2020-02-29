@@ -69,7 +69,6 @@
     
     NSArray *imageNameArray = @[@"guide2_",@"guide1_",@"guide3_"];
     CGRect rt = CGRectMake(KSCREEN_WIDTH * 0.3 + KSCREEN_WIDTH + KSCREEN_WIDTH, KSCREEN_HEIGHT*0.8, KSCREEN_WIDTH*0.4, KSCREEN_HEIGHT*0.06);
-    
     MSLaunchView *launchView = [MSLaunchView launchWithImages:imageNameArray guideFrame:rt gImage:[UIImage imageNamed:@""] isScrollOut:NO];
     
     // 立即体验按钮

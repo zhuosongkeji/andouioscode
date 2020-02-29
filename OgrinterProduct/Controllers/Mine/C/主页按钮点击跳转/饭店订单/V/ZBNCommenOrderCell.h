@@ -17,8 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*! 模型数据 */
 @property (nonatomic, strong) ZBNRTComModel *comM;
-/*! 订单详情点击 */
-@property (nonatomic, copy) void(^detailBtnClickTask)(void);
+
 
 @end
 

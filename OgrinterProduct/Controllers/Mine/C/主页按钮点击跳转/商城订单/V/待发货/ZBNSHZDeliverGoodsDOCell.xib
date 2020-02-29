@@ -119,7 +119,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebm-GE-wGU">
                         <rect key="frame" x="0.0" y="170" width="486" height="145"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10zhou" translatesAutoresizingMaskIntoConstraints="NO" id="ejz-v6-D2R">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ejz-v6-D2R">
                                 <rect key="frame" x="15" y="15" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="1sG-NJ-jWN"/>
@@ -332,11 +332,10 @@
                 <outlet property="shipping_free" destination="Uyl-no-XPg" id="rxv-mX-IgP"/>
                 <outlet property="total_money" destination="3Cz-Rd-y84" id="fEk-b7-N40"/>
             </connections>
-            <point key="canvasLocation" x="2067" y="125"/>
+            <point key="canvasLocation" x="2059" y="105"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="10zhou" width="221" height="221"/>
         <image name="weizhi" width="20" height="24"/>
     </resources>
 </document>

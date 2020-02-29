@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 /*! 设置label的文字 */
 - (ZBNShoppingMallEntryCell *(^)(NSString *labelText))setLabelText;
 
+
+
 @end
 
 NS_ASSUME_NONNULL_END

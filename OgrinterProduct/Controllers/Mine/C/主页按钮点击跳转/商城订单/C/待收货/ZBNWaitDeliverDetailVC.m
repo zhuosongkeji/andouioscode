@@ -8,7 +8,6 @@
 
 #import "ZBNWaitDeliverDetailVC.h"
 #import "ZBNWaitDeliverDetailCell.h"
-#import "ZBNSHApplyForRefundVC.h"
 
 #import "ZBNSHCommonHeadV.h"
 
@@ -104,6 +103,8 @@
     // 退货退款
     cell.returnGoodsBtnClickTask = ^{
         ZBNSHReturnGoodsVC *vc = [[ZBNSHReturnGoodsVC alloc] init];
+        vc.did = self.order_goods_id;
+        vc.order_goods_id = self.getOrderNum;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     // 查看物流
@@ -120,7 +121,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 600;
+    return 570;
 }
 
 

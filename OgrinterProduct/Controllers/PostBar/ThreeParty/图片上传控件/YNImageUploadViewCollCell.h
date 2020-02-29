@@ -35,9 +35,8 @@ typedef NS_ENUM(NSInteger, YNImageUploadState) {
 @property (nonatomic, strong) NSURLSessionDataTask *task;
 /** 上传状态 */
 @property (nonatomic, assign) YNImageUploadState state;
-/*! 返回的URL */
-@property (nonatomic, copy) NSString *get_url;
-
+/*! 回调地址 */
+@property (nonatomic, copy) NSString *returnURL;
 
 @end
 

@@ -64,7 +64,7 @@
                 <outlet property="iconImage" destination="7EL-Vu-Dt5" id="D0Y-kC-dbM"/>
                 <outlet property="shopName" destination="BY4-Aw-oL4" id="Op0-Rn-JlF"/>
             </connections>
-            <point key="canvasLocation" x="-3" y="119"/>
+            <point key="canvasLocation" x="123" y="116"/>
         </view>
     </objects>
     <resources>

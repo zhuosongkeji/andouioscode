@@ -14,7 +14,7 @@
 + (NSDictionary *)mj_objectClassInArray
 {
     return @{
-        @"areas":@"ZBNArea",
+        @"children":@"ZBNArea",
     };
 }
 
