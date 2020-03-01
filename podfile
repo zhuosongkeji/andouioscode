@@ -38,6 +38,7 @@ use_frameworks!
 	pod 'UMCShare/Social/DingDing'
 	pod 'UMCShare/Social/Email'
 	pod 'UMCShare/Social/SMS'
+	pod 'OYCountDownManager'
 	
 	pod 'ZFPlayer' #视频播放 
 	pod 'ZFPlayer/ControlView'

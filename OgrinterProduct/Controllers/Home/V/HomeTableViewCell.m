@@ -13,12 +13,14 @@
 #import "WSLWaterFlowLayout.h"
 #import "OnlineOrderModel.h"
 #import "OnlineOrderListModel.h"
+#import "HXCollectionCollectionViewCell.h"
 
 
 @interface HomeTableViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView1;
 @property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView2;
+@property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView3;
 
 @property (weak, nonatomic) IBOutlet UIView *startbjView;
 
@@ -55,6 +57,24 @@
     self.mCollectionView1.dataSource = self;
     [self.mCollectionView1 setCollectionViewLayout:layout];
     [self.mCollectionView1 registerNib:[UINib nibWithNibName:@"HXCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"HXCollectionViewCell"];
+    
+}
+
+
+-(void)setup1 {
+    
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+    
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    layout.minimumLineSpacing = 10;
+    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    layout.itemSize = CGSizeMake(88,108);
+    
+    self.mCollectionView3.delegate = self;
+    self.mCollectionView3.dataSource = self;
+    [self.mCollectionView3 setCollectionViewLayout:layout];
+//    [self.mCollectionView3 registerNib:[UINib nibWithNibName:@"HXCollectionCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"HXCollectionCollectionViewCell"];
+    [self.mCollectionView3 registerNib:[UINib nibWithNibName:@"HXCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"HXCollectionViewCell"];
     
 }
 
@@ -100,12 +120,22 @@
     NSString *identifier = @"";
     NSInteger index = 0;
     switch (indexPath.section ) {
-        case 0:
-        case 1:
+        case 0:{
+            if (indexPath.row == 0) {
+                identifier = @"HomeTableViewCellOne";
+                index = 0;
+            }else if (indexPath.row == 1){
+                identifier = @"HomeTableViewCellThrid";
+                index = 2;
+            }
+            break;
+        }
             
+        case 1:{
             identifier = @"HomeTableViewCellOne";
             index = 0;
             break;
+        }
             
         case 2:
         case 3:
@@ -138,8 +168,14 @@
 - (void)configTempCellWith:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case 0:{
-            _style = CustomCellStyleOne;
-            [self setup];
+            
+            if (indexPath.row == 0) {
+                _style = CustomCellStyleOne;
+                [self setup];
+            }else if (indexPath.row == 1){
+                _style = CustomCellStyleTwo;
+                [self setup1];
+            }
             break;
         }
             
@@ -177,6 +213,8 @@
     if (_style == CustomCellStyleOne) {
         return [_listArr count];
     }else if (_style == CustomCellStyleTwo){
+        if (collectionView == self.mCollectionView3)
+            return 4;
         return 6;
     }else {
         return [_modelist.cai count];
@@ -185,21 +223,35 @@
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-        
-    HXCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HXCollectionViewCell" forIndexPath:indexPath];
-    if (_style == CustomCellStyleOne) {
-        cell.modelist0 = _listArr[indexPath.item];
-    }else if (_style == CustomCellStyleTwo){
-        cell.modelist1 = _listArr[indexPath.item];
-        
-    }else if (_style == CustomCellStyleThird || _style == CustomCellStyleFouth){
-        if ([_modelist.cai count]) {
-            cell.lmodelist1 = _modelist.cai[indexPath.item];
+    
+//    if (collectionView == self.mCollectionView1 || self.mCollectionView2) {
+    
+        HXCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HXCollectionViewCell" forIndexPath:indexPath];
+        if (_style == CustomCellStyleOne) {
+            cell.modelist0 = _listArr[indexPath.item];
+        }else if (_style == CustomCellStyleTwo){
+            cell.modelist1 = _listArr[indexPath.item];
+            
+        }else if (_style == CustomCellStyleThird || _style == CustomCellStyleFouth){
+            if ([_modelist.cai count]) {
+                cell.lmodelist1 = _modelist.cai[indexPath.item];
+            }
+            
+        }else{
+            
         }
         
-    }else{}
+        return cell;
+        
+//    }else if (collectionView == self.mCollectionView3){
+//
+////        HXCollectionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HXCollectionCollectionViewCell" forIndexPath:indexPath];
+//        HXCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HXCollectionViewCell" forIndexPath:indexPath];
+//
+//        return cell;
+//    }
+//    return nil;
     
-    return cell;
 }
 
 

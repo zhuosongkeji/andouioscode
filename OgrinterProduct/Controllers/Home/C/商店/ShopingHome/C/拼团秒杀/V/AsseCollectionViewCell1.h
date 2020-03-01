@@ -10,12 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class KillerListAessbModel;
+
 @interface AsseCollectionViewCell1 : UICollectionViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *titblabel;
 @property (weak, nonatomic) IBOutlet UIImageView *iconimg;
 
 @property (weak, nonatomic) IBOutlet UILabel *tlable;
 @property (weak, nonatomic) IBOutlet UILabel *plabel;
+
+@property(nonatomic,strong)KillerListAessbModel *listmodel;
 
 @end
 

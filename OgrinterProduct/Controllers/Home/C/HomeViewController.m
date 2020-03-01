@@ -11,6 +11,9 @@
 
 #define gourmet_list @"gourmet/list"//获取 饭店数据
 
+#define users_envelopes_add @"users/envelopes_add"
+#define users_envelopes @"users/envelopes"
+
 #import "HomeViewController.h"
 #import "HQImagePageControl.h"
 #import "CustomSectionView.h"
@@ -18,6 +21,7 @@
 #import "CitylistViewController.h"
 #import "KXWebViewViewController.h"
 #import "iCarousel.h"
+#import "userInfo.h"
 
 #import "HQFlowView.h"
 #import "MarqueeView.h"
@@ -191,29 +195,53 @@
     self.mTableView.tableFooterView = [UILabel new];
     [self.mTableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCell"];
     
+    [self.topBananerView addSubview:self.pageFlowView];
+    [self.pageFlowView addSubview:self.pageC];
+    [self.iCarouselBJView addSubview:self.icarousel];
+    
 }
 
 
 //MARK:- openRedPacket
 - (void)openRedPacket {
     
-    [self.topBananerView addSubview:self.pageFlowView];
-    [self.pageFlowView addSubview:self.pageC];
-    [self.iCarouselBJView addSubview:self.icarousel];
-    
     PacketModel *data = ({
+        
         PacketModel *data = [[PacketModel alloc]init];
-        data.money = 128.00;
-//        data.avatarImage = [UIImage imageNamed:@""];
+        
+        NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+        userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+        
+        NSDictionary *dic = nil;
+        if (unmodel) {
+            dic = @{@"uid":unmodel.uid};
+        }else{
+            dic = @{};
+        }
+        
+        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,users_envelopes] params:dic complement:^(ServerResponseInfo * _Nullable serverInfo) {
+            if ([serverInfo.response[@"code"] integerValue] == 201) {
+                [HUDManager showTextHud:serverInfo.response[@"msg"]];
+            
+                data.money = arc4random() % 20;
+                //        data.avatarImage = [UIImage imageNamed:@""];
+                //        data.userName  = @"小雨同学";
+                
+            }else{
+                NSLog(@"获取数据失败");
+                
+            }
+        }];
+        
         data.content = @"最高可得500.00";
-//        data.userName  = @"小雨同学";
+
         data;
     });
     
     [RedPacketView ShowRedpacketWithData:data cancelBlock:^{
         NSLog(@"取消领取");
     } finishBlock:^(float money) {
-        NSLog(@"领取500.0");
+        
     }];
 }
 
@@ -298,11 +326,32 @@
         [self.noticebjView addSubview:self.queeView];
         [self.pageFlowView reloadData];//刷新轮播
         [self.icarousel reloadData];
-        
         [self.mTableView reloadData];
         
-        [self openRedPacket];
+        NSData * data = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+         userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        
+        NSDictionary *dic = nil;
+        if (unmodel) {
+            dic = @{@"uid":unmodel.uid};
+        }else{
+            dic = @{};
+        }
+        
+        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,users_envelopes_add] params:dic complement:^(ServerResponseInfo * _Nullable serverInfo) {
+            if ([serverInfo.response[@"code"] integerValue] == 201) {
+                NSLog(@"该用户已领取过g红包");
+//                [self performSelector:@selector(openRedPacket) withObject:nil afterDelay:1.5];
+            }else if([serverInfo.response[@"code"] integerValue] == 200){
+                [self performSelector:@selector(openRedPacket) withObject:nil afterDelay:1.5];
+            }else{
+                NSLog(@"获取数据失败");
+                
+            }
+        }];
+        
     });
+    
 }
 
 
@@ -361,7 +410,9 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0 || section == 1)
+    if (section == 0)
+        return 2;
+    else if (section == 1)
         return 1;
     else
         return [_mData count];

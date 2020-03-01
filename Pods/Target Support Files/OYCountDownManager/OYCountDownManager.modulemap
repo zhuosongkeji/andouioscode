@@ -1,0 +1,6 @@
+framework module OYCountDownManager {
+  umbrella header "OYCountDownManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

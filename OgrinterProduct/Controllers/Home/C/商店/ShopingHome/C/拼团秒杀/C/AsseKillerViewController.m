@@ -6,6 +6,9 @@
 //  Copyright © 2020 RXF. All rights reserved.
 //
 
+#define grouptoday_top @"group/today_top"
+#define groupgroup_cate @"group/group_cate"
+
 
 #import "AsseKillerViewController.h"
 #import "HotelBottomTableViewCell.h"
@@ -14,9 +17,14 @@
 #import "AsseCollectionViewCell1.h"
 #import "AsseCollectionViewCell2.h"
 #import "ShopSeckillDetailsViewController.h"
+#import "AssembModel.h"
+#import "KillerListAessbModel.h"
 
 
-@interface AsseKillerViewController ()<UITableViewDelegate,UITableViewDataSource,FSPageContentViewDelegate,FSSegmentTitleViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate>
+
+@interface AsseKillerViewController ()<UITableViewDelegate,UITableViewDataSource,FSPageContentViewDelegate,FSSegmentTitleViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate>{
+    NSInteger page;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 @property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView1;
@@ -29,15 +37,31 @@
 @property (nonatomic, assign) BOOL canScroll;
 @property (nonatomic, strong) FSSegmentTitleView *titleView;
 
+@property(nonatomic,strong)NSMutableArray *dataArr;
+
+@property(nonatomic,strong)NSArray *titArr;
+
 @end
 
 @implementation AsseKillerViewController
+
+
+-(NSMutableArray *)dataArr{
+    if (!_dataArr) {
+        _dataArr = [NSMutableArray array];
+    }
+    return _dataArr;
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self wr_setNavBarBackgroundAlpha:0];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+//    page = 1;
     [self setup];
     
     // Do any additional setup after loading the view from its nib.
@@ -67,6 +91,65 @@
     [self.mCollectionView1 registerNib:[UINib nibWithNibName:@"AsseCollectionViewCell1" bundle:nil] forCellWithReuseIdentifier:@"AsseCollectionViewCell1"];
     
     [self.mCollectionView2 registerNib:[UINib nibWithNibName:@"AsseCollectionViewCell2" bundle:nil] forCellWithReuseIdentifier:@"AsseCollectionViewCell2"];
+    [self loadnetWork];
+}
+
+//MARK:今日必拼
+-(void)loadnetWork{
+    
+    dispatch_group_t group = dispatch_group_create();
+    
+    dispatch_group_enter(group);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,grouptoday_top];
+        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_GET pathUrl:url params:@{} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+            if ([serverInfo.response[@"code"] integerValue] == 200) {
+                NSDictionary *dict = serverInfo.response[@"data"];
+                AssembModel *model = [[AssembModel alloc]initWithDict:dict];
+                [self.dataArr addObject:model];
+                
+                dispatch_group_leave(group);
+            }else {
+                dispatch_group_leave(group);
+                [HUDManager showTextHud:loadError];
+            }
+            
+        }];
+    });
+    
+    dispatch_group_enter(group);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *url1 = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,groupgroup_cate];
+        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_GET pathUrl:url1 params:@{} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+            if ([serverInfo.response[@"code"] integerValue] == 200) {
+                NSArray *arr = serverInfo.response[@"data"];
+                NSMutableArray *mArr = [NSMutableArray array];
+                for (int i = 0; i < [arr count];i ++) {
+                    NSDictionary *dic = arr[i]; KillerListAessbModel *model = [[KillerListAessbModel alloc]init];
+                    model.kid = dic[@"id"];
+                    model.name = dic[@"name"];
+                    [mArr addObject:model];
+                }
+                self.titArr = [NSArray arrayWithArray:mArr];
+                dispatch_group_leave(group);
+            }else {
+                dispatch_group_leave(group);
+                [HUDManager showTextHud:loadError];
+            }
+            
+            
+        }];
+    });
+    
+    
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        
+        [self.mCollectionView1 reloadData];
+        [self.mCollectionView2 reloadData];
+        [self.mTableView reloadData];
+        
+    });
     
 }
 
@@ -85,7 +168,11 @@
 
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 3;
+    if ([self.dataArr count]) {
+        AssembModel *model = self.dataArr[0];
+        return [model.today_goods count];
+    }
+    return 0;
 }
 
 
@@ -93,9 +180,22 @@
     if (collectionView == self.mCollectionView1) {
         AsseCollectionViewCell1 *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AsseCollectionViewCell1" forIndexPath:indexPath];
         
+        if ([self.dataArr count]){
+            AssembModel *model = self.dataArr[0];
+            KillerListAessbModel *m = model.today_goods[indexPath.item];
+            cell.listmodel = m;
+        }
+        
         return cell;
     }else if (collectionView == self.mCollectionView2){
         AsseCollectionViewCell2 *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AsseCollectionViewCell2" forIndexPath:indexPath];
+        
+        if ([self.dataArr count]){
+            AssembModel *model = self.dataArr[0];
+            KillerListAessbModel *m = model.hot_goods[indexPath.item];
+            cell.lmodele = m;
+        }
+        
         return cell;
     }
     
@@ -105,7 +205,23 @@
 
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
     ShopSeckillDetailsViewController *shoper = [[ShopSeckillDetailsViewController alloc]init];
+    
+    if ([self.dataArr count]){
+        AssembModel *model = self.dataArr[0];
+        
+        if (collectionView == self.mCollectionView1) {
+            KillerListAessbModel *m = model.today_goods[indexPath.item];
+            shoper.cpid = m.goods_id;
+        }else if (collectionView == self.mCollectionView2){
+            KillerListAessbModel *m = model.hot_goods[indexPath.item];
+            shoper.cpid = m.kid;
+        }else{}
+    }
+    
+    shoper.seckillType = ShopSeckillDetailsTypeOther;
+    
     [self.navigationController pushViewController:shoper animated:YES];
 }
 
@@ -171,27 +287,38 @@
         _contentCell = [[HotelBottomTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell" withtype:HotelBottomTableViewCellTypeFouth];
         _contentCell.contentView.backgroundColor = [UIColor redColor];
         
-        NSMutableArray *contentVCs = [NSMutableArray array];
-        for (int i = 0 ; i < ASeckilAlDetailsListArr.count; i++) {
+    }
+    
+    NSMutableArray *contentVCs = [NSMutableArray array];
+    if (self.titArr.count > 0) {
+        for (int i = 0 ; i < self.self.titArr.count; i++) {
             AssembleKillSubViewController *vc = [[AssembleKillSubViewController alloc]init];
-            vc.title = ASeckilAlDetailsListArr[i];
+            KillerListAessbModel *mode = self.titArr[i];
+            vc.title = mode.name;
             vc.str = vc.title;
-            //            vc.cp_id = self.cpid;
+            vc.aid = mode.kid;
             
             [contentVCs addObject:vc];
             
         }
-        _contentCell.viewControllers = contentVCs;
-        _contentCell.pageContentView = [[FSPageContentView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-kStatusBarAndNavigationBarH) childVCs:contentVCs parentVC:self delegate:self];
-        [_contentCell.contentView addSubview:_contentCell.pageContentView];
     }
+    
+    _contentCell.viewControllers = contentVCs;
+    _contentCell.pageContentView = [[FSPageContentView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-kStatusBarAndNavigationBarH) childVCs:contentVCs parentVC:self delegate:self];
+    [_contentCell.contentView addSubview:_contentCell.pageContentView];
+    
     return _contentCell;
     
 }
 
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    self.titleView = [[FSSegmentTitleView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 50) titles:ASeckilAlDetailsListArr delegate:self indicatorType:FSIndicatorTypeEqualTitle];
+    NSMutableArray *tArr = [NSMutableArray array];
+    for (int i = 0; i < [self.titArr count]; i ++) {
+        KillerListAessbModel *mode = self.titArr[i];
+        [tArr addObject:mode.name];
+    }
+    self.titleView = [[FSSegmentTitleView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 50) titles:tArr delegate:self indicatorType:FSIndicatorTypeEqualTitle];
     self.titleView.backgroundColor = KSRGBA(255, 255, 255, 255);
     
     return self.titleView;
@@ -209,7 +336,7 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return KSCREEN_HEIGHT-kStatusBarAndNavigationBarH;
+    return KSCREEN_HEIGHT;
 }
 
 

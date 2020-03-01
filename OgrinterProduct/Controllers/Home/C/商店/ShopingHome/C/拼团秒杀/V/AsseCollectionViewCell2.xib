@@ -22,20 +22,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="118" height="121"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="华为meat30手机双摄像头" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Df-Vn-vZ5">
-                        <rect key="frame" x="4" y="125" width="110" height="26.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <rect key="frame" x="4" y="125" width="110" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥2345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTx-PI-U5o">
-                        <rect key="frame" x="4" y="147.5" width="39" height="13.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <rect key="frame" x="4" y="150" width="32.5" height="11"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
                         <color key="textColor" red="0.88868540529999995" green="0.20830759409999999" blue="0.18837797640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2345已拼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q39-PL-B0c">
-                        <rect key="frame" x="63.5" y="147.5" width="50.5" height="13.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <rect key="frame" x="72" y="150" width="42" height="11"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
                         <color key="textColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -56,6 +56,12 @@
                 <constraint firstAttribute="trailing" secondItem="q39-PL-B0c" secondAttribute="trailing" constant="4" id="zIP-GZ-qzr"/>
             </constraints>
             <size key="customSize" width="118" height="165"/>
+            <connections>
+                <outlet property="icon" destination="yOv-VU-gnS" id="0ZE-Jy-v1S"/>
+                <outlet property="number" destination="q39-PL-B0c" id="n3K-Gm-oKp"/>
+                <outlet property="price" destination="aTx-PI-U5o" id="wfH-aA-MUu"/>
+                <outlet property="title" destination="9Df-Vn-vZ5" id="NeE-rg-gWd"/>
+            </connections>
             <point key="canvasLocation" x="181.15942028985509" y="69.308035714285708"/>
         </collectionViewCell>
     </objects>

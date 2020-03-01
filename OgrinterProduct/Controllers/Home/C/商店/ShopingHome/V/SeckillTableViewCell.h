@@ -21,7 +21,7 @@ typedef void(^ScBtnClickBlock)(UIButton *btn);
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class ShopDetalisModel;
+@class ShopDetalisModel,KillModelt;
 
 @interface SeckillTableViewCell : UITableViewCell
 
@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) ShopSeckillDetailsType SeckillType;
 
 @property(nonatomic,strong) ShopDetalisModel *dmodelist;
+@property(nonatomic,strong) KillModelt *kmodelist;
 
 @property (nonatomic,copy)ScBtnClickBlock selectBlock;
 

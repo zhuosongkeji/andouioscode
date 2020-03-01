@@ -29,19 +29,19 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2人团" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7h-6G-Xp4">
-                        <rect key="frame" x="23" y="155" width="30" height="14"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <rect key="frame" x="23" y="158" width="24" height="11"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
                         <color key="textColor" red="0.88868540529999995" green="0.20830759409999999" blue="0.18837797640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥236" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVb-SS-wd1">
-                        <rect key="frame" x="89" y="155" width="32" height="14"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <rect key="frame" x="94" y="158" width="27" height="11"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
                         <color key="textColor" red="0.88868540529999995" green="0.20830759409999999" blue="0.18837797640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ass13" translatesAutoresizingMaskIntoConstraints="NO" id="uLP-W7-Ghh">
-                        <rect key="frame" x="8" y="156.5" width="11" height="11"/>
+                        <rect key="frame" x="8" y="158" width="11" height="11"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="11" id="RG7-Bi-CBt"/>
                             <constraint firstAttribute="height" constant="11" id="Y7z-kD-CQF"/>
@@ -67,6 +67,7 @@
             </constraints>
             <size key="customSize" width="129" height="173"/>
             <connections>
+                <outlet property="icon" destination="nqd-kH-ceR" id="pba-DO-vFU"/>
                 <outlet property="iconimg" destination="uLP-W7-Ghh" id="Zse-ne-mUY"/>
                 <outlet property="plabel" destination="yVb-SS-wd1" id="7HB-mk-3lg"/>
                 <outlet property="titblabel" destination="41G-bs-u03" id="Aay-0u-zuG"/>

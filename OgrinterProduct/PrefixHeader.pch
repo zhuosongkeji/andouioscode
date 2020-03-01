@@ -93,7 +93,7 @@
 #define mError @"请求错误请稍后再试"
 #define loctionError @"无法获取定位、请设置打开定位权限"
 #define redPacketMsg @"恭喜您获得新人专享红包"
-#define openPacket @"打Y开即可获得"
+#define openPacket @"打开即可获得"
 #define Explain @"仅限新注册用户领取"
 #define searchplaceholder @"请输入关键字搜索"
 #define GuessYlike @"猜你喜欢"
