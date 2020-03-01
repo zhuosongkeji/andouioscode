@@ -97,15 +97,14 @@
     [super awakeFromNib];
 
     [self setDelegate];
-    
-//    [self loadData];
-    
+
     self.model = [ZBNMallEntryModel sharedInstance];
     
     // 设置第一个上传界面
     [self setUpLoadViewOne];
     [self setUpLoadViewTwo];
     [self setUpLoadViewThree];
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(upLoadOne) name:@"getURLOne" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(upLoadTwo) name:@"getURLTwo" object:nil];
@@ -127,6 +126,10 @@
 
 - (void)labelClick
 {
+    if (self.upLoadViewOne.finish) {
+    NSLog(@"%@image++++++++",self.upLoadViewOne.returnURL);
+    }
+    NSLog(@"%@image++++++++",self.upLoadViewOne.returnURL);
     if (self.addressLabelClickTask) {
         self.addressLabelClickTask();
     }
@@ -157,7 +160,7 @@
            param[@"token"] = unmodel.token;
           YNImageUploadView *imageView = [[YNImageUploadView alloc] initWithConfig:^(YNImageUploadViewConfig * _Nonnull config) {
               config.insets = UIEdgeInsetsMake(5, 10, 5, 10);
-              config.photoCount = 1;
+//              config.photoCount = 1;
               config.autoHeight = YES;
               config.isNeedUpload = YES;
               config.uploadUrl = @"http://andou.zhuosongkj.com/index.php/api/goods/uploads";

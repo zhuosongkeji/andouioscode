@@ -19,6 +19,7 @@
 #import "LoginViewController.h"
 #import "ZBNChangeNameVC.h"  // 修改昵称
 #import "ZBNUserIconVC.h"
+#import "LoginViewController.h"
 
 @interface ZBNMineSettingVC ()
 /*! 底部视图 */
@@ -69,10 +70,9 @@
     footerV.middleBtnClickTask = ^{
 
         [weakSelf exitRequest];
-        [weakSelf loadSettingVcData];
-
-        [self exitRequest];
-        [self loadSettingVcData];
+        LoginViewController *vc = [[LoginViewController alloc] init];
+        vc.modalPresentationStyle = 0;
+        [weakSelf presentViewController:vc animated:YES completion:nil];
         
     };
     self.tableView.tableFooterView = footerV;
@@ -115,9 +115,6 @@
     ADWeakSelf;
     // 发送网络请求
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNPersonSettingURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
-        
-        
-        NSLog(@"%@loadData",serverInfo.response[@"data"]);
         // 将字典转换成模型
         weakSelf.settingM = [ZBNMineSettingModel mj_objectWithKeyValues: serverInfo.response[@"data"]];
         // 刷新table

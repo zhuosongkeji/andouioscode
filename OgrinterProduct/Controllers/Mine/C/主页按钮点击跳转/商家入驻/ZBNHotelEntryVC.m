@@ -77,6 +77,7 @@
     ZBNHotelEntryCell *cell = [ZBNHotelEntryCell registerCellForTableView:tableView];
     ADWeakSelf;
     self.cell = cell;
+   
     cell.chooseAddressLTask = ^{
         [weakSelf.modalView show];
     };
@@ -90,10 +91,13 @@
 
 - (void)loadAddressData
 {
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/common/district" params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
-        self.dataArr = [ZBNProvince mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
-        self.addressView.datas = self.dataArr;
-    }];
+//    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/common/district" params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
+//        self.dataArr = [ZBNProvince mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+//        self.addressView.datas = self.dataArr;
+//    }];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"pcd" ofType:@"plist"];
+    self.dataArr = [ZBNProvince mj_objectArrayWithFile:filePath];
+    self.addressView.datas = self.dataArr;
 }
 
 
@@ -108,7 +112,7 @@
 
             [weakSelf.modalView hide];
           
-            weakSelf.textLabel = [NSString stringWithFormat:@"%@%@%@",selectedProvince.name,selectedCity.name,selectedArea.name];
+            weakSelf.textLabel = [NSString stringWithFormat:@"%@%@%@",selectedProvince.name,selectedCity.name,selectedArea.fullname];
             weakSelf.cell.setLabelText(weakSelf.textLabel);
         };
     }

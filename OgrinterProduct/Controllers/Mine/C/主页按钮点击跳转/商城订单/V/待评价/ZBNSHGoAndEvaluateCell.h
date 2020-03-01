@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@class ZBNSHGoAndEvaluateModel;
+
 @interface ZBNSHGoAndEvaluateCell : UITableViewCell
+/*! 快速获取 */
 + (instancetype)regiserCellForTable:(UITableView *)tableView;
 
-@property (nonatomic, strong) ZBNSHGoAndEvaluateModel *model;
+/*! 发表评论按钮点击 */
+@property (nonatomic, copy) void(^commentBtnClickTask)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

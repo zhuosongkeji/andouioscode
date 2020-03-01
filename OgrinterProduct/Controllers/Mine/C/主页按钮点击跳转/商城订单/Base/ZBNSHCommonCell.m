@@ -15,6 +15,7 @@
 #import "ZBNSHCommonPayVC.h"  // 订单支付的控制器
 #import "ZBNSHComViewLogisticsVC.h" // 查看物流
 #import "ZBNSHWaitEvaluateDetailVC.h" //
+#import "ZBNRTCommentVC.h"
 
 @interface ZBNSHCommonCell ()
 /*! 商家图标 */
@@ -126,6 +127,7 @@
     if ([self.commonM.status integerValue] == 10) { // 去支付
         ZBNSHCommonPayVC *vc = [[ZBNSHCommonPayVC alloc] init];
         vc.order_id = self.commonM.order_id;
+        vc.did = self.commonM.ID;
         [[self viewController].navigationController pushViewController:vc animated:YES];
     } else if ([self.commonM.status integerValue] == 20) { // 待发货的订单详情
         ZBNSHZDeliverGoodsDOVC *vc = [[ZBNSHZDeliverGoodsDOVC alloc] init];
@@ -230,10 +232,10 @@
     }
     self.goodsSubL.text = [NSString stringWithFormat:@"%@",muStr];
     // 商品价格
-    self.goodsPriceL.text = commonM.price;
+    self.goodsPriceL.text = [NSString stringWithFormat:@"¥%@",commonM.price];
     // 合计
     // 总价
-    self.totalPriceL.text = commonM.pay_money;
+    self.totalPriceL.text = [NSString stringWithFormat:@"¥%@",commonM.pay_money];
     
 }
 

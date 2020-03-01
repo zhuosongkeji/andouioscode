@@ -57,12 +57,12 @@
 {
     _comM = comM;
     self.order_num.text = comM.order_sn;
-    self.order_money.text = comM.order_money;
-    self.integral.text = comM.integral;
-    self.pay_money.text = comM.pay_money;
+    self.order_money.text = [NSString stringWithFormat:@"¥%@",comM.order_money];
+    self.integral.text = [NSString stringWithFormat:@"+¥%@",comM.shipping_free];
+    self.pay_money.text = [NSString stringWithFormat:@"¥%@",comM.pay_money];
     
     self.name.text = comM.userinfo.name;
-    self.address.text = comM.userinfo.address;
+    self.address.text = [NSString stringWithFormat:@"%@%@%@%@",comM.userinfo.province,comM.userinfo.city,comM.userinfo.area,comM.userinfo.address];
     self.phone_num.text = comM.userinfo.mobile;
     
 }

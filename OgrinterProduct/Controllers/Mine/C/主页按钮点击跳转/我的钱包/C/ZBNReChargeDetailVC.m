@@ -9,6 +9,8 @@
 #import "ZBNReChargeDetailVC.h"
 #import "ZBNMyWalletComCell.h"
 #import "ZBNReChargeDetailModel.h"
+#import "ZBNRefreshHeader.h"
+#import "ZBNComDataNilCell.h"
 
 @interface ZBNReChargeDetailVC ()
 /*! 存放模型的数组 */
@@ -28,11 +30,16 @@
     [super viewDidLoad];
     // 加载数据
     [self setupRefresh];
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 240, 0);
 }
 
 - (void)loadNewData
 {
+    self.nextPage = @"2";
     [FKHRequestManager cancleRequestWork];
+    self.tableView.mj_footer.state = MJRefreshStateIdle;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
@@ -43,7 +50,7 @@
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNCashURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         weakSelf.dataArr = [ZBNReChargeDetailModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"][@"log"]];
         if (weakSelf.dataArr.count < 10) {
-            [weakSelf.tableView.mj_footer setHidden:YES];
+            weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
         }
         [weakSelf.tableView reloadData];
         [weakSelf.tableView.mj_header endRefreshing];
@@ -52,7 +59,6 @@
 
 - (void)loadMoreData
 {
-    self.nextPage = @"2";
     [FKHRequestManager cancleRequestWork];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
@@ -63,22 +69,21 @@
     ADWeakSelf;
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNCashURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         NSArray *moreArr = [ZBNReChargeDetailModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"][@"log"]];
-        if (moreArr == nil) {
-            [weakSelf.tableView.mj_footer setHidden:YES];
+        [weakSelf.dataArr addObjectsFromArray:moreArr];
+        if (moreArr.count < 10) {
+            weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
         } else {
-            [weakSelf.dataArr addObjectsFromArray:moreArr];
-                   [weakSelf.tableView reloadData];
-                   self.nextPage = [NSString stringWithFormat:@"%d",(self.nextPage.intValue + 1)];
-                   [weakSelf.tableView.mj_footer endRefreshing];
+            [weakSelf.tableView.mj_footer endRefreshing];
         }
-       
+        [weakSelf.tableView reloadData];
+        self.nextPage = [NSString stringWithFormat:@"%d",(self.nextPage.intValue + 1)];
     }];
 }
 
 - (void)setupRefresh
 {
     // 下拉刷新
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.mj_header = [ZBNRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     // 自动改变透明度
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
     // 马上进入刷新状态
@@ -91,20 +96,32 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return self.dataArr.count;
+    if (self.dataArr.count > 0) {
+        return self.dataArr.count;
+    } else {
+        return 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZBNMyWalletComCell *cell = [ZBNMyWalletComCell registerCellForTableView:tableView];
-    cell.DetailM = self.dataArr[indexPath.row];
-    return cell;
+    if (self.dataArr.count > 0) {
+        ZBNMyWalletComCell *cell = [ZBNMyWalletComCell registerCellForTableView:tableView];
+        cell.DetailM = self.dataArr[indexPath.row];
+        return cell;
+    } else {
+        ZBNComDataNilCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNComDataNilCell" owner:nil options:nil].lastObject;
+        return cell;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44;
+    if (self.dataArr.count > 0) {
+        return 60;
+    } else {
+        return self.view.height - 190;
+    }
 }
 
 #pragma mark -- 懒加载

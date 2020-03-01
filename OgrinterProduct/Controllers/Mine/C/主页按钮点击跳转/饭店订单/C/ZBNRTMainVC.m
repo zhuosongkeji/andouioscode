@@ -31,6 +31,9 @@
     [self setupUI];
     // 设置选项卡视图
      [self setupSegmen];
+    
+   
+    
 }
 
 

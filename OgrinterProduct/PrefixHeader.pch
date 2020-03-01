@@ -180,6 +180,14 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #define ZBNCustomCachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"MyCache"]
 #define ZBNAddressPath [ZBNCustomCachePath stringByAppendingPathComponent:@"myAddress.plist"]
 
+/// 设置系统的字体大小（YES：粗体 NO：常规）
+#define ZBNFont(__size__,__bold__) ((__bold__)?([UIFont boldSystemFontOfSize:__size__]):([UIFont systemFontOfSize:__size__]))
+/**
+ *  Frame PX  ---> Pt 6的宽度 全部向下取整数
+ */
+#define ZBNPxConvertPt(__Px) floor((__Px) * KSCREEN_WIDTH/375.0f)
+
+
 
 #import "HUDManager.h"
 #import "FKHRequestManager.h"
@@ -198,6 +206,9 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #import "NSString+ZBNExtension.h"
 #import "UIBarButtonItem+ZBNExtension.h"
 #import "UIImageView+ZBNExtension.h"
+#import "YYText.h"
+#import "NSObject+ZBNExtension.h"
+#import "NSDate+Extension.h"
 
 
 #endif /* PrefixHeader_h */

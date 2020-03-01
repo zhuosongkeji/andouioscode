@@ -10,6 +10,7 @@
 #import "ZBNSHCommonCell.h"
 #import "ZBNSHCommonModel.h"
 #import "ZBNComDataNilCell.h"
+#import "ZBNRefreshHeader.h"
 
 
 @interface ZBNSHBaseOrderVC ()
@@ -41,6 +42,7 @@
 - (void)loadNewData
 {
     [FKHRequestManager cancleRequestWork];
+    [self.dataArr removeAllObjects];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
@@ -63,6 +65,9 @@
                 [self.dataArr addObject:model];
             }
         }
+        if (self.dataArr.count < 10) {
+            [weakSelf.tableView.mj_footer setState:MJRefreshStateNoMoreData];
+        }
         [weakSelf.tableView reloadData];
         [weakSelf.tableView.mj_header endRefreshing];
     }];
@@ -81,20 +86,28 @@
     ADWeakSelf;
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/order/index" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         NSArray *allDataArr = [ZBNSHCommonModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+        NSMutableArray *addData = [NSMutableArray array];
         for (ZBNSHCommonModel *model in allDataArr) {
             if (model.status.intValue == 10) {
-                [self.dataArr addObject:model];
+                [addData addObject:model];
             } else if (model.status.intValue == 20) {
-                [self.dataArr addObject:model];
+                [addData addObject:model];
             } else if (model.status.intValue == 40) {
-                [self.dataArr addObject:model];
+                [addData addObject:model];
             } else if (model.status.intValue == 50) {
-                [self.dataArr addObject:model];
+                [addData addObject:model];
             }
         }
+        if (addData.count < 10) {
+            [weakSelf.dataArr addObjectsFromArray:addData];
+            [weakSelf.tableView reloadData];
+            weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
+        } else {
+        [weakSelf.dataArr addObjectsFromArray:addData];
         [weakSelf.tableView reloadData];
-        self.nextPage = [NSString stringWithFormat:@"%d",(self.nextPage.intValue + 1)];
         [weakSelf.tableView.mj_footer endRefreshing];
+        weakSelf.nextPage = [NSString stringWithFormat:@"%d",(weakSelf.nextPage.intValue + 1)];
+        }
     }];
 }
 
@@ -102,7 +115,9 @@
 - (void)setupRefresh
 {
     // 下拉刷新
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    // --- gif下拉刷新
+    self.tableView.mj_header = [ZBNRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     // 自动改变透明度
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
     // 马上进入刷新状态
@@ -119,6 +134,14 @@
     [self setupUI];
     // 加载数据
     [self setupRefresh];
+    // 接收通知重新加载,解决因为重定向登录界面刷新无法停止的BUG
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadNewData) name:@"loginOK" object:nil];
+}
+
+- (void)dealloc
+{
+    // 移除通知
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"loginOK" object:nil];
 }
 
 - (void)setupUI

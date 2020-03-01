@@ -68,7 +68,7 @@
     // 收货人
     self.name.text = comM.userinfo.name;
     // 收货详细地址
-    self.address.text = comM.userinfo.address;
+    self.address.text = [NSString stringWithFormat:@"%@%@%@%@",comM.userinfo.province,comM.userinfo.city,comM.userinfo.area,comM.userinfo.address];
     // 电话号码
     self.phone_num.text = comM.userinfo.mobile;
 
@@ -77,7 +77,7 @@
     
     self.price.text = [NSString stringWithFormat:@"¥%@",comM.details.price];
     self.goodsName.text = comM.details.name;
-    self.num.text = comM.details.num;
+    self.num.text = [NSString stringWithFormat:@"¥%@",comM.details.num];
     NSMutableString *muStr = [NSMutableString string];
     for (NSString *str in comM.details.attr_value) {
         [muStr appendString:[NSString stringWithFormat:@"%@",str]];

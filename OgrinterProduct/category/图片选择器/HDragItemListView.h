@@ -84,6 +84,6 @@
  */
 @property (nonatomic, strong) void(^deleteItemBlock)(HDragItem *item);
 
-@property (nonatomic, strong) NSMutableArray *items;
-
+//@property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, strong) NSMutableArray <HDragItem *>*items;
 @end

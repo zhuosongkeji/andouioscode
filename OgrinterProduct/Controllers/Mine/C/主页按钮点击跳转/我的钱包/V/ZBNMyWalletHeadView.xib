@@ -91,7 +91,7 @@
                 <outlet property="moneyLabel" destination="GaC-0f-X8R" id="x0h-FH-xzI"/>
                 <outlet property="rechargeBtnView" destination="Hzc-VK-xK6" id="xaI-Rr-cDV"/>
             </connections>
-            <point key="canvasLocation" x="-22715" y="124"/>
+            <point key="canvasLocation" x="-23062" y="166"/>
         </view>
     </objects>
 </document>

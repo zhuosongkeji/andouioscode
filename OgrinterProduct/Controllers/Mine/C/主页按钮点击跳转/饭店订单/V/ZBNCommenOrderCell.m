@@ -11,6 +11,8 @@
 #import "ZBNRTComModel.h"
 #import "ZBNRTFoodsModel.h"
 #import "ZBNRTComDetailVC.h"
+#import "ZBNRTPayVC.h" // 支付控制器
+#import "ZBNRTCommentVC.h"
 
 @interface ZBNCommenOrderCell () <UITableViewDelegate, UITableViewDataSource>
 
@@ -34,6 +36,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *order_detailBtn;
 /*! 内部cell数组 */
 @property (nonatomic, strong) NSMutableArray *dataArr;
+
+/*! 立即支付按钮 */
+@property (weak, nonatomic) IBOutlet UIButton *payBtn;
+
 
 @end
 
@@ -59,18 +65,24 @@
 {
     _comM = comM;
     
-    [self.dataArr addObjectsFromArray:comM.foods];
+    self.dataArr = comM.foods;
     [self.shop_logo sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,comM.logo_img]]];
     self.shop_name.text = comM.name;
     self.order_sn.text = comM.order_sn;
     self.total_price.text = [NSString stringWithFormat:@"¥%@",comM.prices];
     
-    if (comM.status.intValue == 10) {
+    if (comM.status.intValue == 10) { // 未支付
         [self.state setText:@"未支付"];
-    } else if (comM.status.intValue == 30) {
-        [self.state setText:@"已使用"];
+        [self.payBtn setTitle:@"立即付款" forState:UIControlStateNormal];
+        self.payBtn.hidden = NO;
+    } else if (comM.status.intValue == 20) {
+        [self.state setText:@"未使用"];
+        [self.payBtn setTitle:@"取消订单" forState:UIControlStateNormal];
+        self.payBtn.hidden = YES;
     } else if (comM.status.intValue == 40) {
         [self.state setText:@"待评价"];
+        [self.payBtn setTitle:@"立即评价" forState:UIControlStateNormal];
+        self.payBtn.hidden = NO;
     }
     self.totalLabel.text = [NSString stringWithFormat:@"当前有%zd个菜品,合计:",comM.foods.count];
 
@@ -87,10 +99,16 @@
     self.myTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     // 设置边框
+    // 订单详情
     self.order_detailBtn.layer.cornerRadius = 10;
     self.order_detailBtn.layer.borderWidth = 1;
     self.order_detailBtn.layer.borderColor = KSRGBA(97, 194, 156, 1).CGColor;
     [self.order_detailBtn setTitleColor:KSRGBA(97, 194, 156, 1) forState:UIControlStateNormal];
+    // 立即支付
+    self.payBtn.layer.cornerRadius = 10;
+    self.payBtn.layer.borderWidth = 1;
+    self.payBtn.layer.borderColor = KSRGBA(97, 194, 156, 1).CGColor;
+    [self.payBtn setTitleColor:KSRGBA(97, 194, 156, 1) forState:UIControlStateNormal];
     
 }
 
@@ -98,15 +116,38 @@
 
 /*! 订单详情点击 */
 - (IBAction)detailBtnClick:(UIButton *)sender {
-    if (self.detailBtnClickTask) {
-        self.detailBtnClickTask();
+    if ([self.comM.status intValue] == 10) {  // 未支付的订单详情
+        ZBNRTComDetailVC *vc = [[ZBNRTComDetailVC alloc] init];
+        vc.order_id = self.comM.ID;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
+    } else if (self.comM.status.intValue == 20) { // 未使用的详情
+        // 未支付的订单详情
+        ZBNRTComDetailVC *vc = [[ZBNRTComDetailVC alloc] init];
+        vc.order_id = self.comM.ID;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
+    } else if (self.comM.status.intValue == 40) { // 待评价的详情
+        // 未支付的订单详情
+        ZBNRTComDetailVC *vc = [[ZBNRTComDetailVC alloc] init];
+        vc.order_id = self.comM.ID;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
     }
-    
-    ZBNRTComDetailVC *vc = [[ZBNRTComDetailVC alloc] init];
-    vc.order_id = self.comM.ID;
-    [[self viewController].navigationController pushViewController:vc animated:YES];
-    
 }
+
+- (IBAction)payBtnClick:(UIButton *)sender {
+    if ([self.comM.status intValue] == 10) { // 未支付的去支付
+        ZBNRTPayVC *payVC = [[ZBNRTPayVC alloc] init];
+        payVC.order_id = self.comM.ID;
+        [[self viewController].navigationController pushViewController:payVC animated:YES];
+    } else if (self.comM.status.intValue == 20) { // 未使用的取消订单
+        NSLog(@"20");
+    } else if (self.comM.status.intValue == 40) { // 为评论的去评论
+        ZBNRTCommentVC *vc = [[ZBNRTCommentVC alloc] init];
+        vc.order_id = self.comM.ID;
+        vc.merchants_id = self.comM.merchant_id;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
+    }
+}
+
 
 #pragma mark -- 代理&数据源
 
@@ -119,6 +160,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+   
     ZBNRTOrderCellInCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNRTOrderCellInCell" owner:nil options:nil].lastObject;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.foodsM = self.dataArr[indexPath.row];
@@ -135,7 +177,7 @@
 
 + (instancetype)regiserCellForTable:(UITableView *)tableView
 {
-    static NSString * const ZBNCommenOrderCellID = @"OrderCommenCell";
+    static NSString * const ZBNCommenOrderCellID = @"OrderCommenCellID";
     ZBNCommenOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:ZBNCommenOrderCellID];
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNCommenOrderCell" owner:nil options:nil].lastObject;

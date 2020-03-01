@@ -22,13 +22,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initModel];
-    
+    self.tableView.bounces = NO;
     self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.dataArr removeAllObjects];
+    [self initModel];;
+}
+
 
 - (void)initModel
 {
@@ -42,16 +48,17 @@
         } else if (i == 1) {
             model.count = @"4";
             model.nameL = @"商城消息";
-            model.state = @"0";
+            model.state = @"1";
             model.iconV = @"商家消息";
         } else {
             model.count = @"18";
             model.nameL = @"贴吧消息";
             model.iconV = @"贴吧消息10";
-            model.state = @"0";
+            model.state = @"1";
         }
         [self.dataArr addObject:model];
     }
+    [self.tableView reloadData];
 }
 
 
@@ -73,7 +80,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return 80;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

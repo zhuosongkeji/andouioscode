@@ -14,7 +14,7 @@
 + (NSDictionary *)mj_objectClassInArray
 {
     return @{
-        @"cities":@"ZBNCity",
+        @"children":@"ZBNCity",
     };
 }
 

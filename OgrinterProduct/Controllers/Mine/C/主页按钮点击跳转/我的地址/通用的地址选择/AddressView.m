@@ -55,7 +55,7 @@
     
     self.provinces = [ZBNProvince mj_objectArrayWithKeyValuesArray:datas];
     self.selectedProvince = self.provinces.firstObject;
-    self.selectedCity = self.selectedProvince.cities.firstObject;
+    self.selectedCity = self.selectedProvince.children.firstObject;
     
     [self.pickerView sp_reloadAllComponents];
 }
@@ -77,9 +77,9 @@
     if (component == 0) {
         return self.provinces.count;
     } else if (component == 1) {
-        return self.selectedProvince.cities.count;
+        return self.selectedProvince.children.count;
     } else {
-        return self.selectedCity.areas.count;
+        return self.selectedCity.children.count;
     }
 }
 
@@ -89,13 +89,13 @@
 - (nullable NSString *)sp_pickerView:(SPPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (component == 0) {
         ZBNProvince *province = self.provinces[row];
-        return province.name;
+        return province.fullname;
     } else if (component == 1) {
-        ZBNCity *city = self.selectedProvince.cities[row];
-        return city.name;
+        ZBNCity *city = self.selectedProvince.children[row];
+        return city.fullname;
     } else {
-        ZBNArea *area = self.selectedCity.areas[row];
-        return area.name;
+        ZBNArea *area = self.selectedCity.children[row];
+        return area.fullname;
     }
 }
 
@@ -116,28 +116,28 @@
     if (component == 0) {
         
         self.selectedProvince = self.provinces[row];
-        self.selectedCity = [self.selectedProvince.cities firstObject];
-        self.selectedArea = [self.selectedCity.areas firstObject];
+        self.selectedCity = [self.selectedProvince.children firstObject];
+        self.selectedArea = [self.selectedCity.children firstObject];
         self.numerOfComponents = 2;
         [pickerView sp_reloadAllComponents]; // 列数改变一定要刷新所有列才生效
         if ([self isEspecialCity:self.selectedProvince]) {
             [self setupPageMenuWithName:[NSString stringWithFormat:@"%@市",self.selectedProvince.name]atComponent:component];
         } else {
-            [self setupPageMenuWithName:self.selectedProvince.name atComponent:component];
+            [self setupPageMenuWithName:self.selectedProvince.fullname atComponent:component];
         }
         
     } else if (component == 1) {
         
-        self.selectedCity = self.selectedProvince.cities[row];
-        self.selectedArea = [self.selectedCity.areas firstObject];
+        self.selectedCity = self.selectedProvince.children[row];
+        self.selectedArea = [self.selectedCity.children firstObject];
 
         self.numerOfComponents = 3;
         [pickerView sp_reloadAllComponents]; // 列数改变一定要刷新所有列才生效
-        [self setupPageMenuWithName:self.selectedCity.name atComponent:component];
+        [self setupPageMenuWithName:self.selectedCity.fullname atComponent:component];
         
     } else {
-        self.selectedArea = self.selectedCity.areas[row];
-        [self.pageMenu setTitle:self.selectedArea.name forItemAtIndex:component];
+        self.selectedArea = self.selectedCity.children[row];
+        [self.pageMenu setTitle:self.selectedArea.fullname forItemAtIndex:component];
         self.pageMenu.selectedItemIndex = component;
         
         if (self.lastComponentClickedBlock) {

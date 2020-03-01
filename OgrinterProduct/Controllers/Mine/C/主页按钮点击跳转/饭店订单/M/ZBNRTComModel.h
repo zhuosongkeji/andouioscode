@@ -43,7 +43,7 @@ typedef enum : NSUInteger {
 /*! 订单状态 (10未支付，20已支付,30已使用,待评价,40已评价) */
 @property (nonatomic, copy) NSString *status;
 /*! 菜 */
-@property (nonatomic, strong) NSArray < ZBNRTFoodsModel *> *foods;
+@property (nonatomic, strong) NSMutableArray < ZBNRTFoodsModel *> *foods;
 
 @property (nonatomic, assign) ZBNRTType type;
 

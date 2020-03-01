@@ -7,6 +7,7 @@
 //
 
 #import "ZBNSHCommonPayCell.h"
+
 #import "ZBNSHOrderDetailComM.h"
 #import "ZBNSHOrderUserInfoM.h"
 #import "ZBNSHOrderDetailsM.h"
@@ -38,6 +39,7 @@
 /*! 结算价格 */
 @property (weak, nonatomic) IBOutlet UILabel *total_price;
 
+@property (weak, nonatomic) IBOutlet UIButton *integraBtn;
 
 
 @end
@@ -57,41 +59,50 @@
     return cell;
 }
 
+
+
+
 - (void)setComM:(ZBNSHOrderDetailComM *)comM
 {
     _comM = comM;
-    // 商品图片
-    [self.img sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,comM.details.img]]];
-    // 商品名
-    self.name.text = comM.details.name;
-    // 商品规格
-    NSMutableString *muStr = [NSMutableString string];
-    for (NSString *str in comM.details.attr_value) {
-        [muStr appendString:[NSString stringWithFormat:@"%@",str]];
-    }
-    self.goods_attr.text = [NSString stringWithFormat:@"%@",muStr];
-    // 价格
-    self.priceLabel.text = comM.details.price;
-    // 数量
-    self.count.text = comM.details.num;
-    // 用户名
-    self.userName.text = comM.userinfo.name;
-    // 手机号
-    self.phoneNumber.text = comM.userinfo.mobile;
-    // 地址
-    self.addressL.text = comM.userinfo.address;
     // 运送方式
+    
     // 积分
-    self.integerT.text = comM.integral;
-    if (comM.integral) {
-        if (self.integer) {
-            self.integer(comM.integral);
-        }
-    }
+    self.integerT.text = [NSString stringWithFormat:@"需要积分%@",comM.integral];
+
     // 结算价格
     self.total_price.text = [NSString stringWithFormat:@"%@元",comM.order_money];
 }
 
+- (void)setDetailM:(ZBNSHOrderDetailsM *)detailM
+{
+    _detailM = detailM;
+    // 商品图片
+    [self.img sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,detailM.img]]];
+    // 商品名
+    self.name.text = detailM.name;
+    // 商品规格
+    NSMutableString *muStr = [NSMutableString string];
+    for (NSString *str in detailM.attr_value) {
+        [muStr appendString:[NSString stringWithFormat:@"%@",str]];
+    }
+    self.goods_attr.text = [NSString stringWithFormat:@"%@",muStr];
+    // 价格
+    self.priceLabel.text = [NSString stringWithFormat:@"¥%@",detailM.price];
+    // 数量
+    self.count.text = [NSString stringWithFormat:@"x%@",detailM.num];
+}
+
+// 用户模型
+- (void)setUserInfoM:(ZBNSHOrderUserInfoM *)userInfoM
+{
+    _userInfoM = userInfoM;
+    
+    self.userName.text = userInfoM.name;
+    self.phoneNumber.text = userInfoM.mobile;
+    self.addressL.text = [NSString stringWithFormat:@"%@%@%@%@",userInfoM.province,userInfoM.city,userInfoM.area,userInfoM.address];
+    
+}
 
 
 /*! 选择微信按钮的点击 */
@@ -107,8 +118,15 @@
         NSLog(@"heeheh");
     }
     
-    
 }
+/*! 是否使用积分 */
+- (IBAction)integralBtnClick:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    if (self.integerBtnClickTask) {
+        self.integerBtnClickTask(sender);
+    }
+}
+
 
 - (void)awakeFromNib
 {
@@ -117,14 +135,7 @@
     
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    
-    if (self.integer) {
-        self.integer(self.integerT.text);
-    }
-    
-}
+
 
 
 

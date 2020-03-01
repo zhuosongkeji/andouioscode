@@ -18,6 +18,9 @@ CGFloat const ZBNHeaderH = 150;
 
 CGFloat const ZBNFooterH = 120;
 
+NSString * const ZBNCommentUserKey = @"ZBNCommentUserKey";
+
+
 NSString * const ZBNPersonURL = @"http://andou.zhuosongkj.com/api/wallet/personal";
 
 NSString * const ZBNPersonSettingURL = @"http://andou.zhuosongkj.com/api/opinion/set";
@@ -59,3 +62,5 @@ NSString * const ZBNHTOrderdatailsURL = @"http://andou.zhuosongkj.com/index.php/
 NSString * const ZBNHTOrderURL = @"http://andou.zhuosongkj.com/index.php/api/hotel/order";
 
 NSString * const ZBNHTReasonURL = @"http://andou.zhuosongkj.com/api/htorder/refund_reason";
+// 图片上传
+NSString * const ZBNImgUpLoadURL = @"http://andou.zhuosongkj.com/index.php/api/goods/uploads";

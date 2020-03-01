@@ -49,7 +49,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *vipPlusView;
 /*! 模型 */
 @property (nonatomic, strong) ZBNMineModel *model;
+
 @property (nonatomic, strong) ZBNMineSettingModel *settingM;
+/*! 感恩币 */
+@property (weak, nonatomic) IBOutlet UILabel *thanks;
 
 /*! 美食 */
 @property (weak, nonatomic) IBOutlet Img_lable *foodOrderBtn;
@@ -70,42 +73,42 @@
     [self setupUI];
     // 设置导航栏
     [self setupNav];
-    // 加载数据
-    [self loadData];
     // 设置手势
     [self setupGes];
     // 设置table
     [self setupTable];
     
-    
-//    [self.shopOrderBtn pp_addBadgeWithText:@"4"];
-//    [self.shopOrderBtn pp_moveBadgeWithX:-30 Y:0];
-//    [self.shopOrderBtn pp_setBadgeFlexMode:PPBadgeViewFlexModeTail];
-    // 接收登录成功过的通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"loginOK" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"iconChangeOK" object:nil];
 
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self loadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+
+}
 
 - (void)setupTable
 {
     self.mTableView.bounces = NO;
 }
 
-// 控制器销毁时调用
-- (void)dealloc
-{
-    // 移除通知
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"loginOK" object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"iconChangeOK" object:nil];
-}
+
+
 
 #pragma mark -- UI
 - (void)setupUI
 {
-//    self.toTop.constant = getRectNavAndStatusHight;
+//    [self wr_navBarShadowImageHidden];
     self.navigationController.navigationBar.translucent = NO;
+//    self.extendedLayoutIncludesOpaqueBars = YES;
+//    self.mTableView.translatesAutoresizingMaskIntoConstraints = NO;
     self.mTableView.tableFooterView = [UILabel new];
     self.integerView.layer.cornerRadius = 10;
     self.headImageV.userInteractionEnabled = YES;
@@ -129,7 +132,8 @@
 
 - (void)newsClick
 {
-    [self pushViewControllerWithString:@"ZBNMyAllNewsVC"];
+    [HUDManager showTextHud:OtherMsg];
+//    [self pushViewControllerWithString:@"ZBNMyAllNewsVC"];
 }
 
 
@@ -161,39 +165,40 @@
            // 浏览记录
            weakSelf.historyL.text = weakSelf.model.record;
            // 我的积分
-           weakSelf.integerL.text = [NSString stringWithFormat:@"我的积分:%@",weakSelf.model.integral];
+           weakSelf.thanks.text = [NSString stringWithFormat:@"%@",weakSelf.model.integral];
            // 美食
-           if ([weakSelf.model.foodsordernum isEqualToString:@"0"]) {
+           if ([weakSelf.model.foodsordernum isEqualToString:@"0"] || weakSelf.model.foodsordernum == nil) {
                [weakSelf.foodOrderBtn pp_hiddenBadge];
            } else {
                [weakSelf.foodOrderBtn pp_addBadgeWithText:weakSelf.model.foodsordernum];
-               [weakSelf.foodOrderBtn pp_moveBadgeWithX:-30 Y:0];
+               [weakSelf.foodOrderBtn pp_moveBadgeWithX:-40 Y:10];
                [weakSelf.foodOrderBtn pp_setBadgeHeight:20];
            }
            
            // 酒店
-           if ([weakSelf.model.booksordernum isEqualToString:@"0"]) {
+           if ([weakSelf.model.booksordernum isEqualToString:@"0"] || weakSelf.model.booksordernum == nil) {
                [weakSelf.hotelOrderBtn pp_hiddenBadge];
            } else {
                [weakSelf.hotelOrderBtn pp_addBadgeWithText:weakSelf.model.booksordernum];
-               [weakSelf.hotelOrderBtn pp_moveBadgeWithX:-30 Y:0];
+               [weakSelf.hotelOrderBtn pp_moveBadgeWithX:-40 Y:10];
                [weakSelf.hotelOrderBtn pp_setBadgeHeight:20];
            }
            
            // 商城
-           if ([weakSelf.model.goodordernum isEqualToString:@"0"]) {
+           if ([weakSelf.model.goodordernum isEqualToString:@"0"] || weakSelf.model.goodordernum == nil) {
                [weakSelf.shopOrderBtn pp_hiddenBadge];
            } else {
                [weakSelf.shopOrderBtn pp_addBadgeWithText:weakSelf.model.goodordernum];
-               [weakSelf.shopOrderBtn pp_moveBadgeWithX:-30 Y:0];
+               [weakSelf.shopOrderBtn pp_moveBadgeWithX:-40 Y:10];
                [weakSelf.shopOrderBtn pp_setBadgeHeight:20];
            }
            
            // 是否为会员plus
            if (self.model.status.intValue == 1) {
-               self.vipPlusView.hidden = NO;
+               self.vipPlusView.image = [UIImage imageNamed:@"vipPlus"];
            } else {
-               self.vipPlusView.hidden = YES;
+               self.vipPlusView.image = [UIImage imageNamed:@"vip11"];
+               
            }
 
        }];
@@ -239,8 +244,10 @@
 
 - (void)setupGes
 {
+    // 感恩币
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(integerViewClick)];
-    [self.integerView addGestureRecognizer:tapGes];
+    self.thanks.userInteractionEnabled = YES;
+    [self.thanks addGestureRecognizer:tapGes];
     
     UITapGestureRecognizer *headerGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headerClick)];
     [self.headImageV addGestureRecognizer:headerGes];
@@ -257,6 +264,7 @@
     UITapGestureRecognizer *shopFocusGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shopFocusClick)];
     self.shopFocus.userInteractionEnabled = YES;
     [self.shopFocus addGestureRecognizer:shopFocusGes];
+    //
 }
 
 - (void)shopFocusClick
@@ -292,6 +300,7 @@
 - (IBAction)myWalletBtnClick:(UIButton *)btn
 {
     ZBNMyWalletVC *vc = [[ZBNMyWalletVC alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
     vc.money = self.model.money;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -324,7 +333,8 @@
         } else if (sender.tag == 503) {  // 我的收藏
             [self pushViewControllerWithString:@"ZBNShopingCartVC"];
         } else if (sender.tag == 504) { // 操作视频
-            [self pushViewControllerWithString:@"ZBNOperationVideoVC"];
+            [HUDManager showTextHud:@"暂未开放敬请期待.."];
+//            [self pushViewControllerWithString:@"ZBNOperationVideoVC"];
         } else if (sender.tag == 505) { // 我的地址
             [self pushViewControllerWithString:@"ZBNMyAddressVC"];
         } else if (sender.tag == 506) { // 我的二维码

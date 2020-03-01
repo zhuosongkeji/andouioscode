@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) ZBNSHOrderDetailsM *detailM;
 
 @property (nonatomic, copy) void(^selBtnClick)(NSString *pay_id);
-@property (nonatomic, copy) void(^integer)(NSString *integer_num);
+@property (nonatomic, copy) void(^integerBtnClickTask)(UIButton *integralBtn);
 @end
 
 NS_ASSUME_NONNULL_END

@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *imageName;
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSString *stars;
+@property (nonatomic, copy) NSString *goods_id;
+@property (nonatomic, copy) NSString *order_id;
+@property (nonatomic, copy) NSString *merchants_id;
+
 
 + (ZBNSHGoAndEvaluateModel *)sharedInstance;
 

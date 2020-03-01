@@ -107,7 +107,7 @@
 
             [weakSelf.modalView hide];
             
-            weakSelf.chooseAdd.text = [NSString stringWithFormat:@"%@%@%@",selectedProvince.name,selectedCity.name,selectedArea.name];
+            weakSelf.chooseAdd.text = [NSString stringWithFormat:@"%@%@%@",selectedProvince.fullname,selectedCity.fullname,selectedArea.fullname];
             
             [weakSelf.addM setProvince_id:selectedArea.ID];
             [weakSelf.addM setCity_id:selectedCity.ID];
@@ -121,10 +121,14 @@
 /*! 加载数据 */
 - (void)loadData
 {
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/common/district" params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
-        self.dataArr = [ZBNProvince mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
-        self.addressView.datas = self.dataArr;
-    }];
+//    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/common/district" params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
+//        self.dataArr = [ZBNProvince mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+//        self.addressView.datas = self.dataArr;
+//    }];
+    
+    NSString *filePath =  [[NSBundle mainBundle] pathForResource:@"pcd" ofType:@"plist"];
+    self.dataArr = [ZBNProvince mj_objectArrayWithFile:filePath];
+    self.addressView.datas = self.dataArr;
 }
 
 - (void)changeAddressRequest

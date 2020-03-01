@@ -14,12 +14,12 @@
 #import "IQKeyboardManager.h"
 //#import "LoginViewController.h"
 #import <WechatOpenSDK/WXApi.h>
+#import "MSLaunchView.h"
 
 
-@interface AppDelegate ()<WXApiDelegate>
-
-
-
+@interface AppDelegate ()<WXApiDelegate,MSLaunchViewDeleagte>{
+    MSLaunchView *_launchView;
+}
 @end
 
 @implementation AppDelegate
@@ -58,8 +58,50 @@
     [WXApi registerApp:WeChatAPPKEY universalLink:@"https://www.baidu.com/"];
     
     [self.window makeKeyAndVisible];
-
+    [self setupGuide];
     return YES;
+}
+
+#pragma mark -- guide
+- (void)setupGuide
+{
+    if ([MSLaunchView isFirstLaunch]) {
+    
+    NSArray *imageNameArray = @[@"guide2_",@"guide1_",@"guide3_"];
+    CGRect rt = CGRectMake(KSCREEN_WIDTH * 0.3 + KSCREEN_WIDTH + KSCREEN_WIDTH, KSCREEN_HEIGHT*0.8, KSCREEN_WIDTH*0.4, KSCREEN_HEIGHT*0.06);
+    MSLaunchView *launchView = [MSLaunchView launchWithImages:imageNameArray guideFrame:rt gImage:[UIImage imageNamed:@""] isScrollOut:NO];
+    
+    // 立即体验按钮
+    launchView.guideTitle = @"立即体验";
+    launchView.guideTitleColor = KSRGBA(251, 60, 110, 1);
+    launchView.guideTitleFont = [UIFont systemFontOfSize:18];
+    // 跳过按钮自定义属性
+    launchView.skipTitle = @"跳过";
+    launchView.skipTitleColor = [UIColor whiteColor];
+    launchView.skipTitleFont = [UIFont systemFontOfSize:15];
+    launchView.skipBackgroundColor = [UIColor grayColor];
+    launchView.skipBackgroundImage = [UIImage imageNamed:@""];
+    // PageControl自定义属性
+    launchView.pageDotColor = [UIColor redColor];
+    launchView.currentPageDotColor = [UIColor yellowColor];
+    launchView.textFont = [UIFont systemFontOfSize:9 weight:UIFontWeightBold];
+    launchView.textColor = [UIColor blackColor];
+    launchView.dotsIsSquare = NO;
+    launchView.spacingBetweenDots = 15;
+    launchView.delegate = self;
+
+    launchView.lastDotsIsHidden = YES;//最后一个页面时是否隐藏PageControl 默认为NO
+    launchView.pageDotImage = [UIImage imageNamed:@"guideNormal"];
+    launchView.currentPageDotImage = [UIImage imageNamed:@"guideSelcted"];
+    launchView.loadFinishBlock = ^(MSLaunchView * _Nonnull launchView) {
+          NSLog(@"广告加载完成了");
+      };
+    _launchView = launchView;
+    }
+}
+
+-(void)launchViewLoadFinish:(MSLaunchView *)launchView{
+    NSLog(@"代理方法进入======广告加载完成了");
 }
 
 

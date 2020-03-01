@@ -15,6 +15,7 @@
 #import "CustomNavigationController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "ZBNPostBarVC.h"
+#import "ZBNMyAllNewsVC.h"
 
 #import "CustomBar.h"
 
@@ -73,7 +74,7 @@
     ZBNPostBarVC *vc = [[ZBNPostBarVC alloc] init];
     [self addChildController:vc title:@"贴吧" imageName:@"" selectedImageName:@"" navVc:[UINavigationController class]];
     
-    FindViewController *MoreVc = [[FindViewController alloc] init];
+    ZBNMyAllNewsVC *MoreVc = [[ZBNMyAllNewsVC alloc] init];
     [self addChildController:MoreVc title:@"消息" imageName:@"图层 507" selectedImageName:@"图层 507 拷贝" navVc:[UINavigationController class]];
     
     MineViewController *svc = [[MineViewController alloc] init];

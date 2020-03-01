@@ -67,7 +67,7 @@
                 <outlet property="readBtn" destination="Hpw-TW-7Pq" id="RN7-1v-63A"/>
                 <outlet property="redView" destination="Jdj-IC-u11" id="PK6-sx-UBb"/>
             </connections>
-            <point key="canvasLocation" x="-2706" y="27"/>
+            <point key="canvasLocation" x="-2770" y="56"/>
         </tableViewCell>
     </objects>
 </document>

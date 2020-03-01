@@ -7,36 +7,37 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ZBNPostUserModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNSquareModel : NSObject
-/*! cell高度 */
-@property (nonatomic, assign) CGFloat cellHeight;
-/*! 是否有图片 */
-@property (nonatomic, assign) BOOL hasImg;
-/*! 图片数组 */
-@property (nonatomic, strong) NSMutableArray *imgArr;
-/*! 评论数组 */
-@property (nonatomic, strong) NSMutableArray *commentArr;
 
-@property (nonatomic, copy) NSString *userIcon;
-
-
-@property (nonatomic, copy) NSString *time;
-@property (nonatomic, copy) NSString *userName;
-@property (nonatomic, assign) BOOL isDing;
+/** 话题id */
+@property (nonatomic , copy) NSString * SquareId;
+/*! 用户 */
+@property (nonatomic, strong) ZBNPostUserModel *userM;
+/*! 是否置顶 */
+@property (nonatomic, assign) BOOL isTop;
+/*! 标题 */
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *contentL;
+/*! 内容 */
+@property (nonatomic, copy) NSString *content;
+/*! 展示图片数组 */
+@property (nonatomic, strong) NSMutableArray *images;
+/*! 所有评论数组 */
+@property (nonatomic, strong) NSMutableArray *conments;
+/*! 点赞数 */
+@property (nonatomic, copy) NSString *thumbNums;
+/*! 时间 */
+@property (nonatomic, copy) NSString *create_time;
+/*! 评论数 */
+@property (nonatomic, copy) NSString *commentCount;
+/*! 分享数 */
+@property (nonatomic, copy) NSString *shareCount;
 
-
-
-@property (nonatomic, copy) NSString *cUserIcon;
-@property (nonatomic, copy) NSString *cUserName;
-@property (nonatomic, copy) NSString *cUserCom;
-@property (nonatomic, copy) NSString *cComCount;
-
-
+/** 富文本 */
+- (NSAttributedString *)attributedText;
 
 @end
 

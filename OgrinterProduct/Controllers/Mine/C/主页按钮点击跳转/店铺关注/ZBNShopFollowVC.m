@@ -9,6 +9,8 @@
 #import "ZBNShopFollowVC.h"
 #import "ZBNShopFollowModel.h"
 #import "MsgViewCell.h"
+#import "ZBNRefreshHeader.h"
+#import "ZBNComDataNilCell.h"
 
 @interface ZBNShopFollowVC ()
 
@@ -32,6 +34,7 @@ static NSString * const ZBNShopFollowCellID = @"shopCell";
 - (void)setupTable
 {
     self.navigationItem.title = @"浏览痕迹";
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"MsgViewCell" bundle:nil] forCellReuseIdentifier:ZBNShopFollowCellID];
     self.tableView.backgroundColor = KSRGBA(241, 241, 241, 1);
 }
@@ -39,19 +42,32 @@ static NSString * const ZBNShopFollowCellID = @"shopCell";
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataArr.count;
+    if (self.dataArr.count > 0) {
+        return self.dataArr.count;
+    } else {
+        return 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MsgViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ZBNShopFollowCellID];
-    cell.shopM = self.dataArr[indexPath.row];
-    return cell;
+    if (self.dataArr.count > 0) {
+        MsgViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ZBNShopFollowCellID];
+           cell.shopM = self.dataArr[indexPath.row];
+           return cell;
+    } else {
+        ZBNComDataNilCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNComDataNilCell" owner:nil options:nil].lastObject;
+        return cell;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 98;
+    if (self.dataArr.count > 0) {
+        return 98;
+    } else {
+        return self.view.height;
+    }
 }
 
 
@@ -62,21 +78,22 @@ static NSString * const ZBNShopFollowCellID = @"shopCell";
     
     self.nextPage = @"2";
     [FKHRequestManager cancleRequestWork];
+    self.tableView.mj_footer.state = MJRefreshStateIdle;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
-    
     params[@"uid"] = unmodel.uid;
     params[@"token"] = unmodel.token;
     params[@"page"] = @"1";
     ADWeakSelf;
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNFollowURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         weakSelf.dataArr = [ZBNShopFollowModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+        if (weakSelf.dataArr.count < 10) {
+            weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
+               }
         [weakSelf.tableView reloadData];
         [weakSelf.tableView.mj_header endRefreshing];
-        if (weakSelf.dataArr.count < 10) {
-            [weakSelf.tableView.mj_footer setHidden:YES];
-        }
+       
     }];
 }
 
@@ -93,9 +110,13 @@ static NSString * const ZBNShopFollowCellID = @"shopCell";
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNFollowURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         NSArray *newData = [ZBNShopFollowModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
         [self.dataArr addObjectsFromArray:newData];
+        if (newData.count < 10) {
+            weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
+        } else {
+            [weakSelf.tableView.mj_footer endRefreshing];
+        }
         [weakSelf.tableView reloadData];
         self.nextPage = [NSString stringWithFormat:@"%d",(self.nextPage.intValue + 1)];
-        [weakSelf.tableView.mj_footer endRefreshing];
     }];
 }
 
@@ -103,7 +124,7 @@ static NSString * const ZBNShopFollowCellID = @"shopCell";
 - (void)setupRefresh
 {
     // 下拉刷新
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.mj_header = [ZBNRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     // 自动改变透明度
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
     // 马上进入刷新状态

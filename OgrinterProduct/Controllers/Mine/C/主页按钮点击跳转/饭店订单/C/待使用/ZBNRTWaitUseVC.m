@@ -23,7 +23,7 @@
 
 - (ZBNRTType)type
 {
-    return 30;
+    return 20;
 }
 
 @end
