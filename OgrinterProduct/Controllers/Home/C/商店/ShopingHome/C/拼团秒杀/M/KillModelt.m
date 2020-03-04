@@ -29,6 +29,14 @@
     model.code = dic[@"code"];
     model.sale_total = dic[@"sale_total"];
     
+    model.end_time = dic[@"end_time"];
+    model.sec_status = dic[@"sec_status"];;
+    model.old_price = dic[@"old_price"];;
+    model.start_time = dic[@"start_time"];;
+    
+    model.kill_price = dic[@"kill_price"];;
+    model.kill_num = dic[@"kill_num"];;
+    
     
     model.total_member = dict[@"total_member"];
     

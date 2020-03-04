@@ -16,6 +16,7 @@ typedef void(^MoreBtnClickBlock)(UIButton *btn);
 @property (weak, nonatomic) IBOutlet UIImageView *titimgView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UIButton *morebtn;
 
 @property (nonatomic,copy) MoreBtnClickBlock btnclickBlock;
 

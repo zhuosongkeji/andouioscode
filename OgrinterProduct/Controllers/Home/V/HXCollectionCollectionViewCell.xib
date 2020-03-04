@@ -18,20 +18,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="127" height="173"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQ6-DV-dCz">
-                        <rect key="frame" x="0.0" y="10" width="33" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="房产" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQ6-DV-dCz">
+                        <rect key="frame" x="0.0" y="0.0" width="27" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="w3D-qw-MQQ"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ift-ss-YDI">
-                        <rect key="frame" x="0.0" y="30" width="26.5" height="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="房产交易" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ift-ss-YDI">
+                        <rect key="frame" x="0.0" y="18" width="41" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="iRc-uw-CUE"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hbi-iK-tFE">
-                        <rect key="frame" x="0.0" y="50" width="127" height="123"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fangc" translatesAutoresizingMaskIntoConstraints="NO" id="Hbi-iK-tFE">
+                        <rect key="frame" x="0.0" y="34" width="127" height="139"/>
                     </imageView>
                 </subviews>
             </view>
@@ -41,12 +47,15 @@
                 <constraint firstItem="oQ6-DV-dCz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="E1r-LC-Hhu"/>
                 <constraint firstAttribute="trailing" secondItem="Hbi-iK-tFE" secondAttribute="trailing" id="HDi-rG-LhL"/>
                 <constraint firstAttribute="bottom" secondItem="Hbi-iK-tFE" secondAttribute="bottom" id="X9p-Qw-8fo"/>
-                <constraint firstItem="ift-ss-YDI" firstAttribute="top" secondItem="oQ6-DV-dCz" secondAttribute="bottom" constant="4" id="o7Q-V6-M02"/>
-                <constraint firstItem="oQ6-DV-dCz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="pJ3-1f-vKU"/>
-                <constraint firstItem="Hbi-iK-tFE" firstAttribute="top" secondItem="ift-ss-YDI" secondAttribute="bottom" constant="8" id="v1a-Ln-Pg0"/>
+                <constraint firstItem="ift-ss-YDI" firstAttribute="top" secondItem="oQ6-DV-dCz" secondAttribute="bottom" constant="2" id="o7Q-V6-M02"/>
+                <constraint firstItem="oQ6-DV-dCz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pJ3-1f-vKU"/>
+                <constraint firstItem="Hbi-iK-tFE" firstAttribute="top" secondItem="ift-ss-YDI" secondAttribute="bottom" constant="4" id="v1a-Ln-Pg0"/>
             </constraints>
             <size key="customSize" width="127" height="173"/>
             <point key="canvasLocation" x="99.275362318840592" y="124.88839285714285"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="fangc" width="54" height="62"/>
+    </resources>
 </document>

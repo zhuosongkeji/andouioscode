@@ -27,6 +27,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString *now;
 
 
+@property(nonatomic,strong)NSString *end_time;
+@property(nonatomic,strong)NSString *sec_status;
+@property(nonatomic,strong)NSString *old_price;
+@property(nonatomic,strong)NSString *start_time;
+
+@property(nonatomic,strong)NSString *kill_price;
+@property(nonatomic,strong)NSString *kill_num;
+
+
 
 @property(nonatomic,strong)NSArray *team_list;
 

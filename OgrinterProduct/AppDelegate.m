@@ -38,6 +38,7 @@
     
     [IQKeyboardManager sharedManager].enable = YES;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+    
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
@@ -46,6 +47,9 @@
     if (@available(iOS 11.0, *)){
         [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
     }
+    
+//    67621276 67710935 67740070 67872330 67736163
+    
     
     self.customBar = [[CustomBarViewController alloc]initFrame:CustomBarTypeOne];
     self.window.rootViewController = self.customBar;

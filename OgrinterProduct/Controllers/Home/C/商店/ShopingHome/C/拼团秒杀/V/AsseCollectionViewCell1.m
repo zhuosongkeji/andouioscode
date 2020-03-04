@@ -20,6 +20,15 @@
 @implementation AsseCollectionViewCell1
 
 
+
+-(void)setModellists:(KillerListAessbModel *)modellists{
+    _modellists = modellists;
+    
+    [self.icon sd_setImageWithURL:[NSURL URLWithString:modellists.img] placeholderImage:nil];
+    self.titblabel.text = [NSString stringWithFormat:@"￥%@",modellists.kill_price];
+}
+
+
 -(void)setListmodel:(KillerListAessbModel *)listmodel{
     _listmodel = listmodel;
     [self.icon sd_setImageWithURL:[NSURL URLWithString:listmodel.img] placeholderImage:nil];

@@ -26,6 +26,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong)NSString *fjid;
 
+@property(nonatomic)BOOL issect;//是否团购
+@property(nonatomic,strong)NSDictionary *secDict;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

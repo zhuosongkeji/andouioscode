@@ -15,7 +15,12 @@
 
 #define cart_addcar @"cart/addcar"//加入购物车
 
-#define group_puzzle_detail @"group/puzzle_detail"//拼团
+#define group_puzzle_detail @"group/puzzle_detail"//拼团详情
+
+#define sec_details @"goods/sec_details"//秒杀详情
+#define goodssec_goods @"goods/sec_goods"//秒杀操作
+
+#define groupgroup_order @"group/group_order"//团购操作
 
 #define bottomH 3*(KSCREEN_HEIGHT/5)
 
@@ -47,7 +52,7 @@
 
 
 
-@interface ShopSeckillDetailsViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate,FSPageContentViewDelegate,FSSegmentTitleViewDelegate>
+@interface ShopSeckillDetailsViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate,FSPageContentViewDelegate,FSSegmentTitleViewDelegate,UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 @property (weak, nonatomic) IBOutlet UIView *topBannerbjView;
@@ -69,6 +74,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *collect;//收藏
 @property (weak, nonatomic) IBOutlet UIButton *shareBtn;
 
+@property (weak, nonatomic) IBOutlet UIView *pView;
+@property (weak, nonatomic) IBOutlet UIView *mView;
+@property (weak, nonatomic) IBOutlet UIView *ptView;
+
+
+
 @property (nonatomic, strong) HotelBottomTableViewCell *contentCell;
 @property (nonatomic, strong) FSSegmentTitleView *titleView;
 @property (nonatomic,strong) QCouponView *couponView;
@@ -80,6 +91,7 @@
 
 @property (nonatomic,strong)NSMutableArray *dataArr;
 @property (nonatomic,strong)NSMutableArray *dataArr1;
+@property (nonatomic,strong)NSMutableArray *dataArr2;
 
 
 
@@ -91,6 +103,12 @@
 
 @property(nonatomic,strong)NSDictionary *ggDict;
 @property(nonatomic,strong)NSString *orderNumberStr;
+@property(nonatomic,strong)NSDictionary *dicte;
+
+@property (weak, nonatomic) IBOutlet UILabel *ktgmlable;
+
+@property (weak, nonatomic) IBOutlet UILabel *ddgolable;
+
 
 @end
 
@@ -109,6 +127,13 @@
         _dataArr1 = [NSMutableArray array];
     }
     return _dataArr1;
+}
+
+-(NSMutableArray *)dataArr2 {
+    if (!_dataArr2) {
+        _dataArr2 = [NSMutableArray array];
+    }
+    return _dataArr2;
 }
 
 
@@ -205,15 +230,31 @@
     NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopdetails];
     
     if (self.seckillType == ShopSeckillDetailsTypeKill) {
+        [kCountDownManager start];
         
+        [self.pView setHidden:YES];
+        [self.mView setHidden:NO];
+        NSString *url2 = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,sec_details];
+        
+        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url2 params:@{@"sec_id":self.sec_id} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+            if ([serverInfo.response[@"code"] integerValue] == 200) {
+                self.dicte = serverInfo.response[@"data"];
+                self.ktgmlable.text = [NSString stringWithFormat:@"￥%@",self.dicte[@"kill_price"]];
+                [self.mTableView reloadData];
+                
+            }else {
+                [HUDManager showTextHud:loadError];
+            }
+            
+        }];
         
     }else if (self.seckillType == ShopSeckillDetailsTypeOrder){
-        
-        url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopdetails];
+//        url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopdetails];
         
     }else if (self.seckillType == ShopSeckillDetailsTypeOther){
-        
         [kCountDownManager start];
+        [self.pView setHidden:YES];
+        [self.ptView setHidden:NO];
         
         NSString *url1 = [NSString stringWithFormat:@"%@%@/%@",API_BASE_URL_STRING,group_puzzle_detail,self.cpid];
         
@@ -242,6 +283,7 @@
             [self.dataArr removeAllObjects];
             
             ShopDetalisModel *model = [[ShopDetalisModel alloc]initWithDict:dict];
+            self.ddgolable.text = [NSString stringWithFormat:@"￥%@",model.price];
             [self.dataArr addObject:model];
             [_cycleScrollView setImageURLStringsGroup:model.bStrArr];
             
@@ -296,7 +338,7 @@
                 Online.payType = OnlineBookingViewProductPay;
                 Online.order_sn = [[serverInfo.response objectForKey:@"data"] objectForKey:@"order_sn"];
                 
-                [self.navigationController pushViewController:Online animated:YES];
+                Online.issect = NO; [self.navigationController pushViewController:Online animated:YES];
             }else if ([types isEqualToString:@"1"]){
                 [HUDManager showTextHud:[serverInfo.response objectForKey:@"msg"]];
             }else{}
@@ -402,7 +444,7 @@
         }else if (self.seckillType == ShopSeckillDetailsTypeOrder){
             return 4;
         }else if (self.seckillType == ShopSeckillDetailsTypeKill){
-            return 3;
+            return 4;
         }else{
             return 0;
             
@@ -423,16 +465,26 @@
                 KillModelt *model =  self.dataArr1[0];
                 cell.kmodelist = model;
             }
+            
+//            if ([self.dataArr count]) {
+//                ShopDetalisModel *model =  self.dataArr[0];
+//                cell.dmodelist = model;
+//            }
         }else if (self.seckillType == ShopSeckillDetailsTypeOrder){
             
-            if ([self.dataArr count]) {
-                ShopDetalisModel *model =  self.dataArr[0];
-                cell.dmodelist = model;
-            }
+//            if ([self.dataArr count]) {
+//                ShopDetalisModel *model =  self.dataArr[0];
+//                cell.dmodelist = model;
+//            }
         }else if(self.seckillType == ShopSeckillDetailsTypeKill){
-        
-            
+            if (self.dicte)
+                [cell setDic:self.dicte];
         }else{}
+        
+        if ([self.dataArr count]) {
+            ShopDetalisModel *model =  self.dataArr[0];
+            cell.dmodelist = model;
+        }
         
         cell.selectBlock = ^(UIButton *btn) {
             
@@ -474,11 +526,25 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (indexPath.section == 0) {
-        if (indexPath.row == 2) {
-            [self arterShow];
-        }else if (indexPath.row == 3){
-            [self pusHoperController];
+        
+        if (self.seckillType == ShopSeckillDetailsTypeOther) {
+            if (indexPath.row == 3){
+                [self pusHoperController];
+            }
+        }else if (self.seckillType == ShopSeckillDetailsTypeOrder){
+            if (indexPath.row == 2) {
+                [self arterShow];
+            }else if (indexPath.row == 3){
+                [self pusHoperController];
+            }
+        }else if (self.seckillType == ShopSeckillDetailsTypeKill){
+            if (indexPath.row == 3){
+                [self pusHoperController];
+            }
+        }else{
+            
         }
+        
     }
 }
 
@@ -488,9 +554,9 @@
         if (self.seckillType == ShopSeckillDetailsTypeOrder) {
             return [[@[@"84",@"40",@"40",@"64"] objectAtIndex:indexPath.row] floatValue];
         }else if (self.seckillType == ShopSeckillDetailsTypeKill){
-            return 64;
+            return [[@[@"45",@"84",@"40",@"64"] objectAtIndex:indexPath.row] floatValue];
         }else if (self.seckillType == ShopSeckillDetailsTypeOther){
-            return [[@[@"84",@"40",@"64",@"138"] objectAtIndex:indexPath.row] floatValue];}
+            return [[@[@"84",@"84",@"64",@"138"] objectAtIndex:indexPath.row] floatValue];}
     }else{
         return KSCREEN_HEIGHT-kStatusBarAndNavigationBarH;
     }
@@ -666,6 +732,71 @@
     }else {shoper.u_id = @"";}
     [self.navigationController pushViewController:shoper animated:YES];
 }
+
+//MARK:立即秒杀
+- (IBAction)killAccess:(UIButton *)sender {
+    
+    UIAlertView * alter = [[UIAlertView alloc]initWithTitle:@"提示：" message:@"您确定要秒杀该商品？" delegate:self cancelButtonTitle:@"容我想想" otherButtonTitles:@"那必须的", nil];
+    [alter setTag:100];
+    [alter show];
+}
+
+- (IBAction)kaituan:(UIButton *)sender {
+    UIAlertView * alter = [[UIAlertView alloc]initWithTitle:@"提示：" message:@"您确定团？" delegate:self cancelButtonTitle:@"容我想想" otherButtonTitles:@"那必须的", nil];
+    [alter setTag:101];
+    [alter show];
+    
+}
+
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+//        NSLog(@"quxiao");
+    }else if (buttonIndex == 1){
+        if (alertView.tag == 100) {
+            NSDictionary *dic = nil;
+            if (self.unmodel)
+                dic = @{@"sec_id":self.sec_id,@"uid":self.unmodel.uid};
+            else{
+                dic = @{@"sec_id":self.sec_id};
+            }
+            
+            NSString *url2 = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,goodssec_goods];
+            
+            [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url2 params:dic complement:^(ServerResponseInfo * _Nullable serverInfo) {
+                if ([serverInfo.response[@"code"] integerValue] == 200) {
+                    [HUDManager showTextHud:@"恭喜您!拿下该商品"];
+                }else {
+                    [HUDManager showTextHud:loadError];
+                }
+            }];
+        }else if (alertView.tag == 101){
+            
+            NSDictionary *dic = nil;
+            if (self.unmodel)
+                dic = @{@"num":@"3",@"uid":self.unmodel.uid,@"puzzle_id":self.cpid,@"open_join":@"1"};
+                
+            NSString *url2 = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,groupgroup_order];
+            
+            [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url2 params:dic complement:^(ServerResponseInfo * _Nullable serverInfo) {
+                if ([serverInfo.response[@"code"] integerValue] == 200) {
+                    [HUDManager showTextHud:@"恭喜您!成功开团"];
+                    OnlineBookingViewController *Online = [[OnlineBookingViewController alloc]init];
+                    Online.payType = OnlineBookingViewProductPay;
+                    Online.secDict = serverInfo.response[@"data"];
+                    Online.order_sn = [[serverInfo.response objectForKey:@"data"] objectForKey:@"order_sn"];
+                    Online.issect = YES;
+                    [self.navigationController pushViewController:Online animated:YES];
+                }else {
+                    [HUDManager showTextHud:loadError];
+                }
+            }];
+        }
+        
+    }
+}
+
+//MARK:
 
 //MARK:- dealloc
 -(void)dealloc {

@@ -11,9 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShopingShopViewController">
             <connections>
-                <outlet property="leftTbleView" destination="zbS-kE-LCv" id="1nY-4z-SCI"/>
-                <outlet property="leftTotop" destination="cEg-ah-dFl" id="0kP-xu-adG"/>
-                <outlet property="lefttoTop" destination="cEg-ah-dFl" id="kG5-KR-QlH"/>
+                <outlet property="iCarouselBJView" destination="WCU-0M-tip" id="0db-9R-VJU"/>
+                <outlet property="leftTotop" destination="WdG-G0-9Jh" id="Yj0-EG-Io0"/>
                 <outlet property="rightTotop" destination="Bfg-6e-QY0" id="fl9-L6-Nnt"/>
                 <outlet property="righttoTop" destination="Bfg-6e-QY0" id="0Tq-NK-qRu"/>
                 <outlet property="rigthTableView" destination="fcg-j7-FVA" id="pgj-LS-i3V"/>
@@ -25,35 +24,32 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zbS-kE-LCv">
-                    <rect key="frame" x="0.0" y="0.0" width="124" height="896"/>
-                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="tqn-Uv-X8M"/>
-                        <outlet property="delegate" destination="-1" id="Ktv-FZ-oE8"/>
-                    </connections>
-                </tableView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fcg-j7-FVA">
-                    <rect key="frame" x="124" y="0.0" width="290" height="896"/>
+                    <rect key="frame" x="0.0" y="0.0" width="248.5" height="896"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="RFK-Oi-iEx"/>
                         <outlet property="delegate" destination="-1" id="SO1-KC-EHP"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCU-0M-tip">
+                    <rect key="frame" x="248.5" y="0.0" width="165.5" height="896"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="zbS-kE-LCv" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.3" id="4km-Ms-YQY"/>
                 <constraint firstItem="fcg-j7-FVA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Bfg-6e-QY0"/>
-                <constraint firstItem="zbS-kE-LCv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Fur-pT-lcj"/>
                 <constraint firstAttribute="bottom" secondItem="fcg-j7-FVA" secondAttribute="bottom" id="PXJ-tD-Opm"/>
-                <constraint firstAttribute="trailing" secondItem="fcg-j7-FVA" secondAttribute="trailing" id="aQv-La-bum"/>
-                <constraint firstItem="zbS-kE-LCv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cEg-ah-dFl"/>
-                <constraint firstAttribute="bottom" secondItem="zbS-kE-LCv" secondAttribute="bottom" id="e4j-8p-iO5"/>
-                <constraint firstItem="fcg-j7-FVA" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.7" id="fKA-p2-OH0"/>
+                <constraint firstAttribute="trailing" secondItem="WCU-0M-tip" secondAttribute="trailing" id="R8I-3m-lHD"/>
+                <constraint firstItem="WCU-0M-tip" firstAttribute="leading" secondItem="fcg-j7-FVA" secondAttribute="trailing" id="Ssa-7o-cFa"/>
+                <constraint firstItem="WCU-0M-tip" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WdG-G0-9Jh"/>
+                <constraint firstItem="fcg-j7-FVA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cXA-Y5-cBF"/>
+                <constraint firstItem="fcg-j7-FVA" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.6" id="fKA-p2-OH0"/>
+                <constraint firstAttribute="bottom" secondItem="WCU-0M-tip" secondAttribute="bottom" id="ing-jX-eG3"/>
+                <constraint firstItem="WCU-0M-tip" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.4" id="nw5-aP-2oO"/>
             </constraints>
-            <point key="canvasLocation" x="-81" y="99"/>
+            <point key="canvasLocation" x="-81.159420289855078" y="98.4375"/>
         </view>
     </objects>
 </document>

@@ -18,6 +18,7 @@ typedef enum : NSUInteger {
 #import <UIKit/UIKit.h>
 @class HomeCellModel,OnlineOrderModel;
 
+@class MDBannerModel;
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^HomeTableViewCellBlock)(NSInteger idx);
@@ -28,7 +29,13 @@ typedef void(^HomeTableViewCellBlock)(NSInteger idx);
 
 @property(nonatomic,strong)OnlineOrderModel *modelist;
 
+@property(nonatomic,strong)OnlineOrderModel *modelist1;
+
+@property(nonatomic,strong)MDBannerModel *Bamodelist;
+
 @property(nonatomic,strong)NSArray *listArr;
+
+@property(nonatomic,strong)NSArray *listArrt;
 
 @property(nonatomic)CustomCellStyle style;
 
