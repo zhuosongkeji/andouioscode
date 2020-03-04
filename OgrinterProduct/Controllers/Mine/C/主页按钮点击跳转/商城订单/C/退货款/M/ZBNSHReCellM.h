@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) NSString *type;
 
+@property (nonatomic, assign) NSString *type_name;
+
 /*! 是否选中 */
 @property (nonatomic, assign) BOOL is_selected;
 

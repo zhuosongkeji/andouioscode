@@ -75,8 +75,8 @@
     }
     
     // 评论数据
-    if (squareM.conments > 0) {
-        for (ZBNPostComModel *model in squareM.conments)
+    if (squareM.comments > 0) {
+        for (ZBNPostComModel *model in squareM.comments)
         {
             ZBNCommentFrame *comFrame = [[ZBNCommentFrame alloc] init];
             comFrame.maxW = KSCREEN_WIDTH - 30;
@@ -92,12 +92,12 @@
 }
 
 
-- (NSMutableArray *)commentFrames
++ (NSDictionary *)mj_objectClassInArray
 {
-    if (!_commentFrames) {
-        _commentFrames = [NSMutableArray array];
-    }
-    return _commentFrames;
+    return @{
+        @"squareM":@"ZBNSquareModel",
+    };
 }
+
 
 @end

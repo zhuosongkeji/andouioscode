@@ -37,6 +37,8 @@ typedef NS_ENUM(NSInteger, YNImageUploadState) {
 @property (nonatomic, assign) YNImageUploadState state;
 /*! 回调地址 */
 @property (nonatomic, copy) NSString *returnURL;
+/*! data */
+@property (nonatomic, strong) NSMutableArray *array;
 
 @end
 
@@ -47,6 +49,7 @@ typedef NS_ENUM(NSInteger, YNImageUploadState) {
 @end
 
 @interface YNImageUploadViewCollCell : UICollectionViewCell
+
 /** 照片模型 */
 @property (nonatomic, strong) YNImageModel *model;
 /** 是否需要上传 */

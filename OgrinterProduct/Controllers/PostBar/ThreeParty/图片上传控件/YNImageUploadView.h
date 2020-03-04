@@ -67,7 +67,8 @@ typedef NS_ENUM(NSInteger, YNImageUploadImageType) {
 @property (nonatomic, assign) CGFloat viewH;
 /*! 返回的URL */
 @property (nonatomic, copy) NSString *returnURL;
-
+/*! data */
+@property (nonatomic, strong) NSMutableArray *dataArr;
 
 @end
 

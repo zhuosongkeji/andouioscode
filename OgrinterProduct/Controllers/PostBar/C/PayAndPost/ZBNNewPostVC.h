@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZBNNewPostVC : UITableViewController
+@interface ZBNNewPostVC : UIViewController
 
 @end
 

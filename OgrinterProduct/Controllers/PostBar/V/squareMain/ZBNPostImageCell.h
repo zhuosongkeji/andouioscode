@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class ZBNSquareModel,ZBNPostPhotoItem;
 @interface ZBNPostImageCell : UICollectionViewCell
+@property (nonatomic, weak) UIImageView *imageView;
 @property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) ZBNPostPhotoItem *photoItem;
+
 @end
 
 NS_ASSUME_NONNULL_END

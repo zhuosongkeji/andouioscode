@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNPostPayVC : UIViewController
-
+@property (nonatomic, copy) NSString *post_id;
 @end
 
 NS_ASSUME_NONNULL_END

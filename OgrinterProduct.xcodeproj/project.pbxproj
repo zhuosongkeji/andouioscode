@@ -286,6 +286,72 @@
 		F41612712403A65A001C6BE9 /* MSLaunchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F416126D2403A65A001C6BE9 /* MSLaunchView.m */; };
 		F41612722403A65A001C6BE9 /* MSLaunchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F416126E2403A65A001C6BE9 /* MSLaunchOperation.m */; };
 		F41612762403A66D001C6BE9 /* MSPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F41612752403A66D001C6BE9 /* MSPageControl.m */; };
+		F419FB56240DF687004AA912 /* WMZDialog+Write.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FAF6240DF686004AA912 /* WMZDialog+Write.m */; };
+		F419FB57240DF687004AA912 /* WMZDialog+NaviMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FAF9240DF686004AA912 /* WMZDialog+NaviMenu.m */; };
+		F419FB58240DF687004AA912 /* WMZDialog+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FAFB240DF686004AA912 /* WMZDialog+Loading.m */; };
+		F419FB59240DF687004AA912 /* WMZDialog+TabbarMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FAFE240DF686004AA912 /* WMZDialog+TabbarMenu.m */; };
+		F419FB5A240DF687004AA912 /* WMZDialog+AutoDisappear.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB01240DF686004AA912 /* WMZDialog+AutoDisappear.m */; };
+		F419FB5B240DF687004AA912 /* WMZDialog+Down.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB05240DF687004AA912 /* WMZDialog+Down.m */; };
+		F419FB5C240DF687004AA912 /* WMZDialog+Location.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB07240DF687004AA912 /* WMZDialog+Location.m */; };
+		F419FB5D240DF687004AA912 /* WMZDialog+DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB0A240DF687004AA912 /* WMZDialog+DatePicker.m */; };
+		F419FB5E240DF687004AA912 /* WMZDialog+PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB0D240DF687004AA912 /* WMZDialog+PopView.m */; };
+		F419FB5F240DF687004AA912 /* WMZDialog+Pay.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB11240DF687004AA912 /* WMZDialog+Pay.m */; };
+		F419FB60240DF687004AA912 /* WMZDialog+Calander.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB15240DF687004AA912 /* WMZDialog+Calander.m */; };
+		F419FB61240DF687004AA912 /* CalanderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB16240DF687004AA912 /* CalanderModel.m */; };
+		F419FB62240DF687004AA912 /* WMZDialog+time.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB18240DF687004AA912 /* WMZDialog+time.m */; };
+		F419FB63240DF687004AA912 /* WMZDialog+MenusSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB1C240DF687004AA912 /* WMZDialog+MenusSelect.m */; };
+		F419FB64240DF687004AA912 /* WMZDialog+CardPresent.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB1F240DF687004AA912 /* WMZDialog+CardPresent.m */; };
+		F419FB65240DF687004AA912 /* WMZDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F419FB20240DF687004AA912 /* WMZDialog.bundle */; };
+		F419FB66240DF687004AA912 /* WMZDialog+PickView.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB23240DF687004AA912 /* WMZDialog+PickView.m */; };
+		F419FB67240DF687004AA912 /* WMZDialogShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB28240DF687004AA912 /* WMZDialogShareView.m */; };
+		F419FB68240DF687004AA912 /* WMZDialogTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB2A240DF687004AA912 /* WMZDialogTool.m */; };
+		F419FB69240DF687004AA912 /* WMZDialogTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB2B240DF687004AA912 /* WMZDialogTableView.m */; };
+		F419FB6A240DF687004AA912 /* NSDate+WMZCalendarDate.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB2C240DF687004AA912 /* NSDate+WMZCalendarDate.m */; };
+		F419FB6B240DF687004AA912 /* WMZDialogAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB2E240DF687004AA912 /* WMZDialogAnimation.m */; };
+		F419FB6C240DF687004AA912 /* WMZDialog+BuyCar.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB30240DF687004AA912 /* WMZDialog+BuyCar.m */; };
+		F419FB6D240DF687004AA912 /* WMZDialog+Normal.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB33240DF687004AA912 /* WMZDialog+Normal.m */; };
+		F419FB6E240DF687004AA912 /* WMZDialog+Advertisement.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB36240DF687004AA912 /* WMZDialog+Advertisement.m */; };
+		F419FB6F240DF687004AA912 /* WMZDialog+Select.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB39240DF687004AA912 /* WMZDialog+Select.m */; };
+		F419FB70240DF687004AA912 /* WMZDialog+Sheet.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB3C240DF687004AA912 /* WMZDialog+Sheet.m */; };
+		F419FB71240DF687004AA912 /* WMZDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB3F240DF687004AA912 /* WMZDialog.m */; };
+		F419FB72240DF687004AA912 /* WMZDiaLogBase.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB43240DF687004AA912 /* WMZDiaLogBase.m */; };
+		F419FB73240DF687004AA912 /* WMZDialog+Share.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB45240DF687004AA912 /* WMZDialog+Share.m */; };
+		F419FB74240DF687004AA912 /* WMZTagsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB4A240DF687004AA912 /* WMZTagsTool.m */; };
+		F419FB75240DF687004AA912 /* WMZTagParam.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB4B240DF687004AA912 /* WMZTagParam.m */; };
+		F419FB76240DF687004AA912 /* WMZTagBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB4F240DF687004AA912 /* WMZTagBtn.m */; };
+		F419FB77240DF687004AA912 /* tagOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB50240DF687004AA912 /* tagOneCell.m */; };
+		F419FB78240DF687004AA912 /* WMZTags.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB51240DF687004AA912 /* WMZTags.m */; };
+		F419FB79240DF687004AA912 /* WMZTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB53240DF687004AA912 /* WMZTagCell.m */; };
+		F419FB7D240E827E004AA912 /* ZBNPostComLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB7B240E827D004AA912 /* ZBNPostComLineCell.m */; };
+		F419FB7E240E827E004AA912 /* ZBNPostComLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F419FB7C240E827D004AA912 /* ZBNPostComLineCell.xib */; };
+		F419FB82240E83EF004AA912 /* ZBNPostNoDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FB80240E83EF004AA912 /* ZBNPostNoDataCell.m */; };
+		F419FB83240E83EF004AA912 /* ZBNPostNoDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F419FB81240E83EF004AA912 /* ZBNPostNoDataCell.xib */; };
+		F419FBE3240ED21F004AA912 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBBD240ED21F004AA912 /* DALabeledCircularProgressView.m */; };
+		F419FBE4240ED21F004AA912 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBBE240ED21F004AA912 /* DACircularProgressView.m */; };
+		F419FBE5240ED21F004AA912 /* UIView+PYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBC2240ED21F004AA912 /* UIView+PYExtension.m */; };
+		F419FBE6240ED21F004AA912 /* MBProgressHUD+PYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBC5240ED21F004AA912 /* MBProgressHUD+PYExtension.m */; };
+		F419FBE7240ED21F004AA912 /* PYProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBC7240ED21F004AA912 /* PYProgressView.m */; };
+		F419FBE8240ED21F004AA912 /* PYPhotoBrowserConst.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBCA240ED21F004AA912 /* PYPhotoBrowserConst.m */; };
+		F419FBE9240ED21F004AA912 /* PYPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBCF240ED21F004AA912 /* PYPhotosViewController.m */; };
+		F419FBEA240ED21F004AA912 /* PYPhotosReaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBD1240ED21F004AA912 /* PYPhotosReaderController.m */; };
+		F419FBEB240ED21F004AA912 /* PYPhotosNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBD2240ED21F004AA912 /* PYPhotosNavigationController.m */; };
+		F419FBEC240ED21F004AA912 /* PYPhotosPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBD3240ED21F004AA912 /* PYPhotosPreviewController.m */; };
+		F419FBED240ED21F004AA912 /* PYPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBD7240ED21F004AA912 /* PYPhoto.m */; };
+		F419FBEE240ED21F004AA912 /* PYPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBD9240ED21F004AA912 /* PYPhotosView.m */; };
+		F419FBEF240ED21F004AA912 /* PYPhotoBrowseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBDD240ED21F004AA912 /* PYPhotoBrowseView.m */; };
+		F419FBF0240ED21F004AA912 /* PYPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBDF240ED21F004AA912 /* PYPhotoCell.m */; };
+		F419FBF1240ED21F004AA912 /* PYPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBE0240ED21F004AA912 /* PYPhotoView.m */; };
+		F419FBF2240ED21F004AA912 /* PYPhotosView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F419FBE1240ED21F004AA912 /* PYPhotosView.bundle */; };
+		F419FBF9240ED29B004AA912 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBF5240ED29B004AA912 /* FLAnimatedImage.m */; };
+		F419FBFA240ED29B004AA912 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBF6240ED29B004AA912 /* FLAnimatedImageView.m */; };
+		F419FBFC240F4DB9004AA912 /* ZBNNewPostVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F419FBFB240F4DB9004AA912 /* ZBNNewPostVC.xib */; };
+		F419FC1A240F86C7004AA912 /* ZHFAddTitleAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FC08240F86C7004AA912 /* ZHFAddTitleAddressView.m */; };
+		F419FC1B240F86C7004AA912 /* TownModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FC09240F86C7004AA912 /* TownModel.m */; };
+		F419FC1C240F86C7004AA912 /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FC0A240F86C7004AA912 /* CityModel.m */; };
+		F419FC1D240F86C7004AA912 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FC0C240F86C7004AA912 /* HttpRequest.m */; };
+		F419FC1E240F86C7004AA912 /* AddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FC10240F86C7004AA912 /* AddressCell.m */; };
+		F419FC20240F86C8004AA912 /* ProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FC13240F86C7004AA912 /* ProvinceModel.m */; };
+		F419FC21240F86C8004AA912 /* CountyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FC17240F86C7004AA912 /* CountyModel.m */; };
 		F41B748E23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F41B748D23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.m */; };
 		F41B749223C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F41B749023C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.m */; };
 		F41B749323C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41B749123C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.xib */; };
@@ -311,6 +377,7 @@
 		F443E92223C6FFAE0059E48F /* ZBNMyAllNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F443E91F23C6FFAE0059E48F /* ZBNMyAllNewsCell.m */; };
 		F44DF88423AA067900A7D902 /* ZBNStayInOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F44DF88323AA067900A7D902 /* ZBNStayInOrderVC.m */; };
 		F44DF88C23AA271C00A7D902 /* ZBNAlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F44DF88A23AA271C00A7D902 /* ZBNAlertTool.m */; };
+		F450CF96240CE3F5000F8CEC /* ZBNPostPhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F450CF95240CE3F5000F8CEC /* ZBNPostPhotoItem.m */; };
 		F457188823CEE99D0040164D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F457188723CEE99D0040164D /* LaunchScreen.storyboard */; };
 		F457188E23CFF08D0040164D /* ZBNVIPRechargeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F457188D23CFF08D0040164D /* ZBNVIPRechargeVC.m */; };
 		F457189223CFF0AC0040164D /* ZBNVIPRechargeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F457189023CFF0AC0040164D /* ZBNVIPRechargeCell.m */; };
@@ -338,8 +405,6 @@
 		F45ED43B23FD08E200ADDBDB /* ZBNPostDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F45ED43A23FD08E200ADDBDB /* ZBNPostDetailVC.m */; };
 		F45ED43D23FD09B800ADDBDB /* ZBNPostDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45ED43C23FD09B800ADDBDB /* ZBNPostDetailVC.xib */; };
 		F45ED44523FD266A00ADDBDB /* ZBNNewPostVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F45ED44423FD266A00ADDBDB /* ZBNNewPostVC.m */; };
-		F45ED44923FD268D00ADDBDB /* ZBNNewPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F45ED44723FD268D00ADDBDB /* ZBNNewPostCell.m */; };
-		F45ED44A23FD268D00ADDBDB /* ZBNNewPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45ED44823FD268D00ADDBDB /* ZBNNewPostCell.xib */; };
 		F45ED44E23FD32B800ADDBDB /* ZBNPostPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F45ED44C23FD32B800ADDBDB /* ZBNPostPayVC.m */; };
 		F45ED44F23FD32B800ADDBDB /* ZBNPostPayVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45ED44D23FD32B800ADDBDB /* ZBNPostPayVC.xib */; };
 		F45ED45823FD3B8100ADDBDB /* ZBNPostSuccessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F45ED45623FD3B8100ADDBDB /* ZBNPostSuccessVC.m */; };
@@ -1088,6 +1153,136 @@
 		F41612702403A65A001C6BE9 /* MSLaunchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLaunchOperation.h; sourceTree = "<group>"; };
 		F41612742403A66D001C6BE9 /* MSPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPageControl.h; sourceTree = "<group>"; };
 		F41612752403A66D001C6BE9 /* MSPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPageControl.m; sourceTree = "<group>"; };
+		F419FAF5240DF686004AA912 /* WMZDialog+Write.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+Write.h"; sourceTree = "<group>"; };
+		F419FAF6240DF686004AA912 /* WMZDialog+Write.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+Write.m"; sourceTree = "<group>"; };
+		F419FAF8240DF686004AA912 /* WMZDialog+NaviMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+NaviMenu.h"; sourceTree = "<group>"; };
+		F419FAF9240DF686004AA912 /* WMZDialog+NaviMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+NaviMenu.m"; sourceTree = "<group>"; };
+		F419FAFB240DF686004AA912 /* WMZDialog+Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+Loading.m"; sourceTree = "<group>"; };
+		F419FAFC240DF686004AA912 /* WMZDialog+Loading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+Loading.h"; sourceTree = "<group>"; };
+		F419FAFE240DF686004AA912 /* WMZDialog+TabbarMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+TabbarMenu.m"; sourceTree = "<group>"; };
+		F419FAFF240DF686004AA912 /* WMZDialog+TabbarMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+TabbarMenu.h"; sourceTree = "<group>"; };
+		F419FB01240DF686004AA912 /* WMZDialog+AutoDisappear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+AutoDisappear.m"; sourceTree = "<group>"; };
+		F419FB02240DF687004AA912 /* WMZDialog+AutoDisappear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+AutoDisappear.h"; sourceTree = "<group>"; };
+		F419FB04240DF687004AA912 /* WMZDialog+Down.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+Down.h"; sourceTree = "<group>"; };
+		F419FB05240DF687004AA912 /* WMZDialog+Down.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+Down.m"; sourceTree = "<group>"; };
+		F419FB07240DF687004AA912 /* WMZDialog+Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+Location.m"; sourceTree = "<group>"; };
+		F419FB08240DF687004AA912 /* WMZDialog+Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+Location.h"; sourceTree = "<group>"; };
+		F419FB0A240DF687004AA912 /* WMZDialog+DatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+DatePicker.m"; sourceTree = "<group>"; };
+		F419FB0B240DF687004AA912 /* WMZDialog+DatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+DatePicker.h"; sourceTree = "<group>"; };
+		F419FB0D240DF687004AA912 /* WMZDialog+PopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+PopView.m"; sourceTree = "<group>"; };
+		F419FB0E240DF687004AA912 /* WMZDialog+PopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+PopView.h"; sourceTree = "<group>"; };
+		F419FB10240DF687004AA912 /* WMZDialog+Pay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+Pay.h"; sourceTree = "<group>"; };
+		F419FB11240DF687004AA912 /* WMZDialog+Pay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+Pay.m"; sourceTree = "<group>"; };
+		F419FB13240DF687004AA912 /* WMZDialog+Calander.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+Calander.h"; sourceTree = "<group>"; };
+		F419FB14240DF687004AA912 /* CalanderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalanderModel.h; sourceTree = "<group>"; };
+		F419FB15240DF687004AA912 /* WMZDialog+Calander.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+Calander.m"; sourceTree = "<group>"; };
+		F419FB16240DF687004AA912 /* CalanderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalanderModel.m; sourceTree = "<group>"; };
+		F419FB18240DF687004AA912 /* WMZDialog+time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+time.m"; sourceTree = "<group>"; };
+		F419FB19240DF687004AA912 /* WMZDialog+time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+time.h"; sourceTree = "<group>"; };
+		F419FB1B240DF687004AA912 /* WMZDialog+MenusSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+MenusSelect.h"; sourceTree = "<group>"; };
+		F419FB1C240DF687004AA912 /* WMZDialog+MenusSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+MenusSelect.m"; sourceTree = "<group>"; };
+		F419FB1E240DF687004AA912 /* WMZDialog+CardPresent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+CardPresent.h"; sourceTree = "<group>"; };
+		F419FB1F240DF687004AA912 /* WMZDialog+CardPresent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+CardPresent.m"; sourceTree = "<group>"; };
+		F419FB20240DF687004AA912 /* WMZDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WMZDialog.bundle; sourceTree = "<group>"; };
+		F419FB22240DF687004AA912 /* WMZDialog+PickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+PickView.h"; sourceTree = "<group>"; };
+		F419FB23240DF687004AA912 /* WMZDialog+PickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+PickView.m"; sourceTree = "<group>"; };
+		F419FB25240DF687004AA912 /* WMZDialogTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZDialogTableView.h; sourceTree = "<group>"; };
+		F419FB26240DF687004AA912 /* WMZDialogTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZDialogTool.h; sourceTree = "<group>"; };
+		F419FB27240DF687004AA912 /* NSDate+WMZCalendarDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WMZCalendarDate.h"; sourceTree = "<group>"; };
+		F419FB28240DF687004AA912 /* WMZDialogShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZDialogShareView.m; sourceTree = "<group>"; };
+		F419FB29240DF687004AA912 /* WMZDialogAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZDialogAnimation.h; sourceTree = "<group>"; };
+		F419FB2A240DF687004AA912 /* WMZDialogTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZDialogTool.m; sourceTree = "<group>"; };
+		F419FB2B240DF687004AA912 /* WMZDialogTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZDialogTableView.m; sourceTree = "<group>"; };
+		F419FB2C240DF687004AA912 /* NSDate+WMZCalendarDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WMZCalendarDate.m"; sourceTree = "<group>"; };
+		F419FB2D240DF687004AA912 /* WMZDialogShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZDialogShareView.h; sourceTree = "<group>"; };
+		F419FB2E240DF687004AA912 /* WMZDialogAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZDialogAnimation.m; sourceTree = "<group>"; };
+		F419FB30240DF687004AA912 /* WMZDialog+BuyCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+BuyCar.m"; sourceTree = "<group>"; };
+		F419FB31240DF687004AA912 /* WMZDialog+BuyCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+BuyCar.h"; sourceTree = "<group>"; };
+		F419FB33240DF687004AA912 /* WMZDialog+Normal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+Normal.m"; sourceTree = "<group>"; };
+		F419FB34240DF687004AA912 /* WMZDialog+Normal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+Normal.h"; sourceTree = "<group>"; };
+		F419FB36240DF687004AA912 /* WMZDialog+Advertisement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+Advertisement.m"; sourceTree = "<group>"; };
+		F419FB37240DF687004AA912 /* WMZDialog+Advertisement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+Advertisement.h"; sourceTree = "<group>"; };
+		F419FB39240DF687004AA912 /* WMZDialog+Select.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+Select.m"; sourceTree = "<group>"; };
+		F419FB3A240DF687004AA912 /* WMZDialog+Select.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+Select.h"; sourceTree = "<group>"; };
+		F419FB3C240DF687004AA912 /* WMZDialog+Sheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+Sheet.m"; sourceTree = "<group>"; };
+		F419FB3D240DF687004AA912 /* WMZDialog+Sheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+Sheet.h"; sourceTree = "<group>"; };
+		F419FB3F240DF687004AA912 /* WMZDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZDialog.m; sourceTree = "<group>"; };
+		F419FB40240DF687004AA912 /* WMZDiaLogBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZDiaLogBase.h; sourceTree = "<group>"; };
+		F419FB41240DF687004AA912 /* WMZDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZDialog.h; sourceTree = "<group>"; };
+		F419FB42240DF687004AA912 /* WMZDialogMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZDialogMacro.h; sourceTree = "<group>"; };
+		F419FB43240DF687004AA912 /* WMZDiaLogBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZDiaLogBase.m; sourceTree = "<group>"; };
+		F419FB45240DF687004AA912 /* WMZDialog+Share.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WMZDialog+Share.m"; sourceTree = "<group>"; };
+		F419FB46240DF687004AA912 /* WMZDialog+Share.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMZDialog+Share.h"; sourceTree = "<group>"; };
+		F419FB48240DF687004AA912 /* WMZTagBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZTagBtn.h; sourceTree = "<group>"; };
+		F419FB49240DF687004AA912 /* WMZTagConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZTagConfig.h; sourceTree = "<group>"; };
+		F419FB4A240DF687004AA912 /* WMZTagsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZTagsTool.m; sourceTree = "<group>"; };
+		F419FB4B240DF687004AA912 /* WMZTagParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZTagParam.m; sourceTree = "<group>"; };
+		F419FB4C240DF687004AA912 /* WMZTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZTagCell.h; sourceTree = "<group>"; };
+		F419FB4D240DF687004AA912 /* WMZTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZTags.h; sourceTree = "<group>"; };
+		F419FB4E240DF687004AA912 /* tagOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tagOneCell.h; sourceTree = "<group>"; };
+		F419FB4F240DF687004AA912 /* WMZTagBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZTagBtn.m; sourceTree = "<group>"; };
+		F419FB50240DF687004AA912 /* tagOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tagOneCell.m; sourceTree = "<group>"; };
+		F419FB51240DF687004AA912 /* WMZTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZTags.m; sourceTree = "<group>"; };
+		F419FB52240DF687004AA912 /* WMZTagParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZTagParam.h; sourceTree = "<group>"; };
+		F419FB53240DF687004AA912 /* WMZTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZTagCell.m; sourceTree = "<group>"; };
+		F419FB54240DF687004AA912 /* WMZTagsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZTagsTool.h; sourceTree = "<group>"; };
+		F419FB7A240E827D004AA912 /* ZBNPostComLineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNPostComLineCell.h; sourceTree = "<group>"; };
+		F419FB7B240E827D004AA912 /* ZBNPostComLineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNPostComLineCell.m; sourceTree = "<group>"; };
+		F419FB7C240E827D004AA912 /* ZBNPostComLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNPostComLineCell.xib; sourceTree = "<group>"; };
+		F419FB7F240E83EF004AA912 /* ZBNPostNoDataCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNPostNoDataCell.h; sourceTree = "<group>"; };
+		F419FB80240E83EF004AA912 /* ZBNPostNoDataCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNPostNoDataCell.m; sourceTree = "<group>"; };
+		F419FB81240E83EF004AA912 /* ZBNPostNoDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNPostNoDataCell.xib; sourceTree = "<group>"; };
+		F419FBBD240ED21F004AA912 /* DALabeledCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALabeledCircularProgressView.m; sourceTree = "<group>"; };
+		F419FBBE240ED21F004AA912 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
+		F419FBBF240ED21F004AA912 /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
+		F419FBC0240ED21F004AA912 /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
+		F419FBC2240ED21F004AA912 /* UIView+PYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PYExtension.m"; sourceTree = "<group>"; };
+		F419FBC3240ED21F004AA912 /* MBProgressHUD+PYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+PYExtension.h"; sourceTree = "<group>"; };
+		F419FBC4240ED21F004AA912 /* UIView+PYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PYExtension.h"; sourceTree = "<group>"; };
+		F419FBC5240ED21F004AA912 /* MBProgressHUD+PYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+PYExtension.m"; sourceTree = "<group>"; };
+		F419FBC7240ED21F004AA912 /* PYProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYProgressView.m; sourceTree = "<group>"; };
+		F419FBC8240ED21F004AA912 /* PYPhotoBrowserConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotoBrowserConst.h; sourceTree = "<group>"; };
+		F419FBC9240ED21F004AA912 /* PYProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYProgressView.h; sourceTree = "<group>"; };
+		F419FBCA240ED21F004AA912 /* PYPhotoBrowserConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotoBrowserConst.m; sourceTree = "<group>"; };
+		F419FBCB240ED21F004AA912 /* PYPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotoBrowser.h; sourceTree = "<group>"; };
+		F419FBCD240ED21F004AA912 /* PYPhotosReaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotosReaderController.h; sourceTree = "<group>"; };
+		F419FBCE240ED21F004AA912 /* PYPhotosNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotosNavigationController.h; sourceTree = "<group>"; };
+		F419FBCF240ED21F004AA912 /* PYPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotosViewController.m; sourceTree = "<group>"; };
+		F419FBD0240ED21F004AA912 /* PYPhotosPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotosPreviewController.h; sourceTree = "<group>"; };
+		F419FBD1240ED21F004AA912 /* PYPhotosReaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotosReaderController.m; sourceTree = "<group>"; };
+		F419FBD2240ED21F004AA912 /* PYPhotosNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotosNavigationController.m; sourceTree = "<group>"; };
+		F419FBD3240ED21F004AA912 /* PYPhotosPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotosPreviewController.m; sourceTree = "<group>"; };
+		F419FBD4240ED21F004AA912 /* PYPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotosViewController.h; sourceTree = "<group>"; };
+		F419FBD6240ED21F004AA912 /* PYPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhoto.h; sourceTree = "<group>"; };
+		F419FBD7240ED21F004AA912 /* PYPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhoto.m; sourceTree = "<group>"; };
+		F419FBD9240ED21F004AA912 /* PYPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotosView.m; sourceTree = "<group>"; };
+		F419FBDA240ED21F004AA912 /* PYPhotoBrowseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotoBrowseView.h; sourceTree = "<group>"; };
+		F419FBDB240ED21F004AA912 /* PYPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotoCell.h; sourceTree = "<group>"; };
+		F419FBDC240ED21F004AA912 /* PYPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotoView.h; sourceTree = "<group>"; };
+		F419FBDD240ED21F004AA912 /* PYPhotoBrowseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotoBrowseView.m; sourceTree = "<group>"; };
+		F419FBDE240ED21F004AA912 /* PYPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotosView.h; sourceTree = "<group>"; };
+		F419FBDF240ED21F004AA912 /* PYPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotoCell.m; sourceTree = "<group>"; };
+		F419FBE0240ED21F004AA912 /* PYPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotoView.m; sourceTree = "<group>"; };
+		F419FBE1240ED21F004AA912 /* PYPhotosView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PYPhotosView.bundle; sourceTree = "<group>"; };
+		F419FBF5240ED29B004AA912 /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
+		F419FBF6240ED29B004AA912 /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
+		F419FBF7240ED29B004AA912 /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
+		F419FBF8240ED29B004AA912 /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
+		F419FBFB240F4DB9004AA912 /* ZBNNewPostVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNNewPostVC.xib; sourceTree = "<group>"; };
+		F419FC05240F86C7004AA912 /* AddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressCell.h; sourceTree = "<group>"; };
+		F419FC08240F86C7004AA912 /* ZHFAddTitleAddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFAddTitleAddressView.m; sourceTree = "<group>"; };
+		F419FC09240F86C7004AA912 /* TownModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TownModel.m; sourceTree = "<group>"; };
+		F419FC0A240F86C7004AA912 /* CityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityModel.m; sourceTree = "<group>"; };
+		F419FC0C240F86C7004AA912 /* HttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
+		F419FC0D240F86C7004AA912 /* ProvinceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvinceModel.h; sourceTree = "<group>"; };
+		F419FC0E240F86C7004AA912 /* CountyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountyModel.h; sourceTree = "<group>"; };
+		F419FC10240F86C7004AA912 /* AddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressCell.m; sourceTree = "<group>"; };
+		F419FC11240F86C7004AA912 /* ZHFAddTitleAddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFAddTitleAddressView.h; sourceTree = "<group>"; };
+		F419FC13240F86C7004AA912 /* ProvinceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvinceModel.m; sourceTree = "<group>"; };
+		F419FC14240F86C7004AA912 /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
+		F419FC15240F86C7004AA912 /* CityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityModel.h; sourceTree = "<group>"; };
+		F419FC16240F86C7004AA912 /* TownModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TownModel.h; sourceTree = "<group>"; };
+		F419FC17240F86C7004AA912 /* CountyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountyModel.m; sourceTree = "<group>"; };
 		F41B748C23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHGoAndEvaluateVC.h; sourceTree = "<group>"; };
 		F41B748D23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHGoAndEvaluateVC.m; sourceTree = "<group>"; };
 		F41B748F23C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHGoAndEvaluateCell.h; sourceTree = "<group>"; };
@@ -1131,6 +1326,8 @@
 		F44DF88323AA067900A7D902 /* ZBNStayInOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNStayInOrderVC.m; sourceTree = "<group>"; };
 		F44DF88A23AA271C00A7D902 /* ZBNAlertTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNAlertTool.m; sourceTree = "<group>"; };
 		F44DF88B23AA271C00A7D902 /* ZBNAlertTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNAlertTool.h; sourceTree = "<group>"; };
+		F450CF94240CE3F5000F8CEC /* ZBNPostPhotoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNPostPhotoItem.h; sourceTree = "<group>"; };
+		F450CF95240CE3F5000F8CEC /* ZBNPostPhotoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNPostPhotoItem.m; sourceTree = "<group>"; };
 		F457188723CEE99D0040164D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F457188C23CFF08D0040164D /* ZBNVIPRechargeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNVIPRechargeVC.h; sourceTree = "<group>"; };
 		F457188D23CFF08D0040164D /* ZBNVIPRechargeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNVIPRechargeVC.m; sourceTree = "<group>"; };
@@ -1178,9 +1375,6 @@
 		F45ED43C23FD09B800ADDBDB /* ZBNPostDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNPostDetailVC.xib; sourceTree = "<group>"; };
 		F45ED44323FD266A00ADDBDB /* ZBNNewPostVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNNewPostVC.h; sourceTree = "<group>"; };
 		F45ED44423FD266A00ADDBDB /* ZBNNewPostVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNNewPostVC.m; sourceTree = "<group>"; };
-		F45ED44623FD268D00ADDBDB /* ZBNNewPostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNNewPostCell.h; sourceTree = "<group>"; };
-		F45ED44723FD268D00ADDBDB /* ZBNNewPostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNNewPostCell.m; sourceTree = "<group>"; };
-		F45ED44823FD268D00ADDBDB /* ZBNNewPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNNewPostCell.xib; sourceTree = "<group>"; };
 		F45ED44B23FD32B800ADDBDB /* ZBNPostPayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNPostPayVC.h; sourceTree = "<group>"; };
 		F45ED44C23FD32B800ADDBDB /* ZBNPostPayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNPostPayVC.m; sourceTree = "<group>"; };
 		F45ED44D23FD32B800ADDBDB /* ZBNPostPayVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNPostPayVC.xib; sourceTree = "<group>"; };
@@ -3002,6 +3196,397 @@
 			path = "设置界面相关";
 			sourceTree = "<group>";
 		};
+		F419FAF3240DF686004AA912 /* WMZDialog */ = {
+			isa = PBXGroup;
+			children = (
+				F419FAF4240DF686004AA912 /* Write */,
+				F419FAF7240DF686004AA912 /* NaviMenu */,
+				F419FAFA240DF686004AA912 /* Loading */,
+				F419FAFD240DF686004AA912 /* TabbarMenu */,
+				F419FB00240DF686004AA912 /* AutoDisappear */,
+				F419FB03240DF687004AA912 /* Dowm */,
+				F419FB06240DF687004AA912 /* Location */,
+				F419FB09240DF687004AA912 /* DatePicker */,
+				F419FB0C240DF687004AA912 /* PopView */,
+				F419FB0F240DF687004AA912 /* Pay */,
+				F419FB12240DF687004AA912 /* Calander */,
+				F419FB17240DF687004AA912 /* Time */,
+				F419FB1A240DF687004AA912 /* MenusSelect */,
+				F419FB1D240DF687004AA912 /* CardPresent */,
+				F419FB20240DF687004AA912 /* WMZDialog.bundle */,
+				F419FB21240DF687004AA912 /* PickView */,
+				F419FB24240DF687004AA912 /* WMZDialogTool */,
+				F419FB2F240DF687004AA912 /* BuyCar */,
+				F419FB32240DF687004AA912 /* Normal */,
+				F419FB35240DF687004AA912 /* Advertisement */,
+				F419FB38240DF687004AA912 /* Select */,
+				F419FB3B240DF687004AA912 /* Sheet */,
+				F419FB3E240DF687004AA912 /* Main */,
+				F419FB44240DF687004AA912 /* Share */,
+			);
+			path = WMZDialog;
+			sourceTree = "<group>";
+		};
+		F419FAF4240DF686004AA912 /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				F419FAF5240DF686004AA912 /* WMZDialog+Write.h */,
+				F419FAF6240DF686004AA912 /* WMZDialog+Write.m */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
+		F419FAF7240DF686004AA912 /* NaviMenu */ = {
+			isa = PBXGroup;
+			children = (
+				F419FAF8240DF686004AA912 /* WMZDialog+NaviMenu.h */,
+				F419FAF9240DF686004AA912 /* WMZDialog+NaviMenu.m */,
+			);
+			path = NaviMenu;
+			sourceTree = "<group>";
+		};
+		F419FAFA240DF686004AA912 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				F419FAFB240DF686004AA912 /* WMZDialog+Loading.m */,
+				F419FAFC240DF686004AA912 /* WMZDialog+Loading.h */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		F419FAFD240DF686004AA912 /* TabbarMenu */ = {
+			isa = PBXGroup;
+			children = (
+				F419FAFE240DF686004AA912 /* WMZDialog+TabbarMenu.m */,
+				F419FAFF240DF686004AA912 /* WMZDialog+TabbarMenu.h */,
+			);
+			path = TabbarMenu;
+			sourceTree = "<group>";
+		};
+		F419FB00240DF686004AA912 /* AutoDisappear */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB01240DF686004AA912 /* WMZDialog+AutoDisappear.m */,
+				F419FB02240DF687004AA912 /* WMZDialog+AutoDisappear.h */,
+			);
+			path = AutoDisappear;
+			sourceTree = "<group>";
+		};
+		F419FB03240DF687004AA912 /* Dowm */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB04240DF687004AA912 /* WMZDialog+Down.h */,
+				F419FB05240DF687004AA912 /* WMZDialog+Down.m */,
+			);
+			path = Dowm;
+			sourceTree = "<group>";
+		};
+		F419FB06240DF687004AA912 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB07240DF687004AA912 /* WMZDialog+Location.m */,
+				F419FB08240DF687004AA912 /* WMZDialog+Location.h */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		F419FB09240DF687004AA912 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB0A240DF687004AA912 /* WMZDialog+DatePicker.m */,
+				F419FB0B240DF687004AA912 /* WMZDialog+DatePicker.h */,
+			);
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		F419FB0C240DF687004AA912 /* PopView */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB0D240DF687004AA912 /* WMZDialog+PopView.m */,
+				F419FB0E240DF687004AA912 /* WMZDialog+PopView.h */,
+			);
+			path = PopView;
+			sourceTree = "<group>";
+		};
+		F419FB0F240DF687004AA912 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB10240DF687004AA912 /* WMZDialog+Pay.h */,
+				F419FB11240DF687004AA912 /* WMZDialog+Pay.m */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		F419FB12240DF687004AA912 /* Calander */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB13240DF687004AA912 /* WMZDialog+Calander.h */,
+				F419FB14240DF687004AA912 /* CalanderModel.h */,
+				F419FB15240DF687004AA912 /* WMZDialog+Calander.m */,
+				F419FB16240DF687004AA912 /* CalanderModel.m */,
+			);
+			path = Calander;
+			sourceTree = "<group>";
+		};
+		F419FB17240DF687004AA912 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB18240DF687004AA912 /* WMZDialog+time.m */,
+				F419FB19240DF687004AA912 /* WMZDialog+time.h */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
+		F419FB1A240DF687004AA912 /* MenusSelect */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB1B240DF687004AA912 /* WMZDialog+MenusSelect.h */,
+				F419FB1C240DF687004AA912 /* WMZDialog+MenusSelect.m */,
+			);
+			path = MenusSelect;
+			sourceTree = "<group>";
+		};
+		F419FB1D240DF687004AA912 /* CardPresent */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB1E240DF687004AA912 /* WMZDialog+CardPresent.h */,
+				F419FB1F240DF687004AA912 /* WMZDialog+CardPresent.m */,
+			);
+			path = CardPresent;
+			sourceTree = "<group>";
+		};
+		F419FB21240DF687004AA912 /* PickView */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB22240DF687004AA912 /* WMZDialog+PickView.h */,
+				F419FB23240DF687004AA912 /* WMZDialog+PickView.m */,
+			);
+			path = PickView;
+			sourceTree = "<group>";
+		};
+		F419FB24240DF687004AA912 /* WMZDialogTool */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB25240DF687004AA912 /* WMZDialogTableView.h */,
+				F419FB26240DF687004AA912 /* WMZDialogTool.h */,
+				F419FB27240DF687004AA912 /* NSDate+WMZCalendarDate.h */,
+				F419FB28240DF687004AA912 /* WMZDialogShareView.m */,
+				F419FB29240DF687004AA912 /* WMZDialogAnimation.h */,
+				F419FB2A240DF687004AA912 /* WMZDialogTool.m */,
+				F419FB2B240DF687004AA912 /* WMZDialogTableView.m */,
+				F419FB2C240DF687004AA912 /* NSDate+WMZCalendarDate.m */,
+				F419FB2D240DF687004AA912 /* WMZDialogShareView.h */,
+				F419FB2E240DF687004AA912 /* WMZDialogAnimation.m */,
+			);
+			path = WMZDialogTool;
+			sourceTree = "<group>";
+		};
+		F419FB2F240DF687004AA912 /* BuyCar */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB30240DF687004AA912 /* WMZDialog+BuyCar.m */,
+				F419FB31240DF687004AA912 /* WMZDialog+BuyCar.h */,
+			);
+			path = BuyCar;
+			sourceTree = "<group>";
+		};
+		F419FB32240DF687004AA912 /* Normal */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB33240DF687004AA912 /* WMZDialog+Normal.m */,
+				F419FB34240DF687004AA912 /* WMZDialog+Normal.h */,
+			);
+			path = Normal;
+			sourceTree = "<group>";
+		};
+		F419FB35240DF687004AA912 /* Advertisement */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB36240DF687004AA912 /* WMZDialog+Advertisement.m */,
+				F419FB37240DF687004AA912 /* WMZDialog+Advertisement.h */,
+			);
+			path = Advertisement;
+			sourceTree = "<group>";
+		};
+		F419FB38240DF687004AA912 /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB39240DF687004AA912 /* WMZDialog+Select.m */,
+				F419FB3A240DF687004AA912 /* WMZDialog+Select.h */,
+			);
+			path = Select;
+			sourceTree = "<group>";
+		};
+		F419FB3B240DF687004AA912 /* Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB3C240DF687004AA912 /* WMZDialog+Sheet.m */,
+				F419FB3D240DF687004AA912 /* WMZDialog+Sheet.h */,
+			);
+			path = Sheet;
+			sourceTree = "<group>";
+		};
+		F419FB3E240DF687004AA912 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB3F240DF687004AA912 /* WMZDialog.m */,
+				F419FB40240DF687004AA912 /* WMZDiaLogBase.h */,
+				F419FB41240DF687004AA912 /* WMZDialog.h */,
+				F419FB42240DF687004AA912 /* WMZDialogMacro.h */,
+				F419FB43240DF687004AA912 /* WMZDiaLogBase.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F419FB44240DF687004AA912 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB45240DF687004AA912 /* WMZDialog+Share.m */,
+				F419FB46240DF687004AA912 /* WMZDialog+Share.h */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		F419FB47240DF687004AA912 /* WMZTags */ = {
+			isa = PBXGroup;
+			children = (
+				F419FB48240DF687004AA912 /* WMZTagBtn.h */,
+				F419FB49240DF687004AA912 /* WMZTagConfig.h */,
+				F419FB4A240DF687004AA912 /* WMZTagsTool.m */,
+				F419FB4B240DF687004AA912 /* WMZTagParam.m */,
+				F419FB4C240DF687004AA912 /* WMZTagCell.h */,
+				F419FB4D240DF687004AA912 /* WMZTags.h */,
+				F419FB4E240DF687004AA912 /* tagOneCell.h */,
+				F419FB4F240DF687004AA912 /* WMZTagBtn.m */,
+				F419FB50240DF687004AA912 /* tagOneCell.m */,
+				F419FB51240DF687004AA912 /* WMZTags.m */,
+				F419FB52240DF687004AA912 /* WMZTagParam.h */,
+				F419FB53240DF687004AA912 /* WMZTagCell.m */,
+				F419FB54240DF687004AA912 /* WMZTagsTool.h */,
+			);
+			path = WMZTags;
+			sourceTree = "<group>";
+		};
+		F419FBBB240ED21F004AA912 /* PYPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				F419FBF4240ED29B004AA912 /* FLAnimatedImage */,
+				F419FBBC240ED21F004AA912 /* DACircularProgress */,
+				F419FBC1240ED21F004AA912 /* Category */,
+				F419FBC6240ED21F004AA912 /* Other */,
+				F419FBCB240ED21F004AA912 /* PYPhotoBrowser.h */,
+				F419FBCC240ED21F004AA912 /* Controller */,
+				F419FBD5240ED21F004AA912 /* Model */,
+				F419FBD8240ED21F004AA912 /* View */,
+				F419FBE1240ED21F004AA912 /* PYPhotosView.bundle */,
+			);
+			path = PYPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		F419FBBC240ED21F004AA912 /* DACircularProgress */ = {
+			isa = PBXGroup;
+			children = (
+				F419FBBD240ED21F004AA912 /* DALabeledCircularProgressView.m */,
+				F419FBBE240ED21F004AA912 /* DACircularProgressView.m */,
+				F419FBBF240ED21F004AA912 /* DALabeledCircularProgressView.h */,
+				F419FBC0240ED21F004AA912 /* DACircularProgressView.h */,
+			);
+			path = DACircularProgress;
+			sourceTree = "<group>";
+		};
+		F419FBC1240ED21F004AA912 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F419FBC2240ED21F004AA912 /* UIView+PYExtension.m */,
+				F419FBC3240ED21F004AA912 /* MBProgressHUD+PYExtension.h */,
+				F419FBC4240ED21F004AA912 /* UIView+PYExtension.h */,
+				F419FBC5240ED21F004AA912 /* MBProgressHUD+PYExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		F419FBC6240ED21F004AA912 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F419FBC7240ED21F004AA912 /* PYProgressView.m */,
+				F419FBC8240ED21F004AA912 /* PYPhotoBrowserConst.h */,
+				F419FBC9240ED21F004AA912 /* PYProgressView.h */,
+				F419FBCA240ED21F004AA912 /* PYPhotoBrowserConst.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		F419FBCC240ED21F004AA912 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F419FBCD240ED21F004AA912 /* PYPhotosReaderController.h */,
+				F419FBCE240ED21F004AA912 /* PYPhotosNavigationController.h */,
+				F419FBCF240ED21F004AA912 /* PYPhotosViewController.m */,
+				F419FBD0240ED21F004AA912 /* PYPhotosPreviewController.h */,
+				F419FBD1240ED21F004AA912 /* PYPhotosReaderController.m */,
+				F419FBD2240ED21F004AA912 /* PYPhotosNavigationController.m */,
+				F419FBD3240ED21F004AA912 /* PYPhotosPreviewController.m */,
+				F419FBD4240ED21F004AA912 /* PYPhotosViewController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F419FBD5240ED21F004AA912 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F419FBD6240ED21F004AA912 /* PYPhoto.h */,
+				F419FBD7240ED21F004AA912 /* PYPhoto.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F419FBD8240ED21F004AA912 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F419FBD9240ED21F004AA912 /* PYPhotosView.m */,
+				F419FBDA240ED21F004AA912 /* PYPhotoBrowseView.h */,
+				F419FBDB240ED21F004AA912 /* PYPhotoCell.h */,
+				F419FBDC240ED21F004AA912 /* PYPhotoView.h */,
+				F419FBDD240ED21F004AA912 /* PYPhotoBrowseView.m */,
+				F419FBDE240ED21F004AA912 /* PYPhotosView.h */,
+				F419FBDF240ED21F004AA912 /* PYPhotoCell.m */,
+				F419FBE0240ED21F004AA912 /* PYPhotoView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F419FBF4240ED29B004AA912 /* FLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				F419FBF5240ED29B004AA912 /* FLAnimatedImage.m */,
+				F419FBF6240ED29B004AA912 /* FLAnimatedImageView.m */,
+				F419FBF7240ED29B004AA912 /* FLAnimatedImage.h */,
+				F419FBF8240ED29B004AA912 /* FLAnimatedImageView.h */,
+			);
+			path = FLAnimatedImage;
+			sourceTree = "<group>";
+		};
+		F419FC04240F86C7004AA912 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				F419FC05240F86C7004AA912 /* AddressCell.h */,
+				F419FC08240F86C7004AA912 /* ZHFAddTitleAddressView.m */,
+				F419FC09240F86C7004AA912 /* TownModel.m */,
+				F419FC0A240F86C7004AA912 /* CityModel.m */,
+				F419FC0C240F86C7004AA912 /* HttpRequest.m */,
+				F419FC0D240F86C7004AA912 /* ProvinceModel.h */,
+				F419FC0E240F86C7004AA912 /* CountyModel.h */,
+				F419FC10240F86C7004AA912 /* AddressCell.m */,
+				F419FC11240F86C7004AA912 /* ZHFAddTitleAddressView.h */,
+				F419FC13240F86C7004AA912 /* ProvinceModel.m */,
+				F419FC14240F86C7004AA912 /* HttpRequest.h */,
+				F419FC15240F86C7004AA912 /* CityModel.h */,
+				F419FC16240F86C7004AA912 /* TownModel.h */,
+				F419FC17240F86C7004AA912 /* CountyModel.m */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
 		F42C3C6323C713AE0057288A /* M */ = {
 			isa = PBXGroup;
 			children = (
@@ -3766,6 +4351,7 @@
 			children = (
 				F45ED44323FD266A00ADDBDB /* ZBNNewPostVC.h */,
 				F45ED44423FD266A00ADDBDB /* ZBNNewPostVC.m */,
+				F419FBFB240F4DB9004AA912 /* ZBNNewPostVC.xib */,
 				F45ED44B23FD32B800ADDBDB /* ZBNPostPayVC.h */,
 				F45ED44C23FD32B800ADDBDB /* ZBNPostPayVC.m */,
 				F45ED44D23FD32B800ADDBDB /* ZBNPostPayVC.xib */,
@@ -3789,9 +4375,6 @@
 		F4990DCE2401214400E16C7D /* PostAndPay */ = {
 			isa = PBXGroup;
 			children = (
-				F45ED44623FD268D00ADDBDB /* ZBNNewPostCell.h */,
-				F45ED44723FD268D00ADDBDB /* ZBNNewPostCell.m */,
-				F45ED44823FD268D00ADDBDB /* ZBNNewPostCell.xib */,
 				F4990DD02401227A00E16C7D /* ZBNPostPriceCell.h */,
 				F4990DD12401227A00E16C7D /* ZBNPostPriceCell.m */,
 				F4990DD22401227A00E16C7D /* ZBNPostPriceCell.xib */,
@@ -3801,6 +4384,12 @@
 				F4990DE324013FF000E16C7D /* ZBNPostPayHeader.h */,
 				F4990DE424013FF000E16C7D /* ZBNPostPayHeader.m */,
 				F4990DE6240146D100E16C7D /* ZBNPostPayHeader.xib */,
+				F419FB7A240E827D004AA912 /* ZBNPostComLineCell.h */,
+				F419FB7B240E827D004AA912 /* ZBNPostComLineCell.m */,
+				F419FB7C240E827D004AA912 /* ZBNPostComLineCell.xib */,
+				F419FB7F240E83EF004AA912 /* ZBNPostNoDataCell.h */,
+				F419FB80240E83EF004AA912 /* ZBNPostNoDataCell.m */,
+				F419FB81240E83EF004AA912 /* ZBNPostNoDataCell.xib */,
 			);
 			path = PostAndPay;
 			sourceTree = "<group>";
@@ -3808,6 +4397,10 @@
 		F4990DCF2401219200E16C7D /* ThreeParty */ = {
 			isa = PBXGroup;
 			children = (
+				F419FC04240F86C7004AA912 /* Address */,
+				F419FBBB240ED21F004AA912 /* PYPhotoBrowser */,
+				F419FAF3240DF686004AA912 /* WMZDialog */,
+				F419FB47240DF687004AA912 /* WMZTags */,
 				F4EB907B240A684300C416CA /* EVRElasticViewReference */,
 				F4C1969823C5751200F1C48C /* 图片上传控件 */,
 				F4C196CF23C5771000F1C48C /* Masonry */,
@@ -4007,6 +4600,8 @@
 				F491322023FA7BE4007EC747 /* ZBNPostCommentCell.h */,
 				F491322123FA7BE4007EC747 /* ZBNPostCommentCell.m */,
 				F491322223FA7BE4007EC747 /* ZBNPostCommentCell.xib */,
+				F450CF94240CE3F5000F8CEC /* ZBNPostPhotoItem.h */,
+				F450CF95240CE3F5000F8CEC /* ZBNPostPhotoItem.m */,
 			);
 			path = squareMain;
 			sourceTree = "<group>";
@@ -4390,11 +4985,13 @@
 				A14FB30D238FCD13006A6511 /* CustomSectionView.xib in Resources */,
 				F4FAC28823AC56A000C235EA /* ZBNWaitDeliverDetailCell.xib in Resources */,
 				A1FC709023BD8224005BFDC9 /* BeseListViewCell.xib in Resources */,
+				F419FB65240DF687004AA912 /* WMZDialog.bundle in Resources */,
 				A10A9CE8239B38930049A0D2 /* LiveBroadcastViewController.xib in Resources */,
 				F457188823CEE99D0040164D /* LaunchScreen.storyboard in Resources */,
 				F479DADB24089325003A284B /* ZBNRTPayVC.xib in Resources */,
 				A10A9C192398A1970049A0D2 /* sorts.plist in Resources */,
 				F4917C8323C3132C00C05CFA /* ZBNMerchantEntryTabCell.xib in Resources */,
+				F419FBFC240F4DB9004AA912 /* ZBNNewPostVC.xib in Resources */,
 				A1F6FD1323FE627E0002704C /* AsseCollectionViewCell2.xib in Resources */,
 				A14BDAC423C71C74006EC033 /* ShopCollectionReusableView.xib in Resources */,
 				A14BDAC923C7263B006EC033 /* ShoperHeadView.xib in Resources */,
@@ -4413,7 +5010,6 @@
 				A1F6BDB323ADFA740063AEF8 /* custom.plist in Resources */,
 				F468E55823D14BDD0050F8BE /* ZBNComDataNilCell.xib in Resources */,
 				F4CB2E8E23FE63B9003A673C /* ZBNPostBarHeader.xib in Resources */,
-				F45ED44A23FD268D00ADDBDB /* ZBNNewPostCell.xib in Resources */,
 				F4FAC29023AC63B600C235EA /* ZBNSHApplyForRefundCell.xib in Resources */,
 				A1FD1B6A23AB471500AE0835 /* CategoryShopDetailsViewController.xib in Resources */,
 				A10A9BE9239764D70049A0D2 /* MDBannerCollectionViewCell.xib in Resources */,
@@ -4473,6 +5069,7 @@
 				A1F73D3B23A9F439001D86EF /* OnlineOrderViewController.xib in Resources */,
 				A14FB2E9238F683D006A6511 /* FindViewController.xib in Resources */,
 				A1F86E2C23D1602F00CC0F54 /* HolteOnlineSubViewTableViewCell.xib in Resources */,
+				F419FB7E240E827E004AA912 /* ZBNPostComLineCell.xib in Resources */,
 				A15DC106239E41D4008CF287 /* HotelDetailsBottomView.xib in Resources */,
 				A10A9C1B2398A1970049A0D2 /* address.plist in Resources */,
 				F476A44123A7682B00E3018A /* ZBNDowmLoadAppVC.xib in Resources */,
@@ -4490,6 +5087,7 @@
 				A1FBA8B523D2D4ED008C67E2 /* HotelOnlineGotOrderViewController.xib in Resources */,
 				A1F4DFE623A1EB9B00B02880 /* SeckillTableViewCell.xib in Resources */,
 				F476A48623A7682C00E3018A /* ZBNMyCollectionCommenCell.xib in Resources */,
+				F419FB83240E83EF004AA912 /* ZBNPostNoDataCell.xib in Resources */,
 				F41B74A523C2DA040056DC78 /* ZBNSHReadEvaluateCell.xib in Resources */,
 				A14FB262238E0E4C006A6511 /* Main.storyboard in Resources */,
 				A14FB31C238FFA76006A6511 /* HXCollectionViewCell.xib in Resources */,
@@ -4516,6 +5114,7 @@
 				F4055EB223CD5A7300637E7A /* ZBNHTWaitInDetailCell.xib in Resources */,
 				A15DC0BF239DD52D008CF287 /* HotelDetlisViewController.xib in Resources */,
 				A1CE7CCA23A77EB900C22C41 /* QCouponView.xib in Resources */,
+				F419FBF2240ED21F004AA912 /* PYPhotosView.bundle in Resources */,
 				F4055ED323CD6E7D00637E7A /* ZBNHTApplyRefundVC.xib in Resources */,
 				F476A49823A7682C00E3018A /* ZBNMyIntegerHeadView.xib in Resources */,
 				F4055EC423CD668600637E7A /* ZBNHTCancelCell.xib in Resources */,
@@ -4625,12 +5224,19 @@
 				F476A45223A7682B00E3018A /* ZBNCashWithDrawalCell.m in Sources */,
 				F48D544423CB4C3B004DACFE /* ZBNProvince.m in Sources */,
 				A15DC0C5239DD78A008CF287 /* HotelDetilsBaseTableView.m in Sources */,
+				F419FC1D240F86C7004AA912 /* HttpRequest.m in Sources */,
+				F419FB5E240DF687004AA912 /* WMZDialog+PopView.m in Sources */,
 				A1F73D3A23A9F439001D86EF /* OnlineOrderViewController.m in Sources */,
 				F479DADF24089338003A284B /* ZBNRTPayCell.m in Sources */,
 				F4CB2E9923FE7EE7003A673C /* NSDate+Extension.m in Sources */,
+				F419FC1C240F86C7004AA912 /* CityModel.m in Sources */,
 				A1FC70C723C2CF6B005BFDC9 /* HomeModel.m in Sources */,
 				F4055EB623CD661D00637E7A /* ZBNHTHadInVC.m in Sources */,
 				A14BDABE23C6CCD6006EC033 /* CategoryCollectionViewCell.m in Sources */,
+
+				F4D4A22E24057FCA00571D14 /* TZImageRequestOperation.m in Sources */,
+				F419FB69240DF687004AA912 /* WMZDialogTableView.m in Sources */,
+
 				F4ADBE3823B9A4BA00B62E46 /* ZBNMyIntegralModel.m in Sources */,
 				A15DC104239E41C8008CF287 /* HotelDetailsBottomView.m in Sources */,
 				A14FB323239017BC006A6511 /* UIView+HHAddition.m in Sources */,
@@ -4639,6 +5245,7 @@
 				A14FB2A8238E4DF6006A6511 /* RegisterViewController.m in Sources */,
 				A1F5515C23B0FCB500416682 /* WRNavigationBar.m in Sources */,
 				F4D4A22024057FCA00571D14 /* TZAssetCell.m in Sources */,
+				F419FBEF240ED21F004AA912 /* PYPhotoBrowseView.m in Sources */,
 				A1F6FCFE23FA95320002704C /* AssembleKillSubViewController.m in Sources */,
 				F4D4A22224057FCA00571D14 /* TZAssetModel.m in Sources */,
 				F4055EDC23CDC19000637E7A /* ZBNHTComDetailModel.m in Sources */,
@@ -4648,6 +5255,8 @@
 				F40D746123D06648006DF3CB /* ZBNRTComDetailCellOne.m in Sources */,
 				F479DAE92408FA5E003A284B /* ZBNRTCancelVC.m in Sources */,
 				F4835BC323C9C97A00418D78 /* ZBNHTComModel.m in Sources */,
+				F419FBF0240ED21F004AA912 /* PYPhotoCell.m in Sources */,
+				F419FB70240DF687004AA912 /* WMZDialog+Sheet.m in Sources */,
 				A14FB32A2390E6B1006A6511 /* HotTableViewCell.m in Sources */,
 				F45ED45C23FD9EA200ADDBDB /* ZBNPostImageCell.m in Sources */,
 				F468E57123D166D40050F8BE /* SGQRCodeObtain.m in Sources */,
@@ -4671,7 +5280,9 @@
 				A1F6FD1E2403A2A90002704C /* KillerListAessbModel.m in Sources */,
 				F476A44C23A7682B00E3018A /* ZBNCostVC.m in Sources */,
 				A14FB29E238E4C89006A6511 /* BaseViewController.m in Sources */,
+				F419FB72240DF687004AA912 /* WMZDiaLogBase.m in Sources */,
 				A1F5516023B2099600416682 /* MdBannerListModel.m in Sources */,
+				F419FB66240DF687004AA912 /* WMZDialog+PickView.m in Sources */,
 				F4FAC27F23ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.m in Sources */,
 				F479DAED2408FA7A003A284B /* ZBNRTCancelCell.m in Sources */,
 				A14FB308238FC206006A6511 /* HQIndexBannerSubview.m in Sources */,
@@ -4679,9 +5290,11 @@
 				F4CD169023C0310D0039CE49 /* ZBNSHBaseOrderVC.m in Sources */,
 				F4CD16A123C093590039CE49 /* ZBNSHZDeliverGoodsDOCell.m in Sources */,
 				F476A44523A7682B00E3018A /* ZBNMyNewsVC.m in Sources */,
+				F419FBE7240ED21F004AA912 /* PYProgressView.m in Sources */,
 				A15DC0F6239E320E008CF287 /* CresThirdTableViewCell.m in Sources */,
 				A1F86E1B23D065F800CC0F54 /* HotelOnlineViewController.m in Sources */,
 				F4CB2E7B23FE4D67003A673C /* NSAttributedString+YYText.m in Sources */,
+				F419FB7D240E827E004AA912 /* ZBNPostComLineCell.m in Sources */,
 				F4CB2E6C23FE4D67003A673C /* YYTextEffectWindow.m in Sources */,
 				F41B749723C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.m in Sources */,
 				A1FC4A94239F70E600AF3F57 /* PaySuccessViewController.m in Sources */,
@@ -4696,6 +5309,7 @@
 				A160901523C8629700A89A78 /* HolelModel.m in Sources */,
 				F4B6978823BF271300CB0014 /* ZBNSHCommonCell.m in Sources */,
 				F476A49723A7682C00E3018A /* ZBNMyIntegerHeadView.m in Sources */,
+				F419FB6D240DF687004AA912 /* WMZDialog+Normal.m in Sources */,
 				F41B748E23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.m in Sources */,
 				A1F6FD212403B77B0002704C /* AssembModel.m in Sources */,
 				A1F86E2B23D1602F00CC0F54 /* HolteOnlineSubViewTableViewCell.m in Sources */,
@@ -4707,6 +5321,7 @@
 				A1F4DFE523A1EB9B00B02880 /* SeckillTableViewCell.m in Sources */,
 				A14FB34F239126CB006A6511 /* ShoingMsgViewController.m in Sources */,
 				F443E92223C6FFAE0059E48F /* ZBNMyAllNewsCell.m in Sources */,
+				F419FB6F240DF687004AA912 /* WMZDialog+Select.m in Sources */,
 				F4D7374E23D2A846000329D1 /* ZBNMyNewsDetailVC.m in Sources */,
 				F476A44723A7682B00E3018A /* ZBNMyPostCommenCell.m in Sources */,
 				A1F86E1423D03BF400CC0F54 /* OnlineOrderModel.m in Sources */,
@@ -4719,8 +5334,11 @@
 				F45718B823D0428E0040164D /* ZBNRTMainVC.m in Sources */,
 				F4CB2E7523FE4D67003A673C /* YYTextParser.m in Sources */,
 				F48D544E23CB4C4E004DACFE /* SPPickerView.m in Sources */,
+				F419FBE9240ED21F004AA912 /* PYPhotosViewController.m in Sources */,
+				F419FBF1240ED21F004AA912 /* PYPhotoView.m in Sources */,
 				A14FB2B7238F5788006A6511 /* FKHRequestOperation.m in Sources */,
 				F4CB2E7723FE4D67003A673C /* YYTextArchiver.m in Sources */,
+				F419FBE5240ED21F004AA912 /* UIView+PYExtension.m in Sources */,
 				F4D4A22124057FCA00571D14 /* TZVideoPlayerController.m in Sources */,
 				F443E8FF23C6D7D90059E48F /* ZBNReChargeDetailModel.m in Sources */,
 				F40D746623D0665A006DF3CB /* ZBNRTComDetailCellTwo.m in Sources */,
@@ -4733,6 +5351,7 @@
 				A10A9BE7239764D70049A0D2 /* MDMaskView.m in Sources */,
 				F4990DC72400D56200E16C7D /* SDWaitingView.m in Sources */,
 				F4D4A22924057FCA00571D14 /* TZPhotoPickerController.m in Sources */,
+				F419FB60240DF687004AA912 /* WMZDialog+Calander.m in Sources */,
 				F48128D723D3E90700285A5C /* ZBNSHReturnGoodsVC.m in Sources */,
 				F4B6978C23BF315700CB0014 /* ZBNSHCommonModel.m in Sources */,
 				A14FB26A238E0E50006A6511 /* main.m in Sources */,
@@ -4751,8 +5370,10 @@
 				F4055EC723CD681C00637E7A /* ZBNHTGoCommentVC.m in Sources */,
 				F48128F123D4595600285A5C /* ZBNSHReturnGoodsComM.m in Sources */,
 				F42C3C6923C723C70057288A /* ZBNSHCommonPayVC.m in Sources */,
+				F419FB5D240DF687004AA912 /* WMZDialog+DatePicker.m in Sources */,
 				F476A4A823A7683200E3018A /* UIImage+ZBNExtension.m in Sources */,
 				A15DC0FB239E35E1008CF287 /* CresFouthTableViewCell.m in Sources */,
+				F419FB56240DF687004AA912 /* WMZDialog+Write.m in Sources */,
 				A15DC0E7239E22BE008CF287 /* CresTwoTableViewCell.m in Sources */,
 				F4C1F41623F3CE6800E28D9D /* ZBNShopFollowVC.m in Sources */,
 				F41612762403A66D001C6BE9 /* MSPageControl.m in Sources */,
@@ -4768,7 +5389,9 @@
 				F476A4AB23A7683200E3018A /* ZBNSegmenBarConfig.m in Sources */,
 				F443E8FC23C6D3C50059E48F /* ZBNCostModel.m in Sources */,
 				F4D4A22424057FCA00571D14 /* UIView+Layout.m in Sources */,
+				F419FB5B240DF687004AA912 /* WMZDialog+Down.m in Sources */,
 				F468E57223D166D40050F8BE /* SGQRCodeScanView.m in Sources */,
+				F419FC21240F86C8004AA912 /* CountyModel.m in Sources */,
 				F4990DD32401227A00E16C7D /* ZBNPostPriceCell.m in Sources */,
 				A1F5515D23B0FCB500416682 /* WRCustomNavigationBar.m in Sources */,
 				A14FB2ED238F6858006A6511 /* MsgViewController.m in Sources */,
@@ -4783,6 +5406,7 @@
 				F476A48423A7682C00E3018A /* ZBNShoppingCartCell.m in Sources */,
 				A15DC10A239E60FD008CF287 /* OnlineTableViewCell.m in Sources */,
 				F476A45D23A7682B00E3018A /* ZBNShoppingHallWaitPaymentOrderVC.m in Sources */,
+				F419FBE6240ED21F004AA912 /* MBProgressHUD+PYExtension.m in Sources */,
 				F4CB2E7C23FE4D67003A673C /* UIPasteboard+YYText.m in Sources */,
 				F4055EBA23CD663400637E7A /* ZBNHTHadInCell.m in Sources */,
 				A15DC0BE239DD52D008CF287 /* HotelDetlisViewController.m in Sources */,
@@ -4792,6 +5416,7 @@
 				A14FB30B238FCD03006A6511 /* CustomSectionView.m in Sources */,
 				A14FB2CB238F5C60006A6511 /* CustomBarViewController.m in Sources */,
 				F48D544323CB4C3B004DACFE /* ZBNCity.m in Sources */,
+				F419FBF9240ED29B004AA912 /* FLAnimatedImage.m in Sources */,
 				F4CD169A23C06F9E0039CE49 /* ZBNSHOrderUserInfoM.m in Sources */,
 				F4CB2E7623FE4D67003A673C /* YYTextAttribute.m in Sources */,
 				F491322323FA7BE4007EC747 /* ZBNPostCommentCell.m in Sources */,
@@ -4803,6 +5428,7 @@
 				A13C266A240CBA83001545F1 /* KillAessBTopViewCell.m in Sources */,
 				F4C196F823C5AF2E00F1C48C /* ZBNMallEntryModel.m in Sources */,
 				A14FB2AD238E7858006A6511 /* RetrievepsdViewController.m in Sources */,
+				F419FBEE240ED21F004AA912 /* PYPhotosView.m in Sources */,
 				F476A45523A7682B00E3018A /* ZBNNewAddressVC.m in Sources */,
 				F45ED44523FD266A00ADDBDB /* ZBNNewPostVC.m in Sources */,
 				F4C1F41923F3CE9800E28D9D /* ZBNShopFollowModel.m in Sources */,
@@ -4813,6 +5439,7 @@
 				F458C33C23C8255700338220 /* ZBNSHComViewLogisticsCell.m in Sources */,
 				A1F6FD0823FE31650002704C /* AsseKillerViewController.m in Sources */,
 				F4C1F41D23F3E69200E28D9D /* ZBNProtocolVC.m in Sources */,
+				F419FB75240DF687004AA912 /* WMZTagParam.m in Sources */,
 				F476A48023A7682C00E3018A /* ZBNShoppingCartModel.m in Sources */,
 				F476A49623A7682C00E3018A /* ZBNMyIntegralVC.m in Sources */,
 				F491321123FA4A95007EC747 /* ZBNPostBarVC.m in Sources */,
@@ -4821,6 +5448,7 @@
 				F4B6979423BF424B00CB0014 /* ZBNSHCommonHeadV.m in Sources */,
 				A15DC0C9239DD875008CF287 /* HotelDetilsTopViewCell.m in Sources */,
 				F4990DD82401228B00E16C7D /* ZBNPayWayCell.m in Sources */,
+				F419FBEB240ED21F004AA912 /* PYPhotosNavigationController.m in Sources */,
 				A1FD1B6923AB471500AE0835 /* CategoryShopDetailsViewController.m in Sources */,
 				F42C3C6623C713C90057288A /* ZBNSHGoAndEvaluateModel.m in Sources */,
 				F4C196ED23C5771000F1C48C /* MASLayoutConstraint.m in Sources */,
@@ -4830,16 +5458,22 @@
 				A1F6FD39240B8BAD0002704C /* KillerbListModel.m in Sources */,
 				A1FBA8CA23D3E4CF008C67E2 /* HotelOnlinesListModel.m in Sources */,
 				F476A48723A7682C00E3018A /* ZBNMyCollectionVC.m in Sources */,
+				F419FBE8240ED21F004AA912 /* PYPhotoBrowserConst.m in Sources */,
+				F419FC20240F86C8004AA912 /* ProvinceModel.m in Sources */,
+				F419FB68240DF687004AA912 /* WMZDialogTool.m in Sources */,
 				F4E00E7123C45CA0007EABC3 /* ZBNTakeOutEntryVC.m in Sources */,
 				F4055EC323CD668600637E7A /* ZBNHTCancelCell.m in Sources */,
 				A14BDAC323C71C74006EC033 /* ShopCollectionReusableView.m in Sources */,
+				F419FB76240DF687004AA912 /* WMZTagBtn.m in Sources */,
 				A15DC0DC239E2003008CF287 /* HotelDetlisSubViewOneController.m in Sources */,
+				F419FB61240DF687004AA912 /* CalanderModel.m in Sources */,
 				F468E55323D094AF0050F8BE /* ZBNRTComDetailModel.m in Sources */,
 				F4D4A22324057FCA00571D14 /* NSBundle+TZImagePicker.m in Sources */,
 				F4E6A7B323B75417006721E9 /* ZBNMineSettingCell.m in Sources */,
 				F4990DE22401313300E16C7D /* ZBNPostDingWayModel.m in Sources */,
 				A10A9CB0239B35F70049A0D2 /* TCShopingViewController.m in Sources */,
 				F4CD169323C06D120039CE49 /* ZBNSHOrderDetailComM.m in Sources */,
+				F419FB6A240DF687004AA912 /* NSDate+WMZCalendarDate.m in Sources */,
 				A14FB354239126E5006A6511 /* ShoingMineViewController.m in Sources */,
 				F4055EBF23CD666B00637E7A /* ZBNHTCancelVC.m in Sources */,
 				A14FB2B9238F5788006A6511 /* NSObject+Timecutdow.m in Sources */,
@@ -4854,17 +5488,25 @@
 				F476A44023A7682B00E3018A /* ZBNBrowseHistoryVC.m in Sources */,
 				A10A9CE7239B38930049A0D2 /* LiveBroadcastViewController.m in Sources */,
 				F48D544523CB4C3B004DACFE /* ZBNArea.m in Sources */,
+				F419FB58240DF687004AA912 /* WMZDialog+Loading.m in Sources */,
 				F48D544F23CB4C4E004DACFE /* SPModalView.m in Sources */,
 				F49B6D3D23B9EF2100F1BEBB /* ZBNMineModel.m in Sources */,
 				A1F6FD1B24039C680002704C /* KillerAessModel.m in Sources */,
 				F42C3C6D23C723E30057288A /* ZBNSHCommonPayCell.m in Sources */,
+				F419FBEC240ED21F004AA912 /* PYPhotosPreviewController.m in Sources */,
+				F419FB82240E83EF004AA912 /* ZBNPostNoDataCell.m in Sources */,
+				F419FBE4240ED21F004AA912 /* DACircularProgressView.m in Sources */,
 				F4C196EE23C5771000F1C48C /* NSArray+MASAdditions.m in Sources */,
+				F419FB71240DF687004AA912 /* WMZDialog.m in Sources */,
 				F40D745C23D06613006DF3CB /* ZBNRTComDetailCell.m in Sources */,
 				F476A45623A7682B00E3018A /* ZBNMyAddressModel.m in Sources */,
 				F443E91C23C6FF830059E48F /* ZBNMyAllNewsVC.m in Sources */,
 				F476A49223A7682C00E3018A /* ZBNShoppingMallEntryVC.m in Sources */,
+				F419FB67240DF687004AA912 /* WMZDialogShareView.m in Sources */,
+				F419FB6E240DF687004AA912 /* WMZDialog+Advertisement.m in Sources */,
 				A10A9C1F2398A9C70049A0D2 /* MsgViewCell.m in Sources */,
 				F476A48A23A7682C00E3018A /* ZBNEntryFooterView.m in Sources */,
+				F450CF96240CE3F5000F8CEC /* ZBNPostPhotoItem.m in Sources */,
 				F4C1969E23C5751300F1C48C /* YNImageUploadViewCollCell.m in Sources */,
 				A14FB25C238E0E4C006A6511 /* AppDelegate.m in Sources */,
 				F48128FA23D4627900285A5C /* OnlineOrderListModel.m in Sources */,
@@ -4874,6 +5516,8 @@
 				F41B74A423C2DA040056DC78 /* ZBNSHReadEvaluateCell.m in Sources */,
 				F4FAC2BE23ACB47100C235EA /* ZBNSHGoAndPayDetailVC.m in Sources */,
 				F476A45C23A7682B00E3018A /* ZBNSHWaitReceivingGoodsOrderVC.m in Sources */,
+				F419FB73240DF687004AA912 /* WMZDialog+Share.m in Sources */,
+				F419FB5C240DF687004AA912 /* WMZDialog+Location.m in Sources */,
 				A1FC709623BD94DD005BFDC9 /* BeseListListModel.m in Sources */,
 				A14FB2A3238E4CDE006A6511 /* LoginViewController.m in Sources */,
 				F457189223CFF0AC0040164D /* ZBNVIPRechargeCell.m in Sources */,
@@ -4891,11 +5535,13 @@
 				F4E6A7B423B75417006721E9 /* ZBNMineSettingVC.m in Sources */,
 				F4FAC2CB23ACBE0700C235EA /* TggStarEvaluationView.m in Sources */,
 				A1CE7CC923A77EB900C22C41 /* QCouponView.m in Sources */,
+				F419FB57240DF687004AA912 /* WMZDialog+NaviMenu.m in Sources */,
 				A14BDA9723C5A2F5006EC033 /* ShoperListModel.m in Sources */,
 				F476A49B23A7682C00E3018A /* InviteCourtesyVC.m in Sources */,
 				A10A9C0A2397ED7A0049A0D2 /* PacketModel.m in Sources */,
 				A10A9C98239A57230049A0D2 /* HotelViewController.m in Sources */,
 				F491334223FBE71D007EC747 /* ZBNPostShareView.m in Sources */,
+				F419FBE3240ED21F004AA912 /* DALabeledCircularProgressView.m in Sources */,
 				F476A4AC23A7683200E3018A /* UIView+ZBNExtension.m in Sources */,
 				F4ADBE3B23B9C47000B62E46 /* ZBNRechargeModel.m in Sources */,
 				F4D4A22724057FCA00571D14 /* TZProgressView.m in Sources */,
@@ -4905,7 +5551,7 @@
 				F40D746B23D06876006DF3CB /* ZBNRTComDetailHeader.m in Sources */,
 				F476A45E23A7682B00E3018A /* ZBNShoppingHallAllOrderVC.m in Sources */,
 				F4CB2E7223FE4D67003A673C /* YYTextDebugOption.m in Sources */,
-				A13C2670240F9E4B001545F1 /* PtTableViewCell.m in Sources */,
+
 				F476A4B623A7844A00E3018A /* ZBNRechargeCell.m in Sources */,
 				A1F5516723B4644A00416682 /* userInfo.m in Sources */,
 				F491322723FA8279007EC747 /* ZBNSquareModel.m in Sources */,
@@ -4922,12 +5568,15 @@
 				A19CD6B823C998B1001835E1 /* HoleggModel.m in Sources */,
 				F44DF88C23AA271C00A7D902 /* ZBNAlertTool.m in Sources */,
 				A10A9CB9239B368B0049A0D2 /* BusinessCoursesViewController.m in Sources */,
+				F419FB77240DF687004AA912 /* tagOneCell.m in Sources */,
+				F419FBFA240ED29B004AA912 /* FLAnimatedImageView.m in Sources */,
 				F476A45423A7682B00E3018A /* ZBNMyWalletComCell.m in Sources */,
 				A10A9CA7239B35680049A0D2 /* NongJialeViewController.m in Sources */,
 				F4D4A22B24057FCA00571D14 /* TZImagePickerController.m in Sources */,
 				A1F6BDAF23ADF7B50063AEF8 /* UIColor+Extensions.m in Sources */,
 				F4CB2E7123FE4D67003A673C /* YYTextKeyboardManager.m in Sources */,
 				F4C196F023C5771000F1C48C /* MASConstraint.m in Sources */,
+				F419FB78240DF687004AA912 /* WMZTags.m in Sources */,
 				A1F86E2123D150F300CC0F54 /* HotelOnlineTableViewCell.m in Sources */,
 				A10A9BE8239764D70049A0D2 /* MDShockBannerView.m in Sources */,
 				A10A9BF4239784400049A0D2 /* ShopHomeViewCell.m in Sources */,
@@ -4951,13 +5600,13 @@
 				A10A9C072397EC9C0049A0D2 /* RedPacketView.m in Sources */,
 				F4D4A22A24057FCA00571D14 /* TZPhotoPreviewCell.m in Sources */,
 				A14FB315238FE03A006A6511 /* HomeCellModel.m in Sources */,
-				F45ED44923FD268D00ADDBDB /* ZBNNewPostCell.m in Sources */,
 				F476A47223A7682B00E3018A /* ZBNBecomeDistributor.m in Sources */,
 				F457189823D011770040164D /* ZBNChangeNameVC.m in Sources */,
 				F45ED44E23FD32B800ADDBDB /* ZBNPostPayVC.m in Sources */,
 				F479DAF12408FDAE003A284B /* ZBNRTCommentVC.m in Sources */,
 				A1F6BDB123ADF7B50063AEF8 /* CustomTopCell.m in Sources */,
 				F4C196F123C5771000F1C48C /* MASViewConstraint.m in Sources */,
+				F419FB79240DF687004AA912 /* WMZTagCell.m in Sources */,
 				F4EB907E240A684300C416CA /* EVRElasticViewReference.m in Sources */,
 				F476A49A23A7682C00E3018A /* ZBNMyPostBarVC.m in Sources */,
 				F48128DB23D3E96B00285A5C /* ZBNSHAppReturnGoodsCell.m in Sources */,
@@ -4967,6 +5616,8 @@
 				A14FB3262390C6D1006A6511 /* CitylistViewController.m in Sources */,
 				F45D811323C96D0700AE2A28 /* ZBNSHWaitEvaluateDetailCell.m in Sources */,
 				F41B749223C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.m in Sources */,
+				F419FB64240DF687004AA912 /* WMZDialog+CardPresent.m in Sources */,
+				F419FB6C240DF687004AA912 /* WMZDialog+BuyCar.m in Sources */,
 				A1F6FCEC23F39D1B0002704C /* HDragItem.m in Sources */,
 				F49656E623F7EAD400481F62 /* UIView+PPBadgeView.m in Sources */,
 				F45718B223D03DB30040164D /* ZBNRTComModel.m in Sources */,
@@ -4978,14 +5629,19 @@
 				F476A45723A7682B00E3018A /* ZBNMyAddressVC.m in Sources */,
 				F476A4A923A7683200E3018A /* ZBNSegmenBarVC.m in Sources */,
 				F4EE90E823F55461003870A3 /* ZBNHTReasonView.m in Sources */,
+				F419FB62240DF687004AA912 /* WMZDialog+time.m in Sources */,
 				F4990DCA240107F500E16C7D /* ZBNPostBarHeader.m in Sources */,
 				F457188E23CFF08D0040164D /* ZBNVIPRechargeVC.m in Sources */,
+				F419FB5F240DF687004AA912 /* WMZDialog+Pay.m in Sources */,
 				A14FB311238FD2AC006A6511 /* HomeTableViewCell.m in Sources */,
 				A1F6FD242403CBFE0002704C /* AsseBlModel.m in Sources */,
 				F458C34523C82E0900338220 /* ZBNSHComViewLogisticsModel.m in Sources */,
+				F419FB59240DF687004AA912 /* WMZDialog+TabbarMenu.m in Sources */,
 				F457189F23D03CBE0040164D /* ZBNRTBaseOrderVC.m in Sources */,
+				F419FB5A240DF687004AA912 /* WMZDialog+AutoDisappear.m in Sources */,
 				A1667DED23C455560039C6F8 /* KXWebViewViewController.m in Sources */,
 				A14FB2BE238F57AD006A6511 /* HUDManager.m in Sources */,
+				F419FBED240ED21F004AA912 /* PYPhoto.m in Sources */,
 				F48D545123CB4C4E004DACFE /* SPPageMenu.m in Sources */,
 				A1F6FD1723FE7B290002704C /* KillerAsselbViewController.m in Sources */,
 				A1F6FCEE23F39D1B0002704C /* LXFPhotoHelper.m in Sources */,
@@ -4999,6 +5655,7 @@
 				A10A9BEB239764D70049A0D2 /* MDBannerCollectionViewCell.m in Sources */,
 				F4CB2E7823FE4D67003A673C /* YYTextRubyAnnotation.m in Sources */,
 				F4FAC28F23AC63B600C235EA /* ZBNSHApplyForRefundCell.m in Sources */,
+				F419FB74240DF687004AA912 /* WMZTagsTool.m in Sources */,
 				A14BDAB823C6C985006EC033 /* CuomtentView.m in Sources */,
 				A1ECDEFD239B7A6E003D870D /* HotolListViewController.m in Sources */,
 				A1FBA8B423D2D4ED008C67E2 /* HotelOnlineGotOrderViewController.m in Sources */,
@@ -5006,13 +5663,18 @@
 				F476A47A23A7682B00E3018A /* ZBNCommenOrderCell.m in Sources */,
 				F4CB2E6F23FE4D67003A673C /* YYTextLine.m in Sources */,
 				F479DAE324089FF4003A284B /* ZBNRTMoreView.m in Sources */,
+				F419FC1A240F86C7004AA912 /* ZHFAddTitleAddressView.m in Sources */,
 				F476A46023A7682B00E3018A /* ZBNSHWaitEvaluateOrderVC.m in Sources */,
 				F476A45123A7682B00E3018A /* ZBNSuccessfulWthdrawalsVC.m in Sources */,
+				F419FBEA240ED21F004AA912 /* PYPhotosReaderController.m in Sources */,
 				A1FC70C123C032A0005BFDC9 /* OrderListModel.m in Sources */,
 				A1F4DFE023A1D54F00B02880 /* ShopSeckillDetailsViewController.m in Sources */,
+				F419FB6B240DF687004AA912 /* WMZDialogAnimation.m in Sources */,
 				F4CB2E7323FE4D67003A673C /* YYLabel.m in Sources */,
+				F419FC1E240F86C7004AA912 /* AddressCell.m in Sources */,
 				A15DC100239E3F04008CF287 /* OnlineBookingViewController.m in Sources */,
 				F41612722403A65A001C6BE9 /* MSLaunchOperation.m in Sources */,
+				F419FB63240DF687004AA912 /* WMZDialog+MenusSelect.m in Sources */,
 				F4CB2E7A23FE4D67003A673C /* NSParagraphStyle+YYText.m in Sources */,
 				F4C196EB23C5771000F1C48C /* MASCompositeConstraint.m in Sources */,
 				F476A44923A7682B00E3018A /* ZBNMyWalletHeadView.m in Sources */,

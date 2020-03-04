@@ -31,7 +31,7 @@
             <connections>
                 <outlet property="label" destination="Kdf-VP-MfW" id="mr9-WL-fAO"/>
             </connections>
-            <point key="canvasLocation" x="-314" y="127"/>
+            <point key="canvasLocation" x="-109" y="129"/>
         </view>
     </objects>
 </document>

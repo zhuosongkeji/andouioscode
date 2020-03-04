@@ -26,11 +26,15 @@
 #import "ZBNMyCollectionM.h"
 #import "ZBNBrowseModel.h"
 #import "ZBNShopFollowModel.h"
+#import "ZBNPostUserModel.h"
+#import "ZBNSquareModel.h"
+#import "ZBNPostComModel.h"
 
 @implementation ZBNExtensionConfig
 
 + (void)load
 {
+
     [ZBNShopFollowModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
            return @{
                @"ID" : @"id",
@@ -115,15 +119,27 @@
               return @{
                   @"ID" : @"id",
               };
-          }]; 
+          }];
     [ZBNBrowseModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
             @"ID" : @"id",
         };
     }];
-    
-    
-    
+    [ZBNPostUserModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+           return @{
+               @"ID" : @"id",
+           };
+       }];
+    [ZBNSquareModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+        return @{
+            @"ID" : @"id",
+        };
+    }];
+    [ZBNPostComModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+        return @{
+            @"ID" : @"id",
+        };
+    }];
 }
 
 

@@ -211,6 +211,7 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #import "YYText.h"
 #import "NSObject+ZBNExtension.h"
 #import "NSDate+Extension.h"
+#import <MBProgressHUD.h>
 
 
 #endif /* PrefixHeader_h */

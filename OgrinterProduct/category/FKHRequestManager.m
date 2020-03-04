@@ -554,27 +554,36 @@ static AFHttpClientManager *client = nil;
 + (void)imgFormdata:(id<AFMultipartFormData>  _Nonnull)formData
           fileArray:(NSArray *)fileArray{
     
-    NSString *type = [[fileArray.firstObject componentsSeparatedByString:@"ImageFile/"] lastObject];
+//    NSString *type = [[fileArray.firstObject componentsSeparatedByString:@"fileName/"] lastObject];
+//
+//    for (NSString *imgPath in fileArray) {
+//        UIImage * image =[UIImage  imageWithContentsOfFile:imgPath];
+        
     
-    for (NSString *imgPath in fileArray) {
-        UIImage * image =[UIImage  imageWithContentsOfFile:imgPath];
-//        NSDate *date = [NSDate date];
-//        NSDateFormatter *formormat = [[NSDateFormatter alloc]init];
-//        [formormat setDateFormat:@"yyyyMMddHHmmss"];
-//        NSString *dateString = [formormat stringFromDate:date];
-        NSString *fileName = [NSString  stringWithFormat:@"%@%@",@"1_1",type];
-//        NSString *fileName = [NSString  stringWithFormat:@"%@.%@",dateString,type];
-        NSData *imageData = UIImageJPEGRepresentation(image, 1);
-        double scaleNum = (double)300*1024/imageData.length;
-        NSLog(@"图片压缩率：%f",scaleNum);
-        if(scaleNum <1){
-            
-            imageData = UIImageJPEGRepresentation(image, scaleNum);
-        }else {
-            imageData = UIImageJPEGRepresentation(image, 0.1);
-        }
-        [formData  appendPartWithFileData:imageData name:@"file" fileName:fileName mimeType:@"image/jpg/png/jpeg"];
+    for (int i = 0; i < fileArray.count ; i++) {
+        NSDate *date = [NSDate date];
+        NSDateFormatter *formormat = [[NSDateFormatter alloc]init];
+        [formormat setDateFormat:@"yyyyMMddHHmmss"];
+        NSString *dateString = [formormat stringFromDate:date];
+        UIImage *image = fileArray[i];
+        NSData *data = UIImageJPEGRepresentation(image,1);
+        [formData appendPartWithFileData:data name:[NSString stringWithFormat:@"%@[%d]",@"images",i] fileName:[NSString stringWithFormat:@"%@[%d]",dateString,i] mimeType:@"image/jpg/png/jpeg"];
     }
+    
+//
+//        NSString *fileName = [NSString  stringWithFormat:@"%@%@",@"1_1",type];
+//
+//        NSData *imageData = UIImageJPEGRepresentation(image, 1);
+//        double scaleNum = (double)300*1024/imageData.length;
+//        NSLog(@"图片压缩率：%f",scaleNum);
+//        if(scaleNum <1){
+//
+//            imageData = UIImageJPEGRepresentation(image, scaleNum);
+//        }else {
+//            imageData = UIImageJPEGRepresentation(image, 0.1);
+//        }
+//        [formData  appendPartWithFileData:imageData name:@"images[]" fileName:fileName mimeType:@"image/jpg/png/jpeg"];
+//    }
 }
 
 

@@ -54,6 +54,12 @@
     self.navigationItem.title = @"设置";
     self.tableView.bounces = NO;
 }
+
+- (void)dealloc
+{
+    self.navigationController.navigationBar.translucent = YES;
+}
+
 /*! 设置底部视图 */
 - (void)setupFooterView
 {

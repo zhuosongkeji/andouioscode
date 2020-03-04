@@ -49,8 +49,9 @@
 #import "YNImageUploadViewCollCell.h"
 #import "TZImagePickerController.h"
 #import "Masonry.h"
+#import <AFNetworking.h>
 
-@interface YNImageUploadView () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface YNImageUploadView () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,AFMultipartFormData>
 /** 视图的配置文件 */
 @property (nonatomic, strong) YNImageUploadViewConfig *config;
 /** 视图的高度 */
@@ -165,10 +166,12 @@
                 model.asset = [assets objectAtIndex:i];
                 model.imageType = YNImageUploadImageTypeUpload;
                 model.state = YNImageUploadStateNormal;
-                model.imageName = [NSString stringWithFormat:@"%@%u.jpg",[self uuidString],arc4random_uniform(255)];
+                model.imageName = [NSString stringWithFormat:@"%@%u.png",[self uuidString],arc4random_uniform(255)];
+                [model.array addObject:model.image];
                 [marray addObject:model];
             }
             [weakSelf filtrationDatasWithArray:marray];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"chooseImgOk" object:nil];
         }];
         [viewController presentViewController:imagePicker animated:YES completion:nil];
     }else {
@@ -401,15 +404,28 @@
 
 - (NSArray<UIImage *> *)images {
     NSMutableArray <UIImage *>*marray = @[].mutableCopy;
+    
     if (self.dataList.count > 1) {
         for (YNImageModel *model in self.dataList) {
             [marray addObject:model.image];
+            NSLog(@"%@----+++---",model.image);
         }
         [marray removeLastObject];
     }
     return marray;
 }
 
+- (NSMutableArray *)dataArr
+{
+    NSMutableArray <NSString *>*marray = @[].mutableCopy;
+       if (self.dataList.count > 1) {
+           for (YNImageModel *model in self.dataList) {
+               [marray addObjectsFromArray:model.array];
+           }
+           [marray removeLastObject];
+       }
+       return marray;
+}
 
 
 - (NSArray<NSString *> *)imageNames {

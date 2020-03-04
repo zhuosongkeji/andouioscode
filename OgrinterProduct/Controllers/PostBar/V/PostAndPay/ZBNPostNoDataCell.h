@@ -1,8 +1,8 @@
 //
-//  ZBNNewPostCell.h
+//  ZBNPostNoDataCell.h
 //  OgrinterProduct
 //
-//  Created by 周芳圆 on 2020/2/19.
+//  Created by 周芳圆 on 2020/3/3.
 //  Copyright © 2020 RXF. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZBNNewPostCell : UITableViewCell
+@interface ZBNPostNoDataCell : UITableViewCell
 
 @end
 

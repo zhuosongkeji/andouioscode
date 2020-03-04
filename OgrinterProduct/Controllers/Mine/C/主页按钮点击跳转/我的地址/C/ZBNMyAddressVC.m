@@ -164,7 +164,6 @@ static NSString * const ZBNMyAddressCellID = @"address";
     for (ZBNMyAddressModel *model in self.addressArray) {
         if (model == cell.addModel) {
             ZBNAddressChangeVC *vc  = [[ZBNAddressChangeVC alloc] init];
-            NSLog(@"%@",cell.addModel.area);
             [self.navigationController pushViewController:vc animated:YES];
             vc.addM = cell.addModel;
         }

@@ -25,6 +25,7 @@
 }
 
 
+
 - (IBAction)selctedBtnClick:(UIButton *)sender {
     if (self.selctedBtnClickTask) {
         self.selctedBtnClickTask(self);
