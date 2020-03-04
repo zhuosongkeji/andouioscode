@@ -31,7 +31,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hwb-uk-AZ4">
+                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Hwb-uk-AZ4">
                         <rect key="frame" x="102" y="37.5" width="204" height="31"/>
                         <color key="minimumTrackTintColor" red="0.88868540529999995" green="0.20830759409999999" blue="0.18837797640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="maximumTrackTintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -103,7 +103,12 @@
                 <constraint firstItem="psl-EH-vqH" firstAttribute="centerY" secondItem="KGk-i7-Jjw" secondAttribute="centerY" id="tEt-xO-gwy"/>
             </constraints>
             <connections>
+                <outlet property="icon" destination="psl-EH-vqH" id="ejg-JJ-CRf"/>
+                <outlet property="newlable" destination="k6J-Li-UTi" id="dIo-Ye-EDl"/>
+                <outlet property="old" destination="hKu-72-UDB" id="Jvw-fI-Yxw"/>
                 <outlet property="sbtn" destination="ZQ7-sh-zZ6" id="2RW-oA-6HQ"/>
+                <outlet property="title" destination="Hwb-uk-AZ4" id="KGh-Qn-4ZY"/>
+                <outlet property="tlt" destination="Smw-QQ-1QM" id="Oq1-iE-UCG"/>
                 <outlet property="yplable" destination="knS-DS-IvW" id="Efz-9i-E0P"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="82.03125"/>

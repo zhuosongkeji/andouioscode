@@ -125,6 +125,72 @@
             </connections>
             <point key="canvasLocation" x="128.98550724637681" y="136.60714285714286"/>
         </tableViewCell>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeTableViewCellThrid" rowHeight="163" id="dBK-Uc-5MF" customClass="HomeTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="182"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dBK-Uc-5MF" id="dJ6-BN-FUj">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="181.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3p-p6-bC4">
+                        <rect key="frame" x="0.0" y="173.5" width="320" height="8"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="8" id="pST-wD-Zqf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="AKK-F3-aX2">
+                        <rect key="frame" x="0.0" y="44" width="320" height="129.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Thc-t1-OaS">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxS-Bd-XQc">
+                        <rect key="frame" x="20" y="14" width="125" height="28"/>
+                        <color key="backgroundColor" red="0.94914358854293823" green="0.54828882217407227" blue="0.23538249731063843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="找找您的小区">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbX-33-36t">
+                        <rect key="frame" x="175" y="14" width="125" height="28"/>
+                        <color key="backgroundColor" red="0.94914358850000002" green="0.54828882219999997" blue="0.23538249729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="看看最美乡村">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="GbX-33-36t" firstAttribute="leading" secondItem="zxS-Bd-XQc" secondAttribute="trailing" constant="30" id="FCX-cB-Pfh"/>
+                    <constraint firstItem="zxS-Bd-XQc" firstAttribute="top" secondItem="dJ6-BN-FUj" secondAttribute="top" constant="14" id="Hoy-9R-qVg"/>
+                    <constraint firstAttribute="trailing" secondItem="AKK-F3-aX2" secondAttribute="trailing" id="TJW-nN-YnN"/>
+                    <constraint firstItem="AKK-F3-aX2" firstAttribute="leading" secondItem="dJ6-BN-FUj" secondAttribute="leading" id="UGY-B9-uQ0"/>
+                    <constraint firstItem="AKK-F3-aX2" firstAttribute="top" secondItem="dJ6-BN-FUj" secondAttribute="top" constant="44" id="UzU-nK-fJA"/>
+                    <constraint firstItem="w3p-p6-bC4" firstAttribute="leading" secondItem="dJ6-BN-FUj" secondAttribute="leading" id="WFN-9b-044"/>
+                    <constraint firstAttribute="bottom" secondItem="w3p-p6-bC4" secondAttribute="bottom" id="WhP-Gz-wV0"/>
+                    <constraint firstAttribute="trailing" secondItem="w3p-p6-bC4" secondAttribute="trailing" id="dG0-9j-Iaq"/>
+                    <constraint firstAttribute="trailing" secondItem="GbX-33-36t" secondAttribute="trailing" constant="20" id="f7i-oq-GBI"/>
+                    <constraint firstItem="GbX-33-36t" firstAttribute="height" secondItem="zxS-Bd-XQc" secondAttribute="height" id="gpc-P4-mnS"/>
+                    <constraint firstItem="GbX-33-36t" firstAttribute="width" secondItem="zxS-Bd-XQc" secondAttribute="width" id="hg4-pL-ZWC"/>
+                    <constraint firstItem="w3p-p6-bC4" firstAttribute="top" secondItem="AKK-F3-aX2" secondAttribute="bottom" id="lqf-h7-FZy"/>
+                    <constraint firstItem="GbX-33-36t" firstAttribute="centerY" secondItem="zxS-Bd-XQc" secondAttribute="centerY" id="swQ-69-IP9"/>
+                    <constraint firstItem="zxS-Bd-XQc" firstAttribute="leading" secondItem="dJ6-BN-FUj" secondAttribute="leading" constant="20" id="wkX-pJ-yvr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="mCollectionView3" destination="AKK-F3-aX2" id="ZHI-5y-ol7"/>
+            </connections>
+            <point key="canvasLocation" x="128.98550724637681" y="271.875"/>
+        </tableViewCell>
     </objects>
     <resources>
         <image name="VV" width="11" height="11"/>

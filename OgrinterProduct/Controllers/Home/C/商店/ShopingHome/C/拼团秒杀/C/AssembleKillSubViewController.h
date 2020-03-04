@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITableView *subTableView;
 
 @property (nonatomic, assign) BOOL isRefresh;
+@property(nonatomic,strong)NSString *aid;
 
 
 @end

@@ -6,20 +6,37 @@
 //  Copyright © 2020 RXF. All rights reserved.
 //
 
+#define groupgroup_list @"group/group_list"
+
 #import "AssembleKillSubViewController.h"
 #import "AssemTableViewCell.h"
+#import "AsseBlModel.h"
 
-@interface AssembleKillSubViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface AssembleKillSubViewController ()<UITableViewDataSource,UITableViewDelegate>{
+    NSInteger page;
+}
 
 @property (nonatomic, assign) BOOL fingerIsTouch;
+
+@property(nonatomic,strong)NSMutableArray *listArr;
 
 @end
 
 @implementation AssembleKillSubViewController
 
+
+-(NSMutableArray *)listArr{
+    if (!_listArr) {
+        _listArr = [NSMutableArray array];
+    }
+    return _listArr;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    page = 1;
     [self setup];
     
     // Do any additional setup after loading the view from its nib.
@@ -33,6 +50,41 @@
     self.subTableView.tableFooterView = [UILabel new];
     [self.subTableView registerNib:[UINib nibWithNibName:@"AssemTableViewCell" bundle:nil] forCellReuseIdentifier:@"AssemTableViewCell"];
     
+    self.subTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        page += 1;
+        [self loadNetWork];
+    }];
+    
+    [self.subTableView.mj_footer setHidden:YES];
+    [self loadNetWork];
+    
+    
+}
+
+
+-(void)loadNetWork{
+    
+    NSString *url1 = [NSString stringWithFormat:@"%@%@/%@/%@",API_BASE_URL_STRING,groupgroup_list,self.aid,[NSString stringWithFormat:@"%ld",page]];
+    
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_GET pathUrl:url1 params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            NSArray *arr = serverInfo.response[@"data"];
+            
+            for (int i = 0; i < [arr count];i ++) {
+                NSDictionary *dic = arr[i];
+                AsseBlModel *model = [[AsseBlModel alloc]initWithDict:dic];
+                [self.listArr addObject:model];
+            }
+            
+            [self.subTableView reloadData];
+        }else {
+            
+            [HUDManager showTextHud:loadError];
+        }
+        
+        
+    }];
 }
 
 
@@ -44,13 +96,19 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    self.subTableView.mj_footer.hidden = [self.listArr count]<10;
+    return [self.listArr count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     AssemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AssemTableViewCell"];
     if (!cell) {
         cell = [[NSBundle mainBundle]loadNibNamed:@"AssemTableViewCell" owner:self options:nil].lastObject;
+    }
+    
+    if ([self.listArr count]) {
+        AsseBlModel *mode = self.listArr[indexPath.row];
+        cell.modelist = mode;
     }
     
     return cell;

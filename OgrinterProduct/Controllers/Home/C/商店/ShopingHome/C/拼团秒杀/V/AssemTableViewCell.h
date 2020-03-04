@@ -10,10 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class AsseBlModel;
+
 @interface AssemTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIButton *sbtn;
 
 @property (weak, nonatomic) IBOutlet UILabel *yplable;
+@property(nonatomic,strong)AsseBlModel *modelist;
 
 
 @end

@@ -7,12 +7,15 @@
 //
 
 #define shopdetails @"goods/goods"
+
 #define shopcollection @"goods/collection"//收藏或取消收藏
 #define shopspecslist @"goods/specslist"//产品规格
 
 #define order_add_order @"order/add_order"//购买
 
 #define cart_addcar @"cart/addcar"//加入购物车
+
+#define group_puzzle_detail @"group/puzzle_detail"//拼团
 
 #define bottomH 3*(KSCREEN_HEIGHT/5)
 
@@ -39,6 +42,8 @@
 #import <UMShare/UMShare.h>
 #import <UMCommon/UMCommon.h>
 //#import "ShareView.h"
+#import "KillModelt.h"
+#import "OYCountDownManager.h"
 
 
 
@@ -74,6 +79,9 @@
 @property (nonatomic,strong)SDCycleScrollView *cycleScrollView;
 
 @property (nonatomic,strong)NSMutableArray *dataArr;
+@property (nonatomic,strong)NSMutableArray *dataArr1;
+
+
 
 @property(nonatomic,strong)NSMutableArray *ggArr;
 
@@ -94,6 +102,13 @@
         _dataArr = [NSMutableArray array];
     }
     return _dataArr;
+}
+
+-(NSMutableArray *)dataArr1 {
+    if (!_dataArr1) {
+        _dataArr1 = [NSMutableArray array];
+    }
+    return _dataArr1;
 }
 
 
@@ -131,7 +146,7 @@
 //MARK:-viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.navigationItem.title = @"商品详情";
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -182,12 +197,44 @@
     
     NSDictionary *dict = nil;
     
-    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopdetails];
-    
     if (self.unmodel.uid)
         dict = @{@"uid":self.unmodel.uid,@"id":self.cpid};
     else
         dict  = @{@"id":self.cpid};
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopdetails];
+    
+    if (self.seckillType == ShopSeckillDetailsTypeKill) {
+        
+        
+    }else if (self.seckillType == ShopSeckillDetailsTypeOrder){
+        
+        url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopdetails];
+        
+    }else if (self.seckillType == ShopSeckillDetailsTypeOther){
+        
+        [kCountDownManager start];
+        
+        NSString *url1 = [NSString stringWithFormat:@"%@%@/%@",API_BASE_URL_STRING,group_puzzle_detail,self.cpid];
+        
+        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_GET pathUrl:url1 params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
+            if ([serverInfo.response[@"code"] integerValue] == 200) {
+                NSDictionary *dict = serverInfo.response[@"data"];
+                KillModelt *model = [[KillModelt alloc]initWithDict:dict];
+                [self.dataArr1 addObject:model];
+                [self.mTableView reloadData];
+            }else if([serverInfo.response[@"code"] integerValue] == 404){
+                [HUDManager showTextHud:serverInfo.response[@"msg"]];
+                
+                [self.navigationController popViewControllerAnimated:YES];
+                
+            }else {
+                [HUDManager showTextHud:loadError];
+            }
+            
+        }];
+    }
+    
     
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([serverInfo.response[@"code"] integerValue] == 200) {
@@ -350,7 +397,16 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return 4;
+        if (self.seckillType == ShopSeckillDetailsTypeOther) {
+            return 4;
+        }else if (self.seckillType == ShopSeckillDetailsTypeOrder){
+            return 4;
+        }else if (self.seckillType == ShopSeckillDetailsTypeKill){
+            return 3;
+        }else{
+            return 0;
+            
+        }
     }
     return 1;
 }
@@ -362,10 +418,21 @@
         SeckillTableViewCell *cell = [SeckillTableViewCell tempTableViewCellWith:self.mTableView indexPath:indexPath type:self.seckillType];
         
         [cell configTempCellWith:indexPath];
-        if ([self.dataArr count]) {
-            ShopDetalisModel *model =  self.dataArr[0];
-            cell.dmodelist = model;
-        }
+        if (self.seckillType == ShopSeckillDetailsTypeOther) {
+            if ([self.dataArr1 count]) {
+                KillModelt *model =  self.dataArr1[0];
+                cell.kmodelist = model;
+            }
+        }else if (self.seckillType == ShopSeckillDetailsTypeOrder){
+            
+            if ([self.dataArr count]) {
+                ShopDetalisModel *model =  self.dataArr[0];
+                cell.dmodelist = model;
+            }
+        }else if(self.seckillType == ShopSeckillDetailsTypeKill){
+        
+            
+        }else{}
         
         cell.selectBlock = ^(UIButton *btn) {
             
@@ -421,8 +488,9 @@
         if (self.seckillType == ShopSeckillDetailsTypeOrder) {
             return [[@[@"84",@"40",@"40",@"64"] objectAtIndex:indexPath.row] floatValue];
         }else if (self.seckillType == ShopSeckillDetailsTypeKill){
-            return [[@[@"45",@"65",@"40",@"64"] objectAtIndex:indexPath.row] floatValue];
-        }else{}
+            return 64;
+        }else if (self.seckillType == ShopSeckillDetailsTypeOther){
+            return [[@[@"84",@"40",@"64",@"138"] objectAtIndex:indexPath.row] floatValue];}
     }else{
         return KSCREEN_HEIGHT-kStatusBarAndNavigationBarH;
     }
@@ -599,11 +667,19 @@
     [self.navigationController pushViewController:shoper animated:YES];
 }
 
-
 //MARK:- dealloc
 -(void)dealloc {
+     NSLog(@"释放-");
+    [kCountDownManager invalidate];
     KRemove_Observer(self);
 }
+
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [kCountDownManager invalidate];
+}
+
 
 
 /*

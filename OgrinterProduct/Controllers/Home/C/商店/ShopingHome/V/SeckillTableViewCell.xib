@@ -384,6 +384,42 @@
             </connections>
             <point key="canvasLocation" x="247.82608695652175" y="250.44642857142856"/>
         </tableViewCell>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SeckillTableViewCellSenver" rowHeight="251" id="uSs-o8-uUk" customClass="SeckillTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uSs-o8-uUk" id="6WT-tp-RD5">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="168.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SBx-a5-zGX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="168.5"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FSk-TM-32k">
+                                <rect key="frame" x="0.0" y="8" width="320" height="152.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FSk-TM-32k" firstAttribute="top" secondItem="SBx-a5-zGX" secondAttribute="top" constant="8" id="GGA-Dr-slV"/>
+                            <constraint firstItem="FSk-TM-32k" firstAttribute="leading" secondItem="SBx-a5-zGX" secondAttribute="leading" id="QvY-hv-SJm"/>
+                            <constraint firstAttribute="trailing" secondItem="FSk-TM-32k" secondAttribute="trailing" id="bV4-gM-aVJ"/>
+                            <constraint firstAttribute="bottom" secondItem="FSk-TM-32k" secondAttribute="bottom" constant="8" id="kgJ-jm-Yb4"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="SBx-a5-zGX" secondAttribute="trailing" id="0VL-ip-pZO"/>
+                    <constraint firstAttribute="bottom" secondItem="SBx-a5-zGX" secondAttribute="bottom" id="FuN-O6-6Co"/>
+                    <constraint firstItem="SBx-a5-zGX" firstAttribute="top" secondItem="6WT-tp-RD5" secondAttribute="top" id="jSp-n7-RTm"/>
+                    <constraint firstItem="SBx-a5-zGX" firstAttribute="leading" secondItem="6WT-tp-RD5" secondAttribute="leading" id="rra-wU-hYJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="table" destination="FSk-TM-32k" id="ADQ-EM-7En"/>
+            </connections>
+            <point key="canvasLocation" x="248" y="362"/>
+        </tableViewCell>
     </objects>
     <resources>
         <image name="图层 520" width="70" height="63.5"/>

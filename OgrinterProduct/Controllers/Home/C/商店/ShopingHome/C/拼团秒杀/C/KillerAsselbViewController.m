@@ -6,11 +6,14 @@
 //  Copyright © 2020 RXF. All rights reserved.
 //
 
+#define goods_sec_list @"goods/sec_list"
+
 #import "KillerAsselbViewController.h"
 #import "AssemTableViewCell.h"
 #import "WSLWaterFlowLayout.h"
 #import "AsseCollectionViewCell1.h"
 #import "AssemTableViewCell.h"
+#import "KillerAessModel.h"
 
 
 @interface KillerAsselbViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate>
@@ -21,10 +24,19 @@
 @property (weak, nonatomic) IBOutlet UIView *bjView;
 @property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView;
 
+@property (nonatomic,strong)NSMutableArray *dataArr;
+
 
 @end
 
 @implementation KillerAsselbViewController
+
+-(NSMutableArray *)dataArr{
+    if (!_dataArr) {
+        _dataArr = [NSMutableArray array];
+    }
+    return _dataArr;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,6 +68,29 @@
     
     [self.mCollectionView registerNib:[UINib nibWithNibName:@"AsseCollectionViewCell1" bundle:nil] forCellWithReuseIdentifier:@"AsseCollectionViewCell1"];
     
+    [self loadnetWork];
+    
+}
+
+
+-(void)loadnetWork{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,goods_sec_list];
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"sec_hour":@"15",@"page":@"1"} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        if ([serverInfo.response[@"code"] integerValue] == 200) {
+            NSDictionary *dict = serverInfo.response[@"data"];
+            KillerAessModel *model = [[KillerAessModel alloc]initWithDict:dict];
+            [self.dataArr addObject:model];
+            [self.mCollectionView reloadData];
+            [self.mTableView reloadData];
+        }else {
+            [HUDManager showTextHud:loadError];
+        }
+        
+        [self.mCollectionView reloadData];
+        [self.mTableView reloadData];
+        
+    }];
 }
 
 //MARK:-collection
@@ -65,7 +100,11 @@
 
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 3;
+    if ([self.dataArr count]) {
+        KillerAessModel *model = self.dataArr[0];
+        return [model.top_goods count];
+    }
+    return 0;
 }
 
 
@@ -94,7 +133,7 @@
 
 //MARK:-WSLWaterFlowLayout
 - (CGSize)waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return  CGSizeMake((self.view.width-30)/2,130);
+    return  CGSizeMake((self.view.width-30)/2,150);
     
 }
 
@@ -128,7 +167,11 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    if ([self.dataArr count]) {
+        KillerAessModel *model = self.dataArr[0];
+        return [model.goods_list count];
+    }
+    return 0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

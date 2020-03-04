@@ -46,6 +46,10 @@ NS_ASSUME_NONNULL_BEGIN
 //计算两个时间差
 + (NSString *)pleaseInsertStarTimeo:(NSString *)time1 andInsertEndTime:(NSString *)time2;
 
++ (NSString *)pleaseInsertStarTimeo1:(NSString *)time1 andInsertEndTime:(NSString *)time2;
+
+- (NSString *)intervalFromLastDate:(NSString *) time2 with:(NSString *)nowTime;
+
 @end
 
 NS_ASSUME_NONNULL_END
