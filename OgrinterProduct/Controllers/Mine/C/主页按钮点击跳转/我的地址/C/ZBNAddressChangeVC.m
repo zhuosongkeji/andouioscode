@@ -8,31 +8,24 @@
 
 #import "ZBNAddressChangeVC.h"
 #import "ZBNMyAddressModel.h"
+#import "ZHFAddTitleAddressView.h"
 
-#import "AddressView.h"
-#import "SPModalView.h"
+@interface ZBNAddressChangeVC () <ZHFAddTitleAddressViewDelegate>
 
-@interface ZBNAddressChangeVC ()
-
+@property(nonatomic,strong)ZHFAddTitleAddressView * addTitleAddressView;
 /*! 联系人 */
 @property (weak, nonatomic) IBOutlet UITextField *name;
 /*! 电话号码 */
 @property (weak, nonatomic) IBOutlet UITextField *phone;
 
-/*! 选择地址的label */
-@property (weak, nonatomic) IBOutlet UILabel *chooseAdd;
+@property (weak, nonatomic) IBOutlet UIButton *chooseAddBtn;
+
 /*! 详细地址 */
 @property (weak, nonatomic) IBOutlet UITextField *DetailAddress;
 /*! 是否设置为默认地址 */
 @property (weak, nonatomic) IBOutlet UIButton *defaultBtn;
 
-@property (nonatomic, strong) NSArray *dataArr;
-
-// 地址view，这个view上添加了本人封装的2大控件，一个是SPPageMenu，分页菜单;  另一个是本demo的主角:SPPickerView
-@property (nonatomic, strong) AddressView *addressView;
-
-// 这个view添加了addressView，采用动画的形式从下往上弹出
-@property (nonatomic, strong) SPModalView *modalView;
+@property (nonatomic, copy) NSString *IDArea;
 
 @end
 
@@ -43,36 +36,49 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    self.IDArea = self.addM.area_id;
+    self.addTitleAddressView = [[ZHFAddTitleAddressView alloc]init];
+     self.addTitleAddressView.title = @"选择地址";
+    self.addTitleAddressView.delegate1 = self;
+    self.addTitleAddressView.defaultHeight = 350;
+    self.addTitleAddressView.titleScrollViewH = 37;
+    if (self.addTitleAddressView.titleIDMarr.count > 0) {
+         self.addTitleAddressView.isChangeAddress = true;
+     }
+     else{
+         self.addTitleAddressView.isChangeAddress = false;
+     }
+    
+     [self.view addSubview:[self.addTitleAddressView initAddressView]];
+    
+    
+    
+    
+    
     // 设置UI
     [self setupUI];
-    // 设置手势
-    [self setupLabelGes];
-    // 请求数据
-    [self loadData];
+
 }
+
+
+-(void)cancelBtnClick:(NSString *)titleAddress titleID:(NSString *)titleID{
+    [self.chooseAddBtn setTitle:titleAddress forState:UIControlStateNormal];
+    NSLog( @"%@", [NSString stringWithFormat:@"打印的对应省市县的id=%@",titleID]);
+    self.IDArea = [titleID substringFromIndex:titleID.length - 6];
+}
+
 
 
 - (void)setupUI
 {
-    self.chooseAdd.userInteractionEnabled = YES;
-    self.modalView = [[SPModalView alloc] initWithView:self.addressView inBaseViewController:self];
-    
+
+    [self.chooseAddBtn setTitle:[NSString stringWithFormat:@"%@%@%@",self.addM.province,self.addM.city,self.addM.area] forState:UIControlStateNormal];
     self.defaultBtn.selected = self.addM.is_defualt;
     self.name.text = self.addM.name;
     self.phone.text = self.addM.mobile;
-    self.chooseAdd.text = [NSString stringWithFormat:@"%@%@%@",self.addM.province,self.addM.city,self.addM.area];
     self.DetailAddress.text = self.addM.address;
-}
-
-- (void)setupLabelGes
-{
-    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelClick)];
-    [self.chooseAdd addGestureRecognizer:tapGes];
-}
-
-- (void)labelClick
-{
-    [self.modalView show];
+   
 }
 
 
@@ -95,41 +101,10 @@
     
 }
 
-
-- (AddressView *)addressView {
-    
-    if (!_addressView) {
-        _addressView = [[AddressView alloc] init];
-        _addressView.frame = CGRectMake(0, 0, kScreenWidth, 400);
-        ADWeakSelf;
-//         最后一列的行被点击的回调
-        _addressView.lastComponentClickedBlock = ^(ZBNProvince *selectedProvince, ZBNCity *selectedCity, ZBNArea *selectedArea) {
-
-            [weakSelf.modalView hide];
-            
-            weakSelf.chooseAdd.text = [NSString stringWithFormat:@"%@%@%@",selectedProvince.fullname,selectedCity.fullname,selectedArea.fullname];
-            
-            [weakSelf.addM setProvince_id:selectedArea.ID];
-            [weakSelf.addM setCity_id:selectedCity.ID];
-            [weakSelf.addM setArea_id:selectedArea.ID];
-            
-        };
-    }
-    return _addressView;
+- (IBAction)chooseBtnClick:(UIButton *)sender {
+    [self.addTitleAddressView addAnimate];
 }
 
-/*! 加载数据 */
-- (void)loadData
-{
-//    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/common/district" params:nil complement:^(ServerResponseInfo * _Nullable serverInfo) {
-//        self.dataArr = [ZBNProvince mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
-//        self.addressView.datas = self.dataArr;
-//    }];
-    
-    NSString *filePath =  [[NSBundle mainBundle] pathForResource:@"pcd" ofType:@"plist"];
-    self.dataArr = [ZBNProvince mj_objectArrayWithFile:filePath];
-    self.addressView.datas = self.dataArr;
-}
 
 - (void)changeAddressRequest
 {
@@ -141,9 +116,7 @@
     param[@"token"] = unmodel.token;
     param[@"name"] = self.name.text;
     param[@"mobile"] = self.phone.text;
-    param[@"province_id"] = self.addM.province_id;
-    param[@"city_id"] = self.addM.city_id;
-    param[@"area_id"] = self.addM.area_id;
+    param[@"area_id"] = self.IDArea;
     param[@"address"] = self.DetailAddress.text;
     if (self.addM.is_defualt) {
         param[@"is_defualt"] = @"1";

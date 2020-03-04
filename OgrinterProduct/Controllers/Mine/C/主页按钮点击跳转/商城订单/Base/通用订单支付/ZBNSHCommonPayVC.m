@@ -116,7 +116,7 @@
     
     req.nonceStr = [NSString stringWithFormat:@"%@",dict[@"nonce_str"]];
     
-    req.timeStamp = [dict[@"timestamp"] intValue];
+    req.timeStamp = [dict[@"timestamp"] intValue]; //wxa2ea994d7f5b42e9
     
     req.package = @"Sign=WXPay";
     

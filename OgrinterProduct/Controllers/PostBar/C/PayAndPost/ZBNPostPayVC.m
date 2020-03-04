@@ -15,6 +15,7 @@
 #import "ZBNPostPayWayModel.h"
 #import "ZBNPostDingWayModel.h"
 #import "ZBNPostPayHeader.h"
+#import <WechatOpenSDK/WXApi.h>
 
 @interface ZBNPostPayVC () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *myTableV;
@@ -23,6 +24,10 @@
 @property (nonatomic, strong) NSMutableArray *payWays;
 @property (nonatomic, strong) NSMutableArray *dingWays;
 @property (nonatomic, strong) ZBNPostPayHeader *headerV;
+
+@property (nonatomic, strong) NSNumber *payWay;
+@property (nonatomic, strong) NSNumber *dingWay;
+
 @end
 
 @implementation ZBNPostPayVC
@@ -140,6 +145,13 @@ static NSString * const ZBNDingWayCellID = @"ding";
             if (dingM == self.dingWays[indexPath.row] ) {
                 dingM.selected = YES;
                 [self.priceL setText:[NSString stringWithFormat:@"¥%@",dingM.price]];
+                if ([dingM.name isEqualToString:@"置顶一天"]) {
+                    self.dingWay = @1;
+                } else if ([dingM.name isEqualToString:@"置顶二天"]) {
+                    self.dingWay = @2;
+                } else {
+                    self.dingWay = @3;
+                }
             } else {
                 dingM.selected = NO;
             }
@@ -149,6 +161,16 @@ static NSString * const ZBNDingWayCellID = @"ding";
         for (ZBNPostPayWayModel *payWayM in self.payWays) {
             if (payWayM == self.payWays[indexPath.row]) {
                 payWayM.selected = YES;
+                if ([payWayM.name isEqualToString:@"微信"]) {
+                    self.payWay = @1;
+                } else if ([payWayM.name isEqualToString:@"支付宝"])
+                {
+                    self.payWay = @2;
+                } else if ([payWayM.name isEqualToString:@"银联"]) {
+                    self.payWay = @3;
+                } else {
+                    self.payWay = @4;
+                }
             } else {
                 payWayM.selected = NO;
             }
@@ -191,9 +213,66 @@ static NSString * const ZBNDingWayCellID = @"ding";
 }
 
 - (IBAction)payBtnClick:(id)sender {
-    ZBNPostSuccessVC *vc = [[ZBNPostSuccessVC alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+//    ZBNPostSuccessVC *vc = [[ZBNPostSuccessVC alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    [self payRequest];
+    
+    
 }
+
+
+- (void)payRequest
+{
+    if (self.dingWay && self.payWay) {
+        if (self.payWay.intValue == 2 || self.payWay.intValue == 3) {
+            [HUDManager showTextHud:@"暂不支持支付宝和银联"];
+            return;
+        }
+        NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+        userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+        NSMutableDictionary *param = [NSMutableDictionary dictionary];
+            param[@"uid"] = unmodel.uid;
+            param[@"post_id"] = self.post_id;
+            param[@"method"] = self.dingWay;
+            param[@"pay_way"] = self.payWay;
+        if (self.payWay.intValue == 1) {
+            [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/tieba/create_top_order" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
+                
+                        if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
+                        NSDictionary *dict = serverInfo.response[@"data"];
+                        [self uploadWx:dict];
+                        }
+                   }];
+        }
+       
+        
+    } else {
+        [HUDManager showTextHud:@"请选择置顶方式或支付方式"];
+    }
+ 
+}
+
+-(void)uploadWx:(NSDictionary *)dict{
+    
+    PayReq *req = [[PayReq alloc] init];
+    
+    req.openID = [NSString stringWithFormat:@"%@",dict[@"appid"]];
+    //APPID
+    req.partnerId = [NSString stringWithFormat:@"%@",dict[@"mch_id"]]; //商户号
+    req.prepayId = [NSString stringWithFormat:@"%@",dict[@"prepay_id"]];
+    
+    req.nonceStr = [NSString stringWithFormat:@"%@",dict[@"nonce_str"]];
+    
+    req.timeStamp = [dict[@"timestamp"] intValue];
+    
+    req.package = @"Sign=WXPay";
+    
+    req.sign = [NSString stringWithFormat:@"%@",dict[@"sign"]];
+    
+    [WXApi sendReq:req completion:nil];
+}
+
 
 
 @end

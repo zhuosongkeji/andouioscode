@@ -7,31 +7,19 @@
 //
 
 #import "ZBNPostImageCell.h"
+#import "ZBNPostPhotoItem.h"
 
 @interface ZBNPostImageCell ()
-@property (nonatomic, weak) UIImageView *imageView;
+
 @end
 
 @implementation ZBNPostImageCell
 
-- (UIImageView *)imageView
+- (void)setPhotoItem:(ZBNPostPhotoItem *)photoItem
 {
-    if (_imageView == nil) {
-        UIImageView *imageV = [[UIImageView alloc] init];
-        
-        _imageView = imageV;
-        
-        [self.contentView addSubview:imageV];
-    }
+    _photoItem = photoItem;
     
-    return _imageView;
-}
-
-- (void)setImage:(UIImage *)image
-{
-    _image = image;
-    
-    self.imageView.image = image;
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:photoItem.imageName] placeholderImage:[UIImage imageNamed:@"80"]];
 }
 
 - (void)layoutSubviews
@@ -41,4 +29,28 @@
     self.imageView.frame = self.bounds;
 }
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+     [self setupView];
+    
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        [self setupView];
+    }
+    return self;
+}
+
+
+- (void)setupView
+{
+    UIImageView *imageView = [UIImageView new];
+    [self.contentView addSubview:imageView];
+    self.imageView = imageView;
+    
+}
 @end

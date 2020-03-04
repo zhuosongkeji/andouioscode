@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! 点击头像 */
 - (void)squareHeaderDidClickUserIcon:(ZBNPostBarHeader *)postHeader;
 /*! 点赞 */
-- (void)squareHeaderDidClickDingBtn:(ZBNPostBarHeader *)postHeader;
+- (void)squareHeaderDidClickDingBtn:(ZBNPostBarHeader *)postHeader dingBtn:(UIButton *)dingBtn;
 /*! 点击分享 */
 - (void)squareHeaderDidClickShareBtn:(ZBNPostBarHeader *)postHeader;
 /*! 点击评论 */
@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) ZBNSquareFrame *squareFrame;
 /*! 代理 */
 @property (nonatomic, weak) id <ZBNPostBarHeaderDelegate> delegate;
+
+
 
 @end
 

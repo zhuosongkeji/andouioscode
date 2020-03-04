@@ -84,28 +84,28 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+//    [self wr_setNavBarBackgroundAlpha:0];
     [self loadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-
+//     [self wr_setNavBarBackgroundAlpha:0];
 }
+
+
 
 - (void)setupTable
 {
-    self.mTableView.bounces = NO;
+    self.mTableView.bounces = YES;
 }
-
-
 
 
 #pragma mark -- UI
 - (void)setupUI
 {
-//    [self wr_navBarShadowImageHidden];
+       
     self.navigationController.navigationBar.translucent = NO;
 //    self.extendedLayoutIncludesOpaqueBars = YES;
 //    self.mTableView.translatesAutoresizingMaskIntoConstraints = NO;

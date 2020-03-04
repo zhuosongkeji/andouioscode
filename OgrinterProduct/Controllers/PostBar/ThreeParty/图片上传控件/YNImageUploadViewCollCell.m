@@ -41,6 +41,14 @@
 
 @implementation YNImageModel
 
+- (NSMutableArray *)array
+{
+    if (!_array) {
+        _array = [NSMutableArray array];
+    }
+    return _array;
+}
+
 @end
 
 @interface YNHTTPSessionManager : AFHTTPSessionManager
@@ -53,7 +61,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         manager = [YNHTTPSessionManager manager];
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html",@"multipart/form-data",@"image/png", nil];
         manager.requestSerializer.timeoutInterval = 10.0;
     });
     return manager;
@@ -182,10 +190,10 @@
                 __weak typeof(self)weakSelf = self;
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     model.task = [[YNHTTPSessionManager share] POST:self.uploadUrl parameters:self.parameter constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-                        [formData appendPartWithFileData:UIImageJPEGRepresentation(model.image, 1)
-                                                    name:@"myFile"
-                                                fileName:model.imageName
-                                                mimeType:@"image/jpg"];
+                            [formData appendPartWithFileData:UIImageJPEGRepresentation(model.image,1)
+                                                                               name:@"images[]"
+                                                                           fileName:model.imageName
+                                                                           mimeType:@"image/jpg/png/jpeg"];
                     } progress:^(NSProgress * _Nonnull uploadProgress) {
                         dispatch_async(dispatch_get_main_queue(), ^{
                             weakSelf.circleLayer.strokeEnd = (double)uploadProgress.completedUnitCount/uploadProgress.totalUnitCount;

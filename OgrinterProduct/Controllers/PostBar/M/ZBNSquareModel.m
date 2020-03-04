@@ -16,7 +16,7 @@
     #warning CoderMikeHe: 真机调试的时候，必须加上这句
         fmt.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
         // 获得发布的具体时间
-        NSDate *createDate = [fmt dateFromString:_create_time];
+        NSDate *createDate = [fmt dateFromString:_created_at];
         
         // 判断是否为今年
         if (createDate.zbn_isThisYear) {
@@ -52,20 +52,12 @@
     return attributedString;
 }
 
-- (NSMutableArray *)conments
-{
-    if (!_conments) {
-        _conments = [NSMutableArray array];
-    }
-    return _conments;
-}
 
-- (NSMutableArray *)images
++ (NSDictionary *)mj_objectClassInArray
 {
-    if (!_images) {
-        _images = [NSMutableArray array];
-    }
-    return _images;
+    return @{
+        @"comments":@"ZBNPostComModel",
+    };
 }
 
 

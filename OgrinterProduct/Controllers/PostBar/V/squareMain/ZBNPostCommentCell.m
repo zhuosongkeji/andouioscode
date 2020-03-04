@@ -10,6 +10,7 @@
 #import "ZBNPostComModel.h"
 #import "ZBNCommentFrame.h"
 
+
 @interface ZBNPostCommentCell ()
 /*! 头像 */
 @property (weak, nonatomic) IBOutlet UIImageView *userIcon;
@@ -19,6 +20,7 @@
 @end
 
 @implementation ZBNPostCommentCell
+
 
 
 - (void)awakeFromNib {
@@ -48,7 +50,7 @@
     self.text.frame = commentFrame.textFrame;
     self.text.attributedText = model.attributedText;
     
-    [self.userIcon setHeader:model.fromUser.avatarUrl];
+    [self.userIcon setHeader:model.avator];
 }
 
 

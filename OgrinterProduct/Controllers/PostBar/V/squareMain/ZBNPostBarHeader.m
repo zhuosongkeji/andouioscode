@@ -12,7 +12,7 @@
 #import "ZBNSquareFrame.h"
 #import "ZBNPostImageCell.h"
 #import "SDPhotoBrowser.h"
-
+#import "ZBNPostPhotoItem.h"
 @interface ZBNPostBarHeader () <UICollectionViewDelegate, UICollectionViewDataSource,SDPhotoBrowserDelegate>
 
 /*! 内容 */
@@ -36,11 +36,21 @@
 // 图片背景
 @property (nonatomic, weak) UICollectionView *imageBackV;
 
+@property (nonatomic, strong) NSMutableArray *imageArr;
+
 @end
 
 @implementation ZBNPostBarHeader
 
 static NSString * const ZBNPostImgCellID = @"postImg";
+
+- (NSMutableArray *)imageArr
+{
+    if (!_imageArr) {
+        _imageArr = [NSMutableArray array];
+    }
+    return _imageArr;
+}
 
 + (instancetype)headerViewWithTableView:(UITableView *)tableView
 {
@@ -58,23 +68,24 @@ static NSString * const ZBNPostImgCellID = @"postImg";
 - (void)setSquareFrame:(ZBNSquareFrame *)squareFrame
 {
     _squareFrame = squareFrame;
-    
+
     ZBNSquareModel *squareM = squareFrame.squareM;
     ZBNPostUserModel *userM = squareM.userM;
+    
     // 点赞数
-    [self.dingBtn setTitle:squareM.thumbNums forState:UIControlStateNormal];
+    [self.dingBtn setTitle:[NSString stringWithFormat:@" %@",squareM.vote] forState:UIControlStateNormal];
     // 分享数
-    [self.shareBtn setTitle:squareM.shareCount forState:UIControlStateNormal];
+    [self.shareBtn setTitle:[NSString stringWithFormat:@" %@",squareM.share] forState:UIControlStateNormal];
     // 评论数
-    [self.commentBtn setTitle:squareM.commentCount forState:UIControlStateNormal];
+    [self.commentBtn setTitle:[NSString stringWithFormat:@" %@",squareM.comment_count] forState:UIControlStateNormal];
     // 时间
-    self.createTime.text = squareM.create_time;
+    self.createTime.text = squareM.created_at;
     // 头像
-    [self.userIcon setHeader:userM.avatarUrl];
+    [self.userIcon setHeader:squareM.avator];
     // 名称
-    self.userName.text = userM.nickname;
+    self.userName.text = squareM.name;
     // 置顶
-    if (squareM.isTop) {
+    if (squareM.top_post == YES) {
         self.setTop.hidden = NO;
     } else {
         self.setTop.hidden = YES;
@@ -86,11 +97,11 @@ static NSString * const ZBNPostImgCellID = @"postImg";
     self.contentLabel.attributedText = squareM.attributedText;
     // 图片
     self.imageBackV.frame = squareFrame.imageFrame;
-    if (squareM.images) {
-        
+    for (int i = 0; i < squareM.images.count ; i++) {
+        ZBNPostPhotoItem *item = [[ZBNPostPhotoItem alloc] init];
+        item.imageName = squareM.images[i];
+         [self.imageArr addObject:item];
     }
-    
-    
 }
 
 - (void)awakeFromNib
@@ -148,8 +159,9 @@ static NSString * const ZBNPostImgCellID = @"postImg";
 #pragma mark -- 事件监听
 // 点赞
 - (IBAction)dingBtnClick:(UIButton *)sender {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(squareHeaderDidClickDingBtn:)]) {
-        [self.delegate squareHeaderDidClickDingBtn:self];
+    sender.selected = !sender.selected;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(squareHeaderDidClickDingBtn:dingBtn:)]) {
+        [self.delegate squareHeaderDidClickDingBtn:self dingBtn:sender];
     }
 }
 // 点击评论
@@ -172,8 +184,9 @@ static NSString * const ZBNPostImgCellID = @"postImg";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+
     ZBNPostImageCell *cell  = [collectionView dequeueReusableCellWithReuseIdentifier:ZBNPostImgCellID forIndexPath:indexPath];
-    cell.image = [UIImage imageNamed:self.squareFrame.squareM.images[indexPath.row]];
+    cell.photoItem = self.imageArr[indexPath.row];
     return cell;
 }
 
@@ -182,7 +195,7 @@ static NSString * const ZBNPostImgCellID = @"postImg";
     SDPhotoBrowser *photoBrowser = [SDPhotoBrowser new];
     photoBrowser.delegate = self;
     photoBrowser.currentImageIndex = indexPath.item;
-    photoBrowser.imageCount = self.squareFrame.squareM.images.count;
+    photoBrowser.imageCount = self.imageArr.count;
     photoBrowser.sourceImagesContainerView = self.imageBackV;
     [photoBrowser show];
     
@@ -190,15 +203,27 @@ static NSString * const ZBNPostImgCellID = @"postImg";
 
 #pragma mark  SDPhotoBrowserDelegate
 
+
 // 返回临时占位图片（即原来的小图）
 - (UIImage *)photoBrowser:(SDPhotoBrowser *)browser placeholderImageForIndex:(NSInteger)index
 {
     // 不建议用此种方式获取小图，这里只是为了简单实现展示而已
     ZBNPostImageCell *cell = (ZBNPostImageCell *)[self collectionView:self.imageBackV cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
     
-    return cell.image;
+    return cell.imageView.image;
 
 }
+
+
+//// 返回高质量图片的url
+//- (NSURL *)photoBrowser:(SDPhotoBrowser *)browser highQualityImageURLForIndex:(NSInteger)index
+//{
+//    NSString *urlStr = [[self.imageArr[index] imageName] stringByReplacingOccurrencesOfString:@"80" withString:@"800"];
+//    return [NSURL URLWithString:urlStr];
+//    
+////    thumbnail  bmiddle
+//}
+
 
 
 

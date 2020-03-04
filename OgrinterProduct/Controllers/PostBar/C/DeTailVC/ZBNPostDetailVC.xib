@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZBNPostDetailVC">
             <connections>
+                <outlet property="commentTextF" destination="W9f-rb-slg" id="Jux-OS-Gpf"/>
                 <outlet property="myTableV" destination="133-dL-6KS" id="DHw-Vx-zlW"/>
                 <outlet property="view" destination="iN0-l3-epB" id="uCV-bB-1Pr"/>
             </connections>
@@ -37,6 +38,9 @@
                             <state key="normal" title="发送">
                                 <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="commentBtnClick:" destination="-1" eventType="touchUpInside" id="JUW-kc-KGI"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
@@ -50,7 +54,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="133-dL-6KS" secondAttribute="bottom" id="7FA-Nn-OaP"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="133-dL-6KS" secondAttribute="trailing" id="88t-2z-zlu"/>
@@ -61,7 +65,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NOH-wr-xRX" secondAttribute="trailing" id="jsw-bX-H2H"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="61" y="-88"/>
+            <point key="canvasLocation" x="-84" y="989"/>
         </view>
     </objects>
 </document>

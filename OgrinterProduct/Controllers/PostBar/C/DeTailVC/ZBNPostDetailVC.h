@@ -11,7 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 @class ZBNSquareFrame;
 @interface ZBNPostDetailVC : UIViewController
-@property (nonatomic, strong) ZBNSquareFrame *squareFrame;
+
+
+/*! 帖子ID */
+@property (nonatomic, strong) NSNumber *post_id;
+
 @end
 
 NS_ASSUME_NONNULL_END

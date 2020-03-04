@@ -48,7 +48,7 @@
                 <outlet property="reasonL" destination="mrk-BS-Vpg" id="OkQ-Qj-DW7"/>
                 <outlet property="selctedBtn" destination="UuA-gM-jZl" id="vze-dd-0QH"/>
             </connections>
-            <point key="canvasLocation" x="128" y="69"/>
+            <point key="canvasLocation" x="115" y="85"/>
         </tableViewCell>
     </objects>
     <resources>
