@@ -183,7 +183,7 @@ static NSString * const ZBNPostMineCellId = @"com";
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     ZBNSquareFrame *squareFrame = self.squareFrames[section];
-    return squareFrame.height;
+    return squareFrame.cellHeight;
 }
 
 

@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! 中间图片 */
 @property (nonatomic , assign , readonly) CGRect imageFrame;
 /*! 整个高度 */
-@property (nonatomic , assign , readonly) CGFloat height;
+@property (nonatomic , assign ) CGFloat cellHeight;
 /** 评论尺寸模型 由于后期需要用到，所以不涉及为只读 */
 @property (nonatomic , strong ,readonly) NSMutableArray *commentFrames;
 /*! 整个header模型 */

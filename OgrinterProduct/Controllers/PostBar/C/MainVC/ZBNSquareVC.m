@@ -170,6 +170,7 @@ static NSString * const ZBNPostComCellId = @"com";
     cell.commentFrame = conmenFrame;
     cell.delegate = self;
     return cell;
+    
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -185,15 +186,26 @@ static NSString * const ZBNPostComCellId = @"com";
 {
     ZBNSquareFrame *squareM = self.squareFrames[indexPath.section];
     ZBNCommentFrame *commentFrame = squareM.commentFrames[indexPath.row];
-    return commentFrame.cellHeight;
+    return commentFrame.cellHeight ? : UITableViewAutomaticDimension;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     ZBNSquareFrame *squareFrame = self.squareFrames[section];
-    return squareFrame.height;
+    return squareFrame.cellHeight ? : UITableViewAutomaticDimension;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    ZBNSquareFrame *squareM = self.squareFrames[indexPath.section];
+    ZBNCommentFrame *conmenFrame = squareM.commentFrames[indexPath.row];
+    if (squareM.cellHeight == 0) {
+        CGFloat height = cell.height;
+        squareM.cellHeight = height;
+    }
+    
+}
 
 #pragma mark -- ZBNHeaderViewDelegate
 // 点击分享

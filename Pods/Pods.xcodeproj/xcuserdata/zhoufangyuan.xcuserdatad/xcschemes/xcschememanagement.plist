@@ -28,7 +28,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
@@ -43,6 +43,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
+		</dict>
+		<key>OYCountDownManager.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
 		</dict>
 		<key>Pods-OgrinterProduct.xcscheme</key>
 		<dict>
@@ -96,7 +101,7 @@
 		<key>UMCErrorCatch.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>19</integer>
 		</dict>
 		<key>UMCPush.xcscheme</key>
 		<dict>
@@ -108,7 +113,7 @@
 		<key>UMCSecurityPlugins.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>20</integer>
 		</dict>
 		<key>UMCShare.xcscheme</key>
 		<dict>
@@ -120,7 +125,7 @@
 		<key>WechatOpenSDK.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>20</integer>
+			<integer>21</integer>
 		</dict>
 		<key>YYModel.xcscheme</key>
 		<dict>

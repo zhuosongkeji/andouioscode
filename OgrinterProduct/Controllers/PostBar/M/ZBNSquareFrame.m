@@ -18,7 +18,7 @@
 /*! 中间图片 */
 @property (nonatomic , assign ) CGRect imageFrame;
 /*! 整个高度 */
-@property (nonatomic , assign ) CGFloat height;
+//@property (nonatomic , assign ) CGFloat cellHeight;
 
 @property (nonatomic, strong) NSMutableArray *commentFrames;
 
@@ -36,6 +36,8 @@
     }
     return self;
 }
+
+
 
 - (void)setSquareM:(ZBNSquareModel *)squareM
 {
@@ -87,7 +89,7 @@
     }
     
     // 总体高度
-    self.height = CGRectGetMaxY(self.imageFrame) + 40;
+    self.cellHeight = CGRectGetMaxY(self.imageFrame) + 40;
     
 }
 

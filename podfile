@@ -16,7 +16,9 @@ use_frameworks!
 	pod 'YYModel'
 	pod 'MJExtension'
 	pod 'BaiduMapKit' #百度地图SDK
-	# pod 'BMKLocationKit'
+#  pod 'AMap3DMap'
+#  pod 'AMapSearch'
+#  pod 'AMapLocation'
 	pod 'WechatOpenSDK'
 	# pod 'WechatOpenSDK' #微信
 	pod 'UMCCommon'

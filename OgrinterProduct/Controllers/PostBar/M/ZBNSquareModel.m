@@ -10,7 +10,7 @@
 
 @implementation ZBNSquareModel
 
-- (NSString *)create_time
+- (NSString *)created_at
 {
     NSDateFormatter *fmt = [NSDateFormatter zbn_defaultDateFormatter];
     #warning CoderMikeHe: 真机调试的时候，必须加上这句

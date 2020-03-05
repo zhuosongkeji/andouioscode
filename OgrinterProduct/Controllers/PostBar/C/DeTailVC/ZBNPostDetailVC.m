@@ -201,7 +201,7 @@ static NSString * const ZBNCommentCellId = @"com";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return self.squareFrame.height;
+    return self.squareFrame.cellHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
