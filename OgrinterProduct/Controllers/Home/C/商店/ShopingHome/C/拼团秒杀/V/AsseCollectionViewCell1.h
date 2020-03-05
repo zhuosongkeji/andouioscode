@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *tlable;
 @property (weak, nonatomic) IBOutlet UILabel *plabel;
 
+@property(nonatomic,strong)KillerListAessbModel *modellists;
+
 @property(nonatomic,strong)KillerListAessbModel *listmodel;
 
 @end

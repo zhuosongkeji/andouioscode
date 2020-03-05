@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic)ShopSeckillDetailsType seckillType;
 @property (nonatomic,strong)NSString *cpid;
 
+@property (nonatomic,strong)NSString *sec_id;
+
 @end
 
 NS_ASSUME_NONNULL_END

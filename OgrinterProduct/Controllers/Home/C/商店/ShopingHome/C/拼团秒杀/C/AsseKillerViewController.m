@@ -9,6 +9,8 @@
 #define grouptoday_top @"group/today_top"
 #define groupgroup_cate @"group/group_cate"
 
+#define groupgroup_order @"group/group_order"//开团下单购买
+
 
 #import "AsseKillerViewController.h"
 #import "HotelBottomTableViewCell.h"

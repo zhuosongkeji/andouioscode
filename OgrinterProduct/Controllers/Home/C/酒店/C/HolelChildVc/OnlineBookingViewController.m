@@ -247,7 +247,7 @@
     
     OnlineTableViewCell *cell = [self.mTableView cellForRowAtIndexPath:self.selectIndexPath];
     
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"uid":unmodel.uid,@"id":self.fjid,@"merchant_id":list.merchant_id,@"start_time":cell.rzdateLabel.text,@"end_time":cell.livedateLabel.text,@"real_name":name.text,@"mobile":phone.text,@"day_num":cell.contentLabel.text,@"num":@"1",@"pay_way":@"1",@"is_integral":@"0"} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"uid":unmodel.uid,@"id":self.fjid,@"merchant_id":list.merchant_id,@"start_time":cell.rzdateLabel.text,@"end_time":cell.livedateLabel.text,@"real_name":name.text,@"mobile":phone.text,@"day_num":cell.contentLabel.text,@"num":@"1",@"pay_way":@"1",@"is_integral":[NSString stringWithFormat:@"%ld",selectIndexPaths]} complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([serverInfo.response[@"code"] integerValue] == 200) {
             [self uploadWx:serverInfo.response[@"data"]];
         }else if ([serverInfo.response[@"code"] integerValue] == 201){
@@ -293,6 +293,7 @@
 
 -(void)loadpayToServer {
     
+    NSDictionary *dict = nil;
     NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,order_pay];
     
     PaywayModel *model = self.payArr[selectIndexPaths];
@@ -300,15 +301,25 @@
     userInfo *unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     OrderlModel *Omodel = self.dataArr[0];
     
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{@"uid":unmodel.uid,@"sNo":Omodel.order_sn,@"pay_id":model.pid,@"is_integral":@"0"} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+    if (self.issect) {
+        dict = @{@"uid":unmodel.uid,@"sNo":Omodel.order_sn,@"pay_id":model.pid,@"is_integral":[NSString stringWithFormat:@"%ld",selectIndexPaths],@"puzzle_id":self.secDict[@"puzzle_id"],@"open_join":self.secDict[@"open_join"],@"group_id":self.secDict[@"group_id"]};
+    }else{
+        dict = @{@"uid":unmodel.uid,@"sNo":Omodel.order_sn,@"pay_id":model.pid,@"is_integral":[NSString stringWithFormat:@"%ld",selectIndexPaths]};
+    }
+    
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:dict complement:^(ServerResponseInfo * _Nullable serverInfo) {
         
         if ([serverInfo.response[@"code"] integerValue] == 200) {
             
             NSDictionary *dict = serverInfo.response[@"data"];
-            [self uploadWx:dict];
+            if (selectIndexPaths == 1) {
+                [HUDManager showTextHud:serverInfo.response[@"msg"]];
+            }else if (selectIndexPaths == 0){
+                [self uploadWx:dict];
+            }
             
         }else if ([serverInfo.response[@"code"] integerValue] == 201){
-            
+            [HUDManager showTextHud:serverInfo.response[@"msg"]];
         }else{
             [HUDManager showTextHud:loadError];
         }

@@ -40,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIViewController *)findCurrentShowingViewController;
 
 +(NSString *)getNowtime;
++(NSString *)getNowtime1;
 
 +(NSString *)getnextDate;
 

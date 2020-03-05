@@ -63,6 +63,16 @@
 }
 
 
+-(void)setDic:(NSDictionary *)dic{
+    _dic = dic;
+    self.cPrice.text = [NSString stringWithFormat:@"￥%@",dic[@"kill_price"]];
+    
+//    self.kdLabel.text = [NSString stringWithFormat:@"运费：%@",dic[@"kill_price"]];
+    self.xLabel.text = [NSString stringWithFormat:@"销量：%@",dic[@"kill_num"]];
+    self.kcLabel.text = [NSString stringWithFormat:@"库存：%@",dic[@"storage"]];
+}
+
+
 -(void)setKmodelist:(KillModelt *)kmodelist{
     _kmodelist = kmodelist;
     
@@ -112,8 +122,8 @@
             identifier = @"SeckillTableViewCellOne";
             index = 0;
         } else if (indexPath.row == 1) {
-            identifier = @"SeckillTableViewCellTwo";
-            index = 1;
+            identifier = @"SeckillTableViewCellThrid";
+            index = 2;
         }else if (indexPath.row == 2) {
             identifier = @"SeckillTableViewCellFouth";
             index = 3;
@@ -204,8 +214,9 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     PtTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PtTableViewCell"];
+    
     if (!cell) {
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"PtTableViewCell" owner:self options:nil] objectAtIndex:0];
+            cell = [[NSBundle mainBundle] loadNibNamed:@"PtTableViewCell" owner:self options:nil].lastObject;
         
         NSLog(@"创建");
     }

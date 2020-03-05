@@ -15,7 +15,7 @@
     KillerAessModel *model = [[KillerAessModel alloc]init];
     
     NSArray *top_goodA = dict[@"top_goods"];
-    NSArray *goods_listA = dict[@"top_goods"];
+    NSArray *goods_listA = dict[@"goods_list"];
     
     
     NSMutableArray *TopArr = [NSMutableArray array];

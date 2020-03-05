@@ -10,6 +10,9 @@
 #define BannerApi @"index/index"
 
 #define gourmet_list @"gourmet/list"//获取 饭店数据
+#define hotel_hotellist @"hotel/hotellist"
+
+#define shopApi @"goods/index"
 
 #define users_envelopes_add @"users/envelopes_add"
 #define users_envelopes @"users/envelopes"
@@ -29,6 +32,8 @@
 #import "PacketModel.h"
 #import "HomeModel.h"
 #import "OnlineOrderModel.h"
+#import "MsgModel.h"
+#import "MDBannerModel.h"
 
 
 @interface HomeViewController ()<HQFlowViewDelegate,HQFlowViewDataSource,UITableViewDataSource,UITableViewDelegate,iCarouselDelegate,iCarouselDataSource>{
@@ -53,6 +58,9 @@
 @property (nonatomic,strong) NSMutableArray *notisArr;
 @property (nonatomic,strong) NSMutableArray *merchantArr;
 
+@property (nonatomic,strong) NSMutableArray *listArr;
+
+@property (nonatomic,strong) NSMutableArray *dataArr;
 @property(nonatomic,strong)NSMutableArray *mData;
 
 
@@ -69,6 +77,13 @@
 
 
 //MARK:-imgArr
+-(NSMutableArray *)dataArr {
+    if (!_dataArr) {
+        _dataArr = [NSMutableArray array];
+    }
+    return _dataArr;
+}
+//MARK:-imgArr
 -(NSMutableArray *)imgArr {
     if (!_imgArr) {
         _imgArr = [NSMutableArray array];
@@ -83,6 +98,15 @@
     }
     return _mData;
 }
+
+//MARK:-imgArr
+-(NSMutableArray *)listArr {
+    if (!_listArr) {
+        _listArr = [NSMutableArray array];
+    }
+    return _listArr;
+}
+
 
 //MARK:-imgArr
 -(NSMutableArray *)imgOArr {
@@ -320,12 +344,53 @@
         }];
         
     });
+    dispatch_group_enter(group);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,hotel_hotellist];
+        
+        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+            if ([serverInfo.response[@"code"] integerValue] == 200) {
+                NSArray *array = serverInfo.response[@"data"];
+                for (int i = 0; i < [array  count]; i ++ ) {
+                    MsgModel *model = [[MsgModel alloc]initWithDict:array[i]];
+                    [self.listArr addObject:model];
+                }
+                dispatch_group_leave(group);
+            }else {
+                dispatch_group_leave(group);
+                [HUDManager showTextHud:loadError];
+            }
+        }];
+    });
+    
+    dispatch_group_enter(group);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *url = [NSString stringWithFormat:@"%@%@",API_BASE_URL_STRING,shopApi];
+        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:url params:@{} complement:^(ServerResponseInfo * _Nullable serverInfo) {
+            if ([serverInfo.response[@"code"] integerValue] == 200) {
+                NSDictionary *dict = serverInfo.response[@"data"];
+                
+                MDBannerModel *model = [[MDBannerModel alloc] initWithDict:dict];
+                
+                [self.dataArr addObject:model];
+                dispatch_group_leave(group);
+                
+            }else {
+                dispatch_group_leave(group);
+                [HUDManager showTextHud:loadError];
+            }
+            
+        }];
+    });
+    
     
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         
-        [self.noticebjView addSubview:self.queeView];
         [self.pageFlowView reloadData];//刷新轮播
         [self.icarousel reloadData];
+        
+        [self.noticebjView addSubview:self.queeView];
+        
         [self.mTableView reloadData];
         
         NSData * data = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
@@ -405,37 +470,47 @@
 
 //MARK:- tableView
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 6;
 }
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0)
-        return 2;
-    else if (section == 1)
+    if (section == 0 || section == 1 || section == 4 || section == 5)
         return 1;
-    else
+    else if (section == 2){
         return [_mData count];
+    }else if (section == 3){
+        return [_mData count];
+    }
+    return 1;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     HomeTableViewCell *cell = [HomeTableViewCell tempTableViewCellWith:tableView indexPath:indexPath];
     [cell configTempCellWith:indexPath];
     
     cell.tag = indexPath.row;
+    
     if (indexPath.section == 0) {
-        if ([self.merchantArr count])
-            cell.listArr = self.merchantArr;
-        
+        cell.listArr = self.merchantArr;
     }else if (indexPath.section == 1){
         
     }else if (indexPath.section == 2){
-        
-        if ([self.mData count]) {
-            cell.modelist = self.mData[indexPath.row];
+        if ([self.mData count] > 0) {
+            cell.modelist1 = self.mData[indexPath.row];
         }
-        
+    }else if (indexPath.section == 3){
+        cell.modelist = self.mData[indexPath.row];
+    }else if (indexPath.section == 4){
+        if ([_listArr count] > 0)
+            [cell setListArrt: _listArr];
+    }else if (indexPath.section == 5){
+        if ([self.dataArr count]) {
+            MDBannerModel *mode = self.dataArr[0];
+            cell.Bamodelist = mode;
+        }
     }else{}
     
     cell.mblock = ^(NSInteger idx) {
@@ -447,37 +522,56 @@
 
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    CustomSectionView *v;
-    @try {
-        v = [[NSBundle mainBundle] loadNibNamed:@"CustomSectionView" owner:self options:nil].lastObject;
-    } @catch (NSException *exception) {
-        NSLog(@"exception = %@", exception);
-    } @finally {
-        
-    }
+    CustomSectionView *v = [[NSBundle mainBundle] loadNibNamed:@"CustomSectionView" owner:self options:nil].lastObject;;
+    [v setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 54)];
     
-    if (section != 0) {
-        v.titimgView.hidden = YES;
-        v.titleLabel.hidden = NO;
-        v.contentLabel.hidden = NO;
-    }else{
+    UIColor *core = nil;
+    if (section == 0) {
         v.titimgView.hidden = NO;
         v.titleLabel.hidden = YES;
         v.contentLabel.hidden = YES;
+        core = [UIColor orangeColor];
+    }else {
+        v.titimgView.hidden = YES;
+        v.titleLabel.hidden = NO;
+        v.contentLabel.hidden = NO;
+        
+        if (section == 1) {
+            v.titleLabel.text = @"在线直播";
+            v.contentLabel.text = @"ONUNE BOOKING";
+            core = KSRGBA(255,105 ,115, 1);
+            v.titleLabel.textColor = KSRGBA(255,105 ,115, 1);
+        }else if (section == 2){
+            v.titleLabel.text = @"预约点餐";
+            v.contentLabel.text = @"MAKE AN APPOINTMENT";
+            core = UIColor.orangeColor;
+        }else if (section == 3){
+            v.titleLabel.text = @"在线预约";
+            v.contentLabel.text = @"ONLINE BOOKING";
+            core = UIColor.orangeColor;
+        }else if (section == 4){
+            v.titleLabel.text = @"酒店预约";
+            v.contentLabel.text = @"HOTEL ACCOMMODATION";
+            core = UIColor.orangeColor;
+        }else if (section == 5){
+            v.titleLabel.text = @"推荐产品";
+            v.contentLabel.text = @"PRODUCT";
+            core = UIColor.orangeColor;
+        }
     }
-    
-    v.backgroundColor = KSRGBA(255, 255, 255, 1);
-    [v setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 54)];
-    
+    [v.morebtn setTitleColor:core forState:0];
+    v.titleLabel.textColor = core;
+
     __weak typeof(&*self)WeakSelf = self;
     v.btnclickBlock = ^(UIButton * _Nonnull btn) {
-        if (section == 2) {
+        if (section == 2 || section == 3) {
             [WeakSelf pushViewControllerWithString:@"OnlineOrderViewController"];
         }else if (section == 0){
             KPost_Notify(@"tabBarController", nil, nil);
-        }else{[HUDManager showTextHud:OtherMsg];}
+        }else{
+            [HUDManager showTextHud:OtherMsg];}
     };
-    
+
     return v;
 }
 
@@ -488,7 +582,7 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [[@[@"138",@"138",@"222"] objectAtIndex:indexPath.section] floatValue];
+    return [@[@"363",@"148",@"162",@"222",@"325",@"458"][indexPath.section] floatValue];
 }
 
 

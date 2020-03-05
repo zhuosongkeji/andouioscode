@@ -367,6 +367,22 @@
 }
 
 
++(NSString *)getNowtime1 {
+    
+    NSDate * newDate = [NSDate date];
+    NSDateFormatter*dateformat=[[NSDateFormatter alloc]init];
+    
+    [dateformat setDateFormat:@"HH:mm:ss"];
+    
+    NSString *newDateOne = [dateformat stringFromDate:newDate];
+    
+    [dateformat setFormatterBehavior:NSDateFormatterFullStyle];
+    [dateformat setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    
+    return newDateOne;
+}
+
+
 +(NSString *)getnextDate{
     
     NSDate *nowDate = [NSDate date];

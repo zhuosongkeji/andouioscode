@@ -180,6 +180,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tKy-W2-Ceb" secondAttribute="trailing" constant="-4" id="A76-kI-eQF"/>
                             <constraint firstAttribute="bottom" secondItem="tKy-W2-Ceb" secondAttribute="bottom" constant="12" id="I3F-mf-3MV"/>
+                            <constraint firstItem="cwJ-OJ-DPH" firstAttribute="top" secondItem="Upo-JQ-rJE" secondAttribute="top" constant="53.5" id="Jrl-8U-pxa"/>
                             <constraint firstItem="cwJ-OJ-DPH" firstAttribute="leading" secondItem="Upo-JQ-rJE" secondAttribute="leading" constant="16" id="NEi-gf-Qa6"/>
                             <constraint firstItem="FXJ-o9-29P" firstAttribute="leading" secondItem="Upo-JQ-rJE" secondAttribute="leading" constant="16" id="eAc-Ss-FPO"/>
                             <constraint firstItem="FXJ-o9-29P" firstAttribute="top" secondItem="Upo-JQ-rJE" secondAttribute="top" constant="12" id="eRN-QE-5lG"/>

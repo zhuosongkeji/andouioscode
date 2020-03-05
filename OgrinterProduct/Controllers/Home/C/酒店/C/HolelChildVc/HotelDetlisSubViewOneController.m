@@ -587,6 +587,7 @@
     
     OnlineBookingViewController *online = [[OnlineBookingViewController alloc]init];
     online.payType = OnlineBookingViewHotelPay;
+    online.issect = NO;
     online.fjid = self.roomId;
     [self.navigationController pushViewController:online animated:YES];
 }

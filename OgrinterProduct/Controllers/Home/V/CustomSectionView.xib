@@ -48,13 +48,13 @@
                         <constraint firstAttribute="height" constant="21" id="xYm-mM-yeW"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" red="1" green="0.41058720240000002" blue="0.45229435600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AHDHJSJFH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZq-r7-xy8">
-                    <rect key="frame" x="16" y="36.5" width="66" height="13.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="16" y="36.5" width="49.5" height="10"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                    <color key="textColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -75,6 +75,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="contentLabel" destination="fZq-r7-xy8" id="EHv-Dy-hDd"/>
+                <outlet property="morebtn" destination="hF3-of-CFn" id="hhI-rv-O3k"/>
                 <outlet property="titimgView" destination="BTo-Kq-kIe" id="fdy-72-Wf4"/>
                 <outlet property="titleLabel" destination="AcV-Cz-Qpz" id="aMX-3q-5El"/>
             </connections>

@@ -33,6 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,copy)ScBtnClickBlock selectBlock;
 
+@property(nonatomic,strong)NSDictionary *dic;
+
 + (instancetype)tempTableViewCellWith:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath type:(ShopSeckillDetailsType)type;
 
 - (void)configTempCellWith:(NSIndexPath *)indexPath;
