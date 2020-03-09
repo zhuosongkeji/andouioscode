@@ -50,7 +50,7 @@
     
     self.nameLabel.text = addModel.name;
     self.numberLabel.text = addModel.mobile;
-    self.addressLabel.text = [NSString stringWithFormat:@"%@%@%@%@",addModel.province,addModel.city,addModel.area,addModel.address];
+    self.addressLabel.text = [NSString stringWithFormat:@"%@",addModel.address];
     
 }
 

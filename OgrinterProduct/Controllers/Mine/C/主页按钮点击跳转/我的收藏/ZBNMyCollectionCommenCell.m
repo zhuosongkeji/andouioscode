@@ -9,6 +9,7 @@
 #import "ZBNMyCollectionCommenCell.h"
 #import "ZBNMyCollectionM.h"
 
+
 @interface ZBNMyCollectionCommenCell ()
 /*! 图片 */
 @property (weak, nonatomic) IBOutlet UIImageView *img;
@@ -51,5 +52,15 @@
     frame.size.height -= 0.5;
     [super setFrame:frame];
 }
+
+
+/*! 查看商品点击 */
+- (IBAction)lookGoodsDetailBtlClick:(UIButton *)sender {
+    if (self.lookGoodsDetailBtlClickTask) {
+        self.lookGoodsDetailBtlClickTask(self.collectionM);
+    }
+}
+
+
 
 @end

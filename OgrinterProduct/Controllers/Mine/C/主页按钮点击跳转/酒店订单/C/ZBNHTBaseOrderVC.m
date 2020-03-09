@@ -11,6 +11,7 @@
 #import "ZBNHTComModel.h"  // 酒店通用模型
 #import "ZBNHTComCell.h"
 #import "ZBNComDataNilCell.h"
+#import "ZBNRefreshHeader.h"
 
 
 @interface ZBNHTBaseOrderVC ()
@@ -42,8 +43,12 @@
 - (void)setupTable
 {
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.backgroundColor = KSRGBA(241, 241, 241, 1);
-    self.navigationController.navigationBar.translucent = NO;
+    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 
@@ -51,7 +56,7 @@
 - (void)setupRefresh
 {
     // 下拉刷新
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.mj_header = [ZBNRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     // 自动改变透明度
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
     // 马上进入刷新状态
@@ -97,28 +102,21 @@
 
 - (void)loadNewData
 {
+    self.page = @"2";
     [FKHRequestManager cancleRequestWork];
-       NSMutableDictionary *params = [NSMutableDictionary dictionary];
-       NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
-       userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
-       params[@"uid"] = unmodel.uid;
-       params[@"token"] = unmodel.token;
-       params[@"type"] = @(self.type);
-       params[@"page"] = @"1";
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    self.tableView.mj_footer.state = MJRefreshStateIdle;
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    params[@"uid"] = unmodel.uid;
+    params[@"token"] = unmodel.token;
+    params[@"page"] = @"1";
     ADWeakSelf;
        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNHTOrderURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
-           NSArray *allDataArr = [ZBNHTComModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
-           for (ZBNHTComModel *model in allDataArr) {
-               if (model.status.intValue == 0) {
-                   [weakSelf.dataArr addObject:model];
-               } else if (model.status.intValue == 20) {
-                   [weakSelf.dataArr addObject:model];
-               } else if (model.status.intValue == 40) {
-                   [weakSelf.dataArr addObject:model];
-               }
-           }
+           
+           weakSelf.dataArr = [ZBNHTComModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
            if (weakSelf.dataArr.count < 10) {
-               [weakSelf.tableView.mj_footer setHidden:YES];
+               weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
            }
            [weakSelf.tableView reloadData];
            [weakSelf.tableView.mj_header endRefreshing];
@@ -135,23 +133,18 @@
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     params[@"uid"] = unmodel.uid;
     params[@"token"] = unmodel.token;
-    params[@"type"] = @(self.type);
     params[@"page"] = self.page;
     ADWeakSelf;
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNHTOrderURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         NSArray *moreArr = [ZBNHTComModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
-        for (ZBNHTComModel *model in moreArr) {
-            if (model.status.intValue == 0) {
-                    [self.dataArr addObject:model];
-                } else if (model.status.intValue == 20) {
-                    [self.dataArr addObject:model];
-                } else if (model.status.intValue == 40) {
-                    [self.dataArr addObject:model];
-                }
+        [weakSelf.dataArr addObjectsFromArray:moreArr];
+        if (moreArr.count < 10) {
+            weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
+        } else {
+            [weakSelf.tableView.mj_footer endRefreshing];
         }
         [weakSelf.tableView reloadData];
         self.page = [NSString stringWithFormat:@"%d",(weakSelf.page.intValue + 1)];
-        [weakSelf.tableView.mj_footer endRefreshing];
     }];
 }
 

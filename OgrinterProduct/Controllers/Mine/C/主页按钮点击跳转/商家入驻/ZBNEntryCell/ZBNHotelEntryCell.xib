@@ -445,7 +445,7 @@
                 <outlet property="hotelDoorImg" destination="KHz-H3-izb" id="tWo-Fi-9Ro"/>
                 <outlet property="yyzzImg" destination="tbJ-MI-AfG" id="x8o-qI-kSo"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="1668.0803571428571"/>
+            <point key="canvasLocation" x="129" y="1674"/>
         </tableViewCell>
     </objects>
     <resources>

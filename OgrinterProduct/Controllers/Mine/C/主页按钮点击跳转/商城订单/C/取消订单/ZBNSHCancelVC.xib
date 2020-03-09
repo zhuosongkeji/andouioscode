@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZBNSHCancelVC">
+            <connections>
+                <outlet property="detailReasonT" destination="9Y1-gm-d9o" id="ZJz-Al-qns"/>
+                <outlet property="reasonBtn" destination="dFD-eU-hzV" id="czj-LJ-Z0V"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLH-2G-Qlb">
+                    <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="取消订单原因" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa2-3c-f8u">
+                            <rect key="frame" x="15" y="16.5" width="86" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="返回 拷贝 3" translatesAutoresizingMaskIntoConstraints="NO" id="s6x-sn-kRm">
+                            <rect key="frame" x="389" y="20" width="10" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="ZMI-1w-bQk"/>
+                                <constraint firstAttribute="width" constant="10" id="eSh-GU-NYJ"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFD-eU-hzV">
+                            <rect key="frame" x="254" y="11" width="120" height="28"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="选择取消订单的原因">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="reasonBtnClick:" destination="-1" eventType="touchUpInside" id="HKH-yi-WcQ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="s6x-sn-kRm" firstAttribute="leading" secondItem="dFD-eU-hzV" secondAttribute="trailing" constant="15" id="A5g-vj-yFe"/>
+                        <constraint firstItem="Wa2-3c-f8u" firstAttribute="leading" secondItem="yLH-2G-Qlb" secondAttribute="leading" constant="15" id="Dc3-F3-Ilq"/>
+                        <constraint firstAttribute="height" constant="50" id="EHu-2k-ufr"/>
+                        <constraint firstItem="dFD-eU-hzV" firstAttribute="centerY" secondItem="yLH-2G-Qlb" secondAttribute="centerY" id="R3b-OC-RFH"/>
+                        <constraint firstAttribute="trailing" secondItem="s6x-sn-kRm" secondAttribute="trailing" constant="15" id="eI6-Ww-G0j"/>
+                        <constraint firstItem="s6x-sn-kRm" firstAttribute="centerY" secondItem="yLH-2G-Qlb" secondAttribute="centerY" id="hQu-U1-UgD"/>
+                        <constraint firstItem="Wa2-3c-f8u" firstAttribute="centerY" secondItem="yLH-2G-Qlb" secondAttribute="centerY" id="omb-65-bc6"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hF1-US-D8Y">
+                    <rect key="frame" x="0.0" y="94" width="414" height="300"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GW8-D2-wnj">
+                            <rect key="frame" x="15" y="0.0" width="384" height="0.5"/>
+                            <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="4PM-eC-ONS"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="取消订单说明" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWW-ry-joT">
+                            <rect key="frame" x="15" y="15.5" width="86" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="选填" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Y1-gm-d9o">
+                            <rect key="frame" x="10" y="37.5" width="394" height="257.5"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="9Y1-gm-d9o" secondAttribute="trailing" constant="10" id="4me-b9-sSy"/>
+                        <constraint firstItem="GW8-D2-wnj" firstAttribute="leading" secondItem="hF1-US-D8Y" secondAttribute="leading" constant="15" id="9hb-Ub-c4F"/>
+                        <constraint firstItem="GW8-D2-wnj" firstAttribute="top" secondItem="hF1-US-D8Y" secondAttribute="top" id="QC3-4H-bgy"/>
+                        <constraint firstAttribute="bottom" secondItem="9Y1-gm-d9o" secondAttribute="bottom" constant="5" id="UgD-gl-SNk"/>
+                        <constraint firstItem="9Y1-gm-d9o" firstAttribute="top" secondItem="qWW-ry-joT" secondAttribute="bottom" constant="5" id="YMY-nm-apX"/>
+                        <constraint firstItem="9Y1-gm-d9o" firstAttribute="leading" secondItem="hF1-US-D8Y" secondAttribute="leading" constant="10" id="ZSF-VY-bTz"/>
+                        <constraint firstAttribute="trailing" secondItem="GW8-D2-wnj" secondAttribute="trailing" constant="15" id="azp-mn-ahd"/>
+                        <constraint firstItem="qWW-ry-joT" firstAttribute="top" secondItem="GW8-D2-wnj" secondAttribute="bottom" constant="15" id="bkY-8J-4cE"/>
+                        <constraint firstAttribute="height" constant="300" id="ovn-eH-vR8"/>
+                        <constraint firstItem="qWW-ry-joT" firstAttribute="leading" secondItem="hF1-US-D8Y" secondAttribute="leading" constant="15" id="px0-FM-36X"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXW-Qg-nJW">
+                    <rect key="frame" x="15" y="414" width="384" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="kjW-fu-T0L"/>
+                    </constraints>
+                    <state key="normal" title="取消订单" backgroundImage="底部按钮背景"/>
+                    <connections>
+                        <action selector="cancelBtnClick:" destination="-1" eventType="touchUpInside" id="ofc-T5-WMk"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="hF1-US-D8Y" firstAttribute="top" secondItem="yLH-2G-Qlb" secondAttribute="bottom" id="2dt-XL-h8s"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="VXW-Qg-nJW" secondAttribute="trailing" constant="15" id="ZlB-Q0-JYM"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="yLH-2G-Qlb" secondAttribute="trailing" id="h0a-k2-kcO"/>
+                <constraint firstItem="VXW-Qg-nJW" firstAttribute="top" secondItem="hF1-US-D8Y" secondAttribute="bottom" constant="20" id="jO4-cK-yZD"/>
+                <constraint firstItem="yLH-2G-Qlb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="obG-P6-kKy"/>
+                <constraint firstItem="yLH-2G-Qlb" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="u6B-pl-cVB"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="hF1-US-D8Y" secondAttribute="trailing" id="vuE-oR-8Jw"/>
+                <constraint firstItem="hF1-US-D8Y" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="w7c-8S-n3N"/>
+                <constraint firstItem="VXW-Qg-nJW" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="zbl-sf-9sy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="139" y="214"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="底部按钮背景" width="345" height="45"/>
+        <image name="返回 拷贝 3" width="4" height="7.5"/>
+    </resources>
+</document>

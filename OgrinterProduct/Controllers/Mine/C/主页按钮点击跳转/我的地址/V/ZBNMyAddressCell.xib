@@ -102,11 +102,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="8AI-ZC-7iM" firstAttribute="centerY" secondItem="1dj-DL-tgR" secondAttribute="centerY" id="AwX-O4-3Vf"/>
-                            <constraint firstItem="Kp2-vg-4HD" firstAttribute="top" secondItem="1dj-DL-tgR" secondAttribute="bottom" constant="15" id="GZC-su-Svf"/>
                             <constraint firstAttribute="trailing" secondItem="8AI-ZC-7iM" secondAttribute="trailing" constant="15" id="LkE-pw-fmt"/>
                             <constraint firstItem="1dj-DL-tgR" firstAttribute="leading" secondItem="wb5-B4-EHa" secondAttribute="leading" constant="15" id="UtD-pk-oNQ"/>
                             <constraint firstItem="Kp2-vg-4HD" firstAttribute="leading" secondItem="wb5-B4-EHa" secondAttribute="leading" constant="15" id="a45-RC-eGP"/>
                             <constraint firstItem="1dj-DL-tgR" firstAttribute="top" secondItem="wb5-B4-EHa" secondAttribute="top" constant="15" id="b1P-Od-xVP"/>
+                            <constraint firstItem="Kp2-vg-4HD" firstAttribute="top" secondItem="1dj-DL-tgR" secondAttribute="bottom" constant="15" id="bbq-mH-ZSN"/>
                             <constraint firstAttribute="trailing" secondItem="Kp2-vg-4HD" secondAttribute="trailing" constant="15" id="ueg-dQ-hj3"/>
                         </constraints>
                     </view>
@@ -131,7 +131,7 @@
                 <outlet property="nameLabel" destination="1dj-DL-tgR" id="teV-Sz-jKD"/>
                 <outlet property="numberLabel" destination="8AI-ZC-7iM" id="DgV-Ov-NEo"/>
             </connections>
-            <point key="canvasLocation" x="-578" y="68"/>
+            <point key="canvasLocation" x="-184" y="56"/>
         </tableViewCell>
     </objects>
     <resources>

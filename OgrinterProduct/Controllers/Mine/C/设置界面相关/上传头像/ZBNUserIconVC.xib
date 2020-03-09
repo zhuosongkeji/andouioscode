@@ -31,7 +31,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71k-tc-G1q">
-                    <rect key="frame" x="0.0" y="44" width="414" height="120"/>
+                    <rect key="frame" x="0.0" y="88" width="414" height="120"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="b5u-tP-X9q"/>
@@ -45,10 +45,10 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="71k-tc-G1q" secondAttribute="trailing" id="ZJj-hG-knj"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="h2L-g0-25V" secondAttribute="trailing" constant="10" id="e4y-yr-6vv"/>
                 <constraint firstItem="h2L-g0-25V" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="nvp-fs-1Ef"/>
-                <constraint firstItem="71k-tc-G1q" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="utp-UW-n2g"/>
+                <constraint firstItem="71k-tc-G1q" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="44" id="utp-UW-n2g"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="174" y="221"/>
+            <point key="canvasLocation" x="86" y="145"/>
         </view>
     </objects>
     <resources>

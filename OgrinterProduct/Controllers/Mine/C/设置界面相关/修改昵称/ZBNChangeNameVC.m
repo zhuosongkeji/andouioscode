@@ -19,7 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.navigationItem.title = @"修改昵称";
 }
 
 #pragma mark -- UI

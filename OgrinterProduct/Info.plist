@@ -132,6 +132,10 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>相机</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string></string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>App想获取您周边的信息</string>
 	<key>NSPhotoLibraryUsageDescription</key>

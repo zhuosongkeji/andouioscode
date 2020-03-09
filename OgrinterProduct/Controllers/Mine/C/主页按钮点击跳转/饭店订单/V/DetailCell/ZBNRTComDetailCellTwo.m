@@ -72,11 +72,15 @@
     if (detailM.status.intValue == 10) { // 如果是未付款
         [self.cancelBtn setTitle:@"去付款" forState:UIControlStateNormal];
         self.cancelBtn.hidden = NO;
-    } else if (detailM.status.intValue == 20) {
+    } else if (detailM.status.intValue == 20) { //
         self.cancelBtn.hidden = YES;
-    } else {
+    } else if (detailM.status.intValue == 30) { //
         [self.cancelBtn setTitle:@"去评论" forState:UIControlStateNormal];
         self.cancelBtn.hidden = NO;
+    } else if (detailM.status.intValue == 0){  // 取消
+        self.cancelBtn.hidden = YES;
+    } else if (detailM.status.intValue == 40) { //
+        self.cancelBtn.hidden = YES;
     }
     
 }

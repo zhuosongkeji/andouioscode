@@ -29,12 +29,19 @@
 #import "ZBNPostUserModel.h"
 #import "ZBNSquareModel.h"
 #import "ZBNPostComModel.h"
+#import "ZBNMyAllNewsModel.h"
 
 @implementation ZBNExtensionConfig
 
 + (void)load
 {
 
+    
+    [ZBNMyAllNewsModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+              return @{
+                  @"ID" : @"id",
+              };
+          }];
     [ZBNShopFollowModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
            return @{
                @"ID" : @"id",

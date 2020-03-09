@@ -27,7 +27,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.36862745098039218" green="0.82745098039215681" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.83529411764705885" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="1Ck-x4-pWY" firstAttribute="centerX" secondItem="R6z-5k-y9S" secondAttribute="centerX" id="Etq-ad-c3U"/>
                 <constraint firstItem="R6z-5k-y9S" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FwM-z7-fuz"/>
@@ -39,7 +39,7 @@
             <connections>
                 <outlet property="myIntegerLabel" destination="1Ck-x4-pWY" id="wPx-tJ-CHF"/>
             </connections>
-            <point key="canvasLocation" x="-1097" y="74"/>
+            <point key="canvasLocation" x="-564" y="71"/>
         </view>
     </objects>
 </document>

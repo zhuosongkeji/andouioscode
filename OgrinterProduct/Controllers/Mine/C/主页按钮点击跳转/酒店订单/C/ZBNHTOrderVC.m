@@ -42,7 +42,6 @@
 
 - (void)setupSegmen
 {
-    self.automaticallyAdjustsScrollViewInsets = NO;
     self.segmentBarVC.segmentBar.frame = CGRectMake(0,0, self.view.width, 50);
     self.segmentBarVC.view.frame = CGRectMake(0, 0, self.view.width, self.view.height);
     [self.view addSubview:self.segmentBarVC.view];

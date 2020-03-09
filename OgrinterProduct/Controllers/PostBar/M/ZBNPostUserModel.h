@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZBNPostUserModel : NSObject
 /** userId */
 //@property (nonatomic , copy) NSString *userId;
-@property (nonatomic , copy) NSNumber *ID;
+//@property (nonatomic , copy) NSNumber *ID;
 
 /** 用户昵称 */
 //@property (nonatomic , copy) NSString *nickname;
@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 头像地址 */
 //@property (nonatomic , copy) NSString *avatarUrl;
-@property (nonatomic , copy) NSString *avator;
+//@property (nonatomic , copy) NSString *avator;
 @end
 
 NS_ASSUME_NONNULL_END

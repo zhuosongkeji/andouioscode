@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bmz-iX-G1s">
-                    <rect key="frame" x="0.0" y="30" width="414" height="275"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="275"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="219-Yi-xcE">
                             <rect key="frame" x="10" y="220" width="394" height="44"/>
@@ -139,12 +139,6 @@
                                 <action selector="getVCodeBtnClick:" destination="-1" eventType="touchUpInside" id="Ev2-Fn-J5L"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改密码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wu-8a-s4Q">
-                            <rect key="frame" x="172.5" y="15" width="69.5" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -155,11 +149,9 @@
                         <constraint firstItem="1VO-Gi-CMW" firstAttribute="leading" secondItem="Bmz-iX-G1s" secondAttribute="leading" constant="10" id="B2Q-Fb-lPN"/>
                         <constraint firstAttribute="trailing" secondItem="JtF-Z0-Y3F" secondAttribute="trailing" constant="10" id="Bnb-m5-bgU"/>
                         <constraint firstItem="JtF-Z0-Y3F" firstAttribute="top" secondItem="1VO-Gi-CMW" secondAttribute="bottom" constant="67" id="Fek-1S-dci"/>
-                        <constraint firstItem="9wu-8a-s4Q" firstAttribute="top" secondItem="Bmz-iX-G1s" secondAttribute="top" constant="15" id="IeE-fB-F2h"/>
                         <constraint firstItem="jxu-aF-g9D" firstAttribute="top" secondItem="1VO-Gi-CMW" secondAttribute="bottom" constant="16" id="MQy-gN-X1g"/>
                         <constraint firstItem="o7z-5i-xmf" firstAttribute="leading" secondItem="jxu-aF-g9D" secondAttribute="trailing" constant="16" id="aMk-ig-uhK"/>
                         <constraint firstItem="jxu-aF-g9D" firstAttribute="leading" secondItem="Bmz-iX-G1s" secondAttribute="leading" constant="10" id="b3C-Jr-G4l"/>
-                        <constraint firstItem="9wu-8a-s4Q" firstAttribute="centerX" secondItem="Bmz-iX-G1s" secondAttribute="centerX" id="d3P-pH-7sH"/>
                         <constraint firstItem="JtF-Z0-Y3F" firstAttribute="leading" secondItem="Bmz-iX-G1s" secondAttribute="leading" constant="10" id="dSW-NM-xYV"/>
                         <constraint firstItem="219-Yi-xcE" firstAttribute="top" secondItem="1VO-Gi-CMW" secondAttribute="bottom" constant="135" id="kgy-hW-9Kl"/>
                         <constraint firstAttribute="height" constant="275" id="l3j-Vx-ymd"/>
@@ -171,11 +163,11 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Bmz-iX-G1s" firstAttribute="leading" secondItem="ccL-kF-ZL3" secondAttribute="leading" id="8XS-XF-TXj"/>
-                <constraint firstItem="Bmz-iX-G1s" firstAttribute="top" secondItem="ccL-kF-ZL3" secondAttribute="top" constant="30" id="ged-to-8dX"/>
+                <constraint firstItem="Bmz-iX-G1s" firstAttribute="top" secondItem="ccL-kF-ZL3" secondAttribute="top" id="ged-to-8dX"/>
                 <constraint firstAttribute="trailing" secondItem="Bmz-iX-G1s" secondAttribute="trailing" id="zAu-k1-23p"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="eqM-xH-sWa"/>
-            <point key="canvasLocation" x="-1278" y="162"/>
+            <point key="canvasLocation" x="-1336" y="95"/>
         </view>
     </objects>
     <resources>

@@ -40,10 +40,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
-            <point key="canvasLocation" x="-164" y="2"/>
+            <point key="canvasLocation" x="125" y="96"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="暂无数据11" width="181" height="155"/>
+        <image name="暂无数据11" width="180.5" height="154.5"/>
     </resources>
 </document>

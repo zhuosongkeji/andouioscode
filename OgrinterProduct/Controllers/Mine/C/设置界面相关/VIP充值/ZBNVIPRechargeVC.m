@@ -48,7 +48,11 @@
 
 - (void)setupTable
 {
-    self.navigationController.navigationBar.translucent = NO;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.navigationItem.title = @"会员开通";

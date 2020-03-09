@@ -24,6 +24,11 @@
 
 - (void)setupUI
 {
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.contentInset = UIEdgeInsetsMake(getRectNavAndStatusHight, 0, 0, 0);
     self.navigationItem.title = @"查看评论";

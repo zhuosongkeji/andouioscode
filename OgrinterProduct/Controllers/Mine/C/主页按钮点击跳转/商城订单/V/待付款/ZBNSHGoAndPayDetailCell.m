@@ -46,6 +46,10 @@
 /*! 规格 */
 @property (weak, nonatomic) IBOutlet UILabel *attr_value;
 /*!***********detailEnd****************/
+/*! 去付款 */
+@property (weak, nonatomic) IBOutlet UIButton *payBtn;
+/*! 取消订单 */
+@property (weak, nonatomic) IBOutlet UIButton *cancelBtn;
 
 @end
 
@@ -85,12 +89,13 @@
     self.attr_value.text = [NSString stringWithFormat:@"%@",muStr];
 }
 
-
-
-
-/*! 退货退款按钮的点击 */
-- (IBAction)returnGoodsBtnClick:(UIButton *)sender {
+/*! 取消订单 */
+- (IBAction)cancelBtnClick:(UIButton *)sender {
+    if (self.cancelBtnClickTask) {
+        self.cancelBtnClickTask();
+    }
 }
+
 
 /*! 去付款按钮的点击 */
 - (IBAction)goAndPayBtnClick:(UIButton *)sender {
@@ -99,7 +104,18 @@
     }
 }
 
-
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.payBtn.layer.cornerRadius = 10;
+    self.payBtn.layer.borderWidth = 1;
+    self.payBtn.layer.borderColor = KSRGBA(97, 194, 156, 1).CGColor;
+    
+    self.cancelBtn.layer.cornerRadius = 10;
+    self.cancelBtn.layer.borderWidth = 1;
+    self.cancelBtn.layer.borderColor = KSRGBA(97, 194, 156, 1).CGColor;
+}
 
 
 

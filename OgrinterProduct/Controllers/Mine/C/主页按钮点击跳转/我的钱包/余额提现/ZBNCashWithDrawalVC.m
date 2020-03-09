@@ -22,9 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
     self.navigationItem.title = @"余额提现";
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
-    self.navigationController.navigationBar.translucent = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.bounces = NO;
     [self setupFooter];

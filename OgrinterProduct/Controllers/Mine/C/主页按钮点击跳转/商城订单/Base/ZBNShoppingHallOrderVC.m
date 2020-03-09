@@ -36,7 +36,6 @@
     [super viewDidLoad];
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.navigationItem.title = @"商城订单";
-    self.navigationController.navigationBar.translucent = NO;
     [self setupSegmen];
 }
 

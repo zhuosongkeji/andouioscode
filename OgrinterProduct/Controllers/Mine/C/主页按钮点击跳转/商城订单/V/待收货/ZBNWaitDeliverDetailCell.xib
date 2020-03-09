@@ -169,7 +169,7 @@
                                             <constraint firstAttribute="width" constant="60" id="SGz-ph-f5y"/>
                                             <constraint firstAttribute="height" constant="30" id="xUz-SE-qfB"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="退货/退款">
                                             <color key="titleColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -373,8 +373,9 @@
                 <outlet property="pay_money" destination="6oX-5z-Uea" id="Dj9-19-Ip0"/>
                 <outlet property="phone_num" destination="wJa-sU-dn9" id="oDy-dr-ElM"/>
                 <outlet property="price" destination="43l-Le-jaq" id="aPo-la-Fc0"/>
+                <outlet property="returnGoodsBtn" destination="VZk-sL-deZ" id="904-qc-pzs"/>
             </connections>
-            <point key="canvasLocation" x="117.39130434782609" y="68.303571428571431"/>
+            <point key="canvasLocation" x="-220" y="61"/>
         </tableViewCell>
     </objects>
     <resources>

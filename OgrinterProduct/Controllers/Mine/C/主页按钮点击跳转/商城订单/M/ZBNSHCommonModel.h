@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef enum : NSInteger {
     // 全部
+    // 已取消
+    ZBNCommonTypeCancel = 0,
     // 等待付款 / 未支付
     ZBNCommonTypeWaitPay = 10,
     // 待发货 / 已支付
@@ -21,6 +23,8 @@ typedef enum : NSInteger {
     ZBNCommonTypeShipped = 40,
     // 待评价 / 交易成功
     ZBNCommonTypeSuccess = 50,
+    // 已评价
+    ZBNCommonTypeCommented = 60,
     
 } ZBNCommonType;
 
@@ -38,7 +42,7 @@ typedef enum : NSInteger {
 @property (nonatomic, copy) NSString *merchant_id;
 /*! 订单号 */
 @property (nonatomic, copy) NSString *order_id;
-/*! 状态 10-未支付 20-已支付 40-已发货  50-交易成功（确认收货） 60-交易关闭（已评论） */
+/*! 状态 0-已取消 10-未支付 20-已支付 40-已发货  50-交易成功（确认收货） 60-交易关闭（已评论） */
 @property (nonatomic, copy) NSString *status;
 /*! 商家名字 */
 @property (nonatomic, copy) NSString *mname;

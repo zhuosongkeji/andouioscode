@@ -28,6 +28,11 @@
 
 - (void)setupTable
 {
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.navigationItem.title = @"订单详情";
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);

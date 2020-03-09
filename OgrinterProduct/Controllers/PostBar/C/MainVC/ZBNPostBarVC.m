@@ -30,6 +30,7 @@
 {
     UIBarButtonItem *addItem = [UIBarButtonItem itemWithImage:@"+" highImage:@"+" target:self action:@selector(addItemClick)];
     self.navigationItem.rightBarButtonItem = addItem;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)addItemClick
@@ -41,7 +42,6 @@
 
 - (void)setupSegmen
 {
-    self.automaticallyAdjustsScrollViewInsets = NO;
     self.segmentBarVC.view.frame = CGRectMake(0, 0, self.view.width, self.view.height);
     [self.view addSubview:self.segmentBarVC.view];
     NSArray *items = @[@"广场",@"我的"];

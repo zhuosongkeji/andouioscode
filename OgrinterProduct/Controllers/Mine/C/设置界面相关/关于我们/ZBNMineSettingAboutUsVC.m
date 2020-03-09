@@ -39,6 +39,7 @@
 - (void)setupUI
 {
     self.navigationItem.title = @"关于我们";
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 /*! 加载数据 */

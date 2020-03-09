@@ -11,7 +11,7 @@
 #import "ZBNMyAddressModel.h"
 #import "ZBNEntryFooterView.h"
 #import "ZBNNewAddressVC.h"
-
+#import "ZBNRefreshHeader.h"
 #import "ZBNAddressChangeVC.h"
 
 @interface ZBNMyAddressVC () <ZBNMyAddressCellDelegate>
@@ -33,7 +33,7 @@ static NSString * const ZBNMyAddressCellID = @"address";
     [super viewDidLoad];
     
     // 初始化模型数据
-    [self loadData];
+    [self setupRefresh];
     // 设置table
     [self setupTable];
     // 设置底部的view
@@ -46,7 +46,12 @@ static NSString * const ZBNMyAddressCellID = @"address";
 /*! 设置table */
 - (void)setupTable
 {
-    self.navigationController.navigationBar.translucent = NO;
+ 
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
     
     self.navigationItem.title = @"我的地址";
     
@@ -57,6 +62,16 @@ static NSString * const ZBNMyAddressCellID = @"address";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"changeOK" object:nil];
 }
 
+- (void)setupRefresh
+{
+    // 下拉刷新
+    self.tableView.mj_header = [ZBNRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    // 自动改变透明度
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    // 马上进入刷新状态
+    [self.tableView.mj_header beginRefreshing];
+
+}
 
 
 - (void)setupFooterView
@@ -82,6 +97,7 @@ static NSString * const ZBNMyAddressCellID = @"address";
     params[@"token"] = unmodel.token;
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/Usersaddress/address" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         self.addressArray = [ZBNMyAddressModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+        [self.tableView.mj_header endRefreshing];
         [self.tableView reloadData];
     }];
 }
@@ -154,7 +170,8 @@ static NSString * const ZBNMyAddressCellID = @"address";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 150;
+    ZBNMyAddressModel *model = self.addressArray[indexPath.row];
+    return model.cellHeight;
 }
 
 /*!  cell的代理方法 */

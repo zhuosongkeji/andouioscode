@@ -47,11 +47,24 @@
 @property (weak, nonatomic) IBOutlet UILabel *num;
 /*! 规格 */
 @property (weak, nonatomic) IBOutlet UILabel *attr_value;
+/*! 退货款按钮 */
+@property (weak, nonatomic) IBOutlet UIButton *returnGoosBtn;
+
 
 @end
 
 
 @implementation ZBNSHWaitEvaluateDetailCell
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.returnGoosBtn.layer.cornerRadius = 12;
+    self.returnGoosBtn.layer.borderColor = KSRGBA(100, 100, 100, 1).CGColor;
+    self.returnGoosBtn.layer.borderWidth = .5f;
+}
+
 
 - (void)setComM:(ZBNSHOrderDetailComM *)comM
 {

@@ -97,6 +97,7 @@
     [self.dataArr removeAllObjects];
     [FKHRequestManager cancleRequestWork];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    self.tableView.mj_footer.state = MJRefreshStateIdle;
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     params[@"uid"] = unmodel.uid;
@@ -108,24 +109,12 @@
         if ([[serverInfo.response objectForKey:@"code"] intValue] == 202) {
             [weakSelf.tableView.mj_header endRefreshing];
         }
-        NSArray *allData = [ZBNRTComModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
-        for (ZBNRTComModel *model in allData) {
-            if (model.status.intValue == 10) {
-                [weakSelf.dataArr addObject:model];
-            } else if (model.status.intValue == 20) {
-                [weakSelf.dataArr addObject:model];
-            } else if (model.status.intValue == 40) {
-                [weakSelf.dataArr addObject:model];
-            }
-        }
-        if (allData.count < 8) {
+        weakSelf.dataArr = [ZBNRTComModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+        if (weakSelf.dataArr.count < 8) {
             weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
-            [weakSelf.tableView reloadData];
-        } else {
-            [weakSelf.tableView reloadData];
-            weakSelf.tableView.mj_footer.state = MJRefreshStateIdle;
         }
         [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView reloadData];
     }];
 }
 
@@ -142,21 +131,10 @@
        ADWeakSelf;
        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl: ZBNGourmetURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
            NSArray *allData = [ZBNRTComModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
-           NSMutableArray *addData = [NSMutableArray array];
-           for (ZBNRTComModel *model in allData) {
-               if (model.status.intValue == 10) {
-                   [addData addObject:model];
-               } else if (model.status.intValue == 20) {
-                   [addData addObject:model];
-               } else if (model.status.intValue == 40) {
-                   [addData addObject:model];
-               }
-           }
-           if (addData.count < 8) {
-               [weakSelf.dataArr addObjectsFromArray:addData];
+           [weakSelf.dataArr addObjectsFromArray:allData];
+           if (allData.count < 8) {
                weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
            } else {
-               [weakSelf.dataArr addObjectsFromArray:addData];
                [weakSelf.tableView.mj_footer endRefreshing];
            }
            [weakSelf.tableView reloadData];

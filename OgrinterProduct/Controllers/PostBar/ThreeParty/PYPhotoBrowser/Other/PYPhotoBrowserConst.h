@@ -17,7 +17,7 @@
 #else
     #define PYPlaceholderImage [UIImage imageNamed:@"PYPhotosView.bundle/placeholderimage"] // 占位图
     #define PYLoadFailureImage [UIImage imageNamed:@"PYPhotosView.bundle/imageerror"] // 加载失败图(添加在占位图上大小默认为100 * 100)
-    #define PYAddImage [UIImage imageNamed:@"PYPhotosView.bundle/addimage"] // 添加图片图
+    #define PYAddImage [UIImage imageNamed:@"add_image_white"] // 添加图片图
     #define PYDeleteImage [UIImage imageNamed:@"PYPhotosView.bundle/deleteimage"] // 删除图片图
 #endif
 

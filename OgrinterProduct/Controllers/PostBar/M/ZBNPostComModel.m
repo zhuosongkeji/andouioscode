@@ -10,6 +10,8 @@
 
 @implementation ZBNPostComModel
 
+
+
 - (NSAttributedString *)attributedText
 {
  

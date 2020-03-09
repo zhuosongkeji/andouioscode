@@ -34,6 +34,7 @@
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="niB-nS-YZV">
                             <rect key="frame" x="77" y="16.5" width="322" height="17"/>
+                            <color key="tintColor" red="0.3411764706" green="0.76078431369999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -81,16 +82,9 @@
                                 <constraint firstAttribute="width" constant="10" id="tmb-ku-CvU"/>
                             </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="我的地址" translatesAutoresizingMaskIntoConstraints="NO" id="Uq3-SW-V4k">
-                            <rect key="frame" x="295" y="17.5" width="15" height="15"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="15" id="XJV-S0-MCM"/>
-                                <constraint firstAttribute="width" constant="15" id="hQV-MN-xNE"/>
-                            </constraints>
-                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mi-Qp-ZLF">
-                            <rect key="frame" x="325" y="11" width="54" height="28"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <rect key="frame" x="91.5" y="10.5" width="58" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="点击添加">
                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                             </state>
@@ -98,9 +92,20 @@
                                 <action selector="addBtnClick:" destination="-1" eventType="touchUpInside" id="83I-M0-x2S"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DH7-53-ejD">
+                            <rect key="frame" x="327" y="13" width="52" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="  定位" image="weizhi">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="searchLocationClick:" destination="-1" eventType="touchUpInside" id="LBx-Bw-HH4"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
+                        <constraint firstItem="DH7-53-ejD" firstAttribute="centerY" secondItem="Dem-Uy-LuT" secondAttribute="centerY" id="0F3-2X-sRA"/>
                         <constraint firstItem="Dem-Uy-LuT" firstAttribute="centerY" secondItem="f8U-FN-nbz" secondAttribute="centerY" id="76H-6J-mY4"/>
                         <constraint firstItem="0Mi-Qp-ZLF" firstAttribute="centerY" secondItem="f8U-FN-nbz" secondAttribute="centerY" id="G7X-zs-fyX"/>
                         <constraint firstItem="zF8-bS-2vQ" firstAttribute="centerY" secondItem="Dem-Uy-LuT" secondAttribute="centerY" id="Iwj-zc-3Yb"/>
@@ -108,11 +113,10 @@
                         <constraint firstAttribute="trailing" secondItem="Phj-qm-sBM" secondAttribute="trailing" id="Luf-qs-XKq"/>
                         <constraint firstItem="Dem-Uy-LuT" firstAttribute="leading" secondItem="f8U-FN-nbz" secondAttribute="leading" constant="15" id="N82-Hz-Bm1"/>
                         <constraint firstAttribute="bottom" secondItem="Phj-qm-sBM" secondAttribute="bottom" id="NJR-1S-XPJ"/>
-                        <constraint firstItem="0Mi-Qp-ZLF" firstAttribute="leading" secondItem="Uq3-SW-V4k" secondAttribute="trailing" constant="15" id="PdG-v3-CT8"/>
+                        <constraint firstItem="0Mi-Qp-ZLF" firstAttribute="leading" secondItem="Dem-Uy-LuT" secondAttribute="trailing" constant="15" id="TwU-jX-bSv"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="cFV-3s-kDy"/>
-                        <constraint firstItem="zF8-bS-2vQ" firstAttribute="leading" secondItem="0Mi-Qp-ZLF" secondAttribute="trailing" constant="15" id="hGu-pd-weB"/>
+                        <constraint firstItem="zF8-bS-2vQ" firstAttribute="leading" secondItem="DH7-53-ejD" secondAttribute="trailing" constant="15" id="ivA-cb-VXI"/>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="qdZ-9E-c2v"/>
-                        <constraint firstItem="Uq3-SW-V4k" firstAttribute="centerY" secondItem="f8U-FN-nbz" secondAttribute="centerY" id="wQL-8y-TXa"/>
                         <constraint firstAttribute="trailing" secondItem="zF8-bS-2vQ" secondAttribute="trailing" constant="10" id="xM5-dl-Pl8"/>
                         <constraint firstItem="Phj-qm-sBM" firstAttribute="leading" secondItem="f8U-FN-nbz" secondAttribute="leading" id="zhL-lF-eQ4"/>
                     </constraints>
@@ -135,6 +139,7 @@
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="da9-qr-qlq">
                             <rect key="frame" x="15" y="55" width="384" height="17"/>
+                            <color key="tintColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -194,6 +199,7 @@
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acJ-l7-Z3r">
                             <rect key="frame" x="91.5" y="16.5" width="307.5" height="17"/>
+                            <color key="tintColor" red="0.3411764706" green="0.76078431369999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -268,13 +274,13 @@
                 <constraint firstItem="Dh7-20-BTx" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yhX-3z-XGN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-1661" y="139"/>
+            <point key="canvasLocation" x="-2277" y="65"/>
         </view>
     </objects>
     <resources>
         <image name="dati1" width="16" height="16"/>
+        <image name="weizhi" width="20" height="24"/>
         <image name="底部按钮背景" width="345" height="45"/>
-        <image name="我的地址" width="21" height="26"/>
         <image name="椭圆 1" width="10" height="10"/>
         <image name="返回 拷贝 3" width="4" height="7.5"/>
     </resources>

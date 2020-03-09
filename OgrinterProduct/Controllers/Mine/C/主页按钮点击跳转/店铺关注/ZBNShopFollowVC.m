@@ -11,6 +11,7 @@
 #import "MsgViewCell.h"
 #import "ZBNRefreshHeader.h"
 #import "ZBNComDataNilCell.h"
+#import "ShopShopkeeperViewController.h"
 
 @interface ZBNShopFollowVC ()
 
@@ -33,10 +34,17 @@ static NSString * const ZBNShopFollowCellID = @"shopCell";
 
 - (void)setupTable
 {
+    
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
+    
     self.navigationItem.title = @"浏览痕迹";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"MsgViewCell" bundle:nil] forCellReuseIdentifier:ZBNShopFollowCellID];
-    self.tableView.backgroundColor = KSRGBA(241, 241, 241, 1);
+    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
 }
 
 #pragma mark - Table view data source
@@ -68,6 +76,17 @@ static NSString * const ZBNShopFollowCellID = @"shopCell";
     } else {
         return self.view.height;
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    ZBNShopFollowModel *model = self.dataArr[indexPath.row];
+    ShopShopkeeperViewController *vc = [[ShopShopkeeperViewController alloc] init];
+    vc.shoperId = model.ID;
+    vc.u_id = unmodel.uid;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

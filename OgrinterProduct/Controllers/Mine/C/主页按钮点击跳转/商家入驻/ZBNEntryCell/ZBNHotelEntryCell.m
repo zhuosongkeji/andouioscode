@@ -41,6 +41,13 @@
     
 }
 
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+}
+
+
 - (void)setupLabelGes
 {
     self.chooseAddressL.userInteractionEnabled = YES;
@@ -82,13 +89,13 @@
               config.parameter = param;
           }];
 
-              [weakSelf.hotelDoorImg addSubview:imageView];
-                self.upLoadViewOne = imageView;
+              [self.hotelDoorImg addSubview:imageView];
+                weakSelf.upLoadViewOne = imageView;
               [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
               make.left.right.equalTo(weakSelf.hotelDoorImg);
               make.height.equalTo(@(80));
-              
               }];
+    
 }
 
 - (void)setUpLoadViewTwo

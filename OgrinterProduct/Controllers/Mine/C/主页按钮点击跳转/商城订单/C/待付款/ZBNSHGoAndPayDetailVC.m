@@ -16,6 +16,7 @@
 #import "ZBNSHOrderDetailsM.h"
 
 #import "ZBNSHCommonPayVC.h"
+#import "ZBNSHCancelVC.h"
 
 @interface ZBNSHGoAndPayDetailVC ()
 
@@ -50,7 +51,11 @@
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.tableView.bounces = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.navigationController.navigationBar.translucent = NO;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
 }
 
 - (void)setupHeaderView
@@ -99,6 +104,12 @@
         
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
+    cell.cancelBtnClickTask = ^{
+        ZBNSHCancelVC *vc = [[ZBNSHCancelVC alloc] init];
+        vc.order_sn = self.getOrderNum;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    
     cell.comM = self.comM;
     return cell;
 }

@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *price;
 /*! 规格 */
 @property (nonatomic, copy) NSArray *attr_value;
+
 @end
 
 NS_ASSUME_NONNULL_END

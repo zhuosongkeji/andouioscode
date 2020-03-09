@@ -41,13 +41,6 @@ NS_ASSUME_NONNULL_BEGIN
 /*! to */
 @property (nonatomic, copy) NSString *to;
 
-
-
-
-
-
-
-
 /** 获取富文本 */
 - (NSAttributedString *)attributedText;
 

@@ -23,11 +23,6 @@
 
 @implementation ZBNSHBaseOrderVC
 
-- (ZBNCommonType)type
-{
-    return 0;
-}
-
 - (NSMutableArray *)dataArr
 {
     if (!_dataArr) {
@@ -41,30 +36,21 @@
 // 加载数据
 - (void)loadNewData
 {
+    self.nextPage = @"2";
     [FKHRequestManager cancleRequestWork];
     [self.dataArr removeAllObjects];
+    self.tableView.mj_footer.state = MJRefreshStateIdle;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     
     params[@"uid"] = unmodel.uid;
     params[@"token"] = unmodel.token;
-    params[@"type"] = @(self.type);
     params[@"page"] = @"1";
     ADWeakSelf;
-    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/index" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) { // 10 20 40 50
-        NSArray *allDataArr = [ZBNSHCommonModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
-        for (ZBNSHCommonModel *model in allDataArr) {
-            if (model.status.intValue == 10) {
-                [self.dataArr addObject:model];
-            } else if (model.status.intValue == 20) {
-                [self.dataArr addObject:model];
-            } else if (model.status.intValue == 40) {
-                [self.dataArr addObject:model];
-            } else if (model.status.intValue == 50) {
-                [self.dataArr addObject:model];
-            }
-        }
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/order/index" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) { 
+        weakSelf.dataArr = [ZBNSHCommonModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
+   
         if (self.dataArr.count < 10) {
             [weakSelf.tableView.mj_footer setState:MJRefreshStateNoMoreData];
         }
@@ -81,33 +67,19 @@
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     params[@"uid"] = unmodel.uid;
     params[@"token"] = unmodel.token;
-    params[@"type"] = @(self.type);
     params[@"page"] = self.nextPage;
     ADWeakSelf;
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/api/order/index" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         NSArray *allDataArr = [ZBNSHCommonModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
-        NSMutableArray *addData = [NSMutableArray array];
-        for (ZBNSHCommonModel *model in allDataArr) {
-            if (model.status.intValue == 10) {
-                [addData addObject:model];
-            } else if (model.status.intValue == 20) {
-                [addData addObject:model];
-            } else if (model.status.intValue == 40) {
-                [addData addObject:model];
-            } else if (model.status.intValue == 50) {
-                [addData addObject:model];
-            }
-        }
-        if (addData.count < 10) {
-            [weakSelf.dataArr addObjectsFromArray:addData];
+         [weakSelf.dataArr addObjectsFromArray:allDataArr];
+        if (allDataArr.count < 10) {
             [weakSelf.tableView reloadData];
             weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
         } else {
-        [weakSelf.dataArr addObjectsFromArray:addData];
         [weakSelf.tableView reloadData];
         [weakSelf.tableView.mj_footer endRefreshing];
-        weakSelf.nextPage = [NSString stringWithFormat:@"%d",(weakSelf.nextPage.intValue + 1)];
         }
+        weakSelf.nextPage = [NSString stringWithFormat:@"%d",(weakSelf.nextPage.intValue + 1)];
     }];
 }
 
@@ -129,7 +101,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.nextPage = @"2";
    // 设置UI
     [self setupUI];
     // 加载数据
@@ -146,8 +117,12 @@
 
 - (void)setupUI
 {
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
-    self.navigationController.navigationBar.translucent = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 

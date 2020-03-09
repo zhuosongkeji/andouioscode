@@ -11,6 +11,7 @@
 #import "ZBNSHReturnGoodsComM.h"
 #import "YNImageUploadView.h"
 #import "Masonry.h"
+#import "WMZDialog.h"
 
 @interface ZBNSHAppReturnGoodsCell ()
 
@@ -79,16 +80,31 @@
 
 - (void)labelClick
 {
-    ZBNReturnGoodsReasonView *reView = [ZBNReturnGoodsReasonView viewFromXib];
-    reView.width = KSCREEN_WIDTH;
-    QWAlertView *alertV = [QWAlertView sharedMask];
     ADWeakSelf;
-    [alertV show:reView withType:0 animationFinish:nil dismissHandle:^{
-        [weakSelf.return_reason setText:self.resonM.content];
-        if (self.resonM.content == nil) {
-            [weakSelf.return_reason setText:[NSString stringWithFormat:@"请选择理由"]];
+    Dialog().
+    wTypeSet(DialogTypeSheet).
+    wDataSet(@[@"7天无理由免费退换货",@"多拍,错拍,不想要",@"商品信息描述与实际不符",@"商品变质,发霉,有异物",@"其他"]).
+    wTitleSet(@"退款原因").wOKColorSet([UIColor blackColor]).
+    wEventFinishSet(^(id anyID,NSIndexPath *path, DialogType type){
+        
+        if ([anyID isEqualToString:@"7天无理由免费退换货"]) {
+            weakSelf.resonM.reason_id = @"1";
         }
-    }];
+        if ([anyID isEqualToString:@"多拍,错拍,不想要"]) {
+            weakSelf.resonM.reason_id = @"2";
+        }
+        if ([anyID isEqualToString:@"商品信息描述与实际不符"]) {
+            weakSelf.resonM.reason_id = @"3";
+        }
+        if ([anyID isEqualToString:@"商品变质,发霉,有异物"]) {
+            weakSelf.resonM.reason_id = @"4";
+        }
+        if ([anyID isEqualToString:@"其他"]) {
+            weakSelf.resonM.reason_id = @"5";
+        }
+        [weakSelf.return_reason setText:anyID];
+    }).
+    wStart();
 }
 
 
@@ -118,12 +134,8 @@
 
 /*! 提交申请按钮点击 */
 - (IBAction)replyBtnClick:(UIButton *)sender {
-    if (self.resonM.content) {
         // 发起请求
         [self returnMoneyRequest];
-    } else {
-        [HUDManager showTextHud:@"请选择退款理由"];
-    }
 }
 
 /*! 退款请求 */
@@ -148,6 +160,9 @@
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:ZBNApplyURL params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
         if ([[serverInfo.response objectForKey:@"code"] intValue] == 200) {
             [HUDManager showTextHud:@"退款申请提交成功"];
+            if (weakSelf.requestSuccessBlock) {
+                weakSelf.requestSuccessBlock();
+            }
         } else {
             [HUDManager showTextHud:@"申请失败"];
         }

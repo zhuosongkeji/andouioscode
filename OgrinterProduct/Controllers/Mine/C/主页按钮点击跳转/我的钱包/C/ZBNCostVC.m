@@ -29,6 +29,7 @@
     [self setupRefresh];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 240, 0);
+//    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
 }
 
 
@@ -94,32 +95,32 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (self.dataArr.count > 0) {
+//    if (self.dataArr.count > 0) {
         return self.dataArr.count;
-    } else {
-        return 1;
-    }
+//    } else {
+//        return 1;
+//    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.dataArr.count > 0) {
+//    if (self.dataArr.count > 0) {
         ZBNMyWalletComCell *cell = [ZBNMyWalletComCell registerCellForTableView:tableView];
         cell.costM = self.dataArr[indexPath.row];
         return cell;
-    } else {
-        ZBNComDataNilCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNComDataNilCell" owner:nil options:nil].lastObject;
-        return cell;
-    }
+//    } else {
+//        ZBNComDataNilCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNComDataNilCell" owner:nil options:nil].lastObject;
+//        return cell;
+//    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.dataArr.count > 0) {
+//    if (self.dataArr.count > 0) {
         return 60;
-    } else {
-        return self.view.height - 190;
-    }
+//    } else {
+//        return self.view.height - 190;
+//    }
 }
 
 #pragma mark -- 懒加载

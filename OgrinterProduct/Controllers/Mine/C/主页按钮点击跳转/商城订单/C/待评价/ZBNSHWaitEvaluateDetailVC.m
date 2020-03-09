@@ -28,16 +28,19 @@
     [super viewDidLoad];
     
     [self loadData];
-    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
+    self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.navigationController.navigationBar.translucent = NO;
     self.tableView.bounces = NO;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     return 1;
 }
 
@@ -58,7 +61,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 444;
+    return 510;
 }
 
 

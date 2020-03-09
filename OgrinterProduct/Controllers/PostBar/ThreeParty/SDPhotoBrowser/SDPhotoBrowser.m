@@ -68,6 +68,9 @@
     indexLabel.clipsToBounds = YES;
     if (self.imageCount > 1) {
         indexLabel.text = [NSString stringWithFormat:@"1/%ld", (long)self.imageCount];
+        indexLabel.hidden = NO;
+    } else {
+        indexLabel.hidden = YES;
     }
     _indexLabel = indexLabel;
     [self addSubview:indexLabel];
@@ -262,6 +265,8 @@
     _indexLabel.center = CGPointMake(self.bounds.size.width * 0.5, 35);
     _indexLabel.centerX = self.centerX;
     _indexLabel.y = self.height * 0.1;
+   
+    
     _saveButton.frame = CGRectMake(50, self.bounds.size.height - 70, 50, 25);
 }
 

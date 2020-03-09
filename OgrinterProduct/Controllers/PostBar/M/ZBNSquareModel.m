@@ -8,6 +8,13 @@
 
 #import "ZBNSquareModel.h"
 
+@interface ZBNSquareModel ()
+/*! 辅助属性 */
+@property (nonatomic, copy) NSString *shareString;
+@property (nonatomic, copy) NSString *commentString;
+@property (nonatomic, copy) NSString *voteString;
+@end
+
 @implementation ZBNSquareModel
 
 - (NSString *)created_at
@@ -52,11 +59,50 @@
     return attributedString;
 }
 
+- (void)setShare:(NSNumber *)share
+{
+    _share = share;
+    self.shareString = [self _numsStringWithNums:share];
+}
+
+- (void)setVote:(NSNumber *)vote
+{
+    _vote = vote;
+    self.voteString = [self _numsStringWithNums:vote];
+}
+
+- (void)setComment_count:(NSNumber *)comment_count
+{
+    _comment_count = comment_count;
+    self.commentString = [self _numsStringWithNums:comment_count];
+}
+
+#pragma mark - 私有方法
+// 点赞
+- (NSString *)_numsStringWithNums:(NSNumber *)nums
+{
+
+    NSString *titleString = nil;
+    
+    if (nums.intValue >= 10000) { // 上万
+        CGFloat final = nums.intValue / 10000.0;
+        titleString = [NSString stringWithFormat:@"%.1f万", final];
+        // 替换.0为空串
+        titleString = [titleString stringByReplacingOccurrencesOfString:@".0" withString:@""];
+    } else if (nums.intValue >= 0) { // 一万以内
+        titleString = [NSString stringWithFormat:@"%@1", nums];
+    }
+    
+    return titleString;
+}
+
+
 
 + (NSDictionary *)mj_objectClassInArray
 {
     return @{
         @"comments":@"ZBNPostComModel",
+        @"userM":@"ZBNPostUserModel",
     };
 }
 

@@ -50,10 +50,14 @@
 - (void)setupUI
 {
     self.navigationItem.title = @"订单详情";
-    self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
+    self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.bounces = NO;
-    self.navigationController.navigationBar.translucent = NO;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
 }
 
 - (void)loadData
@@ -97,7 +101,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 495;
+    return 510;
 }
 
 @end

@@ -12,10 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZBNMyAllNewsModel : NSObject
 
-@property (nonatomic, copy) NSString *nameL;
-@property (nonatomic, copy) NSString *iconV;
-@property (nonatomic, copy) NSString *count;
-@property (nonatomic, copy) NSString *state;
+@property (nonatomic, copy) NSString *ID;
+@property (nonatomic, copy) NSString *type_name;
+@property (nonatomic, copy) NSString *unread;
+
 
 @end
 

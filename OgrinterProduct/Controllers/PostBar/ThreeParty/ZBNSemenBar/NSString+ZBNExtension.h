@@ -15,6 +15,16 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)returnImportentNum:(NSString *)importentNum;
 /*! 文件大小 */
 - (unsigned long long)zbn_fileSize;
+
+/**
+ *  动态计算文字的宽高（单行）
+ *  @param font 文字的字体
+ *  @return 计算的宽高
+ */
+- (CGSize)zbn_sizeWithFont:(UIFont *)font;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -17,11 +17,16 @@
 #import "ZBNMyWalletVC.h"
 #import "Img+lable.h"
 #import "PPBadgeView.h"
-
+#import "ZBNMineCell.h"
 
 
 
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerH;
+
+@property (weak, nonatomic) IBOutlet UIView *headerView;
+
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toTop;
 
@@ -84,31 +89,32 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//    [self wr_setNavBarBackgroundAlpha:0];
+    [self wr_setNavBarBackgroundAlpha:0];
     [self loadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-//     [self wr_setNavBarBackgroundAlpha:0];
+//     [self wr_setNavBarBackgroundAlpha:1];
 }
 
 
 
 - (void)setupTable
 {
-    self.mTableView.bounces = YES;
+    self.mTableView.bounces = NO;
+    
+    if (@available(iOS 11.0, *)) {
+           self.mTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+       }else {
+           self.automaticallyAdjustsScrollViewInsets = NO;
+       }
 }
-
 
 #pragma mark -- UI
 - (void)setupUI
 {
-       
-    self.navigationController.navigationBar.translucent = NO;
-//    self.extendedLayoutIncludesOpaqueBars = YES;
-//    self.mTableView.translatesAutoresizingMaskIntoConstraints = NO;
     self.mTableView.tableFooterView = [UILabel new];
     self.integerView.layer.cornerRadius = 10;
     self.headImageV.userInteractionEnabled = YES;
@@ -210,26 +216,26 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 0;
+    return 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *Identifier = @"Identifier";
-    
-    UITableViewCell *cell= [tableView dequeueReusableCellWithIdentifier:Identifier];
-    if (cell==nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
-    }
-    
+    ZBNMineCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNMineCell" owner:nil options:nil].lastObject;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return self.view.height - 490;
 }
+
+
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+//}
 
 
 - (void)pushViewControllerWithString:(NSString *)nameStr{
@@ -341,7 +347,7 @@
             [HUDManager showTextHud:OtherMsg];
         } else if (sender.tag == 507) { // 我的发布
             [HUDManager showTextHud:OtherMsg];
-            [self pushViewControllerWithString:@"ZBNMyPostVC"];
+//            [self pushViewControllerWithString:@"ZBNMyPostVC"];
         }
     
 }

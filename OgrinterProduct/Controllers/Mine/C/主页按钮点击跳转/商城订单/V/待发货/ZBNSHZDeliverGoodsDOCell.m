@@ -13,6 +13,8 @@
 
 
 @interface ZBNSHZDeliverGoodsDOCell ()
+
+@property (weak, nonatomic) IBOutlet UIButton *returnGoodsBtn;
 /*! 订单编号 */
 @property (weak, nonatomic) IBOutlet UILabel *order_num;
 /*! 支付时间 */
@@ -73,7 +75,6 @@
     self.shipping_free.text = [NSString stringWithFormat:@"¥%@",comM.shipping_free];
     // 实际付款
     self.pay_money.text = [NSString stringWithFormat:@"¥%@",comM.pay_money];
-    // 付款方式
 
 }
 
@@ -92,8 +93,8 @@
     self.goods_attr.text = [NSString stringWithFormat:@"%@",muStr];
     // 单价
     self.goods_price.text = [NSString stringWithFormat:@"¥%@",detailM.price];
-    // 数量
-    self.order_num.text = [NSString stringWithFormat:@"x%@",detailM.num];
+    
+     self.goods_count.text = [NSString stringWithFormat:@"x%@",detailM.num];
 }
 
 
@@ -114,7 +115,14 @@
     }
 }
 
-
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.returnGoodsBtn.layer.cornerRadius = 12;
+    self.returnGoodsBtn.layer.borderColor = KSRGBA(100, 100, 100, 1).CGColor;
+    self.returnGoodsBtn.layer.borderWidth = .5f;
+}
 
 
 @end

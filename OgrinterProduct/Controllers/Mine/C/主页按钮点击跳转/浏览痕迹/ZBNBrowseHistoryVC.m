@@ -11,6 +11,7 @@
 #import "ZBNBrowseModel.h"
 #import "ZBNComDataNilCell.h"
 #import "ZBNRefreshHeader.h"
+#import "ShopShopkeeperViewController.h"
 
 @interface ZBNBrowseHistoryVC ()
 /*! 存储数据的数组 */
@@ -33,6 +34,12 @@ static NSString * const ZBNBrowseHistoryCellID = @"collectionCommen";
 
 - (void)setupTable
 {
+    
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
     self.navigationItem.title = @"浏览痕迹";
     [self.tableView registerNib:[UINib nibWithNibName:@"MsgViewCell" bundle:nil] forCellReuseIdentifier:ZBNBrowseHistoryCellID];
     self.tableView.backgroundColor = KSRGBA(241, 241, 241, 1);
@@ -67,6 +74,18 @@ static NSString * const ZBNBrowseHistoryCellID = @"collectionCommen";
     } else {
         return self.view.height;
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    ZBNBrowseModel *model = self.dataArr[indexPath.row];
+    ShopShopkeeperViewController *vc = [[ShopShopkeeperViewController alloc] init];
+    vc.shoperId = model.ID;
+    vc.u_id = unmodel.uid;
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 

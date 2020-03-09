@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! 代理 */
 @property (nonatomic, weak) id <ZBNPostBarHeaderDelegate> delegate;
 
+@property (nonatomic, copy) void(^dingClickTash)(ZBNPostBarHeader *header);
 
 
 @end

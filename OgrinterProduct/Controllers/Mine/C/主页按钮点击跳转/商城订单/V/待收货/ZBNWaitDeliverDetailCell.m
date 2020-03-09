@@ -15,6 +15,7 @@
 
 @interface ZBNWaitDeliverDetailCell ()
 
+@property (weak, nonatomic) IBOutlet UIButton *returnGoodsBtn;
 /*! 订单编号 */
 @property (weak, nonatomic) IBOutlet UILabel *order_num;
 /*! 订单时间 */
@@ -123,6 +124,14 @@
     }
 }
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.returnGoodsBtn.layer.cornerRadius = 12;
+    self.returnGoodsBtn.layer.borderWidth = .5f;
+    self.returnGoodsBtn.layer.borderColor = KSRGBA(100, 100, 100, 1).CGColor;
+}
 
 
 

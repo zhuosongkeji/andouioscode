@@ -12,7 +12,7 @@
 #import "TZImagePickerController.h"
 #import "WMZDialog.h"
 
-@interface ZBNNewPostVC () <TZImagePickerControllerDelegate,PYPhotosViewDelegate>
+@interface ZBNNewPostVC () <TZImagePickerControllerDelegate,PYPhotosViewDelegate,UITextViewDelegate>
 /*! 图片背景View */
 @property (weak, nonatomic) IBOutlet PYPhotosView *photoBackV;
 /*! 标题 */
@@ -22,7 +22,7 @@
 /*! 选择类别 */
 @property (weak, nonatomic) IBOutlet UILabel *chooseL;
 /*! 电话 */
-@property (weak, nonatomic) IBOutlet UILabel *phoneT;
+@property (weak, nonatomic) IBOutlet UITextField *phoneT;
 /*! 不置顶 */
 @property (weak, nonatomic) IBOutlet UIButton *notDingBtn;
 /*! 置顶 */
@@ -51,7 +51,17 @@
 - (void)setupUI
 {
     self.navigationItem.title = @"发布";
+    self.content.delegate = self;
 }
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if (self.content.text.length < 3) {
+        self.content.text = nil;
+    }
+}
+
+
 
 
 // 添加展示图片的view
@@ -117,10 +127,6 @@
     UITapGestureRecognizer *labelGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chooseTypeClick)];
     self.chooseL.userInteractionEnabled = YES;
     [self.chooseL addGestureRecognizer:labelGes];
-    // 电话填写
-    UITapGestureRecognizer *phoneGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(phoneNumClick)];
-    self.phoneT.userInteractionEnabled = YES;
-    [self.phoneT addGestureRecognizer:phoneGes];
 }
 
 
@@ -152,17 +158,6 @@
     // 发布帖子
     [self postRequest];
     
-}
-/*! 电话号码点击 */
-- (void)phoneNumClick
-{
-    Dialog().wTypeSet(DialogTypeWrite).wEventOKFinishSet(^(id anyID, id otherData){
-        if (anyID) {
-            [self.phoneT setText:anyID];
-        } else {
-            [self.phoneT setText:@"请输入手机号"];
-        }
-    }).wOKColorSet(KSRGBA(94, 211, 174, 1)).wTitleSet(@"").wMessageSet(@"手机号").wWirteTextMaxLineSet(1).wWirteTextMaxNumSet(13).wLineAlphaSet(0.01).wLineColorSet([UIColor redColor]).wStart();
 }
 
 /*! 选择类别点击 */
@@ -232,6 +227,7 @@
             [HUDManager showTextHud:@"发帖成功"];
             [weakSelf.navigationController popViewControllerAnimated:YES];
             });
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"postSuccess" object:nil];
         }
     }];
 }

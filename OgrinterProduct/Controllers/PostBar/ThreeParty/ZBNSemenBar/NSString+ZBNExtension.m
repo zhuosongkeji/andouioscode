@@ -10,6 +10,20 @@
 
 @implementation NSString (ZBNExtension)
 
+
+- (CGSize)zbn_sizeWithFont:(UIFont *)font
+{
+    CGSize theSize;
+    NSDictionary *attributes = [NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName];
+    theSize = [self sizeWithAttributes:attributes];
+    // 向上取整
+    theSize.width = ceil(theSize.width);
+    theSize.height = ceil(theSize.height);
+    return theSize;
+}
+
+
+
 + (instancetype)returnImportentNum:(NSString *)importentNum
 {
         NSString *formerStr = [importentNum substringToIndex:4];

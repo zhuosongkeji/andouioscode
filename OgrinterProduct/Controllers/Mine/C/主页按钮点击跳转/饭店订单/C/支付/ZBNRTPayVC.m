@@ -54,6 +54,11 @@
 - (void)setTable
 {
 
+    if (@available(iOS 11.0, *)) {
+        self.myTable.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
     self.myTable.bounces = NO;
     self.myTable.delegate = self;
     self.myTable.dataSource = self;

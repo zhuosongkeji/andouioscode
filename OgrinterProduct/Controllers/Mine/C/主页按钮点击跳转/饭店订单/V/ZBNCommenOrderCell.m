@@ -71,18 +71,25 @@
     self.order_sn.text = comM.order_sn;
     self.total_price.text = [NSString stringWithFormat:@"¥%@",comM.prices];
     
+    if (comM.status.intValue == 0) {
+        [self.state setText:@"已取消"];
+        self.payBtn.hidden = YES;
+    }
     if (comM.status.intValue == 10) { // 未支付
-        [self.state setText:@"未支付"];
+        [self.state setText:@"待支付"];
         [self.payBtn setTitle:@"立即付款" forState:UIControlStateNormal];
         self.payBtn.hidden = NO;
-    } else if (comM.status.intValue == 20) {
-        [self.state setText:@"未使用"];
+    } else if (comM.status.intValue == 20) { // 待使用
+        [self.state setText:@"待使用"];
         [self.payBtn setTitle:@"取消订单" forState:UIControlStateNormal];
         self.payBtn.hidden = YES;
-    } else if (comM.status.intValue == 40) {
+    } else if (comM.status.intValue == 30) { //待评价
         [self.state setText:@"待评价"];
         [self.payBtn setTitle:@"立即评价" forState:UIControlStateNormal];
         self.payBtn.hidden = NO;
+    } else if (comM.status.intValue == 40) { // 已评价
+        [self.state setText:@"已评价"];
+        self.payBtn.hidden = YES;
     }
     self.totalLabel.text = [NSString stringWithFormat:@"当前有%zd个菜品,合计:",comM.foods.count];
 
@@ -102,8 +109,8 @@
     // 订单详情
     self.order_detailBtn.layer.cornerRadius = 10;
     self.order_detailBtn.layer.borderWidth = 1;
-    self.order_detailBtn.layer.borderColor = KSRGBA(97, 194, 156, 1).CGColor;
-    [self.order_detailBtn setTitleColor:KSRGBA(97, 194, 156, 1) forState:UIControlStateNormal];
+    self.order_detailBtn.layer.borderColor = KSRGBA(100, 100, 100, 1).CGColor;
+    [self.order_detailBtn setTitleColor:KSRGBA(100, 100, 100, 1) forState:UIControlStateNormal];
     // 立即支付
     self.payBtn.layer.cornerRadius = 10;
     self.payBtn.layer.borderWidth = 1;
@@ -116,6 +123,13 @@
 
 /*! 订单详情点击 */
 - (IBAction)detailBtnClick:(UIButton *)sender {
+    
+    if (self.comM.status.intValue == 0) { // 取消的订单详情
+        ZBNRTComDetailVC *vc = [[ZBNRTComDetailVC alloc] init];
+        vc.order_id = self.comM.ID;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
+    }
+    
     if ([self.comM.status intValue] == 10) {  // 未支付的订单详情
         ZBNRTComDetailVC *vc = [[ZBNRTComDetailVC alloc] init];
         vc.order_id = self.comM.ID;
@@ -125,8 +139,13 @@
         ZBNRTComDetailVC *vc = [[ZBNRTComDetailVC alloc] init];
         vc.order_id = self.comM.ID;
         [[self viewController].navigationController pushViewController:vc animated:YES];
+    } else if (self.comM.status.intValue == 30) {
+        // 订单详情
+        ZBNRTComDetailVC *vc = [[ZBNRTComDetailVC alloc] init];
+        vc.order_id = self.comM.ID;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
     } else if (self.comM.status.intValue == 40) { // 待评价的详情
-        // 未支付的订单详情
+        // 订单详情
         ZBNRTComDetailVC *vc = [[ZBNRTComDetailVC alloc] init];
         vc.order_id = self.comM.ID;
         [[self viewController].navigationController pushViewController:vc animated:YES];
@@ -134,17 +153,20 @@
 }
 
 - (IBAction)payBtnClick:(UIButton *)sender {
+    
     if ([self.comM.status intValue] == 10) { // 未支付的去支付
         ZBNRTPayVC *payVC = [[ZBNRTPayVC alloc] init];
         payVC.order_id = self.comM.ID;
         [[self viewController].navigationController pushViewController:payVC animated:YES];
     } else if (self.comM.status.intValue == 20) { // 未使用的取消订单
         NSLog(@"20");
-    } else if (self.comM.status.intValue == 40) { // 为评论的去评论
+    } else if (self.comM.status.intValue == 30) { // 为评论的去评论
         ZBNRTCommentVC *vc = [[ZBNRTCommentVC alloc] init];
         vc.order_id = self.comM.ID;
         vc.merchants_id = self.comM.merchant_id;
         [[self viewController].navigationController pushViewController:vc animated:YES];
+    } else if (self.comM.status.intValue == 40) { // 已评价
+        NSLog(@"40");
     }
 }
 

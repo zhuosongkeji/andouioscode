@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *province;
 
-
+@property (nonatomic, assign) CGFloat cellHeight;
 
 @end
 

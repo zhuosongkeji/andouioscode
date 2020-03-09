@@ -45,13 +45,27 @@
                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQh-xg-NUO">
+                        <rect key="frame" x="409" y="68" width="60" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="Jbo-An-KQX"/>
+                            <constraint firstAttribute="height" constant="25" id="iTs-Pn-dd5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <state key="normal" title="查看商品" backgroundImage="底部按钮背景"/>
+                        <connections>
+                            <action selector="lookGoodsDetailBtlClick:" destination="OVd-eQ-rTF" eventType="touchUpInside" id="YEk-oa-Cvj"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="cQh-xg-NUO" secondAttribute="trailing" constant="15" id="9qY-aG-pls"/>
                     <constraint firstItem="U1s-dv-oMR" firstAttribute="leading" secondItem="jw3-gA-Qgc" secondAttribute="leading" id="Mo2-ga-G7Z"/>
                     <constraint firstItem="Xvi-PN-dYL" firstAttribute="leading" secondItem="XX9-yd-wSs" secondAttribute="leading" constant="15" id="Ofj-rK-LF7"/>
                     <constraint firstItem="jw3-gA-Qgc" firstAttribute="leading" secondItem="Xvi-PN-dYL" secondAttribute="trailing" constant="15" id="QrM-3M-Zyc"/>
                     <constraint firstItem="bvW-Re-hlQ" firstAttribute="centerY" secondItem="jw3-gA-Qgc" secondAttribute="centerY" id="SwX-bt-b15"/>
                     <constraint firstItem="U1s-dv-oMR" firstAttribute="bottom" secondItem="Xvi-PN-dYL" secondAttribute="bottom" id="Ubo-Ns-3Hm"/>
+                    <constraint firstAttribute="bottom" secondItem="cQh-xg-NUO" secondAttribute="bottom" constant="15" id="heM-pC-ozC"/>
                     <constraint firstAttribute="trailing" secondItem="bvW-Re-hlQ" secondAttribute="trailing" constant="10" id="hhv-kc-fA7"/>
                     <constraint firstItem="jw3-gA-Qgc" firstAttribute="top" secondItem="Xvi-PN-dYL" secondAttribute="top" id="kt0-Wl-jS5"/>
                     <constraint firstItem="Xvi-PN-dYL" firstAttribute="top" secondItem="XX9-yd-wSs" secondAttribute="top" constant="15" id="lve-ax-tBB"/>
@@ -65,7 +79,10 @@
                 <outlet property="name" destination="jw3-gA-Qgc" id="CCG-Lg-eeo"/>
                 <outlet property="price" destination="bvW-Re-hlQ" id="MFF-q7-Ubf"/>
             </connections>
-            <point key="canvasLocation" x="9" y="35"/>
+            <point key="canvasLocation" x="-129" y="71"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="底部按钮背景" width="345" height="45"/>
+    </resources>
 </document>

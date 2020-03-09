@@ -10,4 +10,16 @@
 
 @implementation ZBNMyAddressModel
 
+- (CGFloat)cellHeight
+{
+    if (_cellHeight == 0) {
+        _cellHeight += 47;
+        CGFloat textW = KSCREEN_WIDTH - 30;
+        CGFloat textH = [self.address boundingRectWithSize:CGSizeMake(textW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.height;
+        _cellHeight += textH + 71;
+    }
+    return _cellHeight;
+ }
+
+
 @end

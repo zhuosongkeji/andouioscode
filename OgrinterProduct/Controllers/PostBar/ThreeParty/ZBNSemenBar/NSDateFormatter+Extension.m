@@ -18,6 +18,6 @@
 
 + (instancetype)zbn_defaultDateFormatter
 {
-    return [self zbn_dateFormatterWithFormat:@"yyyy-MM-dd HH:mm:ss"];
+    return [self zbn_dateFormatterWithFormat:@"yyyy-MM-dd HH:mm"];
 }
 @end

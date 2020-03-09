@@ -27,13 +27,20 @@
 
 - (void)setAllM:(ZBNMyAllNewsModel *)allM
 {
-    self.iconV.image = [UIImage imageNamed:allM.iconV];
-    self.nameL.text = allM.nameL;
-    self.contentLabel.text = allM.count;
-    if ([allM.state isEqualToString:@"0"]) {
-        self.contentLabel.hidden = NO;
-    } else {
+    _allM = allM;
+    
+    if (allM.ID.intValue == 1) {
+        self.iconV.image = [UIImage imageNamed:@"系统消息"];
+    }
+    if (allM.ID.intValue == 2) {
+        self.iconV.image = [UIImage imageNamed:@"贴吧消息10"];
+    }
+    self.nameL.text = allM.type_name;
+    self.contentLabel.text = allM.unread;
+    if ([allM.unread isEqualToString:@"0"]) {
         self.contentLabel.hidden = YES;
+    } else {
+        self.contentLabel.hidden = NO;
     }
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "ZBNNewAddressVC.h"
-
+#import "ZBNLocationSearchVC.h"
 #import "ZHFAddTitleAddressView.h"
 
 
@@ -40,8 +40,7 @@
     [super viewDidLoad];
     self.navigationItem.title = @"新增地址";
 
-   
-   
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.addTitleAddressView = [[ZHFAddTitleAddressView alloc]init];
      self.addTitleAddressView.title = @"选择地址";
     self.addTitleAddressView.delegate1 = self;
@@ -61,9 +60,15 @@
 }
 
 -(void)cancelBtnClick:(NSString *)titleAddress titleID:(NSString *)titleID{
-    [self.addressBtn setTitle:titleAddress forState:UIControlStateNormal];
+    
     NSLog( @"%@", [NSString stringWithFormat:@"打印的对应省市县的id=%@",titleID]);
-    self.IDArea = [titleID substringFromIndex:titleID.length - 6];
+    if (titleID.length > 6) {
+        self.IDArea = [titleID substringFromIndex:titleID.length - 6];
+        [self.addressBtn setTitle:titleAddress forState:UIControlStateNormal];
+    } else {
+        [self.addressBtn setTitle:@"点击选择" forState:UIControlStateNormal];
+    }
+    
 }
 
 /*! 默认地址按钮的点击 */
@@ -77,6 +82,19 @@
         self.is_defualt = @0;
     }
 }
+
+/*! 点位按钮点击 */
+- (IBAction)searchLocationClick:(UIButton *)sender {
+    ZBNLocationSearchVC *vc = [[ZBNLocationSearchVC alloc] init];
+    ADWeakSelf;
+    vc.selectedAddressTask = ^(NSString * _Nonnull address, NSString * _Nonnull areaID,NSString * _Nonnull province ) {
+        [weakSelf.detailAddTex setText:address];
+        [weakSelf.addressBtn setTitle:province forState:UIControlStateNormal];
+        weakSelf.IDArea = areaID;
+    };
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 
 /*! 新增地址按钮的点击 */

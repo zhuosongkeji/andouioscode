@@ -15,6 +15,8 @@
 //#import "LoginViewController.h"
 #import <WechatOpenSDK/WXApi.h>
 #import "MSLaunchView.h"
+#import <AMapFoundationKit/AMapFoundationKit.h>
+
 
 
 @interface AppDelegate ()<WXApiDelegate,MSLaunchViewDeleagte>{
@@ -23,7 +25,8 @@
 @end
 
 @implementation AppDelegate
-
+/*! 高德AK */
+const static NSString *APIKey = @"6eec053d8bc48087bb909349e7d1f7ee";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -34,8 +37,8 @@
     [UMConfigure initWithAppkey:UMKEY channel:nil];
 //    [UMConfigure setLogEnabled:NO];
     [self initUMSDK];
-
-    
+    // 初始化高德AK
+    [self configureAPIKey];
     [IQKeyboardManager sharedManager].enable = YES;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     
@@ -107,6 +110,22 @@
 -(void)launchViewLoadFinish:(MSLaunchView *)launchView{
     NSLog(@"代理方法进入======广告加载完成了");
 }
+
+- (void)configureAPIKey
+{
+    if ([APIKey length] == 0)
+    {
+        NSString *reason = [NSString stringWithFormat:@"apiKey为空，请检查key是否正确设置。"];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:reason delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        
+        [alert show];
+    }
+    
+    [AMapServices sharedServices].apiKey = (NSString *)APIKey;
+//    [AMapLocationServices sharedServices].apiKey =(NSString *)APIKey;
+}
+
 
 
 //MARK:- 加载

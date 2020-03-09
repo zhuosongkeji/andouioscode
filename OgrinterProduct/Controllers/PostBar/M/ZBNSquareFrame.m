@@ -7,6 +7,7 @@
 //
 
 #import "ZBNSquareFrame.h"
+#import "ZBNPostPhotoItem.h"
 
 @interface ZBNSquareFrame ()
 /*! 头像 */
@@ -21,6 +22,7 @@
 //@property (nonatomic , assign ) CGFloat cellHeight;
 
 @property (nonatomic, strong) NSMutableArray *commentFrames;
+@property (nonatomic , strong) NSMutableArray *imageFrames;
 
 @end
 
@@ -33,6 +35,7 @@
     self = [super init];
     if (self) {
         _commentFrames = [NSMutableArray array];
+        _imageFrames = [NSMutableArray array];
     }
     return self;
 }
@@ -76,6 +79,16 @@
         self.imageFrame = CGRectMake(imageX, imageY, imageW, imageH);
     }
     
+    if (squareM.images > 0) {
+        for (int i = 0; i < squareM.images.count ; i++) {
+            ZBNPostPhotoItem *item = [[ZBNPostPhotoItem alloc] init];
+            item.imageName = squareM.images[i];
+            [self.imageFrames addObject:item];
+        }
+    } else {
+        self.imageFrames = nil;
+    }
+    
     // 评论数据
     if (squareM.comments > 0) {
         for (ZBNPostComModel *model in squareM.comments)
@@ -98,6 +111,7 @@
 {
     return @{
         @"squareM":@"ZBNSquareModel",
+        @"commentFrames" : @"ZBNTopicComFrame",
     };
 }
 

@@ -67,9 +67,13 @@
 - (void)setupTabel
 {
     self.navigationItem.title = @"商城商家入驻";
-    self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
 }
 
 

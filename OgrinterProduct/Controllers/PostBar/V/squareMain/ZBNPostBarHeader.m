@@ -163,6 +163,9 @@ static NSString * const ZBNPostImgCellID = @"postImg";
     if (self.delegate && [self.delegate respondsToSelector:@selector(squareHeaderDidClickDingBtn:dingBtn:)]) {
         [self.delegate squareHeaderDidClickDingBtn:self dingBtn:sender];
     }
+    if (self.dingClickTash) {
+        self.dingClickTash(self);
+    }
 }
 // 点击评论
 - (IBAction)commentBtnClick:(UIButton *)sender {

@@ -28,8 +28,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    self.navigationItem.title = @"修改手机号";
     self.getVerificationCodeBtn.layer.cornerRadius = 5;
-    self.navigationController.navigationBar.translucent = NO;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.leftTime = 60;
 }
 

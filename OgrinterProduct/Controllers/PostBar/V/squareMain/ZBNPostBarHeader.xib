@@ -109,7 +109,7 @@
                 <outlet property="userIcon" destination="14t-6p-ck1" id="69t-5h-JIH"/>
                 <outlet property="userName" destination="aWc-Oe-cBG" id="ApN-W1-lLd"/>
             </connections>
-            <point key="canvasLocation" x="97" y="85"/>
+            <point key="canvasLocation" x="-143" y="30"/>
         </view>
     </objects>
     <resources>

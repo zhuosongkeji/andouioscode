@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) ZBNSHOrderDetailsM *detailsM;
 /*! 订单编号 */
 @property (nonatomic, copy) NSString *orderNum;
+
+@property (nonatomic, copy) void(^requestSuccessBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

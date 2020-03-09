@@ -16,9 +16,9 @@ use_frameworks!
 	pod 'YYModel'
 	pod 'MJExtension'
 	pod 'BaiduMapKit' #百度地图SDK
-#  pod 'AMap3DMap'
-#  pod 'AMapSearch'
-#  pod 'AMapLocation'
+ # pod 'AMap2DMap'
+ # pod 'AMapSearch'
+ # pod 'AMapLocation'
 	pod 'WechatOpenSDK'
 	# pod 'WechatOpenSDK' #微信
 	pod 'UMCCommon'
@@ -45,4 +45,7 @@ use_frameworks!
 	pod 'ZFPlayer' #视频播放 
 	pod 'ZFPlayer/ControlView'
 	pod 'ZFPlayer/AVPlayer'
+	#pod 'AMap2DMap'
+   	# pod 'AMapSearch'
+   	# pod 'AMapLocation'
 end

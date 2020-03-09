@@ -11,6 +11,7 @@
 #import "ZBNMyCollectionM.h"
 #import "ZBNComDataNilCell.h"
 #import "ZBNRefreshHeader.h"
+#import "ShopSeckillDetailsViewController.h"
 
 
 @interface ZBNMyCollectionVC ()
@@ -22,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.translucent = NO;
+    
     [self setupTable];
     /*! 加载数据 */
     [self setupRefresh];
@@ -35,6 +36,16 @@
     self.tableView.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.navigationItem.title = @"商品收藏";
     self.tableView.bounces = YES;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear: animated];
+//    [self wr_setNavBarBackgroundAlpha:1];
 }
 
 #pragma mark - Table view data source
@@ -51,12 +62,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    ADWeakSelf;
     if (self.dataArr.count <= 0) {
         ZBNComDataNilCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNComDataNilCell" owner:nil options:nil].lastObject;
         return cell;
     } else {
         ZBNMyCollectionCommenCell *cell = [ZBNMyCollectionCommenCell regiserCellForTable:tableView];
         cell.collectionM = self.dataArr[indexPath.row];
+        // 点击查看商品
+        cell.lookGoodsDetailBtlClickTask = ^(ZBNMyCollectionM * _Nonnull model) {
+            ShopSeckillDetailsViewController *vc = [[ShopSeckillDetailsViewController alloc] init];
+            vc.cpid = model.ID;
+            vc.seckillType = ShopSeckillDetailsTypeOrder;
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+        };
         return cell;
     }
 }

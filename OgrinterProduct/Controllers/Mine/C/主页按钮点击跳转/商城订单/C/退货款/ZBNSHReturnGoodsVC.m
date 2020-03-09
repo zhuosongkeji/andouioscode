@@ -24,13 +24,23 @@
     // 加载数据
     [self loadData];
     
-    // 关于内容视图偏移的解决
+    [self setupTable];
+    
+}
+- (void)setupTable
+{
+    // 关于内容视图
     self.tableView.backgroundColor = KSRGBA(241, 241, 241, 1);
-    self.navigationController.navigationBar.translucent = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.navigationItem.title = @"退款";
     self.tableView.bounces = NO;
+    self.view.backgroundColor = [UIColor whiteColor];
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
 }
-
 
 - (void)loadData
 {
@@ -55,9 +65,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    ADWeakSelf;
     ZBNSHAppReturnGoodsCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNSHAppReturnGoodsCell" owner:nil options:nil].firstObject;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.detailsM = self.detailsM;
     cell.orderNum = self.detailsM.ID;
+    cell.requestSuccessBlock = ^{
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    };
     return cell;
 }
 

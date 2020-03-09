@@ -15,7 +15,7 @@
                 <outlet property="content" destination="gGc-NP-4Ze" id="NSO-Qx-ufE"/>
                 <outlet property="dingBtn" destination="6dr-Sy-HhW" id="auq-oA-VES"/>
                 <outlet property="notDingBtn" destination="FXK-Yn-ne1" id="rie-dX-PId"/>
-                <outlet property="phoneT" destination="rzb-YI-MyI" id="H9D-r5-WjC"/>
+                <outlet property="phoneT" destination="DMF-Zz-vau" id="nEW-Kx-gJY"/>
                 <outlet property="photoBackV" destination="u71-vU-6pk" id="aif-sm-qN5"/>
                 <outlet property="titleL" destination="zds-Xo-bQ7" id="cAZ-t9-zip"/>
                 <outlet property="view" destination="iN0-l3-epB" id="F6Z-Hg-RmO"/>
@@ -31,6 +31,7 @@
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="标题" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zds-Xo-bQ7">
                             <rect key="frame" x="15" y="15.5" width="384" height="17"/>
+                            <color key="tintColor" red="0.3411764706" green="0.76078431369999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -49,6 +50,7 @@
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="内容" translatesAutoresizingMaskIntoConstraints="NO" id="gGc-NP-4Ze">
                             <rect key="frame" x="10" y="15" width="394" height="130"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="tintColor" red="0.36862745099999999" green="0.82745098039999998" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="130" id="HGc-4h-pmw"/>
                             </constraints>
@@ -57,7 +59,7 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u71-vU-6pk" customClass="PYPhotosView">
-                            <rect key="frame" x="0.0" y="145" width="414" height="80"/>
+                            <rect key="frame" x="15" y="145" width="384" height="80"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </scrollView>
                     </subviews>
@@ -65,9 +67,9 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="225" id="Jsf-Nt-8Rd"/>
                         <constraint firstItem="u71-vU-6pk" firstAttribute="top" secondItem="gGc-NP-4Ze" secondAttribute="bottom" id="Ryj-lK-zIX"/>
-                        <constraint firstItem="u71-vU-6pk" firstAttribute="leading" secondItem="Mq3-na-BXk" secondAttribute="leading" id="U1j-u0-nPx"/>
+                        <constraint firstItem="u71-vU-6pk" firstAttribute="leading" secondItem="Mq3-na-BXk" secondAttribute="leading" constant="15" id="U1j-u0-nPx"/>
                         <constraint firstAttribute="trailing" secondItem="gGc-NP-4Ze" secondAttribute="trailing" constant="10" id="Ujc-LV-cNs"/>
-                        <constraint firstAttribute="trailing" secondItem="u71-vU-6pk" secondAttribute="trailing" id="aci-L0-vd1"/>
+                        <constraint firstAttribute="trailing" secondItem="u71-vU-6pk" secondAttribute="trailing" constant="15" id="aci-L0-vd1"/>
                         <constraint firstItem="gGc-NP-4Ze" firstAttribute="leading" secondItem="Mq3-na-BXk" secondAttribute="leading" constant="10" id="iOE-DB-Hmp"/>
                         <constraint firstItem="gGc-NP-4Ze" firstAttribute="top" secondItem="Mq3-na-BXk" secondAttribute="top" constant="15" id="st7-AB-tbk"/>
                         <constraint firstAttribute="bottom" secondItem="u71-vU-6pk" secondAttribute="bottom" id="tRh-ao-ie8"/>
@@ -116,20 +118,21 @@
                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的联系方式" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzb-YI-MyI">
-                            <rect key="frame" x="313" y="15.5" width="86" height="17"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入联系方式" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DMF-Zz-vau">
+                            <rect key="frame" x="88" y="15.5" width="311" height="17"/>
+                            <color key="tintColor" red="0.3411764706" green="0.76078431369999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="rzb-YI-MyI" secondAttribute="trailing" constant="15" id="Fa4-XH-6iK"/>
+                        <constraint firstItem="DMF-Zz-vau" firstAttribute="leading" secondItem="WYm-P7-XKd" secondAttribute="trailing" constant="15" id="5xd-A6-vRp"/>
                         <constraint firstItem="WYm-P7-XKd" firstAttribute="centerY" secondItem="4VO-RH-ynQ" secondAttribute="centerY" id="Mhx-FQ-m8b"/>
+                        <constraint firstAttribute="trailing" secondItem="DMF-Zz-vau" secondAttribute="trailing" constant="15" id="Vep-jq-Lns"/>
                         <constraint firstAttribute="height" constant="48" id="WAT-Lp-EYK"/>
                         <constraint firstItem="WYm-P7-XKd" firstAttribute="leading" secondItem="4VO-RH-ynQ" secondAttribute="leading" constant="15" id="XGu-Fe-VNx"/>
-                        <constraint firstItem="rzb-YI-MyI" firstAttribute="centerY" secondItem="4VO-RH-ynQ" secondAttribute="centerY" id="uji-rG-7yM"/>
+                        <constraint firstItem="DMF-Zz-vau" firstAttribute="centerY" secondItem="4VO-RH-ynQ" secondAttribute="centerY" id="q1h-bh-rcb"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXK-J6-GeB">
@@ -208,7 +211,7 @@
                 <constraint firstItem="4VO-RH-ynQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vqo-KP-Upv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-1426" y="119"/>
+            <point key="canvasLocation" x="-1939" y="33"/>
         </view>
     </objects>
     <resources>

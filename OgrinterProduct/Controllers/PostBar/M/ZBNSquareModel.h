@@ -43,6 +43,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *comment_count;
 /*! 分享数shareCount */
 @property (nonatomic, strong) NSNumber *share;
+/*! 辅助属性 */
+@property (nonatomic, copy, readonly) NSString *shareString;
+@property (nonatomic, copy, readonly) NSString *commentString;
+@property (nonatomic, copy, readonly) NSString *voteString;
 
 /** 富文本 */
 - (NSAttributedString *)attributedText;

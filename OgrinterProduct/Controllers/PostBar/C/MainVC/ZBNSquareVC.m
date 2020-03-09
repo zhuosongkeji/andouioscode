@@ -9,18 +9,25 @@
 #import "ZBNSquareVC.h"
 
 #import "ZBNSquareModel.h"
-#import "ZBNPostShareView.h"
 #import "ZBNPostDetailVC.h"
 #import "ZBNPostUserModel.h"
 #import "NSDate+Extension.h"
 #import "ZBNPostComModel.h"
-#import "ZBNSquareFrame.h"
 #import "ZBNPostCommentCell.h"
-#import "ZBNPostBarHeader.h"
 #import "WMZDialog.h"
 #import "ZBNRefreshHeader.h"
+#import <UMShare/UMShare.h>
+#import <UMCommon/UMCommon.h>
 
-@interface ZBNSquareVC () <ZBNPostCommentDelegate,ZBNPostBarHeaderDelegate,ZBNPostBarHeaderDelegate>
+
+#import "ZBNTopicCell.h"
+#import "ZBNTopicCommentCell.h"
+#import "ZBNTopicComFrame.h"
+#import "ZBNTopicFrame.h"
+#import "ZBNComDataNilCell.h"
+
+
+@interface ZBNSquareVC () <ZBNTopicDelegate>
 /*! 保存数据的数组 */
 @property (nonatomic, strong) NSMutableArray *dataArr;
 /*! squareFrame 模型 */
@@ -57,6 +64,7 @@ static NSString * const ZBNPostComCellId = @"com";
     self.nextPage = @"2";
     [FKHRequestManager cancleRequestWork];
     [self.squareFrames removeAllObjects];
+    self.tableView.mj_footer.state = MJRefreshStateIdle;
     NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
     userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
@@ -64,7 +72,6 @@ static NSString * const ZBNPostComCellId = @"com";
     param[@"type"] = @"public";
     param[@"page"] = @"1";
     ADWeakSelf;
-    self.tableView.mj_footer.state = MJRefreshStateIdle;
     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_GET pathUrl:@"http://andou.zhuosongkj.com/index.php/api/tieba/list" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
         weakSelf.dataArr = [ZBNSquareModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"]];
         for (ZBNSquareModel *model in weakSelf.dataArr) {
@@ -97,6 +104,7 @@ static NSString * const ZBNPostComCellId = @"com";
             weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
         } else {
             [weakSelf.tableView.mj_footer endRefreshing];
+            self.tableView.mj_footer.state = MJRefreshStateIdle;
         }
         [weakSelf.tableView reloadData];
         self.nextPage = [NSString stringWithFormat:@"%d",(self.nextPage.intValue + 1)];
@@ -104,15 +112,13 @@ static NSString * const ZBNPostComCellId = @"com";
     
 }
 
-
-
 #pragma mark - 辅助方法
 /** topic --- topicFrame */
-- (ZBNSquareFrame *)_topicFrameWithSquare:(ZBNSquareModel *)square
+- (ZBNTopicFrame *)_topicFrameWithSquare:(ZBNSquareModel *)square
 {
-    ZBNSquareFrame *squareFrame = [[ZBNSquareFrame alloc] init];
+    ZBNTopicFrame *squareFrame = [[ZBNTopicFrame alloc] init];
     // 传递微博模型数据，计算所有子控件的frame
-    squareFrame.squareM = square;
+    squareFrame.topic = square;
     
     return squareFrame;
 }
@@ -122,11 +128,17 @@ static NSString * const ZBNPostComCellId = @"com";
 
     [self setupRefresh];
     
-    self.navigationController.navigationBar.translucent = NO;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = KSRGBA(241, 241, 241, 1);
     [self.tableView registerNib:[UINib nibWithNibName:@"ZBNPostCommentCell" bundle:nil] forCellReuseIdentifier:ZBNPostComCellId];
-    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.sectionHeaderHeight = 300;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadNewData) name:@"postSuccess" object:nil];
 }
 
 - (void)setupRefresh
@@ -141,116 +153,120 @@ static NSString * const ZBNPostComCellId = @"com";
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
 }
 
-
-// 设置tableView样式
-- (instancetype)initWithStyle:(UITableViewStyle)style
-{
-    return [super initWithStyle:UITableViewStyleGrouped];
-}
-
-
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return self.squareFrames.count;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    ZBNSquareFrame *squareFrame = self.squareFrames[section];
-    return squareFrame.commentFrames.count;
+    if (self.squareFrames.count > 0) {
+        return self.squareFrames.count;
+    } else {
+        return 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZBNPostCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:ZBNPostComCellId];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    ZBNSquareFrame *squareM = self.squareFrames[indexPath.section];
-    ZBNCommentFrame *conmenFrame = squareM.commentFrames[indexPath.row];
-    cell.commentFrame = conmenFrame;
-    cell.delegate = self;
-    return cell;
-    
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    ZBNPostBarHeader *headerV = [ZBNPostBarHeader headerViewWithTableView:tableView];
-    ZBNSquareFrame *squareM = self.squareFrames[section];
-    headerV.squareFrame = squareM;
-    headerV.delegate = self;
-    return headerV;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ZBNSquareFrame *squareM = self.squareFrames[indexPath.section];
-    ZBNCommentFrame *commentFrame = squareM.commentFrames[indexPath.row];
-    return commentFrame.cellHeight ? : UITableViewAutomaticDimension;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    ZBNSquareFrame *squareFrame = self.squareFrames[section];
-    return squareFrame.cellHeight ? : UITableViewAutomaticDimension;
-}
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
-    ZBNSquareFrame *squareM = self.squareFrames[indexPath.section];
-    ZBNCommentFrame *conmenFrame = squareM.commentFrames[indexPath.row];
-    if (squareM.cellHeight == 0) {
-        CGFloat height = cell.height;
-        squareM.cellHeight = height;
+    if (self.squareFrames.count > 0) {
+        ADWeakSelf;
+        ZBNTopicFrame *frame = self.squareFrames[indexPath.row];
+        ZBNTopicCell *cell = [ZBNTopicCell cellWithTableView:tableView];
+        cell.delegate = self;
+        cell.topicFrame = frame;
+        cell.cellIncellDidClick = ^(ZBNTopicCell * _Nonnull cell) {
+            ZBNPostDetailVC *vc = [[ZBNPostDetailVC alloc] init];
+            vc.post_id = cell.topicFrame.topic.ID;
+            vc.hidesBottomBarWhenPushed = YES;
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+        };
+        return cell;
+    } else {
+        ZBNComDataNilCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ZBNComDataNilCell" owner:nil options:nil].lastObject;
+        return cell;
     }
     
 }
 
-#pragma mark -- ZBNHeaderViewDelegate
-// 点击分享
-- (void)squareHeaderDidClickShareBtn:(ZBNPostBarHeader *)postHeader
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.squareFrames.count > 0) {
+        ZBNTopicFrame *frame = self.squareFrames[indexPath.row];
+           if (frame.tableViewFrame.size.height == 0) {
+               return frame.topicHeight + frame.tableViewFrame.size.height ;
+           } else {
+               return frame.topicHeight + frame.tableViewFrame.size.height + 30;
+           }
+    } else {
+        return self.view.height;
+    }
+}
+
+- (void)topicCellDidClickUser:(ZBNTopicCell *)cell
+{
+    ZBNPostDetailVC *vc = [[ZBNPostDetailVC alloc] init];
+    vc.post_id = cell.topicFrame.topic.ID;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)topicDidClickShareBtn:(ZBNTopicCell *)cell
 {
     WMZDialog *alert = Dialog();
-    alert.wTypeSet(DialogTypeShare).wTitleSet(@"分享到").wEventMenuClickSet(^(id anyID, NSInteger section, NSInteger row){
-        
-    }).wDataSet(@[@{@"name":@"微信",@"image":@"weiin"},
-                  @{@"name":@"朋友圈",@"image":@"wexinPen"}]).wStart();
+       alert.wTypeSet(DialogTypeShare).wTitleSet(@"分享到").wEventMenuClickSet(^(id anyID, NSInteger section, NSInteger row){
+
+           if ([anyID isEqualToString:@"微信"]) {
+               UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+
+               UMShareWebpageObject*shareObject = [UMShareWebpageObject shareObjectWithTitle:@"挑战你的记忆力"descr:@"鱼的记忆有七秒，你的呢？"thumImage:[UIImage imageNamed:@"loginIcon"]];
+
+               shareObject.webpageUrl = @"www.baidu.com";
+               messageObject.shareObject= shareObject;
+
+               [[UMSocialManager defaultManager]shareToPlatform:UMSocialPlatformType_WechatSession  messageObject:messageObject currentViewController:nil completion:^(id result, NSError *error) {
+                   if (error) {
+                       NSLog(@"分享失败：%@",error);
+                       [HUDManager showTextHud:@"分享失败!未安装应用"];
+                   }else{
+                       NSLog(@"分享 result = %@",result);
+                   }
+               }];
+           }
+
+
+       }).wDataSet(@[@{@"name":@"微信",@"image":@"weiin"},
+                     @{@"name":@"朋友圈",@"image":@"wexinPen"}]).wStart();
 }
 
-// 点击评论
-- (void)squareHeaderDidClickCommentBtn:(ZBNPostBarHeader *)postHeader
+- (void)topicDidClickCommentBtn:(ZBNTopicCell *)cell
 {
-    ZBNPostDetailVC *detailVC = [[ZBNPostDetailVC alloc] init];
-    detailVC.post_id = postHeader.squareFrame.squareM.ID;
-    detailVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:detailVC animated:YES];
-}
-
-// 点赞
-- (void)squareHeaderDidClickDingBtn:(ZBNPostBarHeader *)postHeader dingBtn:(UIButton *)dingBtn
-{
-     [FKHRequestManager cancleRequestWork];
-        NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
-        userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
-        NSMutableDictionary *param = [NSMutableDictionary dictionary];
-        param[@"uid"] = unmodel.uid;
-        param[@"post_id"] = postHeader.squareFrame.squareM.ID;
-        if (dingBtn.selected) {
-            param[@"vote"] = @0;
-        } else {
-            param[@"vote"] = @1;
-        }
-        ADWeakSelf;
-        [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/tieba/upvote" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
-            
-        }];
-}
-
-// 点赞请求
-- (void)dingRequest
-{
+    ZBNPostDetailVC *vc = [[ZBNPostDetailVC alloc] init];
+    vc.post_id = cell.topicFrame.topic.ID;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
     
+}
+
+- (void)topicDidClickThumbBtn:(ZBNTopicCell *)cell
+{
+    if (cell.topicFrame.topic.is_vote == 1) {
+        [self dingRequest:@"0" cell:cell];
+    } else {
+        [self dingRequest:@"1" cell:cell];
+    }
+}
+
+
+//// 点赞请求
+- (void)dingRequest:(NSString *)vote cell:(ZBNTopicCell *)cell
+{
+    [FKHRequestManager cancleRequestWork];
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"uid"] = unmodel.uid;
+    param[@"post_id"] = cell.topicFrame.topic.ID;
+    param[@"vote"] = vote;
+    [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_POST pathUrl:@"http://andou.zhuosongkj.com/index.php/api/tieba/upvote" params:param complement:^(ServerResponseInfo * _Nullable serverInfo) {
+        [HUDManager showTextHud:serverInfo.response[@"msg"]];
+    }];
 }
 
 @end

@@ -45,7 +45,7 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"我的钱包";
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = [UIColor whiteColor];
     // 设置headerView
     [self setupHeadView];
@@ -77,7 +77,6 @@
 
 - (void)setupSegmen
 {
-    self.automaticallyAdjustsScrollViewInsets = NO;
     self.segmentBarVC.segmentBar.frame = CGRectMake(0,0 , self.view.width, 50);
     self.segmentBarVC.view.frame = CGRectMake(0,   140, self.view.width, self.view.height + 80);
     [self.view addSubview:self.segmentBarVC.view];

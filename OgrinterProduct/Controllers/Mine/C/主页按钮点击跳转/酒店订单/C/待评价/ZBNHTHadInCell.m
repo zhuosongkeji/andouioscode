@@ -8,7 +8,7 @@
 
 #import "ZBNHTHadInCell.h"
 #import "ZBNHTComDetailModel.h"
-
+#import "ZBNHTApplyRefundVC.h"
 @interface ZBNHTHadInCell ()
 
 /*! 商家名字 */
@@ -65,8 +65,10 @@
 
 /*! 取消订单 */
 - (IBAction)cancelBtnClick:(UIButton *)sender {
-    
-    
+    ZBNHTApplyRefundVC * vc = [[ZBNHTApplyRefundVC alloc] init];
+    vc.merchants_id = self.detailM.merchant_id;
+    vc.money = self.detailM.pay_money;
+    vc.order_sn = self.detailM.book_sn;
 }
 /*! 联系商家 */
 - (IBAction)contactShop:(id)sender {

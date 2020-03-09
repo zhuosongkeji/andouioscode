@@ -220,18 +220,35 @@
                                     <constraint firstAttribute="height" constant="30" id="0co-GN-7Mp"/>
                                     <constraint firstAttribute="width" constant="60" id="DaG-Ve-8YZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="去付款" backgroundImage="圆角矩形 2-2">
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="去付款">
                                     <color key="titleColor" red="0.3803921569" green="0.76078431369999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="goAndPayBtnClick:" destination="aXE-vI-d2G" eventType="touchUpInside" id="qt0-sU-Wyj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdw-st-hsr">
+                                <rect key="frame" x="364" y="17" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VHS-LE-FYR"/>
+                                    <constraint firstAttribute="width" constant="60" id="q8u-9l-h4P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="取消订单">
+                                    <color key="titleColor" red="0.3803921569" green="0.76078431369999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelBtnClick:" destination="aXE-vI-d2G" eventType="touchUpInside" id="khn-g8-xfj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="jdw-st-hsr" firstAttribute="centerY" secondItem="7WL-gh-A3H" secondAttribute="centerY" id="3bA-9g-bT1"/>
                             <constraint firstAttribute="trailing" secondItem="7WL-gh-A3H" secondAttribute="trailing" constant="15" id="GOy-da-oZI"/>
+                            <constraint firstItem="7WL-gh-A3H" firstAttribute="leading" secondItem="jdw-st-hsr" secondAttribute="trailing" constant="15" id="UBk-Wq-4QB"/>
+                            <constraint firstItem="jdw-st-hsr" firstAttribute="centerY" secondItem="Crp-23-iRY" secondAttribute="centerY" id="kDW-sq-scN"/>
                             <constraint firstItem="7WL-gh-A3H" firstAttribute="centerY" secondItem="Crp-23-iRY" secondAttribute="centerY" id="x9R-7h-55k"/>
                         </constraints>
                     </view>
@@ -260,6 +277,7 @@
             <connections>
                 <outlet property="address" destination="jcY-id-M1N" id="gJx-ma-e4V"/>
                 <outlet property="attr_value" destination="qWI-1n-YYD" id="aNP-lI-fwy"/>
+                <outlet property="cancelBtn" destination="jdw-st-hsr" id="SJI-Mi-p7W"/>
                 <outlet property="goodsName" destination="qDB-eI-zfN" id="xPo-wx-YPh"/>
                 <outlet property="img" destination="CXJ-H6-KLM" id="lsE-8H-z3D"/>
                 <outlet property="integral" destination="akn-Yn-8r0" id="hDz-BI-mtZ"/>
@@ -267,16 +285,16 @@
                 <outlet property="num" destination="Zag-To-Bwe" id="Rhp-jR-OrF"/>
                 <outlet property="order_money" destination="cES-02-ina" id="lLE-6c-ekT"/>
                 <outlet property="order_num" destination="kqX-L2-FDG" id="42A-xY-dIB"/>
+                <outlet property="payBtn" destination="7WL-gh-A3H" id="I96-i6-R6j"/>
                 <outlet property="pay_money" destination="XCg-Vb-Rcy" id="pRW-7O-8IK"/>
                 <outlet property="phone_num" destination="zHD-pm-63E" id="gwx-x9-H4M"/>
                 <outlet property="price" destination="5s1-ut-v2G" id="Z5e-lY-l3q"/>
             </connections>
-            <point key="canvasLocation" x="-3103" y="102"/>
+            <point key="canvasLocation" x="-1975" y="28"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="banner" width="54.666667938232422" height="42"/>
         <image name="weizhi" width="20" height="24"/>
-        <image name="圆角矩形 2-2" width="90" height="31"/>
     </resources>
 </document>

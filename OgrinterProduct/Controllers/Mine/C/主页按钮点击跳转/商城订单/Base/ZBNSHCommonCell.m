@@ -16,6 +16,7 @@
 #import "ZBNSHComViewLogisticsVC.h" // 查看物流
 #import "ZBNSHWaitEvaluateDetailVC.h" //
 #import "ZBNRTCommentVC.h"
+#import "ZBNSHOrderCanceledVC.h"
 
 @interface ZBNSHCommonCell ()
 /*! 商家图标 */
@@ -124,6 +125,14 @@
         self.thiBtnClickTask();
     }
     ADWeakSelf;
+    
+    if (self.commonM.status.integerValue == 0) {  // 取消订单的订单详情
+        ZBNSHOrderCanceledVC *vc = [[ZBNSHOrderCanceledVC alloc] init];
+        vc.getOrderNum = self.commonM.order_id;
+        vc.dID = self.commonM.ID;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
+    }
+    
     if ([self.commonM.status integerValue] == 10) { // 去支付
         ZBNSHCommonPayVC *vc = [[ZBNSHCommonPayVC alloc] init];
         vc.order_id = self.commonM.order_id;
@@ -150,12 +159,24 @@
 
 #pragma mark -- 设置模型数据
 
+/*! 状态 0-已取消 10-未支付 20-已支付 40-已发货  50-交易成功（确认收货） 60-交易关闭（已评论） */
+
 /*! 设置模型数据 */
 - (void)setCommonM:(ZBNSHCommonModel *)commonM
 {
     _commonM = commonM;
     
-    if ([commonM.status integerValue] == 10) { // 待付款
+    if ([commonM.status integerValue] == 0) { //已取消 0
+        self.firButton.hidden = YES;
+        self.secButton.hidden = YES;
+        self.thiButton.hidden = NO;
+        [self.thiButton setTitleColor:KSRGBA(150, 150, 150, 1) forState:UIControlStateNormal];
+        self.thiButton.layer.borderColor = KSRGBA(150, 150, 150, 1).CGColor;
+        [self.thiButton setTitle:@"订单详情" forState:UIControlStateNormal];
+        self.goodsState.text = @"已取消";
+    }
+    
+    if ([commonM.status integerValue] == 10) { // 待付款 10
         self.firButton.hidden = YES;
         self.secButton.hidden = NO;
         self.thiButton.hidden = NO;
@@ -168,7 +189,7 @@
         [self.thiButton setTitle:@"去付款" forState:UIControlStateNormal];
         self.thiButton.layer.borderColor = KSRGBA(97, 194, 156, 1).CGColor;
         [self.thiButton setTitleColor:KSRGBA(97, 194, 156, 1) forState:UIControlStateNormal];
-    } else if ([commonM.status integerValue] == 20) { // 待发货 / 已付款
+    } else if ([commonM.status integerValue] == 20) { // 待发货 / 已付款 20
         self.firButton.hidden = YES;
         self.secButton.hidden = YES;
         self.thiButton.hidden = NO;
@@ -177,7 +198,7 @@
         self.thiButton.layer.borderColor = KSRGBA(150, 150, 150, 1).CGColor;
         [self.thiButton setTitleColor:KSRGBA(150, 150, 150, 1) forState:UIControlStateNormal];
         self.goodsState.text = @"待发货";
-    } else if ([commonM.status integerValue] == 40) { // 待收货 / 已发货
+    } else if ([commonM.status integerValue] == 40) { // 待收货 / 已发货 40
         self.firButton.hidden = NO;
         self.secButton.hidden = NO;
         self.thiButton.hidden  =NO;
@@ -194,7 +215,7 @@
         self.thiButton.layer.borderColor = KSRGBA(97, 194, 156, 1).CGColor;
         [self.thiButton setTitleColor:KSRGBA(97, 194, 156, 1) forState:UIControlStateNormal];
         self.goodsState.text = @"待收货";
-    } else if ([commonM.status integerValue] == 50) { // 待评价
+    } else if ([commonM.status integerValue] == 50) { // 待评价 50
         self.goodsState.text = @"待评价";
         self.firButton.hidden = NO;
         self.secButton.hidden = NO;
@@ -211,6 +232,15 @@
         [self.thiButton setTitle:@"去评价" forState:UIControlStateNormal];
         self.thiButton.layer.borderColor = KSRGBA(97, 194, 156, 1).CGColor;
         [self.thiButton setTitleColor:KSRGBA(97, 194, 156, 1) forState:UIControlStateNormal];
+    }
+    if ([commonM.status integerValue] == 60) {
+        self.goodsState.text = @"已评价";
+        self.firButton.hidden = YES;
+        self.thiButton.hidden = NO;
+        self.secButton.hidden = YES;
+        self.thiButton.layer.borderColor = KSRGBA(150, 150, 150, 1).CGColor;
+        [self.thiButton setTitleColor:KSRGBA(150, 150, 150, 1) forState:UIControlStateNormal];
+        [self.thiButton setTitle:@"订单详情" forState:UIControlStateNormal];
     }
     
     // 商家图片
@@ -266,11 +296,11 @@
 {
     [super awakeFromNib];
     
-    self.firButton.layer.cornerRadius = 10;
+    self.firButton.layer.cornerRadius = 12;
     self.firButton.layer.borderWidth = 1;
-    self.secButton.layer.cornerRadius = 10;
+    self.secButton.layer.cornerRadius = 12;
      self.secButton.layer.borderWidth = 1;
-    self.thiButton.layer.cornerRadius = 10;
+    self.thiButton.layer.cornerRadius = 12;
      self.thiButton.layer.borderWidth = 1;
     
 }

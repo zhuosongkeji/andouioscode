@@ -9,6 +9,7 @@
 #import "ZBNAddressChangeVC.h"
 #import "ZBNMyAddressModel.h"
 #import "ZHFAddTitleAddressView.h"
+#import "ZBNLocationSearchVC.h"
 
 @interface ZBNAddressChangeVC () <ZHFAddTitleAddressViewDelegate>
 
@@ -36,7 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.IDArea = self.addM.area_id;
     self.addTitleAddressView = [[ZHFAddTitleAddressView alloc]init];
      self.addTitleAddressView.title = @"选择地址";
@@ -62,10 +63,29 @@
 }
 
 
+/*! 点击定位 */
+- (IBAction)searchAddBtnClick:(id)sender {
+    ADWeakSelf;
+    ZBNLocationSearchVC * vc = [[ZBNLocationSearchVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    vc.selectedAddressTask = ^(NSString * _Nonnull address, NSString * _Nonnull areaID,NSString * _Nonnull province) {
+        [weakSelf.DetailAddress setText:address];
+        [weakSelf.chooseAddBtn setTitle:province forState:UIControlStateNormal];
+        weakSelf.IDArea = areaID;
+    };
+}
+
+
 -(void)cancelBtnClick:(NSString *)titleAddress titleID:(NSString *)titleID{
-    [self.chooseAddBtn setTitle:titleAddress forState:UIControlStateNormal];
+    
     NSLog( @"%@", [NSString stringWithFormat:@"打印的对应省市县的id=%@",titleID]);
-    self.IDArea = [titleID substringFromIndex:titleID.length - 6];
+    if (titleID.length > 6) {
+        [self.chooseAddBtn setTitle:titleAddress forState:UIControlStateNormal];
+        self.IDArea = [titleID substringFromIndex:titleID.length - 6];
+    } else {
+        [self.chooseAddBtn setTitle:@"点击选择" forState:UIControlStateNormal];
+    }
+    
 }
 
 
@@ -73,7 +93,7 @@
 - (void)setupUI
 {
 
-    [self.chooseAddBtn setTitle:[NSString stringWithFormat:@"%@%@%@",self.addM.province,self.addM.city,self.addM.area] forState:UIControlStateNormal];
+    [self.chooseAddBtn setTitle:[NSString stringWithFormat:@"%@ %@ %@",self.addM.province,self.addM.city,self.addM.area] forState:UIControlStateNormal];
     self.defaultBtn.selected = self.addM.is_defualt;
     self.name.text = self.addM.name;
     self.phone.text = self.addM.mobile;

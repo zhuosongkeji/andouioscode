@@ -7,7 +7,7 @@
 //
 
 #import "ZBNHotelWaitEvaluateOrderVC.h"
-
+#import "ZBNHTComModel.h"
 @interface ZBNHotelWaitEvaluateOrderVC ()
 
 @end

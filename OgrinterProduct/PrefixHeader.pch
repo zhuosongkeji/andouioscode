@@ -189,6 +189,12 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
  */
 #define ZBNPxConvertPt(__Px) floor((__Px) * KSCREEN_WIDTH/375.0f)
 
+#if !defined(ABS)
+    #define __NSABS_IMPL__(A,L) ({ __typeof__(A) __NSX_PASTE__(__a,L) = (A); (__NSX_PASTE__(__a,L) < 0) ? - __NSX_PASTE__(__a,L) : __NSX_PASTE__(__a,L); })
+    #define ABS(A) __NSABS_IMPL__(A,__COUNTER__)
+#endif
+
+
 
 
 #import "HUDManager.h"

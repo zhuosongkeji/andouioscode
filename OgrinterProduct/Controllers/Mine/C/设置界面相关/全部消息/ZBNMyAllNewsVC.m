@@ -11,6 +11,7 @@
 #import "ZBNMyAllNewsModel.h"
 #import "ZBNMyAllNewsCell.h"
 #import "ZBNMyNewsVC.h"
+#import "ZBNPostBarNewsVC.h"
 
 @interface ZBNMyAllNewsVC ()
 
@@ -22,8 +23,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
+    if (@available(iOS 11.0, *)) {
+           self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+       }else {
+           self.automaticallyAdjustsScrollViewInsets = YES;
+       }
     self.tableView.bounces = NO;
-    self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = KSRGBA(241, 241, 241, 1);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
@@ -31,36 +39,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.dataArr removeAllObjects];
-    [self initModel];;
+    [self loadRequest];
 }
-
-
-- (void)initModel
-{
-    for (int i = 0; i < 3; i++) {
-        ZBNMyAllNewsModel *model = [[ZBNMyAllNewsModel alloc] init];
-        if (i == 0) {
-            model.count = @"99";
-            model.nameL = @"系统消息";
-            model.iconV = @"系统消息";
-            model.state = @"0";
-        } else if (i == 1) {
-            model.count = @"4";
-            model.nameL = @"商城消息";
-            model.state = @"1";
-            model.iconV = @"商家消息";
-        } else {
-            model.count = @"18";
-            model.nameL = @"贴吧消息";
-            model.iconV = @"贴吧消息10";
-            model.state = @"1";
-        }
-        [self.dataArr addObject:model];
-    }
-    [self.tableView reloadData];
-}
-
 
 
 #pragma mark - Table view data source
@@ -85,16 +65,36 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
+        
+    ZBNMyAllNewsModel *model = self.dataArr[indexPath.row];
+    if (model.ID.intValue == 1) {
         ZBNMyNewsVC *vc = [[ZBNMyNewsVC alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
-        ZBNMyAllNewsModel *model = self.dataArr[indexPath.row];
-        [model setState:@"1"];
-        [self.tableView reloadData];
     }
+    
+    if (model.ID.intValue == 2) {
+        ZBNPostBarNewsVC *vc = [[ZBNPostBarNewsVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
     
 }
 
+- (void)loadRequest
+{
+    // 拿到uid 和 token
+    ADWeakSelf;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    NSData * data1 = [[NSUserDefaults standardUserDefaults] valueForKey:@"infoData"];
+    userInfo * unmodel = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    params[@"uid"] = unmodel.uid;
+    params[@"level"] = @"1";
+    params[@"type_id"] = @"1";
+     [FKHRequestManager sendJSONRequestWithMethod:RequestMethod_GET pathUrl:@"http://andou.zhuosongkj.com/index.php/api/info/list" params:params complement:^(ServerResponseInfo * _Nullable serverInfo) {
+         weakSelf.dataArr = [ZBNMyAllNewsModel mj_objectArrayWithKeyValuesArray:serverInfo.response[@"data"][@"count"]];
+         [weakSelf.tableView reloadData];
+       }];
+}
 
 #pragma mark -- lazy
 

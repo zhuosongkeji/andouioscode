@@ -81,40 +81,43 @@
                                 <constraint firstAttribute="height" constant="10" id="PQt-K3-B7V"/>
                             </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="我的地址" translatesAutoresizingMaskIntoConstraints="NO" id="Avq-cW-gqb">
-                            <rect key="frame" x="319" y="17.5" width="15" height="15"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="15" id="1fF-TV-tFl"/>
-                                <constraint firstAttribute="width" constant="15" id="Zua-e8-KOg"/>
-                            </constraints>
-                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azf-8J-LpI">
-                            <rect key="frame" x="349" y="11" width="30" height="28"/>
+                            <rect key="frame" x="91.5" y="11" width="54" height="28"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <state key="normal" title="地址">
+                            <state key="normal" title="点击选择">
                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                             </state>
                             <connections>
                                 <action selector="chooseBtnClick:" destination="-1" eventType="touchUpInside" id="Axv-wv-9Zi"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d99-Xj-ukR">
+                            <rect key="frame" x="325" y="13" width="54" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="  定位" image="weizhi">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="searchAddBtnClick:" destination="-1" eventType="touchUpInside" id="PrU-y7-Egf"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstItem="Avq-cW-gqb" firstAttribute="centerY" secondItem="mXT-eg-cGU" secondAttribute="centerY" id="2QC-zv-7Rb"/>
-                        <constraint firstItem="Azf-8J-LpI" firstAttribute="leading" secondItem="Avq-cW-gqb" secondAttribute="trailing" constant="15" id="2xF-lP-YPK"/>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="7hq-Ng-LIU"/>
                         <constraint firstItem="JBa-Rx-YoG" firstAttribute="centerY" secondItem="mXT-eg-cGU" secondAttribute="centerY" id="A9Y-on-Lq9"/>
                         <constraint firstItem="Azf-8J-LpI" firstAttribute="centerY" secondItem="mXT-eg-cGU" secondAttribute="centerY" id="BeH-w2-dLr"/>
                         <constraint firstAttribute="height" constant="50" id="Ccp-sr-ij0"/>
                         <constraint firstItem="kDS-7M-LuC" firstAttribute="leading" secondItem="mXT-eg-cGU" secondAttribute="leading" id="J2c-DY-GTR"/>
+                        <constraint firstItem="Yl4-3i-NVQ" firstAttribute="leading" secondItem="d99-Xj-ukR" secondAttribute="trailing" constant="15" id="UHR-hC-F6l"/>
                         <constraint firstItem="Yl4-3i-NVQ" firstAttribute="centerY" secondItem="JBa-Rx-YoG" secondAttribute="centerY" id="UVR-79-jmg"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Xhv-HP-SXl"/>
                         <constraint firstItem="JBa-Rx-YoG" firstAttribute="leading" secondItem="mXT-eg-cGU" secondAttribute="leading" constant="15" id="cky-uU-wgv"/>
-                        <constraint firstItem="Yl4-3i-NVQ" firstAttribute="leading" secondItem="Azf-8J-LpI" secondAttribute="trailing" constant="15" id="hfd-Rd-FxV"/>
+                        <constraint firstItem="Azf-8J-LpI" firstAttribute="leading" secondItem="JBa-Rx-YoG" secondAttribute="trailing" constant="15" id="iK1-1L-QPn"/>
                         <constraint firstAttribute="trailing" secondItem="kDS-7M-LuC" secondAttribute="trailing" id="mrl-rh-Fiu"/>
                         <constraint firstAttribute="bottom" secondItem="kDS-7M-LuC" secondAttribute="bottom" id="nRP-Tq-29a"/>
                         <constraint firstAttribute="trailing" secondItem="Yl4-3i-NVQ" secondAttribute="trailing" constant="10" id="qsj-z2-fiM"/>
+                        <constraint firstItem="d99-Xj-ukR" firstAttribute="centerY" secondItem="mXT-eg-cGU" secondAttribute="centerY" id="zQs-jH-Qju"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCd-MG-f0c">
@@ -268,13 +271,13 @@
                 <constraint firstItem="5BB-kd-q1C" firstAttribute="leading" secondItem="HB2-Uz-XWP" secondAttribute="leading" id="vN9-ND-MSt"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="HB2-Uz-XWP"/>
-            <point key="canvasLocation" x="-1551" y="2"/>
+            <point key="canvasLocation" x="3770" y="-35"/>
         </view>
     </objects>
     <resources>
         <image name="dati1" width="16" height="16"/>
+        <image name="weizhi" width="20" height="24"/>
         <image name="底部按钮背景" width="345" height="45"/>
-        <image name="我的地址" width="21" height="26"/>
         <image name="椭圆 1" width="10" height="10"/>
         <image name="返回 拷贝 3" width="4" height="7.5"/>
     </resources>

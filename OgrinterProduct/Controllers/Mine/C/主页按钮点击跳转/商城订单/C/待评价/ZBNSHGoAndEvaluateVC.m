@@ -43,9 +43,13 @@
 {
     self.navigationItem.title = @"发表评论";
     self.tableView.backgroundColor = KSRGBA(241, 241, 241, 1);
-    self.navigationController.navigationBar.translucent = NO;
     self.tableView.bounces = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
 }
 
 #pragma mark - Table view data source

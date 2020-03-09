@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)regiserCellForTable:(UITableView *)tableView;
 /*! 模型数据 */
 @property (nonatomic, strong) ZBNMyCollectionM *collectionM;
+@property (nonatomic, copy) void(^lookGoodsDetailBtlClickTask)(ZBNMyCollectionM *model);
 
 @end
 

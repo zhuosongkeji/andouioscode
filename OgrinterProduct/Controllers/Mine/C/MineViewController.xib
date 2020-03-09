@@ -12,6 +12,8 @@
                 <outlet property="foodOrderBtn" destination="SR1-lj-PvI" id="ebH-g9-og9"/>
                 <outlet property="goodsCollection" destination="rpf-RN-lGc" id="aaO-ui-wvB"/>
                 <outlet property="headImageV" destination="as7-O6-384" id="UAz-Td-pps"/>
+                <outlet property="headerH" destination="0nM-u3-n5f" id="nvH-o9-4IF"/>
+                <outlet property="headerView" destination="7Tx-uO-1xe" id="MI3-J7-UtK"/>
                 <outlet property="historyL" destination="fCa-EY-Z1c" id="5tb-mk-nqf"/>
                 <outlet property="hotelOrderBtn" destination="rjw-vu-phX" id="0pk-0m-EA7"/>
                 <outlet property="integerL" destination="MS7-1P-hH8" id="Kdk-ri-Vkh"/>
@@ -561,7 +563,7 @@
                 <constraint firstAttribute="trailing" secondItem="kGP-dV-NOj" secondAttribute="trailing" id="JYB-Ix-DuZ"/>
                 <constraint firstAttribute="bottom" secondItem="kGP-dV-NOj" secondAttribute="bottom" id="vmt-1l-new"/>
             </constraints>
-            <point key="canvasLocation" x="-25539" y="139"/>
+            <point key="canvasLocation" x="-26683" y="146"/>
         </view>
     </objects>
     <resources>

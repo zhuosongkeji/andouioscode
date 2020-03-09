@@ -12,6 +12,10 @@
 #import "ZBNHTHadInVC.h"   // 待评价
 #import "ZBNHTWaitInDetailVC.h"  // 待入住
 #import "ZBNHTGoCommentVC.h"  // 评论控制器
+#import "ZBNHTOrderComedVC.h"
+#import "ZBNHTOrderUnknowVC.h"
+#import "ZBNHTOrderNotPayVC.h"
+#import "ZBNHTOrderDoneVC.h"
 
 @interface ZBNHTComCell ()
 /*! 状态label */
@@ -67,13 +71,31 @@
     self.goods_price.text = comM.price;
     // 总价格
     self.totalPrice.text = comM.price;
-    
-    if ([comM.status intValue] == 20) { //待入住
+    /*! 订单状态（0-取消订单 10-未支付订单 20-已支付(待入住) 30 已入住 40-已完成(离店) 50-已评价） */
+    if (comM.status.intValue == 60) {
+        self.firsetBtn.hidden = YES;
+        self.secBtn.hidden = YES;
+        self.thiBtn.hidden = NO;
+        [self.thiBtn setTitle:@"订单详情" forState:UIControlStateNormal];
+        [self.stateLabel setText:@"未知状态"];
+    } else if (comM.status.intValue == 10) { // 未支付
+        self.firsetBtn.hidden = YES;
+        self.secBtn.hidden = YES;
+        self.thiBtn.hidden = NO;
+        [self.thiBtn setTitle:@"订单详情" forState:UIControlStateNormal];
+        [self.stateLabel setText:@"未支付"];
+    } else if ([comM.status intValue] == 20) { //待入住
         self.firsetBtn.hidden = YES;
         self.secBtn.hidden = YES;
         self.thiBtn.hidden = NO;
         [self.thiBtn setTitle:@"订单详情" forState:UIControlStateNormal];
         [self.stateLabel setText:@"待入住"];
+    } else if (comM.status.intValue == 30) { // 已入住
+        self.firsetBtn.hidden = YES;
+        self.secBtn.hidden = YES;
+        self.thiBtn.hidden = NO;
+        [self.stateLabel setText:@"已入住"];
+        [self.thiBtn setTitle:@"订单详情" forState:UIControlStateNormal];
     } else if ([comM.status intValue] == 40) { // 已入住
         self.firsetBtn.hidden = YES;
         self.secBtn.hidden = NO;
@@ -145,14 +167,33 @@
 /*! 第三个按钮点击 */
 - (IBAction)thiBtnClick:(id)sender {
     
+    if (self.comM.status.intValue == 30) {
+        ZBNHTOrderDoneVC *vc = [[ZBNHTOrderDoneVC alloc] init];
+        vc.book_sn = self.comM.book_sn;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
+    }
     if (self.comM.status.intValue == 0) {  // 已取消的订单详情 ZBNHTCancelVC
-        
+        ZBNHTCancelVC *vc = [[ZBNHTCancelVC alloc] init];
+        vc.book_sn = self.comM.book_sn;
+        [[self viewController].navigationController pushViewController:vc animated:YES];  
     } else if (self.comM.status.intValue == 20) { // 待入住的订单详情
         ZBNHTWaitInDetailVC *vc = [[ZBNHTWaitInDetailVC alloc] init];
         vc.book_sn = self.comM.book_sn;
         [[self viewController].navigationController pushViewController:vc animated:YES];    
     } else if (self.comM.status.intValue == 40) { // 待评价的订单详情
         ZBNHTHadInVC *vc = [[ZBNHTHadInVC alloc] init];
+        vc.book_sn = self.comM.book_sn;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
+    } else if (self.comM.status.intValue == 50) {  // 已评价
+        ZBNHTOrderComedVC *vc = [[ZBNHTOrderComedVC alloc] init];
+        vc.book_sn = self.comM.book_sn;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
+    } else if (self.comM.status.intValue == 60) {  // 未知
+        ZBNHTOrderUnknowVC *vc = [[ZBNHTOrderUnknowVC alloc] init];
+        vc.book_sn = self.comM.book_sn;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
+    } else if (self.comM.status.intValue == 10) { // 未支付
+        ZBNHTOrderNotPayVC *vc = [[ZBNHTOrderNotPayVC alloc] init];
         vc.book_sn = self.comM.book_sn;
         [[self viewController].navigationController pushViewController:vc animated:YES];
     }

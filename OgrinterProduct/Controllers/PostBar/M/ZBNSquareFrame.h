@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , assign ) CGFloat cellHeight;
 /** 评论尺寸模型 由于后期需要用到，所以不涉及为只读 */
 @property (nonatomic , strong ,readonly) NSMutableArray *commentFrames;
+@property (nonatomic , strong , readonly) NSMutableArray *imageFrames;
 /*! 整个header模型 */
 @property (nonatomic, strong) ZBNSquareModel *squareM;
 

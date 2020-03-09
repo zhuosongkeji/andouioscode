@@ -45,6 +45,9 @@
                         <constraint firstAttribute="width" constant="30" id="Bh8-IH-C03"/>
                     </constraints>
                     <state key="normal" image="图层 63"/>
+                    <connections>
+                        <action selector="addressBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="oaI-Th-qlN"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,7 +67,7 @@
                 <outlet property="iconImage" destination="7EL-Vu-Dt5" id="D0Y-kC-dbM"/>
                 <outlet property="shopName" destination="BY4-Aw-oL4" id="Op0-Rn-JlF"/>
             </connections>
-            <point key="canvasLocation" x="123" y="116"/>
+            <point key="canvasLocation" x="-728" y="137"/>
         </view>
     </objects>
     <resources>

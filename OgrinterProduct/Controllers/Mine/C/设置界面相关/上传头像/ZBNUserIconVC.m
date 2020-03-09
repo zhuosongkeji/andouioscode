@@ -27,6 +27,7 @@
     
     // 设置图片上传的view
     [self setUpLoadView];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationItem.title = @"头像修改";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(upLoadNote) name:@"getURLOne" object:nil];
     

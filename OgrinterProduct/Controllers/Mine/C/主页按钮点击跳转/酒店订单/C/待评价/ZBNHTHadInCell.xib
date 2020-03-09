@@ -418,7 +418,7 @@
                 <outlet property="real_name" destination="cVQ-Iq-99k" id="bbc-hx-TMb"/>
                 <outlet property="start_time" destination="RHa-6o-mTI" id="A3t-Kz-KND"/>
             </connections>
-            <point key="canvasLocation" x="14357" y="300"/>
+            <point key="canvasLocation" x="13438" y="217"/>
         </tableViewCell>
     </objects>
     <resources>

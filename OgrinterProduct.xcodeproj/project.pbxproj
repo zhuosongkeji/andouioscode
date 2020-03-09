@@ -61,7 +61,6 @@
 		A13C2666240CB3C6001545F1 /* AsseCollectionViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13C2664240CB3C5001545F1 /* AsseCollectionViewCell1.xib */; };
 		A13C266A240CBA83001545F1 /* KillAessBTopViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A13C2668240CBA83001545F1 /* KillAessBTopViewCell.m */; };
 		A13C266B240CBA83001545F1 /* KillAessBTopViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13C2669240CBA83001545F1 /* KillAessBTopViewCell.xib */; };
-		A13C2670240F9E4B001545F1 /* PtTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A13C266E240F9E4A001545F1 /* PtTableViewCell.m */; };
 		A13C2671240F9E4B001545F1 /* PtTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13C266F240F9E4B001545F1 /* PtTableViewCell.xib */; };
 		A14BDA9423C5A154006EC033 /* ShoperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A14BDA9323C5A154006EC033 /* ShoperModel.m */; };
 		A14BDA9723C5A2F5006EC033 /* ShoperListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A14BDA9623C5A2F5006EC033 /* ShoperListModel.m */; };
@@ -202,13 +201,8 @@
 		A1F6FD212403B77B0002704C /* AssembModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FD202403B77B0002704C /* AssembModel.m */; };
 		A1F6FD242403CBFE0002704C /* AsseBlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FD232403CBFE0002704C /* AsseBlModel.m */; };
 		A1F6FD292408DE180002704C /* KillModelt.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FD282408DE180002704C /* KillModelt.m */; };
-<<<<<<< HEAD
-		A1F6FD312408FF900002704C /* PtTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F6FD2F2408FF8F0002704C /* PtTableViewCell.xib */; };
-=======
->>>>>>> 8954b4ed966138bc131f54218c8c9a5ab6a2e75c
 		A1F6FD35240B5C670002704C /* HXCollectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FD33240B5C670002704C /* HXCollectionCollectionViewCell.m */; };
 		A1F6FD36240B5C670002704C /* HXCollectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F6FD34240B5C670002704C /* HXCollectionCollectionViewCell.xib */; };
-		A1F6FD39240B8BAD0002704C /* KillerbListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FD37240B8BAC0002704C /* KillerbListModel.m */; };
 		A1F6FD3C240B8DC00002704C /* TZImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6FD3B240B8DC00002704C /* TZImageRequestOperation.m */; };
 		A1F73CF423A880CB001D86EF /* ShopingShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F73CF123A880CB001D86EF /* ShopingShopViewController.xib */; };
 		A1F73CF523A880CB001D86EF /* ShopingShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F73CF323A880CB001D86EF /* ShopingShopViewController.m */; };
@@ -270,7 +264,6 @@
 		F4055ED323CD6E7D00637E7A /* ZBNHTApplyRefundVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4055ED123CD6E7D00637E7A /* ZBNHTApplyRefundVC.xib */; };
 		F4055ED623CD8EE100637E7A /* ZBNHTOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4055ED523CD8EE100637E7A /* ZBNHTOrderVC.m */; };
 		F4055ED923CD907500637E7A /* ZBNHotelAllOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4055ED823CD907500637E7A /* ZBNHotelAllOrderVC.m */; };
-		F4055EDC23CDC19000637E7A /* ZBNHTComDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4055EDB23CDC19000637E7A /* ZBNHTComDetailModel.m */; };
 		F40D745823D065F7006DF3CB /* ZBNRTComDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F40D745723D065F7006DF3CB /* ZBNRTComDetailVC.m */; };
 		F40D745C23D06613006DF3CB /* ZBNRTComDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F40D745A23D06613006DF3CB /* ZBNRTComDetailCell.m */; };
 		F40D745D23D06613006DF3CB /* ZBNRTComDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F40D745B23D06613006DF3CB /* ZBNRTComDetailCell.xib */; };
@@ -349,7 +342,6 @@
 		F419FBFA240ED29B004AA912 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FBF6240ED29B004AA912 /* FLAnimatedImageView.m */; };
 		F419FBFC240F4DB9004AA912 /* ZBNNewPostVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F419FBFB240F4DB9004AA912 /* ZBNNewPostVC.xib */; };
 		F419FC1A240F86C7004AA912 /* ZHFAddTitleAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FC08240F86C7004AA912 /* ZHFAddTitleAddressView.m */; };
-		F419FC1B240F86C7004AA912 /* TownModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FC09240F86C7004AA912 /* TownModel.m */; };
 		F419FC1C240F86C7004AA912 /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FC0A240F86C7004AA912 /* CityModel.m */; };
 		F419FC1D240F86C7004AA912 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FC0C240F86C7004AA912 /* HttpRequest.m */; };
 		F419FC1E240F86C7004AA912 /* AddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F419FC10240F86C7004AA912 /* AddressCell.m */; };
@@ -363,6 +355,11 @@
 		F41B749B23C2D9BE0056DC78 /* ZBNSHReadEvaluateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F41B749A23C2D9BE0056DC78 /* ZBNSHReadEvaluateVC.m */; };
 		F41B74A423C2DA040056DC78 /* ZBNSHReadEvaluateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F41B74A223C2DA040056DC78 /* ZBNSHReadEvaluateCell.m */; };
 		F41B74A523C2DA040056DC78 /* ZBNSHReadEvaluateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41B74A323C2DA040056DC78 /* ZBNSHReadEvaluateCell.xib */; };
+		F41FFB0B2410F64600D5D825 /* ZBNSHCancelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F41FFB092410F64600D5D825 /* ZBNSHCancelVC.m */; };
+		F41FFB0C2410F64600D5D825 /* ZBNSHCancelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41FFB0A2410F64600D5D825 /* ZBNSHCancelVC.xib */; };
+		F41FFB102412297700D5D825 /* ZBNSHOrderCanceledVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F41FFB0F2412297700D5D825 /* ZBNSHOrderCanceledVC.m */; };
+		F41FFB15241229A600D5D825 /* ZBNSHOrderCanceledCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F41FFB13241229A600D5D825 /* ZBNSHOrderCanceledCell.m */; };
+		F41FFB16241229A700D5D825 /* ZBNSHOrderCanceledCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41FFB14241229A600D5D825 /* ZBNSHOrderCanceledCell.xib */; };
 		F42C3C6223C702010057288A /* ZBNMyAllNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C3C6123C702010057288A /* ZBNMyAllNewsModel.m */; };
 		F42C3C6623C713C90057288A /* ZBNSHGoAndEvaluateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C3C6523C713C90057288A /* ZBNSHGoAndEvaluateModel.m */; };
 		F42C3C6923C723C70057288A /* ZBNSHCommonPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C3C6823C723C70057288A /* ZBNSHCommonPayVC.m */; };
@@ -497,9 +494,43 @@
 		F479DAF12408FDAE003A284B /* ZBNRTCommentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F479DAF02408FDAE003A284B /* ZBNRTCommentVC.m */; };
 		F479DAF62408FDDC003A284B /* ZBNRTCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F479DAF42408FDDC003A284B /* ZBNRTCommentCell.xib */; };
 		F479DAF9240900E9003A284B /* ZBNRTCommentM.m in Sources */ = {isa = PBXBuildFile; fileRef = F479DAF8240900E9003A284B /* ZBNRTCommentM.m */; };
+		F47CEBF624139A4500CEEB08 /* TLCity.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEBEB24139A4400CEEB08 /* TLCity.m */; };
+		F47CEBF724139A4500CEEB08 /* CityData.plist in Resources */ = {isa = PBXBuildFile; fileRef = F47CEBEC24139A4400CEEB08 /* CityData.plist */; };
+		F47CEBF824139A4500CEEB08 /* TLCityGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEBED24139A4400CEEB08 /* TLCityGroupCell.m */; };
+		F47CEBF924139A4500CEEB08 /* TLCityPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEBF224139A4400CEEB08 /* TLCityPickerController.m */; };
+		F47CEBFA24139A4500CEEB08 /* TLCityPickerSearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEBF324139A4400CEEB08 /* TLCityPickerSearchResultController.m */; };
+		F47CEBFB24139A4500CEEB08 /* TLCityHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEBF424139A4400CEEB08 /* TLCityHeaderView.m */; };
+		F47CEC292413AB0300CEEB08 /* ZBNPostBarNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC272413AB0200CEEB08 /* ZBNPostBarNewsVC.m */; };
+		F47CEC2A2413AB0300CEEB08 /* ZBNPostBarNewsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47CEC282413AB0200CEEB08 /* ZBNPostBarNewsVC.xib */; };
+		F47CEC342413B4DC00CEEB08 /* ZBNPostBarNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC322413B4DC00CEEB08 /* ZBNPostBarNewsCell.m */; };
+		F47CEC352413B4DC00CEEB08 /* ZBNPostBarNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47CEC332413B4DC00CEEB08 /* ZBNPostBarNewsCell.xib */; };
+		F47CEC382413BD1500CEEB08 /* ZBNPostZanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC372413BD1500CEEB08 /* ZBNPostZanVC.m */; };
+		F47CEC3B2413BD2E00CEEB08 /* ZBNPostMyReplyedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC3A2413BD2E00CEEB08 /* ZBNPostMyReplyedVC.m */; };
+		F47CEC422413BD8400CEEB08 /* ZBNPostComReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC402413BD8400CEEB08 /* ZBNPostComReplyCell.m */; };
+		F47CEC462413C21000CEEB08 /* ZBNPostComReplyM.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC452413C21000CEEB08 /* ZBNPostComReplyM.m */; };
+		F47CEC492413C22200CEEB08 /* ZBNPostComReplyFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC482413C22200CEEB08 /* ZBNPostComReplyFrame.m */; };
+		F47CEC4C2413C53C00CEEB08 /* ZBNHTOrderDoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC4B2413C53C00CEEB08 /* ZBNHTOrderDoneVC.m */; };
+		F47CEC4F2413C55400CEEB08 /* ZBNHTOrderUnknowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC4E2413C55400CEEB08 /* ZBNHTOrderUnknowVC.m */; };
+		F47CEC522413C56B00CEEB08 /* ZBNHTOrderComedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC512413C56B00CEEB08 /* ZBNHTOrderComedVC.m */; };
+		F47CEC552413C58400CEEB08 /* ZBNHTOrderNotPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC542413C58400CEEB08 /* ZBNHTOrderNotPayVC.m */; };
+		F47CEC632413C5BE00CEEB08 /* ZBNHTOrderComedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC612413C5BE00CEEB08 /* ZBNHTOrderComedCell.m */; };
+		F47CEC642413C5BE00CEEB08 /* ZBNHTOrderComedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47CEC622413C5BE00CEEB08 /* ZBNHTOrderComedCell.xib */; };
+		F47CEC682413C5CF00CEEB08 /* ZBNHTOrderNotPayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC662413C5CF00CEEB08 /* ZBNHTOrderNotPayCell.m */; };
+		F47CEC692413C5CF00CEEB08 /* ZBNHTOrderNotPayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47CEC672413C5CF00CEEB08 /* ZBNHTOrderNotPayCell.xib */; };
+		F47CEC6D2413CCE400CEEB08 /* ZBNHTOrderDoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC6B2413CCE400CEEB08 /* ZBNHTOrderDoneCell.m */; };
+		F47CEC6E2413CCE400CEEB08 /* ZBNHTOrderDoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47CEC6C2413CCE400CEEB08 /* ZBNHTOrderDoneCell.xib */; };
+		F47CEC722413CE4B00CEEB08 /* ZBNHTOrderUnknowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC6F2413CE4A00CEEB08 /* ZBNHTOrderUnknowCell.m */; };
+		F47CEC732413CE4B00CEEB08 /* ZBNHTOrderUnknowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47CEC702413CE4B00CEEB08 /* ZBNHTOrderUnknowCell.xib */; };
+		F47CEC772413D6A200CEEB08 /* ZBNMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC752413D6A200CEEB08 /* ZBNMineCell.m */; };
+		F47CEC782413D6A200CEEB08 /* ZBNMineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47CEC762413D6A200CEEB08 /* ZBNMineCell.xib */; };
+		F47CEC7B2413E71300CEEB08 /* ZBNPostMyComVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CEC792413E71200CEEB08 /* ZBNPostMyComVC.m */; };
 		F47D9FBD240FC5AA00ACCBF8 /* TZImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F47D9FBC240FC5AA00ACCBF8 /* TZImageRequestOperation.m */; };
-		F47D9FC0240FC61D00ACCBF8 /* KillerbListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F47D9FBE240FC61D00ACCBF8 /* KillerbListModel.m */; };
 		F47D9FC3240FC68600ACCBF8 /* WMZDialogTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F47D9FC2240FC68600ACCBF8 /* WMZDialogTableView.m */; };
+		F47DA00124109D3D00ACCBF8 /* KillerbListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F47DA00024109D3D00ACCBF8 /* KillerbListModel.m */; };
+		F47DA00424109ECB00ACCBF8 /* TownModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F47DA00224109ECB00ACCBF8 /* TownModel.m */; };
+		F47DA0072410A66400ACCBF8 /* ZBNTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47DA0062410A66400ACCBF8 /* ZBNTopicCell.m */; };
+		F47DA00A2410A67A00ACCBF8 /* ZBNTopicCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47DA0092410A67A00ACCBF8 /* ZBNTopicCommentCell.m */; };
+		F47DA00D2410B2B900ACCBF8 /* ZBNTopicFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = F47DA00C2410B2B900ACCBF8 /* ZBNTopicFrame.m */; };
 		F48128D723D3E90700285A5C /* ZBNSHReturnGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F48128D623D3E90700285A5C /* ZBNSHReturnGoodsVC.m */; };
 		F48128DB23D3E96B00285A5C /* ZBNSHAppReturnGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F48128D923D3E96A00285A5C /* ZBNSHAppReturnGoodsCell.m */; };
 		F48128DC23D3E96B00285A5C /* ZBNSHAppReturnGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F48128DA23D3E96A00285A5C /* ZBNSHAppReturnGoodsCell.xib */; };
@@ -510,7 +541,6 @@
 		F48128FA23D4627900285A5C /* OnlineOrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F48128F923D4627900285A5C /* OnlineOrderListModel.m */; };
 		F481290623D4663200285A5C /* HotelOnlinesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F481290423D4663100285A5C /* HotelOnlinesListModel.m */; };
 		F4835BC023C9C94000418D78 /* ZBNHTBaseOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4835BBF23C9C94000418D78 /* ZBNHTBaseOrderVC.m */; };
-		F4835BC323C9C97A00418D78 /* ZBNHTComModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4835BC223C9C97A00418D78 /* ZBNHTComModel.m */; };
 		F4835BC723C9CA6100418D78 /* ZBNHTComCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4835BC523C9CA6100418D78 /* ZBNHTComCell.m */; };
 		F4835BC823C9CA6100418D78 /* ZBNHTComCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4835BC623C9CA6100418D78 /* ZBNHTComCell.xib */; };
 		F48D544323CB4C3B004DACFE /* ZBNCity.m in Sources */ = {isa = PBXBuildFile; fileRef = F48D543F23CB4C3A004DACFE /* ZBNCity.m */; };
@@ -644,6 +674,14 @@
 		F4E00E7123C45CA0007EABC3 /* ZBNTakeOutEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E00E7023C45C9F007EABC3 /* ZBNTakeOutEntryVC.m */; };
 		F4E00E7A23C45D05007EABC3 /* ZBNTakeOutEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E00E7823C45D05007EABC3 /* ZBNTakeOutEntryCell.m */; };
 		F4E00E7B23C45D05007EABC3 /* ZBNTakeOutEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E00E7923C45D05007EABC3 /* ZBNTakeOutEntryCell.xib */; };
+		F4E3DC412414B64F00AD961D /* ZBNLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E3DC3A2414B64B00AD961D /* ZBNLocationCell.m */; };
+		F4E3DC422414B64F00AD961D /* ZBNSearchAddrM.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E3DC3B2414B64B00AD961D /* ZBNSearchAddrM.m */; };
+		F4E3DC432414B64F00AD961D /* ZBNLocationSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E3DC3C2414B64C00AD961D /* ZBNLocationSearchVC.xib */; };
+		F4E3DC442414B64F00AD961D /* ZBNLocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E3DC3E2414B64E00AD961D /* ZBNLocationCell.xib */; };
+		F4E3DC452414B64F00AD961D /* ZBNLocationSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E3DC402414B64F00AD961D /* ZBNLocationSearchVC.m */; };
+		F4E3DC482414E78E00AD961D /* ZBNTopicComFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E3DC472414E78E00AD961D /* ZBNTopicComFrame.m */; };
+		F4E3DC502415A60600AD961D /* ZBNHTComDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E3DC4C2415A60300AD961D /* ZBNHTComDetailModel.m */; };
+		F4E3DC512415A60600AD961D /* ZBNHTComModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E3DC4F2415A60600AD961D /* ZBNHTComModel.m */; };
 		F4E6A7A023B75140006721E9 /* FKHRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6A79F23B75140006721E9 /* FKHRequestManager.m */; };
 		F4E6A7A923B753F2006721E9 /* ZBNMineFeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6A7A223B753F1006721E9 /* ZBNMineFeedbackVC.m */; };
 		F4E6A7AA23B753F2006721E9 /* ZBNMineFeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E6A7A423B753F1006721E9 /* ZBNMineFeedbackVC.xib */; };
@@ -653,8 +691,6 @@
 		F4E6A7B323B75417006721E9 /* ZBNMineSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6A7AF23B75417006721E9 /* ZBNMineSettingCell.m */; };
 		F4E6A7B423B75417006721E9 /* ZBNMineSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6A7B123B75417006721E9 /* ZBNMineSettingVC.m */; };
 		F4EB907E240A684300C416CA /* EVRElasticViewReference.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EB907D240A684300C416CA /* EVRElasticViewReference.m */; };
-		F4EE90E823F55461003870A3 /* ZBNHTReasonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EE90E723F55461003870A3 /* ZBNHTReasonView.m */; };
-		F4EE90EA23F55488003870A3 /* ZBNHTReasonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4EE90E923F55488003870A3 /* ZBNHTReasonView.xib */; };
 		F4FAC27F23ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FAC27D23ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.m */; };
 		F4FAC28023ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FAC27E23ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.xib */; };
 		F4FAC28323AC568900C235EA /* ZBNWaitDeliverDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FAC28223AC568900C235EA /* ZBNWaitDeliverDetailVC.m */; };
@@ -1018,17 +1054,9 @@
 		A1F6FD232403CBFE0002704C /* AsseBlModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsseBlModel.m; sourceTree = "<group>"; };
 		A1F6FD272408DE180002704C /* KillModelt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KillModelt.h; sourceTree = "<group>"; };
 		A1F6FD282408DE180002704C /* KillModelt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KillModelt.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		A1F6FD2D2408FF8F0002704C /* PtTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PtTableViewCell.h; sourceTree = "<group>"; };
-		A1F6FD2E2408FF8F0002704C /* PtTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PtTableViewCell.m; sourceTree = "<group>"; };
-		A1F6FD2F2408FF8F0002704C /* PtTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PtTableViewCell.xib; sourceTree = "<group>"; };
-=======
->>>>>>> 8954b4ed966138bc131f54218c8c9a5ab6a2e75c
 		A1F6FD32240B5C670002704C /* HXCollectionCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HXCollectionCollectionViewCell.h; sourceTree = "<group>"; };
 		A1F6FD33240B5C670002704C /* HXCollectionCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HXCollectionCollectionViewCell.m; sourceTree = "<group>"; };
 		A1F6FD34240B5C670002704C /* HXCollectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HXCollectionCollectionViewCell.xib; sourceTree = "<group>"; };
-		A1F6FD37240B8BAC0002704C /* KillerbListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillerbListModel.m; sourceTree = "<group>"; };
-		A1F6FD38240B8BAD0002704C /* KillerbListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillerbListModel.h; sourceTree = "<group>"; };
 		A1F6FD3A240B8DBF0002704C /* TZImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZImageRequestOperation.h; sourceTree = "<group>"; };
 		A1F6FD3B240B8DC00002704C /* TZImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImageRequestOperation.m; sourceTree = "<group>"; };
 		A1F73CF123A880CB001D86EF /* ShopingShopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShopingShopViewController.xib; path = "OgrinterProduct/Controllers/Home/C/商店/ShopingHome/C/ShopingShopViewController.xib"; sourceTree = SOURCE_ROOT; };
@@ -1131,8 +1159,6 @@
 		F4055ED523CD8EE100637E7A /* ZBNHTOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTOrderVC.m; sourceTree = "<group>"; };
 		F4055ED723CD907500637E7A /* ZBNHotelAllOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHotelAllOrderVC.h; sourceTree = "<group>"; };
 		F4055ED823CD907500637E7A /* ZBNHotelAllOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHotelAllOrderVC.m; sourceTree = "<group>"; };
-		F4055EDA23CDC19000637E7A /* ZBNHTComDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTComDetailModel.h; sourceTree = "<group>"; };
-		F4055EDB23CDC19000637E7A /* ZBNHTComDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTComDetailModel.m; sourceTree = "<group>"; };
 		F40D745623D065F7006DF3CB /* ZBNRTComDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNRTComDetailVC.h; sourceTree = "<group>"; };
 		F40D745723D065F7006DF3CB /* ZBNRTComDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNRTComDetailVC.m; sourceTree = "<group>"; };
 		F40D745923D06613006DF3CB /* ZBNRTComDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNRTComDetailCell.h; sourceTree = "<group>"; };
@@ -1281,7 +1307,6 @@
 		F419FBFB240F4DB9004AA912 /* ZBNNewPostVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNNewPostVC.xib; sourceTree = "<group>"; };
 		F419FC05240F86C7004AA912 /* AddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressCell.h; sourceTree = "<group>"; };
 		F419FC08240F86C7004AA912 /* ZHFAddTitleAddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFAddTitleAddressView.m; sourceTree = "<group>"; };
-		F419FC09240F86C7004AA912 /* TownModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TownModel.m; sourceTree = "<group>"; };
 		F419FC0A240F86C7004AA912 /* CityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityModel.m; sourceTree = "<group>"; };
 		F419FC0C240F86C7004AA912 /* HttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
 		F419FC0D240F86C7004AA912 /* ProvinceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvinceModel.h; sourceTree = "<group>"; };
@@ -1291,7 +1316,6 @@
 		F419FC13240F86C7004AA912 /* ProvinceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvinceModel.m; sourceTree = "<group>"; };
 		F419FC14240F86C7004AA912 /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
 		F419FC15240F86C7004AA912 /* CityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityModel.h; sourceTree = "<group>"; };
-		F419FC16240F86C7004AA912 /* TownModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TownModel.h; sourceTree = "<group>"; };
 		F419FC17240F86C7004AA912 /* CountyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountyModel.m; sourceTree = "<group>"; };
 		F41B748C23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHGoAndEvaluateVC.h; sourceTree = "<group>"; };
 		F41B748D23C2C8BF0056DC78 /* ZBNSHGoAndEvaluateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHGoAndEvaluateVC.m; sourceTree = "<group>"; };
@@ -1306,6 +1330,14 @@
 		F41B74A123C2DA040056DC78 /* ZBNSHReadEvaluateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHReadEvaluateCell.h; sourceTree = "<group>"; };
 		F41B74A223C2DA040056DC78 /* ZBNSHReadEvaluateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHReadEvaluateCell.m; sourceTree = "<group>"; };
 		F41B74A323C2DA040056DC78 /* ZBNSHReadEvaluateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNSHReadEvaluateCell.xib; sourceTree = "<group>"; };
+		F41FFB082410F64600D5D825 /* ZBNSHCancelVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHCancelVC.h; sourceTree = "<group>"; };
+		F41FFB092410F64600D5D825 /* ZBNSHCancelVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHCancelVC.m; sourceTree = "<group>"; };
+		F41FFB0A2410F64600D5D825 /* ZBNSHCancelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNSHCancelVC.xib; sourceTree = "<group>"; };
+		F41FFB0E2412297700D5D825 /* ZBNSHOrderCanceledVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHOrderCanceledVC.h; sourceTree = "<group>"; };
+		F41FFB0F2412297700D5D825 /* ZBNSHOrderCanceledVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHOrderCanceledVC.m; sourceTree = "<group>"; };
+		F41FFB12241229A600D5D825 /* ZBNSHOrderCanceledCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHOrderCanceledCell.h; sourceTree = "<group>"; };
+		F41FFB13241229A600D5D825 /* ZBNSHOrderCanceledCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHOrderCanceledCell.m; sourceTree = "<group>"; };
+		F41FFB14241229A600D5D825 /* ZBNSHOrderCanceledCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNSHOrderCanceledCell.xib; sourceTree = "<group>"; };
 		F42C3C6023C702010057288A /* ZBNMyAllNewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNMyAllNewsModel.h; sourceTree = "<group>"; };
 		F42C3C6123C702010057288A /* ZBNMyAllNewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNMyAllNewsModel.m; sourceTree = "<group>"; };
 		F42C3C6423C713C90057288A /* ZBNSHGoAndEvaluateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHGoAndEvaluateModel.h; sourceTree = "<group>"; };
@@ -1543,12 +1575,73 @@
 		F479DAF42408FDDC003A284B /* ZBNRTCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNRTCommentCell.xib; sourceTree = "<group>"; };
 		F479DAF7240900E9003A284B /* ZBNRTCommentM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNRTCommentM.h; sourceTree = "<group>"; };
 		F479DAF8240900E9003A284B /* ZBNRTCommentM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNRTCommentM.m; sourceTree = "<group>"; };
+		F47CEBEA24139A4400CEEB08 /* TLCityPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCityPickerController.h; sourceTree = "<group>"; };
+		F47CEBEB24139A4400CEEB08 /* TLCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLCity.m; sourceTree = "<group>"; };
+		F47CEBEC24139A4400CEEB08 /* CityData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CityData.plist; sourceTree = "<group>"; };
+		F47CEBED24139A4400CEEB08 /* TLCityGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLCityGroupCell.m; sourceTree = "<group>"; };
+		F47CEBEE24139A4400CEEB08 /* TLCityHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCityHeaderView.h; sourceTree = "<group>"; };
+		F47CEBEF24139A4400CEEB08 /* TLCityPickerSearchResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCityPickerSearchResultController.h; sourceTree = "<group>"; };
+		F47CEBF024139A4400CEEB08 /* TLCityPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCityPickerDelegate.h; sourceTree = "<group>"; };
+		F47CEBF124139A4400CEEB08 /* TLCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCity.h; sourceTree = "<group>"; };
+		F47CEBF224139A4400CEEB08 /* TLCityPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLCityPickerController.m; sourceTree = "<group>"; };
+		F47CEBF324139A4400CEEB08 /* TLCityPickerSearchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLCityPickerSearchResultController.m; sourceTree = "<group>"; };
+		F47CEBF424139A4400CEEB08 /* TLCityHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLCityHeaderView.m; sourceTree = "<group>"; };
+		F47CEBF524139A4400CEEB08 /* TLCityGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCityGroupCell.h; sourceTree = "<group>"; };
+		F47CEC262413AB0200CEEB08 /* ZBNPostBarNewsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNPostBarNewsVC.h; sourceTree = "<group>"; };
+		F47CEC272413AB0200CEEB08 /* ZBNPostBarNewsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNPostBarNewsVC.m; sourceTree = "<group>"; };
+		F47CEC282413AB0200CEEB08 /* ZBNPostBarNewsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNPostBarNewsVC.xib; sourceTree = "<group>"; };
+		F47CEC312413B4DC00CEEB08 /* ZBNPostBarNewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNPostBarNewsCell.h; sourceTree = "<group>"; };
+		F47CEC322413B4DC00CEEB08 /* ZBNPostBarNewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNPostBarNewsCell.m; sourceTree = "<group>"; };
+		F47CEC332413B4DC00CEEB08 /* ZBNPostBarNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNPostBarNewsCell.xib; sourceTree = "<group>"; };
+		F47CEC362413BD1500CEEB08 /* ZBNPostZanVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNPostZanVC.h; sourceTree = "<group>"; };
+		F47CEC372413BD1500CEEB08 /* ZBNPostZanVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNPostZanVC.m; sourceTree = "<group>"; };
+		F47CEC392413BD2E00CEEB08 /* ZBNPostMyReplyedVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNPostMyReplyedVC.h; sourceTree = "<group>"; };
+		F47CEC3A2413BD2E00CEEB08 /* ZBNPostMyReplyedVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNPostMyReplyedVC.m; sourceTree = "<group>"; };
+		F47CEC3F2413BD8400CEEB08 /* ZBNPostComReplyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNPostComReplyCell.h; sourceTree = "<group>"; };
+		F47CEC402413BD8400CEEB08 /* ZBNPostComReplyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNPostComReplyCell.m; sourceTree = "<group>"; };
+		F47CEC442413C21000CEEB08 /* ZBNPostComReplyM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNPostComReplyM.h; sourceTree = "<group>"; };
+		F47CEC452413C21000CEEB08 /* ZBNPostComReplyM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNPostComReplyM.m; sourceTree = "<group>"; };
+		F47CEC472413C22200CEEB08 /* ZBNPostComReplyFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNPostComReplyFrame.h; sourceTree = "<group>"; };
+		F47CEC482413C22200CEEB08 /* ZBNPostComReplyFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNPostComReplyFrame.m; sourceTree = "<group>"; };
+		F47CEC4A2413C53C00CEEB08 /* ZBNHTOrderDoneVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTOrderDoneVC.h; sourceTree = "<group>"; };
+		F47CEC4B2413C53C00CEEB08 /* ZBNHTOrderDoneVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTOrderDoneVC.m; sourceTree = "<group>"; };
+		F47CEC4D2413C55400CEEB08 /* ZBNHTOrderUnknowVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTOrderUnknowVC.h; sourceTree = "<group>"; };
+		F47CEC4E2413C55400CEEB08 /* ZBNHTOrderUnknowVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTOrderUnknowVC.m; sourceTree = "<group>"; };
+		F47CEC502413C56B00CEEB08 /* ZBNHTOrderComedVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTOrderComedVC.h; sourceTree = "<group>"; };
+		F47CEC512413C56B00CEEB08 /* ZBNHTOrderComedVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTOrderComedVC.m; sourceTree = "<group>"; };
+		F47CEC532413C58400CEEB08 /* ZBNHTOrderNotPayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTOrderNotPayVC.h; sourceTree = "<group>"; };
+		F47CEC542413C58400CEEB08 /* ZBNHTOrderNotPayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTOrderNotPayVC.m; sourceTree = "<group>"; };
+		F47CEC602413C5BE00CEEB08 /* ZBNHTOrderComedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTOrderComedCell.h; sourceTree = "<group>"; };
+		F47CEC612413C5BE00CEEB08 /* ZBNHTOrderComedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTOrderComedCell.m; sourceTree = "<group>"; };
+		F47CEC622413C5BE00CEEB08 /* ZBNHTOrderComedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNHTOrderComedCell.xib; sourceTree = "<group>"; };
+		F47CEC652413C5CF00CEEB08 /* ZBNHTOrderNotPayCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTOrderNotPayCell.h; sourceTree = "<group>"; };
+		F47CEC662413C5CF00CEEB08 /* ZBNHTOrderNotPayCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTOrderNotPayCell.m; sourceTree = "<group>"; };
+		F47CEC672413C5CF00CEEB08 /* ZBNHTOrderNotPayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNHTOrderNotPayCell.xib; sourceTree = "<group>"; };
+		F47CEC6A2413CCE400CEEB08 /* ZBNHTOrderDoneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTOrderDoneCell.h; sourceTree = "<group>"; };
+		F47CEC6B2413CCE400CEEB08 /* ZBNHTOrderDoneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTOrderDoneCell.m; sourceTree = "<group>"; };
+		F47CEC6C2413CCE400CEEB08 /* ZBNHTOrderDoneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNHTOrderDoneCell.xib; sourceTree = "<group>"; };
+		F47CEC6F2413CE4A00CEEB08 /* ZBNHTOrderUnknowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNHTOrderUnknowCell.m; sourceTree = "<group>"; };
+		F47CEC702413CE4B00CEEB08 /* ZBNHTOrderUnknowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZBNHTOrderUnknowCell.xib; sourceTree = "<group>"; };
+		F47CEC712413CE4B00CEEB08 /* ZBNHTOrderUnknowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNHTOrderUnknowCell.h; sourceTree = "<group>"; };
+		F47CEC742413D6A200CEEB08 /* ZBNMineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNMineCell.h; sourceTree = "<group>"; };
+		F47CEC752413D6A200CEEB08 /* ZBNMineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNMineCell.m; sourceTree = "<group>"; };
+		F47CEC762413D6A200CEEB08 /* ZBNMineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNMineCell.xib; sourceTree = "<group>"; };
+		F47CEC792413E71200CEEB08 /* ZBNPostMyComVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNPostMyComVC.m; sourceTree = "<group>"; };
+		F47CEC7A2413E71300CEEB08 /* ZBNPostMyComVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNPostMyComVC.h; sourceTree = "<group>"; };
 		F47D9FBB240FC5A900ACCBF8 /* TZImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZImageRequestOperation.h; sourceTree = "<group>"; };
 		F47D9FBC240FC5AA00ACCBF8 /* TZImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImageRequestOperation.m; sourceTree = "<group>"; };
-		F47D9FBE240FC61D00ACCBF8 /* KillerbListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillerbListModel.m; sourceTree = "<group>"; };
-		F47D9FBF240FC61D00ACCBF8 /* KillerbListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillerbListModel.h; sourceTree = "<group>"; };
 		F47D9FC1240FC68600ACCBF8 /* WMZDialogTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZDialogTableView.h; sourceTree = "<group>"; };
 		F47D9FC2240FC68600ACCBF8 /* WMZDialogTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZDialogTableView.m; sourceTree = "<group>"; };
+		F47D9FFF24109D3D00ACCBF8 /* KillerbListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillerbListModel.h; sourceTree = "<group>"; };
+		F47DA00024109D3D00ACCBF8 /* KillerbListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillerbListModel.m; sourceTree = "<group>"; };
+		F47DA00224109ECB00ACCBF8 /* TownModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TownModel.m; sourceTree = "<group>"; };
+		F47DA00324109ECB00ACCBF8 /* TownModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TownModel.h; sourceTree = "<group>"; };
+		F47DA0052410A66400ACCBF8 /* ZBNTopicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNTopicCell.h; sourceTree = "<group>"; };
+		F47DA0062410A66400ACCBF8 /* ZBNTopicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNTopicCell.m; sourceTree = "<group>"; };
+		F47DA0082410A67A00ACCBF8 /* ZBNTopicCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNTopicCommentCell.h; sourceTree = "<group>"; };
+		F47DA0092410A67A00ACCBF8 /* ZBNTopicCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNTopicCommentCell.m; sourceTree = "<group>"; };
+		F47DA00B2410B2B900ACCBF8 /* ZBNTopicFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNTopicFrame.h; sourceTree = "<group>"; };
+		F47DA00C2410B2B900ACCBF8 /* ZBNTopicFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNTopicFrame.m; sourceTree = "<group>"; };
 		F48128D523D3E90700285A5C /* ZBNSHReturnGoodsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHReturnGoodsVC.h; sourceTree = "<group>"; };
 		F48128D623D3E90700285A5C /* ZBNSHReturnGoodsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHReturnGoodsVC.m; sourceTree = "<group>"; };
 		F48128D823D3E96A00285A5C /* ZBNSHAppReturnGoodsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHAppReturnGoodsCell.h; sourceTree = "<group>"; };
@@ -1567,8 +1660,6 @@
 		F481290523D4663100285A5C /* HotelOnlinesListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelOnlinesListModel.h; sourceTree = "<group>"; };
 		F4835BBE23C9C94000418D78 /* ZBNHTBaseOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTBaseOrderVC.h; sourceTree = "<group>"; };
 		F4835BBF23C9C94000418D78 /* ZBNHTBaseOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTBaseOrderVC.m; sourceTree = "<group>"; };
-		F4835BC123C9C97A00418D78 /* ZBNHTComModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTComModel.h; sourceTree = "<group>"; };
-		F4835BC223C9C97A00418D78 /* ZBNHTComModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTComModel.m; sourceTree = "<group>"; };
 		F4835BC423C9CA6100418D78 /* ZBNHTComCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTComCell.h; sourceTree = "<group>"; };
 		F4835BC523C9CA6100418D78 /* ZBNHTComCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTComCell.m; sourceTree = "<group>"; };
 		F4835BC623C9CA6100418D78 /* ZBNHTComCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNHTComCell.xib; sourceTree = "<group>"; };
@@ -1826,6 +1917,20 @@
 		F4E00E7723C45D05007EABC3 /* ZBNTakeOutEntryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNTakeOutEntryCell.h; sourceTree = "<group>"; };
 		F4E00E7823C45D05007EABC3 /* ZBNTakeOutEntryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNTakeOutEntryCell.m; sourceTree = "<group>"; };
 		F4E00E7923C45D05007EABC3 /* ZBNTakeOutEntryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNTakeOutEntryCell.xib; sourceTree = "<group>"; };
+		F4E3DC392414B64A00AD961D /* ZBNLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNLocationCell.h; sourceTree = "<group>"; };
+		F4E3DC3A2414B64B00AD961D /* ZBNLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNLocationCell.m; sourceTree = "<group>"; };
+		F4E3DC3B2414B64B00AD961D /* ZBNSearchAddrM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNSearchAddrM.m; sourceTree = "<group>"; };
+		F4E3DC3C2414B64C00AD961D /* ZBNLocationSearchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZBNLocationSearchVC.xib; sourceTree = "<group>"; };
+		F4E3DC3D2414B64D00AD961D /* ZBNSearchAddrM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNSearchAddrM.h; sourceTree = "<group>"; };
+		F4E3DC3E2414B64E00AD961D /* ZBNLocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZBNLocationCell.xib; sourceTree = "<group>"; };
+		F4E3DC3F2414B64E00AD961D /* ZBNLocationSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNLocationSearchVC.h; sourceTree = "<group>"; };
+		F4E3DC402414B64F00AD961D /* ZBNLocationSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNLocationSearchVC.m; sourceTree = "<group>"; };
+		F4E3DC462414E78E00AD961D /* ZBNTopicComFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNTopicComFrame.h; sourceTree = "<group>"; };
+		F4E3DC472414E78E00AD961D /* ZBNTopicComFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNTopicComFrame.m; sourceTree = "<group>"; };
+		F4E3DC4C2415A60300AD961D /* ZBNHTComDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNHTComDetailModel.m; sourceTree = "<group>"; };
+		F4E3DC4D2415A60400AD961D /* ZBNHTComModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNHTComModel.h; sourceTree = "<group>"; };
+		F4E3DC4E2415A60500AD961D /* ZBNHTComDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNHTComDetailModel.h; sourceTree = "<group>"; };
+		F4E3DC4F2415A60600AD961D /* ZBNHTComModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNHTComModel.m; sourceTree = "<group>"; };
 		F4E6A79E23B75140006721E9 /* FKHRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKHRequestManager.h; sourceTree = "<group>"; };
 		F4E6A79F23B75140006721E9 /* FKHRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKHRequestManager.m; sourceTree = "<group>"; };
 		F4E6A7A223B753F1006721E9 /* ZBNMineFeedbackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNMineFeedbackVC.m; sourceTree = "<group>"; };
@@ -1841,9 +1946,6 @@
 		F4E6A7B123B75417006721E9 /* ZBNMineSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNMineSettingVC.m; sourceTree = "<group>"; };
 		F4EB907C240A684300C416CA /* EVRElasticViewReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVRElasticViewReference.h; sourceTree = "<group>"; };
 		F4EB907D240A684300C416CA /* EVRElasticViewReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVRElasticViewReference.m; sourceTree = "<group>"; };
-		F4EE90E623F55461003870A3 /* ZBNHTReasonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNHTReasonView.h; sourceTree = "<group>"; };
-		F4EE90E723F55461003870A3 /* ZBNHTReasonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNHTReasonView.m; sourceTree = "<group>"; };
-		F4EE90E923F55488003870A3 /* ZBNHTReasonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNHTReasonView.xib; sourceTree = "<group>"; };
 		F4FAC27C23ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNSHWriteLogisticsListCell.h; sourceTree = "<group>"; };
 		F4FAC27D23ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBNSHWriteLogisticsListCell.m; sourceTree = "<group>"; };
 		F4FAC27E23ABCA6700C235EA /* ZBNSHWriteLogisticsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBNSHWriteLogisticsListCell.xib; sourceTree = "<group>"; };
@@ -2385,6 +2487,7 @@
 				A14FB258238E0E4C006A6511 /* Products */,
 				205D0D9F6CFF3367BAB444AD /* Pods */,
 				E3CD6EC2EBE0FEF0B7882BD3 /* Frameworks */,
+				F47D9FF824109AF100ACCBF8 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2751,6 +2854,9 @@
 				A14FB2E0238F682A006A6511 /* MineViewController.h */,
 				A14FB2E1238F682A006A6511 /* MineViewController.m */,
 				A14FB2E2238F682A006A6511 /* MineViewController.xib */,
+				F47CEC742413D6A200CEEB08 /* ZBNMineCell.h */,
+				F47CEC752413D6A200CEEB08 /* ZBNMineCell.m */,
+				F47CEC762413D6A200CEEB08 /* ZBNMineCell.xib */,
 				F49B6D3B23B9EF2100F1BEBB /* ZBNMineModel.h */,
 				F49B6D3C23B9EF2100F1BEBB /* ZBNMineModel.m */,
 			);
@@ -2969,21 +3075,16 @@
 			children = (
 				A1F6FD1924039C680002704C /* KillerAessModel.h */,
 				A1F6FD1A24039C680002704C /* KillerAessModel.m */,
+				F47D9FFF24109D3D00ACCBF8 /* KillerbListModel.h */,
+				F47DA00024109D3D00ACCBF8 /* KillerbListModel.m */,
 				A1F6FD1F2403B77B0002704C /* AssembModel.h */,
 				A1F6FD202403B77B0002704C /* AssembModel.m */,
 				A1F6FD1C2403A2A90002704C /* KillerListAessbModel.h */,
 				A1F6FD1D2403A2A90002704C /* KillerListAessbModel.m */,
-				A1F6FD38240B8BAD0002704C /* KillerbListModel.h */,
-				A1F6FD37240B8BAC0002704C /* KillerbListModel.m */,
 				A1F6FD222403CBFE0002704C /* AsseBlModel.h */,
 				A1F6FD232403CBFE0002704C /* AsseBlModel.m */,
 				A1F6FD272408DE180002704C /* KillModelt.h */,
 				A1F6FD282408DE180002704C /* KillModelt.m */,
-<<<<<<< HEAD
-				F47D9FBF240FC61D00ACCBF8 /* KillerbListModel.h */,
-				F47D9FBE240FC61D00ACCBF8 /* KillerbListModel.m */,
-=======
->>>>>>> 8954b4ed966138bc131f54218c8c9a5ab6a2e75c
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -3075,9 +3176,6 @@
 				F4055ECF23CD6E7D00637E7A /* ZBNHTApplyRefundVC.h */,
 				F4055ED023CD6E7D00637E7A /* ZBNHTApplyRefundVC.m */,
 				F4055ED123CD6E7D00637E7A /* ZBNHTApplyRefundVC.xib */,
-				F4EE90E623F55461003870A3 /* ZBNHTReasonView.h */,
-				F4EE90E723F55461003870A3 /* ZBNHTReasonView.m */,
-				F4EE90E923F55488003870A3 /* ZBNHTReasonView.xib */,
 			);
 			path = "待入住";
 			sourceTree = "<group>";
@@ -3177,6 +3275,7 @@
 				F476A3EA23A7682800E3018A /* 饭店订单 */,
 				F476A40823A7682900E3018A /* 购物车 */,
 				F476A3FF23A7682800E3018A /* 酒店订单 */,
+				F4E3DC4B2415A5FB00AD961D /* M */,
 				F476A38523A7682400E3018A /* 浏览痕迹 */,
 				F476A3BB23A7682700E3018A /* 商城订单 */,
 				F476A41723A7682A00E3018A /* 商家入驻 */,
@@ -3592,9 +3691,10 @@
 			children = (
 				F419FC05240F86C7004AA912 /* AddressCell.h */,
 				F419FC08240F86C7004AA912 /* ZHFAddTitleAddressView.m */,
-				F419FC09240F86C7004AA912 /* TownModel.m */,
 				F419FC0A240F86C7004AA912 /* CityModel.m */,
 				F419FC0C240F86C7004AA912 /* HttpRequest.m */,
+				F47DA00324109ECB00ACCBF8 /* TownModel.h */,
+				F47DA00224109ECB00ACCBF8 /* TownModel.m */,
 				F419FC0D240F86C7004AA912 /* ProvinceModel.h */,
 				F419FC0E240F86C7004AA912 /* CountyModel.h */,
 				F419FC10240F86C7004AA912 /* AddressCell.m */,
@@ -3602,10 +3702,53 @@
 				F419FC13240F86C7004AA912 /* ProvinceModel.m */,
 				F419FC14240F86C7004AA912 /* HttpRequest.h */,
 				F419FC15240F86C7004AA912 /* CityModel.h */,
-				F419FC16240F86C7004AA912 /* TownModel.h */,
 				F419FC17240F86C7004AA912 /* CountyModel.m */,
 			);
 			path = Address;
+			sourceTree = "<group>";
+		};
+		F41FFB062410DD4C00D5D825 /* new */ = {
+			isa = PBXGroup;
+			children = (
+				F47DA0052410A66400ACCBF8 /* ZBNTopicCell.h */,
+				F47DA0062410A66400ACCBF8 /* ZBNTopicCell.m */,
+				F47DA0082410A67A00ACCBF8 /* ZBNTopicCommentCell.h */,
+				F47DA0092410A67A00ACCBF8 /* ZBNTopicCommentCell.m */,
+				F47DA00B2410B2B900ACCBF8 /* ZBNTopicFrame.h */,
+				F47DA00C2410B2B900ACCBF8 /* ZBNTopicFrame.m */,
+				F4E3DC462414E78E00AD961D /* ZBNTopicComFrame.h */,
+				F4E3DC472414E78E00AD961D /* ZBNTopicComFrame.m */,
+			);
+			path = new;
+			sourceTree = "<group>";
+		};
+		F41FFB072410F58300D5D825 /* 取消订单 */ = {
+			isa = PBXGroup;
+			children = (
+				F41FFB082410F64600D5D825 /* ZBNSHCancelVC.h */,
+				F41FFB092410F64600D5D825 /* ZBNSHCancelVC.m */,
+				F41FFB0A2410F64600D5D825 /* ZBNSHCancelVC.xib */,
+			);
+			path = "取消订单";
+			sourceTree = "<group>";
+		};
+		F41FFB0D2412290500D5D825 /* 已取消 */ = {
+			isa = PBXGroup;
+			children = (
+				F41FFB0E2412297700D5D825 /* ZBNSHOrderCanceledVC.h */,
+				F41FFB0F2412297700D5D825 /* ZBNSHOrderCanceledVC.m */,
+			);
+			path = "已取消";
+			sourceTree = "<group>";
+		};
+		F41FFB112412297F00D5D825 /* 已取消 */ = {
+			isa = PBXGroup;
+			children = (
+				F41FFB12241229A600D5D825 /* ZBNSHOrderCanceledCell.h */,
+				F41FFB13241229A600D5D825 /* ZBNSHOrderCanceledCell.m */,
+				F41FFB14241229A600D5D825 /* ZBNSHOrderCanceledCell.xib */,
+			);
+			path = "已取消";
 			sourceTree = "<group>";
 		};
 		F42C3C6323C713AE0057288A /* M */ = {
@@ -3642,6 +3785,7 @@
 				F443E91E23C6FFAE0059E48F /* ZBNMyAllNewsCell.xib */,
 				F42C3C6023C702010057288A /* ZBNMyAllNewsModel.h */,
 				F42C3C6123C702010057288A /* ZBNMyAllNewsModel.m */,
+				F47CEC2B2413AB4A00CEEB08 /* 贴吧消息 */,
 			);
 			path = "全部消息";
 			sourceTree = "<group>";
@@ -3914,6 +4058,8 @@
 		F476A3BD23A7682700E3018A /* C */ = {
 			isa = PBXGroup;
 			children = (
+				F41FFB0D2412290500D5D825 /* 已取消 */,
+				F41FFB072410F58300D5D825 /* 取消订单 */,
 				F4FAC25623ABC20C00C235EA /* 退货款 */,
 				F4FAC25523ABC1F800C235EA /* 待评价 */,
 				F4FAC25423ABC1E900C235EA /* 待发货 */,
@@ -3927,8 +4073,8 @@
 		F476A3CE23A7682700E3018A /* V */ = {
 			isa = PBXGroup;
 			children = (
+				F41FFB112412297F00D5D825 /* 已取消 */,
 				F4FAC29623AC6E7200C235EA /* 待收货 */,
-				F4FAC29523AC6E6700C235EA /* 全部订单 */,
 				F4FAC29423AC6E6000C235EA /* 待付款 */,
 				F4FAC29323AC6E5B00C235EA /* 待发货 */,
 				F4FAC29223AC6E5400C235EA /* 待评价 */,
@@ -4008,7 +4154,6 @@
 			children = (
 				F4835BBD23C9C5A100418D78 /* C */,
 				F4835BBC23C9C59D00418D78 /* V */,
-				F4835BBB23C9C59900418D78 /* M */,
 			);
 			path = "酒店订单";
 			sourceTree = "<group>";
@@ -4207,6 +4352,105 @@
 			path = "取消订单";
 			sourceTree = "<group>";
 		};
+		F47CEBE924139A4400CEEB08 /* TLCityPicker */ = {
+			isa = PBXGroup;
+			children = (
+				F47CEBEA24139A4400CEEB08 /* TLCityPickerController.h */,
+				F47CEBEB24139A4400CEEB08 /* TLCity.m */,
+				F47CEBEC24139A4400CEEB08 /* CityData.plist */,
+				F47CEBED24139A4400CEEB08 /* TLCityGroupCell.m */,
+				F47CEBEE24139A4400CEEB08 /* TLCityHeaderView.h */,
+				F47CEBEF24139A4400CEEB08 /* TLCityPickerSearchResultController.h */,
+				F47CEBF024139A4400CEEB08 /* TLCityPickerDelegate.h */,
+				F47CEBF124139A4400CEEB08 /* TLCity.h */,
+				F47CEBF224139A4400CEEB08 /* TLCityPickerController.m */,
+				F47CEBF324139A4400CEEB08 /* TLCityPickerSearchResultController.m */,
+				F47CEBF424139A4400CEEB08 /* TLCityHeaderView.m */,
+				F47CEBF524139A4400CEEB08 /* TLCityGroupCell.h */,
+			);
+			path = TLCityPicker;
+			sourceTree = "<group>";
+		};
+		F47CEC212413A04700CEEB08 /* 未支付 */ = {
+			isa = PBXGroup;
+			children = (
+				F47CEC532413C58400CEEB08 /* ZBNHTOrderNotPayVC.h */,
+				F47CEC542413C58400CEEB08 /* ZBNHTOrderNotPayVC.m */,
+				F47CEC652413C5CF00CEEB08 /* ZBNHTOrderNotPayCell.h */,
+				F47CEC662413C5CF00CEEB08 /* ZBNHTOrderNotPayCell.m */,
+				F47CEC672413C5CF00CEEB08 /* ZBNHTOrderNotPayCell.xib */,
+			);
+			path = "未支付";
+			sourceTree = "<group>";
+		};
+		F47CEC232413A07300CEEB08 /* 已评价 */ = {
+			isa = PBXGroup;
+			children = (
+				F47CEC502413C56B00CEEB08 /* ZBNHTOrderComedVC.h */,
+				F47CEC512413C56B00CEEB08 /* ZBNHTOrderComedVC.m */,
+				F47CEC602413C5BE00CEEB08 /* ZBNHTOrderComedCell.h */,
+				F47CEC612413C5BE00CEEB08 /* ZBNHTOrderComedCell.m */,
+				F47CEC622413C5BE00CEEB08 /* ZBNHTOrderComedCell.xib */,
+			);
+			path = "已评价";
+			sourceTree = "<group>";
+		};
+		F47CEC242413A08000CEEB08 /* 未知 */ = {
+			isa = PBXGroup;
+			children = (
+				F47CEC4D2413C55400CEEB08 /* ZBNHTOrderUnknowVC.h */,
+				F47CEC4E2413C55400CEEB08 /* ZBNHTOrderUnknowVC.m */,
+				F47CEC712413CE4B00CEEB08 /* ZBNHTOrderUnknowCell.h */,
+				F47CEC6F2413CE4A00CEEB08 /* ZBNHTOrderUnknowCell.m */,
+				F47CEC702413CE4B00CEEB08 /* ZBNHTOrderUnknowCell.xib */,
+			);
+			path = "未知";
+			sourceTree = "<group>";
+		};
+		F47CEC252413A0D800CEEB08 /* 已入住 */ = {
+			isa = PBXGroup;
+			children = (
+				F47CEC4A2413C53C00CEEB08 /* ZBNHTOrderDoneVC.h */,
+				F47CEC4B2413C53C00CEEB08 /* ZBNHTOrderDoneVC.m */,
+				F47CEC6A2413CCE400CEEB08 /* ZBNHTOrderDoneCell.h */,
+				F47CEC6B2413CCE400CEEB08 /* ZBNHTOrderDoneCell.m */,
+				F47CEC6C2413CCE400CEEB08 /* ZBNHTOrderDoneCell.xib */,
+			);
+			path = "已入住";
+			sourceTree = "<group>";
+		};
+		F47CEC2B2413AB4A00CEEB08 /* 贴吧消息 */ = {
+			isa = PBXGroup;
+			children = (
+				F47CEC262413AB0200CEEB08 /* ZBNPostBarNewsVC.h */,
+				F47CEC272413AB0200CEEB08 /* ZBNPostBarNewsVC.m */,
+				F47CEC282413AB0200CEEB08 /* ZBNPostBarNewsVC.xib */,
+				F47CEC312413B4DC00CEEB08 /* ZBNPostBarNewsCell.h */,
+				F47CEC322413B4DC00CEEB08 /* ZBNPostBarNewsCell.m */,
+				F47CEC332413B4DC00CEEB08 /* ZBNPostBarNewsCell.xib */,
+				F47CEC362413BD1500CEEB08 /* ZBNPostZanVC.h */,
+				F47CEC372413BD1500CEEB08 /* ZBNPostZanVC.m */,
+				F47CEC392413BD2E00CEEB08 /* ZBNPostMyReplyedVC.h */,
+				F47CEC3A2413BD2E00CEEB08 /* ZBNPostMyReplyedVC.m */,
+				F47CEC7A2413E71300CEEB08 /* ZBNPostMyComVC.h */,
+				F47CEC792413E71200CEEB08 /* ZBNPostMyComVC.m */,
+				F47CEC3F2413BD8400CEEB08 /* ZBNPostComReplyCell.h */,
+				F47CEC402413BD8400CEEB08 /* ZBNPostComReplyCell.m */,
+				F47CEC442413C21000CEEB08 /* ZBNPostComReplyM.h */,
+				F47CEC452413C21000CEEB08 /* ZBNPostComReplyM.m */,
+				F47CEC472413C22200CEEB08 /* ZBNPostComReplyFrame.h */,
+				F47CEC482413C22200CEEB08 /* ZBNPostComReplyFrame.m */,
+			);
+			path = "贴吧消息";
+			sourceTree = "<group>";
+		};
+		F47D9FF824109AF100ACCBF8 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		F48128E523D4352200285A5C /* M */ = {
 			isa = PBXGroup;
 			children = (
@@ -4214,17 +4458,6 @@
 				F48128EA23D436AD00285A5C /* ZBNSHReCellM.m */,
 				F48128F023D4595500285A5C /* ZBNSHReturnGoodsComM.h */,
 				F48128EF23D4595500285A5C /* ZBNSHReturnGoodsComM.m */,
-			);
-			path = M;
-			sourceTree = "<group>";
-		};
-		F4835BBB23C9C59900418D78 /* M */ = {
-			isa = PBXGroup;
-			children = (
-				F4835BC123C9C97A00418D78 /* ZBNHTComModel.h */,
-				F4835BC223C9C97A00418D78 /* ZBNHTComModel.m */,
-				F4055EDA23CDC19000637E7A /* ZBNHTComDetailModel.h */,
-				F4055EDB23CDC19000637E7A /* ZBNHTComDetailModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -4242,6 +4475,10 @@
 		F4835BBD23C9C5A100418D78 /* C */ = {
 			isa = PBXGroup;
 			children = (
+				F47CEC252413A0D800CEEB08 /* 已入住 */,
+				F47CEC242413A08000CEEB08 /* 未知 */,
+				F47CEC232413A07300CEEB08 /* 已评价 */,
+				F47CEC212413A04700CEEB08 /* 未支付 */,
 				F4055EBC23CD664E00637E7A /* 已取消 */,
 				F4055EB323CD65CF00637E7A /* 待评价 */,
 				F4055EA923CD59D000637E7A /* 待入住 */,
@@ -4347,12 +4584,12 @@
 			isa = PBXGroup;
 			children = (
 				F4990DBF2400D56200E16C7D /* SDPhotoBrowserConfig.h */,
-				F4990DC02400D56200E16C7D /* SDPhotoBrowser.m */,
-				F4990DC12400D56200E16C7D /* SDWaitingView.m */,
-				F4990DC22400D56200E16C7D /* SDBrowserImageView.m */,
 				F4990DC32400D56200E16C7D /* SDWaitingView.h */,
-				F4990DC42400D56200E16C7D /* SDPhotoBrowser.h */,
+				F4990DC12400D56200E16C7D /* SDWaitingView.m */,
 				F4990DC52400D56200E16C7D /* SDBrowserImageView.h */,
+				F4990DC22400D56200E16C7D /* SDBrowserImageView.m */,
+				F4990DC42400D56200E16C7D /* SDPhotoBrowser.h */,
+				F4990DC02400D56200E16C7D /* SDPhotoBrowser.m */,
 			);
 			path = SDPhotoBrowser;
 			sourceTree = "<group>";
@@ -4418,6 +4655,7 @@
 		F4990DCF2401219200E16C7D /* ThreeParty */ = {
 			isa = PBXGroup;
 			children = (
+				F47CEBE924139A4400CEEB08 /* TLCityPicker */,
 				F419FC04240F86C7004AA912 /* Address */,
 				F419FBBB240ED21F004AA912 /* PYPhotoBrowser */,
 				F419FAF3240DF686004AA912 /* WMZDialog */,
@@ -4472,6 +4710,14 @@
 				F4B7F8C923CC5553008BCEDF /* ZBNAddressChangeVC.h */,
 				F4B7F8CA23CC5553008BCEDF /* ZBNAddressChangeVC.m */,
 				F4B7F8CB23CC5553008BCEDF /* ZBNAddressChangeVC.xib */,
+				F4E3DC392414B64A00AD961D /* ZBNLocationCell.h */,
+				F4E3DC3A2414B64B00AD961D /* ZBNLocationCell.m */,
+				F4E3DC3E2414B64E00AD961D /* ZBNLocationCell.xib */,
+				F4E3DC3F2414B64E00AD961D /* ZBNLocationSearchVC.h */,
+				F4E3DC402414B64F00AD961D /* ZBNLocationSearchVC.m */,
+				F4E3DC3C2414B64C00AD961D /* ZBNLocationSearchVC.xib */,
+				F4E3DC3D2414B64D00AD961D /* ZBNSearchAddrM.h */,
+				F4E3DC3B2414B64B00AD961D /* ZBNSearchAddrM.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -4613,6 +4859,7 @@
 		F4CB2E9E23FF94CD003A673C /* squareMain */ = {
 			isa = PBXGroup;
 			children = (
+				F41FFB062410DD4C00D5D825 /* new */,
 				F4CB2E8A23FE635F003A673C /* ZBNPostBarHeader.h */,
 				F4990DC9240107F500E16C7D /* ZBNPostBarHeader.m */,
 				F4CB2E8D23FE63B9003A673C /* ZBNPostBarHeader.xib */,
@@ -4697,6 +4944,17 @@
 				F4D4A21E24057FCA00571D14 /* TZProgressView.h */,
 			);
 			path = TZImagePickerController;
+			sourceTree = "<group>";
+		};
+		F4E3DC4B2415A5FB00AD961D /* M */ = {
+			isa = PBXGroup;
+			children = (
+				F4E3DC4E2415A60500AD961D /* ZBNHTComDetailModel.h */,
+				F4E3DC4C2415A60300AD961D /* ZBNHTComDetailModel.m */,
+				F4E3DC4D2415A60400AD961D /* ZBNHTComModel.h */,
+				F4E3DC4F2415A60600AD961D /* ZBNHTComModel.m */,
+			);
+			path = M;
 			sourceTree = "<group>";
 		};
 		F4E6A7A123B753F1006721E9 /* 意见反馈 */ = {
@@ -4856,13 +5114,6 @@
 			path = "待付款";
 			sourceTree = "<group>";
 		};
-		F4FAC29523AC6E6700C235EA /* 全部订单 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "全部订单";
-			sourceTree = "<group>";
-		};
 		F4FAC29623AC6E7200C235EA /* 待收货 */ = {
 			isa = PBXGroup;
 			children = (
@@ -4989,7 +5240,6 @@
 			files = (
 				A15DC10B239E60FD008CF287 /* OnlineTableViewCell.xib in Resources */,
 				F45ED44F23FD32B800ADDBDB /* ZBNPostPayVC.xib in Resources */,
-				F4EE90EA23F55488003870A3 /* ZBNHTReasonView.xib in Resources */,
 				A1FBA8C423D30106008C67E2 /* RCarTableViewCell.xib in Resources */,
 				F476A48123A7682C00E3018A /* ZBNShoppingCartCell.xib in Resources */,
 				F4D4A22624057FCA00571D14 /* TZImagePickerController.bundle in Resources */,
@@ -4997,6 +5247,7 @@
 				F4B6979623BF425D00CB0014 /* ZBNSHCommonHeadV.xib in Resources */,
 				A1667DEE23C455560039C6F8 /* KXWebViewViewController.xib in Resources */,
 				A14FB34B2391269B006A6511 /* ShopingHomeViewController.xib in Resources */,
+				F47CEC732413CE4B00CEEB08 /* ZBNHTOrderUnknowCell.xib in Resources */,
 				F4DBE611240978AF0033CC30 /* pcd.plist in Resources */,
 				F41B749823C2D6B90056DC78 /* ZBNSHEvaluateSuccessVC.xib in Resources */,
 				F48128DC23D3E96B00285A5C /* ZBNSHAppReturnGoodsCell.xib in Resources */,
@@ -5021,11 +5272,14 @@
 				A15DC0F7239E320E008CF287 /* CresThirdTableViewCell.xib in Resources */,
 				F479DAEE2408FA7A003A284B /* ZBNRTCancelCell.xib in Resources */,
 				A14FB2A9238E4DF6006A6511 /* RegisterViewController.xib in Resources */,
+				F47CEC642413C5BE00CEEB08 /* ZBNHTOrderComedCell.xib in Resources */,
 				A1F6FCFF23FA95320002704C /* AssembleKillSubViewController.xib in Resources */,
 				A1F73CF423A880CB001D86EF /* ShopingShopViewController.xib in Resources */,
 				F4E6A7AA23B753F2006721E9 /* ZBNMineFeedbackVC.xib in Resources */,
+				F47CEC782413D6A200CEEB08 /* ZBNMineCell.xib in Resources */,
 				F4C1F41E23F3E69200E28D9D /* ZBNProtocolVC.xib in Resources */,
 				F49656D823F67D2A00481F62 /* ZBNUserIconVC.xib in Resources */,
+				F47CEC692413C5CF00CEEB08 /* ZBNHTOrderNotPayCell.xib in Resources */,
 				A14FB350239126CB006A6511 /* ShoingMsgViewController.xib in Resources */,
 				F4FAC2A023AC731100C235EA /* ZBNHotelEntryCell.xib in Resources */,
 				A15DC101239E3F04008CF287 /* OnlineBookingViewController.xib in Resources */,
@@ -5061,6 +5315,7 @@
 				A15DC0E8239E22BE008CF287 /* CresTwoTableViewCell.xib in Resources */,
 				F4B7F8CD23CC5553008BCEDF /* ZBNAddressChangeVC.xib in Resources */,
 				F476A48923A7682C00E3018A /* ZBNEntryFooterView.xib in Resources */,
+				F41FFB16241229A700D5D825 /* ZBNSHOrderCanceledCell.xib in Resources */,
 				A1F86E2723D159EB00CC0F54 /* HotelOnlineSubViewController.xib in Resources */,
 				F41B749323C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.xib in Resources */,
 				A10A9CCC239B37800049A0D2 /* AutomobileViewController.xib in Resources */,
@@ -5073,7 +5328,9 @@
 				F4CD16A223C093590039CE49 /* ZBNSHZDeliverGoodsDOCell.xib in Resources */,
 				A1F4E03123A48E4F00B02880 /* ShopSeckillDetailsSubViewController.xib in Resources */,
 				F48128E423D4349800285A5C /* ZBNReturnGoodsReasonCell.xib in Resources */,
+				F41FFB0C2410F64600D5D825 /* ZBNSHCancelVC.xib in Resources */,
 				F491322423FA7BE4007EC747 /* ZBNPostCommentCell.xib in Resources */,
+				F47CEC352413B4DC00CEEB08 /* ZBNPostBarNewsCell.xib in Resources */,
 				A10A9C202398A9C70049A0D2 /* MsgViewCell.xib in Resources */,
 				F45ED45923FD3B8200ADDBDB /* ZBNPostSuccessVC.xib in Resources */,
 				A1FBA8BA23D2D870008C67E2 /* HotelOnlineOrderTableViewCell.xib in Resources */,
@@ -5095,6 +5352,7 @@
 				F419FB7E240E827E004AA912 /* ZBNPostComLineCell.xib in Resources */,
 				A15DC106239E41D4008CF287 /* HotelDetailsBottomView.xib in Resources */,
 				A10A9C1B2398A1970049A0D2 /* address.plist in Resources */,
+				F4E3DC432414B64F00AD961D /* ZBNLocationSearchVC.xib in Resources */,
 				F476A44123A7682B00E3018A /* ZBNDowmLoadAppVC.xib in Resources */,
 				F476A48223A7682C00E3018A /* ZBNShopingCartVC.xib in Resources */,
 				F476A44A23A7682B00E3018A /* ZBNMyWalletHeadView.xib in Resources */,
@@ -5107,9 +5365,11 @@
 				A14FB312238FD2AC006A6511 /* HomeTableViewCell.xib in Resources */,
 				F479DAE524089FFF003A284B /* ZBNRTMoreView.xib in Resources */,
 				F4990DE7240146D100E16C7D /* ZBNPostPayHeader.xib in Resources */,
+				F47CEC6E2413CCE400CEEB08 /* ZBNHTOrderDoneCell.xib in Resources */,
 				A1FBA8B523D2D4ED008C67E2 /* HotelOnlineGotOrderViewController.xib in Resources */,
 				A1F4DFE623A1EB9B00B02880 /* SeckillTableViewCell.xib in Resources */,
 				F476A48623A7682C00E3018A /* ZBNMyCollectionCommenCell.xib in Resources */,
+				F47CEBF724139A4500CEEB08 /* CityData.plist in Resources */,
 				F419FB83240E83EF004AA912 /* ZBNPostNoDataCell.xib in Resources */,
 				F41B74A523C2DA040056DC78 /* ZBNSHReadEvaluateCell.xib in Resources */,
 				A14FB262238E0E4C006A6511 /* Main.storyboard in Resources */,
@@ -5133,6 +5393,7 @@
 				F4B6978923BF271300CB0014 /* ZBNSHCommonCell.xib in Resources */,
 				F458C34223C8267B00338220 /* ZBNSHComViewLogisticsHeader.xib in Resources */,
 				A10A9CB1239B35F70049A0D2 /* TCShopingViewController.xib in Resources */,
+				F47CEC2A2413AB0300CEEB08 /* ZBNPostBarNewsVC.xib in Resources */,
 				A10A9CBA239B368B0049A0D2 /* BusinessCoursesViewController.xib in Resources */,
 				F4055EB223CD5A7300637E7A /* ZBNHTWaitInDetailCell.xib in Resources */,
 				A15DC0BF239DD52D008CF287 /* HotelDetlisViewController.xib in Resources */,
@@ -5150,6 +5411,7 @@
 				A14FB2BF238F57AD006A6511 /* MBProgressHUD.bundle in Resources */,
 				A1F6FD1823FE7B290002704C /* KillerAsselbViewController.xib in Resources */,
 				F40D745D23D06613006DF3CB /* ZBNRTComDetailCell.xib in Resources */,
+				F4E3DC442414B64F00AD961D /* ZBNLocationCell.xib in Resources */,
 				A14FB2E4238F682A006A6511 /* MineViewController.xib in Resources */,
 				F40D746D23D06883006DF3CB /* ZBNRTComDetailHeader.xib in Resources */,
 				A14BDABA23C6C992006EC033 /* CuomtentView.xib in Resources */,
@@ -5256,16 +5518,10 @@
 				A1FC70C723C2CF6B005BFDC9 /* HomeModel.m in Sources */,
 				F4055EB623CD661D00637E7A /* ZBNHTHadInVC.m in Sources */,
 				A14BDABE23C6CCD6006EC033 /* CategoryCollectionViewCell.m in Sources */,
-<<<<<<< HEAD
-=======
-
-				F4D4A22E24057FCA00571D14 /* TZImageRequestOperation.m in Sources */,
-				F419FB69240DF687004AA912 /* WMZDialogTableView.m in Sources */,
-
->>>>>>> 8954b4ed966138bc131f54218c8c9a5ab6a2e75c
 				F4ADBE3823B9A4BA00B62E46 /* ZBNMyIntegralModel.m in Sources */,
 				A15DC104239E41C8008CF287 /* HotelDetailsBottomView.m in Sources */,
 				A14FB323239017BC006A6511 /* UIView+HHAddition.m in Sources */,
+				F47CEC682413C5CF00CEEB08 /* ZBNHTOrderNotPayCell.m in Sources */,
 				F45718A923D03D710040164D /* ZBNRTWaitComVC.m in Sources */,
 				F4CB2E6B23FE4D67003A673C /* YYTextContainerView.m in Sources */,
 				A14FB2A8238E4DF6006A6511 /* RegisterViewController.m in Sources */,
@@ -5274,13 +5530,11 @@
 				F419FBEF240ED21F004AA912 /* PYPhotoBrowseView.m in Sources */,
 				A1F6FCFE23FA95320002704C /* AssembleKillSubViewController.m in Sources */,
 				F4D4A22224057FCA00571D14 /* TZAssetModel.m in Sources */,
-				F4055EDC23CDC19000637E7A /* ZBNHTComDetailModel.m in Sources */,
 				A14FB322239017BC006A6511 /* MarqueeView.m in Sources */,
 				F476A44E23A7682B00E3018A /* ZBNCashWithDrawalVC.m in Sources */,
 				F476A47F23A7682C00E3018A /* ZBNHotelCancelOrderVC.m in Sources */,
 				F40D746123D06648006DF3CB /* ZBNRTComDetailCellOne.m in Sources */,
 				F479DAE92408FA5E003A284B /* ZBNRTCancelVC.m in Sources */,
-				F4835BC323C9C97A00418D78 /* ZBNHTComModel.m in Sources */,
 				F419FBF0240ED21F004AA912 /* PYPhotoCell.m in Sources */,
 				F419FB70240DF687004AA912 /* WMZDialog+Sheet.m in Sources */,
 				A14FB32A2390E6B1006A6511 /* HotTableViewCell.m in Sources */,
@@ -5300,6 +5554,7 @@
 				A1F73D0823A8C86D001D86EF /* BeserveView.m in Sources */,
 				F49656E423F7EAD400481F62 /* PPBadgeControl.m in Sources */,
 				F4D4A22524057FCA00571D14 /* TZPhotoPreviewController.m in Sources */,
+				F41FFB0B2410F64600D5D825 /* ZBNSHCancelVC.m in Sources */,
 				F4CB2E6E23FE4D67003A673C /* YYTextLayout.m in Sources */,
 				F4917C8223C3132C00C05CFA /* ZBNMerchantEntryTabCell.m in Sources */,
 				F4835BC023C9C94000418D78 /* ZBNHTBaseOrderVC.m in Sources */,
@@ -5360,6 +5615,7 @@
 				F45718B823D0428E0040164D /* ZBNRTMainVC.m in Sources */,
 				F4CB2E7523FE4D67003A673C /* YYTextParser.m in Sources */,
 				F48D544E23CB4C4E004DACFE /* SPPickerView.m in Sources */,
+				F47CEC462413C21000CEEB08 /* ZBNPostComReplyM.m in Sources */,
 				F419FBE9240ED21F004AA912 /* PYPhotosViewController.m in Sources */,
 				F419FBF1240ED21F004AA912 /* PYPhotoView.m in Sources */,
 				A14FB2B7238F5788006A6511 /* FKHRequestOperation.m in Sources */,
@@ -5381,18 +5637,22 @@
 				F419FB60240DF687004AA912 /* WMZDialog+Calander.m in Sources */,
 				F48128D723D3E90700285A5C /* ZBNSHReturnGoodsVC.m in Sources */,
 				F4B6978C23BF315700CB0014 /* ZBNSHCommonModel.m in Sources */,
+				F47CEC292413AB0300CEEB08 /* ZBNPostBarNewsVC.m in Sources */,
 				A14FB26A238E0E50006A6511 /* main.m in Sources */,
 				F45D811723C9A01800AE2A28 /* ZBNGoodsCarModel.m in Sources */,
 				F479DADA24089325003A284B /* ZBNRTPayVC.m in Sources */,
 				F4C196E923C5771000F1C48C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				A1F5518023B74D1F00416682 /* CommentModel.m in Sources */,
 				F476A4B223A783E200E3018A /* ZBNWalletRechargeVC.m in Sources */,
+				F47CEBFB24139A4500CEEB08 /* TLCityHeaderView.m in Sources */,
 				A1F6BDB023ADF7B50063AEF8 /* UIView+Extension.m in Sources */,
 				A1F6FD3C240B8DC00002704C /* TZImageRequestOperation.m in Sources */,
 				F4CB2E6923FE4D67003A673C /* YYTextView.m in Sources */,
 				A1FC70BE23BF149D005BFDC9 /* OrderlModel.m in Sources */,
 				F4CB2E8323FE4F33003A673C /* ZBNPostUserModel.m in Sources */,
 				F4FAC2A423AC79BE00C235EA /* ZBNShoppingMallEntryCell.m in Sources */,
+				F47CEBF824139A4500CEEB08 /* TLCityGroupCell.m in Sources */,
+				F4E3DC502415A60600AD961D /* ZBNHTComDetailModel.m in Sources */,
 				A14FB2F5238F6A84006A6511 /* HomeViewController.m in Sources */,
 				F4055EC723CD681C00637E7A /* ZBNHTGoCommentVC.m in Sources */,
 				F48128F123D4595600285A5C /* ZBNSHReturnGoodsComM.m in Sources */,
@@ -5417,8 +5677,10 @@
 				F443E8FC23C6D3C50059E48F /* ZBNCostModel.m in Sources */,
 				F4D4A22424057FCA00571D14 /* UIView+Layout.m in Sources */,
 				F419FB5B240DF687004AA912 /* WMZDialog+Down.m in Sources */,
+				F4E3DC422414B64F00AD961D /* ZBNSearchAddrM.m in Sources */,
 				F468E57223D166D40050F8BE /* SGQRCodeScanView.m in Sources */,
 				F419FC21240F86C8004AA912 /* CountyModel.m in Sources */,
+				F47CEC6D2413CCE400CEEB08 /* ZBNHTOrderDoneCell.m in Sources */,
 				F4990DD32401227A00E16C7D /* ZBNPostPriceCell.m in Sources */,
 				A1F5515D23B0FCB500416682 /* WRCustomNavigationBar.m in Sources */,
 				A14FB2ED238F6858006A6511 /* MsgViewController.m in Sources */,
@@ -5434,12 +5696,14 @@
 				A15DC10A239E60FD008CF287 /* OnlineTableViewCell.m in Sources */,
 				F476A45D23A7682B00E3018A /* ZBNShoppingHallWaitPaymentOrderVC.m in Sources */,
 				F419FBE6240ED21F004AA912 /* MBProgressHUD+PYExtension.m in Sources */,
+				F47DA00D2410B2B900ACCBF8 /* ZBNTopicFrame.m in Sources */,
 				F4CB2E7C23FE4D67003A673C /* UIPasteboard+YYText.m in Sources */,
 				F4055EBA23CD663400637E7A /* ZBNHTHadInCell.m in Sources */,
 				A15DC0BE239DD52D008CF287 /* HotelDetlisViewController.m in Sources */,
 				F4CB2E9123FE667D003A673C /* ZBNComReModel.m in Sources */,
 				F41612712403A65A001C6BE9 /* MSLaunchView.m in Sources */,
 				A10A9C8F239A469A0049A0D2 /* CaseCluessKeybordCollectionHeadView.m in Sources */,
+				F47DA0072410A66400ACCBF8 /* ZBNTopicCell.m in Sources */,
 				A14FB30B238FCD03006A6511 /* CustomSectionView.m in Sources */,
 				A14FB2CB238F5C60006A6511 /* CustomBarViewController.m in Sources */,
 				F48D544323CB4C3B004DACFE /* ZBNCity.m in Sources */,
@@ -5457,13 +5721,16 @@
 				A14FB2AD238E7858006A6511 /* RetrievepsdViewController.m in Sources */,
 				F419FBEE240ED21F004AA912 /* PYPhotosView.m in Sources */,
 				F476A45523A7682B00E3018A /* ZBNNewAddressVC.m in Sources */,
+				F47CEBF624139A4500CEEB08 /* TLCity.m in Sources */,
 				F45ED44523FD266A00ADDBDB /* ZBNNewPostVC.m in Sources */,
 				F4C1F41923F3CE9800E28D9D /* ZBNShopFollowModel.m in Sources */,
+				F4E3DC482414E78E00AD961D /* ZBNTopicComFrame.m in Sources */,
 				F479DAF9240900E9003A284B /* ZBNRTCommentM.m in Sources */,
 				F4055EAD23CD5A1100637E7A /* ZBNHTWaitInDetailVC.m in Sources */,
 				A15DC0D7239DE0CE008CF287 /* FSSegmentTitleView.m in Sources */,
 				F4D7375523D2B3C3000329D1 /* ZBNMyNewsDetailModel.m in Sources */,
 				F458C33C23C8255700338220 /* ZBNSHComViewLogisticsCell.m in Sources */,
+				F47CEC722413CE4B00CEEB08 /* ZBNHTOrderUnknowCell.m in Sources */,
 				A1F6FD0823FE31650002704C /* AsseKillerViewController.m in Sources */,
 				F4C1F41D23F3E69200E28D9D /* ZBNProtocolVC.m in Sources */,
 				F419FB75240DF687004AA912 /* WMZTagParam.m in Sources */,
@@ -5482,7 +5749,6 @@
 				F491322A23FA828C007EC747 /* ZBNPostComModel.m in Sources */,
 				A1FBA8B923D2D870008C67E2 /* HotelOnlineOrderTableViewCell.m in Sources */,
 				A1FBA8C923D3E4CF008C67E2 /* HotelOnlinesModel.m in Sources */,
-				A1F6FD39240B8BAD0002704C /* KillerbListModel.m in Sources */,
 				A1FBA8CA23D3E4CF008C67E2 /* HotelOnlinesListModel.m in Sources */,
 				F476A48723A7682C00E3018A /* ZBNMyCollectionVC.m in Sources */,
 				F419FBE8240ED21F004AA912 /* PYPhotoBrowserConst.m in Sources */,
@@ -5526,6 +5792,7 @@
 				F4C196EE23C5771000F1C48C /* NSArray+MASAdditions.m in Sources */,
 				F419FB71240DF687004AA912 /* WMZDialog.m in Sources */,
 				F40D745C23D06613006DF3CB /* ZBNRTComDetailCell.m in Sources */,
+				F47CEC522413C56B00CEEB08 /* ZBNHTOrderComedVC.m in Sources */,
 				F476A45623A7682B00E3018A /* ZBNMyAddressModel.m in Sources */,
 				F443E91C23C6FF830059E48F /* ZBNMyAllNewsVC.m in Sources */,
 				F476A49223A7682C00E3018A /* ZBNShoppingMallEntryVC.m in Sources */,
@@ -5537,6 +5804,7 @@
 				F4C1969E23C5751300F1C48C /* YNImageUploadViewCollCell.m in Sources */,
 				A14FB25C238E0E4C006A6511 /* AppDelegate.m in Sources */,
 				F48128FA23D4627900285A5C /* OnlineOrderListModel.m in Sources */,
+				F47CEC4C2413C53C00CEEB08 /* ZBNHTOrderDoneVC.m in Sources */,
 				A14FB2CE238F5F36006A6511 /* CustomBar.m in Sources */,
 				F45ED43B23FD08E200ADDBDB /* ZBNPostDetailVC.m in Sources */,
 				A1F86DF823CD63F500CC0F54 /* HotelOrderModel.m in Sources */,
@@ -5550,6 +5818,7 @@
 				F457189223CFF0AC0040164D /* ZBNVIPRechargeCell.m in Sources */,
 				A1FBA8BD23D2FE58008C67E2 /* RCarlistView.m in Sources */,
 				F476A4AA23A7683200E3018A /* ZBNSegmenBar.m in Sources */,
+				F4E3DC452414B64F00AD961D /* ZBNLocationSearchVC.m in Sources */,
 				F4990DE524013FF000E16C7D /* ZBNPostPayHeader.m in Sources */,
 				F46E0F1123BADBEA006FE05D /* ZBNMineSettingModel.m in Sources */,
 				F49656D723F67D2A00481F62 /* ZBNUserIconVC.m in Sources */,
@@ -5557,7 +5826,9 @@
 				A1F4E03023A48E4F00B02880 /* ShopSeckillDetailsSubViewController.m in Sources */,
 				F4CB2E6A23FE4D67003A673C /* YYTextMagnifier.m in Sources */,
 				F491321723FA4AE3007EC747 /* ZBNPostMineVC.m in Sources */,
+				F4E3DC512415A60600AD961D /* ZBNHTComModel.m in Sources */,
 				F476A48323A7682C00E3018A /* ZBNShopingCartVC.m in Sources */,
+				F47DA00424109ECB00ACCBF8 /* TownModel.m in Sources */,
 				A1F6FD292408DE180002704C /* KillModelt.m in Sources */,
 				F4E6A7B423B75417006721E9 /* ZBNMineSettingVC.m in Sources */,
 				F4FAC2CB23ACBE0700C235EA /* TggStarEvaluationView.m in Sources */,
@@ -5565,7 +5836,6 @@
 				F419FB57240DF687004AA912 /* WMZDialog+NaviMenu.m in Sources */,
 				A14BDA9723C5A2F5006EC033 /* ShoperListModel.m in Sources */,
 				F476A49B23A7682C00E3018A /* InviteCourtesyVC.m in Sources */,
-				F47D9FC0240FC61D00ACCBF8 /* KillerbListModel.m in Sources */,
 				A10A9C0A2397ED7A0049A0D2 /* PacketModel.m in Sources */,
 				A10A9C98239A57230049A0D2 /* HotelViewController.m in Sources */,
 				F491334223FBE71D007EC747 /* ZBNPostShareView.m in Sources */,
@@ -5579,13 +5849,13 @@
 				F40D746B23D06876006DF3CB /* ZBNRTComDetailHeader.m in Sources */,
 				F476A45E23A7682B00E3018A /* ZBNShoppingHallAllOrderVC.m in Sources */,
 				F4CB2E7223FE4D67003A673C /* YYTextDebugOption.m in Sources */,
-
 				F476A4B623A7844A00E3018A /* ZBNRechargeCell.m in Sources */,
 				A1F5516723B4644A00416682 /* userInfo.m in Sources */,
 				F491322723FA8279007EC747 /* ZBNSquareModel.m in Sources */,
 				A1FBA8CC23D3E540008C67E2 /* HotelOnlineSubViewController.m in Sources */,
 				F45718AF23D03D960040164D /* ZBNRTWaitPayVC.m in Sources */,
 				A10A9C1423989A4D0049A0D2 /* DropMenuView.m in Sources */,
+				F47CEC382413BD1500CEEB08 /* ZBNPostZanVC.m in Sources */,
 				A14FB2E3238F682A006A6511 /* MineViewController.m in Sources */,
 				A1FD1B8823AC6E7800AE0835 /* iCarousel.m in Sources */,
 				F491321423FA4ACF007EC747 /* ZBNSquareVC.m in Sources */,
@@ -5595,6 +5865,7 @@
 				A14FB2C7238F5BFA006A6511 /* CustomNavigationController.m in Sources */,
 				A19CD6B823C998B1001835E1 /* HoleggModel.m in Sources */,
 				F44DF88C23AA271C00A7D902 /* ZBNAlertTool.m in Sources */,
+				F47CEC422413BD8400CEEB08 /* ZBNPostComReplyCell.m in Sources */,
 				A10A9CB9239B368B0049A0D2 /* BusinessCoursesViewController.m in Sources */,
 				F419FB77240DF687004AA912 /* tagOneCell.m in Sources */,
 				F419FBFA240ED29B004AA912 /* FLAnimatedImageView.m in Sources */,
@@ -5612,6 +5883,7 @@
 				A1F6BDAD23ADF7B50063AEF8 /* CustomMoveView.m in Sources */,
 				F4CB2E7423FE4D67003A673C /* YYTextRunDelegate.m in Sources */,
 				F4CB2E7E23FE4D67003A673C /* UIView+YYText.m in Sources */,
+				F47CEC552413C58400CEEB08 /* ZBNHTOrderNotPayVC.m in Sources */,
 				A10A9C1523989A4D0049A0D2 /* MenuScreeningView.m in Sources */,
 				F4D916AD23C33B7A003EBE20 /* UIBarButtonItem+ZBNExtension.m in Sources */,
 				F4FAC28323AC568900C235EA /* ZBNWaitDeliverDetailVC.m in Sources */,
@@ -5630,6 +5902,8 @@
 				A14FB315238FE03A006A6511 /* HomeCellModel.m in Sources */,
 				F476A47223A7682B00E3018A /* ZBNBecomeDistributor.m in Sources */,
 				F457189823D011770040164D /* ZBNChangeNameVC.m in Sources */,
+				F47CEC342413B4DC00CEEB08 /* ZBNPostBarNewsCell.m in Sources */,
+				F41FFB102412297700D5D825 /* ZBNSHOrderCanceledVC.m in Sources */,
 				F45ED44E23FD32B800ADDBDB /* ZBNPostPayVC.m in Sources */,
 				F479DAF12408FDAE003A284B /* ZBNRTCommentVC.m in Sources */,
 				A1F6BDB123ADF7B50063AEF8 /* CustomTopCell.m in Sources */,
@@ -5637,14 +5911,17 @@
 				F419FB79240DF687004AA912 /* WMZTagCell.m in Sources */,
 				F4EB907E240A684300C416CA /* EVRElasticViewReference.m in Sources */,
 				F476A49A23A7682C00E3018A /* ZBNMyPostBarVC.m in Sources */,
+				F47CEC772413D6A200CEEB08 /* ZBNMineCell.m in Sources */,
 				F48128DB23D3E96B00285A5C /* ZBNSHAppReturnGoodsCell.m in Sources */,
 				A1F86DFB23CD666A00CC0F54 /* HotelOrderModelList.m in Sources */,
+				F47CEBFA24139A4500CEEB08 /* TLCityPickerSearchResultController.m in Sources */,
 				F4D7375223D2AD87000329D1 /* UIImageView+ZBNExtension.m in Sources */,
 				A1FC4A8B239F27BB00AF3F57 /* CustomAlterView.m in Sources */,
 				A14FB3262390C6D1006A6511 /* CitylistViewController.m in Sources */,
 				F45D811323C96D0700AE2A28 /* ZBNSHWaitEvaluateDetailCell.m in Sources */,
 				F41B749223C2C8E30056DC78 /* ZBNSHGoAndEvaluateCell.m in Sources */,
 				F419FB64240DF687004AA912 /* WMZDialog+CardPresent.m in Sources */,
+				F41FFB15241229A600D5D825 /* ZBNSHOrderCanceledCell.m in Sources */,
 				F419FB6C240DF687004AA912 /* WMZDialog+BuyCar.m in Sources */,
 				A1F6FCEC23F39D1B0002704C /* HDragItem.m in Sources */,
 				F49656E623F7EAD400481F62 /* UIView+PPBadgeView.m in Sources */,
@@ -5652,25 +5929,29 @@
 				F4C196EF23C5771000F1C48C /* View+MASAdditions.m in Sources */,
 				F4CB2E7923FE4D67003A673C /* YYTextUtilities.m in Sources */,
 				F476A48523A7682C00E3018A /* ZBNMyCollectionCommenCell.m in Sources */,
+				F47CEBF924139A4500CEEB08 /* TLCityPickerController.m in Sources */,
 				F476A45A23A7682B00E3018A /* ZBNSHDeliverGoodsOrderVC.m in Sources */,
 				F4C196F223C5771000F1C48C /* MASViewAttribute.m in Sources */,
 				F476A45723A7682B00E3018A /* ZBNMyAddressVC.m in Sources */,
 				F476A4A923A7683200E3018A /* ZBNSegmenBarVC.m in Sources */,
-				F4EE90E823F55461003870A3 /* ZBNHTReasonView.m in Sources */,
 				F419FB62240DF687004AA912 /* WMZDialog+time.m in Sources */,
 				F4990DCA240107F500E16C7D /* ZBNPostBarHeader.m in Sources */,
+				F47DA00124109D3D00ACCBF8 /* KillerbListModel.m in Sources */,
 				F457188E23CFF08D0040164D /* ZBNVIPRechargeVC.m in Sources */,
 				F419FB5F240DF687004AA912 /* WMZDialog+Pay.m in Sources */,
 				A14FB311238FD2AC006A6511 /* HomeTableViewCell.m in Sources */,
 				A1F6FD242403CBFE0002704C /* AsseBlModel.m in Sources */,
 				F458C34523C82E0900338220 /* ZBNSHComViewLogisticsModel.m in Sources */,
 				F419FB59240DF687004AA912 /* WMZDialog+TabbarMenu.m in Sources */,
+				F47CEC7B2413E71300CEEB08 /* ZBNPostMyComVC.m in Sources */,
 				F457189F23D03CBE0040164D /* ZBNRTBaseOrderVC.m in Sources */,
 				F419FB5A240DF687004AA912 /* WMZDialog+AutoDisappear.m in Sources */,
 				A1667DED23C455560039C6F8 /* KXWebViewViewController.m in Sources */,
 				A14FB2BE238F57AD006A6511 /* HUDManager.m in Sources */,
 				F419FBED240ED21F004AA912 /* PYPhoto.m in Sources */,
 				F48D545123CB4C4E004DACFE /* SPPageMenu.m in Sources */,
+				F47CEC632413C5BE00CEEB08 /* ZBNHTOrderComedCell.m in Sources */,
+				F47CEC492413C22200CEEB08 /* ZBNPostComReplyFrame.m in Sources */,
 				A1F6FD1723FE7B290002704C /* KillerAsselbViewController.m in Sources */,
 				A1F6FCEE23F39D1B0002704C /* LXFPhotoHelper.m in Sources */,
 				F476A45923A7682B00E3018A /* ZBNMyAddressCell.m in Sources */,
@@ -5686,6 +5967,7 @@
 				F419FB74240DF687004AA912 /* WMZTagsTool.m in Sources */,
 				A14BDAB823C6C985006EC033 /* CuomtentView.m in Sources */,
 				A1ECDEFD239B7A6E003D870D /* HotolListViewController.m in Sources */,
+				F47CEC4F2413C55400CEEB08 /* ZBNHTOrderUnknowVC.m in Sources */,
 				A1FBA8B423D2D4ED008C67E2 /* HotelOnlineGotOrderViewController.m in Sources */,
 				F4CB2E9A23FE7EE7003A673C /* NSDateFormatter+Extension.m in Sources */,
 				F476A47A23A7682B00E3018A /* ZBNCommenOrderCell.m in Sources */,
@@ -5701,11 +5983,13 @@
 				F4CB2E7323FE4D67003A673C /* YYLabel.m in Sources */,
 				F419FC1E240F86C7004AA912 /* AddressCell.m in Sources */,
 				A15DC100239E3F04008CF287 /* OnlineBookingViewController.m in Sources */,
+				F4E3DC412414B64F00AD961D /* ZBNLocationCell.m in Sources */,
 				F41612722403A65A001C6BE9 /* MSLaunchOperation.m in Sources */,
 				F419FB63240DF687004AA912 /* WMZDialog+MenusSelect.m in Sources */,
 				F4CB2E7A23FE4D67003A673C /* NSParagraphStyle+YYText.m in Sources */,
 				F4C196EB23C5771000F1C48C /* MASCompositeConstraint.m in Sources */,
 				F476A44923A7682B00E3018A /* ZBNMyWalletHeadView.m in Sources */,
+				F47CEC3B2413BD2E00CEEB08 /* ZBNPostMyReplyedVC.m in Sources */,
 				F4CD169723C06F800039CE49 /* ZBNSHOrderDetailsM.m in Sources */,
 				F4C196FC23C5E68100F1C48C /* ZBNMerchantEntryVC.m in Sources */,
 				F4CB2E8623FE6317003A673C /* ZBNSquareFrame.m in Sources */,
@@ -5720,6 +6004,7 @@
 				F4E6A7A023B75140006721E9 /* FKHRequestManager.m in Sources */,
 				F476A44623A7682B00E3018A /* ZBNMyPostVC.m in Sources */,
 				F458C34823C8457D00338220 /* ZBNSHDetailLogisticsModel.m in Sources */,
+				F47DA00A2410A67A00ACCBF8 /* ZBNTopicCommentCell.m in Sources */,
 				A10A9C9E239A5B650049A0D2 /* UIButton+Ex.m in Sources */,
 				A14FB318238FF6D4006A6511 /* WSLWaterFlowLayout.m in Sources */,
 				F4C1F40F23F395C500E28D9D /* ZBNMyCollectionM.m in Sources */,
@@ -5892,7 +6177,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2C8KC8WYWK;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5900,6 +6185,10 @@
 					"$(PROJECT_DIR)/OgrinterProduct/Controllers/frameworks",
 					"${SRCROOT}",
 					"$(PROJECT_DIR)/OgrinterProduct/Controllers/Mine/C/ZBNSemenBar/YYKit/Vendor",
+					"$(PROJECT_DIR)/OgrinterProduct/Controllers/PostBar/ThreeParty/AMap2DMap",
+					"$(PROJECT_DIR)/OgrinterProduct/Controllers/PostBar/ThreeParty/AMapSearch",
+					"$(PROJECT_DIR)/OgrinterProduct/Controllers/PostBar/ThreeParty/AMapFoundation",
+					"$(PROJECT_DIR)/OgrinterProduct/Controllers/PostBar/ThreeParty/AMapLocation",
 				);
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -6020,7 +6309,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.OgrinterProducts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS andou Development";
 				TARGETED_DEVICE_FAMILY = 1;
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "${SRCROOT}";
 			};
@@ -6033,7 +6322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2C8KC8WYWK;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -6041,6 +6330,10 @@
 					"$(PROJECT_DIR)/OgrinterProduct/Controllers/frameworks",
 					"${SRCROOT}",
 					"$(PROJECT_DIR)/OgrinterProduct/Controllers/Mine/C/ZBNSemenBar/YYKit/Vendor",
+					"$(PROJECT_DIR)/OgrinterProduct/Controllers/PostBar/ThreeParty/AMap2DMap",
+					"$(PROJECT_DIR)/OgrinterProduct/Controllers/PostBar/ThreeParty/AMapSearch",
+					"$(PROJECT_DIR)/OgrinterProduct/Controllers/PostBar/ThreeParty/AMapFoundation",
+					"$(PROJECT_DIR)/OgrinterProduct/Controllers/PostBar/ThreeParty/AMapLocation",
 				);
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -6161,7 +6454,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.OgrinterProducts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS andou Development";
 				TARGETED_DEVICE_FAMILY = 1;
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "${SRCROOT";
 			};

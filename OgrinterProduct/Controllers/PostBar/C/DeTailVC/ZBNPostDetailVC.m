@@ -138,6 +138,12 @@ static NSString * const ZBNCommentCellId = @"com";
     return squareFrame;
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"Dismiss" object:nil];
+}
 
 #pragma mark - Table view data source
 

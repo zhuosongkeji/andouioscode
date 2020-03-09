@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationItem.title = @"意见反馈";
     // 设置代理对象
     self.contentText.delegate = self;

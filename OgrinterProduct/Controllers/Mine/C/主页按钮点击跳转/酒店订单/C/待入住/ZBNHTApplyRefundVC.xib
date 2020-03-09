@@ -132,7 +132,7 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="3tj-4v-Lpu" secondAttribute="trailing" id="uGE-7V-A45"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="-301" y="120"/>
+            <point key="canvasLocation" x="-67" y="133"/>
         </view>
     </objects>
     <resources>

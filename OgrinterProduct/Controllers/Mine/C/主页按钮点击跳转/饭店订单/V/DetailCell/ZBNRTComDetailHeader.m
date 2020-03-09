@@ -8,6 +8,7 @@
 
 #import "ZBNRTComDetailHeader.h"
 #import "ZBNRTComDetailModel.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface ZBNRTComDetailHeader ()
 
@@ -17,16 +18,18 @@
 
 /*! 店家的电话 */
 @property (nonatomic, copy) NSString *shopPhone;
-
+@property (nonatomic, copy) NSString *address;
 @end
 
 @implementation ZBNRTComDetailHeader
 
 - (void)setComDetailM:(ZBNRTComDetailModel *)comDetailM
 {
+    _comDetailM = comDetailM;
     [self.iconImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgServer,comDetailM.logo_img]]];
     self.shopName.text = comDetailM.name;
     self.shopPhone = comDetailM.tel;
+    self.address = comDetailM.address;
 }
 
 
@@ -50,6 +53,38 @@
     
 }
 
+
+- (IBAction)addressBtnClick:(UIButton *)sender {
+    ADWeakSelf;
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"iosamap://"]]) {
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder geocodeAddressString:weakSelf.comDetailM.address completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+            for (CLPlacemark *mark in placemarks) {
+                CLLocationCoordinate2D coordinate = mark.location.coordinate;
+                NSString *urlString = [[NSString stringWithFormat:@"iosamap://navi?sourceApplication=%@&backScheme=%@&lat=%f&lon=%f&dev=0&style=2",@"导航",@"@AmapScheme",coordinate.latitude,coordinate.longitude] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+                if (@available(iOS 10.0, *)) {
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString] options:@{UIApplicationOpenURLOptionUniversalLinksOnly:@NO} completionHandler:nil];
+                } else {
+                }
+            }
+        }];
+    } else {
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"baidumap://"]]) {
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder geocodeAddressString:weakSelf.comDetailM.address completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+            for (CLPlacemark *mark in placemarks) {
+                CLLocationCoordinate2D coordinate = mark.location.coordinate;
+                NSString *urlString = [[NSString stringWithFormat:@"baidumap://map/direction?origin={{我的位置}}&destination=latLng:%f,%f|name=目的地&mode=driving&coord_type=gcj02",coordinate.latitude,coordinate.longitude] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+                if (@available(iOS 10.0, *)) {
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString] options:@{UIApplicationOpenURLOptionUniversalLinksOnly:@NO} completionHandler:nil];
+                } else {
+                }
+            }
+        }];
+            
+        }
+    }
+}
 
 
 @end
